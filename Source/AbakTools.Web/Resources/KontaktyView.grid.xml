@@ -1,0 +1,10 @@
+<grid>
+  <key>KontaktyView</key>
+  <sort property="EMAIL" direction="Ascending" />
+  <properties />
+  <columns>
+    <add headertext="EMAIL" headertextalign="0" width="285" textalign="0" format="" propertypath="EMAIL" readonly="True" />
+    <add headertext="Nazwa" headertextalign="0" width="249" textalign="0" format="" propertypath="Nazwa" readonly="True" />
+    <add headertext="Telefon komorkowy" headertextalign="0" width="245" textalign="0" format="" propertypath="TelefonKomorkowy" readonly="True" />
+  </columns>
+</grid>

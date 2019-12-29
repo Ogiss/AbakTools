@@ -1,0 +1,13 @@
+<grid>
+  <key>ZamowienieMagazynAVView</key>
+  <properties>
+    <add name="TopPanelSpliterDistance" value="49" type="System.Int32" />
+  </properties>
+  <columns>
+    <add headertext="Kod" headertextalign="0" width="243" textalign="1" format="" propertypath="TowarKod" readonly="True" />
+    <add headertext="TowarNazwa" headertextalign="0" width="357" textalign="1" format="" propertypath="TowarNazwa" readonly="True" />
+    <add headertext="Atrybut" headertextalign="0" width="240" textalign="1" format="" propertypath="AtrybutNazwaPelna" readonly="True" />
+    <add headertext="Aktywny" headertextalign="3" width="74" textalign="3" format="" propertypath="AktywnyWithSave" readonly="False" />
+    <add headertext="Dostepny" headertextalign="3" width="72" textalign="3" format="" propertypath="DostepnyWithSave" readonly="False" />
+  </columns>
+</grid>

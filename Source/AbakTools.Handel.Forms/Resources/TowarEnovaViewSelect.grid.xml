@@ -1,0 +1,10 @@
+<grid>
+  <key>TowarEnovaView</key>
+  <sort property="Kod" direction="Ascending" />
+  <columns>
+    <add headertext="Kod" width="191" textalign="1" format="" propertypath="Kod" />
+    <add headertext="Nazwa" width="500" textalign="1" format="" propertypath="Nazwa" />
+    <add headertext="Cena netto" width="87" textalign="2" format="C2" propertypath="CenaNetto" />
+    <add headertext="VAT" width="51" textalign="2" format="" propertypath="StawkaVat" />
+  </columns>
+</grid>

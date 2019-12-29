@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA72DCC9-DCBC-480C-86D4-6B514521A4E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AbakTools.Business.Forms</RootNamespace>
+    <AssemblyName>AbakTools.Business.Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EnovaApiTest|AnyCPU'">
+    <OutputPath>bin\EnovaApiTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\AbakTools.Business.Forms.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BAL.Business">
+      <HintPath>..\BAL\BAL.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="BAL.Forms">
+      <HintPath>..\BAL\BAL.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net40\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net40\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DictionaryTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DictionaryTextBox.Designer.cs">
+      <DependentUpon>DictionaryTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FeaturesTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FeaturesTreeView.Designer.cs">
+      <DependentUpon>FeaturesTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KonfiguracjaEnovaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KonfiguracjaEnovaForm.Designer.cs">
+      <DependentUpon>KonfiguracjaEnovaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KonfiguracjaZamowienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KonfiguracjaZamowienForm.Designer.cs">
+      <DependentUpon>KonfiguracjaZamowienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KonfiguracjaZwrotowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KonfiguracjaZwrotowForm.Designer.cs">
+      <DependentUpon>KonfiguracjaZwrotowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorEnovaPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OperatorEnovaPanel.Designer.cs">
+      <DependentUpon>OperatorEnovaPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorKontaktPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OperatorKontaktPanel.Designer.cs">
+      <DependentUpon>OperatorKontaktPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorOgolnePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OperatorOgolnePanel.Designer.cs">
+      <DependentUpon>OperatorOgolnePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorUprawnieniaPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OperatorUprawnieniaPanel.Designer.cs">
+      <DependentUpon>OperatorUprawnieniaPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorzyView.cs" />
+    <Compile Include="PrintSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintSettingsForm.Designer.cs">
+      <DependentUpon>PrintSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SerwerConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SerwerConfigForm.designer.cs">
+      <DependentUpon>SerwerConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UzytkownicyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UzytkownicyForm.Designer.cs">
+      <DependentUpon>UzytkownicyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UzytkownikEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UzytkownikEditForm.Designer.cs">
+      <DependentUpon>UzytkownikEditForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DictionaryTextBox.resx">
+      <DependentUpon>DictionaryTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FeaturesTreeView.resx">
+      <DependentUpon>FeaturesTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KonfiguracjaEnovaForm.resx">
+      <DependentUpon>KonfiguracjaEnovaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KonfiguracjaZamowienForm.resx">
+      <DependentUpon>KonfiguracjaZamowienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KonfiguracjaZwrotowForm.resx">
+      <DependentUpon>KonfiguracjaZwrotowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorEnovaPanel.resx">
+      <DependentUpon>OperatorEnovaPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorKontaktPanel.resx">
+      <DependentUpon>OperatorKontaktPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorOgolnePanel.resx">
+      <DependentUpon>OperatorOgolnePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorUprawnieniaPanel.resx">
+      <DependentUpon>OperatorUprawnieniaPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintSettingsForm.resx">
+      <DependentUpon>PrintSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerwerConfigForm.resx">
+      <DependentUpon>SerwerConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UzytkownicyForm.resx">
+      <DependentUpon>UzytkownicyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UzytkownikEditForm.resx">
+      <DependentUpon>UzytkownikEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Enova.API\Enova.API\Enova.API.csproj">
+      <Project>{858d7fdd-5dba-4eae-a857-c3cfe2ba3496}</Project>
+      <Name>Enova.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Business\AbakTools.Business.csproj">
+      <Project>{5EC96917-4A7D-4116-B046-5014C054F259}</Project>
+      <Name>AbakTools.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Forms\AbakTools.Forms.csproj">
+      <Project>{2BCDD22E-6A64-4E1A-BC00-B41F5D9D4F32}</Project>
+      <Name>AbakTools.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enova.Business\Enova.Business.Old.csproj">
+      <Project>{D433FEDB-C0E1-4280-A420-198EF74503E4}</Project>
+      <Name>Enova.Business.Old</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enova.Forms\Enova.Forms.csproj">
+      <Project>{B8F7A741-ECB5-4BC7-9903-D8038700087C}</Project>
+      <Name>Enova.Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\AbakTools.Business.ElementSlownika.datasource" />
+    <None Include="Properties\DataSources\AbakTools.Business.Operator.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Enova.API.Business.FeatureDefinition.datasource" />
+    <None Include="Properties\DataSources\Enova.API.Business.FeatureDefinition1.datasource" />
+    <None Include="Properties\DataSources\Enova.API.Business.FeatureDefs.datasource" />
+    <None Include="Resources\OperatorzyView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slownik.grid.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

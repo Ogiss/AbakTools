@@ -1,0 +1,15 @@
+<grid>
+  <key>DokumentyEnovaView</key>
+  <columns>
+    <add headertext="Z" width="23" textalign="3" format="" propertypath="Zatwierdzony" />
+    <add headertext="A" width="21" textalign="3" format="" propertypath="Anulowany" />
+    <add headertext="K" width="23" textalign="3" format="" propertypath="Korekta" />
+    <add headertext="Data" width="100" textalign="1" format="" propertypath="Data" />
+    <add headertext="Numer" width="100" textalign="1" format="" propertypath="NumerPelny" />
+    <add headertext="Kod" width="131" textalign="0" format="" propertypath="Kontrahent.Kod" />
+    <add headertext="Nazwa" width="371" textalign="0" format="" propertypath="Kontrahent.Nazwa" />
+    <add headertext="Wartość netto" width="100" textalign="2" format="C2" propertypath="WartoscNetto" />
+    <add headertext="Wartosc VAT" width="100" textalign="2" format="C2" propertypath="WartoscVat" />
+    <add headertext="Wartość brutto" width="100" textalign="2" format="C2" propertypath="WartoscBrutto" />
+  </columns>
+</grid>

@@ -1,0 +1,14 @@
+<grid>
+  <key>KorespondencjaView</key>
+  <sort property="DataWysylki" direction="Descending" />
+  <columns>
+    <add headertext="ID" width="41" textalign="1" format="" propertypath="ID" />
+    <add headertext="Data" width="105" textalign="1" format="" propertypath="DataWysylki" />
+    <add headertext="Kod" width="210" textalign="1" format="" propertypath="Kod" />
+    <add headertext="Nazwa" width="422" textalign="1" format="" propertypath="Nazwa" />
+    <add headertext="Adres" width="364" textalign="1" format="" propertypath="AdresPelny" />
+    <add headertext="Rodzaj" width="190" textalign="1" format="" propertypath="RodzajKorespondencji" />
+    <add headertext="Opis" width="183" textalign="1" format="" propertypath="Opis" />
+    <add headertext="Użytkownik" width="75" textalign="1" format="" propertypath="Uzytkownik" />
+  </columns>
+</grid>

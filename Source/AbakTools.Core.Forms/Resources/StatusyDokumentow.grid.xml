@@ -1,0 +1,9 @@
+<grid>
+  <key>Statusy</key>
+  <sort property="Kolejnosc" direction="Ascending" />
+  <columns>
+    <add headertext="Kategoria" width="146" textalign="1" format="" propertypath="Kategoria" />
+    <add headertext="Nazwa" width="304" textalign="1" format="" propertypath="Nazwa" />
+    <add headertext="Kolejność" width="100" textalign="2" format="" propertypath="Kolejnosc" />
+  </columns>
+</grid>

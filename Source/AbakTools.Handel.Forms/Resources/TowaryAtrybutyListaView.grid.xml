@@ -1,0 +1,16 @@
+<grid>
+  <key>TowaryAtrybutyListaView</key>
+  <sort property="TowarKod" direction="Ascending" />
+  <properties>
+    <add name="LeftPanelSpliterDistance" value="192" type="System.Int32" />
+    <add name="TopPanelSpliterDistance" value="51" type="System.Int32" />
+  </properties>
+  <columns>
+    <add headertext="Kod" headertextalign="0" width="263" textalign="0" format="" propertypath="TowarKod" readonly="True" />
+    <add headertext="Nazwa" headertextalign="0" width="334" textalign="0" format="" propertypath="TowarNazwa" readonly="True" />
+    <add headertext="Atrybut" headertextalign="0" width="192" textalign="0" format="" propertypath="AtrybutNazwaPelna" readonly="True" />
+    <add headertext="Widoczny" headertextalign="3" width="78" textalign="3" format="" propertypath="VisibleAVWidthSave" readonly="False" />
+    <add headertext="Aktywny" headertextalign="3" width="72" textalign="3" format="" propertypath="AktywnyWithSave" readonly="False" />
+    <add headertext="Dostepny" headertextalign="3" width="81" textalign="3" format="" propertypath="DostepnyWithSave" readonly="False" />
+  </columns>
+</grid>

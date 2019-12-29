@@ -1,0 +1,17 @@
+<grid>
+  <key>DostawyView</key>
+  <sort property="ID" direction="Descending" />
+  <columns>
+    <add headertext="ID" width="100" textalign="1" format="" propertypath="ID" />
+    <add headertext="Data" width="100" textalign="1" format="" propertypath="Data" />
+    <add headertext="Dostawca" width="100" textalign="1" format="" propertypath="Dostawca" />
+    <add headertext="Rodzaj towaru" width="100" textalign="1" format="" propertypath="RodzajTowaru" />
+    <add headertext="Przewoznik" width="100" textalign="1" format="" propertypath="Przewoznik" />
+    <add headertext="Nr dok przyjecia" width="100" textalign="1" format="" propertypath="NrDokPrzyjecia" />
+    <add headertext="Nr faktury" width="100" textalign="1" format="" propertypath="NrFaktury" />
+    <add headertext="Przyjmowal" width="100" textalign="1" format="" propertypath="Przyjmowal" />
+    <add headertext="Roznice" width="241" textalign="1" format="" propertypath="Roznice" />
+    <add headertext="Uwagi" width="329" textalign="1" format="" propertypath="Uwagi" />
+    <add headertext="Status" width="364" textalign="1" format="" propertypath="OstatniStatus" />
+  </columns>
+</grid>

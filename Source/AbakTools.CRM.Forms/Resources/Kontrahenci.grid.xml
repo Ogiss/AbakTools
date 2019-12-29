@@ -1,0 +1,11 @@
+<grid>
+  <key>Kontrahenci</key>
+  <sort property="Kod" direction="Ascending" />
+  <columns>
+    <add headertext="Kod" width="219" textalign="1" format="" propertypath="Kod" />
+    <add headertext="Nazwa" width="473" textalign="1" format="" propertypath="Nazwa" />
+    <add headertext="Nip" width="127" textalign="1" format="" propertypath="Nip" />
+    <add headertext="Email" width="206" textalign="1" format="" propertypath="Email" />
+    <add headertext="Telefon" width="116" textalign="1" format="" propertypath="Telefon" />
+  </columns>
+</grid>

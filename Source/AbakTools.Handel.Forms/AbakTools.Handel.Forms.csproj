@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2D2ACF7A-744B-4EE4-84A6-1F1DEFC016CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AbakTools.Handel.Forms</RootNamespace>
+    <AssemblyName>AbakTools.Handel.Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EnovaApiTest|AnyCPU'">
+    <OutputPath>bin\EnovaApiTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\AbakTools.Handel.Forms.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BAL.Business">
+      <HintPath>..\BAL\BAL.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="BAL.Forms">
+      <HintPath>..\BAL\BAL.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net40\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net40\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\DataGridViewProduktColumn.cs" />
+    <Compile Include="Controls\KategorieTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PozycjeAnalizyZwrotuGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PozycjeZamowieniaGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PozycjeZamowieniaIloscCell.cs" />
+    <Compile Include="Controls\PozycjeZamowieniaIloscColumn.cs" />
+    <Compile Include="Controls\PozycjeZamowieniaIloscEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PozycjeZwrotuGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TowarZdjecie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TowarZdjecie.Designer.cs">
+      <DependentUpon>TowarZdjecie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnovaSezonyView.cs" />
+    <Compile Include="HandelGridService.cs" />
+    <Compile Include="Handel\PozycjeReklamacjiGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Handel\PozycjeReklamacjiView.cs" />
+    <Compile Include="Handel\ReklamacjaDokHandlowyContext.cs" />
+    <Compile Include="Handel\ReklamacjaOgolnePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Handel\ReklamacjaOgolnePanel.Designer.cs">
+      <DependentUpon>ReklamacjaOgolnePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Handel\ReklamacjeEditContext.cs" />
+    <Compile Include="Handel\ReklamacjeView.cs" />
+    <Compile Include="Handel\ReklamacjeViewGridTemplate.cs" />
+    <Compile Include="Magazyn\StanMagazynowyContext.cs" />
+    <Compile Include="Magazyn\StanMagazynowyOgolnePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Magazyn\StanMagazynowyOgolnePanel.Designer.cs">
+      <DependentUpon>StanMagazynowyOgolnePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Magazyn\StanyMagazynoweView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\AtrybutyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\AtrybutyForm.Designer.cs">
+      <DependentUpon>AtrybutyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\DostawcaInfo.cs" />
+    <Compile Include="Towary\DrukujTowaryAction.cs" />
+    <Compile Include="Towary\ImagePreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\ImagePreviewForm.Designer.cs">
+      <DependentUpon>ImagePreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\KategorieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\KategorieForm.Designer.cs">
+      <DependentUpon>KategorieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\MagazynAVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\MagazynAVForm.Designer.cs">
+      <DependentUpon>MagazynAVForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\MagazynAVView.cs" />
+    <Compile Include="Towary\MagazynAVViewGridTemplate.cs" />
+    <Compile Include="Towary\MagazynForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\MagazynForm.Designer.cs">
+      <DependentUpon>MagazynForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\MapowanieTowarowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\MapowanieTowarowForm.Designer.cs">
+      <DependentUpon>MapowanieTowarowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\MapowanieTowaruEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\MapowanieTowaruEditForm.Designer.cs">
+      <DependentUpon>MapowanieTowaruEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\StanMagazynuOgolnePanel.cs" />
+    <Compile Include="Towary\StanMagazynuOgolnePanel.Designer.cs">
+      <DependentUpon>StanMagazynuOgolnePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\StanMagazynuViewContext.cs" />
+    <Compile Include="Towary\StanyMagazynoweView.cs" />
+    <Compile Include="Towary\TowarAtrybutContext.cs" />
+    <Compile Include="Towary\TowarAtrybutOgolnePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Towary\TowarAtrybutOgolnePanel.Designer.cs">
+      <DependentUpon>TowarAtrybutOgolnePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\TowarEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\TowarEditForm.Designer.cs">
+      <DependentUpon>TowarEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\TowaryAtrybutyView.cs" />
+    <Compile Include="Towary\TowaryEnovaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\TowaryEnovaForm.Designer.cs">
+      <DependentUpon>TowaryEnovaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\TowaryEnovaView.cs" />
+    <Compile Include="Towary\TowaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\TowaryForm.Designer.cs">
+      <DependentUpon>TowaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\TowaryView.cs" />
+    <Compile Include="Towary\WyborTowaruEnovaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\WyborTowaruEnovaForm.Designer.cs">
+      <DependentUpon>WyborTowaruEnovaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\WyborZdjeciaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\WyborZdjeciaForm.Designer.cs">
+      <DependentUpon>WyborZdjeciaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\AddMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\AddMessageForm.Designer.cs">
+      <DependentUpon>AddMessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\BrakiAction.cs" />
+    <Compile Include="Zamowienia\BrakiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\BrakiForm.Designer.cs">
+      <DependentUpon>BrakiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\BrakiFormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\BrakiFormReport.Designer.cs">
+      <DependentUpon>BrakiFormReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\BrakiRow.cs" />
+    <Compile Include="Zamowienia\NaglowekZamowieniaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\NaglowekZamowieniaForm.Designer.cs">
+      <DependentUpon>NaglowekZamowieniaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\OpisPozycjiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\OpisPozycjiForm.Designer.cs">
+      <DependentUpon>OpisPozycjiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\PodgladProduktuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\PodgladProduktuForm.Designer.cs">
+      <DependentUpon>PodgladProduktuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\PozycjaZamowieniaEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\PozycjaZamowieniaEditForm.Designer.cs">
+      <DependentUpon>PozycjaZamowieniaEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\PozycjeZamowienia.cs" />
+    <Compile Include="Zamowienia\StatusyZamowienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\StatusyZamowienForm.Designer.cs">
+      <DependentUpon>StatusyZamowienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\StatusZamowieniaEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\StatusZamowieniaEditForm.Designer.cs">
+      <DependentUpon>StatusZamowieniaEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\WybierzDateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\WybierzDateForm.Designer.cs">
+      <DependentUpon>WybierzDateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\WyborFakturyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\WyborFakturyForm.Designer.cs">
+      <DependentUpon>WyborFakturyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\WyborMagazynieraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\WyborMagazynieraForm.Designer.cs">
+      <DependentUpon>WyborMagazynieraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\WyborProduktuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\WyborProduktuForm.Designer.cs">
+      <DependentUpon>WyborProduktuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\WystawFaktureAction.cs" />
+    <Compile Include="Zamowienia\WystawFaktureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\WystawFaktureForm.Designer.cs">
+      <DependentUpon>WystawFaktureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\ZamowieniaView.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewActionBase.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewAnulujAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewBlokujAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewCofnijAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewGotoweAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewGridTemplate.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewOdblokujAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewPakujAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewPolaczAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewPrzedstawicielAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewSpakowaneAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewStatusAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewWstrzymajAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewDoDostawcyAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewKurierAction.cs" />
+    <Compile Include="Zamowienia\ZamowieniaViewWyslaneAction.cs" />
+    <Compile Include="Zamowienia\ZamowienieEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\ZamowienieEditForm.Designer.cs">
+      <DependentUpon>ZamowienieEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\ZamowienieFormularzForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamowienia\ZamowienieFormularzForm.Designer.cs">
+      <DependentUpon>ZamowienieFormularzForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowienia\ZamowienieMagazynAVView.cs" />
+    <Compile Include="Zamowienia\ZamowienieViewContext.cs" />
+    <Compile Include="Zamowienia\ZamowioneTowaryAction.cs" />
+    <Compile Include="Zwroty\AnalizaZwrotuEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\AnalizaZwrotuEditForm.Designer.cs">
+      <DependentUpon>AnalizaZwrotuEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\BarCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\BarCodeForm.Designer.cs">
+      <DependentUpon>BarCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\HistoriaZwrotuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\HistoriaZwrotuForm.Designer.cs">
+      <DependentUpon>HistoriaZwrotuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\PozycjeNieskorygowaneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\PozycjeNieskorygowaneForm.Designer.cs">
+      <DependentUpon>PozycjeNieskorygowaneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\RejestracjaZwrotuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\RejestracjaZwrotuForm.Designer.cs">
+      <DependentUpon>RejestracjaZwrotuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\StatusyZwrotowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\StatusyZwrotowForm.Designer.cs">
+      <DependentUpon>StatusyZwrotowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\StatusZwrotuEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\StatusZwrotuEditForm.Designer.cs">
+      <DependentUpon>StatusZwrotuEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\TowaryGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Zwroty\TowaryNieskorygowaneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\TowaryNieskorygowaneForm.Designer.cs">
+      <DependentUpon>TowaryNieskorygowaneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\WyborTowaruForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\WyborTowaruForm.Designer.cs">
+      <DependentUpon>WyborTowaruForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\WystawKorektyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\WystawKorektyForm.Designer.cs">
+      <DependentUpon>WystawKorektyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\ZwrotEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\ZwrotEditForm.Designer.cs">
+      <DependentUpon>ZwrotEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\ZwrotFormularzForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\ZwrotFormularzForm.Designer.cs">
+      <DependentUpon>ZwrotFormularzForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\ZwrotyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zwroty\ZwrotyForm.Designer.cs">
+      <DependentUpon>ZwrotyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zwroty\ZwrotyView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Enova.API\Enova.API\Enova.API.csproj">
+      <Project>{858d7fdd-5dba-4eae-a857-c3cfe2ba3496}</Project>
+      <Name>Enova.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Business.Forms\AbakTools.Business.Forms.csproj">
+      <Project>{CA72DCC9-DCBC-480C-86D4-6B514521A4E8}</Project>
+      <Name>AbakTools.Business.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Business\AbakTools.Business.csproj">
+      <Project>{5EC96917-4A7D-4116-B046-5014C054F259}</Project>
+      <Name>AbakTools.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Core.Forms\AbakTools.Core.Forms.csproj">
+      <Project>{AE764200-CB59-4593-A98B-51CFABFFCF8D}</Project>
+      <Name>AbakTools.Core.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Core\AbakTools.Core.csproj">
+      <Project>{3950B48F-EB91-4B4B-B1FE-6E95570ADA9B}</Project>
+      <Name>AbakTools.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.CRM.Forms\AbakTools.CRM.Forms.csproj">
+      <Project>{E5362565-3687-4094-89C1-BC28DDDBBDF3}</Project>
+      <Name>AbakTools.CRM.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.CRM\AbakTools.CRM.csproj">
+      <Project>{3F7A828A-5829-489D-8C4F-610AD188426C}</Project>
+      <Name>AbakTools.CRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Forms\AbakTools.Forms.csproj">
+      <Project>{2BCDD22E-6A64-4E1A-BC00-B41F5D9D4F32}</Project>
+      <Name>AbakTools.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Handel\AbakTools.Handel.csproj">
+      <Project>{EC074DC9-2E25-4282-B483-15383EA7FC29}</Project>
+      <Name>AbakTools.Handel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Printer\AbakTools.Printer.csproj">
+      <Project>{98ED01DC-AE4F-4DC9-8A5D-2B540D605E71}</Project>
+      <Name>AbakTools.Printer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Web\AbakTools.Web.csproj">
+      <Project>{B89A0739-C2BC-4960-92E8-F0AE023AAD7F}</Project>
+      <Name>AbakTools.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enova.Business\Enova.Business.Old.csproj">
+      <Project>{d433fedb-c0e1-4280-a420-198ef74503e4}</Project>
+      <Name>Enova.Business.Old</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enova.Forms\Enova.Forms.csproj">
+      <Project>{B8F7A741-ECB5-4BC7-9903-D8038700087C}</Project>
+      <Name>Enova.Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\TowarZdjecie.resx">
+      <DependentUpon>TowarZdjecie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Handel\ReklamacjaOgolnePanel.resx">
+      <DependentUpon>ReklamacjaOgolnePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Magazyn\StanMagazynowyOgolnePanel.resx">
+      <DependentUpon>StanMagazynowyOgolnePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BrakiReport.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CennikiReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TowaryAtrybutyListaReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TowaryDoSkorygowania.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TowaryDoSkorygowaniaII.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ZamowienieReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ZamowioneTowaryReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ZwrotAnalizaSimpleReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ZwrotReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\AtrybutyForm.resx">
+      <DependentUpon>AtrybutyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\ImagePreviewForm.resx">
+      <DependentUpon>ImagePreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\KategorieForm.resx">
+      <DependentUpon>KategorieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\MagazynAVForm.resx">
+      <DependentUpon>MagazynAVForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\MagazynForm.resx">
+      <DependentUpon>MagazynForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\MapowanieTowarowForm.resx">
+      <DependentUpon>MapowanieTowarowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\MapowanieTowaruEditForm.resx">
+      <DependentUpon>MapowanieTowaruEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\StanMagazynuOgolnePanel.resx">
+      <DependentUpon>StanMagazynuOgolnePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\TowarAtrybutOgolnePanel.resx">
+      <DependentUpon>TowarAtrybutOgolnePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\TowarEditForm.resx">
+      <DependentUpon>TowarEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\TowaryEnovaForm.resx">
+      <DependentUpon>TowaryEnovaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\TowaryForm.resx">
+      <DependentUpon>TowaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\WyborTowaruEnovaForm.resx">
+      <DependentUpon>WyborTowaruEnovaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\WyborZdjeciaForm.resx">
+      <DependentUpon>WyborZdjeciaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\AddMessageForm.resx">
+      <DependentUpon>AddMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\BrakiForm.resx">
+      <DependentUpon>BrakiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\BrakiFormReport.resx">
+      <DependentUpon>BrakiFormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\NaglowekZamowieniaForm.resx">
+      <DependentUpon>NaglowekZamowieniaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\OpisPozycjiForm.resx">
+      <DependentUpon>OpisPozycjiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\PodgladProduktuForm.resx">
+      <DependentUpon>PodgladProduktuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\PozycjaZamowieniaEditForm.resx">
+      <DependentUpon>PozycjaZamowieniaEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\StatusyZamowienForm.resx">
+      <DependentUpon>StatusyZamowienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\StatusZamowieniaEditForm.resx">
+      <DependentUpon>StatusZamowieniaEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\WybierzDateForm.resx">
+      <DependentUpon>WybierzDateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\WyborFakturyForm.resx">
+      <DependentUpon>WyborFakturyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\WyborMagazynieraForm.resx">
+      <DependentUpon>WyborMagazynieraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\WyborProduktuForm.resx">
+      <DependentUpon>WyborProduktuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\WystawFaktureForm.resx">
+      <DependentUpon>WystawFaktureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\ZamowienieEditForm.resx">
+      <DependentUpon>ZamowienieEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zamowienia\ZamowienieFormularzForm.resx">
+      <DependentUpon>ZamowienieFormularzForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\AnalizaZwrotuEditForm.resx">
+      <DependentUpon>AnalizaZwrotuEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\BarCodeForm.resx">
+      <DependentUpon>BarCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\HistoriaZwrotuForm.resx">
+      <DependentUpon>HistoriaZwrotuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\PozycjeNieskorygowaneForm.resx">
+      <DependentUpon>PozycjeNieskorygowaneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\RejestracjaZwrotuForm.resx">
+      <DependentUpon>RejestracjaZwrotuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\StatusyZwrotowForm.resx">
+      <DependentUpon>StatusyZwrotowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\StatusZwrotuEditForm.resx">
+      <DependentUpon>StatusZwrotuEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\TowaryNieskorygowaneForm.resx">
+      <DependentUpon>TowaryNieskorygowaneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\WyborTowaruForm.resx">
+      <DependentUpon>WyborTowaruForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\WystawKorektyForm.resx">
+      <DependentUpon>WystawKorektyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\ZwrotEditForm.resx">
+      <DependentUpon>ZwrotEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\ZwrotFormularzForm.resx">
+      <DependentUpon>ZwrotFormularzForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zwroty\ZwrotyForm.resx">
+      <DependentUpon>ZwrotyForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\AbakTools.Handel.Dostawa.datasource" />
+    <None Include="Properties\DataSources\AbakTools.Handel.PozycjaReklamacji.datasource" />
+    <None Include="Properties\DataSources\AbakTools.Handel.Reklamacja.datasource" />
+    <None Include="Properties\DataSources\AbakTools.Produkcja.PlanProdukcyjny.datasource" />
+    <None Include="Properties\DataSources\AbakTools.Towary.Forms.DostawcaInfo.datasource" />
+    <None Include="Properties\DataSources\AbakTools.Zamowienia.Forms.ZamowienieFormularzForm+RaportFormularzWgGrupViewRow.datasource" />
+    <None Include="Properties\DataSources\Enova.API.Business.DictionaryItem.datasource" />
+    <None Include="Properties\DataSources\Enova.API.Business.FeatureDefinition.datasource" />
+    <None Include="Properties\DataSources\Enova.API.Business.FeatureDefinition1.datasource" />
+    <None Include="Properties\DataSources\Enova.API.CRM.Kontrahent.datasource" />
+    <None Include="Properties\DataSources\Enova.API.CRM.Kontrahent1.datasource" />
+    <None Include="Properties\DataSources\Enova.Business.Old.DB.Towar.datasource" />
+    <None Include="Properties\DataSources\Enova.Business.Old.DB.Web.Dostawca.datasource" />
+    <None Include="Properties\DataSources\Enova.Business.Old.DB.Web.Magazyn_StanMagazynowy.datasource" />
+    <None Include="Properties\DataSources\Enova.Business.Old.DB.Web.StanMagazynowy.datasource" />
+    <None Include="Properties\DataSources\Enova.Business.Old.DB.Web.TowarAtrybut.datasource" />
+    <None Include="Properties\DataSources\Enova.Business.Old.DB.Web.Zdjecie.datasource" />
+    <None Include="Properties\DataSources\Enova.Forms.Handel.DokumentHandlowyView.datasource" />
+    <None Include="Properties\DataSources\Enova.Types.Handel.IDefDokHandlowego.datasource" />
+    <None Include="Properties\DataSources\Enova.Types.Old.Kasa.ISposobZaplaty.datasource" />
+    <None Include="Resources\ZamowieniaView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DokumentyEnovaView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TowarEnovaView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TowarEnovaViewSelect.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reklamacje.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DostawyView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StanyMagazynoweView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MagazynAVView.grid.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TowaryAtrybutyListaView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZamowienieMagazynAVView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Magazyn.StanyMagazynoweView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Produkcja\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

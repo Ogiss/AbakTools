@@ -1,0 +1,16 @@
+<grid>
+  <key>MagazynAVView</key>
+  <sort property="TowarKod" direction="Ascending" />
+  <properties>
+    <add name="ColumnHeadersHeight" value="39" type="System.Int32" />
+    <add name="GridViewReadOnly" value="False" type="System.Boolean" />
+  </properties>
+  <columns>
+    <add headertext="Kod" headertextalign="0" width="170" textalign="1" format="" propertypath="TowarKod" readonly="True" />
+    <add headertext="Nazwa" headertextalign="0" width="405" textalign="1" format="" propertypath="TowarNazwa" readonly="True" />
+    <add headertext="Atrybut" headertextalign="0" width="156" textalign="0" format="" propertypath="AtrybutNazwaPelna" readonly="True" />
+    <add headertext="Widoczny na tej liście" headertextalign="3" width="102" textalign="3" format="" propertypath="VisibleAVWidthSave" readonly="False" />
+    <add headertext="Widoczny na stronie i w toolsach" headertextalign="3" width="113" textalign="3" format="" propertypath="AktywnyWithSave" readonly="False" />
+    <add headertext="Dostępny na stronie i w toolsach" headertextalign="3" width="122" textalign="3" format="" propertypath="DisableAVWithSave" readonly="False" />
+  </columns>
+</grid>

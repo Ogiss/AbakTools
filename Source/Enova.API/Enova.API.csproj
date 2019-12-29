@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{858D7FDD-5DBA-4EAE-A857-C3CFE2BA3496}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Enova.API</RootNamespace>
+    <AssemblyName>Enova.API</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EnovaApiTest|AnyCPU'">
+    <OutputPath>bin\EnovaApiTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Enova.API.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyAttributes.cs" />
+    <Compile Include="Business\FeatureCollection.cs" />
+    <Compile Include="Business\FeatureCollectionTypeDescriptor.cs" />
+    <Compile Include="Business\FeatureCollectionTypeDescriptorProvider.cs" />
+    <Compile Include="Business\FeaturePropertyDescriptor.cs" />
+    <Compile Include="Business\FieldCondition.cs" />
+    <Compile Include="Business\HistoryFeature.cs" />
+    <Compile Include="Business\IFeatureCollection.cs" />
+    <Compile Include="Business\IRow.cs" />
+    <Compile Include="Business\MemoText.cs" />
+    <Compile Include="Business\SubRow.cs" />
+    <Compile Include="Business\RequiredAttribute.cs" />
+    <Compile Include="Business\SubTable.cs" />
+    <Compile Include="Business\View.cs" />
+    <Compile Include="Business\RowCondition.cs" />
+    <Compile Include="Connector\Business\BusApplication.cs" />
+    <Compile Include="Connector\Business\BusinessModule.cs" />
+    <Compile Include="Connector\Business\Database.cs" />
+    <Compile Include="Business\FeatureTypeNumber.cs" />
+    <Compile Include="Business\BusinessModule.cs" />
+    <Compile Include="Business\Dictionary.cs" />
+    <Compile Include="Business\DictionaryItem.cs" />
+    <Compile Include="Business\FeatureDefinition.cs" />
+    <Compile Include="Business\IFeatureDefinitions.cs" />
+    <Compile Include="Business\FeatureDefs.cs" />
+    <Compile Include="Business\GuidedTable.cs" />
+    <Compile Include="Business\IHistoryFeature.cs" />
+    <Compile Include="Business\Login.cs" />
+    <Compile Include="Business\IMemoText.cs" />
+    <Compile Include="Business\Module.cs" />
+    <Compile Include="Business\Row.cs" />
+    <Compile Include="Business\Session.cs" />
+    <Compile Include="Business\ISessionable.cs" />
+    <Compile Include="Business\Table.cs" />
+    <Compile Include="Business\Table_T.cs" />
+    <Compile Include="Business\Transaction.cs" />
+    <Compile Include="Connector\Business\Dictionary.cs" />
+    <Compile Include="Connector\Business\DictionaryItem.cs" />
+    <Compile Include="Connector\Business\EnovaEnumerable.cs" />
+    <Compile Include="Connector\Business\EnovaEnumerable_T.cs" />
+    <Compile Include="Connector\Business\EnovaEnumerator.cs" />
+    <Compile Include="Connector\Business\EnovaEnumerator_T.cs" />
+    <Compile Include="Connector\Business\EnovaTable.cs" />
+    <Compile Include="Connector\Business\FeatureDefinition.cs" />
+    <Compile Include="Connector\Business\FeatureDefinitions.cs" />
+    <Compile Include="Connector\Business\FeatureDefs.cs" />
+    <Compile Include="Connector\Business\GuidedRow.cs" />
+    <Compile Include="Connector\Business\GuidedTable.cs" />
+    <Compile Include="Connector\Business\Login.cs" />
+    <Compile Include="Connector\Business\Module.cs" />
+    <Compile Include="Connector\Business\SubRow.cs" />
+    <Compile Include="Connector\Business\SubTable.cs" />
+    <Compile Include="Connector\Core\CoreModule.cs" />
+    <Compile Include="Connector\Core\DefinicjaDokumentu.cs" />
+    <Compile Include="Connector\Core\DokEwidencja.cs" />
+    <Compile Include="Connector\Core\DokEwidencji.cs" />
+    <Compile Include="Connector\Core\IDefinicjaDokumentu.cs" />
+    <Compile Include="Connector\Core\IDokument.cs" />
+    <Compile Include="Connector\Core\IDokumentPodmiotu.cs" />
+    <Compile Include="Connector\CRM\Bank.cs" />
+    <Compile Include="Connector\CRM\Banki.cs" />
+    <Compile Include="Connector\CRM\PFRONCentrala.cs" />
+    <Compile Include="Connector\CRM\UrzadSkarbowy.cs" />
+    <Compile Include="Connector\CRM\UrzedySkarbowe.cs" />
+    <Compile Include="Connector\CRM\ZUS.cs" />
+    <Compile Include="Connector\CRM\ZUSCentrala.cs" />
+    <Compile Include="Connector\CRM\ZUSY.cs" />
+    <Compile Include="Connector\Handel\DefRelacjiHandlowej.cs" />
+    <Compile Include="Connector\Handel\DefRelacjiKorekta.cs" />
+    <Compile Include="Connector\Handel\DefRelHandlowych.cs" />
+    <Compile Include="Connector\Handel\PozycjeDokHan.cs" />
+    <Compile Include="Connector\Handel\ZatwierdzanieWorker.cs" />
+    <Compile Include="Connector\Kadry\KadryModule.cs" />
+    <Compile Include="Connector\Kadry\Pracownicy.cs" />
+    <Compile Include="Connector\Kadry\Pracownik.cs" />
+    <Compile Include="Connector\Kadry\PracownikFirmy.cs" />
+    <Compile Include="Connector\Kasa\DokRozliczBase.cs" />
+    <Compile Include="Connector\Kasa\DokRozliczeniowe.cs" />
+    <Compile Include="Connector\Kasa\EwidencjeSP.cs" />
+    <Compile Include="Connector\Kasa\IPodmiotKasowy.cs" />
+    <Compile Include="Connector\Kasa\Kompensata.cs" />
+    <Compile Include="Connector\Kasa\KompensataBase.cs" />
+    <Compile Include="Connector\Kasa\KompensataPozycja.cs" />
+    <Compile Include="Connector\Kasa\KsiegowalnyDokRozlicz.cs" />
+    <Compile Include="Connector\Kasa\PlatnyDokRozlicz.cs" />
+    <Compile Include="Connector\Kasa\PozDokRozlicz.cs" />
+    <Compile Include="Connector\Kasa\PozycjaDokRozlicz.cs" />
+    <Compile Include="Connector\Kasa\RozrachunkiInfoWorker.cs" />
+    <Compile Include="Connector\Kasa\Zaplaty.cs" />
+    <Compile Include="Connector\Magazyny\Magazyny.cs" />
+    <Compile Include="Connector\Magazyny\MagazynyModule.cs" />
+    <Compile Include="Connector\Magazyny\Obrot.cs" />
+    <Compile Include="Connector\Magazyny\Obroty.cs" />
+    <Compile Include="Connector\Magazyny\OkresMagazynowy.cs" />
+    <Compile Include="Connector\Magazyny\OkresyMag.cs" />
+    <Compile Include="Connector\Magazyny\PartiaTowaru.cs" />
+    <Compile Include="Connector\Magazyny\StanMagazynuWorker.cs" />
+    <Compile Include="Connector\Towary\Cena.cs" />
+    <Compile Include="Connector\Towary\ElementKompletu.cs" />
+    <Compile Include="Connector\Towary\ICena.cs" />
+    <Compile Include="Core\CoreModule.cs" />
+    <Compile Include="Core\DefinicjaNumeracji.cs" />
+    <Compile Include="Core\DefinicjaStawkiVat.cs" />
+    <Compile Include="Core\DokEwidencja.cs" />
+    <Compile Include="Core\DokEwidencji.cs" />
+    <Compile Include="Core\IDokument.cs" />
+    <Compile Include="Core\IDokumentKsiegowalny.cs" />
+    <Compile Include="Core\IDokumentPodmiotu.cs" />
+    <Compile Include="Core\IDefinicjaDokumentu.cs" />
+    <Compile Include="Core\IEuVatHost.cs" />
+    <Compile Include="Core\IDokumentHandlowy.cs" />
+    <Compile Include="Core\IKontrahent.cs" />
+    <Compile Include="Core\INipHost.cs" />
+    <Compile Include="Core\INumerDokumentuHost.cs" />
+    <Compile Include="Core\StanEwidencji.cs" />
+    <Compile Include="CRM\Bank.cs" />
+    <Compile Include="CRM\Banki.cs" />
+    <Compile Include="CRM\PFRONCentrala.cs" />
+    <Compile Include="CRM\UrzadSkarbowy.cs" />
+    <Compile Include="CRM\UrzedySkarbowe.cs" />
+    <Compile Include="CRM\ZUS.cs" />
+    <Compile Include="CRM\ZUSCentrala.cs" />
+    <Compile Include="CRM\ZUSY.cs" />
+    <Compile Include="Handel\TypRelacjiHandlowej.cs" />
+    <Compile Include="Kadry\KadryModule.cs" />
+    <Compile Include="Kadry\Pracownik.cs" />
+    <Compile Include="Kadry\Pracownicy.cs" />
+    <Compile Include="Kadry\PracownikFirmy.cs" />
+    <Compile Include="Kadry\TypPracownika.cs" />
+    <Compile Include="Kasa\DefDokRozliczeniowego.cs" />
+    <Compile Include="Kasa\DokRozliczBase.cs" />
+    <Compile Include="Kasa\EwidencjeSP.cs" />
+    <Compile Include="Kasa\IDokumentPlatny.cs" />
+    <Compile Include="Kasa\IDokumentPlatny2.cs" />
+    <Compile Include="Kasa\IBank.cs" />
+    <Compile Include="Kasa\IPodmiotRozrachunki.cs" />
+    <Compile Include="Kasa\IRozliczalnyCy.cs" />
+    <Compile Include="Kasa\Kompensata.cs" />
+    <Compile Include="Kasa\KompensataBase.cs" />
+    <Compile Include="Kasa\KompensataPozycja.cs" />
+    <Compile Include="Kasa\KsiegowalnyDokRozlicz.cs" />
+    <Compile Include="Kasa\PlatnyDokRozlicz.cs" />
+    <Compile Include="Kasa\PozDokRozlicz.cs" />
+    <Compile Include="Kasa\PozycjaDokRozlicz.cs" />
+    <Compile Include="Kasa\RachunekBankowyFirmyBase.cs" />
+    <Compile Include="Kasa\RozrachunkiInfoWorker.cs" />
+    <Compile Include="Kasa\Zaplaty.cs" />
+    <Compile Include="SonetaException.cs" />
+    <Compile Include="Towary\Cena.cs" />
+    <Compile Include="Towary\CenySubTable.cs" />
+    <Compile Include="Core\NumerDokumentu.cs" />
+    <Compile Include="Handel\DefRelacjiHandlowej.cs" />
+    <Compile Include="Handel\DefRelacjiKorekta.cs" />
+    <Compile Include="Handel\DefRelHandlowych.cs" />
+    <Compile Include="Handel\IlośćWartość.cs" />
+    <Compile Include="Handel\PozycjeDokHan.cs" />
+    <Compile Include="Handel\ZatwierdzanieWorker.cs" />
+    <Compile Include="Magazyny\Dostawy\IGrupaDostaw.cs" />
+    <Compile Include="Magazyny\IDanePartiiTowaru.cs" />
+    <Compile Include="Magazyny\Obrot.cs" />
+    <Compile Include="Magazyny\Obroty.cs" />
+    <Compile Include="Magazyny\OkresMagazynowy.cs" />
+    <Compile Include="Magazyny\OkresyMag.cs" />
+    <Compile Include="Magazyny\PartiaTowaru.cs" />
+    <Compile Include="Magazyny\KierunekPartii.cs" />
+    <Compile Include="Magazyny\KorektaObrotu.cs" />
+    <Compile Include="Magazyny\TypPartii.cs" />
+    <Compile Include="TableNameAttribute.cs" />
+    <Compile Include="Towary\ICena.cs" />
+    <Compile Include="Towary\ElementKompletu.cs" />
+    <Compile Include="Towary\Quantity.cs" />
+    <Compile Include="Towary\TypElementuKompletu.cs" />
+    <Compile Include="Towary\TypTowaru.cs" />
+    <Compile Include="Towary\WyliczenieCeny.cs" />
+    <Compile Include="Types\CaptionAttribute.cs" />
+    <Compile Include="Types\DoubleCy.cs" />
+    <Compile Include="Types\FromTo.cs" />
+    <Compile Include="Types\IObjectBase.cs" />
+    <Compile Include="Types\MaxLengthAttribute.cs" />
+    <Compile Include="Types\ObjectBase.cs" />
+    <Compile Include="Connector\Business\Row.cs" />
+    <Compile Include="Connector\Business\Session.cs" />
+    <Compile Include="Connector\Business\EnovaView.cs" />
+    <Compile Include="Connector\Business\Table.cs" />
+    <Compile Include="Connector\Business\Transaction.cs" />
+    <Compile Include="Connector\Business\View.cs" />
+    <Compile Include="Connector\Core\Adres.cs" />
+    <Compile Include="Connector\CRM\CRMModule.cs" />
+    <Compile Include="Connector\CRM\Kontrahenci.cs" />
+    <Compile Include="Connector\CRM\Kontrahent.cs" />
+    <Compile Include="Connector\EnovaHelper.cs" />
+    <Compile Include="Connector\Handel\DefDokHandlowego.cs" />
+    <Compile Include="Connector\Handel\DefDokHandlowych.cs" />
+    <Compile Include="Connector\Handel\DokHandlowe.cs" />
+    <Compile Include="Connector\Handel\DokumentHandlowy.cs" />
+    <Compile Include="Connector\Handel\HandelModule.cs" />
+    <Compile Include="Connector\Handel\PozycjaDokHandlowego.cs" />
+    <Compile Include="Connector\Kasa\EwidencjaSP.cs" />
+    <Compile Include="Connector\Kasa\FormaPlatnosci.cs" />
+    <Compile Include="Connector\Kasa\FormyPlatnosci.cs" />
+    <Compile Include="Connector\Kasa\KasaModule.cs" />
+    <Compile Include="Connector\Kasa\Naleznosc.cs" />
+    <Compile Include="Connector\Kasa\Platnosc.cs" />
+    <Compile Include="Connector\Kasa\RozliczeniaSP.cs" />
+    <Compile Include="Connector\Kasa\RozliczenieSP.cs" />
+    <Compile Include="Connector\Kasa\RozrachunekIdx.cs" />
+    <Compile Include="Connector\Kasa\RozrachunkiIdx.cs" />
+    <Compile Include="Connector\Kasa\SposobyZaplaty.cs" />
+    <Compile Include="Connector\Kasa\SposobZaplaty.cs" />
+    <Compile Include="Connector\Kasa\Wplata.cs" />
+    <Compile Include="Connector\Kasa\Wyplata.cs" />
+    <Compile Include="Connector\Kasa\Zaplata.cs" />
+    <Compile Include="Connector\Kasa\Zobowiazanie.cs" />
+    <Compile Include="Connector\Magazyny\Magazyn.cs" />
+    <Compile Include="Connector\ModuleAttribute.cs" />
+    <Compile Include="Connector\RowMapAttribute.cs" />
+    <Compile Include="Connector\Towary\CenaGrupowa.cs" />
+    <Compile Include="Connector\Towary\CenyGrupowe.cs" />
+    <Compile Include="Connector\Towary\DefinicjeCen.cs" />
+    <Compile Include="Connector\Towary\Towar.cs" />
+    <Compile Include="Connector\Towary\Towary.cs" />
+    <Compile Include="Connector\Towary\TowaryModule.cs" />
+    <Compile Include="TypeMapAttribute.cs" />
+    <Compile Include="Types\Currency.cs" />
+    <Compile Include="Types\Date.cs" />
+    <Compile Include="Core\Adres.cs" />
+    <Compile Include="Core\DefinicjaDokumentu.cs" />
+    <Compile Include="Core\IPodmiot.cs" />
+    <Compile Include="Core\KierunekPlatnosci.cs" />
+    <Compile Include="Core\RodzajPodmiotu.cs" />
+    <Compile Include="Core\StatusPodmiotu.cs" />
+    <Compile Include="Core\TypDokumentu.cs" />
+    <Compile Include="Core\TypPodmiotu.cs" />
+    <Compile Include="CRM\CRMModule.cs" />
+    <Compile Include="CRM\Kontrahenci.cs" />
+    <Compile Include="CRM\Kontrahent.cs" />
+    <Compile Include="CRM\ISendEmail.cs" />
+    <Compile Include="CRM\SendEmailInfo.cs" />
+    <Compile Include="Connector\EnovaConnector.cs" />
+    <Compile Include="EnovaService.cs" />
+    <Compile Include="Handel\DefDokHandlowego.cs" />
+    <Compile Include="Handel\DefDokHandlowych.cs" />
+    <Compile Include="Handel\DokHandlowe.cs" />
+    <Compile Include="Handel\DokumentHandlowy.cs" />
+    <Compile Include="Handel\HandelModule.cs" />
+    <Compile Include="Handel\PozycjaDokHandlowego.cs" />
+    <Compile Include="Handel\KategoriaHandlowa.cs" />
+    <Compile Include="Handel\StanDokumentuHandlowego.cs" />
+    <Compile Include="Business\GuidedRow.cs" />
+    <Compile Include="IEnovaService.cs" />
+    <Compile Include="IInfo.cs" />
+    <Compile Include="IProgressForm.cs" />
+    <Compile Include="ITowaryTools.cs" />
+    <Compile Include="IUserData.cs" />
+    <Compile Include="Kasa\DokRozlicz.cs" />
+    <Compile Include="Kasa\DokRozliczeniowe.cs" />
+    <Compile Include="Kasa\EwidencjaSP.cs" />
+    <Compile Include="Kasa\FormaPlatnosci.cs" />
+    <Compile Include="Kasa\FormyPlatnosci.cs" />
+    <Compile Include="Kasa\KasaModule.cs" />
+    <Compile Include="Kasa\Platnosc.cs" />
+    <Compile Include="Kasa\IPodmiotKasowy.cs" />
+    <Compile Include="Kasa\IRozliczalny.cs" />
+    <Compile Include="Kasa\RozliczeniaSP.cs" />
+    <Compile Include="Kasa\RozliczenieSP.cs" />
+    <Compile Include="Kasa\RozrachunekIdx.cs" />
+    <Compile Include="Kasa\RozrachunkiIdx.cs" />
+    <Compile Include="Kasa\SposobyZaplaty.cs" />
+    <Compile Include="Kasa\SposobZaplaty.cs" />
+    <Compile Include="Kasa\Zaplata.cs" />
+    <Compile Include="Kasa\TypEwidencjiSP.cs" />
+    <Compile Include="Kasa\TypRozrachunku.cs" />
+    <Compile Include="Kasa\TypySposobowZaplaty.cs" />
+    <Compile Include="Loader.cs" />
+    <Compile Include="LoadSettings.cs" />
+    <Compile Include="Magazyny\Magazyn.cs" />
+    <Compile Include="Magazyny\Magazyny.cs" />
+    <Compile Include="Magazyny\MagazynyModule.cs" />
+    <Compile Include="Magazyny\StanMagazynuWorker.cs" />
+    <Compile Include="Printer\Destinations.cs" />
+    <Compile Include="Printer\RowPrintTemplateAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Connector\Towary\DefinicjaCeny.cs" />
+    <Compile Include="RowMapAttribute.cs" />
+    <Compile Include="Towary\CenaGrupowa.cs" />
+    <Compile Include="Towary\CenyGrupowe.cs" />
+    <Compile Include="Towary\DefinicjaCeny.cs" />
+    <Compile Include="Towary\DefinicjeCen.cs" />
+    <Compile Include="Towary\Towar.cs" />
+    <Compile Include="Towary\Towary.cs" />
+    <Compile Include="Towary\TowaryModule.cs" />
+    <Compile Include="Types\FromToOld.cs" />
+    <Compile Include="Types\Percent.cs" />
+    <Compile Include="Types\Time.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Connector\Types\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

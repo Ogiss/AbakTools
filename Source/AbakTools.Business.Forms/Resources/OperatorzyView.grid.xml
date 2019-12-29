@@ -1,0 +1,11 @@
+<grid>
+  <key>OperatorzyView</key>
+  <columns>
+    <add headertext="B" width="39" textalign="3" format="" propertypath="Blokada" />
+    <add headertext="Nazwa" width="140" textalign="1" format="" propertypath="Nazwa" />
+    <add headertext="Imie" width="140" textalign="1" format="" propertypath="Imie" />
+    <add headertext="Nazwisko" width="140" textalign="1" format="" propertypath="Nazwisko" />
+    <add headertext="Email" width="150" textalign="1" format="" propertypath="Email" />
+    <add headertext="Telefon" width="150" textalign="1" format="" propertypath="Telefon" />
+  </columns>
+</grid>

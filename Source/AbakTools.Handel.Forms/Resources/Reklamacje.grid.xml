@@ -1,0 +1,12 @@
+<grid>
+  <key>ReklamacjeView</key>
+  <columns>
+    <add headertext="Numer" headertextalign="0" width="115" textalign="0" format="" propertypath="Numer.NumerPelny" readonly="True" />
+    <add headertext="Data dodania" headertextalign="0" width="104" textalign="3" format="yyyy-MM-dd" propertypath="DataDodania" readonly="True" />
+    <add headertext="Data modyfikacji" headertextalign="0" width="110" textalign="3" format="yyyy-MM-dd" propertypath="DataModyfikacji" readonly="True" />
+    <add headertext="PR" headertextalign="0" width="41" textalign="0" format="" propertypath="Kontrahent.PrzedstawicielKod" readonly="True" />
+    <add headertext="Kontrahent" headertextalign="0" width="510" textalign="0" format="" propertypath="Kontrahent" readonly="True" />
+    <add headertext="Status" headertextalign="0" width="117" textalign="0" format="" propertypath="OstatniStatusDokumentu" readonly="True" />
+    <add headertext="Opis" headertextalign="0" width="562" textalign="0" format="" propertypath="Opis" readonly="True" />
+  </columns>
+</grid>

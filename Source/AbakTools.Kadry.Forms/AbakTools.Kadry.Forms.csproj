@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D85756D-CD52-4E66-8535-4F3B59BC0183}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AbakTools.Kadry.Forms</RootNamespace>
+    <AssemblyName>AbakTools.Kadry.Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\EnovaToolsExplorer\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\EnovaToolsExplorer\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EnovaApiTest|AnyCPU'">
+    <OutputPath>bin\EnovaApiTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>..\EnovaToolsExplorer\bin\Release\AbakTools.Kadry.Forms.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AbakTools.Business, Version=1.2.0.661, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="AbakTools.Web, Version=1.2.0.661, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="BAL.Business, Version=1.2.0.662, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BAL\BAL.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="BAL.Forms, Version=1.2.0.662, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BAL\BAL.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>c:\Program Files (x86)\Microsoft Visual Basic 2005 Power Packs\3.0\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="Soneta.Types">
+      <HintPath>C:\Program Files (x86)\Soneta\enova365 12.1.6192.4499\Soneta.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net40\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net40\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DokumentInfo.cs" />
+    <Compile Include="DokumentProwizjaNumerComparer.cs" />
+    <Compile Include="DokumentProwizjaRow.cs" />
+    <Compile Include="ProwizjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProwizjeForm.Designer.cs">
+      <DependentUpon>ProwizjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EtatEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EtatEditForm.Designer.cs">
+      <DependentUpon>EtatEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EtatyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EtatyForm.Designer.cs">
+      <DependentUpon>EtatyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProwizjaZFakturForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProwizjaZFakturForm.Designer.cs">
+      <DependentUpon>ProwizjaZFakturForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProwizjeMagazynForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProwizjeMagazynForm.Designer.cs">
+      <DependentUpon>ProwizjeMagazynForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProwizjeMagRocznyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProwizjeMagRocznyForm.Designer.cs">
+      <DependentUpon>ProwizjeMagRocznyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RaporOkresowyProwizjiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RaporOkresowyProwizjiForm.Designer.cs">
+      <DependentUpon>RaporOkresowyProwizjiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RozliczeniaProwizjiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RozliczeniaProwizjiForm.Designer.cs">
+      <DependentUpon>RozliczeniaProwizjiForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProwizjeForm.resx">
+      <DependentUpon>ProwizjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EtatEditForm.resx">
+      <DependentUpon>EtatEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EtatyForm.resx">
+      <DependentUpon>EtatyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProwizjaZFakturForm.resx">
+      <DependentUpon>ProwizjaZFakturForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProwizjeMagazynForm.resx">
+      <DependentUpon>ProwizjeMagazynForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProwizjeMagRocznyForm.resx">
+      <DependentUpon>ProwizjeMagRocznyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RaporOkresowyProwizjiForm.resx">
+      <DependentUpon>RaporOkresowyProwizjiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DokumentyListaReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DokumentyObrotyReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DokumentyPotraceniaReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DokumentyProwizjeReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProwizjaMagazynuReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProwizjaMagRocznyReport.rdlc" />
+    <EmbeddedResource Include="Reports\ProwizjaPodsumowanieReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProwizjaZFakturReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RaportOkresowyProwizji.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RozliczeniaSpReport.rdlc" />
+    <EmbeddedResource Include="RozliczeniaProwizjiForm.resx">
+      <DependentUpon>RozliczeniaProwizjiForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Enova.API\Enova.API\Enova.API.csproj">
+      <Project>{858d7fdd-5dba-4eae-a857-c3cfe2ba3496}</Project>
+      <Name>Enova.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Printer\AbakTools.Printer.csproj">
+      <Project>{98ED01DC-AE4F-4DC9-8A5D-2B540D605E71}</Project>
+      <Name>AbakTools.Printer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enova.Business\Enova.Business.Old.csproj">
+      <Project>{D433FEDB-C0E1-4280-A420-198EF74503E4}</Project>
+      <Name>Enova.Business.Old</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enova.Forms\Enova.Forms.csproj">
+      <Project>{B8F7A741-ECB5-4BC7-9903-D8038700087C}</Project>
+      <Name>Enova.Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\DokumentProwizjaRow.datasource" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

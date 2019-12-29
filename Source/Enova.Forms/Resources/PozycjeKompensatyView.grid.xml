@@ -1,0 +1,12 @@
+<grid>
+  <key>PozycjeKompensatyView</key>
+  <sort property="DataDokumentu" direction="Ascending" />
+  <properties />
+  <columns>
+    <add headertext="Data" headertextalign="3" width="75" textalign="3" format="" propertypath="DataDokumentu" readonly="True" />
+    <add headertext="Numer dokumentu" headertextalign="0" width="174" textalign="0" format="" propertypath="NumerDokumentu" readonly="True" />
+    <add headertext="Należność" headertextalign="0" width="115" textalign="2" format="" propertypath="Należność" readonly="True" />
+    <add headertext="Zobowiązanie" headertextalign="0" width="126" textalign="2" format="" propertypath="Zobowiązanie" readonly="True" />
+    <add headertext="Do rozliczenia" headertextalign="0" width="121" textalign="2" format="" propertypath="DokRozliczany.DoRozliczenia" readonly="True" />
+  </columns>
+</grid>

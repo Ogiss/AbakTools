@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8F7A741-ECB5-4BC7-9903-D8038700087C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Enova.Forms</RootNamespace>
+    <AssemblyName>Enova.Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\EnovaToolsExplorer\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\EnovaToolsExplorer\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EnovaApiTest|AnyCPU'">
+    <OutputPath>bin\EnovaApiTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>..\EnovaToolsExplorer\bin\Release\Enova.Forms.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BAL.Business, Version=1.2.0.662, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BAL\BAL.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="BAL.Forms, Version=1.2.0.662, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BAL\BAL.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net40\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net40\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\DictionaryView.cs" />
+    <Compile Include="Business\RowComparer.cs" />
+    <Compile Include="Business\RowEqualityComparer.cs" />
+    <Compile Include="Controls\BALControlWithEnovaAPI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BALControlWithEnovaAPI.Designer.cs">
+      <DependentUpon>BALControlWithEnovaAPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FeaturesTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FeaturesTreeView.Designer.cs">
+      <DependentUpon>FeaturesTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\KontrahentEnovaSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\KontrahentEnovaCheckBoxSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\KontrahentEnovaCheckBoxSelect.Designer.cs">
+      <DependentUpon>KontrahentEnovaCheckBoxSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PodmiotSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PodmiotSelect.Designer.cs">
+      <DependentUpon>PodmiotSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRM\KontrahenciView.cs" />
+    <Compile Include="CRM\KontrahenciViewGridTemplate.cs" />
+    <Compile Include="CRM\KontrahentContext.cs" />
+    <Compile Include="CRM\KontrahentDokumentyPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRM\KontrahentDokumentyPanel.Designer.cs">
+      <DependentUpon>KontrahentDokumentyPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRM\KontrahentKontaktyPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRM\KontrahentKontaktyPanel.Designer.cs">
+      <DependentUpon>KontrahentKontaktyPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRM\KontrahentOgolnePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRM\KontrahentOgolnePanel.Designer.cs">
+      <DependentUpon>KontrahentOgolnePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRM\KontrahentRabatyPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRM\KontrahentRabatyPanel.Designer.cs">
+      <DependentUpon>KontrahentRabatyPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRM\KontrahentRozliczeniaPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRM\KontrahentRozliczeniaPanel.Designer.cs">
+      <DependentUpon>KontrahentRozliczeniaPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRM\KontrahentRozrachunkiPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRM\KontrahentRozrachunkiPanel.Designer.cs">
+      <DependentUpon>KontrahentRozrachunkiPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRM\OsobaKontaktowaEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRM\OsobaKontaktowaEditForm.Designer.cs">
+      <DependentUpon>OsobaKontaktowaEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContextWithEnovaApi.cs" />
+    <Compile Include="DataGridFormWithEnovaAPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridFormWithEnovaAPI.Designer.cs">
+      <DependentUpon>DataGridFormWithEnovaAPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridFormWithEnovaAPIOld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridFormWithEnovaAPIOld.Designer.cs">
+      <DependentUpon>DataGridFormWithEnovaAPIOld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DokumentyViewBase.cs" />
+    <Compile Include="EnovaDataEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnovaDataEditForm.Designer.cs">
+      <DependentUpon>EnovaDataEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnovaGridService.cs" />
+    <Compile Include="FormWithEnovaAPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWithEnovaAPI.Designer.cs">
+      <DependentUpon>FormWithEnovaAPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridViewWithEnovaApi.cs" />
+    <Compile Include="Handel\DokHandlowyContext.cs" />
+    <Compile Include="Handel\DokHandlowyDrukujAction.cs" />
+    <Compile Include="Handel\DokHandlowyEmailAction.cs" />
+    <Compile Include="Handel\DokHandlowyNumerPelnyComparer.cs" />
+    <Compile Include="Handel\DokumentHandlowyView.cs" />
+    <Compile Include="Handel\DokumentOgolnePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Handel\DokumentOgolnePanel.Designer.cs">
+      <DependentUpon>DokumentOgolnePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Handel\DokumentyEmailAction.cs" />
+    <Compile Include="Handel\DokumentyView.cs" />
+    <Compile Include="Handel\PozycjeDokHanGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Handel\ZmienDateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Handel\ZmienDateForm.Designer.cs">
+      <DependentUpon>ZmienDateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kasa\KompensataContext.cs" />
+    <Compile Include="Kasa\KompensataOgolnePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kasa\KompensataOgolnePanel.Designer.cs">
+      <DependentUpon>KompensataOgolnePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kasa\KompensatyView.cs" />
+    <Compile Include="Kasa\PozDokRozliczView.cs" />
+    <Compile Include="Kasa\PozycjeKompensatyView.cs" />
+    <Compile Include="Kasa\RozrachunkiView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\BusinessService.cs" />
+    <Compile Include="Services\CRMService.cs" />
+    <Compile Include="Services\DokumentHandlowyExtensions.cs" />
+    <Compile Include="Services\HandelService.cs" />
+    <Compile Include="Services\KasaService.cs" />
+    <Compile Include="Services\MagazynyService.cs" />
+    <Compile Include="Services\RozrachunekIdxExtensions.cs" />
+    <Compile Include="Services\RozrachunekProxy.cs" />
+    <Compile Include="Services\TowaryService.cs" />
+    <Compile Include="Services\View_T.cs" />
+    <Compile Include="Towary\RabatGrupowy.cs" />
+    <Compile Include="Towary\RabatyGrupowe.cs" />
+    <Compile Include="Services\TowarExtensions.cs" />
+    <Compile Include="Towary\TowaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\TowaryForm.Designer.cs">
+      <DependentUpon>TowaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Towary\TowaryView.cs" />
+    <Compile Include="Towary\WyborTowaruForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Towary\WyborTowaruForm.Designer.cs">
+      <DependentUpon>WyborTowaruForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\FeaturesTreeView.resx">
+      <DependentUpon>FeaturesTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\KontrahentEnovaCheckBoxSelect.resx">
+      <DependentUpon>KontrahentEnovaCheckBoxSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PodmiotSelect.resx">
+      <DependentUpon>PodmiotSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRM\KontrahentDokumentyPanel.resx">
+      <DependentUpon>KontrahentDokumentyPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRM\KontrahentKontaktyPanel.resx">
+      <DependentUpon>KontrahentKontaktyPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRM\KontrahentOgolnePanel.resx">
+      <DependentUpon>KontrahentOgolnePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRM\KontrahentRabatyPanel.resx">
+      <DependentUpon>KontrahentRabatyPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRM\KontrahentRozliczeniaPanel.resx">
+      <DependentUpon>KontrahentRozliczeniaPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRM\KontrahentRozrachunkiPanel.resx">
+      <DependentUpon>KontrahentRozrachunkiPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRM\OsobaKontaktowaEditForm.resx">
+      <DependentUpon>OsobaKontaktowaEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnovaDataEditForm.resx">
+      <DependentUpon>EnovaDataEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Handel\DokumentOgolnePanel.resx">
+      <DependentUpon>DokumentOgolnePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Handel\ZmienDateForm.resx">
+      <DependentUpon>ZmienDateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasa\KompensataOgolnePanel.resx">
+      <DependentUpon>KompensataOgolnePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\KontrahenciReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RabatyKontrahentaReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Towary\TowaryForm.resx">
+      <DependentUpon>TowaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Enova.API.Business.IDictionaryItem.datasource" />
+    <None Include="Properties\DataSources\Enova.API.Core.IPodmiot.datasource" />
+    <None Include="Properties\DataSources\Enova.API.CRM.IKontrahent.datasource" />
+    <None Include="Properties\DataSources\Enova.API.Handel.IDokHandlowy.datasource" />
+    <None Include="Properties\DataSources\Enova.API.Kasa.IKompensata.datasource" />
+    <None Include="Properties\DataSources\Enova.API.Kasa.IRozliczenieSP.datasource" />
+    <None Include="Properties\DataSources\Enova.API.Kasa.IRozrachunekIdx.datasource" />
+    <None Include="Properties\DataSources\Enova.Forms.Towary.RabatGrupowy.datasource" />
+    <None Include="Properties\DataSources\Enova.Types.Old.Core.IAdres.datasource" />
+    <None Include="Properties\DataSources\Enova.Types.Old.CRM.IKontrahentDOD.datasource" />
+    <None Include="Properties\DataSources\Enova.Types.Old.Handel.IDokHandlowyDOD.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Enova.Types.Handel.IPozycjaDokHanDOD.datasource" />
+    <None Include="Resources\DokumentyEnovaView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KontrahenciEnovaView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KontrahenciEnovaViewSelect.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Enova.API\Enova.API\Enova.API.csproj">
+      <Project>{858d7fdd-5dba-4eae-a857-c3cfe2ba3496}</Project>
+      <Name>Enova.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Business\AbakTools.Business.csproj">
+      <Project>{5EC96917-4A7D-4116-B046-5014C054F259}</Project>
+      <Name>AbakTools.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Forms\AbakTools.Forms.csproj">
+      <Project>{2BCDD22E-6A64-4E1A-BC00-B41F5D9D4F32}</Project>
+      <Name>AbakTools.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Printer\AbakTools.Printer.csproj">
+      <Project>{98ED01DC-AE4F-4DC9-8A5D-2B540D605E71}</Project>
+      <Name>AbakTools.Printer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Web\AbakTools.Web.csproj">
+      <Project>{B89A0739-C2BC-4960-92E8-F0AE023AAD7F}</Project>
+      <Name>AbakTools.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enova.Business\Enova.Business.Old.csproj">
+      <Project>{D433FEDB-C0E1-4280-A420-198EF74503E4}</Project>
+      <Name>Enova.Business.Old</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KompensatyView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PozycjeKompensatyView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

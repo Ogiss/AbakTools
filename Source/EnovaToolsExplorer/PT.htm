@@ -1,0 +1,1690 @@
+<HTML XMLNS:IE>
+<HEAD>
+<?IMPORT NAMESPACE="ie" IMPLEMENTATION="#default">
+<meta name=vs_targetSchema content="http://schemas.microsoft.com/intellisense/ie5">
+<STYLE TYPE="text/css">
+.lorstyle
+{
+    background:white;
+    margin-top:0in;
+    margin-left:0in;
+}
+.pagestyle
+{ 
+    background:white;
+    border-left:1 solid black;
+    border-top:1 solid black;
+    border-right:4 solid black;
+    border-bottom:4 solid black;
+    margin:0px;
+    overflow:hidden;
+    left:-100in;
+}
+.headerstyle
+{
+    position:absolute;
+    top:.0in;
+    width:0in;
+    height:0in;
+    left:1in;
+}
+.footerstyle
+{
+    position:absolute;
+    top:0in;
+    width:0in;
+    height:0in;
+    left:1in;
+}
+#ui
+{
+    height:40px;
+    background-color:#61b12e;
+    margin:0px;
+    padding;0px; 
+}
+#zoomcontainer
+{
+    zoom:100%;
+    width:100%;
+    position:absolute;
+}
+#pagecontainer
+{
+   width:100%;
+   overflow:auto; 
+   border:'thin threedhighlight inset'; 
+   background:threedshadow;
+}
+.mmarker
+{
+    position:absolute;
+    top:100;
+    left:100;
+    display:none
+}
+</STYLE>
+<!--
+.lorstyle
+{
+    background:white;
+    margin-top:0in;
+    margin-left:0in;
+    width:6in;
+    height:10in;
+    border:dashed 1 white;
+}
+.pagestyle
+{ 
+    background:white;
+    border-left:1 solid black;
+    border-top:1 solid black;
+    border-right:4 solid black;
+    border-bottom:4 solid black;
+    width:8.5in;
+    height:11in;
+    margin:0px;
+    overflow:hidden;
+    left:-100in;
+}
+.headerstyle
+{
+    position:absolute;
+    top:.25in;
+    width:6in;
+    left:1in;
+}
+.footerstyle
+{
+    position:absolute;
+    top:10.5in;
+    width:6in;
+    left:1in;
+}
+-->
+<SCRIPT LANGUAGE="JScript">
+<!--
+
+var smaller = 0;//6;
+
+var iNextPageToCreate = 1;
+var oPageStyleClass;
+var oLorStyleClass;
+var oHeaderStyleClass;
+var oFooterStyleClass;
+var oMMarkerClass;
+var sSrcID = null
+var iStartingX;
+var iStartingY;
+var bMoveMMarkerLeft = false;
+var bMoveMMarkerRight = false;
+var bMoveMMarkerTop = false;
+var bMoveMMarkerBottom = false;
+var iDeltaX = 0;
+var iDeltaY = 0;
+var fZoomNum = 1;
+var iPixelToInchRatio;
+var oPopup;
+var oPopupBody;
+var pprinter = new Object();
+
+function AddFirstPage()
+{
+	buttonPlus.width = 24;
+	buttonMinus.width = 24;
+//    newHTML  = "<IE:DEVICERECT ID='page1' MEDIA='print' CLASS='pagestyle'>";
+//    newHTML += "<IE:LAYOUTRECT ID='layout1' ONLAYOUTCOMPLETE='OnRectComplete()' NEXTRECT='layoutrect2' CLASS='lorstyle'/>";
+//    newHTML += "</IE:DEVICERECT>";
+//
+//    zoomcontainer.insertAdjacentHTML("afterBegin", newHTML);
+
+	onload_Body();
+
+    headfoot.textHead = printer.header;
+    headfoot.textFoot = printer.footer;
+    
+    // W przegl¹darce IE7 pojawia siê tutaj b³¹d - a linie wydaj¹ siê niepotrzebne
+    //headfoot.url = dialogArguments.__IE_BrowseDocument.URL;
+    //headfoot.title = dialogArguments.__IE_BrowseDocument.title;
+   
+    headfoot.page = 1;
+  //  AddHeaderAndFooterToPage(1);
+
+    iNextPageToCreate = 2;
+}
+
+function MouseDownHandler()
+{
+    if (event.button != 1) return;
+    
+    sZoomNum = zoomcontainer.style.zoom;
+    sZoomNum = sZoomNum.substring(0, sZoomNum.length - 1);
+    iZoomNum = sZoomNum.valueOf(sZoomNum, 10);
+    fZoomNum = iZoomNum/100
+    sSrcID = event.srcElement.id;
+    iPixelToInchRatio = ratiomarker.offsetLeft;
+    
+    if (sSrcID == "mmarkerLeft")
+    {
+        bMoveMMarkerLeft = true;
+        iStartingX = event.x;
+        iDeltaX = (mmarkerLeft.offsetLeft - event.x);
+        iDeltaY = 0;
+        
+        oPopup = window.createPopup();
+        oPopupBody = oPopup.document.body;
+        theText = Math.round((100 * (mmarkerLeft.offsetLeft - 5))/iPixelToInchRatio)/100;
+        oPopupBody.innerHTML = theText + " in";
+        oPopupBody.style.backgroundColor = "#ffff66";
+        oPopupBody.style.border = "1 solid black";
+        oPopupBody.style.fontSize = "12px";
+        oPopupBody.style.fontFamily = "Courier New";
+        oPopup.show(fZoomNum * (mmarkerLeft.offsetLeft + 5), fZoomNum * (mmarkerLeft.offsetTop - 20), 60, 16, zoomcontainer);
+        
+        return;
+    }
+    if (sSrcID == "mmarkerRight")
+    {
+        bMoveMMarkerRight = true;
+        iStartingX = event.x;
+        iDeltaX = (mmarkerRight.offsetLeft - event.x);
+        iDeltaY = 0;
+
+        oPopup = window.createPopup();
+        oPopupBody = oPopup.document.body;
+        theText = Math.round((100 * (mmarkerRight.offsetLeft - 5))/iPixelToInchRatio)/100;
+        oPopupBody.innerHTML = theText + " in";
+        oPopupBody.style.backgroundColor = "#ffff66";
+        oPopupBody.style.border = "1 solid black";
+        oPopupBody.style.fontSize = "12px";
+        oPopupBody.style.fontFamily = "Courier New";
+        oPopup.show(fZoomNum * (mmarkerRight.offsetLeft + 5) - 60, fZoomNum * (mmarkerRight.offsetTop - 20), 60, 16, zoomcontainer);        
+        
+        return;
+    }
+    if (sSrcID == "mmarkerTop")
+    {
+        bMoveMMarkerTop = true;
+        iStartingY = event.y;
+        iDeltaX = 0;
+        iDeltaY = (mmarkerTop.offsetTop - event.y);
+
+        oPopup = window.createPopup();
+        oPopupBody = oPopup.document.body;
+        theText = Math.round((100 * (mmarkerLeft.offsetTop - 5))/iPixelToInchRatio)/100;
+        oPopupBody.innerHTML = theText + " in";
+        oPopupBody.style.backgroundColor = "#ffff66";
+        oPopupBody.style.border = "1 solid black";
+        oPopupBody.style.fontSize = "12px";
+        oPopupBody.style.fontFamily = "Courier New";
+        oPopup.show(fZoomNum * (mmarkerTop.offsetLeft + 5) - 70, fZoomNum * (mmarkerTop.offsetTop + 5), 60, 16, zoomcontainer);
+
+        return;
+    }
+    if (sSrcID == "mmarkerBottom")
+    {
+        bMoveMMarkerBottom = true;
+        iStartingY = event.y;
+        iDeltaX = 0;
+        iDeltaY = (mmarkerBottom.offsetTop - event.y);
+
+        oPopup = window.createPopup();
+        oPopupBody = oPopup.document.body;
+        theText = Math.round((100 * (mmarkerBottom.offsetTop - 5))/iPixelToInchRatio)/100;
+        oPopupBody.innerHTML = theText + " in";
+        oPopupBody.style.backgroundColor = "#ffff66";
+        oPopupBody.style.border = "1 solid black";
+        oPopupBody.style.fontSize = "12px";
+        oPopupBody.style.fontFamily = "Courier New";
+        oPopup.show(fZoomNum * (mmarkerTop.offsetLeft + 5) - 70, fZoomNum * (mmarkerBottom.offsetTop) - 10, 60, 16, zoomcontainer);
+        
+        return;
+    }
+    
+    sSrcID = null;
+}
+
+function MouseMoveHandler()
+{
+    iPixelToInchRatio = ratiomarker.offsetLeft;
+    fZoomCompensationX = (event.x - iStartingX)*(1/fZoomNum - 1);
+    fZoomCompensationY = (event.y - iStartingY)*(1/fZoomNum - 1);
+    
+    if (bMoveMMarkerLeft)
+    {
+        if (event.x + iDeltaX + fZoomCompensationX >= mmarkerRight.offsetLeft - 10) return false;
+        if (event.x + iDeltaX + fZoomCompensationX <= iPixelToInchRatio * pprinter.unprintableLeft/100 + 5) return false;
+        mmarkerLeft.style.left = event.x + iDeltaX + fZoomCompensationX;
+        theText = Math.round((100 * (mmarkerLeft.offsetLeft - 5))/iPixelToInchRatio)/100;
+        oPopupBody.innerHTML = theText + " in";
+    }
+    else if (bMoveMMarkerRight)
+    {
+        if (event.x + iDeltaX + fZoomCompensationX >=  iPixelToInchRatio * (printer.pageWidth - pprinter.unprintableRight)/100 + 5) return false;
+        if (event.x + iDeltaX + fZoomCompensationX <= mmarkerLeft.offsetLeft + 10) return false;
+        mmarkerRight.style.pixelLeft = event.x + iDeltaX + fZoomCompensationX;
+        theText = Math.round((printer.pageWidth - (100 * (mmarkerRight.offsetLeft - 5))/iPixelToInchRatio))/100;
+        oPopupBody.innerHTML = theText + " in";
+    }
+    else if (bMoveMMarkerTop)
+    {
+        if (event.y + iDeltaY + fZoomCompensationY >= mmarkerBottom.offsetTop - 10) return false;
+        if (event.y + iDeltaY + fZoomCompensationY <= iPixelToInchRatio * pprinter.unprintableTop/100 + 5) return false;
+        mmarkerTop.style.pixelTop = event.y + iDeltaY + fZoomCompensationY;
+        theText = Math.round((100 * (mmarkerTop.offsetTop - 5))/iPixelToInchRatio)/100;
+        oPopupBody.innerHTML = theText + " in";
+    }
+    else if (bMoveMMarkerBottom)
+    {
+        if (event.y + iDeltaY + fZoomCompensationY >=  iPixelToInchRatio * (printer.pageHeight - pprinter.unprintableBottom)/100 + 5) return false;
+        if (event.y + iDeltaY + fZoomCompensationY <= mmarkerTop.offsetTop + 10) return false;
+        mmarkerBottom.style.pixelTop = event.y + iDeltaY + fZoomCompensationY;
+        theText = Math.round((printer.pageHeight - (100 * (mmarkerBottom.offsetTop - 5))/iPixelToInchRatio))/100;
+        oPopupBody.innerHTML = theText + " in";
+    }
+
+    return false;
+}
+
+function MouseUpHandler()
+{
+    if (!sSrcID) return;
+    
+    iPixelToInchRatio = ratiomarker.offsetLeft;
+    
+    switch (sSrcID)
+    {
+        case "mmarkerLeft":
+        printer.marginLeft = 100 * (mmarkerLeft.offsetLeft - 5)/iPixelToInchRatio;
+        oPopup.hide();
+        break;
+        
+        case "mmarkerRight":
+        printer.marginRight = printer.pageWidth - (100 * (mmarkerRight.offsetLeft - 5)/iPixelToInchRatio);
+        oPopup.hide();
+        break;
+
+        case "mmarkerTop":
+        printer.marginTop = 100 * (mmarkerTop.offsetTop - 5)/iPixelToInchRatio;
+        oPopup.hide();
+        break;
+        
+        case "mmarkerBottom":
+        printer.marginBottom = printer.pageHeight - (100 * (mmarkerBottom.offsetTop - 5)/iPixelToInchRatio);
+        oPopup.hide();
+        break;
+    }
+    
+    InitClasses(false);
+    InitMMarkers();
+    iDeltaX = 0;
+    iDeltaY = 0;
+    bMoveMMarkerLeft = false;
+    bMoveMMarkerRight = false;
+    bMoveMMarkerTop = false;
+    bMoveMMarkerBottom = false;
+
+    sSrcID = null;
+}
+
+function FindStyleRule(styleName)
+{
+    for (var i = 0; i < document.styleSheets.length; i++)
+    {
+        for (var j = 0; j < document.styleSheets(i).rules.length; j++)
+        {
+            if (document.styleSheets(i).rules(j).selectorText == styleName)
+                return document.styleSheets(i).rules(j);
+        }
+    }
+}
+
+var deltaMarginX = 0.1181;
+var deltaMarginY = 0.1881;
+
+function InitClasses(firstCall)
+{
+    oPageStyleClass = FindStyleRule(".pagestyle");
+    oLorStyleClass = FindStyleRule(".lorstyle");
+    oHeaderStyleClass = FindStyleRule(".headerstyle");
+    oFooterStyleClass = FindStyleRule(".footerstyle");
+    oMMarkerClass = FindStyleRule(".mmarker");
+
+    var _pageWidth = printer.pageWidth;
+	var _pageHeight = printer.pageHeight;
+	var _marginTop = printer.marginTop;
+	var _marginBottom = printer.marginBottom;
+	var _marginLeft = printer.marginLeft;
+	var _marginRight = printer.marginRight;
+
+	try {
+	    if (landscape && firstCall) {
+	        buttonSettings.disabled = true;
+	        printer.orientation = "landscape";
+	        var temp;
+	        temp = _pageWidth; _pageWidth = _pageHeight; _pageHeight = temp;
+	        temp = _marginTop; _marginTop = _marginLeft; _marginLeft = temp;
+	        temp = _marginRight; _marginRight = _marginBottom; _marginBottom = temp;
+
+	        printer.marginLeft = _marginLeft;
+	        printer.marginRight = _marginRight;
+	        printer.marginTop = _marginTop;
+	        printer.marginBottom = _marginBottom;
+	    }
+
+	    oPageStyleClass.style.width = _pageWidth / 100 + "in";
+	    oPageStyleClass.style.height = _pageHeight / 100 - smaller + "in";
+	    oLorStyleClass.style.marginTop = (_marginTop / 100 /*-deltaMarginY*/) + "in";
+	    oLorStyleClass.style.marginLeft = (_marginLeft / 100 /*-deltaMarginX*/) + "in";
+	    oLorStyleClass.style.width = ((_pageWidth - _marginLeft - _marginRight) / 100 /*+ 2*deltaMarginX*/) + "in";
+	    oLorStyleClass.style.height = ((_pageHeight - _marginTop - _marginBottom) / 100 /*+ 2*deltaMarginY*/) - smaller + "in";
+
+	    oHeaderStyleClass.style.left = printer.marginLeft / 100 + "in";
+	    oHeaderStyleClass.style.top = printer.unprintableTop / 100 + "in";
+	    oHeaderStyleClass.style.width = 0; // oLorStyleClass.style.width;   
+	    oFooterStyleClass.style.left = printer.marginLeft / 100 + "in";
+	    oFooterStyleClass.style.width = 0; // oLorStyleClass.style.width;
+	    oFooterStyleClass.style.top = null;
+	    oFooterStyleClass.style.bottom = printer.unprintableBottom / 100 + "in";
+
+	    return true;
+	}
+	catch (ex) {
+	    alert("Wyst¹pi³ problem podczas inicjowania rozmiarów oraz marginesów strony. SprawdŸ ustawienia systemowe drukarki.\n\n" +
+            "Aktualne ustawienia:\n" +
+            "Wysokoœæ strony: " + _pageWidth + ", szerokoœæ strony: " + _pageHeight + "\n" +
+            "Margines lewy: " + _marginLeft + ", prawy: " + _marginRight + ", górny: " + _marginTop + ", dolny: " + _marginBottom);
+	    return false;
+	}
+}
+
+var IsIE8;
+
+function Init() {
+
+    IsIE8 = mainBody.getAttribute("aria-busy") != null;
+    // IsIE8 = ScriptEngineMajorVersion() > 5 || ScriptEngineMajorVersion() == 5 && ScriptEngineMinorVersion() >= 8;
+    // window.navigator.userAgent.indexOf("MSIE 8") >= 0;
+
+    printType = dialogArguments.__IE_PrintType;
+    fso = new ActiveXObject("Scripting.FileSystemObject");
+    
+    try {
+		totals = new ActiveXObject("Scripting.Dictionary");
+	}
+	catch (e) {
+		if (e.number==-2146827859) {
+			alert("Wyst¹pi³ b³¹d podczas inicjacji obiektu systemowego Scripting.Dictionary.\n"+
+				"Biblioteka wymagana przez system oraz program enova nie istnieje lub zosta³a wyrejestrowana.\n\n"+
+				"Informacja dla administratora:\n"+
+				"    Nale¿y ponownie zarejestrowaæ bibliotekê systemow¹ SCRRUN.DLL .");
+			return;
+		}
+		throw e;
+	}
+	
+    document.attachEvent("onmousedown", MouseDownHandler);
+    document.attachEvent("onmouseup", MouseUpHandler);
+    document.attachEvent("onmousemove", MouseMoveHandler);
+    mmarkerLeft.attachEvent("onmousemove", MouseMoveHandler);
+    mmarkerRight.attachEvent("onmousemove", MouseMoveHandler);
+    mmarkerTop.attachEvent("onmousemove", MouseMoveHandler);
+        
+    initSentryVariables();     
+    //1
+
+    startPrintOnline();
+	if (printType=="Quit") return;
+
+//	// Te linie przeniesione z góry z miejsca //1
+//    // chodzi o inicjacje ustawiñ marginesów itp przed analiz¹ html
+//	AddFirstPage();
+//	InitClasses(true);
+
+	zoomcontainer.style.zoom = "100%";
+    ui.style.width = document.body.clientWidth;
+    ui.style.height = "40px";
+    pagecontainer.style.height = document.body.clientHeight - ui.style.pixelHeight;
+     
+	startInit();
+}
+
+function startInit() {
+    InitMMarkers();
+
+	alg_First(false);
+	prepareNextPage(true);
+}
+
+function InitMMarkers()
+{
+    mmarkerLeft.style.top = oLorStyleClass.style.marginTop;
+    mmarkerRight.style.top = oLorStyleClass.style.marginTop;
+    mmarkerLeft.style.left = oLorStyleClass.style.marginLeft;
+    mmarkerRight.style.left = (printer.pageWidth - printer.marginRight)/100 + "in";
+    mmarkerTop.style.top = oLorStyleClass.style.marginTop;
+    mmarkerBottom.style.top = (printer.pageHeight - printer.marginBottom)/100 + "in";
+    mmarkerTop.style.left = oLorStyleClass.style.marginLeft;
+    mmarkerBottom.style.left = oLorStyleClass.style.marginLeft;
+    
+    mmarkerLeft.style.pixelTop -= 2;
+    mmarkerLeft.style.pixelLeft += 6;
+    mmarkerRight.style.pixelTop -= 2;
+    mmarkerRight.style.pixelLeft += 5;
+    mmarkerTop.style.pixelTop += 6;
+    mmarkerTop.style.pixelLeft -= 2;
+    mmarkerBottom.style.pixelTop += 5;
+    mmarkerBottom.style.pixelLeft -= 2;
+}
+
+//function CheckPrint()
+//{           
+//    switch (dialogArguments.__IE_PrintType)
+//    {
+//        case "Prompt":
+//            if (printer.showPrintDialog()) 
+//                PrintPrep();
+//            else
+//                deleteSentry();
+//            break;
+//        case "NoPrompt":
+//            PrintPrep();
+//            break;
+//        case "Preview":
+//        default:
+//            break;
+//    }
+//}
+
+var reset;
+
+function PrintPrep()
+{
+	reset = false;
+    if (oLorStyleClass.style.border == "dashed 1 black") {
+		reset = true;
+		oLorStyleClass.style.border = "dashed 1 white";
+	}
+	
+	setTimeout(PrintNow, 1);
+}
+
+function PrintNow() {
+    try {
+        checkPages();
+        if (endPage > pages.length) endPage = pages.length;
+
+        printer.startDoc(documentTitle);
+
+        if (printer.collate && printer.copies > 1) {
+            for (var nr = 0; nr < printer.copies; ++nr)
+                PrintPages();
+        }
+        else
+            PrintPages();
+
+        printer.stopDoc();
+
+        if (reset) oLorStyleClass.style.border = "dashed 1 black";
+    }
+    finally {
+        deleteSentry();
+    }
+}
+
+function PrintPages() {
+    for (var i = startPage - 1; i < endPage; i++) {
+        if (!printer.collate && printer.copies > 1) {
+            for (var nr = 0; nr < printer.copies; ++nr)
+                printSinglePage(i);
+        }
+        else {
+            printSinglePage(i);
+        }
+    }
+}
+
+function printSinglePage(idx) {
+    printer.printPage(pages[idx].device);
+    if (pages[idx].docBreak) {
+        printer.stopDoc();
+        printer.startDoc(documentTitle);
+    }
+}
+
+function ResizeApp()
+{
+    ui.style.width = document.body.clientWidth;
+    pagecontainer.style.height = document.body.clientHeight - ui.style.pixelHeight;
+}
+
+function Zoomer(string)
+{
+    if (string == "in")
+    {
+        currZoom = zoomcontainer.style.zoom;
+        currZoom = currZoom.substring(0, currZoom.length - 1);
+        currZoom = parseInt(currZoom, 10);
+        newZoom = currZoom + 5;
+        
+        if (newZoom > 10000) return;
+        
+        zoomcontainer.style.zoom = newZoom + "%";
+        zoomnumber.value = newZoom;
+    }
+    else if (string == "out")
+    {
+        currZoom = zoomcontainer.style.zoom;
+        currZoom = currZoom.substring(0, currZoom.length - 1);
+        currZoom = parseInt(currZoom, 10);
+        newZoom = currZoom - 5;
+        
+        if (newZoom < 1) return;
+               
+        zoomcontainer.style.zoom = newZoom + "%";
+        zoomnumber.value = newZoom;
+    }
+    else if (string == "amount")
+    {
+//        if (event.srcElement.id != "zoomnumber") return;
+  //      if (event.keyCode != 13) return;
+
+        var newZoom = zoomnumber.value;
+        numValue = parseInt(newZoom, 10);
+        
+        if (numValue != newZoom) return;
+        if (newZoom > 10000) return;
+        if (newZoom < 1) return;
+            
+        zoomcontainer.style.zoom = newZoom + "%";
+    }
+    else
+    {
+        zoomcontainer.style.zoom = string;
+        zoomnumber.value = string.substring(0, string.length-1);
+    }
+}
+
+function DoPageSetup()
+{
+    if (printer.showPageSetupDialog()) {
+		InitClasses(false);
+		InitMMarkers();
+    }
+}
+
+function DoPrintFromPreview()
+{
+    if (printer.showPrintDialog()) 
+        PrintPrep();
+}
+
+function ShowHideMargins()
+{
+    if (marginbutton.value == "Poka¿ marginesy")
+    {
+        oMMarkerClass.style.display = "block";
+        oLorStyleClass.style.border = "dashed 1 black";
+        marginbutton.value = "Ukryj marginesy";
+    }
+    else
+    {
+        oMMarkerClass.style.display = "none";
+        oLorStyleClass.style.border = "dashed 1 white";
+        marginbutton.value = "Poka¿ marginesy";    
+    }
+}
+
+-->
+</SCRIPT>
+
+
+
+
+
+<SCRIPT LANGUAGE="JScript">
+<!--
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/// Obs³uga drukarki
+///
+
+var documentTitle = "Dokument enova";
+var startPage;
+var endPage;
+
+function startPrintOnline() {
+    if (printType == "Preview") {
+        // Trochê ryzykowne, bo brak dokumentacji
+        // Ale inaczej nie inicjuje z drukarki domyœlnej.
+        if (IsIE8)
+            printer.ensurePrintDialogDefaults();
+        AddFirstPage();
+        InitClasses(true);
+        return;
+    }
+
+	if (printType == "Prompt") {
+	    if (!printer.showPrintDialog()) {
+	        printType = "Quit";
+	        deleteSentry();
+	        fso.DeleteFile(infoFN, true);
+	        return;
+	    }
+	    fso.DeleteFile(infoFN, true);
+	}
+	else if (printType == "NoPrompt") {
+	    // Trochê ryzykowne, bo brak dokumentacji
+	// Ale inaczej nie drukuje na domyœln¹ drukarkê.
+	    if (IsIE8)
+	        printer.ensurePrintDialogDefaults(); 
+	}
+
+	if (printType != "Quit") {
+	    // Te linie przeniesione z góry z miejsca //1
+	    // chodzi o inicjacje ustawiñ marginesów itp przed analiz¹ html
+	    AddFirstPage();
+	    if (!InitClasses(true)) return;
+	}
+
+	checkPages();
+
+	printer.startDoc(documentTitle);
+}
+
+function printPageOnline() {
+	if (printType=="Preview") return;
+
+	if (startPage<=pages.length && pages.length<=endPage)
+		setTimeout("printOnePage("+(pages.length-1)+", "+reportFinish+");", 1);
+	else if (reportFinish)
+		setTimeout("printStopDoc();", 1);
+}
+
+function printOnePage(pageNr, finish) {
+    try {
+	    if (!printer.collate && printer.copies>1) {
+	        for (var i = 0; i < printer.copies; ++i)
+	            printSinglePage(pageNr);
+	    }
+	    else
+	        printSinglePage(pageNr);
+	}
+	catch (e) {
+	    finish = true;
+	}
+
+	if (finish)
+	    printStopDoc();
+}
+
+function printStopDoc() {
+	if (printer.collate && printer.copies>1) {
+		if (endPage>pages.length)
+			endPage = pages.length;
+		for (var i = 1; i<printer.copies; ++i) {
+			for (var pg = startPage-1; pg<endPage; ++pg)
+			    printSinglePage(pg);
+		}
+	}
+    printer.stopDoc();
+	deleteSentry();
+}
+
+function deleteSentry() {
+	if (fso.FileExists(sentryFN))
+	    fso.DeleteFile(sentryFN, true);
+}
+
+function checkPages() {
+	startPage = 0;
+	endPage = -1;
+    if (printType=="NoPrompt" || !printer.selectedPages) {
+        startPage = 1;
+        endPage = 65000;
+    }
+    else if (printer.currentPage) {
+		startPage = 1;
+		endPage = 1;
+        // Determine current page, if necessary.
+        // Normally, the print current page option is disabled because a print
+        // template has no way of determining which section of a document is displayed
+        // in the browser and cannot calculate a current page. In print preview,
+        // a print template can enable the print current page option because the
+        // template can determine which page is currently showing in the print
+        // preview dialog. The print preview window would need a user interface
+        // with a print button so that the user could print from the print preview
+        // window. See template7.htm for an example showing how to add a user
+        // interface to a print preview template.
+    }
+    else {
+        startPage = printer.pageFrom;
+        endPage = printer.pageTo;
+        if (startPage > endPage) {
+            alert("Strona startowa jest wiêksza ni¿ strona koñcowa");
+            return;
+        }
+    }
+//    alert(startPage+" "+endPage);
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/// Globalne zmienne steruj¹ce wydrukiem
+///
+
+var data = [];			// Lista drukowanych sekcji
+var standardPrint = true;
+var firstSection = 0;			// Pierwsza sekcja drukowana na stronie
+
+var totals = null;
+var pages = [];
+var pg = null;
+var printType;
+var device1 = null;
+var layout1 = null;
+var pageHeight = null;
+var pageZoom = null;
+var landscape = false;
+var fso;
+var sentryFN, infoFN;
+var isPDF = false;
+
+function initSentryVariables() {
+    infoFN = fso.GetSpecialFolder(2) + "\\sonetaprinter.info";
+    if (fso.FileExists(infoFN)) {
+        var ts = fso.OpenTextFile(infoFN, 1, false);
+        sentryFN = ts.ReadLine();
+        isPDF = ts.ReadLine() == "pdf";
+        ts.Close();
+
+        ts = fso.CreateTextFile(infoFN + ".delfile", true);
+        ts.WriteLine(dialogArguments.__IE_ContentDocumentUrl);
+        ts.Close();
+    }
+    else
+        sentryFN = dialogArguments.__IE_ContentDocumentUrl + ".sentry";
+}
+
+function onload_Body() {
+	var ts = fso.OpenTextFile(dialogArguments.__IE_ContentDocumentUrl, 1, false, -1);
+	var orgHTML = ts.ReadAll();
+	ts.Close();
+	
+	analyseBody(orgHTML);
+}
+
+function page(device, layout) {
+	this.body = document.createElement("BODY");
+	
+	this.device = device;
+	this.layout = layout;
+	this.docBreak = false;
+	this.nr = pages.length+1;
+	
+	return this;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+//// Parsowanie pocz¹tkowe
+////
+
+var headerText = null;
+var firstheaderText = null;
+var innerheaderText = null;
+var lastSection = null;
+var lastFooter = false;
+
+function section(body) {
+	this.header = null;
+	this.firstheader = null;
+	this.innerheader = null;
+	this.footer = null;
+	this.firstfooter = null;
+	this.firstlastfooter = null;
+	this.lastfooter = null;
+	this.innerfooter = null;
+	this.body = body;
+	this.pageBreak = false;
+	this.pageBreakOdd = false;
+	this.docBreak = false;
+	return this;
+}
+
+function checkExistsBody() {
+	if (headerText!=null || firstheaderText!=null || innerheaderText!=null) {
+		analyseItem("BODY", "");
+	}
+}
+
+function checkFooter() {
+    if (lastFooter) {
+		analyseItem("BODY", "");
+    }
+}
+
+function removeHidden(line) {
+	for (;;) {
+		var i = line.indexOf("DISPLAY: none");
+		if (i<0) break;
+		line = line.substring(0, i)+line.substring(i+13);
+	}
+	return line;
+}
+
+function analyseItem(type, text) {
+    if (type == "TEXT" || type == "BODY" || type == "PAGEBREAK" || type == "DOCBREAK" || type == "PAGEBREAKODD") {
+
+	    if (type == "DOCBREAK" && lastSection != null)
+	        lastSection.docBreak = lastSection.pageBreak = true;
+	    if (type == "PAGEBREAK" && lastSection != null)
+	        lastSection.pageBreak = true;
+	    if (type == "PAGEBREAKODD" && lastSection != null)
+	        lastSection.pageBreakOdd = true;
+
+        lastFooter = false;
+		lastSection = new section(text);
+		data.push(lastSection);
+		if (headerText!=null) {
+			lastSection.header = headerText;
+			headerText = null;
+		}
+		if (firstheaderText!=null) {
+			lastSection.firstheader = firstheaderText;
+			firstheaderText = null;
+		}
+		if (innerheaderText!=null) {
+			lastSection.innerheader = innerheaderText;
+			innerheaderText = null;
+		}
+	}	
+	
+	else if (type=="HEADER") {
+		checkFooter();
+		if (headerText!=null)
+			alert("Duplikacja sekcji HEADER.");
+		headerText = text;
+		standardPrint = false;
+	}
+	
+	else if (type=="FIRSTHEADER") {
+		checkFooter();
+		if (firstheaderText!=null)
+			alert("Duplikacja sekcji FIRSTHEADER.");
+		firstheaderText = text;
+		standardPrint = false;
+	}
+	
+	else if (type=="INNERHEADER") {
+		checkFooter();
+		if (innerheaderText!=null)
+			alert("Duplikacja sekcji INNERHEADER.");
+		innerheaderText = removeHidden(text);
+		if (lastSection.firstheader==null)
+			lastSection.firstheader = lastSection.innerheader;
+		standardPrint = false;
+	}
+	
+	else if (type=="FOOTER") {
+		checkExistsBody();
+		if (lastSection==null)
+			alert("Sekcja FOOTER bez poprzedzaj¹cej sekcji BODY.");
+		else
+			lastSection.footer = text;
+		standardPrint = false;
+		lastFooter = true;
+	}
+	
+	else if (type=="FIRSTFOOTER") {
+		checkExistsBody();
+		if (lastSection==null)
+			alert("Sekcja FIRSTFOOTER bez poprzedzaj¹cej sekcji BODY.");
+		else
+			lastSection.firstfooter = removeHidden(text);
+		standardPrint = false;
+		lastFooter = true;
+	}
+	
+	else if (type=="FIRSTLASTFOOTER") {
+		checkExistsBody();
+		if (lastSection==null)
+			alert("Sekcja FIRSTLASTFOOTER bez poprzedzaj¹cej sekcji BODY.");
+		else
+			lastSection.firstlastfooter = removeHidden(text);
+		standardPrint = false;
+		lastFooter = true;
+	}
+	
+	else if (type=="LASTFOOTER") {
+		checkExistsBody();
+		if (lastSection==null)
+			alert("Sekcja LASTFOOTER bez poprzedzaj¹cej sekcji BODY.");
+		else
+			lastSection.lastfooter = removeHidden(text);
+			if (lastSection.firstlastfooter==null)
+				lastSection.firstlastfooter = lastSection.lastfooter;
+		standardPrint = false;
+		lastFooter = true;
+	}
+	
+	else if (type=="INNERFOOTER") {
+		checkExistsBody();
+		if (lastSection==null)
+			alert("Sekcja INNERFOOTER bez poprzedzaj¹cej sekcji BODY.");
+		else {
+			lastSection.innerfooter = removeHidden(text);
+			if (lastSection.firstfooter==null)
+				lastSection.firstfooter = lastSection.innerfooter;
+			if (lastSection.lastfooter==null)
+				lastSection.lastfooter = lastSection.innerfooter;
+			if (lastSection.firstlastfooter==null)
+				lastSection.firstlastfooter = lastSection.innerfooter;
+		}
+		standardPrint = false;
+		lastFooter = true;
+	}
+	
+	else
+		alert("Nieznany typ sekcji "+type);
+}
+
+var isMarginLeft = false, isMarginRight = false, isMarginTop = false, isMarginBottom = false, isMarginZoom = false, isMarginOrient = false;
+
+function analyseBody(orgHTML) {
+    var last = 0, lastcopy = 0;
+	var type = "TEXT";
+	for (;;) {
+		var i = orgHTML.indexOf("<EA:", last);
+		if (i<0) break;
+		var setlastcopy = false;
+		
+		var l = i+4;
+		if (orgHTML.substring(l, l+7)=="SECTION") {
+			l = orgHTML.indexOf("TYPE=\"", i);
+			if (l<0) break;
+
+			l += 6;
+			
+			var k = orgHTML.indexOf("\"", l);
+			if (k<0) break;
+			var newType = orgHTML.substring(l, k);
+			
+			analyseItem(type, orgHTML.substring(lastcopy, i));
+			type = newType;
+			last = k;
+			setlastcopy = true;
+		}
+		else if (orgHTML.substring(l, l+8)=="PAGEINFO") {
+
+			l += 9;
+			while (" \n\r".indexOf(orgHTML.substring(l, l+1))>=0) ++l;
+			
+			var k = orgHTML.indexOf("=\"", l);
+			if (k<0) break;
+			
+			var attr = orgHTML.substring(l, k)
+			k += 2;
+			l = orgHTML.indexOf("\"", k);
+			if (l<0) break;
+			
+			var v = orgHTML.substring(k, l);
+			
+			if (attr=="MARGINLEFT") { if (!isMarginLeft) {
+				isMarginLeft = true;
+				printer.marginLeft = v == "MIN" ? (printer.unprintableLeft + (isPDF ? 4 : 1)) : parseFloat(v) / 0.254;
+			} }
+			else if (attr == "MARGINRIGHT") { if (!isMarginRight) {
+				isMarginRight = true;
+				printer.marginRight = v=="MIN" ? (printer.unprintableRight+(isPDF ? 8 : 1)) : parseFloat(v)/0.254;
+            } }
+			else if (attr=="MARGINTOP") { if (!isMarginTop) {
+				isMarginTop = true;
+				printer.marginTop = v=="MIN" ? (printer.unprintableTop+1) : parseFloat(v)/0.254;
+            } }
+			else if (attr=="MARGINBOTTOM") { if (!isMarginBottom) {
+				isMarginBottom = true;
+				printer.marginBottom = v=="MIN" ? (printer.unprintableBottom+1) : parseFloat(v)/0.254;
+            } }
+			else if (attr=="ZOOM") { if (!isMarginZoom) {			        
+			    isMarginZoom = true;
+				pageZoom = v;
+			} }
+			else if (attr=="HEIGHT")
+				pageHeight = v;
+			else if (attr=="LANDSCAPE") { if (!isMarginOrient) {
+				isMarginOrient = true;
+				landscape = true;
+			} }
+			else
+				alert("B³êdne ustawienie PAGEINFO "+attr+"="+v);
+			
+			last = k;
+		}
+//		else if (orgHTML.substring(l, l+4)=="SUMV") {
+//			last = i;
+//		}
+		else {
+			var j = orgHTML.indexOf(">", i);
+			alert("Nieznany element: "+orgHTML.substring(i, j+1));
+			last = i;
+		}
+		
+		last = orgHTML.indexOf(">", last);
+		if (last<0) break;
+		++last;
+		if (setlastcopy)
+			lastcopy = last;
+	}
+	
+	analyseItem(type, orgHTML.substring(lastcopy));
+	
+//	standardPrint = data.length==1;
+	if (standardPrint)
+		last = 0;
+	
+	if (headerText!=null)
+		alert("Sekcja HEADER bez nastêpuj¹cej po niej sekcji BODY.");
+		
+	var i1 = orgHTML.indexOf("<title>");
+	if (i1>=0) {
+		var i2 = orgHTML.indexOf("</title>", i1);
+		if (i2>=0)
+			documentTitle = orgHTML.substring(i1+7, i2)+" - enova";
+	}
+	else {
+		i1 = orgHTML.indexOf("<TITLE>");
+		if (i1>=0) {
+			var i2 = orgHTML.indexOf("</TITLE>", i1);
+			if (i2>=0)
+				documentTitle = orgHTML.substring(i1+7, i2)+" - enova";
+		}
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+//// Strona jest gotowa
+////
+
+var firstPageNumber = 0;
+
+function sum() {
+	var i;
+	var prevs = new ActiveXObject("Scripting.Dictionary");
+	var keys = new VBArray(totals.Keys());
+	for (i = keys.lbound(); i<=keys.ubound(); ++i) {
+		var key = keys.getItem(i);
+		prevs(key) = totals(key);
+	}
+	
+	var all = pg.layout.contentDocument.all;// pg.body.all;
+	var sums = new ActiveXObject("Scripting.Dictionary");
+	var tags = all.tags("SUMV");
+	for (i = 0; i<tags.length; ++i) {
+		var sumv = tags(i);
+		var name = sumv.attributes("NAME").nodeValue;
+		var v = parseFloat(sumv.attributes("V").nodeValue);
+
+		if (sums.Exists(name))
+			sums(name) = Math.round((sums(name)+v)*1000000)/1000000;
+		else
+			sums(name) = v;
+
+		//BCH: pobieranie wartoœci przy renderowaniu totals(name) dodawa³o klucz z wartoœci¹ undefined
+		//if (totals.Exists(name))
+		if (typeof(totals(name))=="number")
+			totals(name) = Math.round((totals(name)+v)*1000000)/1000000;
+		else
+			totals(name) = v;
+	}
+	
+	for (i = 0; i<all.length; ++i) {
+		var elem = all(i);
+		if (elem.className.substring(0, 6)=="_SUMV_")
+			elem.innerHTML = formatDecimal(sums(elem.className.substring(6)));
+			
+		else if (elem.className.substring(0, 8)=="_TOTALV_")
+			elem.innerHTML = formatDecimal(totals(elem.className.substring(8)));
+			
+		else if (elem.className.substring(0, 7)=="_PREVV_")
+			elem.innerHTML = formatDecimal(prevs(elem.className.substring(7)));
+			
+		else if (elem.className=="_VAR_PAGENO_RESET") {
+			firstPageNumber = pages.length-1;
+		}
+			
+		else if (elem.className=="_VAR_PAGENO") {
+			elem.innerHTML = pages.length-firstPageNumber;
+		}
+	}
+}
+
+function formatDecimal(v) {
+	if (v+""=="undefined") v = 0;
+	var minus = v<0;
+	if (minus) v = -v;
+	v = (Math.round(100*v)).toString();
+	switch (v.length) {
+		case 1: v = "00"+v; break;
+		case 2: v = "0"+v; break;
+	}
+	var i = v.length-2;
+	v = v.substring(0, i)+","+v.substring(i, i+2);
+	while (i-3>0) {
+		i -= 3;
+		v = v.substring(0, i)+" "+v.substring(i, v.length);
+	}
+	if (minus) v = "-"+v;
+	return v;
+}
+
+function pageReady() {
+	pg.layout.onlayoutcomplete = null;
+	sum();
+	if (currentDocBreak)
+	    pg.docBreak = true;
+	
+	printPageOnline();
+	
+	if (!reportFinish) {
+	    if (fso.FileExists(sentryFN)) {
+            var f = fso.CreateTextFile(sentryFN, true);
+            f.WriteLine("working");
+            f.Close();
+        }
+        
+		prepareNextPage(true);
+	}
+	else {
+//	    deleteSentry();
+    } 
+}
+
+function prepareNextPage(nextpage) {
+	if (reportFinish)
+		alert("Tworzona strona w zamkniêtym raporcie");
+
+	////////////////////////////////////////////////////////////////
+	/// Generujemy nowy layout
+	///
+	var pageCounter = pages.length+1;
+	var s = "<IE:DEVICERECT ID=page"+pageCounter+" MEDIA=print CLASS='pagestyle'>";
+	var ss = "";
+	if (standardPrint) {
+		ss = " NEXTRECT=layout"+(pageCounter+1);
+
+//		if (pageCounter==1)
+//			ss += " CONTENTSRC='document'";
+	}
+	s += "<IE:LAYOUTRECT ID=layout"+pageCounter+ss+" CLASS='lorstyle' onlayoutcomplete='complete()'/>";
+	s += "</IE:DEVICERECT>";
+	
+    zoomcontainer.insertAdjacentHTML("beforeEnd", s);
+    
+	////////////////////////////////////////////////////////////////
+	/// Przygotowujemy nowe BODY
+	///
+    pg = new page(mainBody.all("page" + pageCounter), mainBody.all("layout" + pageCounter));
+	pages.push(pg);
+	
+	if (pageHeight!=null)
+		pg.layout.style.height = pageHeight;
+		
+	if (pageZoom!=null)
+		pg.layout.style.zoom = pageZoom;
+		
+	if (pageCounter==1) {
+		device1 = pg.device;
+		layout1 = pg.layout;
+	}
+
+	pageSpan.innerText = pages.length;
+	
+	if (nextpage)
+		setTimeout("setPage(currentSection)", 1);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+//// Stronicowanie
+////
+
+var currentSection = 0;
+var lastCurrentSection = 0;
+var lastFirstSection = 0;
+var nextAlg = alg_First;
+var fillCounter = 0;
+var reportFinish = false;
+var lastPageBodies = 0;
+
+var thisIsLastPage = -1;
+
+function complete() {
+	if (standardPrint) {
+		if (event.contentOverflow) {
+			printPageOnline();
+			setTimeout("prepareNextPage(false)", 1);
+		}
+		else {
+			if (currentSection++>=data.length) {
+				reportFinish = true;
+				printPageOnline();
+			}
+			else
+				pageReady();
+		}
+	}
+	else if (thisIsLastPage>=0) {
+		lastPageBodies = thisIsLastPage-firstSection;
+		firstSection = thisIsLastPage;
+		thisIsLastPage = -1;
+		pageReady();
+	}
+	else {
+		var i = nextAlg(event.contentOverflow);
+
+		if (i<0)
+			setPage(currentSection);
+		else {
+			if (i!=lastCurrentSection) {
+				thisIsLastPage = i;
+				setPage(i);
+			}
+			else {
+				lastPageBodies = i-firstSection;
+				firstSection = i;
+				pageReady();
+			}
+		}
+	}
+}
+
+function setPage(curr) {
+    if (curr==firstSection)
+		alert("Brak nowego kodu dla strony");
+	if (curr==lastCurrentSection && firstSection==lastFirstSection)
+		alert("Powtórka generowania strony");
+		
+	lastCurrentSection = curr;
+	lastFirstSection = firstSection;
+	
+	var html = [];
+
+/*	if (ScriptEngineMajorVersion()<8)
+	{
+	    alert("7");
+	    html.push("<DIV style='WIDTH:");
+	    html.push(oLorStyleClass.style.width);
+	    html.push(";HEIGHT:");
+	    html.push(oLorStyleClass.style.height - 0.05);
+
+	    html.push(";MARGIN-LEFT:-10px;MARGIN-RIGHT:-10px;MARGIN-TOP:-15px;MARGIN-BOTTOM:-10px;'>");
+	}
+ */  
+    html.push("<DIV style='WIDTH:97%");
+    html.push(";HEIGHT:");
+    html.push(oLorStyleClass.style.height - 0.05);
+
+    html.push(";MARGIN-LEFT: 7px;MARGIN-RIGHT:0px;MARGIN-TOP:0px;MARGIN-BOTTOM:0px;'>");
+
+    concatBody(curr, html);
+	html.push("</DIV>");
+    pg.body.innerHTML = html.join("");
+		
+	if (pg.body.innerText!="") {
+		try {
+			pg.layout.contentSrc = pg.body.document;
+			fillSpan.innerText = ++fillCounter;
+		}
+		catch (e) {
+		}
+	}
+	else {
+	    firstSection = curr;
+	    if (firstSection<data.length) {
+		    try {
+            	thisIsLastPage = -1;
+			    pg.layout.contentSrc = pg.body.document;
+		    }
+		    catch (e) {
+		    }
+	    }
+	    else {
+	        //
+	        // Nie ma co drukowaæ - trzeba przerwaæ
+	        // i usun¹æ przygotowan¹ ju¿ stronê
+	        //
+	        if (pg!=null) {
+	            pg.device.removeNode(true);
+	            pages.pop();
+        	    pageSpan.innerText = pages.length;
+	        }
+        	reportFinish = true;
+            if (printType!="Preview")
+		        printStopDoc();
+		}
+	}
+}
+
+var currentDocBreak = false;
+
+function concatBody(curr, html) {
+    if (curr>0)
+       currentDocBreak = data[curr - 1].docBreak;
+
+    if (standardPrint) {
+        html.push(data[curr - 1].body);
+        return;
+   }
+	
+	var i;
+	var sec;
+    var htmlidx = html.length;
+	
+	//////////////////////////////////////////////
+	/// Zebraæ headery poprzedzaj¹ce
+	///
+	var deep = 0, deepf = 0;
+	for (i = firstSection; --i>=0; ) {
+		sec = data[i];
+		if (sec.footer!=null || sec.firstfooter!=null || sec.firstlastfooter!=null || sec.innerfooter!=null || sec.lastfooter!=null) 
+			++deep;
+		if (sec.header!=null || sec.firstheader!=null || sec.innerheader!=null) {
+			if (deep<=0) {
+			    ++deepf;
+			    if (sec.innerheader != null)
+			        html.splice(htmlidx, 0, sec.innerheader);
+				if (sec.header!=null)
+					html.splice(htmlidx, 0, sec.header);
+			}
+			else
+				--deep;
+		}
+	}
+	
+	/////////////////////////////////////////////
+	/// Zebraæ aktualn¹ stronê
+	///
+	var headerCounter = 0;
+	var isFooter = true;
+	for (i = firstSection; i<curr; ++i) {
+		sec = data[i];
+		if (sec.header!=null)
+			html.push(sec.header);
+		if (sec.firstheader!=null)
+			html.push(sec.firstheader);
+		if (sec.header!=null || sec.firstheader!=null || sec.innerheader!=null)
+			++headerCounter;
+		
+		html.push(sec.body);
+		
+		if (headerCounter>0 && sec.firstlastfooter!=null)
+			html.push(sec.firstlastfooter);
+		else if (sec.lastfooter!=null)
+			html.push(sec.lastfooter);
+		if (sec.footer!=null)
+			html.push(sec.footer);
+		isFooter = sec.footer!=null || sec.firstfooter!=null || sec.firstlastfooter!=null || sec.innerfooter!=null || sec.lastfooter!=null;
+		if (isFooter)
+			--headerCounter;
+	}
+	deepf += headerCounter;
+	
+	/////////////////////////////////////////////
+	/// Dodaæ pozosta³e footer'y
+	///
+// Chodzi o to, ¿eby w przypadku HBBBHBB.BBBFBBBBF drukowaæ dwa footery a nie jeden
+	deep = 0;
+	for (i = curr; i<data.length; ++i) {
+		sec = data[i];
+		if (sec.header!=null || sec.firstheader!=null || sec.innerheader!=null)
+			++deep;
+		isFooter = sec.footer!=null || sec.firstfooter!=null || sec.firstlastfooter!=null || sec.innerfooter!=null || sec.lastfooter!=null;
+		if (isFooter)
+			--deep;
+		if (deep<=0) {
+			if (headerCounter>0) {
+				if (sec.firstfooter!=null)
+					html.push(sec.firstfooter);
+			}
+			else
+				if (sec.innerfooter!=null)
+					html.push(sec.innerfooter);
+			if (sec.footer!=null)
+				html.push(sec.footer);
+			if (isFooter)
+				if (--deepf<0) break;
+		}
+	}
+
+	/////////////////////////////////////////////
+	/// Dodaæ najbli¿szy footer
+	///
+	/*
+	if (!isFooter) {
+		for (i = curr; i<data.length; ++i) {
+			sec = data[i];
+			var quit = false;
+			if (headerCounter>0) {
+				if (sec.firstfooter!=null) {
+					result += sec.firstfooter;
+					quit = true;
+				}
+			}
+			else
+				if (sec.innerfooter!=null) {
+					result += sec.innerfooter;
+					quit = true;
+				}
+			if (sec.footer!=null) {
+				result += sec.footer;
+				quit = true;
+			}
+		    isFooter = sec.footer!=null || sec.firstfooter!=null || sec.firstlastfooter!=null || sec.innerfooter!=null || sec.lastfooter!=null;
+		    if (isFooter)
+			    if (--deepf<0) break;
+			if (quit) break;
+		}
+	}
+	*/
+}
+
+/////////////////////////////////////////////////////////
+/// overload - wskazuje, czy ostatnie 
+///            formatowanie przepe³ni³o siê
+/// result   = -1  strona nie jest poprawna
+///          = >=0 strona poprawna dla wskazanej liczby
+
+var minOK;
+var maxOK;
+var withPageBreak = false; // Czy aktualnie generowana strona zakoñczona jest przez PAGEBREAK
+
+function alg_First(overload) {
+    if (standardPrint) {
+	    currentSection = 1;
+	    return;
+    }
+
+	currentSection = 35;
+	if (currentSection>data.length)
+		currentSection = data.length;
+		
+	minOK = 1; //Przelewy 0
+	maxOK = data.length;
+	checkMaxOK();
+	
+	nextAlg = alg_Divider;
+
+	return -1;
+}
+
+function alg_Divider(overload) {
+	if (overload) {
+		maxOK = currentSection;
+
+		if (maxOK-minOK>8)
+			currentSection -= 8;
+		else
+			currentSection = minOK + Math.floor((maxOK-minOK)/2);
+	}
+	else {
+		minOK = currentSection;
+		if (minOK>=data.length) {
+			reportFinish = true;
+			return minOK;
+		}
+
+		if (maxOK-minOK>8)
+			currentSection += 8;
+		else
+			currentSection = minOK + Math.floor((maxOK-minOK)/2);
+	}
+	
+	if (minOK+1>=maxOK) {
+		if (withPageBreak)
+			currentSection += 35;
+		else
+			currentSection += minOK-firstSection+1;
+				
+		if (currentSection>data.length)
+			currentSection = data.length;
+
+		else if (data.length>=3)
+			nextAlg = alg_IdenticalPage;
+			
+		var result = minOK;
+		
+		minOK = minOK+1;	//Przelewy by³o bez +1
+		maxOK = data.length+1;
+		
+		checkMaxOK();
+
+		return result;
+	}
+
+	return -1;
+}
+
+function alg_IdenticalPage(overload) {
+	if (!overload)
+		return alg_Divider(overload);
+	
+	maxOK = currentSection;
+	
+	--currentSection;
+	
+	nextAlg = alg_IdenticalPage2;
+
+	return -1;
+}
+
+function alg_IdenticalPage2(overload) {
+	if (overload) {
+		nextAlg = alg_Divider;
+		return alg_Divider(overload);
+	}
+		
+	var result = currentSection;
+
+	nextAlg = alg_Divider;
+	currentSection += currentSection-firstSection+1;
+			
+	if (currentSection>data.length)
+		currentSection = data.length;
+	else
+		nextAlg = alg_IdenticalPage;
+		
+	minOK = result;
+	maxOK = data.length+1;
+
+	checkMaxOK();
+
+	return result;
+}
+
+function checkMaxOK() {
+    withPageBreak = false;
+	
+	if (maxOK>data.length)
+		maxOK = data.length+1;
+
+    for (var i = minOK; i < maxOK - 1; ++i) {
+        if (data[i].pageBreak) {
+            maxOK = i + 1;
+            withPageBreak = true;
+            break;
+        }
+        else if (data[i].pageBreakOdd && (pages.length % 2)==0) {
+            maxOK = i + 1;
+            withPageBreak = true;
+            break;
+        }
+    }
+	
+	if (currentSection>=maxOK)
+		currentSection = maxOK;
+	if (!standardPrint)
+		reportFinish = minOK>=maxOK;
+}
+
+/*
+function alg_Inc(overload) {
+	if (overload)
+		return currentSection-1;
+
+	if (currentSection>=data.length)
+		return data.length;
+		
+	++currentSection;
+
+	return -1;
+}
+*/
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+-->
+</SCRIPT>
+
+
+
+
+</HEAD>
+<BODY ID=mainBody ONLOAD="Init()" ONRESIZE="ResizeApp()" SCROLL="no">
+
+    <IE:TEMPLATEPRINTER ID="printer" />
+    <IE:HEADERFOOTER ID="headfoot"/>
+
+    <DIV ID="ui">
+        <BR style="font-size:7">
+        &nbsp;&nbsp;
+        <INPUT ID=buttonSettings TYPE="BUTTON" VALUE="Ustawienia..." OnClick="DoPageSetup()">
+        &nbsp;&nbsp;
+        <INPUT ID=buttonPlus TYPE="BUTTON" VALUE="+" OnClick="Zoomer('in')">
+       
+        <span style="POSITION: relative; TOP: -2px">
+        <INPUT ID="zoomnumber" TYPE="TEXT" VALUE="100" SIZE="3" MAXLENGTH="4" onpropertychange="Zoomer('amount')">&nbsp;<span style="color:white;">%</span>
+        </span>
+       
+        <INPUT ID=buttonMinus TYPE="BUTTON" VALUE="-" OnClick="Zoomer('out')" NAME="buttonMinus"> 
+        <INPUT TYPE="BUTTON" VALUE="25%" OnClick="Zoomer('25%')" ID="Button1" NAME="Button1">
+        <INPUT TYPE="BUTTON" VALUE="50%" OnClick="Zoomer('50%')" ID="Button2" NAME="Button2">
+        <INPUT TYPE="BUTTON" VALUE="100%" OnClick="Zoomer('100%')" ID="Button3" NAME="Button2">
+        &nbsp;&nbsp;
+        <INPUT TYPE="BUTTON" VALUE="Drukuj..." OnClick="DoPrintFromPreview()">
+        <!--&nbsp;&nbsp;-->
+        <!--INPUT ID="marginbutton" TYPE="BUTTON" VALUE="Poka¿ marginesy" ONMOUSEUP="ShowHideMargins()"-->
+        &nbsp;&nbsp;<div style="COLOR: white; FONT-FAMILY: Tahoma, Arial; POSITION: absolute; TOP: 9px; ">
+        Stron: <span id=pageSpan>0</span>&nbsp;<span id=fillSpan style="VISIBILITY: hidden">0</span></div>
+    </DIV>
+
+    <DIV ID="pagecontainer">
+        <DIV ID="zoomcontainer">
+        <!-- Dynamically created pages go here. -->
+        <IMG ID="mmarkerLeft" CLASS="mmarker" SRC="res://printtemplates.exe/MarginLR.gif" WIDTH="10" HEIGHT="10" BORDER="0">
+        <IMG ID="mmarkerRight" CLASS="mmarker" SRC="res://printtemplates.exe/MarginLR.gif" WIDTH="10" HEIGHT="10" BORDER="0">
+        <IMG ID="mmarkerTop" CLASS="mmarker" SRC="res://printtemplates.exe/MarginTB.gif" WIDTH="10" HEIGHT="10" BORDER="0">
+        <IMG ID="mmarkerBottom" CLASS="mmarker" SRC="res://printtemplates.exe/MarginTB.gif" WIDTH="10" HEIGHT="10" BORDER="0">
+        <IMG ID="ratiomarker" CLASS="mmarker" STYLE="visibility:hidden;left:1in;top:1in" SRC="res://printtemplates.exe/MarginTB.gif" WIDTH="10" HEIGHT="10" BORDER="0">
+        </DIV>
+    </DIV>
+
+</BODY>
+</HTML>

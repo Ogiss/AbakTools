@@ -1,0 +1,11 @@
+<grid>
+  <key>Magazyn.StanyMagazynoweView</key>
+  <properties />
+  <columns>
+    <add headertext="Kod" headertextalign="0" width="177" textalign="0" format="" propertypath="TowarKod" readonly="True" />
+    <add headertext="Nazwa" headertextalign="0" width="334" textalign="0" format="" propertypath="TowarNazwa" readonly="True" />
+    <add headertext="Stan mag." headertextalign="3" width="100" textalign="2" format="" propertypath="StanMag" readonly="True" />
+    <add headertext="Rezerwacje" headertextalign="3" width="100" textalign="2" format="" propertypath="Rezerwacje" readonly="True" />
+    <add headertext="Stan razem" headertextalign="3" width="100" textalign="2" format="" propertypath="StanRazem" readonly="True" />
+  </columns>
+</grid>

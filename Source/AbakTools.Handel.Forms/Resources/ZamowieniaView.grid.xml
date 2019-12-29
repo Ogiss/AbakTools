@@ -1,0 +1,21 @@
+<grid>
+  <key>ZamowieniaView</key>
+  <columns>
+    <add headertext="B" width="27" textalign="3" propertypath="Blokada" />
+    <add headertext="Numer" width="66" textalign="1" propertypath="NumerPelny" />
+    <add headertext="Data" width="100" textalign="1" propertypath="DataDodania" />
+    <add headertext="Data aktual." width="95" textalign="1" propertypath="DataAtualizacji" />
+    <add headertext="PR" width="26" textalign="1" propertypath="PrzedstawicielKod" />
+    <add headertext="Kontrahent" width="169" textalign="1" propertypath="KontrahentZam" />
+    <add headertext="ZAM" width="50" textalign="0" propertypath="KtoZamowil" />
+    <add headertext="Na kiedy" width="100" textalign="0" propertypath="NaKiedyData" />
+    <add headertext="Dzień" width="100" textalign="1" propertypath="NaKiedyDzienFull" />
+    <add headertext="Transport" width="100" textalign="1" propertypath="RodzajTransportuStr" />
+    <add headertext="Status" width="195" textalign="1" propertypath="StatusZamowieniaPelny" />
+    <add headertext="Pakowacz" width="31" textalign="1" propertypath="Pakowacz" />
+    <add headertext="Razem" width="100" textalign="0" propertypath="TotalBrutto" />
+    <add headertext="Faktura" width="100" textalign="1" propertypath="FakturaNumer" />
+    <add headertext="Info" width="340" textalign="1" propertypath="PierwszaWiadomosc" />
+    <add headertext="Braki" width="100" textalign="1" propertypath="WartoscBrakiStr" />
+  </columns>
+</grid>

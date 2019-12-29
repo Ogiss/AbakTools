@@ -1,0 +1,12 @@
+<grid>
+  <key>StanyMagazynoweView</key>
+  <sort property="Kod" direction="Ascending" />
+  <columns>
+    <add headertext="Kod" width="179" textalign="1" format="" propertypath="Kod" />
+    <add headertext="Nazwa" width="433" textalign="1" format="" propertypath="Nazwa" />
+    <add headertext="Cena netto" width="100" textalign="2" format="C2" propertypath="CenaNetto" />
+    <add headertext="Stan mag." width="100" textalign="2" format="N2" propertypath="StanMagazynowy" />
+    <add headertext="Rezerwacje" width="100" textalign="2" format="N2" propertypath="IloscZam" />
+    <add headertext="Stan razem" width="100" textalign="2" format="N2" propertypath="StanRazem" />
+  </columns>
+</grid>

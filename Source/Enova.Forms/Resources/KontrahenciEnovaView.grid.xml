@@ -1,0 +1,16 @@
+<grid>
+  <key>KontrahenciEnovaView</key>
+  <sort property="Kod" direction="Ascending" />
+  <properties>
+    <add name="LeftPanelSpliterDistance" value="175" type="System.Int32" />
+  </properties>
+  <columns>
+    <add headertext="BS" headertextalign="3" width="42" textalign="3" format="" propertypath="BlokadaSprzedaży" readonly="True" />
+    <add headertext="Kod" headertextalign="0" width="228" textalign="0" format="" propertypath="Kod" readonly="True" />
+    <add headertext="Nazwa" headertextalign="0" width="553" textalign="0" format="" propertypath="Nazwa" readonly="True" />
+    <add headertext="NIP" headertextalign="3" width="92" textalign="3" format="" propertypath="NIP" readonly="True" />
+    <add headertext="Miejscowosc" headertextalign="0" width="129" textalign="0" format="" propertypath="Adres.Miejscowosc" readonly="True" />
+    <add headertext="Telefon" headertextalign="0" width="153" textalign="0" format="" propertypath="Adres.Telefon" readonly="True" />
+    <add headertext="Email" headertextalign="0" width="165" textalign="0" format="" propertypath="KontaktEMAIL" readonly="True" />
+  </columns>
+</grid>

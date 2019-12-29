@@ -1,0 +1,8 @@
+<grid>
+  <key>StatusyDokumentowSelectView</key>
+  <sort property="Kolejnosc" direction="Ascending" />
+  <columns>
+    <add headertext="Kategoria" width="146" textalign="1" format="" propertypath="Kategoria" />
+    <add headertext="Nazwa" width="304" textalign="1" format="" propertypath="Nazwa" />
+  </columns>
+</grid>

@@ -1,0 +1,7 @@
+<grid>
+  <key>Slownik</key>
+  <columns>
+    <add headertext="Kategoria" width="211" textalign="1" format="" propertypath="Kategoria" />
+    <add headertext="Wartosc" width="495" textalign="1" format="" propertypath="Wartosc" />
+  </columns>
+</grid>
