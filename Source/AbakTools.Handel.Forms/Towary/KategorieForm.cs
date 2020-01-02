@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using Enova.Business.Old.Core;
 using Enova.Business.Old.DB.Web;
 using Enova.Business.Old.Controls;
+using static AbakTools.Handel.Forms.KategorieTreeView;
+using BAL.Forms;
 
 [assembly: BAL.Forms.MenuAction("WebTools\\Kategorie", typeof(AbakTools.Towary.Forms.KategorieForm), MenuAction = BAL.Forms.MenuActionsType.OpenFormModal, Priority = 1020)]
 
@@ -19,7 +21,7 @@ namespace AbakTools.Towary.Forms
     public partial class KategorieForm : Form
     {
 
-        private bool nazwaChanged = false;
+        private List<KategoriaOld> categoriesToRemove = new List<KategoriaOld>();
 
         public KategorieForm()
         {
@@ -42,10 +44,19 @@ namespace AbakTools.Towary.Forms
         private void SaveChanges()
         {
             SaveChanges(kategorieTreeView.RootNode);
+            if (categoriesToRemove.Any())
+            {
+                foreach (IDeleteRecord category in categoriesToRemove)
+                {
+                    category.DeleteRecord();
+                }
+                categoriesToRemove.Clear();
+            }
         }
 
         private void UndoChanges(Enova.Business.Old.Controls.KategorieTreeView.KategoriaTreeNode node)
         {
+            categoriesToRemove.Clear();
             Enova.Business.Old.DB.Web.KategoriaOld kategoria = node.Kategoria;
             if (kategoria != null)
             {
@@ -62,9 +73,9 @@ namespace AbakTools.Towary.Forms
             UndoChanges(kategorieTreeView.RootNode);
         }
 
-        private void DeleteRecord(Enova.Business.Old.Controls.KategorieTreeView.KategoriaTreeNode node)
+        private void DeleteRecord(Enova.Business.Old.Controls.KategorieTreeView.KategoriaTreeNode node, bool confirmed = false)
         {
-            Enova.Business.Old.DB.Web.KategoriaOld kategoria = node.Kategoria;
+            KategoriaOld kategoria = node.Kategoria;
             if (kategoria != null)
             {
                 if (kategoria.PoziomGlebokosci == 0)
@@ -73,14 +84,14 @@ namespace AbakTools.Towary.Forms
                     return;
                 }
 
-                DialogResult result = MessageBox.Show("Czy napewno chcesz usunąć kategorię?", "EnovaTools", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (confirmed || FormManager.Confirm($"Czy napewno chcesz usunąć kategorię {kategoria.Nazwa}?"))
                 {
                     foreach (var n in node.Nodes)
                     {
-                        DeleteRecord((Enova.Business.Old.Controls.KategorieTreeView.KategoriaTreeNode)n);
+                        DeleteRecord((Enova.Business.Old.Controls.KategorieTreeView.KategoriaTreeNode)n, true);
                     }
-                    kategoria.DoUsuniecia = true;
+                    //kategoria.DoUsuniecia = true;
+                    categoriesToRemove.Add(kategoria);
                 }
             }
         }
@@ -88,7 +99,6 @@ namespace AbakTools.Towary.Forms
         private void kategorieTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             kategoriaBindingSource.DataSource = kategorieTreeView.Kategoria;
-            nazwaChanged = false;
         }
 
         private void zatwierdzbbutton_Click(object sender, EventArgs e)
@@ -186,7 +196,6 @@ namespace AbakTools.Towary.Forms
 
         private void nazwaTextBox_TextChanged(object sender, EventArgs e)
         {
-            nazwaChanged = true;
         }
 
         private void przyjaznayLinkTextBox_Enter(object sender, EventArgs e)
@@ -195,7 +204,13 @@ namespace AbakTools.Towary.Forms
 
         private void delButton_Click(object sender, EventArgs e)
         {
+            var node = kategorieTreeView.SelectedNode as KategorieTreeView.KategoriaTreeNode;
 
+            if (node != null)
+            {
+                DeleteRecord(node);
+                node.Remove();
+            }
         }
 
         private void aktywnaTheckBox_CheckedChanged(object sender, EventArgs e)
