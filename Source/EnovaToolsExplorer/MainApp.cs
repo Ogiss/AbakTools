@@ -51,7 +51,7 @@ namespace EnovaToolsExplorer
             CheckdefaultDatabase();
             Assembly.Load(new AssemblyName("AbakTools.Business"));
             Assembly.Load(new AssemblyName("AbakTools.Core"));
-            Assembly.Load(new AssemblyName("AbakTools.CRM"));
+            //Assembly.Load(new AssemblyName("AbakTools.CRM"));
             //Assembly.Load(new AssemblyName("AbakTools.Handel"));
 
             Assembly.Load(new AssemblyName("AbakTools.Business.Forms"));

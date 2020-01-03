@@ -234,6 +234,7 @@ namespace Enova.API
                     //user call
                 }
 
+                /*
                 if (appDomain != null)
                 {
                     if (pingPong != null)
@@ -245,6 +246,12 @@ namespace Enova.API
                     AppDomain.Unload(appDomain);
                     appDomain = null;
 
+                }
+                */
+                if(connector != null)
+                {
+                    connector.Finish();
+                    connector = null;
                 }
                 instance = null;
             }
