@@ -92,6 +92,7 @@ namespace AbakTools.Towary.Forms
                     }
                     //kategoria.DoUsuniecia = true;
                     categoriesToRemove.Add(kategoria);
+                    node.Remove();
                 }
             }
         }
@@ -209,7 +210,6 @@ namespace AbakTools.Towary.Forms
             if (node != null)
             {
                 DeleteRecord(node);
-                node.Remove();
             }
         }
 
