@@ -15607,7 +15607,7 @@ namespace Enova.Business.Old.DB.Web
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        private global::System.Boolean DostepnyOld
+        internal global::System.Boolean DostepnyOld
         {
             get
             {

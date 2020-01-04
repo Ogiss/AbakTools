@@ -188,10 +188,11 @@ namespace Enova.Business.Old.DB.Web
         {
             get
             {
-                return this.Zasob != null ? this.Zasob.Dostepny : true;
+                return this.Zasob?.Dostepny ?? DostepnyOld;
             }
             set
             {
+                DostepnyOld = value;
                 if (this.Zasob != null && this.Zasob.Dostepny != value)
                     this.Zasob.Dostepny = value;
             }

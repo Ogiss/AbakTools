@@ -2206,7 +2206,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="Boolean" Name="Usuniety" />
           <Property Type="Int32" Name="DostawcaID" />
           <NavigationProperty Name="Dostawca" Relationship="WebModel.DostawcaProdukt" FromRole="Produkt" ToRole="Dostawca" />
-          <Property Type="Boolean" Name="DostepnyOld" Nullable="false" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Private" />
+          <Property Type="Boolean" Name="DostepnyOld" Nullable="false" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Internal" />
           <NavigationProperty Name="KategorieProduktu" Relationship="WebModel.ProduktKategoriaProdukt" FromRole="Produkt" ToRole="KategoriaProdukt" />
           <NavigationProperty Name="PozycjeZwrotow" Relationship="WebModel.ProduktPozycjeZwrotow" FromRole="Produkt" ToRole="PozycjeZwrotow" />
           <Property Type="Int32" Name="Kolejnosc" Nullable="false" />

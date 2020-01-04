@@ -59,6 +59,11 @@ namespace Enova.Business.Old.Web
             return base.GetSortedRows(query);
         }
 
-
+        public override object CreateNewRecord()
+        {
+            var product = (Produkt)base.CreateNewRecord();
+            product.DostepnyOld = true;
+            return product;
+        }
     }
 }

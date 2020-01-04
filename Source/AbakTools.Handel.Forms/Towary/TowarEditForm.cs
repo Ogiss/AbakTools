@@ -31,7 +31,7 @@ namespace AbakTools.Towary.Forms
         private Enova.Business.Old.DB.Web.Zdjecie zdjecieOkladki = null;
 
 
-        public Enova.Business.Old.DB.Web.Produkt Towar
+        public Produkt Towar
         {
             get { return (Enova.Business.Old.DB.Web.Produkt)this.DataSource; }
         }
