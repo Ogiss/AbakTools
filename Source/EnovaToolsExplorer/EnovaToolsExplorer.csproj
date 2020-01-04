@@ -207,7 +207,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="App.Production.Config">
+    <None Include="App.Release.Config">
       <SubType>Designer</SubType>
     </None>
     <None Include="App.Development.Config">
