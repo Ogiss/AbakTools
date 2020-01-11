@@ -2089,10 +2089,12 @@ namespace AbakTools.Zamowienia.Forms
 
         private void kontrahentEnovaSelect_ValueChanged(object sender, EventArgs e)
         {
-
-            var kontrahent = Enova.Business.Old.DB.Web.Kontrahent.GetKontrahent(DbContext, (Enova.API.CRM.Kontrahent)this.kontrahentEnovaSelect.SelectedItem);
-            if (kontrahent == null)
+            var enovaKontrahent = (Enova.API.CRM.Kontrahent)this.kontrahentEnovaSelect.SelectedItem;
+            var kontrahent = Enova.Business.Old.DB.Web.Kontrahent.GetKontrahent(DbContext, enovaKontrahent);
+            if (kontrahent == null && enovaKontrahent != null)
             {
+                kontrahent = new DBWeb.Kontrahent(enovaKontrahent);
+                (kontrahent as Enova.Business.Old.Core.ISaveChanges).SaveChanges();
             }
             if (kontrahent != null && (Zamowienie.Kontrahent == null || Zamowienie.Kontrahent.Guid != kontrahent.Guid))
             {
