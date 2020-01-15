@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kategorieTreeView = new Enova.Business.Old.Controls.KategorieTreeView();
             this.nieaktywneCheckBox = new System.Windows.Forms.CheckBox();
             this.towaryEnovaCheckBox = new System.Windows.Forms.CheckBox();
             this.findTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dostawcaComboBox = new System.Windows.Forms.ComboBox();
+            this.dostawcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Kod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,9 +47,6 @@
             this.Gotowy = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TowarEnovaColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Synchronizacja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dostawcaComboBox = new System.Windows.Forms.ComboBox();
-            this.dostawcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TopSplitContainer)).BeginInit();
             this.TopSplitContainer.Panel1.SuspendLayout();
             this.TopSplitContainer.Panel2.SuspendLayout();
@@ -120,6 +120,8 @@
             this.TowarEnovaColumn,
             this.Synchronizacja});
             this.DataGrid.Size = new System.Drawing.Size(1135, 612);
+            this.DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_CellContentClick);
+            this.DataGrid.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DataGrid_RowPrePaint);
             this.DataGrid.SelectionChanged += new System.EventHandler(this.DataGrid_SelectionChanged);
             this.DataGrid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DataGrid_KeyPress);
             // 
@@ -156,6 +158,7 @@
             this.towaryEnovaCheckBox.TabIndex = 3;
             this.towaryEnovaCheckBox.Text = "Towary Enova";
             this.towaryEnovaCheckBox.UseVisualStyleBackColor = true;
+            this.towaryEnovaCheckBox.Visible = false;
             this.towaryEnovaCheckBox.CheckedChanged += new System.EventHandler(this.towaryEnovaCheckBox_CheckedChanged);
             // 
             // findTextBox
@@ -174,6 +177,31 @@
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Szukaj:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(441, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Dostawca:";
+            // 
+            // dostawcaComboBox
+            // 
+            this.dostawcaComboBox.DataSource = this.dostawcaBindingSource;
+            this.dostawcaComboBox.DisplayMember = "Nazwa";
+            this.dostawcaComboBox.FormattingEnabled = true;
+            this.dostawcaComboBox.Location = new System.Drawing.Point(506, 15);
+            this.dostawcaComboBox.Name = "dostawcaComboBox";
+            this.dostawcaComboBox.Size = new System.Drawing.Size(198, 21);
+            this.dostawcaComboBox.TabIndex = 7;
+            this.dostawcaComboBox.ValueMember = "ID";
+            this.dostawcaComboBox.SelectionChangeCommitted += new System.EventHandler(this.dostawcaComboBox_SelectionChangeCommitted);
+            // 
+            // dostawcaBindingSource
+            // 
+            this.dostawcaBindingSource.DataSource = typeof(AbakTools.Towary.Forms.DostawcaInfo);
             // 
             // Kod
             // 
@@ -196,10 +224,10 @@
             // Cena
             // 
             this.Cena.DataPropertyName = "Cena";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Cena.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Cena.DefaultCellStyle = dataGridViewCellStyle1;
             this.Cena.HeaderText = "Cena";
             this.Cena.Name = "Cena";
             this.Cena.ReadOnly = true;
@@ -207,15 +235,15 @@
             // StawkaVat
             // 
             this.StawkaVat.DataPropertyName = "StawkaVat";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.StawkaVat.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.StawkaVat.DefaultCellStyle = dataGridViewCellStyle2;
             this.StawkaVat.HeaderText = "StawkaVat";
             this.StawkaVat.Name = "StawkaVat";
             this.StawkaVat.ReadOnly = true;
             // 
             // Aktywny
             // 
-            this.Aktywny.DataPropertyName = "Aktywny";
+            this.Aktywny.DataPropertyName = "IsActive";
             this.Aktywny.HeaderText = "Aktywny";
             this.Aktywny.Name = "Aktywny";
             this.Aktywny.ReadOnly = true;
@@ -244,31 +272,6 @@
             this.Synchronizacja.HeaderText = "Synchronizacja";
             this.Synchronizacja.Name = "Synchronizacja";
             this.Synchronizacja.ReadOnly = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(441, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Dostawca:";
-            // 
-            // dostawcaComboBox
-            // 
-            this.dostawcaComboBox.DataSource = this.dostawcaBindingSource;
-            this.dostawcaComboBox.DisplayMember = "Nazwa";
-            this.dostawcaComboBox.FormattingEnabled = true;
-            this.dostawcaComboBox.Location = new System.Drawing.Point(506, 15);
-            this.dostawcaComboBox.Name = "dostawcaComboBox";
-            this.dostawcaComboBox.Size = new System.Drawing.Size(198, 21);
-            this.dostawcaComboBox.TabIndex = 7;
-            this.dostawcaComboBox.ValueMember = "ID";
-            this.dostawcaComboBox.SelectionChangeCommitted += new System.EventHandler(this.dostawcaComboBox_SelectionChangeCommitted);
-            // 
-            // dostawcaBindingSource
-            // 
-            this.dostawcaBindingSource.DataSource = typeof(AbakTools.Towary.Forms.DostawcaInfo);
             // 
             // TowaryForm
             // 
@@ -312,6 +315,9 @@
         private System.Windows.Forms.CheckBox nieaktywneCheckBox;
         private System.Windows.Forms.TextBox findTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox dostawcaComboBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource dostawcaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kod;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cena;
@@ -320,8 +326,5 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Gotowy;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TowarEnovaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Synchronizacja;
-        private System.Windows.Forms.ComboBox dostawcaComboBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.BindingSource dostawcaBindingSource;
     }
 }

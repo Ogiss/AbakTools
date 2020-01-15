@@ -6,8 +6,9 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using DbWeb = Enova.Business.Old.DB.Web;
 
-[assembly: BAL.Forms.MenuAction("WebTools\\Towary", typeof(AbakTools.Towary.Forms.TowaryForm), Priority=1040)]
+[assembly: BAL.Forms.MenuAction("WebTools\\Towary", typeof(AbakTools.Towary.Forms.TowaryForm), Priority = 1040)]
 
 namespace AbakTools.Towary.Forms
 {
@@ -87,7 +88,7 @@ namespace AbakTools.Towary.Forms
 
         private void findTextBox_TextChanged(object sender, EventArgs e)
         {
-            if(!string.IsNullOrWhiteSpace(findTextBox.Text))
+            if (!string.IsNullOrWhiteSpace(findTextBox.Text))
             {
                 try
                 {
@@ -112,7 +113,7 @@ namespace AbakTools.Towary.Forms
 
         private void DataGrid_SelectionChanged(object sender, EventArgs e)
         {
-            if(!disableOnSelectionChanged)
+            if (!disableOnSelectionChanged)
             {
                 findTextBox.Text = "";
             }
@@ -122,9 +123,9 @@ namespace AbakTools.Towary.Forms
         {
             var dostawcy = new List<DostawcaInfo>();
             dostawcy.Add(new DostawcaInfo() { ID = 0, Nazwa = "Wszyscy" });
-            if(!this.DesignMode)
+            if (!this.DesignMode)
             {
-                using(var dc = new Enova.Business.Old.DB.Web.WebContext())
+                using (var dc = new Enova.Business.Old.DB.Web.WebContext())
                 {
                     dostawcy.AddRange(from d in dc.Dostawcy orderby d.Nazwa select new DostawcaInfo() { ID = d.ID, Nazwa = d.Nazwa });
                 }
@@ -137,10 +138,49 @@ namespace AbakTools.Towary.Forms
 
         private void dostawcaComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if(!disableDostawcaChanged)
+            if (!disableDostawcaChanged)
             {
                 LoadData();
             }
+        }
+
+        private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DataGrid_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < DataGrid.Rows.Count)
+            {
+                var row = DataGrid.Rows[e.RowIndex];
+                var product = row?.DataBoundItem as DbWeb.Produkt;
+
+                if(row != null && row.Selected)
+                {
+                    row.DefaultCellStyle.Font = new Font(DataGrid.DefaultCellStyle.Font, FontStyle.Bold);
+                }
+                else if(row != null)
+                {
+                    row.DefaultCellStyle.Font = new Font(DataGrid.DefaultCellStyle.Font, FontStyle.Regular);
+                }
+
+                if(product != null)
+                {
+                    Color? backColor = product.IsNew ? Color.LightBlue : (product.IsEdited ? Color.LightGreen : (Color?)null);
+
+                    if (backColor.HasValue)
+                    {
+                        row.DefaultCellStyle.BackColor = backColor.Value;
+                    }
+
+                    if (!product.IsActive)
+                    {
+                        row.DefaultCellStyle.ForeColor = Color.Red;
+                        row.DefaultCellStyle.SelectionForeColor = Color.Red;
+                    }
+                }
+            };
         }
     }
 }

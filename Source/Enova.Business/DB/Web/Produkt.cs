@@ -184,6 +184,8 @@ namespace Enova.Business.Old.DB.Web
             }
         }
 
+        public bool IsActive => !Blokada;
+
         public bool Dostepny
         {
             get
@@ -197,6 +199,9 @@ namespace Enova.Business.Old.DB.Web
                     this.Zasob.Dostepny = value;
             }
         }
+
+        public bool IsNew => Synchronizacja == (byte)RowSynchronizeOld.NotsynchronizedNew;
+        public bool IsEdited => Synchronizacja == (byte)RowSynchronizeOld.NotsynchronizedEdit;
 
         public Produkt()
         {
