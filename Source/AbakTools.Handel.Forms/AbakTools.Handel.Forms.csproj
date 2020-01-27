@@ -512,6 +512,10 @@
       <Project>{2BCDD22E-6A64-4E1A-BC00-B41F5D9D4F32}</Project>
       <Name>AbakTools.Forms</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Framework\AbakTools.Framework.csproj">
+      <Project>{e356a448-002d-4e82-8238-f07153f8051e}</Project>
+      <Name>AbakTools.Framework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AbakTools.Handel\AbakTools.Handel.csproj">
       <Project>{EC074DC9-2E25-4282-B483-15383EA7FC29}</Project>
       <Name>AbakTools.Handel</Name>

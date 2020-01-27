@@ -885,6 +885,10 @@
       <Project>{3950B48F-EB91-4B4B-B1FE-6E95570ADA9B}</Project>
       <Name>AbakTools.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Framework\AbakTools.Framework.csproj">
+      <Project>{e356a448-002d-4e82-8238-f07153f8051e}</Project>
+      <Name>AbakTools.Framework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AbakTools.Printer\AbakTools.Printer.csproj">
       <Project>{98ED01DC-AE4F-4DC9-8A5D-2B540D605E71}</Project>
       <Name>AbakTools.Printer</Name>

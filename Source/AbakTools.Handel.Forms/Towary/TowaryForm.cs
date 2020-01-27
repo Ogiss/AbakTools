@@ -156,15 +156,6 @@ namespace AbakTools.Towary.Forms
                 var row = DataGrid.Rows[e.RowIndex];
                 var product = row?.DataBoundItem as DbWeb.Produkt;
 
-                if(row != null && row.Selected)
-                {
-                    row.DefaultCellStyle.Font = new Font(DataGrid.DefaultCellStyle.Font, FontStyle.Bold);
-                }
-                else if(row != null)
-                {
-                    row.DefaultCellStyle.Font = new Font(DataGrid.DefaultCellStyle.Font, FontStyle.Regular);
-                }
-
                 if(product != null)
                 {
                     Color? backColor = product.IsNew ? Color.LightBlue : (product.IsEdited ? Color.LightGreen : (Color?)null);
@@ -172,6 +163,11 @@ namespace AbakTools.Towary.Forms
                     if (backColor.HasValue)
                     {
                         row.DefaultCellStyle.BackColor = backColor.Value;
+                        row.Cells[7].Style.SelectionBackColor = backColor.Value;
+                        if (product.IsActive)
+                        {
+                            row.Cells[7].Style.SelectionForeColor = Color.Black;
+                        }
                     }
 
                     if (!product.IsActive)

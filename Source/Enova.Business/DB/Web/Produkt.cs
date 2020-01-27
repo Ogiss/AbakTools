@@ -9,6 +9,8 @@ using System.Data.Objects.DataClasses;
 using Enova.Business.Old.Types;
 using Enova.Business.Old.Core;
 using System.IO;
+using AbakTools.Framework.Logging;
+using System.Web.UI.WebControls;
 
 namespace Enova.Business.Old.DB.Web
 {
@@ -127,7 +129,7 @@ namespace Enova.Business.Old.DB.Web
             {
                 if (this.Cena != null && this.StawkaVat != null)
                 {
-                    return decimal.Round(this.Cena.Value * (1M + (decimal)this.StawkaVat.Procent/100M), 2);
+                    return decimal.Round(this.Cena.Value * (1M + (decimal)this.StawkaVat.Procent / 100M), 2);
                 }
                 return null;
             }
@@ -139,7 +141,7 @@ namespace Enova.Business.Old.DB.Web
             {
                 if (this.CenaBrutto != null)
                 {
-                    return this.CenaBrutto.ToString() + " zł"; 
+                    return this.CenaBrutto.ToString() + " zł";
                 }
                 return null;
             }
@@ -150,7 +152,7 @@ namespace Enova.Business.Old.DB.Web
                 }
                 else
                 {
-                    
+
                 }
             }
         }
@@ -180,7 +182,7 @@ namespace Enova.Business.Old.DB.Web
             {
                 if (this.Zasob != null && this.Zasob.Blokada != value)
                     this.Zasob.Blokada = value;
-                    
+
             }
         }
 
@@ -325,7 +327,7 @@ namespace Enova.Business.Old.DB.Web
             return null;
         }
 
-        public Feature SetFeature(EnovaContext ec, string featureName, string data, string dataKey = null, int lp=0)
+        public Feature SetFeature(EnovaContext ec, string featureName, string data, string dataKey = null, int lp = 0)
         {
             var t = this.GetTowarEnova(ec);
             if (t != null)
@@ -382,7 +384,7 @@ namespace Enova.Business.Old.DB.Web
 
         public void SetOgraniczenieSprzedazyStan(EnovaContext ec, int stanMagazynu)
         {
-            if (ec != null && this.EnovaGuid!= null)
+            if (ec != null && this.EnovaGuid != null)
             {
                 var feature = this.GetFeature(ec, "STAN MAGAZYNU");
                 if (feature != null)
@@ -523,6 +525,7 @@ namespace Enova.Business.Old.DB.Web
 
         public bool DeleteRecord()
         {
+            /*
             if ((this.Synchronizacja == (int)RowSynchronizeOld.NotsynchronizedNew && (this.Gotowy == null || this.Gotowy == false)) || this.Synchronizacja == (int)RowSynchronizeOld.Notsaved)
             {
                 var dc = Enova.Business.Old.Core.ContextManager.WebContext;
@@ -561,6 +564,24 @@ namespace Enova.Business.Old.DB.Web
                 Enova.Business.Old.Core.ContextManager.WebContext.OptimisticSaveChanges();
             }
             return true;
+            */
+
+            try
+            {
+
+                this.Stamp = DateTime.Now;
+                this.Usuniety = true;
+                this.Synchronizacja = (int)RowSynchronizeOld.NotsynchronizedDelete;
+                Enova.Business.Old.Core.ContextManager.WebContext.OptimisticSaveChanges();
+            }
+            catch(Exception ex)
+            {
+                LogProvider.GetLogger(LogNames.Application).Error(ex.ToString());
+                return false;
+            }
+
+            return true;
+
         }
 
         partial void OnNazwaChanged()
@@ -575,7 +596,7 @@ namespace Enova.Business.Old.DB.Web
         {
             get
             {
-                if (this.KategorieProduktu.Where(k=>k.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete).Count() == 0)
+                if (this.KategorieProduktu.Where(k => k.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete).Count() == 0)
                 {
                     validationError = "Nie przydzielono kategorii do produktu";
                     return false;
@@ -669,7 +690,7 @@ namespace Enova.Business.Old.DB.Web
             rec.EnovaStamp = this.EnovaStamp;
             rec.Gotowy = false;
             rec.GUID = Guid.NewGuid();
-            rec.Ilosc =1;
+            rec.Ilosc = 1;
             rec.Indexed = false;
             rec.JednostkaMiary = this.JednostkaMiary;
             rec.Kod = this.Kod;
@@ -692,13 +713,13 @@ namespace Enova.Business.Old.DB.Web
             rec.Usuniety = this.Usuniety;
             rec.VisibleAV = this.VisibleAV;
 
-            foreach (var kp in this.KategorieProduktu.Where(r=>r.Deleted == false && r.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete).ToList())
+            foreach (var kp in this.KategorieProduktu.Where(r => r.Deleted == false && r.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete).ToList())
             {
                 var nkp = new KategoriaProdukt();
                 nkp.Produkt = rec;
                 nkp.Gotowy = false;
                 nkp.Guid = Guid.NewGuid();
-                
+
                 nkp.KategoriaOld = kp.KategoriaOld;
                 nkp.Pozycja = kp.Pozycja;
                 nkp.Stamp = DateTime.Now;
