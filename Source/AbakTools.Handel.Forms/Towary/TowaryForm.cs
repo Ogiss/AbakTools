@@ -156,9 +156,11 @@ namespace AbakTools.Towary.Forms
                 var row = DataGrid.Rows[e.RowIndex];
                 var product = row?.DataBoundItem as DbWeb.Produkt;
 
-                if(product != null)
+                if (product != null)
                 {
-                    Color? backColor = product.IsNew ? Color.LightBlue : (product.IsEdited ? Color.LightGreen : (Color?)null);
+                    var pink = Color.FromArgb(204, 67, 136);
+                    Color? backColor = product.NotWebAvailable ? pink :
+                        (product.IsNew ? Color.LightBlue : (product.IsEdited ? Color.LightGreen : (Color?)null));
 
                     if (backColor.HasValue)
                     {

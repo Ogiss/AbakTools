@@ -1158,6 +1158,5 @@ namespace AbakTools.Towary.Forms
         {
             setFormText();
         }
-
     }
 }

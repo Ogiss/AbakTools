@@ -84,6 +84,8 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("WebModel", "HistoriaZamowieniaOperator", "HistoriaZamowienia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Enova.Business.Old.DB.Web.HistoriaZamowienia), "Operator", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Enova.Business.Old.DB.Web.Operator), true)]
 [assembly: EdmRelationshipAttribute("WebModel", "ZamowienieOperator", "Zamowienie", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Enova.Business.Old.DB.Web.Zamowienie), "Operator", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Enova.Business.Old.DB.Web.Operator), true)]
 [assembly: EdmRelationshipAttribute("WebModel", "WiadomoscOperator", "Wiadomosc", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Enova.Business.Old.DB.Web.Wiadomosc), "Operator", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Enova.Business.Old.DB.Web.Operator), true)]
+[assembly: EdmRelationshipAttribute("WebModel", "FK_Zamowienia_PozycjeZamowien", "Zamowienie", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Enova.Business.Old.DB.Web.Zamowienie), "Zamowienie1", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Enova.Business.Old.DB.Web.Zamowienie), true)]
+[assembly: EdmRelationshipAttribute("WebModel", "FK_Zwroty_PozycjeZwrotow", "Zwrot", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Enova.Business.Old.DB.Web.Zwrot), "Zwrot1", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Enova.Business.Old.DB.Web.Zwrot), true)]
 
 #endregion
 
@@ -7089,6 +7091,30 @@ namespace Enova.Business.Old.DB.Web
         private global::System.Byte[] _Stamp;
         partial void OnStampChanging(global::System.Byte[] value);
         partial void OnStampChanged();
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Operator
+        {
+            get
+            {
+                return _Operator;
+            }
+            set
+            {
+                OnOperatorChanging(value);
+                ReportPropertyChanging("Operator");
+                _Operator = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Operator");
+                OnOperatorChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Operator;
+        partial void OnOperatorChanging(Nullable<global::System.Int32> value);
+        partial void OnOperatorChanged();
 
         #endregion
 
@@ -9598,6 +9624,30 @@ namespace Enova.Business.Old.DB.Web
         private global::System.String _Value;
         partial void OnValueChanging(global::System.String value);
         partial void OnValueChanged();
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Operator
+        {
+            get
+            {
+                return _Operator;
+            }
+            set
+            {
+                OnOperatorChanging(value);
+                ReportPropertyChanging("Operator");
+                _Operator = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Operator");
+                OnOperatorChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Operator;
+        partial void OnOperatorChanging(Nullable<global::System.Int32> value);
+        partial void OnOperatorChanged();
 
         #endregion
 
@@ -11586,6 +11636,30 @@ namespace Enova.Business.Old.DB.Web
         private Nullable<global::System.Int32> _RodzajID;
         partial void OnRodzajIDChanging(Nullable<global::System.Int32> value);
         partial void OnRodzajIDChanged();
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Operator
+        {
+            get
+            {
+                return _Operator;
+            }
+            set
+            {
+                OnOperatorChanging(value);
+                ReportPropertyChanging("Operator");
+                _Operator = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Operator");
+                OnOperatorChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Operator;
+        partial void OnOperatorChanging(Nullable<global::System.Int32> value);
+        partial void OnOperatorChanged();
 
         #endregion
 
@@ -12382,6 +12456,54 @@ namespace Enova.Business.Old.DB.Web
         private global::System.String _KodyPrzedstawicieli;
         partial void OnKodyPrzedstawicieliChanging(global::System.String value);
         partial void OnKodyPrzedstawicieliChanged();
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> PracownikID
+        {
+            get
+            {
+                return _PracownikID;
+            }
+            set
+            {
+                OnPracownikIDChanging(value);
+                ReportPropertyChanging("PracownikID");
+                _PracownikID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PracownikID");
+                OnPracownikIDChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _PracownikID;
+        partial void OnPracownikIDChanging(Nullable<global::System.Int32> value);
+        partial void OnPracownikIDChanged();
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> UserID
+        {
+            get
+            {
+                return _UserID;
+            }
+            set
+            {
+                OnUserIDChanging(value);
+                ReportPropertyChanging("UserID");
+                _UserID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UserID");
+                OnUserIDChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _UserID;
+        partial void OnUserIDChanging(Nullable<global::System.Int32> value);
+        partial void OnUserIDChanged();
 
         #endregion
 
@@ -12413,7 +12535,8 @@ namespace Enova.Business.Old.DB.Web
         /// <param name="deleted">Nieprawidłowa wartość właściwości Deleted.</param>
         /// <param name="synchronize">Nieprawidłowa wartość właściwości Synchronize.</param>
         /// <param name="stamp">Nieprawidłowa wartość właściwości Stamp.</param>
-        public static PozycjaReklamacji CreatePozycjaReklamacji(global::System.Int32 id, global::System.Int32 reklamacjaID, global::System.Int32 lp, global::System.Boolean indywidualny, global::System.Decimal cena, global::System.Boolean korekta, global::System.Double iloscBraki, global::System.Double iloscNadwyzki, global::System.Int32 opcje, global::System.Boolean deleted, global::System.Int32 synchronize, global::System.Byte[] stamp)
+        /// <param name="guid">Nieprawidłowa wartość właściwości Guid.</param>
+        public static PozycjaReklamacji CreatePozycjaReklamacji(global::System.Int32 id, global::System.Int32 reklamacjaID, global::System.Int32 lp, global::System.Boolean indywidualny, global::System.Decimal cena, global::System.Boolean korekta, global::System.Double iloscBraki, global::System.Double iloscNadwyzki, global::System.Int32 opcje, global::System.Boolean deleted, global::System.Int32 synchronize, global::System.Byte[] stamp, global::System.Guid guid)
         {
             PozycjaReklamacji pozycjaReklamacji = new PozycjaReklamacji();
             pozycjaReklamacji.ID = id;
@@ -12428,6 +12551,7 @@ namespace Enova.Business.Old.DB.Web
             pozycjaReklamacji.Deleted = deleted;
             pozycjaReklamacji.Synchronize = synchronize;
             pozycjaReklamacji.Stamp = stamp;
+            pozycjaReklamacji.Guid = guid;
             return pozycjaReklamacji;
         }
 
@@ -12821,6 +12945,30 @@ namespace Enova.Business.Old.DB.Web
         private global::System.Byte[] _Stamp;
         partial void OnStampChanging(global::System.Byte[] value);
         partial void OnStampChanged();
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid Guid
+        {
+            get
+            {
+                return _Guid;
+            }
+            set
+            {
+                OnGuidChanging(value);
+                ReportPropertyChanging("Guid");
+                _Guid = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Guid");
+                OnGuidChanged();
+            }
+        }
+        private global::System.Guid _Guid;
+        partial void OnGuidChanging(global::System.Guid value);
+        partial void OnGuidChanged();
 
         #endregion
 
@@ -14738,7 +14886,8 @@ namespace Enova.Business.Old.DB.Web
         /// <param name="stanMag">Nieprawidłowa wartość właściwości StanMag.</param>
         /// <param name="visibleAV">Nieprawidłowa wartość właściwości VisibleAV.</param>
         /// <param name="wyprzedaz">Nieprawidłowa wartość właściwości Wyprzedaz.</param>
-        public static Produkt CreateProdukt(global::System.Int32 id, global::System.Guid gUID, global::System.Int64 enovaStamp, global::System.Byte[] rowVer, global::System.Boolean towarEnova, global::System.Int32 kolejnosc, global::System.Boolean disableAVList, global::System.Boolean kontrolaStanuMag, global::System.Double stanMag, global::System.Boolean visibleAV, global::System.Boolean wyprzedaz)
+        /// <param name="notWebAvailable">Nieprawidłowa wartość właściwości NotWebAvailable.</param>
+        public static Produkt CreateProdukt(global::System.Int32 id, global::System.Guid gUID, global::System.Int64 enovaStamp, global::System.Byte[] rowVer, global::System.Boolean towarEnova, global::System.Int32 kolejnosc, global::System.Boolean disableAVList, global::System.Boolean kontrolaStanuMag, global::System.Double stanMag, global::System.Boolean visibleAV, global::System.Boolean wyprzedaz, global::System.Boolean notWebAvailable)
         {
             Produkt produkt = new Produkt();
             produkt.ID = id;
@@ -14752,6 +14901,7 @@ namespace Enova.Business.Old.DB.Web
             produkt.StanMag = stanMag;
             produkt.VisibleAV = visibleAV;
             produkt.Wyprzedaz = wyprzedaz;
+            produkt.NotWebAvailable = notWebAvailable;
             return produkt;
         }
 
@@ -15865,6 +16015,30 @@ namespace Enova.Business.Old.DB.Web
         private global::System.Boolean _Wyprzedaz;
         partial void OnWyprzedazChanging(global::System.Boolean value);
         partial void OnWyprzedazChanged();
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean NotWebAvailable
+        {
+            get
+            {
+                return _NotWebAvailable;
+            }
+            set
+            {
+                OnNotWebAvailableChanging(value);
+                ReportPropertyChanging("NotWebAvailable");
+                _NotWebAvailable = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NotWebAvailable");
+                OnNotWebAvailableChanged();
+            }
+        }
+        private global::System.Boolean _NotWebAvailable;
+        partial void OnNotWebAvailableChanging(global::System.Boolean value);
+        partial void OnNotWebAvailableChanged();
 
         #endregion
 
@@ -26525,6 +26699,82 @@ namespace Enova.Business.Old.DB.Web
                 }
             }
         }
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WebModel", "FK_Zamowienia_PozycjeZamowien", "Zamowienie1")]
+        public Zamowienie Zamowienia1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Zamowienie>("WebModel.FK_Zamowienia_PozycjeZamowien", "Zamowienie1").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Zamowienie>("WebModel.FK_Zamowienia_PozycjeZamowien", "Zamowienie1").Value = value;
+            }
+        }
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Zamowienie> Zamowienia1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Zamowienie>("WebModel.FK_Zamowienia_PozycjeZamowien", "Zamowienie1");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Zamowienie>("WebModel.FK_Zamowienia_PozycjeZamowien", "Zamowienie1", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WebModel", "FK_Zamowienia_PozycjeZamowien", "Zamowienie")]
+        public Zamowienie Zamowienia2
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Zamowienie>("WebModel.FK_Zamowienia_PozycjeZamowien", "Zamowienie").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Zamowienie>("WebModel.FK_Zamowienia_PozycjeZamowien", "Zamowienie").Value = value;
+            }
+        }
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Zamowienie> Zamowienia2Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Zamowienie>("WebModel.FK_Zamowienia_PozycjeZamowien", "Zamowienie");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Zamowienie>("WebModel.FK_Zamowienia_PozycjeZamowien", "Zamowienie", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -27591,6 +27841,54 @@ namespace Enova.Business.Old.DB.Web
         private global::System.String _SezonDodatkowy;
         partial void OnSezonDodatkowyChanging(global::System.String value);
         partial void OnSezonDodatkowyChanged();
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> StatusOprID
+        {
+            get
+            {
+                return _StatusOprID;
+            }
+            set
+            {
+                OnStatusOprIDChanging(value);
+                ReportPropertyChanging("StatusOprID");
+                _StatusOprID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StatusOprID");
+                OnStatusOprIDChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _StatusOprID;
+        partial void OnStatusOprIDChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusOprIDChanged();
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String StatusOprKod
+        {
+            get
+            {
+                return _StatusOprKod;
+            }
+            set
+            {
+                OnStatusOprKodChanging(value);
+                ReportPropertyChanging("StatusOprKod");
+                _StatusOprKod = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("StatusOprKod");
+                OnStatusOprKodChanged();
+            }
+        }
+        private global::System.String _StatusOprKod;
+        partial void OnStatusOprKodChanging(global::System.String value);
+        partial void OnStatusOprKodChanged();
 
         #endregion
 
@@ -29105,6 +29403,30 @@ namespace Enova.Business.Old.DB.Web
         private global::System.String _Sezon4;
         partial void OnSezon4Changing(global::System.String value);
         partial void OnSezon4Changed();
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> OstatniaHistoriaOperatorID
+        {
+            get
+            {
+                return _OstatniaHistoriaOperatorID;
+            }
+            set
+            {
+                OnOstatniaHistoriaOperatorIDChanging(value);
+                ReportPropertyChanging("OstatniaHistoriaOperatorID");
+                _OstatniaHistoriaOperatorID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("OstatniaHistoriaOperatorID");
+                OnOstatniaHistoriaOperatorIDChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _OstatniaHistoriaOperatorID;
+        partial void OnOstatniaHistoriaOperatorIDChanging(Nullable<global::System.Int32> value);
+        partial void OnOstatniaHistoriaOperatorIDChanged();
 
         #endregion
 
@@ -29287,6 +29609,82 @@ namespace Enova.Business.Old.DB.Web
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<KorektaZwrot>("WebModel.ZwrotKorektyZwroty", "KorektyZwroty", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WebModel", "FK_Zwroty_PozycjeZwrotow", "Zwrot1")]
+        public Zwrot Zwroty1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Zwrot>("WebModel.FK_Zwroty_PozycjeZwrotow", "Zwrot1").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Zwrot>("WebModel.FK_Zwroty_PozycjeZwrotow", "Zwrot1").Value = value;
+            }
+        }
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Zwrot> Zwroty1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Zwrot>("WebModel.FK_Zwroty_PozycjeZwrotow", "Zwrot1");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Zwrot>("WebModel.FK_Zwroty_PozycjeZwrotow", "Zwrot1", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WebModel", "FK_Zwroty_PozycjeZwrotow", "Zwrot")]
+        public Zwrot Zwroty2
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Zwrot>("WebModel.FK_Zwroty_PozycjeZwrotow", "Zwrot").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Zwrot>("WebModel.FK_Zwroty_PozycjeZwrotow", "Zwrot").Value = value;
+            }
+        }
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Zwrot> Zwroty2Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Zwrot>("WebModel.FK_Zwroty_PozycjeZwrotow", "Zwrot");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Zwrot>("WebModel.FK_Zwroty_PozycjeZwrotow", "Zwrot", value);
                 }
             }
         }

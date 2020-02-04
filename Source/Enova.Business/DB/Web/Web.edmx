@@ -25,6 +25,8 @@
           <Property Name="Stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
           <Property Name="KodPrzedstawiciela" Type="varchar" MaxLength="10" />
           <Property Name="KodyPrzedstawicieli" Type="varchar" MaxLength="100" />
+          <Property Name="PracownikID" Type="int" />
+          <Property Name="UserID" Type="int" />
         </EntityType>
         <EntityType Name="DefinicjeDokumentow">
           <Key>
@@ -212,6 +214,7 @@
           <Property Name="key" Type="varchar" MaxLength="128" />
           <Property Name="value" Type="text" />
           <Property Name="UserID" Type="int" />
+          <Property Name="Operator" Type="int" />
         </EntityType>
         <EntityType Name="CzasyPracy">
           <Key>
@@ -288,8 +291,9 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Data" Type="datetime" Nullable="false" />
-          <Property Name="Zwrot" Type="int" Nullable="false" />
+          <Property Name="Zwrot" Type="int" />
           <Property Name="Uzytkownik" Type="int" />
+          <Property Name="Operator" Type="int" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="Deleted" Type="bit" Nullable="false" />
           <Property Name="Synchronize" Type="int" Nullable="false" />
@@ -406,6 +410,7 @@
           <Property Name="Opis" Type="text" />
           <Property Name="Rodzaj" Type="int" />
           <Property Name="Uzytkownik" Type="int" />
+          <Property Name="Operator" Type="int" />
         </EntityType>
         <EntityType Name="PozycjeZamowien">
           <Key>
@@ -415,7 +420,7 @@
           <Property Name="GUID" Type="uniqueidentifier" />
           <Property Name="PSID" Type="int" />
           <Property Name="Ident" Type="int" />
-          <Property Name="Zamowienie" Type="int" />
+          <Property Name="Zamowienie" Type="int" Nullable="false" />
           <Property Name="ProduktIndywidualny" Type="bit" />
           <Property Name="ProduktNazwa" Type="varchar" MaxLength="256" />
           <Property Name="Produkt" Type="int" />
@@ -508,6 +513,7 @@
           <Property Name="OrderIndex" Type="nvarchar" MaxLength="50" />
           <Property Name="SearchIndex" Type="nvarchar" MaxLength="50" />
           <Property Name="Wyprzedaz" Type="bit" Nullable="false" />
+          <Property Name="NotWebAvailable" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="product_attribute">
           <Key>
@@ -820,7 +826,6 @@
           <Property Name="GUID" Type="uniqueidentifier" />
           <Property Name="PSID" Type="int" />
           <Property Name="Kontrahent" Type="int" />
-          <Property Name="OperatorId" Type="int" />
           <Property Name="Koszyk" Type="int" />
           <Property Name="Zamowienie" Type="int" />
           <Property Name="Tekst" Type="text" />
@@ -828,6 +833,7 @@
           <Property Name="Synchronizacja" Type="int" />
           <Property Name="Stamp" Type="datetime" />
           <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="OperatorId" Type="int" />
         </EntityType>
         <EntityType Name="Zamowienia">
           <Key>
@@ -897,6 +903,7 @@
           <Property Name="OstatniaHistoriaID" Type="int" />
           <Property Name="OstatniStatusID" Type="int" />
           <Property Name="OstatniaHistoriaUserID" Type="int" />
+          <Property Name="OstatniaHistoriaOperatorID" Type="int" />
           <Property Name="Sezon" Type="nvarchar" MaxLength="128" />
           <Property Name="Sezon2" Type="nvarchar" MaxLength="128" />
           <Property Name="Sezon3" Type="nvarchar" MaxLength="128" />
@@ -987,6 +994,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Reklamacja" Type="int" Nullable="false" />
           <Property Name="Lp" Type="int" Nullable="false" />
           <Property Name="Towar" Type="int" />
@@ -1061,7 +1069,7 @@
           <Property Name="Stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'AbakToolsOld.dbo.HistorieZamowienView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'AbakTools.dbo.HistorieZamowienView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="HistorieZamowienView">
           <Key>
             <PropertyRef Name="ID" />
@@ -1087,7 +1095,7 @@ warning 6002: The table/view 'AbakToolsOld.dbo.HistorieZamowienView' does not ha
           <Property Name="Blokada" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'AbakToolsOld.dbo.PozycjeZamowieniaView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'AbakTools.dbo.PozycjeZamowieniaView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PozycjeZamowieniaView">
           <Key>
             <PropertyRef Name="ID" />
@@ -1119,7 +1127,7 @@ warning 6002: The table/view 'AbakToolsOld.dbo.PozycjeZamowieniaView' does not h
           <Property Name="Synchronizacja" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'AbakToolsOld.dbo.ProduktyAtrybuty' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'AbakTools.dbo.ProduktyAtrybuty' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ProduktyAtrybuty">
           <Key>
             <PropertyRef Name="id" />
@@ -1169,7 +1177,7 @@ warning 6002: The table/view 'AbakToolsOld.dbo.ProduktyAtrybuty' does not have a
           <Property Name="OrderIndex" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'AbakToolsOld.dbo.StanyMagazynoweView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'AbakTools.dbo.StanyMagazynoweView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="StanyMagazynoweView">
           <Key>
             <PropertyRef Name="id" />
@@ -1193,7 +1201,7 @@ warning 6002: The table/view 'AbakToolsOld.dbo.StanyMagazynoweView' does not hav
           <Property Name="IloscZam" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'AbakToolsOld.dbo.TowaryAtrybuty' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'AbakTools.dbo.TowaryAtrybuty' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TowaryAtrybuty">
           <Key>
             <PropertyRef Name="ID1" />
@@ -1246,7 +1254,7 @@ warning 6002: The table/view 'AbakToolsOld.dbo.TowaryAtrybuty' does not have a p
           <Property Name="SearchIndex" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'AbakToolsOld.dbo.ZamowieniaView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'AbakTools.dbo.ZamowieniaView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ZamowieniaView">
           <Key>
             <PropertyRef Name="ID" />
@@ -1286,7 +1294,9 @@ warning 6002: The table/view 'AbakToolsOld.dbo.ZamowieniaView' does not have a p
           <Property Name="StatusTyp" Type="int" />
           <Property Name="StatusKolor" Type="varchar" MaxLength="32" />
           <Property Name="StatusPrID" Type="int" />
+          <Property Name="StatusOprID" Type="int" />
           <Property Name="StatusPrKod" Type="varchar" MaxLength="50" />
+          <Property Name="StatusOprKod" Type="varchar" MaxLength="50" />
           <Property Name="FakturaGuid" Type="uniqueidentifier" />
           <Property Name="FakturaNumer" Type="varchar" MaxLength="50" />
           <Property Name="Synchronizacja" Type="int" />
@@ -1307,6 +1317,42 @@ warning 6002: The table/view 'AbakToolsOld.dbo.ZamowieniaView' does not have a p
             </Principal>
             <Dependent Role="Adresy">
               <PropertyRef Name="Kontrahent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Wiadomosci_Operatorzy">
+          <End Role="Operatorzy" Type="Self.Operatorzy" Multiplicity="0..1" />
+          <End Role="Wiadomosci" Type="Self.Wiadomosci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operatorzy">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Wiadomosci">
+              <PropertyRef Name="OperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienia_PozycjeZamowien">
+          <End Role="Zamowienia" Type="Self.Zamowienia" Multiplicity="1" />
+          <End Role="Zamowienia1" Type="Self.Zamowienia" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Zamowienia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Zamowienia1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zwroty_PozycjeZwrotow">
+          <End Role="Zwroty" Type="Self.Zwroty" Multiplicity="1" />
+          <End Role="Zwroty1" Type="Self.Zwroty" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Zwroty">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Zwroty1">
+              <PropertyRef Name="ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1562,7 +1608,9 @@ FROM [dbo].[TowaryAtrybuty] AS [TowaryAtrybuty]</DefiningQuery>
 [ZamowieniaView].[StatusTyp] AS [StatusTyp], 
 [ZamowieniaView].[StatusKolor] AS [StatusKolor], 
 [ZamowieniaView].[StatusPrID] AS [StatusPrID], 
+[ZamowieniaView].[StatusOprID] AS [StatusOprID], 
 [ZamowieniaView].[StatusPrKod] AS [StatusPrKod], 
+[ZamowieniaView].[StatusOprKod] AS [StatusOprKod], 
 [ZamowieniaView].[FakturaGuid] AS [FakturaGuid], 
 [ZamowieniaView].[FakturaNumer] AS [FakturaNumer], 
 [ZamowieniaView].[Synchronizacja] AS [Synchronizacja], 
@@ -1576,6 +1624,18 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <AssociationSet Name="FK_Adresy_Kontrahenci" Association="Self.FK_Adresy_Kontrahenci">
             <End Role="Kontrahenci" EntitySet="Kontrahenci" />
             <End Role="Adresy" EntitySet="Adresy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Wiadomosci_Operatorzy" Association="Self.FK_Wiadomosci_Operatorzy">
+            <End Role="Operatorzy" EntitySet="Operatorzy" />
+            <End Role="Wiadomosci" EntitySet="Wiadomosci" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienia_PozycjeZamowien" Association="Self.FK_Zamowienia_PozycjeZamowien">
+            <End Role="Zamowienia" EntitySet="Zamowienia" />
+            <End Role="Zamowienia1" EntitySet="Zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zwroty_PozycjeZwrotow" Association="Self.FK_Zwroty_PozycjeZwrotow">
+            <End Role="Zwroty" EntitySet="Zwroty" />
+            <End Role="Zwroty1" EntitySet="Zwroty" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -1898,6 +1958,14 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
             <End Role="Wiadomosc" EntitySet="Wiadomosci" />
             <End Role="Operator" EntitySet="Operatorzy" />
           </AssociationSet>
+          <AssociationSet Name="FK_Zamowienia_PozycjeZamowien" Association="WebModel.FK_Zamowienia_PozycjeZamowien">
+            <End Role="Zamowienie" EntitySet="Zamowienia" />
+            <End Role="Zamowienie1" EntitySet="Zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zwroty_PozycjeZwrotow" Association="WebModel.FK_Zwroty_PozycjeZwrotow">
+            <End Role="Zwrot" EntitySet="Zwroty" />
+            <End Role="Zwrot1" EntitySet="Zwroty" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Adres">
           <Key>
@@ -2041,6 +2109,8 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="String" Name="SezonDodatkowy" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="OstatniStatusOpID" Type="Int32" Nullable="true" />
           <NavigationProperty Name="OstatniStatusOperator" Relationship="WebModel.ZamowienieOperator" FromRole="Zamowienie" ToRole="Operator" />
+          <NavigationProperty Name="Zamowienia1" Relationship="WebModel.FK_Zamowienia_PozycjeZamowien" FromRole="Zamowienie" ToRole="Zamowienie1" />
+          <NavigationProperty Name="Zamowienia2" Relationship="WebModel.FK_Zamowienia_PozycjeZamowien" FromRole="Zamowienie1" ToRole="Zamowienie" />
           </EntityType>
         <Association Name="KontrahentZamowienie">
           <End Type="WebModel.Kontrahent" Role="Kontrahent" Multiplicity="0..1" />
@@ -2220,6 +2290,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Name="SearchIndex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Wyprzedaz" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Zasoby" Relationship="WebModel.ProduktZasob" FromRole="Produkt" ToRole="Zasob" />
+          <Property Name="NotWebAvailable" Type="Boolean" Nullable="false" />
           </EntityType>
         <EntityType Name="AtrybutProduktu">
           <Key>
@@ -2379,6 +2450,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <NavigationProperty Name="Uzytkownik" Relationship="WebModel.UserKorespondencja" FromRole="Korespondencja" ToRole="User" a:GetterAccess="Public" a:SetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Type="Int32" Name="RodzajID" Nullable="true" />
           <NavigationProperty Name="RodzajKorespondencji" Relationship="WebModel.RodzajKorespondencjiKorespondencja" FromRole="Korespondencja" ToRole="RodzajKorespondencji" />
+          <Property Name="Operator" Type="Int32" />
           </EntityType>
         <Association Name="JednostkiMiaryProdukt">
           <End Type="WebModel.JednostkaMiary" Role="JednostkiMiary" Multiplicity="0..1" />
@@ -2605,6 +2677,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="String" Name="Key" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Value" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="RelationUser" Relationship="WebModel.UserKonfiguracja" FromRole="Konfiguracja" ToRole="User" a:GetterAccess="Internal" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="Operator" Type="Int32" />
         </EntityType>
         <EntityType Name="HistorieZamowienView">
           <Key>
@@ -2972,6 +3045,9 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="String" Name="Sezon2" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Sezon3" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Sezon4" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="OstatniaHistoriaOperatorID" Type="Int32" />
+          <NavigationProperty Name="Zwroty1" Relationship="WebModel.FK_Zwroty_PozycjeZwrotow" FromRole="Zwrot" ToRole="Zwrot1" />
+          <NavigationProperty Name="Zwroty2" Relationship="WebModel.FK_Zwroty_PozycjeZwrotow" FromRole="Zwrot1" ToRole="Zwrot" />
         </EntityType>
         <Association Name="ZwrotPozycjeZwrotow">
           <End Type="WebModel.Zwrot" Role="Zwrot" Multiplicity="1" >
@@ -3039,6 +3115,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <NavigationProperty Name="Zwrot" Relationship="WebModel.ZwrotHistoriaZwrotow" FromRole="HistoriaZwrotow" ToRole="Zwrot" />
           <NavigationProperty Name="Uzytkownik" Relationship="WebModel.UserHistoriaZwrotow" FromRole="HistoriaZwrotow" ToRole="User" />
           <NavigationProperty Name="Status" Relationship="WebModel.StatusZwrotuHistoriaZwrotu" FromRole="HistoriaZwrotu" ToRole="StatusZwrotu" />
+          <Property Name="Operator" Type="Int32" />
         </EntityType>
         <EntityType Name="StatusZwrotu">
           <Key>
@@ -3224,6 +3301,8 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="Guid" Name="KontrahentGuid" />
           <Property Type="String" Name="Sezon" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="SezonDodatkowy" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="StatusOprID" Type="Int32" />
+          <Property Name="StatusOprKod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="StatusZamowieniaZamowienieView">
           <End Type="WebModel.StatusZamowienia" Role="StatusZamowienia" Multiplicity="0..1" />
@@ -3523,6 +3602,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="Binary" Name="Stamp" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <NavigationProperty Name="Reklamacja" Relationship="WebModel.ReklamacjaPozycjeReklamacji" FromRole="PozycjeReklamacji" ToRole="Reklamacja" />
           <NavigationProperty Name="Towar" Relationship="WebModel.ProduktPozycjaReklamacji" FromRole="PozycjaReklamacji" ToRole="Produkt" />
+          <Property Name="Guid" Type="Guid" Nullable="false" />
         </EntityType>
         <EntityType Name="Reklamacja">
           <Key>
@@ -3654,6 +3734,8 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="Binary" Name="Stamp" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="KodPrzedstawiciela" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="KodyPrzedstawicieli" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PracownikID" Type="Int32" />
+          <Property Name="UserID" Type="Int32" />
         </EntityType>
         <Association Name="OperatorHistoriaDokumentu">
           <End Type="WebModel.Operator" Role="Operator" Multiplicity="0..1" />
@@ -3835,6 +3917,30 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
             </Principal>
             <Dependent Role="Wiadomosc">
               <PropertyRef Name="OperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienia_PozycjeZamowien">
+          <End Type="WebModel.Zamowienie" Role="Zamowienie" Multiplicity="1" />
+          <End Type="WebModel.Zamowienie" Role="Zamowienie1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Zamowienie">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Zamowienie1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zwroty_PozycjeZwrotow">
+          <End Type="WebModel.Zwrot" Role="Zwrot" Multiplicity="1" />
+          <End Type="WebModel.Zwrot" Role="Zwrot1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Zwrot">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Zwrot1">
+              <PropertyRef Name="ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4095,6 +4201,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <EntitySetMapping Name="Produkty">
             <EntityTypeMapping TypeName="IsTypeOf(WebModel.Produkt)">
               <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="NotWebAvailable" ColumnName="NotWebAvailable" />
                 <ScalarProperty Name="Wyprzedaz" ColumnName="Wyprzedaz" />
                 <ScalarProperty Name="SearchIndex" ColumnName="SearchIndex" />
                 <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
@@ -4292,6 +4399,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <EntitySetMapping Name="RejestrKorespondencji">
             <EntityTypeMapping TypeName="IsTypeOf(WebModel.Korespondencja)">
               <MappingFragment StoreEntitySet="Korespondencja">
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
                 <ScalarProperty Name="RodzajID" ColumnName="Rodzaj" />
                 <ScalarProperty Name="Kod" ColumnName="Kod" />
                 <ScalarProperty Name="Opis" ColumnName="Opis" />
@@ -4516,6 +4624,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <EntitySetMapping Name="Konfiguracje">
             <EntityTypeMapping TypeName="WebModel.Konfiguracja">
               <MappingFragment StoreEntitySet="configuration">
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
                 <ScalarProperty Name="Value" ColumnName="value" />
                 <ScalarProperty Name="Key" ColumnName="key" />
                 <ScalarProperty Name="ID" ColumnName="id" />
@@ -4790,6 +4899,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <EntitySetMapping Name="Zwroty">
             <EntityTypeMapping TypeName="WebModel.Zwrot">
               <MappingFragment StoreEntitySet="Zwroty">
+                <ScalarProperty Name="OstatniaHistoriaOperatorID" ColumnName="OstatniaHistoriaOperatorID" />
                 <ScalarProperty Name="Sezon4" ColumnName="Sezon4" />
                 <ScalarProperty Name="Sezon3" ColumnName="Sezon3" />
                 <ScalarProperty Name="Sezon2" ColumnName="Sezon2" />
@@ -4815,6 +4925,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <EntitySetMapping Name="HistoriaZwrotow">
             <EntityTypeMapping TypeName="WebModel.HistoriaZwrotu">
               <MappingFragment StoreEntitySet="HistoriaZwrotow">
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
                 <ScalarProperty Name="Stamp" ColumnName="Stamp" />
                 <ScalarProperty Name="Synchronize" ColumnName="Synchronize" />
                 <ScalarProperty Name="Deleted" ColumnName="Deleted" />
@@ -4865,6 +4976,8 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <EntitySetMapping Name="ZamowieniaView">
             <EntityTypeMapping TypeName="WebModel.ZamowienieView">
               <MappingFragment StoreEntitySet="ZamowieniaView">
+                <ScalarProperty Name="StatusOprKod" ColumnName="StatusOprKod" />
+                <ScalarProperty Name="StatusOprID" ColumnName="StatusOprID" />
                 <ScalarProperty Name="SezonDodatkowy" ColumnName="SezonDodatkowy" />
                 <ScalarProperty Name="Sezon" ColumnName="Sezon" />
                 <ScalarProperty Name="KontrahentGuid" ColumnName="KontrahentGuid" />
@@ -5100,6 +5213,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <EntitySetMapping Name="PozycjeReklamacji">
             <EntityTypeMapping TypeName="WebModel.PozycjaReklamacji">
               <MappingFragment StoreEntitySet="PozycjeReklamacji">
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
                 <ScalarProperty Name="Stamp" ColumnName="Stamp" />
                 <ScalarProperty Name="Synchronize" ColumnName="Synchronize" />
                 <ScalarProperty Name="Deleted" ColumnName="Deleted" />
@@ -5179,6 +5293,8 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <EntitySetMapping Name="Operatorzy">
             <EntityTypeMapping TypeName="WebModel.Operator">
               <MappingFragment StoreEntitySet="Operatorzy">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="PracownikID" ColumnName="PracownikID" />
                 <ScalarProperty Name="KodyPrzedstawicieli" ColumnName="KodyPrzedstawicieli" />
                 <ScalarProperty Name="KodPrzedstawiciela" ColumnName="KodPrzedstawiciela" />
                 <ScalarProperty Name="Stamp" ColumnName="Stamp" />
@@ -5749,6 +5865,8 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
         <AssociationConnector Association="WebModel.HistoriaZamowieniaOperator" />
         <AssociationConnector Association="WebModel.ZamowienieOperator" />
         <AssociationConnector Association="WebModel.WiadomoscOperator" />
+        <AssociationConnector Association="WebModel.FK_Zamowienia_PozycjeZamowien" />
+        <AssociationConnector Association="WebModel.FK_Zwroty_PozycjeZwrotow" />
         </Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

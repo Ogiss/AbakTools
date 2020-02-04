@@ -61,8 +61,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.wyprzedazCheckBox = new System.Windows.Forms.CheckBox();
-            this.disavleAVListCheckBox = new System.Windows.Forms.CheckBox();
             this.towarEnovaCheckBox = new System.Windows.Forms.CheckBox();
             this.dostepnyCheckBox = new System.Windows.Forms.CheckBox();
             this.outOfStock1RadioButton = new System.Windows.Forms.RadioButton();
@@ -483,8 +483,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.wyprzedazCheckBox);
-            this.groupBox3.Controls.Add(this.disavleAVListCheckBox);
             this.groupBox3.Controls.Add(this.towarEnovaCheckBox);
             this.groupBox3.Controls.Add(this.dostepnyCheckBox);
             this.groupBox3.Controls.Add(this.outOfStock1RadioButton);
@@ -499,27 +499,27 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ustawienia";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.DataSourceBinding, "NotWebAvailable", true));
+            this.checkBox1.Location = new System.Drawing.Point(127, 46);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(134, 17);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Niedostepny na stronie";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // wyprzedazCheckBox
             // 
             this.wyprzedazCheckBox.AutoSize = true;
             this.wyprzedazCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.DataSourceBinding, "Wyprzedaz", true));
-            this.wyprzedazCheckBox.Location = new System.Drawing.Point(258, 46);
+            this.wyprzedazCheckBox.Location = new System.Drawing.Point(249, 20);
             this.wyprzedazCheckBox.Name = "wyprzedazCheckBox";
             this.wyprzedazCheckBox.Size = new System.Drawing.Size(79, 17);
             this.wyprzedazCheckBox.TabIndex = 9;
             this.wyprzedazCheckBox.Text = "Wyprzedaż";
             this.wyprzedazCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // disavleAVListCheckBox
-            // 
-            this.disavleAVListCheckBox.AutoSize = true;
-            this.disavleAVListCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.DataSourceBinding, "DisableAVList", true));
-            this.disavleAVListCheckBox.Location = new System.Drawing.Point(135, 46);
-            this.disavleAVListCheckBox.Name = "disavleAVListCheckBox";
-            this.disavleAVListCheckBox.Size = new System.Drawing.Size(117, 17);
-            this.disavleAVListCheckBox.TabIndex = 8;
-            this.disavleAVListCheckBox.Text = "Niedostepny na AV";
-            this.disavleAVListCheckBox.UseVisualStyleBackColor = true;
             // 
             // towarEnovaCheckBox
             // 
@@ -1301,7 +1301,6 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox atrybutPrefixTextBox;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.CheckBox disavleAVListCheckBox;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.CheckBox attributeDisableAVListCheckBox;
         private System.Windows.Forms.Label label32;
@@ -1313,5 +1312,6 @@
         private System.Windows.Forms.TextBox searchIndexTextBox;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.CheckBox wyprzedazCheckBox;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

@@ -1,0 +1,1 @@
+ALTER TABLE product ADD NotWebAvailable BIT NOT NULL DEFAULT (0);
