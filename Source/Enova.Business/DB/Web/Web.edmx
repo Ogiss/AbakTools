@@ -514,6 +514,7 @@
           <Property Name="SearchIndex" Type="nvarchar" MaxLength="50" />
           <Property Name="Wyprzedaz" Type="bit" Nullable="false" />
           <Property Name="NotWebAvailable" Type="bit" Nullable="false" />
+          <Property Name="MinimumOrderQuantity" Type="int" Nullable="true" />
         </EntityType>
         <EntityType Name="product_attribute">
           <Key>
@@ -2291,6 +2292,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Name="Wyprzedaz" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Zasoby" Relationship="WebModel.ProduktZasob" FromRole="Produkt" ToRole="Zasob" />
           <Property Name="NotWebAvailable" Type="Boolean" Nullable="false" />
+          <Property Name="MinimumOrderQuantity" Type="Int32" Nullable="true" />
           </EntityType>
         <EntityType Name="AtrybutProduktu">
           <Key>
@@ -4201,6 +4203,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <EntitySetMapping Name="Produkty">
             <EntityTypeMapping TypeName="IsTypeOf(WebModel.Produkt)">
               <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="MinimumOrderQuantity" ColumnName="MinimumOrderQuantity" />
                 <ScalarProperty Name="NotWebAvailable" ColumnName="NotWebAvailable" />
                 <ScalarProperty Name="Wyprzedaz" ColumnName="Wyprzedaz" />
                 <ScalarProperty Name="SearchIndex" ColumnName="SearchIndex" />

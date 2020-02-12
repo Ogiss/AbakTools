@@ -16039,6 +16039,30 @@ namespace Enova.Business.Old.DB.Web
         private global::System.Boolean _NotWebAvailable;
         partial void OnNotWebAvailableChanging(global::System.Boolean value);
         partial void OnNotWebAvailableChanged();
+    
+        /// <summary>
+        /// Dokumentacja metadanych jest niedostępna.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> MinimumOrderQuantity
+        {
+            get
+            {
+                return _MinimumOrderQuantity;
+            }
+            set
+            {
+                OnMinimumOrderQuantityChanging(value);
+                ReportPropertyChanging("MinimumOrderQuantity");
+                _MinimumOrderQuantity = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MinimumOrderQuantity");
+                OnMinimumOrderQuantityChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _MinimumOrderQuantity;
+        partial void OnMinimumOrderQuantityChanging(Nullable<global::System.Int32> value);
+        partial void OnMinimumOrderQuantityChanged();
 
         #endregion
 

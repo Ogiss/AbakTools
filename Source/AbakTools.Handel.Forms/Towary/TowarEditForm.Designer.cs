@@ -46,8 +46,6 @@
             this.towarEnovaTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.iloscTextBox = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.cenaNettoOpkTextBox = new System.Windows.Forms.TextBox();
             this.opakowanieComboBox = new System.Windows.Forms.ComboBox();
             this.opakowaniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -128,6 +126,9 @@
             this.atrybutZdjeciePictureBox = new System.Windows.Forms.PictureBox();
             this.atrybutyTreeView = new System.Windows.Forms.TreeView();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.mainTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataSourceBinding)).BeginInit();
@@ -339,8 +340,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.iloscTextBox);
-            this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.cenaNettoOpkTextBox);
             this.groupBox2.Controls.Add(this.opakowanieComboBox);
             this.groupBox2.Controls.Add(this.cenaBruttoTextBox);
@@ -358,27 +357,10 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dane handlowe";
             // 
-            // iloscTextBox
-            // 
-            this.iloscTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "Ilosc", true));
-            this.iloscTextBox.Location = new System.Drawing.Point(107, 124);
-            this.iloscTextBox.Name = "iloscTextBox";
-            this.iloscTextBox.Size = new System.Drawing.Size(94, 20);
-            this.iloscTextBox.TabIndex = 11;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(69, 127);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(32, 13);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "Ilość:";
-            // 
             // cenaNettoOpkTextBox
             // 
             this.cenaNettoOpkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "CenaNettoOpkStr", true));
-            this.cenaNettoOpkTextBox.Location = new System.Drawing.Point(107, 98);
+            this.cenaNettoOpkTextBox.Location = new System.Drawing.Point(107, 97);
             this.cenaNettoOpkTextBox.Name = "cenaNettoOpkTextBox";
             this.cenaNettoOpkTextBox.Size = new System.Drawing.Size(94, 20);
             this.cenaNettoOpkTextBox.TabIndex = 9;
@@ -438,7 +420,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 101);
+            this.label9.Location = new System.Drawing.Point(15, 100);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 13);
             this.label9.TabIndex = 4;
@@ -483,6 +465,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label34);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.wyprzedazCheckBox);
             this.groupBox3.Controls.Add(this.towarEnovaCheckBox);
@@ -1174,6 +1159,33 @@
             this.openFileDialog.InitialDirectory = "c:\\";
             this.openFileDialog.RestoreDirectory = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "MinimumOrderQuantity", true));
+            this.textBox1.Location = new System.Drawing.Point(187, 69);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(57, 20);
+            this.textBox1.TabIndex = 11;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(27, 72);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(154, 13);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "Minimalna ilość na zamówieniu:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(250, 73);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(23, 13);
+            this.label34.TabIndex = 12;
+            this.label34.Text = "szt.";
+            // 
             // TowarEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1278,8 +1290,6 @@
         private System.Windows.Forms.Button zdjecieUsunButton;
         private System.Windows.Forms.Button zdjecieDodajButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.TextBox iloscTextBox;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.RadioButton outOfStock1RadioButton;
         private System.Windows.Forms.RadioButton outOfStock0RadioButton;
         private System.Windows.Forms.Label label23;
@@ -1313,5 +1323,8 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.CheckBox wyprzedazCheckBox;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label34;
     }
 }
