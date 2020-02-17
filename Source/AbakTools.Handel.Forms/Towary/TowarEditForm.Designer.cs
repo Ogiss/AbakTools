@@ -59,13 +59,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.wyprzedazCheckBox = new System.Windows.Forms.CheckBox();
             this.towarEnovaCheckBox = new System.Windows.Forms.CheckBox();
             this.dostepnyCheckBox = new System.Windows.Forms.CheckBox();
-            this.outOfStock1RadioButton = new System.Windows.Forms.RadioButton();
-            this.outOfStock0RadioButton = new System.Windows.Forms.RadioButton();
-            this.label23 = new System.Windows.Forms.Label();
             this.gotowyCheckBox = new System.Windows.Forms.CheckBox();
             this.blokadaCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -126,9 +125,10 @@
             this.atrybutZdjeciePictureBox = new System.Windows.Forms.PictureBox();
             this.atrybutyTreeView = new System.Windows.Forms.TreeView();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
+            this.outOfStock1RadioButton = new System.Windows.Forms.RadioButton();
+            this.outOfStock0RadioButton = new System.Windows.Forms.RadioButton();
+            this.label23 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.mainTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataSourceBinding)).BeginInit();
@@ -340,7 +340,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label34);
             this.groupBox2.Controls.Add(this.cenaNettoOpkTextBox);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.opakowanieComboBox);
             this.groupBox2.Controls.Add(this.cenaBruttoTextBox);
             this.groupBox2.Controls.Add(this.stawkaVatComboBox);
@@ -352,7 +355,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(315, 174);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(362, 160);
+            this.groupBox2.Size = new System.Drawing.Size(362, 132);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dane handlowe";
@@ -360,9 +363,9 @@
             // cenaNettoOpkTextBox
             // 
             this.cenaNettoOpkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "CenaNettoOpkStr", true));
-            this.cenaNettoOpkTextBox.Location = new System.Drawing.Point(107, 97);
+            this.cenaNettoOpkTextBox.Location = new System.Drawing.Point(283, 70);
             this.cenaNettoOpkTextBox.Name = "cenaNettoOpkTextBox";
-            this.cenaNettoOpkTextBox.Size = new System.Drawing.Size(94, 20);
+            this.cenaNettoOpkTextBox.Size = new System.Drawing.Size(73, 20);
             this.cenaNettoOpkTextBox.TabIndex = 9;
             this.cenaNettoOpkTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -420,11 +423,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 100);
+            this.label9.Location = new System.Drawing.Point(218, 74);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 13);
+            this.label9.Size = new System.Drawing.Size(59, 13);
             this.label9.TabIndex = 4;
-            this.label9.Text = "Cena netto opk.:";
+            this.label9.Text = "Cena opk.:";
             // 
             // label8
             // 
@@ -465,9 +468,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label34);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.wyprzedazCheckBox);
             this.groupBox3.Controls.Add(this.towarEnovaCheckBox);
@@ -479,10 +479,28 @@
             this.groupBox3.Controls.Add(this.blokadaCheckBox);
             this.groupBox3.Location = new System.Drawing.Point(683, 175);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(370, 159);
+            this.groupBox3.Size = new System.Drawing.Size(370, 131);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ustawienia";
+            // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "MinimumOrderQuantity", true));
+            this.textBox1.Location = new System.Drawing.Point(107, 98);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(94, 20);
+            this.textBox1.TabIndex = 11;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(20, 100);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(81, 13);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "Minimalna ilość:";
             // 
             // checkBox1
             // 
@@ -528,37 +546,6 @@
             this.dostepnyCheckBox.Text = "Dostepny";
             this.dostepnyCheckBox.UseVisualStyleBackColor = true;
             // 
-            // outOfStock1RadioButton
-            // 
-            this.outOfStock1RadioButton.AutoSize = true;
-            this.outOfStock1RadioButton.Location = new System.Drawing.Point(135, 120);
-            this.outOfStock1RadioButton.Name = "outOfStock1RadioButton";
-            this.outOfStock1RadioButton.Size = new System.Drawing.Size(109, 17);
-            this.outOfStock1RadioButton.TabIndex = 5;
-            this.outOfStock1RadioButton.TabStop = true;
-            this.outOfStock1RadioButton.Text = "Pozwól zamawiać";
-            this.outOfStock1RadioButton.UseVisualStyleBackColor = true;
-            // 
-            // outOfStock0RadioButton
-            // 
-            this.outOfStock0RadioButton.AutoSize = true;
-            this.outOfStock0RadioButton.Location = new System.Drawing.Point(135, 97);
-            this.outOfStock0RadioButton.Name = "outOfStock0RadioButton";
-            this.outOfStock0RadioButton.Size = new System.Drawing.Size(127, 17);
-            this.outOfStock0RadioButton.TabIndex = 4;
-            this.outOfStock0RadioButton.TabStop = true;
-            this.outOfStock0RadioButton.Text = "Nie pozwól zamawiać";
-            this.outOfStock0RadioButton.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(29, 100);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(99, 13);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Gdy brak na stanie:";
-            // 
             // gotowyCheckBox
             // 
             this.gotowyCheckBox.AutoSize = true;
@@ -595,9 +582,9 @@
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.linkRewriteTextBox);
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Location = new System.Drawing.Point(8, 340);
+            this.groupBox4.Location = new System.Drawing.Point(8, 328);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1044, 269);
+            this.groupBox4.Size = new System.Drawing.Size(1044, 281);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dane dodatkowe";
@@ -1159,32 +1146,45 @@
             this.openFileDialog.InitialDirectory = "c:\\";
             this.openFileDialog.RestoreDirectory = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "MinimumOrderQuantity", true));
-            this.textBox1.Location = new System.Drawing.Point(187, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(57, 20);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(27, 72);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(154, 13);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "Minimalna ilość na zamówieniu:";
-            // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(250, 73);
+            this.label34.Location = new System.Drawing.Point(207, 101);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(23, 13);
             this.label34.TabIndex = 12;
             this.label34.Text = "szt.";
+            // 
+            // outOfStock1RadioButton
+            // 
+            this.outOfStock1RadioButton.AutoSize = true;
+            this.outOfStock1RadioButton.Location = new System.Drawing.Point(165, 98);
+            this.outOfStock1RadioButton.Name = "outOfStock1RadioButton";
+            this.outOfStock1RadioButton.Size = new System.Drawing.Size(109, 17);
+            this.outOfStock1RadioButton.TabIndex = 5;
+            this.outOfStock1RadioButton.TabStop = true;
+            this.outOfStock1RadioButton.Text = "Pozwól zamawiać";
+            this.outOfStock1RadioButton.UseVisualStyleBackColor = true;
+            // 
+            // outOfStock0RadioButton
+            // 
+            this.outOfStock0RadioButton.AutoSize = true;
+            this.outOfStock0RadioButton.Location = new System.Drawing.Point(32, 97);
+            this.outOfStock0RadioButton.Name = "outOfStock0RadioButton";
+            this.outOfStock0RadioButton.Size = new System.Drawing.Size(127, 17);
+            this.outOfStock0RadioButton.TabIndex = 4;
+            this.outOfStock0RadioButton.TabStop = true;
+            this.outOfStock0RadioButton.Text = "Nie pozwól zamawiać";
+            this.outOfStock0RadioButton.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 78);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(99, 13);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Gdy brak na stanie:";
             // 
             // TowarEditForm
             // 
@@ -1290,9 +1290,6 @@
         private System.Windows.Forms.Button zdjecieUsunButton;
         private System.Windows.Forms.Button zdjecieDodajButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.RadioButton outOfStock1RadioButton;
-        private System.Windows.Forms.RadioButton outOfStock0RadioButton;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.CheckBox atrybutDefaultOnCheckBox;
         private System.Windows.Forms.ComboBox dostawcaComboBox;
@@ -1326,5 +1323,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.RadioButton outOfStock1RadioButton;
+        private System.Windows.Forms.RadioButton outOfStock0RadioButton;
+        private System.Windows.Forms.Label label23;
     }
 }
