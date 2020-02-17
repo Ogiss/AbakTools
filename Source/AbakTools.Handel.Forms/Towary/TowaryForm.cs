@@ -156,6 +156,9 @@ namespace AbakTools.Towary.Forms
                 var row = DataGrid.Rows[e.RowIndex];
                 var product = row?.DataBoundItem as DbWeb.Produkt;
 
+                row.Cells[7].Style.SelectionBackColor = DataGrid.DefaultCellStyle.BackColor;
+                row.Cells[7].Style.SelectionForeColor = DataGrid.DefaultCellStyle.ForeColor;
+
                 if (product != null)
                 {
                     var pink = Color.FromArgb(204, 67, 136);
@@ -172,10 +175,12 @@ namespace AbakTools.Towary.Forms
                         }
                     }
 
+
                     if (!product.IsActive)
                     {
                         row.DefaultCellStyle.ForeColor = Color.Red;
                         row.DefaultCellStyle.SelectionForeColor = Color.Red;
+                        row.Cells[7].Style.SelectionForeColor = Color.Red;
                     }
                 }
             };
