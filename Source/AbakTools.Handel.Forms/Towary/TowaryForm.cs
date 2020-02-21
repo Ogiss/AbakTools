@@ -156,11 +156,11 @@ namespace AbakTools.Towary.Forms
                 var row = DataGrid.Rows[e.RowIndex];
                 var product = row?.DataBoundItem as DbWeb.Produkt;
 
-                row.Cells[7].Style.SelectionBackColor = DataGrid.DefaultCellStyle.BackColor;
-                row.Cells[7].Style.SelectionForeColor = DataGrid.DefaultCellStyle.ForeColor;
-
                 if (product != null)
                 {
+                    //row.Cells[7].Style.SelectionBackColor = DataGrid.DefaultCellStyle.BackColor;
+                    //row.Cells[7].Style.SelectionForeColor = DataGrid.DefaultCellStyle.ForeColor;
+
                     var pink = Color.FromArgb(204, 67, 136);
                     Color? backColor = product.NotWebAvailable ? pink :
                         (product.IsNew ? Color.LightBlue : (product.IsEdited ? Color.LightGreen : (Color?)null));
@@ -168,11 +168,14 @@ namespace AbakTools.Towary.Forms
                     if (backColor.HasValue)
                     {
                         row.DefaultCellStyle.BackColor = backColor.Value;
+                        row.DefaultCellStyle.SelectionBackColor = backColor.Value;
+                        /*
                         row.Cells[7].Style.SelectionBackColor = backColor.Value;
                         if (product.IsActive)
                         {
                             row.Cells[7].Style.SelectionForeColor = Color.Black;
                         }
+                        */
                     }
 
 
@@ -180,7 +183,7 @@ namespace AbakTools.Towary.Forms
                     {
                         row.DefaultCellStyle.ForeColor = Color.Red;
                         row.DefaultCellStyle.SelectionForeColor = Color.Red;
-                        row.Cells[7].Style.SelectionForeColor = Color.Red;
+                        //row.Cells[7].Style.SelectionForeColor = Color.Red;
                     }
                 }
             };
