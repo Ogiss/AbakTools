@@ -10,8 +10,8 @@ using BAL.Business;
 using BAL.Extensions;
 using BAL.Forms;
 
-[assembly: MenuAction("Dokumenty\\Dokumenty sprzedaży", MenuAction = MenuActionsType.OpenView, ViewType = typeof(Enova.Forms.Handel.DokumentyView),
-    Options =  ActionOptions.WithoutSession, Priority=410)]
+//[assembly: MenuAction("Dokumenty\\Dokumenty sprzedaży", MenuAction = MenuActionsType.OpenView, ViewType = typeof(Enova.Forms.Handel.DokumentyView),
+//    Options =  ActionOptions.WithoutSession, Priority=410)]
 
 namespace Enova.Forms.Handel
 {
