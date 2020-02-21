@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F0914654-3281-471F-8E2B-41C604E47142}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BAL.Forms</RootNamespace>
+    <AssemblyName>BAL.Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>.\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EnovaApiTest|AnyCPU'">
+    <OutputPath>bin\EnovaApiTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>BAL.Forms.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Source\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Source\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionOptions.cs" />
+    <Compile Include="BALFormException.cs" />
+    <Compile Include="CanceledRowEventArgs.cs" />
+    <Compile Include="CancelWithDataEventArgs.cs" />
+    <Compile Include="ColumnSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColumnSelectForm.Designer.cs">
+      <DependentUpon>ColumnSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ActionButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BALControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BALControl.Designer.cs">
+      <DependentUpon>BALControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CalendarCell.cs" />
+    <Compile Include="Controls\CalendarColumn.cs" />
+    <Compile Include="Controls\CalendarEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckedComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckedComboBox.Designer.cs">
+      <DependentUpon>CheckedComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckedComboBoxList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckedComboBoxList.Designer.cs">
+      <DependentUpon>CheckedComboBoxList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboBox.Designer.cs">
+      <DependentUpon>ComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DateFromToControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DateFromToControl.Designer.cs">
+      <DependentUpon>DateFromToControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FromToCalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FromToCalendarForm.Designer.cs">
+      <DependentUpon>FromToCalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Grid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Grid.Designer.cs">
+      <DependentUpon>Grid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GridNavigator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GridViewCheckBoxColumn.cs" />
+    <Compile Include="Controls\GridViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GridViewControl.Designer.cs">
+      <DependentUpon>GridViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MenuBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SelectBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SelectBox.Designer.cs">
+      <DependentUpon>SelectBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StatusLine.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TableLayout.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TextBox.Designer.cs">
+      <DependentUpon>TextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTypeAttribute.cs" />
+    <Compile Include="DataEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataEditForm.Designer.cs">
+      <DependentUpon>DataEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm.Designer.cs">
+      <DependentUpon>DataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataFormAttribute.cs" />
+    <Compile Include="DataGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridForm.Designer.cs">
+      <DependentUpon>DataGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridFormOld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridFormOld.Designer.cs">
+      <DependentUpon>DataGridFormOld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataPanel.Designer.cs">
+      <DependentUpon>DataPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataPanelAttribute.cs" />
+    <Compile Include="DuplicatedMenuItemException.cs" />
+    <Compile Include="ExceptionDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExceptionDetailForm.Designer.cs">
+      <DependentUpon>ExceptionDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExceptionForm.Designer.cs">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileWaitCursor.cs" />
+    <Compile Include="FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManager.cs" />
+    <Compile Include="FormService.cs" />
+    <Compile Include="FormWithMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWithMenu.Designer.cs">
+      <DependentUpon>FormWithMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWithPanels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWithPanels.Designer.cs">
+      <DependentUpon>FormWithPanels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWithTabs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWithTabs.Designer.cs">
+      <DependentUpon>FormWithTabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridConfigForm.Designer.cs">
+      <DependentUpon>GridConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridService.cs" />
+    <Compile Include="GridTemplate.cs" />
+    <Compile Include="GridViewContext.cs" />
+    <Compile Include="IControlContainer.cs" />
+    <Compile Include="IControlKey.cs" />
+    <Compile Include="IDataPanelForm.cs" />
+    <Compile Include="IEndEdit.cs" />
+    <Compile Include="IExceptionInfo.cs" />
+    <Compile Include="IFormService.cs" />
+    <Compile Include="IFormWithMenu.cs" />
+    <Compile Include="IGridService.cs" />
+    <Compile Include="IGridTemplate.cs" />
+    <Compile Include="IMainForm.cs" />
+    <Compile Include="IMenuItem.cs" />
+    <Compile Include="MenuActionAttribute.cs" />
+    <Compile Include="MenuActionsType.cs" />
+    <Compile Include="MenuException.cs" />
+    <Compile Include="MenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBoxForm.Designer.cs">
+      <DependentUpon>MessageBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RowEventArgs.cs" />
+    <Compile Include="StdMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StdMainForm.Designer.cs">
+      <DependentUpon>StdMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabControlCollection.cs" />
+    <Compile Include="WaitCursor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ColumnSelectForm.resx">
+      <DependentUpon>ColumnSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BALControl.resx">
+      <DependentUpon>BALControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CheckedComboBox.resx">
+      <DependentUpon>CheckedComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CheckedComboBoxList.resx">
+      <DependentUpon>CheckedComboBoxList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ComboBox.resx">
+      <DependentUpon>ComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DateFromToControl.resx">
+      <DependentUpon>DateFromToControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FromToCalendarForm.resx">
+      <DependentUpon>FromToCalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Grid.resx">
+      <DependentUpon>Grid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GridViewControl.resx">
+      <DependentUpon>GridViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SelectBox.resx">
+      <DependentUpon>SelectBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TextBox.resx">
+      <DependentUpon>TextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataEditForm.resx">
+      <DependentUpon>DataEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm.resx">
+      <DependentUpon>DataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridForm.resx">
+      <DependentUpon>DataGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridFormOld.resx">
+      <DependentUpon>DataGridFormOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataPanel.resx">
+      <DependentUpon>DataPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceptionDetailForm.resx">
+      <DependentUpon>ExceptionDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWithMenu.resx">
+      <DependentUpon>FormWithMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWithPanels.resx">
+      <DependentUpon>FormWithPanels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWithTabs.resx">
+      <DependentUpon>FormWithTabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridConfigForm.resx">
+      <DependentUpon>GridConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBoxForm.resx">
+      <DependentUpon>MessageBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StdMainForm.resx">
+      <DependentUpon>StdMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BAL.Business\BAL.Business.csproj">
+      <Project>{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}</Project>
+      <Name>BAL.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\BAL.Types.Column.datasource" />
+    <None Include="Resources\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dialog_cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tools_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-view-split-left-right-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LeftView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_up_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SendEmail.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

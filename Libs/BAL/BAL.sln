@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL.Business", "BAL.Business\BAL.Business.csproj", "{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL.Forms", "BAL.Forms\BAL.Forms.csproj", "{F0914654-3281-471F-8E2B-41C604E47142}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL.Test", "BAL.Test\BAL.Test.csproj", "{8871ED86-8390-4BCB-B933-F5847C9D842F}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.0.100:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BAL.Business\\BAL.Business.csproj
+		SccProjectName1 = BAL.Business
+		SccLocalPath1 = BAL.Business
+		SccProjectUniqueName2 = BAL.Forms\\BAL.Forms.csproj
+		SccProjectName2 = BAL.Forms
+		SccLocalPath2 = BAL.Forms
+		SccProjectUniqueName3 = BAL.Test\\BAL.Test.csproj
+		SccProjectName3 = BAL.Test
+		SccLocalPath3 = BAL.Test
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}.Release|x86.ActiveCfg = Release|Any CPU
+		{F0914654-3281-471F-8E2B-41C604E47142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0914654-3281-471F-8E2B-41C604E47142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0914654-3281-471F-8E2B-41C604E47142}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F0914654-3281-471F-8E2B-41C604E47142}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F0914654-3281-471F-8E2B-41C604E47142}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F0914654-3281-471F-8E2B-41C604E47142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0914654-3281-471F-8E2B-41C604E47142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0914654-3281-471F-8E2B-41C604E47142}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F0914654-3281-471F-8E2B-41C604E47142}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F0914654-3281-471F-8E2B-41C604E47142}.Release|x86.ActiveCfg = Release|Any CPU
+		{8871ED86-8390-4BCB-B933-F5847C9D842F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{8871ED86-8390-4BCB-B933-F5847C9D842F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{8871ED86-8390-4BCB-B933-F5847C9D842F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{8871ED86-8390-4BCB-B933-F5847C9D842F}.Debug|x86.ActiveCfg = Debug|x86
+		{8871ED86-8390-4BCB-B933-F5847C9D842F}.Debug|x86.Build.0 = Debug|x86
+		{8871ED86-8390-4BCB-B933-F5847C9D842F}.Release|Any CPU.ActiveCfg = Release|x86
+		{8871ED86-8390-4BCB-B933-F5847C9D842F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{8871ED86-8390-4BCB-B933-F5847C9D842F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{8871ED86-8390-4BCB-B933-F5847C9D842F}.Release|x86.ActiveCfg = Release|x86
+		{8871ED86-8390-4BCB-B933-F5847C9D842F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

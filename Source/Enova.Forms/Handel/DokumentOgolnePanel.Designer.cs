@@ -236,7 +236,6 @@
             this.RabatOrgColumn,
             this.RabatColumn});
             this.pozycjeDokHanGrid.DataSource = this.pozycjeBindingSource;
-            this.pozycjeDokHanGrid.DefaultCellValueNeeded = false;
             this.pozycjeDokHanGrid.Location = new System.Drawing.Point(0, 67);
             this.pozycjeDokHanGrid.Name = "pozycjeDokHanGrid";
             this.pozycjeDokHanGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

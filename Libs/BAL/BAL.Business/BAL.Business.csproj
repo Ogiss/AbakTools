@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BAL.Business</RootNamespace>
+    <AssemblyName>BAL.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EnovaApiTest|AnyCPU'">
+    <OutputPath>bin\EnovaApiTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\BAL.Business.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Source\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Source\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessException.cs" />
+    <Compile Include="AppAssemblyAttribute.cs" />
+    <Compile Include="AppControllerException.cs" />
+    <Compile Include="AppController.cs" />
+    <Compile Include="AppModuleAttribute.cs" />
+    <Compile Include="AppServiceAttribute.cs" />
+    <Compile Include="AppServiceBase.cs" />
+    <Compile Include="AppServiceException.cs" />
+    <Compile Include="App\Database.cs" />
+    <Compile Include="App\IDatabase.cs" />
+    <Compile Include="App\IDBTS.cs" />
+    <Compile Include="App\ILogin.cs" />
+    <Compile Include="App\ILoginService.cs" />
+    <Compile Include="App\Login.cs" />
+    <Compile Include="App\LoginEventArgs.cs" />
+    <Compile Include="App\LoginService.cs" />
+    <Compile Include="AttributesCollection.cs" />
+    <Compile Include="BadRegistrationModuleException.cs" />
+    <Compile Include="BusException.cs" />
+    <Compile Include="Configuration\AppConfigurationService.cs" />
+    <Compile Include="Configuration\DatabaseConfiguration.cs" />
+    <Compile Include="Configuration\DatabaseConfigurationService.cs" />
+    <Compile Include="Configuration\DatabasesConfigurationCollection.cs" />
+    <Compile Include="Configuration\IAppConfigurationService.cs" />
+    <Compile Include="Configuration\IDatabaseConfiguration.cs" />
+    <Compile Include="Configuration\IDatabasesConfigurationService.cs" />
+    <Compile Include="Configuration\UnknownDatabaseException.cs" />
+    <Compile Include="DataContext.cs" />
+    <Compile Include="DataContextAttribute.cs" />
+    <Compile Include="DataContextParam.cs" />
+    <Compile Include="DataContextParamEventArgs.cs" />
+    <Compile Include="DeletedRowInaccessibleException.cs" />
+    <Compile Include="ExceptionBase.cs" />
+    <Compile Include="DBContextBase.cs" />
+    <Compile Include="ExceptionMethodHandler.cs" />
+    <Compile Include="Extensions\StandardTypesExtensions.cs" />
+    <Compile Include="Host.cs" />
+    <Compile Include="IAppService.cs" />
+    <Compile Include="IDataContexable.cs" />
+    <Compile Include="IDataContextSerializer.cs" />
+    <Compile Include="IDataType.cs" />
+    <Compile Include="IDeletable.cs" />
+    <Compile Include="IEditable.cs" />
+    <Compile Include="IHostedRow.cs" />
+    <Compile Include="IModuleSetter.cs" />
+    <Compile Include="InterfaceRelation.cs" />
+    <Compile Include="Types\IPriority.cs" />
+    <Compile Include="IRow.cs" />
+    <Compile Include="IRowCollection.cs" />
+    <Compile Include="IRowInvoker.cs" />
+    <Compile Include="ISessionable.cs" />
+    <Compile Include="ISessionSetter.cs" />
+    <Compile Include="IStampRow.cs" />
+    <Compile Include="IStatusSetter.cs" />
+    <Compile Include="ITable.cs" />
+    <Compile Include="Old\IRow.cs" />
+    <Compile Include="Old\ISession.cs" />
+    <Compile Include="Old\ITable.cs" />
+    <Compile Include="RowInvokerAttribute.cs" />
+    <Compile Include="RowStatus.cs" />
+    <Compile Include="Types\IValidator.cs" />
+    <Compile Include="Types\IValue.cs" />
+    <Compile Include="Key.cs" />
+    <Compile Include="Diagnostic\Log.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="ModuleException.cs" />
+    <Compile Include="ModulesCollection.cs" />
+    <Compile Include="NoAccessException.cs" />
+    <Compile Include="ObjectDisposingEventArgs.cs" />
+    <Compile Include="RowAction.cs" />
+    <Compile Include="RowActionAttribute.cs" />
+    <Compile Include="RowInvokeType.cs" />
+    <Compile Include="Tools\CoreTools.Xml.cs" />
+    <Compile Include="Tools\FileStorageService.cs" />
+    <Compile Include="Tools\IFileStorageService.cs" />
+    <Compile Include="Types\Action.cs" />
+    <Compile Include="Types\ActionAttribute.cs" />
+    <Compile Include="Types\ActionInvoker.cs" />
+    <Compile Include="Types\ActionTarget.cs" />
+    <Compile Include="Types\AttributeBase.cs" />
+    <Compile Include="Types\AttributesExtensions.cs" />
+    <Compile Include="Types\CancelDataContextEventArgs.cs" />
+    <Compile Include="Types\CaptionAttribute.cs" />
+    <Compile Include="Types\Column.cs" />
+    <Compile Include="Types\ColumnChangedEventArgs.cs" />
+    <Compile Include="Types\ColumnCollection.cs" />
+    <Compile Include="Types\ColumnEventArgs.cs" />
+    <Compile Include="Types\DataContextEventArgs.cs" />
+    <Compile Include="Types\DataContextKeyAttribute.cs" />
+    <Compile Include="Types\DateFromTo.cs" />
+    <Compile Include="Types\EnumToStringUsingCaption.cs" />
+    <Compile Include="Types\FromTo.cs" />
+    <Compile Include="Types\FromTo_T.cs" />
+    <Compile Include="Types\HiddenAttribute.cs" />
+    <Compile Include="Types\IFromTo.cs" />
+    <Compile Include="Types\INotifyValueChanged.cs" />
+    <Compile Include="Types\OwnerTypeDescriptor.cs" />
+    <Compile Include="Types\ParamControlAttribute.cs" />
+    <Compile Include="Types\PriorityAttribute.cs" />
+    <Compile Include="ReadOnlyException.cs" />
+    <Compile Include="Relation.cs" />
+    <Compile Include="Row.cs" />
+    <Compile Include="RowBase.cs" />
+    <Compile Include="RowCollection.cs" />
+    <Compile Include="RowException.cs" />
+    <Compile Include="RowExtensions.cs" />
+    <Compile Include="RowNotFoundException.cs" />
+    <Compile Include="RowState.cs" />
+    <Compile Include="Old\RowStatus.cs" />
+    <Compile Include="SaveInEditException.cs" />
+    <Compile Include="Saver.cs" />
+    <Compile Include="SaveRowErrorException.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubRow.cs" />
+    <Compile Include="SubTable.cs" />
+    <Compile Include="TableCollection.cs" />
+    <Compile Include="TableExtensions.cs" />
+    <Compile Include="TableNameAttribute.cs" />
+    <Compile Include="Table.cs" />
+    <Compile Include="Tools\CoreTools.cs" />
+    <Compile Include="Types\PropertyDescriptorPath.cs" />
+    <Compile Include="Types\PropertyPath.cs" />
+    <Compile Include="Types\PropertyPathException.cs" />
+    <Compile Include="Types\TextAlign.cs" />
+    <Compile Include="Types\OwnerTypeDescriptorAttribute.cs" />
+    <Compile Include="View.cs" />
+    <Compile Include="ViewSerializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -41,7 +41,7 @@ namespace Enova.API.Connector.Business
             get { return this.filter; }
             set
             {
-                if (this.filter != value) ;
+                if (this.filter != value)
                 {
                     rows = null;
                     filter = value;

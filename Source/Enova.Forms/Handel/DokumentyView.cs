@@ -196,10 +196,12 @@ namespace Enova.Forms.Handel
 
         protected override IComparer GetSortComparer()
         {
+            /*
             if (SortProperty != null)
                 return new DokHandlowyComparer(SortProperty, SortDirection);
             else if (SortPropertyPath != null)
                 return new DokHandlowyComparer(SortPropertyPath, SortDirection);
+                */
             return null;
         }
 

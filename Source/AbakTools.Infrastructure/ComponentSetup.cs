@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using AbakTools.Framework;
+﻿using AbakTools.Framework;
 using AbakTools.Framework.Logging;
 using AbakTools.Infrastructure.Logging;
 using Unity;

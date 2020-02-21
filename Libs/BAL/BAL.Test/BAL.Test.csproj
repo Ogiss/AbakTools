@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8871ED86-8390-4BCB-B933-F5847C9D842F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BAL.Test</RootNamespace>
+    <AssemblyName>BAL.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\BusinessContext.cs" />
+    <Compile Include="Core\Adres.cs" />
+    <Compile Include="Core\Adresy.cs" />
+    <Compile Include="Core\CoreContext.cs" />
+    <Compile Include="Core\CoreModule.AdresRow.cs" />
+    <Compile Include="Core\CoreModule.AdresTable.cs" />
+    <Compile Include="Core\CoreModule.cs" />
+    <Compile Include="Core\StawkaVat.cs" />
+    <Compile Include="CRM\CRMContext.cs" />
+    <Compile Include="CRM\CRMModule.cs" />
+    <Compile Include="CRM\CRMModule.KontrahentRow.cs" />
+    <Compile Include="CRM\CRMModule.KontrahentTable.cs" />
+    <Compile Include="CRM\Kontrahenci.cs" />
+    <Compile Include="CRM\KontrahenciView.cs" />
+    <Compile Include="CRM\Kontrahent.cs" />
+    <Compile Include="Handel\DefalutMenu.cs" />
+    <Compile Include="Handel\Dokument.cs" />
+    <Compile Include="Handel\DokumentOgolnePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Handel\DokumentOgolnePanel.Designer.cs">
+      <DependentUpon>DokumentOgolnePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Handel\Dokumenty.cs" />
+    <Compile Include="Handel\DokumentyView.cs" />
+    <Compile Include="Handel\HandelContext.cs" />
+    <Compile Include="FormService.cs" />
+    <Compile Include="Handel\HandelModule.DokumentRow.cs" />
+    <Compile Include="Handel\HandelModule.DokumentTable.cs" />
+    <Compile Include="Handel\HandelModule.KategoriaRow.cs" />
+    <Compile Include="Handel\HandelModule.KategoriaTable.cs" />
+    <Compile Include="Handel\Kategoria.cs" />
+    <Compile Include="Handel\Kategorie.cs" />
+    <Compile Include="Handel\TowarDodatkowePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Handel\TowarDodatkowePanel.Designer.cs">
+      <DependentUpon>TowarDodatkowePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Handel\TowarDrukujAction.cs" />
+    <Compile Include="Handel\TowarDrukujAction2.cs" />
+    <Compile Include="Handel\TowaryView.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Handel\HandelModule.cs" />
+    <Compile Include="Handel\HandelModule.TowarRow.cs" />
+    <Compile Include="Handel\HandelModule.TowarTable.cs" />
+    <Compile Include="Handel\Towar.cs" />
+    <Compile Include="Handel\Towary.cs" />
+    <Compile Include="Core\TypAdresu.cs" />
+    <Compile Include="Handel\TowarPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Handel\TowarPanel.Designer.cs">
+      <DependentUpon>TowarPanel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Handel\DokumentOgolnePanel.resx">
+      <DependentUpon>DokumentOgolnePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Handel\TowarDodatkowePanel.resx">
+      <DependentUpon>TowarDodatkowePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Handel\TowarPanel.resx">
+      <DependentUpon>TowarPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\BAL.Test.CRM.Kontrahent.datasource" />
+    <None Include="Properties\DataSources\BAL.Test.Handel.Dokument.datasource" />
+    <None Include="Properties\DataSources\BAL.Test.Handel.Towar.datasource" />
+    <None Include="Properties\DataSources\Towar.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BAL.Business\BAL.Business.csproj">
+      <Project>{190505BD-83F7-4CC2-8D02-D07BCD5F05B9}</Project>
+      <Name>BAL.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BAL.Forms\BAL.Forms.csproj">
+      <Project>{F0914654-3281-471F-8E2B-41C604E47142}</Project>
+      <Name>BAL.Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Release\Grids\TowaryView.grid.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

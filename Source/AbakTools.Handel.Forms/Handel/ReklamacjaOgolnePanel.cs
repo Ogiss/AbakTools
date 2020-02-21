@@ -386,6 +386,7 @@ namespace AbakTools.Handel.Forms
 
         private void wgDokSprzButton_Click(object sender, EventArgs e)
         {
+            /*
             Enova.API.CRM.Kontrahent kontrahent = null;
             Enova.API.Handel.DefDokHandlowego definicja;
             using(var session = Enova.API.EnovaService.Instance.CreateSession())
@@ -422,6 +423,7 @@ namespace AbakTools.Handel.Forms
                     }
                 }
             }
+            */
         }
 
 

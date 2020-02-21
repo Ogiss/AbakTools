@@ -230,7 +230,7 @@ namespace AbakTools.Finanse.Forms
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            if (kontrahent != null && (kontrahent.EntityState == EntityState.Modified || kontrahent.WindykacjaChanged || kontrahent.ZakończenieWindykacjiChanged ))
+            if (kontrahent != null && (kontrahent.EntityState == System.Data.EntityState.Modified || kontrahent.WindykacjaChanged || kontrahent.ZakończenieWindykacjiChanged ))
             {
                 kontrahent.SaveChanges(DataContext);
                 if (kontrahent.WindykacjaChanged)
@@ -242,7 +242,7 @@ namespace AbakTools.Finanse.Forms
 
         private void anulujButton_Click(object sender, EventArgs e)
         {
-            if (kontrahent != null && kontrahent.EntityState == EntityState.Modified)
+            if (kontrahent != null && kontrahent.EntityState == System.Data.EntityState.Modified)
             {
                 DataContext.Refresh(System.Data.Objects.RefreshMode.StoreWins, kontrahent);
             }

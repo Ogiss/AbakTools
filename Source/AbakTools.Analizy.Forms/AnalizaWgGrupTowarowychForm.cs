@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Linq;
-using System.Data.Entity;
 using Enova.Business.Old.DB;
 using Enova.Business.Old.Types;
 using DBWeb = Enova.Business.Old.DB.Web;
