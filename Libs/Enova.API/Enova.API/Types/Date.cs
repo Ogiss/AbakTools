@@ -19,7 +19,6 @@ namespace Enova.API.Types
 
         public static implicit operator DateTime(Date date)
         {
-            //return EnovaHelper.FromEnova<DateTime>(date);
             return EnovaService.FromEnova<DateTime>(date);
         }
 
