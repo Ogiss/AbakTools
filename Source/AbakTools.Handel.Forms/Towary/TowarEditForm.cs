@@ -1158,5 +1158,10 @@ namespace AbakTools.Towary.Forms
         {
             setFormText();
         }
+
+        private void blokadaCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

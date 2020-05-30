@@ -186,7 +186,7 @@ namespace Enova.Business.Old.DB.Web
             }
         }
 
-        public bool IsActive => !Blokada;
+        public bool IsActive { get => !Blokada; set => Blokada = !value; }
 
         public bool Dostepny
         {
@@ -574,7 +574,7 @@ namespace Enova.Business.Old.DB.Web
                 this.Synchronizacja = (int)RowSynchronizeOld.NotsynchronizedDelete;
                 Enova.Business.Old.Core.ContextManager.WebContext.OptimisticSaveChanges();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 LogProvider.GetLogger(LogNames.Application).Error(ex.ToString());
                 return false;

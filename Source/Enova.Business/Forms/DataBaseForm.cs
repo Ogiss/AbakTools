@@ -30,6 +30,14 @@ namespace Enova.Business.Old.Forms
             }
         }
 
+        public Enova.Business.Old.DB.Web.WebContext WebContext
+        {
+            get
+            {
+                return Enova.Business.Old.Core.ContextManager.WebContext;
+            }
+        }
+
         private bool isLoaded = false;
         [Browsable(false)]
         public bool IsLoaded

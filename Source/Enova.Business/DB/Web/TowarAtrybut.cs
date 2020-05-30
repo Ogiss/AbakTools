@@ -163,8 +163,11 @@ namespace Enova.Business.Old.DB.Web
         {
             try
             {
-                dc.ExecuteStoreCommand("EXEC dbo.SetZasobyBlokada {0},{1},{2}", this.TowarID, this.AtrybutTowaruID, value);
-                dc.Refresh(RefreshMode.StoreWins, this);
+                if (dc != null)
+                {
+                    dc.ExecuteStoreCommand("EXEC dbo.SetZasobyBlokada {0},{1},{2}", this.TowarID, this.AtrybutTowaruID, value);
+                    dc.Refresh(RefreshMode.StoreWins, this);
+                }
             }
             catch (Exception ex)
             {

@@ -30,9 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kategorieTreeView = new Enova.Business.Old.Controls.KategorieTreeView();
             this.nieaktywneCheckBox = new System.Windows.Forms.CheckBox();
             this.towaryEnovaCheckBox = new System.Windows.Forms.CheckBox();
@@ -44,10 +43,8 @@
             this.Kod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StawkaVat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Aktywny = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Gotowy = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.TowarEnovaColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Synchronizacja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TopSplitContainer)).BeginInit();
             this.TopSplitContainer.Panel1.SuspendLayout();
@@ -121,19 +118,17 @@
             this.Kod,
             this.Nazwa,
             this.Cena,
-            this.StawkaVat,
             this.Aktywny,
             this.Gotowy,
-            this.TowarEnovaColumn,
             this.Synchronizacja});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGrid.RowHeadersVisible = true;
             this.DataGrid.Size = new System.Drawing.Size(1135, 612);
             this.DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_CellContentClick);
@@ -248,15 +243,6 @@
             this.Cena.Name = "Cena";
             this.Cena.ReadOnly = true;
             // 
-            // StawkaVat
-            // 
-            this.StawkaVat.DataPropertyName = "StawkaVat";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.StawkaVat.DefaultCellStyle = dataGridViewCellStyle3;
-            this.StawkaVat.HeaderText = "StawkaVat";
-            this.StawkaVat.Name = "StawkaVat";
-            this.StawkaVat.ReadOnly = true;
-            // 
             // Aktywny
             // 
             this.Aktywny.DataPropertyName = "IsActive";
@@ -274,13 +260,6 @@
             this.Gotowy.ReadOnly = true;
             this.Gotowy.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Gotowy.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // TowarEnovaColumn
-            // 
-            this.TowarEnovaColumn.DataPropertyName = "TowarEnova";
-            this.TowarEnovaColumn.HeaderText = "Towar Enova";
-            this.TowarEnovaColumn.Name = "TowarEnovaColumn";
-            this.TowarEnovaColumn.ReadOnly = true;
             // 
             // Synchronizacja
             // 
@@ -337,10 +316,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Kod;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cena;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StawkaVat;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Aktywny;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Gotowy;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn TowarEnovaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Synchronizacja;
     }
 }

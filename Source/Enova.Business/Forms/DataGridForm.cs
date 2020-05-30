@@ -9,6 +9,7 @@ using System.Xml;
 using System.IO;
 using System.Reflection;
 using Enova.Business.Old.Types;
+using System.Linq;
 
 namespace Enova.Business.Old.Forms
 {
@@ -19,6 +20,9 @@ namespace Enova.Business.Old.Forms
         private string sortColumn = null;
         private string sortOrder = null;
 
+        private Dictionary<string, CheckBox> headersCheckboxes = new Dictionary<string, CheckBox>();
+        private bool headersCheckboxesEventsDisabled = false;
+
         #endregion
 
         #region Properties
@@ -26,8 +30,9 @@ namespace Enova.Business.Old.Forms
         public object DataSource
         {
             get { return DataGridBindingSource.DataSource; }
-            set {
-                
+            set
+            {
+
                 //DataGridBindingSource.DataSource = value;
                 setDataSource(value);
             }
@@ -82,7 +87,7 @@ namespace Enova.Business.Old.Forms
             get { return BottomSplitContainer.Panel2; }
         }
 
-        [Browsable(true),Category("Panels collapsed")]
+        [Browsable(true), Category("Panels collapsed")]
         public bool LeftPanelCollapsed
         {
             get { return LeftSplitContainer.Panel1Collapsed; }
@@ -641,7 +646,7 @@ namespace Enova.Business.Old.Forms
             }
         }
 
-        
+
 
 
         public virtual bool ProcessEnterKey(Keys keyData)
@@ -668,6 +673,49 @@ namespace Enova.Business.Old.Forms
             }
         }
 
+        protected CheckBox AddCheckboxToColumnHeader(string columnName, Action<CheckBox> onChangeAction, bool treeState = false)
+        {
+            var checkBox = new CheckBox();
+            checkBox.Size = new Size(15, 15);
+            checkBox.BackColor = Color.Transparent;
+            checkBox.Padding = new Padding(0);
+            checkBox.Margin = new Padding(0);
+            checkBox.Text = "";
+            checkBox.ThreeState = treeState;
+
+            DataGrid.Controls.Add(checkBox);
+            var column = DataGrid.Columns[columnName];
+
+            UpdateHeaderCheckboxLocation(checkBox, column);
+
+            checkBox.CheckedChanged += (s, e) =>
+            {
+                if (!headersCheckboxesEventsDisabled)
+                {
+                    onChangeAction((CheckBox)s);
+                }
+            };
+
+            headersCheckboxes[columnName] = checkBox;
+
+            return checkBox;
+        }
+
+        private void UpdateHeaderCheckboxLocation(CheckBox checkBox, DataGridViewColumn column)
+        {
+            DataGridViewHeaderCell header = column.HeaderCell;
+
+            int startX = DataGrid.Columns.Cast<DataGridViewColumn>().Where(x => x.Index < header.ColumnIndex).Sum(x => x.Width);
+            int startY = 2;
+
+            if (DataGrid.RowHeadersVisible)
+            {
+                startX += DataGrid.RowHeadersWidth;
+            }
+
+            checkBox.Location = new Point(startX + column.Width - checkBox.Width - 2,
+                         startY + (DataGrid.ColumnHeadersHeight - checkBox.Height) / 2);
+        }
 
         #endregion
 
@@ -818,6 +866,18 @@ namespace Enova.Business.Old.Forms
 
         #region Events Handlers
 
+        private void DataGrid_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
+        {
+            if (headersCheckboxes.Any())
+            {
+                foreach(var kvp in headersCheckboxes)
+                {
+                    var column = DataGrid.Columns[kvp.Key];
+                    UpdateHeaderCheckboxLocation(kvp.Value, column);
+                }
+            }
+        }
+
         private void zapiszKonfiguracjęTabeliToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(ConfigFile))
@@ -955,5 +1015,60 @@ namespace Enova.Business.Old.Forms
 
         protected virtual void OpenFileAction() { }
 
-     }
+        private void DataGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            if (headersCheckboxes.Any())
+            {
+                foreach (var kvp in headersCheckboxes)
+                {
+                    bool hasTrue = false;
+                    bool hasFalse = false;
+                    var column = DataGrid.Columns[kvp.Key];
+
+                    if (DataGrid.SelectedRows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in DataGrid.SelectedRows)
+                        {
+                            var cell = row.Cells[column.Index] as DataGridViewCheckBoxCell;
+                            if (cell != null)
+                            {
+                                var val = (bool)cell.Value;
+                                if (val)
+                                {
+                                    hasTrue = true;
+                                }
+                                else
+                                {
+                                    hasFalse = true;
+                                }
+
+                                if(hasTrue && hasFalse)
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    try
+                    {
+                        headersCheckboxesEventsDisabled = true;
+
+                        if (kvp.Value.ThreeState)
+                        {
+                            kvp.Value.CheckState = hasTrue && hasFalse ? CheckState.Indeterminate : (hasTrue ? CheckState.Checked : CheckState.Unchecked);
+                        }
+                        else
+                        {
+                            kvp.Value.Checked = hasTrue;
+                        }
+                    }
+                    finally
+                    {
+                        headersCheckboxesEventsDisabled = false;
+                    }
+                }
+            }
+        }
+    }
 }

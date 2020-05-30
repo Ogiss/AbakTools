@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DbWeb = Enova.Business.Old.DB.Web;
+using Enova.Business.Old.DB.Web;
+using Enova.Business.Old.Types;
 
 [assembly: BAL.Forms.MenuAction("WebTools\\Towary", typeof(AbakTools.Towary.Forms.TowaryForm), Priority = 1040)]
 
@@ -16,6 +18,8 @@ namespace AbakTools.Towary.Forms
     {
         private bool disableOnSelectionChanged;
         private bool disableDostawcaChanged;
+        private CheckBox readyHeaderCheckBox;
+        private CheckBox activeHeaderCheckBox;
 
         public TowaryForm()
         {
@@ -42,10 +46,54 @@ namespace AbakTools.Towary.Forms
                     (towaryEnovaCheckBox.Checked ? (bool?)null : false), dostawcaID);
 
                 DataGrid.Sort(sortedColumn, (sortOrder == SortOrder.Descending ? ListSortDirection.Descending : ListSortDirection.Ascending));
+
+                activeHeaderCheckBox = AddCheckboxToColumnHeader("Aktywny", ChangeActivForSelectedRows, true);
+
+                readyHeaderCheckBox = AddCheckboxToColumnHeader("Gotowy", ChangeReadyForSelectedBox, true);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.InnerException != null ? ex.InnerException.Message : ex.Message, "EnovaTools");
+            }
+        }
+
+        private void ChangeActivForSelectedRows(CheckBox checkBox)
+        {
+            if (checkBox.CheckState != CheckState.Indeterminate && DataGrid.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in DataGrid.SelectedRows)
+                {
+                    var product = (Produkt)row.DataBoundItem;
+                    product.IsActive = checkBox.CheckState == CheckState.Checked ? true : false;
+
+                    if (product.EntityState == EntityState.Modified)
+                    {
+                        product.Synchronizacja = (byte)RowSynchronizeOld.NotsynchronizedEdit;
+                    }
+                }
+
+                WebContext.SaveChanges();
+                DataGrid.Refresh();
+            }
+        }
+
+        private void ChangeReadyForSelectedBox(CheckBox checkBox)
+        {
+            if(checkBox.CheckState != CheckState.Indeterminate && DataGrid.SelectedRows.Count > 0)
+            {
+                foreach(DataGridViewRow row in DataGrid.SelectedRows)
+                {
+                    var product = ( Produkt)row.DataBoundItem;
+                    product.Gotowy = checkBox.CheckState == CheckState.Checked ? true : false;
+
+                    if(product.EntityState == EntityState.Modified)
+                    {
+                        product.Synchronizacja = (byte)RowSynchronizeOld.NotsynchronizedEdit;
+                    }
+                }
+
+                WebContext.SaveChanges();
+                DataGrid.Refresh();
             }
         }
 
