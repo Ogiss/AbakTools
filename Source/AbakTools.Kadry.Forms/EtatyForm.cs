@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.Linq;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 [assembly: BAL.Forms.MenuAction("Prowizje\\Etaty", typeof(AbakTools.Kadry.Forms.EtatyForm), Priority = 40)]
 
