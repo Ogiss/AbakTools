@@ -29,6 +29,7 @@ namespace AbakTools.Towary.Forms
         private Dictionary<int, Enova.Business.Old.DB.Web.AtrybutProduktu> atrybutyDeleted = new Dictionary<int, Enova.Business.Old.DB.Web.AtrybutProduktu>();
         private List<Enova.Business.Old.DB.Web.Zdjecie> zdjeciaDeleted = new List<Enova.Business.Old.DB.Web.Zdjecie>();
         private Enova.Business.Old.DB.Web.Zdjecie zdjecieOkladki = null;
+        private AutoCompleteStringCollection userStateAutocompleteSource;
 
 
         public Produkt Towar
@@ -86,6 +87,18 @@ namespace AbakTools.Towary.Forms
 
                 if (Towar.Dostawca == null)
                     dostawcaComboBox.SelectedItem = null;
+
+                userStateAutocompleteSource = new AutoCompleteStringCollection();
+                userStateAutocompleteSource.AddRange(
+                WebContext.Produkty.Where(x => x.UserState != null && x.UserState != "")
+                    .GroupBy(x => x.UserState)
+                    .Select(x => x.Key)
+                    .OrderBy(x => x)
+                    .ToArray());
+
+                statusTextBox.AutoCompleteCustomSource = userStateAutocompleteSource;
+                statusTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                statusTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
             }
         }
 

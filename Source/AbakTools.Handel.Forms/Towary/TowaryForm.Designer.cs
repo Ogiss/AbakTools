@@ -45,6 +45,7 @@
             this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Aktywny = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Gotowy = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.UserState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Synchronizacja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TopSplitContainer)).BeginInit();
             this.TopSplitContainer.Panel1.SuspendLayout();
@@ -120,6 +121,7 @@
             this.Cena,
             this.Aktywny,
             this.Gotowy,
+            this.UserState,
             this.Synchronizacja});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -261,6 +263,15 @@
             this.Gotowy.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Gotowy.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // UserState
+            // 
+            this.UserState.DataPropertyName = "UserState";
+            this.UserState.FillWeight = 250F;
+            this.UserState.HeaderText = "Status";
+            this.UserState.Name = "UserState";
+            this.UserState.ReadOnly = true;
+            this.UserState.Width = 250;
+            // 
             // Synchronizacja
             // 
             this.Synchronizacja.DataPropertyName = "SynchronizacjaStr";
@@ -318,6 +329,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cena;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Aktywny;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Gotowy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserState;
         private System.Windows.Forms.DataGridViewTextBoxColumn Synchronizacja;
     }
 }

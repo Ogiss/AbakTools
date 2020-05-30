@@ -129,6 +129,8 @@
             this.atrybutZdjeciePictureBox = new System.Windows.Forms.PictureBox();
             this.atrybutyTreeView = new System.Windows.Forms.TreeView();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.statusTextBox = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.mainTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataSourceBinding)).BeginInit();
@@ -196,6 +198,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.statusTextBox);
+            this.groupBox1.Controls.Add(this.label36);
             this.groupBox1.Controls.Add(this.searchIndexTextBox);
             this.groupBox1.Controls.Add(this.label35);
             this.groupBox1.Controls.Add(this.dostawcaComboBox);
@@ -1187,6 +1191,24 @@
             this.openFileDialog.InitialDirectory = "c:\\";
             this.openFileDialog.RestoreDirectory = true;
             // 
+            // statusTextBox
+            // 
+            this.statusTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "UserState", true));
+            this.statusTextBox.Location = new System.Drawing.Point(362, 122);
+            this.statusTextBox.Name = "statusTextBox";
+            this.statusTextBox.Size = new System.Drawing.Size(250, 20);
+            this.statusTextBox.TabIndex = 16;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(316, 125);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(40, 13);
+            this.label36.TabIndex = 15;
+            this.label36.Text = "Status:";
+            // 
             // TowarEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1327,5 +1349,7 @@
         private System.Windows.Forms.RadioButton outOfStock1RadioButton;
         private System.Windows.Forms.RadioButton outOfStock0RadioButton;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox statusTextBox;
+        private System.Windows.Forms.Label label36;
     }
 }

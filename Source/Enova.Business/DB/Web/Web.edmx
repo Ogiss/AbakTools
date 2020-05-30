@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="WebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="WebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Operatorzy">
           <Key>
             <PropertyRef Name="ID" />
@@ -515,6 +515,7 @@
           <Property Name="Wyprzedaz" Type="bit" Nullable="false" />
           <Property Name="NotWebAvailable" Type="bit" Nullable="false" />
           <Property Name="MinimumOrderQuantity" Type="int" Nullable="true" />
+          <Property Name="UserState" Type="varchar" MaxLength="255" Nullable="true"/>
         </EntityType>
         <EntityType Name="product_attribute">
           <Key>
@@ -1370,62 +1371,62 @@ warning 6002: The table/view 'AbakTools.dbo.ZamowieniaView' does not have a prim
           <Parameter Name="stanMag" Type="float" Mode="InOut" />
         </Function>
         <EntityContainer Name="WebModelStoreContainer">
-          <EntitySet Name="Operatorzy" EntityType="Self.Operatorzy" Schema="Business" store:Type="Tables" />
-          <EntitySet Name="DefinicjeDokumentow" EntityType="Self.DefinicjeDokumentow" Schema="Core" store:Type="Tables" />
-          <EntitySet Name="HistorieDokumentow" EntityType="Self.HistorieDokumentow" Schema="Core" store:Type="Tables" />
-          <EntitySet Name="RelacjeStatDok" EntityType="Self.RelacjeStatDok" Schema="Core" store:Type="Tables" />
-          <EntitySet Name="StatusyDokumentow" EntityType="Self.StatusyDokumentow" Schema="Core" store:Type="Tables" />
-          <EntitySet Name="Kontakty" EntityType="Self.Kontakty" Schema="CRM" store:Type="Tables" />
-          <EntitySet Name="Adresy" EntityType="Self.Adresy" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="attribute" EntityType="Self.attribute" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="attribute_group" EntityType="Self.attribute_group" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="category_product" EntityType="Self.category_product" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="configuration" EntityType="Self.configuration" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CzasyPracy" EntityType="Self.CzasyPracy" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Dostawcy" EntityType="Self.Dostawcy" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Etaty" EntityType="Self.Etaty" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GrupyRabatowe" EntityType="Self.GrupyRabatowe" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GuidMap" EntityType="Self.GuidMap" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="HistoriaZamowien" EntityType="Self.HistoriaZamowien" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="HistoriaZwrotow" EntityType="Self.HistoriaZwrotow" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="image" EntityType="Self.image" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="JednostkiMiary" EntityType="Self.JednostkiMiary" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Kontrahenci" EntityType="Self.Kontrahenci" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="KontrahentRabatyGrupowe" EntityType="Self.KontrahentRabatyGrupowe" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="KorektaPozyceZwrotow" EntityType="Self.KorektaPozyceZwrotow" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="KorektyZwroty" EntityType="Self.KorektyZwroty" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Korespondencja" EntityType="Self.Korespondencja" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PozycjeZamowien" EntityType="Self.PozycjeZamowien" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PozycjeZwrotow" EntityType="Self.PozycjeZwrotow" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="product_attribute" EntityType="Self.product_attribute" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="product_attribute_combination" EntityType="Self.product_attribute_combination" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="product_attribute_image" EntityType="Self.product_attribute_image" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Prowizje" EntityType="Self.Prowizje" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ProwizjeObroty" EntityType="Self.ProwizjeObroty" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ProwizjePracownikow" EntityType="Self.ProwizjePracownikow" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RodzajeKorespondencji" EntityType="Self.RodzajeKorespondencji" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SkladkiZUSUP" EntityType="Self.SkladkiZUSUP" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="StanyMagazynowe" EntityType="Self.StanyMagazynowe" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="StatusyZamowien" EntityType="Self.StatusyZamowien" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="StatusyZwrotów" EntityType="Self.StatusyZwrotów" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SynchProfileItems" EntityType="Self.SynchProfileItems" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SynchProfileItemsDefs" EntityType="Self.SynchProfileItemsDefs" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tax" EntityType="Self.tax" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TowarGrupaRabatowa" EntityType="Self.TowarGrupaRabatowa" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Wiadomosci" EntityType="Self.Wiadomosci" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Zamowienia" EntityType="Self.Zamowienia" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Zwroty" EntityType="Self.Zwroty" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ListyPrzewozowe" EntityType="Self.ListyPrzewozowe" Schema="FedEx" store:Type="Tables" />
-          <EntitySet Name="Odbiorcy" EntityType="Self.Odbiorcy" Schema="FedEx" store:Type="Tables" />
-          <EntitySet Name="PozycjeReklamacji" EntityType="Self.PozycjeReklamacji" Schema="Handel" store:Type="Tables" />
-          <EntitySet Name="Reklamacje" EntityType="Self.Reklamacje" Schema="Handel" store:Type="Tables" />
-          <EntitySet Name="StanyMagazynowe1" EntityType="Self.StanyMagazynowe1" Schema="Magazyn" Table="StanyMagazynowe" store:Type="Tables" />
-          <EntitySet Name="Zasoby" EntityType="Self.Zasoby" Schema="Magazyn" store:Type="Tables" />
-          <EntitySet Name="ZasobyEx" EntityType="Self.ZasobyEx" Schema="Magazyn" store:Type="Tables" />
-          <EntitySet Name="HistorieZamowienView" EntityType="Self.HistorieZamowienView" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="Operatorzy" EntityType="Self.Operatorzy" Schema="Business" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="DefinicjeDokumentow" EntityType="Self.DefinicjeDokumentow" Schema="Core" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="HistorieDokumentow" EntityType="Self.HistorieDokumentow" Schema="Core" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="RelacjeStatDok" EntityType="Self.RelacjeStatDok" Schema="Core" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="StatusyDokumentow" EntityType="Self.StatusyDokumentow" Schema="Core" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Kontakty" EntityType="Self.Kontakty" Schema="CRM" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Adresy" EntityType="Self.Adresy" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="attribute" EntityType="Self.attribute" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="attribute_group" EntityType="Self.attribute_group" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="category_product" EntityType="Self.category_product" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="configuration" EntityType="Self.configuration" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="CzasyPracy" EntityType="Self.CzasyPracy" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Dostawcy" EntityType="Self.Dostawcy" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Etaty" EntityType="Self.Etaty" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="GrupyRabatowe" EntityType="Self.GrupyRabatowe" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="GuidMap" EntityType="Self.GuidMap" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="HistoriaZamowien" EntityType="Self.HistoriaZamowien" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="HistoriaZwrotow" EntityType="Self.HistoriaZwrotow" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="image" EntityType="Self.image" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="JednostkiMiary" EntityType="Self.JednostkiMiary" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Kontrahenci" EntityType="Self.Kontrahenci" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="KontrahentRabatyGrupowe" EntityType="Self.KontrahentRabatyGrupowe" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="KorektaPozyceZwrotow" EntityType="Self.KorektaPozyceZwrotow" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="KorektyZwroty" EntityType="Self.KorektyZwroty" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Korespondencja" EntityType="Self.Korespondencja" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="PozycjeZamowien" EntityType="Self.PozycjeZamowien" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="PozycjeZwrotow" EntityType="Self.PozycjeZwrotow" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="product_attribute" EntityType="Self.product_attribute" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="product_attribute_combination" EntityType="Self.product_attribute_combination" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="product_attribute_image" EntityType="Self.product_attribute_image" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Prowizje" EntityType="Self.Prowizje" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ProwizjeObroty" EntityType="Self.ProwizjeObroty" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ProwizjePracownikow" EntityType="Self.ProwizjePracownikow" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="RodzajeKorespondencji" EntityType="Self.RodzajeKorespondencji" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="SkladkiZUSUP" EntityType="Self.SkladkiZUSUP" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="StanyMagazynowe" EntityType="Self.StanyMagazynowe" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="StatusyZamowien" EntityType="Self.StatusyZamowien" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="StatusyZwrotów" EntityType="Self.StatusyZwrotów" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="SynchProfileItems" EntityType="Self.SynchProfileItems" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="SynchProfileItemsDefs" EntityType="Self.SynchProfileItemsDefs" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tax" EntityType="Self.tax" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="TowarGrupaRabatowa" EntityType="Self.TowarGrupaRabatowa" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Wiadomosci" EntityType="Self.Wiadomosci" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Zamowienia" EntityType="Self.Zamowienia" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Zwroty" EntityType="Self.Zwroty" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ListyPrzewozowe" EntityType="Self.ListyPrzewozowe" Schema="FedEx" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Odbiorcy" EntityType="Self.Odbiorcy" Schema="FedEx" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="PozycjeReklamacji" EntityType="Self.PozycjeReklamacji" Schema="Handel" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Reklamacje" EntityType="Self.Reklamacje" Schema="Handel" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="StanyMagazynowe1" EntityType="Self.StanyMagazynowe1" Schema="Magazyn" Table="StanyMagazynowe" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Zasoby" EntityType="Self.Zasoby" Schema="Magazyn" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ZasobyEx" EntityType="Self.ZasobyEx" Schema="Magazyn" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="HistorieZamowienView" EntityType="Self.HistorieZamowienView" store:Type="Views" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT 
 [HistorieZamowienView].[ID] AS [ID], 
 [HistorieZamowienView].[PracownikID] AS [PracownikID], 
@@ -1448,7 +1449,7 @@ warning 6002: The table/view 'AbakTools.dbo.ZamowieniaView' does not have a prim
 [HistorieZamowienView].[Blokada] AS [Blokada]
 FROM [dbo].[HistorieZamowienView] AS [HistorieZamowienView]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="PozycjeZamowieniaView" EntityType="Self.PozycjeZamowieniaView" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="PozycjeZamowieniaView" EntityType="Self.PozycjeZamowieniaView" store:Type="Views" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT 
 [PozycjeZamowieniaView].[ID] AS [ID], 
 [PozycjeZamowieniaView].[PSID] AS [PSID], 
@@ -1477,7 +1478,7 @@ FROM [dbo].[HistorieZamowienView] AS [HistorieZamowienView]</DefiningQuery>
 [PozycjeZamowieniaView].[Synchronizacja] AS [Synchronizacja]
 FROM [dbo].[PozycjeZamowieniaView] AS [PozycjeZamowieniaView]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ProduktyAtrybuty" EntityType="Self.ProduktyAtrybuty" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="ProduktyAtrybuty" EntityType="Self.ProduktyAtrybuty" store:Type="Views" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT 
 [ProduktyAtrybuty].[id] AS [id], 
 [ProduktyAtrybuty].[AtrybutID] AS [AtrybutID], 
@@ -1517,7 +1518,7 @@ FROM [dbo].[PozycjeZamowieniaView] AS [PozycjeZamowieniaView]</DefiningQuery>
 [ProduktyAtrybuty].[OrderIndex] AS [OrderIndex]
 FROM [dbo].[ProduktyAtrybuty] AS [ProduktyAtrybuty]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="StanyMagazynoweView" EntityType="Self.StanyMagazynoweView" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="StanyMagazynoweView" EntityType="Self.StanyMagazynoweView" store:Type="Views" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT 
 [StanyMagazynoweView].[id] AS [id], 
 [StanyMagazynoweView].[guid] AS [guid], 
@@ -1534,7 +1535,7 @@ FROM [dbo].[ProduktyAtrybuty] AS [ProduktyAtrybuty]</DefiningQuery>
 [StanyMagazynoweView].[IloscZam] AS [IloscZam]
 FROM [dbo].[StanyMagazynoweView] AS [StanyMagazynoweView]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="TowaryAtrybuty" EntityType="Self.TowaryAtrybuty" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="TowaryAtrybuty" EntityType="Self.TowaryAtrybuty" store:Type="Views" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT 
 [TowaryAtrybuty].[ID1] AS [ID1], 
 [TowaryAtrybuty].[ID2] AS [ID2], 
@@ -1573,7 +1574,7 @@ FROM [dbo].[StanyMagazynoweView] AS [StanyMagazynoweView]</DefiningQuery>
 [TowaryAtrybuty].[SearchIndex] AS [SearchIndex]
 FROM [dbo].[TowaryAtrybuty] AS [TowaryAtrybuty]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ZamowieniaView" EntityType="Self.ZamowieniaView" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="ZamowieniaView" EntityType="Self.ZamowieniaView" store:Type="Views" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT 
 [ZamowieniaView].[ID] AS [ID], 
 [ZamowieniaView].[PSID] AS [PSID], 
@@ -1642,7 +1643,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="WebModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <Schema Namespace="WebModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityContainer Name="WebContext" a:LazyLoadingEnabled="true" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="Adresy" EntityType="WebModel.Adres" />
           <EntitySet Name="Kontrahenci" EntityType="WebModel.Kontrahent" />
@@ -2192,7 +2193,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <NavigationProperty Name="GrupaAtrybutow" Relationship="WebModel.GrupaAtrybutowAtrybut" FromRole="Atrybut" ToRole="GrupaAtrybutow" />
           <Property Type="Int32" Name="Kolejnosc" DefaultValue="1000" />
           <Property Type="Int32" Name="SynchronizacjaTekstury" />
-          <Property Type="Binary" Name="RowVersion" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" ConcurrencyMode="Fixed" />
+          <Property Type="Binary" Name="RowVersion" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Boolean" Name="is_deleted" Nullable="false" /></EntityType>
         <EntityType Name="JednostkaMiary">
           <Key>
@@ -2277,7 +2278,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="Boolean" Name="Usuniety" />
           <Property Type="Int32" Name="DostawcaID" />
           <NavigationProperty Name="Dostawca" Relationship="WebModel.DostawcaProdukt" FromRole="Produkt" ToRole="Dostawca" />
-          <Property Type="Boolean" Name="DostepnyOld" Nullable="false" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Internal" />
+          <Property Type="Boolean" Name="DostepnyOld" Nullable="false" a:GetterAccess="Internal" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="KategorieProduktu" Relationship="WebModel.ProduktKategoriaProdukt" FromRole="Produkt" ToRole="KategoriaProdukt" />
           <NavigationProperty Name="PozycjeZwrotow" Relationship="WebModel.ProduktPozycjeZwrotow" FromRole="Produkt" ToRole="PozycjeZwrotow" />
           <Property Type="Int32" Name="Kolejnosc" Nullable="false" />
@@ -2293,6 +2294,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <NavigationProperty Name="Zasoby" Relationship="WebModel.ProduktZasob" FromRole="Produkt" ToRole="Zasob" />
           <Property Name="NotWebAvailable" Type="Boolean" Nullable="false" />
           <Property Name="MinimumOrderQuantity" Type="Int32" Nullable="true" />
+          <Property Name="UserState" Type="String" />
           </EntityType>
         <EntityType Name="AtrybutProduktu">
           <Key>
@@ -2321,7 +2323,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <NavigationProperty Name="ProduktyAtrybutyZdjecia" Relationship="WebModel.AtrybutProduktuProduktAtrybutZdjecie" FromRole="AtrybutProduktu" ToRole="ProduktAtrybutZdjecie" a:GetterAccess="Public" a:SetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Type="Boolean" Name="Deleted" Nullable="false" />
           <Property Type="Binary" Name="Timestamp" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Type="Boolean" Name="DostepnyOld" Nullable="false" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Private" />
+          <Property Type="Boolean" Name="DostepnyOld" Nullable="false" a:GetterAccess="Private" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Type="Boolean" Name="DisableAVList" Nullable="false" />
           <Property Type="Boolean" Name="VisibleAV" Nullable="false" />
           <Property Type="Boolean" Name="Active" Nullable="false" DefaultValue="true" />
@@ -2407,7 +2409,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Name="Synchronizacja" Type="Byte" Nullable="true" />
           <Property Name="Stamp" Type="DateTime" Nullable="true" Precision="3" />
           <NavigationProperty Name="Atrybuty" Relationship="WebModel.GrupaAtrybutowAtrybut" FromRole="GrupaAtrybutow" ToRole="Atrybut" />
-          <Property Type="Binary" Name="RowVersion" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" ConcurrencyMode="Fixed" />
+          <Property Type="Binary" Name="RowVersion" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Boolean" Name="is_deleted" Nullable="false" /></EntityType>
         <Association Name="GrupaAtrybutowAtrybut">
           <End Type="WebModel.GrupaAtrybutow" Role="GrupaAtrybutow" Multiplicity="1" />
@@ -2562,7 +2564,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="Byte" Name="Stan" />
           <Property Type="Byte" Name="Synchronizacja" />
           <Property Type="Boolean" Name="Gotowy" />
-          <Property Type="DateTime" Name="Stamp" a:GetterAccess="Public" a:SetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" Precision="3" />
+          <Property Type="DateTime" Name="Stamp" a:GetterAccess="Public" a:SetterAccess="Public" Precision="3" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="Produkt" Relationship="WebModel.ProduktZdjecie" FromRole="Zdjecie" ToRole="Produkt" />
           <NavigationProperty Name="ProduktyAtrybutyZdjecia" Relationship="WebModel.ZdjecieProduktAtrybutZdjecie" FromRole="Zdjecie" ToRole="ProduktAtrybutZdjecie" a:GetterAccess="Public" a:SetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Type="Binary" Name="RowVer" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
@@ -2626,8 +2628,8 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="Int32" Name="KolejnoscAtrybutu" Nullable="true" />
           <Property Type="Boolean" Name="ProduktDostepny" Nullable="false" />
           <Property Type="Boolean" Name="AtrybutDostepny" Nullable="false" />
-          <Property Type="Boolean" Name="IsAvailable" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Internal" />
-          <Property Type="Boolean" Name="IsActive" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Internal" />
+          <Property Type="Boolean" Name="IsAvailable" a:GetterAccess="Internal" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Type="Boolean" Name="IsActive" a:GetterAccess="Internal" a:SetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Type="Boolean" Name="AvailableVisible" />
           <Property Type="String" Name="AvailableMsg" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="AvailableDate" Precision="3" />
@@ -2723,7 +2725,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="String" Name="Wartosc" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="Wlasciciel" />
           <Property Type="Binary" Name="EnovaStamp" Nullable="false" MaxLength="8" FixedLength="true" />
-          <Property Type="Binary" Name="Stamp" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" ConcurrencyMode="Fixed" />
+          <Property Type="Binary" Name="Stamp" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <NavigationProperty Name="KontrahentRabatGrupowies" Relationship="WebModel.GrupaRabatowaKontrahentRabatGrupowy" FromRole="GrupaRabatowa" ToRole="KontrahentRabatGrupowy" />
           <NavigationProperty Name="TowarGrupyRabatowe" Relationship="WebModel.GrupaRabatowaTowarGrupaRabatowa" FromRole="GrupaRabatowa" ToRole="TowarGrupaRabatowa" />
           <Property Type="Int32" Name="Synchronize" />
@@ -2739,7 +2741,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="Decimal" Name="Rabat" Nullable="false" Precision="8" Scale="6" />
           <Property Type="Boolean" Name="RabatZdefiniowany" Nullable="false" />
           <Property Type="Binary" Name="EnovaStamp" Nullable="false" MaxLength="8" FixedLength="true" />
-          <Property Type="Binary" Name="Stamp" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" ConcurrencyMode="Fixed" />
+          <Property Type="Binary" Name="Stamp" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <NavigationProperty Name="Kontrahent" Relationship="WebModel.KontrahentKontrahentRabatGrupowy" FromRole="KontrahentRabatGrupowy" ToRole="Kontrahent" />
           <NavigationProperty Name="GrupaRabatowa" Relationship="WebModel.GrupaRabatowaKontrahentRabatGrupowy" FromRole="KontrahentRabatGrupowy" ToRole="GrupaRabatowa" />
           <Property Type="Int32" Name="Synchronize" />
@@ -3006,7 +3008,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="Decimal" Name="Cena" Nullable="false" Precision="20" Scale="6" />
           <Property Type="Int32" Name="Synchronizacja" Nullable="false" />
           <Property Type="Boolean" Name="Deleted" Nullable="false" />
-          <Property Type="Binary" Name="Stamp" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" ConcurrencyMode="Fixed" />
+          <Property Type="Binary" Name="Stamp" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Double" Name="IlocsDeklarowana" Nullable="false" />
           <Property Type="Int32" Name="ZwrotID" Nullable="false" />
           <Property Type="String" Name="TowarNazwa" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -3027,7 +3029,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Type="Int32" Name="KontrahentID" Nullable="false" />
           <Property Type="Int32" Name="Synchronizacja" Nullable="false" />
           <Property Type="Boolean" Name="Deleted" Nullable="false" />
-          <Property Type="Binary" Name="Stamp" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" ConcurrencyMode="Fixed" />
+          <Property Type="Binary" Name="Stamp" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <NavigationProperty Name="Pozycje" Relationship="WebModel.ZwrotPozycjeZwrotow" FromRole="Zwrot" ToRole="PozycjeZwrotow" />
           <NavigationProperty Name="Kontrahent" Relationship="WebModel.KontrahentZwrot" FromRole="Zwrot" ToRole="Kontrahent" />
           <Property Type="Decimal" Name="WartoscNetto" Nullable="false" Precision="20" Scale="6" />
@@ -3052,7 +3054,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <NavigationProperty Name="Zwroty2" Relationship="WebModel.FK_Zwroty_PozycjeZwrotow" FromRole="Zwrot1" ToRole="Zwrot" />
         </EntityType>
         <Association Name="ZwrotPozycjeZwrotow">
-          <End Type="WebModel.Zwrot" Role="Zwrot" Multiplicity="1" >
+          <End Type="WebModel.Zwrot" Role="Zwrot" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Type="WebModel.PozycjaZwrotu" Role="PozycjeZwrotow" Multiplicity="*" />
@@ -3135,7 +3137,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <NavigationProperty Name="Zwroty" Relationship="WebModel.StatusZwrotuZwrot" FromRole="StatusZwrotu" ToRole="Zwrot" />
         </EntityType>
         <Association Name="ZwrotHistoriaZwrotow">
-          <End Type="WebModel.Zwrot" Role="Zwrot" Multiplicity="1" >
+          <End Type="WebModel.Zwrot" Role="Zwrot" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Type="WebModel.HistoriaZwrotu" Role="HistoriaZwrotow" Multiplicity="*" />
@@ -3950,7 +3952,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="WebModelStoreContainer" CdmEntityContainer="WebContext">
           <EntitySetMapping Name="Adresy">
             <EntityTypeMapping TypeName="IsTypeOf(WebModel.Adres)">
@@ -4203,6 +4205,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <EntitySetMapping Name="Produkty">
             <EntityTypeMapping TypeName="IsTypeOf(WebModel.Produkt)">
               <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="UserState" ColumnName="UserState" />
                 <ScalarProperty Name="MinimumOrderQuantity" ColumnName="MinimumOrderQuantity" />
                 <ScalarProperty Name="NotWebAvailable" ColumnName="NotWebAvailable" />
                 <ScalarProperty Name="Wyprzedaz" ColumnName="Wyprzedaz" />
@@ -5376,500 +5379,500 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <edmx:Designer>
     <edmx:Connection>
-      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
-        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
-      </DesignerInfoPropertySet>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
     </edmx:Connection>
     <edmx:Options>
-      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
-        <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
-        <DesignerProperty Name="UseLegacyProvider" Value="True" />
-      </DesignerInfoPropertySet>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="False" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </edmx:DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="Web" xmlns="http://schemas.microsoft.com/ado/2008/10/edmx" ZoomLevel="73">
-        <EntityTypeShape EntityType="WebModel.Adres" Width="1.5" PointX="5.375" PointY="0.5" Height="5.8263151041666656" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebModel.Kontrahent" Width="1.75" PointX="2.875" PointY="0.5" Height="6.5955208333333317" IsExpanded="true" />
-        <AssociationConnector Association="WebModel.FK_Adresy_Kontrahenci" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.625" PointY="3.4131575520833328" />
-          <ConnectorPoint PointX="5.375" PointY="3.4131575520833328" />
-          </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.User" Width="1.5" PointX="0.5" PointY="27.75" Height="5.2494108072916674" />
-        <EntityTypeShape EntityType="WebModel.Zamowienie" Width="1.875" PointX="2.875" PointY="8.125" Height="9.8646451822916674" />
-        <AssociationConnector Association="WebModel.KontrahentZamowienie">
-          <ConnectorPoint PointX="3.75" PointY="7.0955208333333317" />
-          <ConnectorPoint PointX="3.75" PointY="8.125" />
-          </AssociationConnector>
-        <AssociationConnector Association="WebModel.AdresZamowienie">
-          <ConnectorPoint PointX="5.400383615384615" PointY="6.3263151041666656" />
-          <ConnectorPoint PointX="5" PointY="6.4513151041666656" />
-          <ConnectorPoint PointX="5.25" PointY="6.4513151041666656" />
-          <ConnectorPoint PointX="5.25" PointY="7.65672976923077" />
-          <ConnectorPoint PointX="4.75" PointY="8.15672976923077" />
-          </AssociationConnector>
-        <AssociationConnector Association="WebModel.AdresZamowienie1">
-          <ConnectorPoint PointX="5.3819220769230771" PointY="6.3263151041666656" />
-          <ConnectorPoint PointX="4.9756720769230771" PointY="6.7325651041666656" />
-          <ConnectorPoint PointX="5.125" PointY="6.7325651041666656" />
-          <ConnectorPoint PointX="5.125" PointY="7.7197115384615387" />
-          <ConnectorPoint PointX="4.7197115384615387" PointY="8.125" />
-          </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.HistoriaZamowienia" Width="1.5" PointX="0.5" PointY="16.5" Height="2.9417936197916656" />
-        <EntityTypeShape EntityType="WebModel.StatusZamowienia" Width="1.5" PointX="0.5" PointY="8.625" Height="6.787822265625" />
-        <AssociationConnector Association="WebModel.ZamowienieHistoriaZamowien">
-          <ConnectorPoint PointX="2.875" PointY="17.244822591145834" />
-          <ConnectorPoint PointX="2.5208333333333335" PointY="17.244822591145834" />
-          <ConnectorPoint PointX="2.2916666666666665" PointY="17.244822591145834" />
-          <ConnectorPoint PointX="2" PointY="17.244822591145834" />
-          </AssociationConnector>
-        <AssociationConnector Association="WebModel.StatusyZamowienHistoriaZamowien">
-          <ConnectorPoint PointX="1.25" PointY="15.412822265625" />
-          <ConnectorPoint PointX="1.25" PointY="16.5" />
-          </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.Atrybut" Width="1.5" PointX="10.125" PointY="11.875" Height="4.0956022135416656" />
-        <EntityTypeShape EntityType="WebModel.JednostkaMiary" Width="1.5" PointX="10.125" PointY="8.875" Height="2.5571907552083317" />
-        <EntityTypeShape EntityType="WebModel.PozycjaZamowienia" Width="1.5" PointX="5.5" PointY="6.875" Height="5.634013671875" />
-        <EntityTypeShape EntityType="WebModel.Produkt" Width="2" PointX="7.625" PointY="4" Height="11.018453776041666" />
-        <EntityTypeShape EntityType="WebModel.AtrybutProduktu" Width="1.75" PointX="7.75" PointY="21.5" Height="6.4032194010416674" />
-        <EntityTypeShape EntityType="WebModel.KombinacjaAtrybutu" Width="1.5" PointX="11.875" PointY="19.125" Height="3.9033007812499996" />
-        <EntityTypeShape EntityType="WebModel.StawkaVat" Width="1.5" PointX="10.375" PointY="0.5" Height="3.5186979166666656" />
-        <AssociationConnector Association="WebModel.FK_product_tax">
-          <ConnectorPoint PointX="10.375" PointY="3.4730436197916656" />
-          <ConnectorPoint PointX="9.46875" PointY="3.4730436197916656" />
-          <ConnectorPoint PointX="9.46875" PointY="4.25" />
-          </AssociationConnector>
-        <AssociationConnector Association="WebModel.ZamowieniePozycjaZamowienia">
-          <ConnectorPoint PointX="4.75" PointY="10.07836738461538" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="10.07836738461538" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="10.07836738461538" />
-          <ConnectorPoint PointX="5.5" PointY="10.07836738461538" />
-          </AssociationConnector>
-        <AssociationConnector Association="WebModel.ProduktPozycjaZamowienia">
-          <ConnectorPoint PointX="7.625" PointY="9.6920068359375" />
-          <ConnectorPoint PointX="7" PointY="9.6920068359375" />
-          </AssociationConnector>
-        <AssociationConnector Association="WebModel.ProduktAtrybutProduktu">
-          <ConnectorPoint PointX="8.75" PointY="15.268453776041666" />
-          <ConnectorPoint PointX="8.75" PointY="15.875" />
-          </AssociationConnector>
-        <AssociationConnector Association="WebModel.AtrybutProduktuPozycjaZamowienia">
-          <ConnectorPoint PointX="8.75" PointY="15.875" />
-          <ConnectorPoint PointX="8.75" PointY="15.330953776041667" />
-          <ConnectorPoint PointX="7.5625" PointY="15.330953776041667" />
-          <ConnectorPoint PointX="7.5625" PointY="11.131762253906244" />
-          <ConnectorPoint PointX="7" PointY="11.131762253906244" />
-          </AssociationConnector>
-        <AssociationConnector Association="WebModel.AtrybutProduktuKombinacjaAtrybutu">
-          <ConnectorPoint PointX="9.625" PointY="18.576650390624998" />
-          <ConnectorPoint PointX="9.9791666666666661" PointY="18.576650390624998" />
-          <ConnectorPoint PointX="10.145833333333334" PointY="18.576650390624998" />
-          <ConnectorPoint PointX="10.25" PointY="18.576650390624998" />
-          </AssociationConnector>
-        <AssociationConnector Association="WebModel.AtrybutKombinacjaAtrybutu">
-          <ConnectorPoint PointX="10.9375" PointY="15.970602213541666" />
-          <ConnectorPoint PointX="10.9375" PointY="16.625" />
-          </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.GrupaAtrybutow" Width="1.5" PointX="12.25" PointY="7.875" Height="3.5186979166666656" />
-        <AssociationConnector Association="WebModel.GrupaAtrybutowAtrybut">
-          <ConnectorPoint PointX="12.25" PointY="11.393697916666667" />
-          <ConnectorPoint PointX="11.625" PointY="11.875" />
-          </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.Wiadomosc" Width="1.5" PointX="5.625" PointY="18.125" Height="3.3263964843750031" />
-        <AssociationConnector Association="WebModel.ZamowienieWiadomosc">
-          <ConnectorPoint PointX="4.65625" PointY="17.989645182291667" />
-          <ConnectorPoint PointX="4.65625" PointY="18.34375" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="18.34375" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="18.34375" />
-          <ConnectorPoint PointX="5.625" PointY="18.34375" />
-          </AssociationConnector>
-        <AssociationConnector Association="WebModel.KontrahentWiadomosc">
-          <ConnectorPoint PointX="4.08594" PointY="7.2878222656249987" />
-          <ConnectorPoint PointX="4.08594" PointY="7.875" />
-          <ConnectorPoint PointX="5" PointY="7.875" />
-          <ConnectorPoint PointX="5" PointY="19.7881982421875" />
-          <ConnectorPoint PointX="5.625" PointY="19.7881982421875" />
-          </AssociationConnector>
-        <AssociationConnector Association="WebModel.KontrahentKontrahent">
-          <ConnectorPoint PointX="3.75" PointY="0.5" />
-          <ConnectorPoint PointX="3.75" PointY="0.25" />
-          <ConnectorPoint PointX="4.1376923076923076" PointY="0.25" />
-          <ConnectorPoint PointX="4.1376923076923076" PointY="0.5" /></AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.Korespondencja" Width="1.5" PointX="2.875" PointY="21.5" Height="3.3263964843749996" />
-        <AssociationConnector Association="WebModel.JednostkiMiaryProdukt">
-          <ConnectorPoint PointX="10.125" PointY="9.28125" />
-          <ConnectorPoint PointX="10.083333333333334" PointY="9.28125" />
-          <ConnectorPoint PointX="9.9166666666666661" PointY="9.28125" />
-          <ConnectorPoint PointX="9.625" PointY="9.28125" />
-          </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.RodzajKorespondencji" Width="1.5" PointX="3" PointY="18.625" Height="1.787985026041671" />
-        <AssociationConnector Association="WebModel.UserKorespondencja">
-          <ConnectorPoint PointX="2" PointY="30.374705403645834" />
-          <ConnectorPoint PointX="2.3541666666666665" PointY="30.374705403645834" />
-          <ConnectorPoint PointX="2.5208333333333335" PointY="30.374705403645834" />
-          <ConnectorPoint PointX="3.625" PointY="30.374705403645834" />
-          <ConnectorPoint PointX="3.625" PointY="24.826396484375" />
-          </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.KategoriaOld" Width="2" PointX="12.375" PointY="0.5" Height="6.21091796875" />
-        <EntityTypeShape EntityType="WebModel.KategoriaProdukt" Width="1.5" PointX="10.125" PointY="4.375" Height="3.9033007812499996" />
-        <EntityTypeShape EntityType="WebModel.PozycjaZamowieniaView" Width="1.5" PointX="12.125" PointY="12.75" Height="5.6340136718750031" />
-        <EntityTypeShape EntityType="WebModel.Zdjecie" Width="2.125" PointX="5.25" PointY="13" Height="4.6725065104166674" />
-        <EntityTypeShape EntityType="WebModel.ProduktAtrybutZdjecie" Width="1.5" PointX="5.75" PointY="22.25" Height="3.5186979166666674" />
-        <AssociationConnector Association="WebModel.ProduktZdjecie">
-          <ConnectorPoint PointX="7.625" PointY="14.134226888020834" />
-          <ConnectorPoint PointX="7.375" PointY="14.134226888020834" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.ProduktAtrybut" Width="1.5" PointX="14.5" PointY="7.875" Height="7.5570279947916656" />
-        <AssociationConnector Association="WebModel.AtrybutProduktuProduktAtrybutZdjecie">
-          <ConnectorPoint PointX="8.75" PointY="22.278219401041667" />
-          <ConnectorPoint PointX="8.75" PointY="24.009348958333334" />
-          <ConnectorPoint PointX="7.8020838333333336" PointY="24.009348958333334" />
-          <ConnectorPoint PointX="7.6354171666666675" PointY="24.009348958333334" />
-          <ConnectorPoint PointX="7.25" PointY="24.009348958333334" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.ZdjecieProduktAtrybutZdjecie">
-          <ConnectorPoint PointX="7.21875" PointY="17.672506510416667" />
-          <ConnectorPoint PointX="7.21875" PointY="22.25" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.GuidMap" Width="1.5" PointX="23" PointY="3.125" Height="1.59568359375" />
-        <EntityTypeShape EntityType="WebModel.Konfiguracja" Width="1.5" PointX="0.5" PointY="25.125" Height="1.787985026041671" />
-        <EntityTypeShape EntityType="WebModel.HistorieZamowienView" Width="1.5" PointX="20.625" PointY="10.75" Height="4.6725065104166656" />
-        <AssociationConnector Association="WebModel.StatusZamowieniaZamowienie">
-          <ConnectorPoint PointX="2" PointY="12.0189111328125" />
-          <ConnectorPoint PointX="2.875" PointY="12.0189111328125" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.UserKonfiguracja">
-          <ConnectorPoint PointX="1.25" PointY="27.75" />
-          <ConnectorPoint PointX="1.25" PointY="26.912985026041671" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.GrupaRabatowa" Width="1.5" PointX="0.5" PointY="0.5" Height="2.9417936197916661" />
-        <EntityTypeShape EntityType="WebModel.KontrahentRabatGrupowy" Width="1.5" PointX="0.5" PointY="4.5" Height="3.1340950520833326" />
-        <EntityTypeShape EntityType="WebModel.TowarGrupaRabatowa" Width="1.5" PointX="7.75" PointY="0.5" Height="2.3648893229166661" />
-        <AssociationConnector Association="WebModel.KontrahentKontrahentRabatGrupowy">
-          <ConnectorPoint PointX="2.875" PointY="5.7977604166666659" />
-          <ConnectorPoint PointX="2" PointY="5.7977604166666659" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.GrupaRabatowaKontrahentRabatGrupowy">
-          <ConnectorPoint PointX="1.25" PointY="3.4417936197916661" />
-          <ConnectorPoint PointX="1.25" PointY="4.5" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.ProduktTowarGrupaRabatowa">
-          <ConnectorPoint PointX="8.5" PointY="4.25" />
-          <ConnectorPoint PointX="8.5" PointY="2.8648893229166661" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.GrupaRabatowaTowarGrupaRabatowa">
-          <ConnectorPoint PointX="1.9999999999999991" PointY="0.5" />
-          <ConnectorPoint PointX="2.3749999999999991" PointY="0.125" />
-          <ConnectorPoint PointX="7.3761528461538459" PointY="0.125" />
-          <ConnectorPoint PointX="7.7511528461538459" PointY="0.5" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.Prowizja" Width="1.5" PointX="16.625" PointY="7" Height="4.2879036458333335" />
-        <EntityTypeShape EntityType="WebModel.SynchProfileItem" Width="1.5" PointX="14.125" PointY="18.5" Height="2.1725878906250031" />
-        <EntityTypeShape EntityType="WebModel.SynchProfileItemDef" Width="1.5" PointX="14.125" PointY="20.875" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="WebModel.CzasPracy" Width="1.5" PointX="14.25" PointY="16.125" Height="1.7566536458333246" />
-        <EntityTypeShape EntityType="WebModel.Dostawca" Width="1.5" PointX="16.375" PointY="12.25" Height="1.7566536458333246" />
-        <AssociationConnector Association="WebModel.DostawcaProdukt">
-          <ConnectorPoint PointX="17.125" PointY="12.25" />
-          <ConnectorPoint PointX="17.125" PointY="11.537903645833332" />
-          <ConnectorPoint PointX="16.25" PointY="11.537903645833332" />
-          <ConnectorPoint PointX="16.25" PointY="7.625" />
-          <ConnectorPoint PointX="11.875" PointY="7.625" />
-          <ConnectorPoint PointX="11.875" PointY="8.625" />
-          <ConnectorPoint PointX="10" PointY="8.625" />
-          <ConnectorPoint PointX="10" PointY="9.7592268880208337" />
-          <ConnectorPoint PointX="9.625" PointY="9.7592268880208337" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.ProwizjaObrot" Width="1.5" PointX="16.25" PointY="15" Height="5.3722949218750031" />
-        <EntityTypeShape EntityType="WebModel.Etat" Width="1.5" PointX="20.375" PointY="0.5" Height="1.9802864583333331" />
-        <EntityTypeShape EntityType="WebModel.SkladkaZUSUP" Width="1.5" PointX="19" PointY="3.125" Height="3.9033007812499996" />
-        <EntityTypeShape EntityType="WebModel.ProwizjaPracownika" Width="1.5" PointX="18.375" PointY="8.25" Height="3.5644742838541674" />
-        <AssociationConnector Association="WebModel.ProduktKategoriaProdukt">
-          <ConnectorPoint PointX="9.625" PointY="6.09375" />
-          <ConnectorPoint PointX="10.125" PointY="6.09375" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.KategoriaKategoriaProduktOld">
-          <ConnectorPoint PointX="12.375" PointY="5.542958984375" />
-          <ConnectorPoint PointX="11.625" PointY="5.542958984375" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.PozycjaZwrotu" Width="1.5" PointX="7.75" PointY="29.5" Height="4.4802050781250031" />
-        <EntityTypeShape EntityType="WebModel.Zwrot" Width="1.5" PointX="9.75" PointY="29.5" Height="5.8263151041666674" />
-        <AssociationConnector Association="WebModel.ZwrotPozycjeZwrotow">
-          <ConnectorPoint PointX="10.6875" PointY="27.076315104166667" />
-          <ConnectorPoint PointX="10.6875" PointY="28.75" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.KontrahentZwrot">
-          <ConnectorPoint PointX="4.625" PointY="4.94786403125" />
-          <ConnectorPoint PointX="5.25" PointY="4.94786403125" />
-          <ConnectorPoint PointX="5.25" PointY="6.3888151041666656" />
-          <ConnectorPoint PointX="5.2545502820512819" PointY="6.3888151041666648" />
-          <ConnectorPoint PointX="5.421216948717948" PointY="6.3888151041666656" />
-          <ConnectorPoint PointX="7.5625" PointY="6.3888151041666656" />
-          <ConnectorPoint PointX="7.5625" PointY="15.330953776041667" />
-          <ConnectorPoint PointX="10.0625" PointY="15.330953776041667" />
-          <ConnectorPoint PointX="10.0625" PointY="21.15625" />
-          <ConnectorPoint PointX="10.75" PointY="21.15625" />
-          <ConnectorPoint PointX="10.75" PointY="21.25" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.ProduktPozycjeZwrotow">
-          <ConnectorPoint PointX="7.7187505000000005" PointY="15.268453776041666" />
-          <ConnectorPoint PointX="7.7187505000000005" PointY="30.9901025390625" />
-          <ConnectorPoint PointX="9.875" PointY="30.9901025390625" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.KategoriaKategoria">
-          <ConnectorPoint PointX="13.08423076923077" PointY="6.71091796875" />
-          <ConnectorPoint PointX="13.08423076923077" PointY="6.96091796875" />
-          <ConnectorPoint PointX="13.679615384615385" PointY="6.96091796875" />
-          <ConnectorPoint PointX="13.679615384615385" PointY="6.71091796875" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.HistoriaZwrotu" Width="1.5" PointX="11.75" PointY="29.5" Height="3.3263964843750031" />
-        <EntityTypeShape EntityType="WebModel.StatusZwrotu" Width="1.5" PointX="13.625" PointY="29.5" Height="2.5571907552083246" />
-        <AssociationConnector Association="WebModel.ZwrotHistoriaZwrotow">
-          <ConnectorPoint PointX="11.5" PointY="25.2881982421875" />
-          <ConnectorPoint PointX="12" PointY="25.2881982421875" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.UserHistoriaZwrotow">
-          <ConnectorPoint PointX="2" PointY="29.031100701822915" />
-          <ConnectorPoint PointX="2.3541666666666665" PointY="29.031100701822915" />
-          <ConnectorPoint PointX="2.5208333333333335" PointY="29.031100701822915" />
-          <ConnectorPoint PointX="3.5416666666666665" PointY="29.031100701822915" />
-          <ConnectorPoint PointX="3.7083333333333335" PointY="29.031100701822915" />
-          <ConnectorPoint PointX="5.5" PointY="29.031100701822915" />
-          <ConnectorPoint PointX="5.5" PointY="26.125" />
-          <ConnectorPoint PointX="7.6354171666666675" PointY="26.125" />
-          <ConnectorPoint PointX="7.8020838333333336" PointY="26.125" />
-          <ConnectorPoint PointX="9.625" PointY="26.125" />
-          <ConnectorPoint PointX="9.625" PointY="28.5" />
-          <ConnectorPoint PointX="10.604166666666666" PointY="28.5" />
-          <ConnectorPoint PointX="10.770833333333334" PointY="28.5" />
-          <ConnectorPoint PointX="12.75" PointY="28.5" />
-          <ConnectorPoint PointX="12.75" PointY="26.951396484375003" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.StatusZwrotuHistoriaZwrotu">
-          <ConnectorPoint PointX="14.75" PointY="25.095896809895834" />
-          <ConnectorPoint PointX="13.5" PointY="25.095896809895834" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.StatusZwrotuZwrot">
-          <ConnectorPoint PointX="15.5" PointY="26.566793619791667" />
-          <ConnectorPoint PointX="15.5" PointY="27.045105794270832" />
-          <ConnectorPoint PointX="12.833333333333334" PointY="27.045105794270832" />
-          <ConnectorPoint PointX="12.666666666666666" PointY="27.045105794270832" />
-          <ConnectorPoint PointX="11.5" PointY="27.045105794270832" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.UserZwrot">
-          <ConnectorPoint PointX="0.84374800000000016" PointY="27.75" />
-          <ConnectorPoint PointX="0.84374800000000016" PointY="27.162985026041667" />
-          <ConnectorPoint PointX="1.1666666666666667" PointY="27.162985026041667" />
-          <ConnectorPoint PointX="1.3333333333333333" PointY="27.162985026041667" />
-          <ConnectorPoint PointX="2.3541666666666665" PointY="27.162985026041667" />
-          <ConnectorPoint PointX="2.5208333333333335" PointY="27.162985026041667" />
-          <ConnectorPoint PointX="3.5416666666666665" PointY="27.162985026041667" />
-          <ConnectorPoint PointX="3.7083333333333335" PointY="27.162985026041667" />
-          <ConnectorPoint PointX="5.25" PointY="27.162985026041667" />
-          <ConnectorPoint PointX="5.25" PointY="25.893697916666667" />
-          <ConnectorPoint PointX="7.6354171666666675" PointY="25.893697916666667" />
-          <ConnectorPoint PointX="7.8020838333333336" PointY="25.893697916666667" />
-          <ConnectorPoint PointX="9.875" PointY="25.893697916666667" />
-          <ConnectorPoint PointX="9.875" PointY="23.6875005" />
-          <ConnectorPoint PointX="10" PointY="23.6875005" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.KorektaPozycjaZwrotu" Width="2" PointX="20.875" PointY="18.625" Height="1.9802864583333353" />
-        <EntityTypeShape EntityType="WebModel.KorektaZwrot" Width="1.5" PointX="21" PointY="21.5" Height="2.1725878906249996" />
-        <AssociationConnector Association="WebModel.ZwrotKorektyZwroty">
-          <ConnectorPoint PointX="11.5" PointY="23.237847121093758" />
-          <ConnectorPoint PointX="11.75" PointY="23.237847121093758" />
-          <ConnectorPoint PointX="11.75" PointY="23.375" />
-          <ConnectorPoint PointX="17.125" PointY="23.375" />
-          <ConnectorPoint PointX="17.125" PointY="22.5" />
-          <ConnectorPoint PointX="20.75" PointY="22.5" />
-          <ConnectorPoint PointX="20.75" PointY="23.922587890624996" />
-          <ConnectorPoint PointX="21.75" PointY="23.922587890624996" />
-          <ConnectorPoint PointX="21.75" PointY="23.672587890625" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.KorektaZwrotKorektaPozycjaZwrotu">
-          <ConnectorPoint PointX="21.75" PointY="21.5" />
-          <ConnectorPoint PointX="21.75" PointY="20.989889322916667" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.PozycjaZwrotuKorektaPozycjaZwrotu">
-          <ConnectorPoint PointX="11.375" PointY="30.990102539062505" />
-          <ConnectorPoint PointX="22.71875" PointY="30.990102539062505" />
-          <ConnectorPoint PointX="22.71875" PointY="20.989889322916667" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.ZamowienieView" Width="1.5" PointX="5.75" PointY="26.375" Height="9.4800423177083317" />
-        <AssociationConnector Association="WebModel.StatusZamowieniaZamowienieView">
-          <ConnectorPoint PointX="2" PointY="15.350513573317308" />
-          <ConnectorPoint PointX="2.3160744349011213" PointY="15.666588008218428" />
-          <ConnectorPoint PointX="2.4339255650988791" PointY="15.784439138416186" />
-          <ConnectorPoint PointX="2.4375" PointY="15.788013573317308" />
-          <ConnectorPoint PointX="2.4375" PointY="33.786675711588543" />
-          <ConnectorPoint PointX="5.75" PointY="33.786675711588543" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.StanMagazynowyDoUsuniecia" Width="1.5" PointX="22.75" PointY="0.75" Height="1.9802864583333331" />
-        <EntityTypeShape EntityType="WebModel.StanMagazynowyView" Width="2" PointX="17.375" PointY="22.75" Height="3.5186979166666674" />
-        <AssociationConnector Association="WebModel.RodzajKorespondencjiKorespondencja">
-          <ConnectorPoint PointX="3.6875" PointY="20.412985026041671" />
-          <ConnectorPoint PointX="3.6875" PointY="21.5" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.FedExOdbiorca" Width="1.5" PointX="25.375" PointY="0.5" Height="3.7109993489583326" />
-        <EntityTypeShape EntityType="WebModel.FedExListPrzewozowy" Width="2.25" PointX="28" PointY="0.5" Height="5.2494108072916656" />
-        <AssociationConnector Association="WebModel.FedExOdbiorcaFedExListPrzewozowy">
-          <ConnectorPoint PointX="26.875" PointY="2.3554996744791667" />
-          <ConnectorPoint PointX="28" PointY="2.3554996744791667" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.FedExOdbiorcaFedExListPrzewozowy1">
-          <ConnectorPoint PointX="26.875" PointY="1.3652498372395834" />
-          <ConnectorPoint PointX="28" PointY="1.3652498372395834" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.FedExOdbiorcaFedExListPrzewozowy2">
-          <ConnectorPoint PointX="26.875" PointY="3.3457495117187497" />
-          <ConnectorPoint PointX="28" PointY="3.3457495117187497" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.TowarAtrybut" Width="2.125" PointX="23.625" PointY="5.25" Height="7.1724251302083353" />
-        <AssociationConnector Association="WebModel.ProduktTowarAtrybut">
-          <ConnectorPoint PointX="9.625" PointY="12.545092332031246" />
-          <ConnectorPoint PointX="10.0625" PointY="12.545092332031246" />
-          <ConnectorPoint PointX="10.0625" PointY="11.494690755208332" />
-          <ConnectorPoint PointX="12.035521329311404" PointY="11.494690755208332" />
-          <ConnectorPoint PointX="12.202187995978072" PointY="11.494690755208332" />
-          <ConnectorPoint PointX="14.4375" PointY="11.494690755208332" />
-          <ConnectorPoint PointX="14.4375" PointY="15.494527994791667" />
-          <ConnectorPoint PointX="15.979166666666666" PointY="15.494527994791667" />
-          <ConnectorPoint PointX="16.145833333333332" PointY="15.494527994791667" />
-          <ConnectorPoint PointX="16.1875" PointY="15.494527994791667" />
-          <ConnectorPoint PointX="16.1875" PointY="14.9375" />
-          <ConnectorPoint PointX="20.5625" PointY="14.9375" />
-          <ConnectorPoint PointX="20.5625" PointY="10.6875" />
-          <ConnectorPoint PointX="23.5625" PointY="10.6875" />
-          <ConnectorPoint PointX="23.5625" PointY="12.484925130208335" />
-          <ConnectorPoint PointX="24.6875" PointY="12.484925130208335" />
-          <ConnectorPoint PointX="24.6875" PointY="12.422425130208335" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.AtrybutProduktuTowarAtrybut">
-          <ConnectorPoint PointX="9.625" PointY="19.076609700520834" />
-          <ConnectorPoint PointX="9.9791666666666661" PointY="19.076609700520834" />
-          <ConnectorPoint PointX="10.145833333333334" PointY="19.076609700520834" />
-          <ConnectorPoint PointX="10.1875" PointY="19.076609700520834" />
-          <ConnectorPoint PointX="10.1875" PointY="16.5625" />
-          <ConnectorPoint PointX="11.791666666666666" PointY="16.5625" />
-          <ConnectorPoint PointX="11.958333333333334" PointY="16.5625" />
-          <ConnectorPoint PointX="12.0625" PointY="16.5625" />
-          <ConnectorPoint PointX="12.0625" PointY="18.4375" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="18.4375" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="18.4375" />
-          <ConnectorPoint PointX="15.791666666666666" PointY="18.4375" />
-          <ConnectorPoint PointX="15.958333333333334" PointY="18.4375" />
-          <ConnectorPoint PointX="16.125" PointY="18.4375" />
-          <ConnectorPoint PointX="16.125" PointY="14.9375" />
-          <ConnectorPoint PointX="20.5" PointY="14.9375" />
-          <ConnectorPoint PointX="20.5" PointY="10.6875" />
-          <ConnectorPoint PointX="23.5" PointY="10.6875" />
-          <ConnectorPoint PointX="23.5" PointY="12.547425130208335" />
-          <ConnectorPoint PointX="24.124997999999998" PointY="12.547425130208335" />
-          <ConnectorPoint PointX="24.124997999999998" PointY="12.422425130208335" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.Magazyn_StanMagazynowy" Width="2.25" PointX="23.375" PointY="22.125" Height="2.7494921875000031" />
-        <EntityTypeShape EntityType="WebModel.RelacjaStatDok" Width="1.5" PointX="30.625" PointY="7.875" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="WebModel.PozycjaReklamacji" Width="1.5" PointX="25.5" PointY="16" Height="4.480205078125" />
-        <EntityTypeShape EntityType="WebModel.Reklamacja" Width="1.875" PointX="27.75" PointY="17" Height="4.480205078125" />
-        <AssociationConnector Association="WebModel.KontrahentReklamacja">
-          <ConnectorPoint PointX="4.625" PointY="1.9409519791666656" />
-          <ConnectorPoint PointX="5.3125" PointY="1.9409519791666656" />
-          <ConnectorPoint PointX="5.3125" PointY="6.3888151041666656" />
-          <ConnectorPoint PointX="7.5625" PointY="6.3888151041666656" />
-          <ConnectorPoint PointX="7.5625" PointY="15.330953776041667" />
-          <ConnectorPoint PointX="10" PointY="15.330953776041667" />
-          <ConnectorPoint PointX="10" PointY="16.033102213541667" />
-          <ConnectorPoint PointX="12" PointY="16.033102213541667" />
-          <ConnectorPoint PointX="12" PointY="18.4375" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="18.4375" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="18.4375" />
-          <ConnectorPoint PointX="15.791666666666666" PointY="18.4375" />
-          <ConnectorPoint PointX="15.958333333333334" PointY="18.4375" />
-          <ConnectorPoint PointX="16.0625" PointY="18.4375" />
-          <ConnectorPoint PointX="16.0625" PointY="14.9375" />
-          <ConnectorPoint PointX="20.4375" PointY="14.9375" />
-          <ConnectorPoint PointX="20.4375" PointY="15.485006510416667" />
-          <ConnectorPoint PointX="28.6875" PointY="15.485006510416667" />
-          <ConnectorPoint PointX="28.6875" PointY="17" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.ReklamacjaPozycjeReklamacji">
-          <ConnectorPoint PointX="27.75" PointY="18.740102539062498" />
-          <ConnectorPoint PointX="27" PointY="18.740102539062498" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.HistoriaDokumentu" Width="1.5" PointX="30.625" PointY="16.375" Height="3.3263964843749996" />
-        <EntityTypeShape EntityType="WebModel.StatusDokumentu" Width="1.5" PointX="30.625" PointY="11.375" Height="3.1340950520833246" />
-        <AssociationConnector Association="WebModel.HistoriaDokumentuReklamacja">
-          <ConnectorPoint PointX="30.625" PointY="18.446848958333334" />
-          <ConnectorPoint PointX="30.333333333333332" PointY="18.446848958333334" />
-          <ConnectorPoint PointX="30.166666666666668" PointY="18.446848958333334" />
-          <ConnectorPoint PointX="29.625" PointY="18.446848958333334" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.StatusDokumentuReklamacja">
-          <ConnectorPoint PointX="30.625" PointY="14.509095052083325" />
-          <ConnectorPoint PointX="30.25" PointY="14.884095052083325" />
-          <ConnectorPoint PointX="30.25" PointY="19.994779018229167" />
-          <ConnectorPoint PointX="29.625" PointY="19.994779018229167" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.Operator" Width="1.5" PointX="33.375" PointY="16.25" Height="4.0956022135416674" />
-        <AssociationConnector Association="WebModel.OperatorHistoriaDokumentu">
-          <ConnectorPoint PointX="33.25" PointY="18.134348958333334" />
-          <ConnectorPoint PointX="32.125" PointY="18.134348958333334" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.OperatorReklamacja">
-          <ConnectorPoint PointX="33.25" PointY="20.295190615885417" />
-          <ConnectorPoint PointX="29.625" PointY="20.295190615885417" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.StatusDokumentuRelacjaStatDok">
-          <ConnectorPoint PointX="31.375" PointY="11.375" />
-          <ConnectorPoint PointX="31.375" PointY="10.239889322916667" />
-        </AssociationConnector>
-        <AssociationConnector Association="WebModel.StatusDokumentuRelacjaStatDok1">
-          <ConnectorPoint PointX="31.8125" PointY="11.375" />
-          <ConnectorPoint PointX="31.8125" PointY="10.239889322916667" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.Kontakt" Width="1.5" PointX="28" PointY="24.875" Height="1.7879850260416674" />
-        <AssociationConnector Association="WebModel.ProduktPozycjaReklamacji">
-          <ConnectorPoint PointX="8.26562775" PointY="15.268453776041666" />
-          <ConnectorPoint PointX="8.26562775" PointY="15.625" />
-          <ConnectorPoint PointX="8.6666666666666661" PointY="15.625" />
-          <ConnectorPoint PointX="8.8333333333333339" PointY="15.625" />
-          <ConnectorPoint PointX="9.875" PointY="15.625" />
-          <ConnectorPoint PointX="9.875" PointY="16.375" />
-          <ConnectorPoint PointX="9.9791666666666661" PointY="16.375" />
-          <ConnectorPoint PointX="10.145833333333334" PointY="16.375" />
-          <ConnectorPoint PointX="10.854166666666666" PointY="16.375" />
-          <ConnectorPoint PointX="11.020833333333334" PointY="16.375" />
-          <ConnectorPoint PointX="11.875" PointY="16.375" />
-          <ConnectorPoint PointX="11.875" PointY="18.634013671875003" />
-          <ConnectorPoint PointX="13.875" PointY="18.634013671875003" />
-          <ConnectorPoint PointX="13.875" PointY="18.25" />
-          <ConnectorPoint PointX="15.875" PointY="18.25" />
-          <ConnectorPoint PointX="15.875" PointY="21.460917968750003" />
-          <ConnectorPoint PointX="20.75" PointY="21.460917968750003" />
-          <ConnectorPoint PointX="20.75" PointY="21.25" />
-          <ConnectorPoint PointX="21.666666666666668" PointY="21.25" />
-          <ConnectorPoint PointX="21.833333333333332" PointY="21.25" />
-          <ConnectorPoint PointX="22.635416666666668" PointY="21.25" />
-          <ConnectorPoint PointX="22.802083333333332" PointY="21.25" />
-          <ConnectorPoint PointX="25.125" PointY="21.25" />
-          <ConnectorPoint PointX="25.125" PointY="18.240102539062498" />
-          <ConnectorPoint PointX="25.5" PointY="18.240102539062498" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.DefinicjaDokumentu" Width="1.5" PointX="30.75" PointY="21.75" Height="2.9417936197916674" />
-        <AssociationConnector Association="WebModel.StatusDokumentuHistoriaDokumentu">
-          <ConnectorPoint PointX="31.375" PointY="14.509095052083325" />
-          <ConnectorPoint PointX="31.375" PointY="16.375" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WebModel.Zasob" Width="1.5" PointX="7.875" PointY="16.375" />
-        <EntityTypeShape EntityType="WebModel.ZasobEx" Width="1.5" PointX="16.5" PointY="28" />
-        <AssociationConnector Association="WebModel.ProduktZasob" />
-        <AssociationConnector Association="WebModel.AtrybutProduktuZasob" />
-        <AssociationConnector Association="WebModel.HistoriaZamowieniaOperator" />
-        <AssociationConnector Association="WebModel.ZamowienieOperator" />
-        <AssociationConnector Association="WebModel.WiadomoscOperator" />
-        <AssociationConnector Association="WebModel.FK_Zamowienia_PozycjeZamowien" />
-        <AssociationConnector Association="WebModel.FK_Zwroty_PozycjeZwrotow" />
-        </Diagram></edmx:Diagrams>
+      <edmx:Diagram Name="Web" ZoomLevel="73">
+        <edmx:EntityTypeShape EntityType="WebModel.Adres" Width="1.5" PointX="5.375" PointY="0.5" Height="5.8263151041666656" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="WebModel.Kontrahent" Width="1.75" PointX="2.875" PointY="0.5" Height="6.5955208333333317" IsExpanded="true" />
+        <edmx:AssociationConnector Association="WebModel.FK_Adresy_Kontrahenci" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.625" PointY="3.4131575520833328" />
+          <edmx:ConnectorPoint PointX="5.375" PointY="3.4131575520833328" />
+          </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.User" Width="1.5" PointX="0.5" PointY="27.75" Height="5.2494108072916674" />
+        <edmx:EntityTypeShape EntityType="WebModel.Zamowienie" Width="1.875" PointX="2.875" PointY="8.125" Height="9.8646451822916674" />
+        <edmx:AssociationConnector Association="WebModel.KontrahentZamowienie">
+          <edmx:ConnectorPoint PointX="3.75" PointY="7.0955208333333317" />
+          <edmx:ConnectorPoint PointX="3.75" PointY="8.125" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.AdresZamowienie">
+          <edmx:ConnectorPoint PointX="5.400383615384615" PointY="6.3263151041666656" />
+          <edmx:ConnectorPoint PointX="5" PointY="6.4513151041666656" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="6.4513151041666656" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="7.65672976923077" />
+          <edmx:ConnectorPoint PointX="4.75" PointY="8.15672976923077" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.AdresZamowienie1">
+          <edmx:ConnectorPoint PointX="5.3819220769230771" PointY="6.3263151041666656" />
+          <edmx:ConnectorPoint PointX="4.9756720769230771" PointY="6.7325651041666656" />
+          <edmx:ConnectorPoint PointX="5.125" PointY="6.7325651041666656" />
+          <edmx:ConnectorPoint PointX="5.125" PointY="7.7197115384615387" />
+          <edmx:ConnectorPoint PointX="4.7197115384615387" PointY="8.125" />
+          </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.HistoriaZamowienia" Width="1.5" PointX="0.5" PointY="16.5" Height="2.9417936197916656" />
+        <edmx:EntityTypeShape EntityType="WebModel.StatusZamowienia" Width="1.5" PointX="0.5" PointY="8.625" Height="6.787822265625" />
+        <edmx:AssociationConnector Association="WebModel.ZamowienieHistoriaZamowien">
+          <edmx:ConnectorPoint PointX="2.875" PointY="17.244822591145834" />
+          <edmx:ConnectorPoint PointX="2.5208333333333335" PointY="17.244822591145834" />
+          <edmx:ConnectorPoint PointX="2.2916666666666665" PointY="17.244822591145834" />
+          <edmx:ConnectorPoint PointX="2" PointY="17.244822591145834" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.StatusyZamowienHistoriaZamowien">
+          <edmx:ConnectorPoint PointX="1.25" PointY="15.412822265625" />
+          <edmx:ConnectorPoint PointX="1.25" PointY="16.5" />
+          </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.Atrybut" Width="1.5" PointX="10.125" PointY="11.875" Height="4.0956022135416656" />
+        <edmx:EntityTypeShape EntityType="WebModel.JednostkaMiary" Width="1.5" PointX="10.125" PointY="8.875" Height="2.5571907552083317" />
+        <edmx:EntityTypeShape EntityType="WebModel.PozycjaZamowienia" Width="1.5" PointX="5.5" PointY="6.875" Height="5.634013671875" />
+        <edmx:EntityTypeShape EntityType="WebModel.Produkt" Width="2" PointX="7.625" PointY="4" Height="11.018453776041666" />
+        <edmx:EntityTypeShape EntityType="WebModel.AtrybutProduktu" Width="1.75" PointX="7.75" PointY="21.5" Height="6.4032194010416674" />
+        <edmx:EntityTypeShape EntityType="WebModel.KombinacjaAtrybutu" Width="1.5" PointX="11.875" PointY="19.125" Height="3.9033007812499996" />
+        <edmx:EntityTypeShape EntityType="WebModel.StawkaVat" Width="1.5" PointX="10.375" PointY="0.5" Height="3.5186979166666656" />
+        <edmx:AssociationConnector Association="WebModel.FK_product_tax">
+          <edmx:ConnectorPoint PointX="10.375" PointY="3.4730436197916656" />
+          <edmx:ConnectorPoint PointX="9.46875" PointY="3.4730436197916656" />
+          <edmx:ConnectorPoint PointX="9.46875" PointY="4.25" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.ZamowieniePozycjaZamowienia">
+          <edmx:ConnectorPoint PointX="4.75" PointY="10.07836738461538" />
+          <edmx:ConnectorPoint PointX="4.916666666666667" PointY="10.07836738461538" />
+          <edmx:ConnectorPoint PointX="5.083333333333333" PointY="10.07836738461538" />
+          <edmx:ConnectorPoint PointX="5.5" PointY="10.07836738461538" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.ProduktPozycjaZamowienia">
+          <edmx:ConnectorPoint PointX="7.625" PointY="9.6920068359375" />
+          <edmx:ConnectorPoint PointX="7" PointY="9.6920068359375" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.ProduktAtrybutProduktu">
+          <edmx:ConnectorPoint PointX="8.75" PointY="15.268453776041666" />
+          <edmx:ConnectorPoint PointX="8.75" PointY="15.875" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.AtrybutProduktuPozycjaZamowienia">
+          <edmx:ConnectorPoint PointX="8.75" PointY="15.875" />
+          <edmx:ConnectorPoint PointX="8.75" PointY="15.330953776041667" />
+          <edmx:ConnectorPoint PointX="7.5625" PointY="15.330953776041667" />
+          <edmx:ConnectorPoint PointX="7.5625" PointY="11.131762253906244" />
+          <edmx:ConnectorPoint PointX="7" PointY="11.131762253906244" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.AtrybutProduktuKombinacjaAtrybutu">
+          <edmx:ConnectorPoint PointX="9.625" PointY="18.576650390624998" />
+          <edmx:ConnectorPoint PointX="9.9791666666666661" PointY="18.576650390624998" />
+          <edmx:ConnectorPoint PointX="10.145833333333334" PointY="18.576650390624998" />
+          <edmx:ConnectorPoint PointX="10.25" PointY="18.576650390624998" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.AtrybutKombinacjaAtrybutu">
+          <edmx:ConnectorPoint PointX="10.9375" PointY="15.970602213541666" />
+          <edmx:ConnectorPoint PointX="10.9375" PointY="16.625" />
+          </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.GrupaAtrybutow" Width="1.5" PointX="12.25" PointY="7.875" Height="3.5186979166666656" />
+        <edmx:AssociationConnector Association="WebModel.GrupaAtrybutowAtrybut">
+          <edmx:ConnectorPoint PointX="12.25" PointY="11.393697916666667" />
+          <edmx:ConnectorPoint PointX="11.625" PointY="11.875" />
+          </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.Wiadomosc" Width="1.5" PointX="5.625" PointY="18.125" Height="3.3263964843750031" />
+        <edmx:AssociationConnector Association="WebModel.ZamowienieWiadomosc">
+          <edmx:ConnectorPoint PointX="4.65625" PointY="17.989645182291667" />
+          <edmx:ConnectorPoint PointX="4.65625" PointY="18.34375" />
+          <edmx:ConnectorPoint PointX="4.916666666666667" PointY="18.34375" />
+          <edmx:ConnectorPoint PointX="5.083333333333333" PointY="18.34375" />
+          <edmx:ConnectorPoint PointX="5.625" PointY="18.34375" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.KontrahentWiadomosc">
+          <edmx:ConnectorPoint PointX="4.08594" PointY="7.2878222656249987" />
+          <edmx:ConnectorPoint PointX="4.08594" PointY="7.875" />
+          <edmx:ConnectorPoint PointX="5" PointY="7.875" />
+          <edmx:ConnectorPoint PointX="5" PointY="19.7881982421875" />
+          <edmx:ConnectorPoint PointX="5.625" PointY="19.7881982421875" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.KontrahentKontrahent">
+          <edmx:ConnectorPoint PointX="3.75" PointY="0.5" />
+          <edmx:ConnectorPoint PointX="3.75" PointY="0.25" />
+          <edmx:ConnectorPoint PointX="4.1376923076923076" PointY="0.25" />
+          <edmx:ConnectorPoint PointX="4.1376923076923076" PointY="0.5" /></edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.Korespondencja" Width="1.5" PointX="2.875" PointY="21.5" Height="3.3263964843749996" />
+        <edmx:AssociationConnector Association="WebModel.JednostkiMiaryProdukt">
+          <edmx:ConnectorPoint PointX="10.125" PointY="9.28125" />
+          <edmx:ConnectorPoint PointX="10.083333333333334" PointY="9.28125" />
+          <edmx:ConnectorPoint PointX="9.9166666666666661" PointY="9.28125" />
+          <edmx:ConnectorPoint PointX="9.625" PointY="9.28125" />
+          </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.RodzajKorespondencji" Width="1.5" PointX="3" PointY="18.625" Height="1.787985026041671" />
+        <edmx:AssociationConnector Association="WebModel.UserKorespondencja">
+          <edmx:ConnectorPoint PointX="2" PointY="30.374705403645834" />
+          <edmx:ConnectorPoint PointX="2.3541666666666665" PointY="30.374705403645834" />
+          <edmx:ConnectorPoint PointX="2.5208333333333335" PointY="30.374705403645834" />
+          <edmx:ConnectorPoint PointX="3.625" PointY="30.374705403645834" />
+          <edmx:ConnectorPoint PointX="3.625" PointY="24.826396484375" />
+          </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.KategoriaOld" Width="2" PointX="12.375" PointY="0.5" Height="6.21091796875" />
+        <edmx:EntityTypeShape EntityType="WebModel.KategoriaProdukt" Width="1.5" PointX="10.125" PointY="4.375" Height="3.9033007812499996" />
+        <edmx:EntityTypeShape EntityType="WebModel.PozycjaZamowieniaView" Width="1.5" PointX="12.125" PointY="12.75" Height="5.6340136718750031" />
+        <edmx:EntityTypeShape EntityType="WebModel.Zdjecie" Width="2.125" PointX="5.25" PointY="13" Height="4.6725065104166674" />
+        <edmx:EntityTypeShape EntityType="WebModel.ProduktAtrybutZdjecie" Width="1.5" PointX="5.75" PointY="22.25" Height="3.5186979166666674" />
+        <edmx:AssociationConnector Association="WebModel.ProduktZdjecie">
+          <edmx:ConnectorPoint PointX="7.625" PointY="14.134226888020834" />
+          <edmx:ConnectorPoint PointX="7.375" PointY="14.134226888020834" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.ProduktAtrybut" Width="1.5" PointX="14.5" PointY="7.875" Height="7.5570279947916656" />
+        <edmx:AssociationConnector Association="WebModel.AtrybutProduktuProduktAtrybutZdjecie">
+          <edmx:ConnectorPoint PointX="8.75" PointY="22.278219401041667" />
+          <edmx:ConnectorPoint PointX="8.75" PointY="24.009348958333334" />
+          <edmx:ConnectorPoint PointX="7.8020838333333336" PointY="24.009348958333334" />
+          <edmx:ConnectorPoint PointX="7.6354171666666675" PointY="24.009348958333334" />
+          <edmx:ConnectorPoint PointX="7.25" PointY="24.009348958333334" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.ZdjecieProduktAtrybutZdjecie">
+          <edmx:ConnectorPoint PointX="7.21875" PointY="17.672506510416667" />
+          <edmx:ConnectorPoint PointX="7.21875" PointY="22.25" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.GuidMap" Width="1.5" PointX="23" PointY="3.125" Height="1.59568359375" />
+        <edmx:EntityTypeShape EntityType="WebModel.Konfiguracja" Width="1.5" PointX="0.5" PointY="25.125" Height="1.787985026041671" />
+        <edmx:EntityTypeShape EntityType="WebModel.HistorieZamowienView" Width="1.5" PointX="20.625" PointY="10.75" Height="4.6725065104166656" />
+        <edmx:AssociationConnector Association="WebModel.StatusZamowieniaZamowienie">
+          <edmx:ConnectorPoint PointX="2" PointY="12.0189111328125" />
+          <edmx:ConnectorPoint PointX="2.875" PointY="12.0189111328125" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.UserKonfiguracja">
+          <edmx:ConnectorPoint PointX="1.25" PointY="27.75" />
+          <edmx:ConnectorPoint PointX="1.25" PointY="26.912985026041671" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.GrupaRabatowa" Width="1.5" PointX="0.5" PointY="0.5" Height="2.9417936197916661" />
+        <edmx:EntityTypeShape EntityType="WebModel.KontrahentRabatGrupowy" Width="1.5" PointX="0.5" PointY="4.5" Height="3.1340950520833326" />
+        <edmx:EntityTypeShape EntityType="WebModel.TowarGrupaRabatowa" Width="1.5" PointX="7.75" PointY="0.5" Height="2.3648893229166661" />
+        <edmx:AssociationConnector Association="WebModel.KontrahentKontrahentRabatGrupowy">
+          <edmx:ConnectorPoint PointX="2.875" PointY="5.7977604166666659" />
+          <edmx:ConnectorPoint PointX="2" PointY="5.7977604166666659" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.GrupaRabatowaKontrahentRabatGrupowy">
+          <edmx:ConnectorPoint PointX="1.25" PointY="3.4417936197916661" />
+          <edmx:ConnectorPoint PointX="1.25" PointY="4.5" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.ProduktTowarGrupaRabatowa">
+          <edmx:ConnectorPoint PointX="8.5" PointY="4.25" />
+          <edmx:ConnectorPoint PointX="8.5" PointY="2.8648893229166661" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.GrupaRabatowaTowarGrupaRabatowa">
+          <edmx:ConnectorPoint PointX="1.9999999999999991" PointY="0.5" />
+          <edmx:ConnectorPoint PointX="2.3749999999999991" PointY="0.125" />
+          <edmx:ConnectorPoint PointX="7.3761528461538459" PointY="0.125" />
+          <edmx:ConnectorPoint PointX="7.7511528461538459" PointY="0.5" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.Prowizja" Width="1.5" PointX="16.625" PointY="7" Height="4.2879036458333335" />
+        <edmx:EntityTypeShape EntityType="WebModel.SynchProfileItem" Width="1.5" PointX="14.125" PointY="18.5" Height="2.1725878906250031" />
+        <edmx:EntityTypeShape EntityType="WebModel.SynchProfileItemDef" Width="1.5" PointX="14.125" PointY="20.875" Height="2.3648893229166674" />
+        <edmx:EntityTypeShape EntityType="WebModel.CzasPracy" Width="1.5" PointX="14.25" PointY="16.125" Height="1.7566536458333246" />
+        <edmx:EntityTypeShape EntityType="WebModel.Dostawca" Width="1.5" PointX="16.375" PointY="12.25" Height="1.7566536458333246" />
+        <edmx:AssociationConnector Association="WebModel.DostawcaProdukt">
+          <edmx:ConnectorPoint PointX="17.125" PointY="12.25" />
+          <edmx:ConnectorPoint PointX="17.125" PointY="11.537903645833332" />
+          <edmx:ConnectorPoint PointX="16.25" PointY="11.537903645833332" />
+          <edmx:ConnectorPoint PointX="16.25" PointY="7.625" />
+          <edmx:ConnectorPoint PointX="11.875" PointY="7.625" />
+          <edmx:ConnectorPoint PointX="11.875" PointY="8.625" />
+          <edmx:ConnectorPoint PointX="10" PointY="8.625" />
+          <edmx:ConnectorPoint PointX="10" PointY="9.7592268880208337" />
+          <edmx:ConnectorPoint PointX="9.625" PointY="9.7592268880208337" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.ProwizjaObrot" Width="1.5" PointX="16.25" PointY="15" Height="5.3722949218750031" />
+        <edmx:EntityTypeShape EntityType="WebModel.Etat" Width="1.5" PointX="20.375" PointY="0.5" Height="1.9802864583333331" />
+        <edmx:EntityTypeShape EntityType="WebModel.SkladkaZUSUP" Width="1.5" PointX="19" PointY="3.125" Height="3.9033007812499996" />
+        <edmx:EntityTypeShape EntityType="WebModel.ProwizjaPracownika" Width="1.5" PointX="18.375" PointY="8.25" Height="3.5644742838541674" />
+        <edmx:AssociationConnector Association="WebModel.ProduktKategoriaProdukt">
+          <edmx:ConnectorPoint PointX="9.625" PointY="6.09375" />
+          <edmx:ConnectorPoint PointX="10.125" PointY="6.09375" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.KategoriaKategoriaProduktOld">
+          <edmx:ConnectorPoint PointX="12.375" PointY="5.542958984375" />
+          <edmx:ConnectorPoint PointX="11.625" PointY="5.542958984375" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.PozycjaZwrotu" Width="1.5" PointX="7.75" PointY="29.5" Height="4.4802050781250031" />
+        <edmx:EntityTypeShape EntityType="WebModel.Zwrot" Width="1.5" PointX="9.75" PointY="29.5" Height="5.8263151041666674" />
+        <edmx:AssociationConnector Association="WebModel.ZwrotPozycjeZwrotow">
+          <edmx:ConnectorPoint PointX="10.6875" PointY="27.076315104166667" />
+          <edmx:ConnectorPoint PointX="10.6875" PointY="28.75" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.KontrahentZwrot">
+          <edmx:ConnectorPoint PointX="4.625" PointY="4.94786403125" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="4.94786403125" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="6.3888151041666656" />
+          <edmx:ConnectorPoint PointX="5.2545502820512819" PointY="6.3888151041666648" />
+          <edmx:ConnectorPoint PointX="5.421216948717948" PointY="6.3888151041666656" />
+          <edmx:ConnectorPoint PointX="7.5625" PointY="6.3888151041666656" />
+          <edmx:ConnectorPoint PointX="7.5625" PointY="15.330953776041667" />
+          <edmx:ConnectorPoint PointX="10.0625" PointY="15.330953776041667" />
+          <edmx:ConnectorPoint PointX="10.0625" PointY="21.15625" />
+          <edmx:ConnectorPoint PointX="10.75" PointY="21.15625" />
+          <edmx:ConnectorPoint PointX="10.75" PointY="21.25" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.ProduktPozycjeZwrotow">
+          <edmx:ConnectorPoint PointX="7.7187505000000005" PointY="15.268453776041666" />
+          <edmx:ConnectorPoint PointX="7.7187505000000005" PointY="30.9901025390625" />
+          <edmx:ConnectorPoint PointX="9.875" PointY="30.9901025390625" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.KategoriaKategoria">
+          <edmx:ConnectorPoint PointX="13.08423076923077" PointY="6.71091796875" />
+          <edmx:ConnectorPoint PointX="13.08423076923077" PointY="6.96091796875" />
+          <edmx:ConnectorPoint PointX="13.679615384615385" PointY="6.96091796875" />
+          <edmx:ConnectorPoint PointX="13.679615384615385" PointY="6.71091796875" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.HistoriaZwrotu" Width="1.5" PointX="11.75" PointY="29.5" Height="3.3263964843750031" />
+        <edmx:EntityTypeShape EntityType="WebModel.StatusZwrotu" Width="1.5" PointX="13.625" PointY="29.5" Height="2.5571907552083246" />
+        <edmx:AssociationConnector Association="WebModel.ZwrotHistoriaZwrotow">
+          <edmx:ConnectorPoint PointX="11.5" PointY="25.2881982421875" />
+          <edmx:ConnectorPoint PointX="12" PointY="25.2881982421875" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.UserHistoriaZwrotow">
+          <edmx:ConnectorPoint PointX="2" PointY="29.031100701822915" />
+          <edmx:ConnectorPoint PointX="2.3541666666666665" PointY="29.031100701822915" />
+          <edmx:ConnectorPoint PointX="2.5208333333333335" PointY="29.031100701822915" />
+          <edmx:ConnectorPoint PointX="3.5416666666666665" PointY="29.031100701822915" />
+          <edmx:ConnectorPoint PointX="3.7083333333333335" PointY="29.031100701822915" />
+          <edmx:ConnectorPoint PointX="5.5" PointY="29.031100701822915" />
+          <edmx:ConnectorPoint PointX="5.5" PointY="26.125" />
+          <edmx:ConnectorPoint PointX="7.6354171666666675" PointY="26.125" />
+          <edmx:ConnectorPoint PointX="7.8020838333333336" PointY="26.125" />
+          <edmx:ConnectorPoint PointX="9.625" PointY="26.125" />
+          <edmx:ConnectorPoint PointX="9.625" PointY="28.5" />
+          <edmx:ConnectorPoint PointX="10.604166666666666" PointY="28.5" />
+          <edmx:ConnectorPoint PointX="10.770833333333334" PointY="28.5" />
+          <edmx:ConnectorPoint PointX="12.75" PointY="28.5" />
+          <edmx:ConnectorPoint PointX="12.75" PointY="26.951396484375003" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.StatusZwrotuHistoriaZwrotu">
+          <edmx:ConnectorPoint PointX="14.75" PointY="25.095896809895834" />
+          <edmx:ConnectorPoint PointX="13.5" PointY="25.095896809895834" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.StatusZwrotuZwrot">
+          <edmx:ConnectorPoint PointX="15.5" PointY="26.566793619791667" />
+          <edmx:ConnectorPoint PointX="15.5" PointY="27.045105794270832" />
+          <edmx:ConnectorPoint PointX="12.833333333333334" PointY="27.045105794270832" />
+          <edmx:ConnectorPoint PointX="12.666666666666666" PointY="27.045105794270832" />
+          <edmx:ConnectorPoint PointX="11.5" PointY="27.045105794270832" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.UserZwrot">
+          <edmx:ConnectorPoint PointX="0.84374800000000016" PointY="27.75" />
+          <edmx:ConnectorPoint PointX="0.84374800000000016" PointY="27.162985026041667" />
+          <edmx:ConnectorPoint PointX="1.1666666666666667" PointY="27.162985026041667" />
+          <edmx:ConnectorPoint PointX="1.3333333333333333" PointY="27.162985026041667" />
+          <edmx:ConnectorPoint PointX="2.3541666666666665" PointY="27.162985026041667" />
+          <edmx:ConnectorPoint PointX="2.5208333333333335" PointY="27.162985026041667" />
+          <edmx:ConnectorPoint PointX="3.5416666666666665" PointY="27.162985026041667" />
+          <edmx:ConnectorPoint PointX="3.7083333333333335" PointY="27.162985026041667" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="27.162985026041667" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="25.893697916666667" />
+          <edmx:ConnectorPoint PointX="7.6354171666666675" PointY="25.893697916666667" />
+          <edmx:ConnectorPoint PointX="7.8020838333333336" PointY="25.893697916666667" />
+          <edmx:ConnectorPoint PointX="9.875" PointY="25.893697916666667" />
+          <edmx:ConnectorPoint PointX="9.875" PointY="23.6875005" />
+          <edmx:ConnectorPoint PointX="10" PointY="23.6875005" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.KorektaPozycjaZwrotu" Width="2" PointX="20.875" PointY="18.625" Height="1.9802864583333353" />
+        <edmx:EntityTypeShape EntityType="WebModel.KorektaZwrot" Width="1.5" PointX="21" PointY="21.5" Height="2.1725878906249996" />
+        <edmx:AssociationConnector Association="WebModel.ZwrotKorektyZwroty">
+          <edmx:ConnectorPoint PointX="11.5" PointY="23.237847121093758" />
+          <edmx:ConnectorPoint PointX="11.75" PointY="23.237847121093758" />
+          <edmx:ConnectorPoint PointX="11.75" PointY="23.375" />
+          <edmx:ConnectorPoint PointX="17.125" PointY="23.375" />
+          <edmx:ConnectorPoint PointX="17.125" PointY="22.5" />
+          <edmx:ConnectorPoint PointX="20.75" PointY="22.5" />
+          <edmx:ConnectorPoint PointX="20.75" PointY="23.922587890624996" />
+          <edmx:ConnectorPoint PointX="21.75" PointY="23.922587890624996" />
+          <edmx:ConnectorPoint PointX="21.75" PointY="23.672587890625" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.KorektaZwrotKorektaPozycjaZwrotu">
+          <edmx:ConnectorPoint PointX="21.75" PointY="21.5" />
+          <edmx:ConnectorPoint PointX="21.75" PointY="20.989889322916667" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.PozycjaZwrotuKorektaPozycjaZwrotu">
+          <edmx:ConnectorPoint PointX="11.375" PointY="30.990102539062505" />
+          <edmx:ConnectorPoint PointX="22.71875" PointY="30.990102539062505" />
+          <edmx:ConnectorPoint PointX="22.71875" PointY="20.989889322916667" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.ZamowienieView" Width="1.5" PointX="5.75" PointY="26.375" Height="9.4800423177083317" />
+        <edmx:AssociationConnector Association="WebModel.StatusZamowieniaZamowienieView">
+          <edmx:ConnectorPoint PointX="2" PointY="15.350513573317308" />
+          <edmx:ConnectorPoint PointX="2.3160744349011213" PointY="15.666588008218428" />
+          <edmx:ConnectorPoint PointX="2.4339255650988791" PointY="15.784439138416186" />
+          <edmx:ConnectorPoint PointX="2.4375" PointY="15.788013573317308" />
+          <edmx:ConnectorPoint PointX="2.4375" PointY="33.786675711588543" />
+          <edmx:ConnectorPoint PointX="5.75" PointY="33.786675711588543" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.StanMagazynowyDoUsuniecia" Width="1.5" PointX="22.75" PointY="0.75" Height="1.9802864583333331" />
+        <edmx:EntityTypeShape EntityType="WebModel.StanMagazynowyView" Width="2" PointX="17.375" PointY="22.75" Height="3.5186979166666674" />
+        <edmx:AssociationConnector Association="WebModel.RodzajKorespondencjiKorespondencja">
+          <edmx:ConnectorPoint PointX="3.6875" PointY="20.412985026041671" />
+          <edmx:ConnectorPoint PointX="3.6875" PointY="21.5" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.FedExOdbiorca" Width="1.5" PointX="25.375" PointY="0.5" Height="3.7109993489583326" />
+        <edmx:EntityTypeShape EntityType="WebModel.FedExListPrzewozowy" Width="2.25" PointX="28" PointY="0.5" Height="5.2494108072916656" />
+        <edmx:AssociationConnector Association="WebModel.FedExOdbiorcaFedExListPrzewozowy">
+          <edmx:ConnectorPoint PointX="26.875" PointY="2.3554996744791667" />
+          <edmx:ConnectorPoint PointX="28" PointY="2.3554996744791667" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.FedExOdbiorcaFedExListPrzewozowy1">
+          <edmx:ConnectorPoint PointX="26.875" PointY="1.3652498372395834" />
+          <edmx:ConnectorPoint PointX="28" PointY="1.3652498372395834" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.FedExOdbiorcaFedExListPrzewozowy2">
+          <edmx:ConnectorPoint PointX="26.875" PointY="3.3457495117187497" />
+          <edmx:ConnectorPoint PointX="28" PointY="3.3457495117187497" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.TowarAtrybut" Width="2.125" PointX="23.625" PointY="5.25" Height="7.1724251302083353" />
+        <edmx:AssociationConnector Association="WebModel.ProduktTowarAtrybut">
+          <edmx:ConnectorPoint PointX="9.625" PointY="12.545092332031246" />
+          <edmx:ConnectorPoint PointX="10.0625" PointY="12.545092332031246" />
+          <edmx:ConnectorPoint PointX="10.0625" PointY="11.494690755208332" />
+          <edmx:ConnectorPoint PointX="12.035521329311404" PointY="11.494690755208332" />
+          <edmx:ConnectorPoint PointX="12.202187995978072" PointY="11.494690755208332" />
+          <edmx:ConnectorPoint PointX="14.4375" PointY="11.494690755208332" />
+          <edmx:ConnectorPoint PointX="14.4375" PointY="15.494527994791667" />
+          <edmx:ConnectorPoint PointX="15.979166666666666" PointY="15.494527994791667" />
+          <edmx:ConnectorPoint PointX="16.145833333333332" PointY="15.494527994791667" />
+          <edmx:ConnectorPoint PointX="16.1875" PointY="15.494527994791667" />
+          <edmx:ConnectorPoint PointX="16.1875" PointY="14.9375" />
+          <edmx:ConnectorPoint PointX="20.5625" PointY="14.9375" />
+          <edmx:ConnectorPoint PointX="20.5625" PointY="10.6875" />
+          <edmx:ConnectorPoint PointX="23.5625" PointY="10.6875" />
+          <edmx:ConnectorPoint PointX="23.5625" PointY="12.484925130208335" />
+          <edmx:ConnectorPoint PointX="24.6875" PointY="12.484925130208335" />
+          <edmx:ConnectorPoint PointX="24.6875" PointY="12.422425130208335" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.AtrybutProduktuTowarAtrybut">
+          <edmx:ConnectorPoint PointX="9.625" PointY="19.076609700520834" />
+          <edmx:ConnectorPoint PointX="9.9791666666666661" PointY="19.076609700520834" />
+          <edmx:ConnectorPoint PointX="10.145833333333334" PointY="19.076609700520834" />
+          <edmx:ConnectorPoint PointX="10.1875" PointY="19.076609700520834" />
+          <edmx:ConnectorPoint PointX="10.1875" PointY="16.5625" />
+          <edmx:ConnectorPoint PointX="11.791666666666666" PointY="16.5625" />
+          <edmx:ConnectorPoint PointX="11.958333333333334" PointY="16.5625" />
+          <edmx:ConnectorPoint PointX="12.0625" PointY="16.5625" />
+          <edmx:ConnectorPoint PointX="12.0625" PointY="18.4375" />
+          <edmx:ConnectorPoint PointX="13.791666666666666" PointY="18.4375" />
+          <edmx:ConnectorPoint PointX="13.958333333333334" PointY="18.4375" />
+          <edmx:ConnectorPoint PointX="15.791666666666666" PointY="18.4375" />
+          <edmx:ConnectorPoint PointX="15.958333333333334" PointY="18.4375" />
+          <edmx:ConnectorPoint PointX="16.125" PointY="18.4375" />
+          <edmx:ConnectorPoint PointX="16.125" PointY="14.9375" />
+          <edmx:ConnectorPoint PointX="20.5" PointY="14.9375" />
+          <edmx:ConnectorPoint PointX="20.5" PointY="10.6875" />
+          <edmx:ConnectorPoint PointX="23.5" PointY="10.6875" />
+          <edmx:ConnectorPoint PointX="23.5" PointY="12.547425130208335" />
+          <edmx:ConnectorPoint PointX="24.124997999999998" PointY="12.547425130208335" />
+          <edmx:ConnectorPoint PointX="24.124997999999998" PointY="12.422425130208335" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.Magazyn_StanMagazynowy" Width="2.25" PointX="23.375" PointY="22.125" Height="2.7494921875000031" />
+        <edmx:EntityTypeShape EntityType="WebModel.RelacjaStatDok" Width="1.5" PointX="30.625" PointY="7.875" Height="2.3648893229166674" />
+        <edmx:EntityTypeShape EntityType="WebModel.PozycjaReklamacji" Width="1.5" PointX="25.5" PointY="16" Height="4.480205078125" />
+        <edmx:EntityTypeShape EntityType="WebModel.Reklamacja" Width="1.875" PointX="27.75" PointY="17" Height="4.480205078125" />
+        <edmx:AssociationConnector Association="WebModel.KontrahentReklamacja">
+          <edmx:ConnectorPoint PointX="4.625" PointY="1.9409519791666656" />
+          <edmx:ConnectorPoint PointX="5.3125" PointY="1.9409519791666656" />
+          <edmx:ConnectorPoint PointX="5.3125" PointY="6.3888151041666656" />
+          <edmx:ConnectorPoint PointX="7.5625" PointY="6.3888151041666656" />
+          <edmx:ConnectorPoint PointX="7.5625" PointY="15.330953776041667" />
+          <edmx:ConnectorPoint PointX="10" PointY="15.330953776041667" />
+          <edmx:ConnectorPoint PointX="10" PointY="16.033102213541667" />
+          <edmx:ConnectorPoint PointX="12" PointY="16.033102213541667" />
+          <edmx:ConnectorPoint PointX="12" PointY="18.4375" />
+          <edmx:ConnectorPoint PointX="13.791666666666666" PointY="18.4375" />
+          <edmx:ConnectorPoint PointX="13.958333333333334" PointY="18.4375" />
+          <edmx:ConnectorPoint PointX="15.791666666666666" PointY="18.4375" />
+          <edmx:ConnectorPoint PointX="15.958333333333334" PointY="18.4375" />
+          <edmx:ConnectorPoint PointX="16.0625" PointY="18.4375" />
+          <edmx:ConnectorPoint PointX="16.0625" PointY="14.9375" />
+          <edmx:ConnectorPoint PointX="20.4375" PointY="14.9375" />
+          <edmx:ConnectorPoint PointX="20.4375" PointY="15.485006510416667" />
+          <edmx:ConnectorPoint PointX="28.6875" PointY="15.485006510416667" />
+          <edmx:ConnectorPoint PointX="28.6875" PointY="17" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.ReklamacjaPozycjeReklamacji">
+          <edmx:ConnectorPoint PointX="27.75" PointY="18.740102539062498" />
+          <edmx:ConnectorPoint PointX="27" PointY="18.740102539062498" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.HistoriaDokumentu" Width="1.5" PointX="30.625" PointY="16.375" Height="3.3263964843749996" />
+        <edmx:EntityTypeShape EntityType="WebModel.StatusDokumentu" Width="1.5" PointX="30.625" PointY="11.375" Height="3.1340950520833246" />
+        <edmx:AssociationConnector Association="WebModel.HistoriaDokumentuReklamacja">
+          <edmx:ConnectorPoint PointX="30.625" PointY="18.446848958333334" />
+          <edmx:ConnectorPoint PointX="30.333333333333332" PointY="18.446848958333334" />
+          <edmx:ConnectorPoint PointX="30.166666666666668" PointY="18.446848958333334" />
+          <edmx:ConnectorPoint PointX="29.625" PointY="18.446848958333334" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.StatusDokumentuReklamacja">
+          <edmx:ConnectorPoint PointX="30.625" PointY="14.509095052083325" />
+          <edmx:ConnectorPoint PointX="30.25" PointY="14.884095052083325" />
+          <edmx:ConnectorPoint PointX="30.25" PointY="19.994779018229167" />
+          <edmx:ConnectorPoint PointX="29.625" PointY="19.994779018229167" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.Operator" Width="1.5" PointX="33.375" PointY="16.25" Height="4.0956022135416674" />
+        <edmx:AssociationConnector Association="WebModel.OperatorHistoriaDokumentu">
+          <edmx:ConnectorPoint PointX="33.25" PointY="18.134348958333334" />
+          <edmx:ConnectorPoint PointX="32.125" PointY="18.134348958333334" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.OperatorReklamacja">
+          <edmx:ConnectorPoint PointX="33.25" PointY="20.295190615885417" />
+          <edmx:ConnectorPoint PointX="29.625" PointY="20.295190615885417" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.StatusDokumentuRelacjaStatDok">
+          <edmx:ConnectorPoint PointX="31.375" PointY="11.375" />
+          <edmx:ConnectorPoint PointX="31.375" PointY="10.239889322916667" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="WebModel.StatusDokumentuRelacjaStatDok1">
+          <edmx:ConnectorPoint PointX="31.8125" PointY="11.375" />
+          <edmx:ConnectorPoint PointX="31.8125" PointY="10.239889322916667" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.Kontakt" Width="1.5" PointX="28" PointY="24.875" Height="1.7879850260416674" />
+        <edmx:AssociationConnector Association="WebModel.ProduktPozycjaReklamacji">
+          <edmx:ConnectorPoint PointX="8.26562775" PointY="15.268453776041666" />
+          <edmx:ConnectorPoint PointX="8.26562775" PointY="15.625" />
+          <edmx:ConnectorPoint PointX="8.6666666666666661" PointY="15.625" />
+          <edmx:ConnectorPoint PointX="8.8333333333333339" PointY="15.625" />
+          <edmx:ConnectorPoint PointX="9.875" PointY="15.625" />
+          <edmx:ConnectorPoint PointX="9.875" PointY="16.375" />
+          <edmx:ConnectorPoint PointX="9.9791666666666661" PointY="16.375" />
+          <edmx:ConnectorPoint PointX="10.145833333333334" PointY="16.375" />
+          <edmx:ConnectorPoint PointX="10.854166666666666" PointY="16.375" />
+          <edmx:ConnectorPoint PointX="11.020833333333334" PointY="16.375" />
+          <edmx:ConnectorPoint PointX="11.875" PointY="16.375" />
+          <edmx:ConnectorPoint PointX="11.875" PointY="18.634013671875003" />
+          <edmx:ConnectorPoint PointX="13.875" PointY="18.634013671875003" />
+          <edmx:ConnectorPoint PointX="13.875" PointY="18.25" />
+          <edmx:ConnectorPoint PointX="15.875" PointY="18.25" />
+          <edmx:ConnectorPoint PointX="15.875" PointY="21.460917968750003" />
+          <edmx:ConnectorPoint PointX="20.75" PointY="21.460917968750003" />
+          <edmx:ConnectorPoint PointX="20.75" PointY="21.25" />
+          <edmx:ConnectorPoint PointX="21.666666666666668" PointY="21.25" />
+          <edmx:ConnectorPoint PointX="21.833333333333332" PointY="21.25" />
+          <edmx:ConnectorPoint PointX="22.635416666666668" PointY="21.25" />
+          <edmx:ConnectorPoint PointX="22.802083333333332" PointY="21.25" />
+          <edmx:ConnectorPoint PointX="25.125" PointY="21.25" />
+          <edmx:ConnectorPoint PointX="25.125" PointY="18.240102539062498" />
+          <edmx:ConnectorPoint PointX="25.5" PointY="18.240102539062498" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.DefinicjaDokumentu" Width="1.5" PointX="30.75" PointY="21.75" Height="2.9417936197916674" />
+        <edmx:AssociationConnector Association="WebModel.StatusDokumentuHistoriaDokumentu">
+          <edmx:ConnectorPoint PointX="31.375" PointY="14.509095052083325" />
+          <edmx:ConnectorPoint PointX="31.375" PointY="16.375" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="WebModel.Zasob" Width="1.5" PointX="7.875" PointY="16.375" />
+        <edmx:EntityTypeShape EntityType="WebModel.ZasobEx" Width="1.5" PointX="16.5" PointY="28" />
+        <edmx:AssociationConnector Association="WebModel.ProduktZasob" />
+        <edmx:AssociationConnector Association="WebModel.AtrybutProduktuZasob" />
+        <edmx:AssociationConnector Association="WebModel.HistoriaZamowieniaOperator" />
+        <edmx:AssociationConnector Association="WebModel.ZamowienieOperator" />
+        <edmx:AssociationConnector Association="WebModel.WiadomoscOperator" />
+        <edmx:AssociationConnector Association="WebModel.FK_Zamowienia_PozycjeZamowien" />
+        <edmx:AssociationConnector Association="WebModel.FK_Zwroty_PozycjeZwrotow" />
+        </edmx:Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
