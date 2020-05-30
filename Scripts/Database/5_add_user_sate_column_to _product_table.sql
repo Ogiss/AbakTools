@@ -1,0 +1,4 @@
+ALTER TABLE product ADD UserState VARCHAR(255) NULL;
+
+
+ 
