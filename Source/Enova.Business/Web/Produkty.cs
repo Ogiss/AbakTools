@@ -14,12 +14,12 @@ namespace Enova.Business.Old.Web
     public class Produkty : TableBase<Produkt>
     {
         public Produkty()
-            : base((ObjectQuery<Produkt>)ContextManager.WebContext.Produkty.Include("RelationStawkaVat").Where(p => p.AktywnyOld == true && p.ProduktGrupujacy == false)) { }
+            : base((ObjectQuery<Produkt>)ContextManager.WebContext.Produkty.Include("RelationStawkaVat").Where(p => p.Aktywny == true && p.ProduktGrupujacy == false)) { }
 
 
         public Produkty(KategoriaOld kategoria)
             : base((ObjectQuery<Produkt>)ContextManager.WebContext.GetProduktyByKategoria(kategoria).Include("RelationStawkaVat")
-                .Where(p => p.AktywnyOld == true && p.ProduktGrupujacy == false))
+                .Where(p => p.Aktywny == true && p.ProduktGrupujacy == false))
         {
         }
 

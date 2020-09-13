@@ -368,7 +368,7 @@ namespace AbakTools.Zwroty.Forms
                         GUID = Guid.NewGuid(),
                         Kod = towar.Kod,
                         Nazwa = towar.Nazwa,
-                        AktywnyOld = false,
+                        Aktywny = false,
                         Cena = (decimal)towar.CenaHurtowaNetto,
                         DataAktualizacji = stamp,
                         DataDodania = stamp,

@@ -38,7 +38,7 @@ namespace AbakTools.Handel.Forms
         {
             get
             {
-                return (ObjectQuery<Produkt>)ContextManager.WebContext.Produkty.Where(p => p.AktywnyOld == true && p.ProduktGrupujacy == false);
+                return (ObjectQuery<Produkt>)ContextManager.WebContext.Produkty.Where(p => p.Aktywny == true && p.ProduktGrupujacy == false);
             }
         }
     }

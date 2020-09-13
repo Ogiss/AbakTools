@@ -17,13 +17,6 @@ namespace Enova.Business.Old.DB.Web
     [DataEditForm("AbakTools.Towary.Forms.TowarEditForm, AbakTools.Handel.Forms")]
     public partial class Produkt : ISaveChanges, IUndoChanges, IDeleteRecord, IValidation, Enova.API.Towary.Towar, IDbContext, ICloneable
     {
-        #region Fields
-
-        private Zasob zasob;
-        private ZasobEx zasobEx;
-
-        #endregion
-
         public ObjectContext DbContext { get; set; }
 
         public override string ToString()
@@ -166,27 +159,28 @@ namespace Enova.Business.Old.DB.Web
         {
             get
             {
-                if (zasob == null)
-                    zasob = this.Zasoby.Where(r => r.AtrybutID == null).FirstOrDefault();
-                return zasob;
+                return this.Zasoby.Where(r => r.AtrybutID == null).FirstOrDefault();
             }
         }
 
-        public bool Blokada
+        public bool Blokada { get => !IsActive; set => IsActive = !value; }
+
+        public bool IsActive
         {
             get
             {
-                return this.Zasob != null ? this.Zasob.Blokada : false;
+                return Aktywny ?? true;
             }
             set
             {
-                if (this.Zasob != null && this.Zasob.Blokada != value)
-                    this.Zasob.Blokada = value;
-
+                Aktywny = value;
+                var zasob = this.Zasob;
+                if (zasob != null)
+                {
+                    this.Zasob.Blokada = !value;
+                }
             }
         }
-
-        public bool IsActive { get => !Blokada; set => Blokada = !value; }
 
         public bool Dostepny
         {
@@ -221,7 +215,7 @@ namespace Enova.Business.Old.DB.Web
                 GUID = Guid.NewGuid(),
                 Kod = towar.Kod,
                 Nazwa = towar.Nazwa,
-                AktywnyOld = true,
+                IsActive = true,
                 Cena = (decimal)towar.CenaHurtowaNetto,
                 DataAktualizacji = stamp,
                 DataDodania = stamp,
@@ -679,7 +673,8 @@ namespace Enova.Business.Old.DB.Web
         {
             var rec = new Produkt();
             rec.DbContext = this.DbContext;
-            rec.AktywnyOld = this.AktywnyOld;
+            rec.Aktywny = this.Aktywny;
+            rec.Blokada = this.Blokada;
             rec.Cena = this.Cena;
             rec.DataDodania = DateTime.Now;
             rec.DataAktualizacji = DateTime.Now;

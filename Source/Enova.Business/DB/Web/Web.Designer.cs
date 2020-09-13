@@ -15004,24 +15004,24 @@ namespace Enova.Business.Old.DB.Web
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> AktywnyOld
+        public Nullable<global::System.Boolean> Aktywny
         {
             get
             {
-                return _AktywnyOld;
+                return _Aktywny;
             }
             set
             {
-                OnAktywnyOldChanging(value);
-                ReportPropertyChanging("AktywnyOld");
-                _AktywnyOld = StructuralObject.SetValidValue(value, "AktywnyOld");
-                ReportPropertyChanged("AktywnyOld");
-                OnAktywnyOldChanged();
+                OnAktywnyChanging(value);
+                ReportPropertyChanging("Aktywny");
+                _Aktywny = StructuralObject.SetValidValue(value, "Aktywny");
+                ReportPropertyChanged("Aktywny");
+                OnAktywnyChanged();
             }
         }
-        private Nullable<global::System.Boolean> _AktywnyOld;
-        partial void OnAktywnyOldChanging(Nullable<global::System.Boolean> value);
-        partial void OnAktywnyOldChanged();
+        private Nullable<global::System.Boolean> _Aktywny;
+        partial void OnAktywnyChanging(Nullable<global::System.Boolean> value);
+        partial void OnAktywnyChanged();
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.

@@ -2241,7 +2241,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Name="PSID" Type="Int32" Nullable="true" />
           <Property Name="Cena" Type="Decimal" Nullable="true" Precision="20" Scale="6" />
           <Property Name="Kod" Type="String" Nullable="true" MaxLength="128" Unicode="false" FixedLength="false" />
-          <Property Name="AktywnyOld" Type="Boolean" />
+          <Property Name="Aktywny" Type="Boolean" />
           <Property Name="DataDodania" Type="DateTime" Nullable="true" Precision="3" />
           <Property Name="DataAktualizacji" Type="DateTime" Nullable="true" Precision="3" />
           <Property Name="Indexed" Type="Boolean" Nullable="true" />
@@ -4248,7 +4248,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
                 <ScalarProperty Name="Indexed" ColumnName="indexed" />
                 <ScalarProperty Name="DataAktualizacji" ColumnName="date_upd" />
                 <ScalarProperty Name="DataDodania" ColumnName="date_add" />
-                <ScalarProperty Name="AktywnyOld" ColumnName="active" />
+                <ScalarProperty Name="Aktywny" ColumnName="active" />
                 <ScalarProperty Name="Kod" ColumnName="reference" />
                 <ScalarProperty Name="Cena" ColumnName="price" />
                 <ScalarProperty Name="PSID" ColumnName="id_product" />

@@ -112,13 +112,13 @@ namespace Enova.Business.Old.DB.Web
                     atrybut.Synchronizacja = value ? (byte)Types.RowSynchronizeOld.NotsynchronizedNew : (byte)Types.RowSynchronizeOld.NotsynchronizedDelete;
                     if (value)
                     {
-                        produkt.AktywnyOld = true;
+                        produkt.Aktywny = true;
                         atrybut.Deleted = false;
                     }
                 }
                 else
                 {
-                    produkt.AktywnyOld = value;
+                    produkt.Aktywny = value;
                 }
                 this.aktywny = value;
             }

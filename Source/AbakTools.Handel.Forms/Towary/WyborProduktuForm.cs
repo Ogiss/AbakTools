@@ -221,7 +221,7 @@ namespace AbakTools.Towary.Forms
                                 GUID = Guid.NewGuid(),
                                 Kod = towar.Kod,
                                 Nazwa = towar.Nazwa,
-                                AktywnyOld = true,
+                                Aktywny = true,
                                 Cena = (decimal)towar.CenaHurtowaNetto,
                                 DataAktualizacji = stamp,
                                 DataDodania = stamp,

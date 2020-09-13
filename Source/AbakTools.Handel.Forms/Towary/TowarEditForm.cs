@@ -136,7 +136,7 @@ namespace AbakTools.Towary.Forms
                     if (Towar.GUID == Guid.Empty || Towar.EnovaGuid == null || Towar.EnovaGuid.Value == Guid.Empty)
                     {
                         Towar.GUID = Guid.NewGuid();
-                        Towar.AktywnyOld = true;
+                        Towar.Aktywny = true;
                         Towar.Widoczny = true;
                         Towar.Gotowy = false;
 

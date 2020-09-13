@@ -20,6 +20,5 @@ namespace Enova.API.Towary
         CenySubTable Ceny { get; }
         Business.MemoText Opis { get; set; }
         ICena OstatniaCenaZakupu { get; }
-
     }
 }
