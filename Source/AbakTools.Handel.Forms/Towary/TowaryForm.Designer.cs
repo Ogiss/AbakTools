@@ -44,6 +44,7 @@
             this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Aktywny = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Dostepny = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Gotowy = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.UserState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Synchronizacja = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,6 +121,7 @@
             this.Nazwa,
             this.Cena,
             this.Aktywny,
+            this.Dostepny,
             this.Gotowy,
             this.UserState,
             this.Synchronizacja});
@@ -254,6 +256,13 @@
             this.Aktywny.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Aktywny.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // Dostepny
+            // 
+            this.Dostepny.DataPropertyName = "Dostepny";
+            this.Dostepny.HeaderText = "Dostepny";
+            this.Dostepny.Name = "Dostepny";
+            this.Dostepny.ReadOnly = true;
+            // 
             // Gotowy
             // 
             this.Gotowy.DataPropertyName = "Gotowy";
@@ -328,6 +337,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cena;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Aktywny;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Dostepny;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Gotowy;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserState;
         private System.Windows.Forms.DataGridViewTextBoxColumn Synchronizacja;

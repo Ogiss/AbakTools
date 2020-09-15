@@ -20,6 +20,7 @@ namespace AbakTools.Towary.Forms
         private bool disableDostawcaChanged;
         private CheckBox readyHeaderCheckBox;
         private CheckBox activeHeaderCheckBox;
+        private CheckBox availableHeaderCheckBox;
 
         public TowaryForm()
         {
@@ -47,9 +48,10 @@ namespace AbakTools.Towary.Forms
 
                 DataGrid.Sort(sortedColumn, (sortOrder == SortOrder.Descending ? ListSortDirection.Descending : ListSortDirection.Ascending));
 
-                activeHeaderCheckBox = AddCheckboxToColumnHeader("Aktywny", ChangeActivForSelectedRows, true);
+                activeHeaderCheckBox = AddCheckboxToColumnHeader("Aktywny", ChangeActivForSelectedRows, treeState: true);
+                readyHeaderCheckBox = AddCheckboxToColumnHeader("Gotowy", ChangeReadyForSelectedRows, treeState: true);
+                availableHeaderCheckBox = AddCheckboxToColumnHeader("Dostepny", ChangeAvailableForSelectedRows, treeState: true);
 
-                readyHeaderCheckBox = AddCheckboxToColumnHeader("Gotowy", ChangeReadyForSelectedBox, true);
             }
             catch (Exception ex)
             {
@@ -77,7 +79,7 @@ namespace AbakTools.Towary.Forms
             }
         }
 
-        private void ChangeReadyForSelectedBox(CheckBox checkBox)
+        private void ChangeReadyForSelectedRows(CheckBox checkBox)
         {
             if(checkBox.CheckState != CheckState.Indeterminate && DataGrid.SelectedRows.Count > 0)
             {
@@ -87,6 +89,26 @@ namespace AbakTools.Towary.Forms
                     product.Gotowy = checkBox.CheckState == CheckState.Checked ? true : false;
 
                     if(product.EntityState == EntityState.Modified)
+                    {
+                        product.Synchronizacja = (byte)RowSynchronizeOld.NotsynchronizedEdit;
+                    }
+                }
+
+                WebContext.SaveChanges();
+                DataGrid.Refresh();
+            }
+        }
+
+        private void ChangeAvailableForSelectedRows(CheckBox checkBox)
+        {
+            if (checkBox.CheckState != CheckState.Indeterminate && DataGrid.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in DataGrid.SelectedRows)
+                {
+                    var product = (Produkt)row.DataBoundItem;
+                    product.Dostepny = checkBox.CheckState == CheckState.Checked ? true : false;
+
+                    if (product.EntityState == EntityState.Modified)
                     {
                         product.Synchronizacja = (byte)RowSynchronizeOld.NotsynchronizedEdit;
                     }
