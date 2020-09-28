@@ -11,6 +11,7 @@ using Enova.API.Handel;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace Enova.Forms.Services
 {
@@ -89,9 +90,9 @@ namespace Enova.Forms.Services
                 if (definicjaDokID != null)
                     sb.Append(" AND dh.Definicja=" + definicjaDokID.Value);
                 if (from != null)
-                    sb.Append(" AND pdh.Data >= '" + from.Value.Date.ToShortDateString() + "'");
+                    sb.Append(" AND pdh.Data >= '" + from.Value.Date.ToString("yyyy-MM-dd") + "'");
                 if (to != null)
-                    sb.Append(" AND pdh.Data < '" + to.Value.Date.AddDays(1) + "'");
+                    sb.Append(" AND pdh.Data < '" + to.Value.Date.AddDays(1).ToString("yyyy-MM-dd") + "'");
                 sb.Append(")t0 GROUP BY t0.Definicja");
 
                 var result = new SqlCommand(sb.ToString(), con).ExecuteScalar();
@@ -120,11 +121,12 @@ namespace Enova.Forms.Services
                 if (definicjaDokID != null)
                     sb.Append(" AND dh.Definicja=" + definicjaDokID.Value);
                 if (from != null)
-                    sb.Append(" AND pdh.Data >= '" + from.Value.Date.ToShortDateString() + "'");
+                    sb.Append(" AND pdh.Data >= '" + from.Value.Date.ToString("yyyy-MM-dd") + "'");
                 if (to != null)
-                    sb.Append(" AND pdh.Data < '" + to.Value.Date.AddDays(1) + "'");
+                    sb.Append(" AND pdh.Data < '" + to.Value.Date.AddDays(1).ToString("yyyy-MM-dd") + "'");
                 sb.Append(")t0 GROUP BY t0.Definicja");
-                var result = new SqlCommand(sb.ToString(), con).ExecuteScalar();
+                var result = new SqlCommand(sb.ToString(), con)
+                    .ExecuteScalar();
                 return DBNull.Value.Equals(result) ? default(T) : (T)result;
             }
         }

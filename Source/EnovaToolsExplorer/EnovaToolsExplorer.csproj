@@ -245,6 +245,10 @@
       <Project>{858d7fdd-5dba-4eae-a857-c3cfe2ba3496}</Project>
       <Name>Enova.API</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Analizy.Forms\AbakTools.Analizy.Forms.csproj">
+      <Project>{3a06f688-0e13-452a-923c-c0a3dfc5b200}</Project>
+      <Name>AbakTools.Analizy.Forms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AbakTools.Business.Forms\AbakTools.Business.Forms.csproj">
       <Project>{CA72DCC9-DCBC-480C-86D4-6B514521A4E8}</Project>
       <Name>AbakTools.Business.Forms</Name>
@@ -257,6 +261,26 @@
       <Project>{9a403bdc-22b2-4d1d-a4b5-255d75e3002a}</Project>
       <Name>AbakTools.Configuration</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Core.Forms\AbakTools.Core.Forms.csproj">
+      <Project>{ae764200-cb59-4593-a98b-51cfabffcf8d}</Project>
+      <Name>AbakTools.Core.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Core\AbakTools.Core.csproj">
+      <Project>{3950b48f-eb91-4b4b-b1fe-6e95570ada9b}</Project>
+      <Name>AbakTools.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.CRM.Forms\AbakTools.CRM.Forms.csproj">
+      <Project>{e5362565-3687-4094-89c1-bc28dddbbdf3}</Project>
+      <Name>AbakTools.CRM.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.CRM\AbakTools.CRM.csproj">
+      <Project>{3f7a828a-5829-489d-8c4f-610ad188426c}</Project>
+      <Name>AbakTools.CRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Finanse.Forms\AbakTools.Finanse.Forms.csproj">
+      <Project>{f7e9636d-8f89-4946-b1df-0b080a09d058}</Project>
+      <Name>AbakTools.Finanse.Forms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AbakTools.Forms\AbakTools.Forms.csproj">
       <Project>{2BCDD22E-6A64-4E1A-BC00-B41F5D9D4F32}</Project>
       <Name>AbakTools.Forms</Name>
@@ -265,9 +289,33 @@
       <Project>{e356a448-002d-4e82-8238-f07153f8051e}</Project>
       <Name>AbakTools.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Handel.Forms\AbakTools.Handel.Forms.csproj">
+      <Project>{2d2acf7a-744b-4ee4-84a6-1f1defc016ce}</Project>
+      <Name>AbakTools.Handel.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Handel\AbakTools.Handel.csproj">
+      <Project>{ec074dc9-2e25-4282-b483-15383ea7fc29}</Project>
+      <Name>AbakTools.Handel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AbakTools.Infrastructure\AbakTools.Infrastructure.csproj">
       <Project>{7fe136e6-b74d-4da2-b898-d375b5d8abb4}</Project>
       <Name>AbakTools.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Kadry.Forms\AbakTools.Kadry.Forms.csproj">
+      <Project>{1d85756d-cd52-4e66-8535-4f3b59bc0183}</Project>
+      <Name>AbakTools.Kadry.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Ksiegowosc.Forms\AbakTools.Ksiegowosc.Forms.csproj">
+      <Project>{96f33d1a-f382-453a-b647-a2239c07168a}</Project>
+      <Name>AbakTools.Ksiegowosc.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.SMS\AbakTools.SMS.csproj">
+      <Project>{6da7b0a0-3b27-4b27-8fe6-57e0b668fb65}</Project>
+      <Name>AbakTools.SMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Web\AbakTools.Web.csproj">
+      <Project>{b89a0739-c2bc-4960-92e8-f0ae023aad7f}</Project>
+      <Name>AbakTools.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\Enova.Business\Enova.Business.Old.csproj">
       <Project>{D433FEDB-C0E1-4280-A420-198EF74503E4}</Project>
@@ -276,6 +324,14 @@
     <ProjectReference Include="..\Enova.Forms\Enova.Forms.csproj">
       <Project>{B8F7A741-ECB5-4BC7-9903-D8038700087C}</Project>
       <Name>Enova.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnovaToolsPublish\EnovaToolsPublish.csproj">
+      <Project>{5e5fa7fe-c87a-47ec-a452-3d0dde1d3539}</Project>
+      <Name>EnovaToolsPublish</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnovaToolsStart\EnovaToolsStart.csproj">
+      <Project>{576df80d-48ad-4962-a9cd-3902238ae615}</Project>
+      <Name>EnovaToolsStart</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

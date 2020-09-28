@@ -12,6 +12,7 @@ using System.Threading;
 using Core = Enova.Business.Old.Core;
 using AbakTools.Framework;
 using AbakTools.Framework.Logging;
+using System.Globalization;
 
 namespace EnovaToolsExplorer
 {
@@ -27,6 +28,8 @@ namespace EnovaToolsExplorer
         [STAThread]
         static void Main(string[] args)
         {
+            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+
             if (args.Length > 0 && args[0] == "update")
                 Update();
 
