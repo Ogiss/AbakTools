@@ -113,20 +113,65 @@ namespace Enova.Forms.Services
                 sb.Append("INNER JOIN dbo.DokHandlowe dh ON dh.ID=pdh.Dokument ");
                 sb.Append("INNER JOIN dbo.DefDokHandlowych ddh ON ddh.ID=dh.Definicja ");
                 sb.Append("INNER JOIN dbo.Towary t ON t.ID=pdh.Towar ");
-                sb.Append("WHERE dh.TypPartii = 1 AND ddh.DuplikatWartosci = 0 AND pdh.KierunekMagazynu = -1 AND dh.Stan IN (1,2) AND t.Guid='" + towarGuid + "'");
-                if (magazynID != null)
-                    sb.Append(" AND dh.Magazyn=" + magazynID.Value);
-                if (kontrahentID != null)
-                    sb.Append(" AND dh.Kontrahent=" + kontrahentID.Value);
-                if (definicjaDokID != null)
-                    sb.Append(" AND dh.Definicja=" + definicjaDokID.Value);
-                if (from != null)
-                    sb.Append(" AND pdh.Data >= '" + from.Value.Date.ToString("yyyy-MM-dd") + "'");
-                if (to != null)
-                    sb.Append(" AND pdh.Data < '" + to.Value.Date.AddDays(1).ToString("yyyy-MM-dd") + "'");
+                sb.Append("WHERE dh.TypPartii = 1 AND ddh.DuplikatWartosci = 0 AND pdh.KierunekMagazynu = -1 AND dh.Stan IN (1,2) AND t.Guid = @towarGuid");
+
+                if (magazynID.HasValue)
+                {
+                    sb.Append(" AND dh.Magazyn= @magazynId");
+                }
+
+                if (kontrahentID.HasValue)
+                {
+                    sb.Append(" AND dh.Kontrahent = @kontrahentId");
+                }
+
+                if (definicjaDokID.HasValue)
+                {
+                    sb.Append(" AND dh.Definicja = @definicjaDokID");
+                }
+
+                if (from.HasValue)
+                {
+                    sb.Append(" AND pdh.Data >= @from");
+                }
+
+                if (to.HasValue)
+                {
+                    sb.Append(" AND pdh.Data < @to");
+                }
+
                 sb.Append(")t0 GROUP BY t0.Definicja");
-                var result = new SqlCommand(sb.ToString(), con)
-                    .ExecuteScalar();
+
+                var cmd = new SqlCommand(sb.ToString(), con);
+                cmd.Parameters.Add("@towarGuid", towarGuid);
+
+                if (magazynID.HasValue)
+                {
+                    cmd.Parameters.Add("@magazynId", magazynID.Value);
+                }
+
+                if (kontrahentID.HasValue)
+                {
+                    cmd.Parameters.Add("@kontrahentId", kontrahentID.Value);
+                }
+
+                if (definicjaDokID.HasValue)
+                {
+                    cmd.Parameters.Add("@definicjaDokID", definicjaDokID.Value);
+                }
+
+                if (from.HasValue)
+                {
+                    cmd.Parameters.Add("@from", from.Value.Date);
+                }
+
+                if (to.HasValue)
+                {
+                    cmd.Parameters.Add("@to", to.Value.AddDays(1).Date);
+                }
+
+                var result = cmd.ExecuteScalar();
+
                 return DBNull.Value.Equals(result) ? default(T) : (T)result;
             }
         }
