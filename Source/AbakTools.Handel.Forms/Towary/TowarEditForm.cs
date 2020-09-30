@@ -53,13 +53,6 @@ namespace AbakTools.Towary.Forms
                     Enova.Business.Old.Core.ContextManager.WebContext.Refresh(System.Data.Objects.RefreshMode.StoreWins, Towar.Zdjecia.Where(z => z.EntityState != System.Data.EntityState.Added));
                     Towar.AtrybutyProduktu.Load();
 
-                    /*
-                    if (Towar.Synchronizacja == (int)RowSynchronize.Synchronized)
-                    {
-                        towarEnovaTextBox.Enabled = false;
-                        zmienEnovaTowarButton.Enabled = false;
-                    }
-                     */
                 }
 
                 if (Towar.EnovaGuid != null && Towar.EnovaGuid.Value != Guid.Empty)

@@ -141,7 +141,6 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("EnovaModel", "Towary_Jednostka_FK", "Jednostki", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Enova.Business.Old.DB.Jednostka), "Towar", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Enova.Business.Old.DB.Towar))]
 [assembly: EdmRelationshipAttribute("EnovaModel", "Towary_JednostkaAlternatywna_FK", "Jednostki", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Enova.Business.Old.DB.Jednostka), "Towar", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Enova.Business.Old.DB.Towar))]
 [assembly: EdmRelationshipAttribute("EnovaModel", "Towary_JednostkaReszty_FK", "Jednostki", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Enova.Business.Old.DB.Jednostka), "Towar", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Enova.Business.Old.DB.Towar))]
-[assembly: EdmRelationshipAttribute("EnovaModel", "Towary_JednostkaUzupelniajaca_FK", "Jednostki", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Enova.Business.Old.DB.Jednostka), "Towar", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Enova.Business.Old.DB.Towar))]
 [assembly: EdmRelationshipAttribute("EnovaModel", "ZamiennikiTowaru_JednostkaTow_FK", "Jednostki", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Enova.Business.Old.DB.Jednostka), "ZamiennikTowaru", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Enova.Business.Old.DB.ZamiennikTowaru))]
 [assembly: EdmRelationshipAttribute("EnovaModel", "ZamiennikiTowaru_JednostkaZam_FK", "Jednostki", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Enova.Business.Old.DB.Jednostka), "ZamiennikTowaru", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Enova.Business.Old.DB.ZamiennikTowaru))]
 [assembly: EdmRelationshipAttribute("EnovaModel", "DokRozliczeniowe_Definicja_FK1", "DefinicjaDokumentu", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Enova.Business.Old.DB.DefinicjaDokumentu), "DokumentRozliczeniowy", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Enova.Business.Old.DB.DokumentRozliczeniowy))]
@@ -1903,7 +1902,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -1920,7 +1919,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresFaksChanging(value);
                 ReportPropertyChanging("AdresFaks");
-                _AdresFaks = StructuralObject.SetValidValue(value, true);
+                _AdresFaks = StructuralObject.SetValidValue(value, true, "AdresFaks");
                 ReportPropertyChanged("AdresFaks");
                 OnAdresFaksChanged();
             }
@@ -1944,7 +1943,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresGminaChanging(value);
                 ReportPropertyChanging("AdresGmina");
-                _AdresGmina = StructuralObject.SetValidValue(value, true);
+                _AdresGmina = StructuralObject.SetValidValue(value, true, "AdresGmina");
                 ReportPropertyChanged("AdresGmina");
                 OnAdresGminaChanged();
             }
@@ -1968,7 +1967,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresKodKrajuChanging(value);
                 ReportPropertyChanging("AdresKodKraju");
-                _AdresKodKraju = StructuralObject.SetValidValue(value, true);
+                _AdresKodKraju = StructuralObject.SetValidValue(value, true, "AdresKodKraju");
                 ReportPropertyChanged("AdresKodKraju");
                 OnAdresKodKrajuChanged();
             }
@@ -1992,7 +1991,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresKodPocztowyChanging(value);
                 ReportPropertyChanging("AdresKodPocztowy");
-                _AdresKodPocztowy = StructuralObject.SetValidValue(value);
+                _AdresKodPocztowy = StructuralObject.SetValidValue(value, "AdresKodPocztowy");
                 ReportPropertyChanged("AdresKodPocztowy");
                 OnAdresKodPocztowyChanged();
             }
@@ -2016,7 +2015,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresKrajChanging(value);
                 ReportPropertyChanging("AdresKraj");
-                _AdresKraj = StructuralObject.SetValidValue(value, true);
+                _AdresKraj = StructuralObject.SetValidValue(value, true, "AdresKraj");
                 ReportPropertyChanged("AdresKraj");
                 OnAdresKrajChanged();
             }
@@ -2040,7 +2039,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresMiejscowoscChanging(value);
                 ReportPropertyChanging("AdresMiejscowosc");
-                _AdresMiejscowosc = StructuralObject.SetValidValue(value, true);
+                _AdresMiejscowosc = StructuralObject.SetValidValue(value, true, "AdresMiejscowosc");
                 ReportPropertyChanged("AdresMiejscowosc");
                 OnAdresMiejscowoscChanged();
             }
@@ -2064,7 +2063,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresNrDomuChanging(value);
                 ReportPropertyChanging("AdresNrDomu");
-                _AdresNrDomu = StructuralObject.SetValidValue(value, true);
+                _AdresNrDomu = StructuralObject.SetValidValue(value, true, "AdresNrDomu");
                 ReportPropertyChanged("AdresNrDomu");
                 OnAdresNrDomuChanged();
             }
@@ -2088,7 +2087,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresNrLokaluChanging(value);
                 ReportPropertyChanging("AdresNrLokalu");
-                _AdresNrLokalu = StructuralObject.SetValidValue(value, true);
+                _AdresNrLokalu = StructuralObject.SetValidValue(value, true, "AdresNrLokalu");
                 ReportPropertyChanged("AdresNrLokalu");
                 OnAdresNrLokaluChanged();
             }
@@ -2112,7 +2111,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresPocztaChanging(value);
                 ReportPropertyChanging("AdresPoczta");
-                _AdresPoczta = StructuralObject.SetValidValue(value, true);
+                _AdresPoczta = StructuralObject.SetValidValue(value, true, "AdresPoczta");
                 ReportPropertyChanged("AdresPoczta");
                 OnAdresPocztaChanged();
             }
@@ -2136,7 +2135,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresPowiatChanging(value);
                 ReportPropertyChanging("AdresPowiat");
-                _AdresPowiat = StructuralObject.SetValidValue(value, true);
+                _AdresPowiat = StructuralObject.SetValidValue(value, true, "AdresPowiat");
                 ReportPropertyChanged("AdresPowiat");
                 OnAdresPowiatChanged();
             }
@@ -2160,7 +2159,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresTelefonChanging(value);
                 ReportPropertyChanging("AdresTelefon");
-                _AdresTelefon = StructuralObject.SetValidValue(value, true);
+                _AdresTelefon = StructuralObject.SetValidValue(value, true, "AdresTelefon");
                 ReportPropertyChanged("AdresTelefon");
                 OnAdresTelefonChanged();
             }
@@ -2184,7 +2183,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresUlicaChanging(value);
                 ReportPropertyChanging("AdresUlica");
-                _AdresUlica = StructuralObject.SetValidValue(value, true);
+                _AdresUlica = StructuralObject.SetValidValue(value, true, "AdresUlica");
                 ReportPropertyChanged("AdresUlica");
                 OnAdresUlicaChanged();
             }
@@ -2208,7 +2207,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresWojewodztwoChanging(value);
                 ReportPropertyChanging("AdresWojewodztwo");
-                _AdresWojewodztwo = StructuralObject.SetValidValue(value);
+                _AdresWojewodztwo = StructuralObject.SetValidValue(value, "AdresWojewodztwo");
                 ReportPropertyChanged("AdresWojewodztwo");
                 OnAdresWojewodztwoChanged();
             }
@@ -2232,7 +2231,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresZagranicznyKodPocztowyChanging(value);
                 ReportPropertyChanging("AdresZagranicznyKodPocztowy");
-                _AdresZagranicznyKodPocztowy = StructuralObject.SetValidValue(value, true);
+                _AdresZagranicznyKodPocztowy = StructuralObject.SetValidValue(value, true, "AdresZagranicznyKodPocztowy");
                 ReportPropertyChanged("AdresZagranicznyKodPocztowy");
                 OnAdresZagranicznyKodPocztowyChanged();
             }
@@ -2256,7 +2255,7 @@ namespace Enova.Business.Old.DB
             {
                 OnHostChanging(value);
                 ReportPropertyChanging("Host");
-                _Host = StructuralObject.SetValidValue(value);
+                _Host = StructuralObject.SetValidValue(value, "Host");
                 ReportPropertyChanged("Host");
                 OnHostChanged();
             }
@@ -2280,7 +2279,7 @@ namespace Enova.Business.Old.DB
             {
                 OnHostTypeChanging(value);
                 ReportPropertyChanging("HostType");
-                _HostType = StructuralObject.SetValidValue(value, false);
+                _HostType = StructuralObject.SetValidValue(value, false, "HostType");
                 ReportPropertyChanged("HostType");
                 OnHostTypeChanged();
             }
@@ -2306,7 +2305,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -2331,7 +2330,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -2355,7 +2354,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -2379,7 +2378,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIdentyfikacjaAdresuGLNChanging(value);
                 ReportPropertyChanging("IdentyfikacjaAdresuGLN");
-                _IdentyfikacjaAdresuGLN = StructuralObject.SetValidValue(value, true);
+                _IdentyfikacjaAdresuGLN = StructuralObject.SetValidValue(value, true, "IdentyfikacjaAdresuGLN");
                 ReportPropertyChanged("IdentyfikacjaAdresuGLN");
                 OnIdentyfikacjaAdresuGLNChanged();
             }
@@ -2390,7 +2389,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -2450,7 +2448,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -2469,7 +2467,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -2494,7 +2492,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZapisChanging(value);
                 ReportPropertyChanging("Zapis");
-                _Zapis = StructuralObject.SetValidValue(value);
+                _Zapis = StructuralObject.SetValidValue(value, "Zapis");
                 ReportPropertyChanged("Zapis");
                 OnZapisChanged();
             }
@@ -2518,7 +2516,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZapisTypeChanging(value);
                 ReportPropertyChanging("ZapisType");
-                _ZapisType = StructuralObject.SetValidValue(value, false);
+                _ZapisType = StructuralObject.SetValidValue(value, false, "ZapisType");
                 ReportPropertyChanged("ZapisType");
                 OnZapisTypeChanged();
             }
@@ -2542,7 +2540,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresChanging(value);
                 ReportPropertyChanging("Adres");
-                _Adres = StructuralObject.SetValidValue(value, false);
+                _Adres = StructuralObject.SetValidValue(value, false, "Adres");
                 ReportPropertyChanged("Adres");
                 OnAdresChanged();
             }
@@ -2566,7 +2564,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDomyslnyChanging(value);
                 ReportPropertyChanging("Domyslny");
-                _Domyslny = StructuralObject.SetValidValue(value);
+                _Domyslny = StructuralObject.SetValidValue(value, "Domyslny");
                 ReportPropertyChanged("Domyslny");
                 OnDomyslnyChanged();
             }
@@ -2590,7 +2588,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -2601,7 +2599,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -2633,7 +2630,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -2652,7 +2649,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -2677,7 +2674,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParentChanging(value);
                 ReportPropertyChanging("Parent");
-                _Parent = StructuralObject.SetValidValue(value);
+                _Parent = StructuralObject.SetValidValue(value, "Parent");
                 ReportPropertyChanged("Parent");
                 OnParentChanged();
             }
@@ -2701,7 +2698,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParentTypeChanging(value);
                 ReportPropertyChanging("ParentType");
-                _ParentType = StructuralObject.SetValidValue(value, true);
+                _ParentType = StructuralObject.SetValidValue(value, true, "ParentType");
                 ReportPropertyChanged("ParentType");
                 OnParentTypeChanged();
             }
@@ -2725,7 +2722,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypeChanging(value);
                 ReportPropertyChanging("Type");
-                _Type = StructuralObject.SetValidValue(value);
+                _Type = StructuralObject.SetValidValue(value, "Type");
                 ReportPropertyChanged("Type");
                 OnTypeChanged();
             }
@@ -2749,7 +2746,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
+                _Name = StructuralObject.SetValidValue(value, false, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -2773,7 +2770,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataChanging(value);
                 ReportPropertyChanging("Data");
-                _Data = StructuralObject.SetValidValue(value, true);
+                _Data = StructuralObject.SetValidValue(value, true, "Data");
                 ReportPropertyChanged("Data");
                 OnDataChanged();
             }
@@ -2797,7 +2794,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIsDataCompressedChanging(value);
                 ReportPropertyChanging("IsDataCompressed");
-                _IsDataCompressed = StructuralObject.SetValidValue(value);
+                _IsDataCompressed = StructuralObject.SetValidValue(value, "IsDataCompressed");
                 ReportPropertyChanged("IsDataCompressed");
                 OnIsDataCompressedChanged();
             }
@@ -2821,7 +2818,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLinkChanging(value);
                 ReportPropertyChanging("Link");
-                _Link = StructuralObject.SetValidValue(value, true);
+                _Link = StructuralObject.SetValidValue(value, true, "Link");
                 ReportPropertyChanged("Link");
                 OnLinkChanged();
             }
@@ -2845,7 +2842,7 @@ namespace Enova.Business.Old.DB
             {
                 OnModifiedChanging(value);
                 ReportPropertyChanging("Modified");
-                _Modified = StructuralObject.SetValidValue(value);
+                _Modified = StructuralObject.SetValidValue(value, "Modified");
                 ReportPropertyChanged("Modified");
                 OnModifiedChanged();
             }
@@ -2869,7 +2866,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIconXChanging(value);
                 ReportPropertyChanging("IconX");
-                _IconX = StructuralObject.SetValidValue(value);
+                _IconX = StructuralObject.SetValidValue(value, "IconX");
                 ReportPropertyChanged("IconX");
                 OnIconXChanged();
             }
@@ -2893,7 +2890,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIconYChanging(value);
                 ReportPropertyChanging("IconY");
-                _IconY = StructuralObject.SetValidValue(value);
+                _IconY = StructuralObject.SetValidValue(value, "IconY");
                 ReportPropertyChanged("IconY");
                 OnIconYChanged();
             }
@@ -2917,7 +2914,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIconChanging(value);
                 ReportPropertyChanging("Icon");
-                _Icon = StructuralObject.SetValidValue(value, true);
+                _Icon = StructuralObject.SetValidValue(value, true, "Icon");
                 ReportPropertyChanged("Icon");
                 OnIconChanged();
             }
@@ -2941,7 +2938,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -2965,7 +2962,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDescriptionChanging(value);
                 ReportPropertyChanging("Description");
-                _Description = StructuralObject.SetValidValue(value, true);
+                _Description = StructuralObject.SetValidValue(value, true, "Description");
                 ReportPropertyChanged("Description");
                 OnDescriptionChanged();
             }
@@ -2989,7 +2986,7 @@ namespace Enova.Business.Old.DB
             {
                 OnVisibleInNetChanging(value);
                 ReportPropertyChanging("VisibleInNet");
-                _VisibleInNet = StructuralObject.SetValidValue(value);
+                _VisibleInNet = StructuralObject.SetValidValue(value, "VisibleInNet");
                 ReportPropertyChanged("VisibleInNet");
                 OnVisibleInNetChanged();
             }
@@ -3013,7 +3010,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLpChanging(value);
                 ReportPropertyChanging("Lp");
-                _Lp = StructuralObject.SetValidValue(value);
+                _Lp = StructuralObject.SetValidValue(value, "Lp");
                 ReportPropertyChanged("Lp");
                 OnLpChanged();
             }
@@ -3037,7 +3034,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSubTypeChanging(value);
                 ReportPropertyChanging("SubType");
-                _SubType = StructuralObject.SetValidValue(value);
+                _SubType = StructuralObject.SetValidValue(value, "SubType");
                 ReportPropertyChanged("SubType");
                 OnSubTypeChanged();
             }
@@ -3061,7 +3058,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMimeTypeChanging(value);
                 ReportPropertyChanging("MimeType");
-                _MimeType = StructuralObject.SetValidValue(value, true);
+                _MimeType = StructuralObject.SetValidValue(value, true, "MimeType");
                 ReportPropertyChanged("MimeType");
                 OnMimeTypeChanged();
             }
@@ -3085,7 +3082,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLockTimeChanging(value);
                 ReportPropertyChanging("LockTime");
-                _LockTime = StructuralObject.SetValidValue(value);
+                _LockTime = StructuralObject.SetValidValue(value, "LockTime");
                 ReportPropertyChanged("LockTime");
                 OnLockTimeChanged();
             }
@@ -3109,7 +3106,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIsDefaultChanging(value);
                 ReportPropertyChanging("IsDefault");
-                _IsDefault = StructuralObject.SetValidValue(value);
+                _IsDefault = StructuralObject.SetValidValue(value, "IsDefault");
                 ReportPropertyChanged("IsDefault");
                 OnIsDefaultChanged();
             }
@@ -3133,7 +3130,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSendChanging(value);
                 ReportPropertyChanging("Send");
-                _Send = StructuralObject.SetValidValue(value);
+                _Send = StructuralObject.SetValidValue(value, "Send");
                 ReportPropertyChanged("Send");
                 OnSendChanged();
             }
@@ -3157,7 +3154,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOcrDataChanging(value);
                 ReportPropertyChanging("OcrData");
-                _OcrData = StructuralObject.SetValidValue(value, true);
+                _OcrData = StructuralObject.SetValidValue(value, true, "OcrData");
                 ReportPropertyChanged("OcrData");
                 OnOcrDataChanged();
             }
@@ -3181,7 +3178,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOcrDataWithLayoutChanging(value);
                 ReportPropertyChanging("OcrDataWithLayout");
-                _OcrDataWithLayout = StructuralObject.SetValidValue(value, true);
+                _OcrDataWithLayout = StructuralObject.SetValidValue(value, true, "OcrDataWithLayout");
                 ReportPropertyChanged("OcrDataWithLayout");
                 OnOcrDataWithLayoutChanged();
             }
@@ -3205,7 +3202,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIsFilePathSourceChanging(value);
                 ReportPropertyChanging("IsFilePathSource");
-                _IsFilePathSource = StructuralObject.SetValidValue(value);
+                _IsFilePathSource = StructuralObject.SetValidValue(value, "IsFilePathSource");
                 ReportPropertyChanged("IsFilePathSource");
                 OnIsFilePathSourceChanged();
             }
@@ -3229,7 +3226,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFolderChanging(value);
                 ReportPropertyChanging("Folder");
-                _Folder = StructuralObject.SetValidValue(value);
+                _Folder = StructuralObject.SetValidValue(value, "Folder");
                 ReportPropertyChanged("Folder");
                 OnFolderChanged();
             }
@@ -3253,7 +3250,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFolderTypeChanging(value);
                 ReportPropertyChanging("FolderType");
-                _FolderType = StructuralObject.SetValidValue(value, true);
+                _FolderType = StructuralObject.SetValidValue(value, true, "FolderType");
                 ReportPropertyChanged("FolderType");
                 OnFolderTypeChanged();
             }
@@ -3264,7 +3261,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -3340,7 +3336,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -3357,7 +3353,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEuVATChanging(value);
                 ReportPropertyChanging("EuVAT");
-                _EuVAT = StructuralObject.SetValidValue(value, true);
+                _EuVAT = StructuralObject.SetValidValue(value, true, "EuVAT");
                 ReportPropertyChanged("EuVAT");
                 OnEuVATChanged();
             }
@@ -3381,7 +3377,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -3407,7 +3403,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -3432,7 +3428,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKierunekChanging(value);
                 ReportPropertyChanging("Kierunek");
-                _Kierunek = StructuralObject.SetValidValue(value, true);
+                _Kierunek = StructuralObject.SetValidValue(value, true, "Kierunek");
                 ReportPropertyChanged("Kierunek");
                 OnKierunekChanged();
             }
@@ -3456,7 +3452,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodChanging(value);
                 ReportPropertyChanging("Kod");
-                _Kod = StructuralObject.SetValidValue(value, false);
+                _Kod = StructuralObject.SetValidValue(value, false, "Kod");
                 ReportPropertyChanged("Kod");
                 OnKodChanged();
             }
@@ -3480,7 +3476,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktEMAILChanging(value);
                 ReportPropertyChanging("KontaktEMAIL");
-                _KontaktEMAIL = StructuralObject.SetValidValue(value, true);
+                _KontaktEMAIL = StructuralObject.SetValidValue(value, true, "KontaktEMAIL");
                 ReportPropertyChanged("KontaktEMAIL");
                 OnKontaktEMAILChanged();
             }
@@ -3504,7 +3500,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktSkrytkaPocztowaChanging(value);
                 ReportPropertyChanging("KontaktSkrytkaPocztowa");
-                _KontaktSkrytkaPocztowa = StructuralObject.SetValidValue(value, true);
+                _KontaktSkrytkaPocztowa = StructuralObject.SetValidValue(value, true, "KontaktSkrytkaPocztowa");
                 ReportPropertyChanged("KontaktSkrytkaPocztowa");
                 OnKontaktSkrytkaPocztowaChanged();
             }
@@ -3528,7 +3524,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktTelefonKomorkowyChanging(value);
                 ReportPropertyChanging("KontaktTelefonKomorkowy");
-                _KontaktTelefonKomorkowy = StructuralObject.SetValidValue(value, true);
+                _KontaktTelefonKomorkowy = StructuralObject.SetValidValue(value, true, "KontaktTelefonKomorkowy");
                 ReportPropertyChanged("KontaktTelefonKomorkowy");
                 OnKontaktTelefonKomorkowyChanged();
             }
@@ -3552,7 +3548,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktWWWChanging(value);
                 ReportPropertyChanging("KontaktWWW");
-                _KontaktWWW = StructuralObject.SetValidValue(value, true);
+                _KontaktWWW = StructuralObject.SetValidValue(value, true, "KontaktWWW");
                 ReportPropertyChanged("KontaktWWW");
                 OnKontaktWWWChanged();
             }
@@ -3576,7 +3572,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLimitKredytuSymbolChanging(value);
                 ReportPropertyChanging("LimitKredytuSymbol");
-                _LimitKredytuSymbol = StructuralObject.SetValidValue(value, true);
+                _LimitKredytuSymbol = StructuralObject.SetValidValue(value, true, "LimitKredytuSymbol");
                 ReportPropertyChanged("LimitKredytuSymbol");
                 OnLimitKredytuSymbolChanged();
             }
@@ -3600,7 +3596,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLimitKredytuValueChanging(value);
                 ReportPropertyChanging("LimitKredytuValue");
-                _LimitKredytuValue = StructuralObject.SetValidValue(value);
+                _LimitKredytuValue = StructuralObject.SetValidValue(value, "LimitKredytuValue");
                 ReportPropertyChanged("LimitKredytuValue");
                 OnLimitKredytuValueChanged();
             }
@@ -3624,7 +3620,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -3648,7 +3644,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNIPChanging(value);
                 ReportPropertyChanging("NIP");
-                _NIP = StructuralObject.SetValidValue(value, true);
+                _NIP = StructuralObject.SetValidValue(value, true, "NIP");
                 ReportPropertyChanged("NIP");
                 OnNIPChanged();
             }
@@ -3672,7 +3668,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneIndywidualneChanging(value);
                 ReportPropertyChanging("OdsKarneIndywidualne");
-                _OdsKarneIndywidualne = StructuralObject.SetValidValue(value);
+                _OdsKarneIndywidualne = StructuralObject.SetValidValue(value, "OdsKarneIndywidualne");
                 ReportPropertyChanged("OdsKarneIndywidualne");
                 OnOdsKarneIndywidualneChanged();
             }
@@ -3696,7 +3692,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneOdsIndHistChanging(value);
                 ReportPropertyChanging("OdsKarneOdsIndHist");
-                _OdsKarneOdsIndHist = StructuralObject.SetValidValue(value, true);
+                _OdsKarneOdsIndHist = StructuralObject.SetValidValue(value, true, "OdsKarneOdsIndHist");
                 ReportPropertyChanged("OdsKarneOdsIndHist");
                 OnOdsKarneOdsIndHistChanged();
             }
@@ -3720,7 +3716,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneRozpoczecieDniChanging(value);
                 ReportPropertyChanging("OdsKarneRozpoczecieDni");
-                _OdsKarneRozpoczecieDni = StructuralObject.SetValidValue(value);
+                _OdsKarneRozpoczecieDni = StructuralObject.SetValidValue(value, "OdsKarneRozpoczecieDni");
                 ReportPropertyChanged("OdsKarneRozpoczecieDni");
                 OnOdsKarneRozpoczecieDniChanged();
             }
@@ -3744,7 +3740,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneRozpoczecieTypChanging(value);
                 ReportPropertyChanging("OdsKarneRozpoczecieTyp");
-                _OdsKarneRozpoczecieTyp = StructuralObject.SetValidValue(value);
+                _OdsKarneRozpoczecieTyp = StructuralObject.SetValidValue(value, "OdsKarneRozpoczecieTyp");
                 ReportPropertyChanged("OdsKarneRozpoczecieTyp");
                 OnOdsKarneRozpoczecieTypChanged();
             }
@@ -3768,7 +3764,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneStopaChanging(value);
                 ReportPropertyChanging("OdsKarneStopa");
-                _OdsKarneStopa = StructuralObject.SetValidValue(value);
+                _OdsKarneStopa = StructuralObject.SetValidValue(value, "OdsKarneStopa");
                 ReportPropertyChanged("OdsKarneStopa");
                 OnOdsKarneStopaChanged();
             }
@@ -3792,7 +3788,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneZwlokaChanging(value);
                 ReportPropertyChanging("OdsKarneZwloka");
-                _OdsKarneZwloka = StructuralObject.SetValidValue(value);
+                _OdsKarneZwloka = StructuralObject.SetValidValue(value, "OdsKarneZwloka");
                 ReportPropertyChanged("OdsKarneZwloka");
                 OnOdsKarneZwlokaChanged();
             }
@@ -3816,7 +3812,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOsobaAdresChanging(value);
                 ReportPropertyChanging("OsobaAdres");
-                _OsobaAdres = StructuralObject.SetValidValue(value, true);
+                _OsobaAdres = StructuralObject.SetValidValue(value, true, "OsobaAdres");
                 ReportPropertyChanged("OsobaAdres");
                 OnOsobaAdresChanged();
             }
@@ -3840,7 +3836,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOsobaOsobaChanging(value);
                 ReportPropertyChanging("OsobaOsoba");
-                _OsobaOsoba = StructuralObject.SetValidValue(value, true);
+                _OsobaOsoba = StructuralObject.SetValidValue(value, true, "OsobaOsoba");
                 ReportPropertyChanged("OsobaOsoba");
                 OnOsobaOsobaChanged();
             }
@@ -3864,7 +3860,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOsobaTelefonChanging(value);
                 ReportPropertyChanging("OsobaTelefon");
-                _OsobaTelefon = StructuralObject.SetValidValue(value, true);
+                _OsobaTelefon = StructuralObject.SetValidValue(value, true, "OsobaTelefon");
                 ReportPropertyChanged("OsobaTelefon");
                 OnOsobaTelefonChanged();
             }
@@ -3888,7 +3884,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabatChanging(value);
                 ReportPropertyChanging("Rabat");
-                _Rabat = StructuralObject.SetValidValue(value);
+                _Rabat = StructuralObject.SetValidValue(value, "Rabat");
                 ReportPropertyChanged("Rabat");
                 OnRabatChanged();
             }
@@ -3912,7 +3908,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -3936,7 +3932,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSWIFTChanging(value);
                 ReportPropertyChanging("SWIFT");
-                _SWIFT = StructuralObject.SetValidValue(value, true);
+                _SWIFT = StructuralObject.SetValidValue(value, true, "SWIFT");
                 ReportPropertyChanged("SWIFT");
                 OnSWIFTChanged();
             }
@@ -3960,7 +3956,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminChanging(value);
                 ReportPropertyChanging("Termin");
-                _Termin = StructuralObject.SetValidValue(value);
+                _Termin = StructuralObject.SetValidValue(value, "Termin");
                 ReportPropertyChanged("Termin");
                 OnTerminChanged();
             }
@@ -3984,7 +3980,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUwagiChanging(value);
                 ReportPropertyChanging("Uwagi");
-                _Uwagi = StructuralObject.SetValidValue(value, true);
+                _Uwagi = StructuralObject.SetValidValue(value, true, "Uwagi");
                 ReportPropertyChanged("Uwagi");
                 OnUwagiChanged();
             }
@@ -4008,7 +4004,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaChanging(value);
                 ReportPropertyChanging("Blokada");
-                _Blokada = StructuralObject.SetValidValue(value);
+                _Blokada = StructuralObject.SetValidValue(value, "Blokada");
                 ReportPropertyChanged("Blokada");
                 OnBlokadaChanged();
             }
@@ -4019,7 +4015,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -4113,7 +4108,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -4132,7 +4127,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -4157,7 +4152,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCelChanging(value);
                 ReportPropertyChanging("Cel");
-                _Cel = StructuralObject.SetValidValue(value);
+                _Cel = StructuralObject.SetValidValue(value, "Cel");
                 ReportPropertyChanged("Cel");
                 OnCelChanged();
             }
@@ -4181,7 +4176,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -4192,7 +4187,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -4262,7 +4256,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -4279,7 +4273,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBruttoSymbolChanging(value);
                 ReportPropertyChanging("BruttoSymbol");
-                _BruttoSymbol = StructuralObject.SetValidValue(value, true);
+                _BruttoSymbol = StructuralObject.SetValidValue(value, true, "BruttoSymbol");
                 ReportPropertyChanged("BruttoSymbol");
                 OnBruttoSymbolChanged();
             }
@@ -4303,7 +4297,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBruttoValueChanging(value);
                 ReportPropertyChanging("BruttoValue");
-                _BruttoValue = StructuralObject.SetValidValue(value);
+                _BruttoValue = StructuralObject.SetValidValue(value, "BruttoValue");
                 ReportPropertyChanged("BruttoValue");
                 OnBruttoValueChanged();
             }
@@ -4329,7 +4323,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -4354,7 +4348,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKorygowanaChanging(value);
                 ReportPropertyChanging("Korygowana");
-                _Korygowana = StructuralObject.SetValidValue(value);
+                _Korygowana = StructuralObject.SetValidValue(value, "Korygowana");
                 ReportPropertyChanged("Korygowana");
                 OnKorygowanaChanged();
             }
@@ -4378,7 +4372,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNettoSymbolChanging(value);
                 ReportPropertyChanging("NettoSymbol");
-                _NettoSymbol = StructuralObject.SetValidValue(value, true);
+                _NettoSymbol = StructuralObject.SetValidValue(value, true, "NettoSymbol");
                 ReportPropertyChanged("NettoSymbol");
                 OnNettoSymbolChanged();
             }
@@ -4402,7 +4396,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNettoValueChanging(value);
                 ReportPropertyChanging("NettoValue");
-                _NettoValue = StructuralObject.SetValidValue(value);
+                _NettoValue = StructuralObject.SetValidValue(value, "NettoValue");
                 ReportPropertyChanged("NettoValue");
                 OnNettoValueChanged();
             }
@@ -4426,7 +4420,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPolaczChanging(value);
                 ReportPropertyChanging("Polacz");
-                _Polacz = StructuralObject.SetValidValue(value);
+                _Polacz = StructuralObject.SetValidValue(value, "Polacz");
                 ReportPropertyChanged("Polacz");
                 OnPolaczChanged();
             }
@@ -4450,7 +4444,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -4474,7 +4468,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStandardowaIloscSymbolChanging(value);
                 ReportPropertyChanging("StandardowaIloscSymbol");
-                _StandardowaIloscSymbol = StructuralObject.SetValidValue(value, true);
+                _StandardowaIloscSymbol = StructuralObject.SetValidValue(value, true, "StandardowaIloscSymbol");
                 ReportPropertyChanged("StandardowaIloscSymbol");
                 OnStandardowaIloscSymbolChanged();
             }
@@ -4498,7 +4492,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStandardowaIloscValueChanging(value);
                 ReportPropertyChanging("StandardowaIloscValue");
-                _StandardowaIloscValue = StructuralObject.SetValidValue(value);
+                _StandardowaIloscValue = StructuralObject.SetValidValue(value, "StandardowaIloscValue");
                 ReportPropertyChanged("StandardowaIloscValue");
                 OnStandardowaIloscValueChanged();
             }
@@ -4509,7 +4503,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -4619,7 +4612,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -4636,7 +4629,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -4662,7 +4655,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -4687,7 +4680,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabatChanging(value);
                 ReportPropertyChanging("Rabat");
-                _Rabat = StructuralObject.SetValidValue(value);
+                _Rabat = StructuralObject.SetValidValue(value, "Rabat");
                 ReportPropertyChanged("Rabat");
                 OnRabatChanged();
             }
@@ -4711,7 +4704,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabatujPromocjeChanging(value);
                 ReportPropertyChanging("RabatujPromocje");
-                _RabatujPromocje = StructuralObject.SetValidValue(value);
+                _RabatujPromocje = StructuralObject.SetValidValue(value, "RabatujPromocje");
                 ReportPropertyChanged("RabatujPromocje");
                 OnRabatujPromocjeChanged();
             }
@@ -4735,7 +4728,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabatZdefiniowanyChanging(value);
                 ReportPropertyChanging("RabatZdefiniowany");
-                _RabatZdefiniowany = StructuralObject.SetValidValue(value);
+                _RabatZdefiniowany = StructuralObject.SetValidValue(value, "RabatZdefiniowany");
                 ReportPropertyChanged("RabatZdefiniowany");
                 OnRabatZdefiniowanyChanged();
             }
@@ -4759,7 +4752,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -4770,7 +4763,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -4956,7 +4948,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -4973,7 +4965,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataChanging(value);
                 ReportPropertyChanging("Data");
-                _Data = StructuralObject.SetValidValue(value, true);
+                _Data = StructuralObject.SetValidValue(value, true, "Data");
                 ReportPropertyChanged("Data");
                 OnDataChanged();
             }
@@ -4999,7 +4991,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -5024,7 +5016,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInfoChanging(value);
                 ReportPropertyChanging("Info");
-                _Info = StructuralObject.SetValidValue(value, true);
+                _Info = StructuralObject.SetValidValue(value, true, "Info");
                 ReportPropertyChanged("Info");
                 OnInfoChanged();
             }
@@ -5048,7 +5040,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSourceGuidChanging(value);
                 ReportPropertyChanging("SourceGuid");
-                _SourceGuid = StructuralObject.SetValidValue(value);
+                _SourceGuid = StructuralObject.SetValidValue(value, "SourceGuid");
                 ReportPropertyChanged("SourceGuid");
                 OnSourceGuidChanged();
             }
@@ -5072,7 +5064,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSourceTableChanging(value);
                 ReportPropertyChanging("SourceTable");
-                _SourceTable = StructuralObject.SetValidValue(value, true);
+                _SourceTable = StructuralObject.SetValidValue(value, true, "SourceTable");
                 ReportPropertyChanged("SourceTable");
                 OnSourceTableChanged();
             }
@@ -5096,7 +5088,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTimeChanging(value);
                 ReportPropertyChanging("Time");
-                _Time = StructuralObject.SetValidValue(value);
+                _Time = StructuralObject.SetValidValue(value, "Time");
                 ReportPropertyChanged("Time");
                 OnTimeChanged();
             }
@@ -5120,7 +5112,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypeChanging(value);
                 ReportPropertyChanging("Type");
-                _Type = StructuralObject.SetValidValue(value);
+                _Type = StructuralObject.SetValidValue(value, "Type");
                 ReportPropertyChanged("Type");
                 OnTypeChanged();
             }
@@ -5144,7 +5136,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWebUserChanging(value);
                 ReportPropertyChanging("WebUser");
-                _WebUser = StructuralObject.SetValidValue(value, true);
+                _WebUser = StructuralObject.SetValidValue(value, true, "WebUser");
                 ReportPropertyChanged("WebUser");
                 OnWebUserChanged();
             }
@@ -5168,7 +5160,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNoteToChangeChanging(value);
                 ReportPropertyChanging("NoteToChange");
-                _NoteToChange = StructuralObject.SetValidValue(value, true);
+                _NoteToChange = StructuralObject.SetValidValue(value, true, "NoteToChange");
                 ReportPropertyChanged("NoteToChange");
                 OnNoteToChangeChanged();
             }
@@ -5179,7 +5171,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -5255,7 +5246,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -5274,7 +5265,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -5299,7 +5290,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktChanging(value);
                 ReportPropertyChanging("Kontakt");
-                _Kontakt = StructuralObject.SetValidValue(value, false);
+                _Kontakt = StructuralObject.SetValidValue(value, false, "Kontakt");
                 ReportPropertyChanged("Kontakt");
                 OnKontaktChanged();
             }
@@ -5323,7 +5314,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisChanging(value);
                 ReportPropertyChanging("Opis");
-                _Opis = StructuralObject.SetValidValue(value, true);
+                _Opis = StructuralObject.SetValidValue(value, true, "Opis");
                 ReportPropertyChanged("Opis");
                 OnOpisChanged();
             }
@@ -5347,7 +5338,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDomyslnyChanging(value);
                 ReportPropertyChanging("Domyslny");
-                _Domyslny = StructuralObject.SetValidValue(value);
+                _Domyslny = StructuralObject.SetValidValue(value, "Domyslny");
                 ReportPropertyChanged("Domyslny");
                 OnDomyslnyChanged();
             }
@@ -5371,7 +5362,7 @@ namespace Enova.Business.Old.DB
             {
                 OnHostChanging(value);
                 ReportPropertyChanging("Host");
-                _Host = StructuralObject.SetValidValue(value);
+                _Host = StructuralObject.SetValidValue(value, "Host");
                 ReportPropertyChanged("Host");
                 OnHostChanged();
             }
@@ -5395,7 +5386,7 @@ namespace Enova.Business.Old.DB
             {
                 OnHostTypeChanging(value);
                 ReportPropertyChanging("HostType");
-                _HostType = StructuralObject.SetValidValue(value, false);
+                _HostType = StructuralObject.SetValidValue(value, false, "HostType");
                 ReportPropertyChanged("HostType");
                 OnHostTypeChanged();
             }
@@ -5419,7 +5410,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -5430,7 +5421,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -5566,7 +5556,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -5585,7 +5575,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -5610,7 +5600,7 @@ namespace Enova.Business.Old.DB
             {
                 OnHostChanging(value);
                 ReportPropertyChanging("Host");
-                _Host = StructuralObject.SetValidValue(value);
+                _Host = StructuralObject.SetValidValue(value, "Host");
                 ReportPropertyChanged("Host");
                 OnHostChanged();
             }
@@ -5634,7 +5624,7 @@ namespace Enova.Business.Old.DB
             {
                 OnHostTypeChanging(value);
                 ReportPropertyChanging("HostType");
-                _HostType = StructuralObject.SetValidValue(value, false);
+                _HostType = StructuralObject.SetValidValue(value, false, "HostType");
                 ReportPropertyChanged("HostType");
                 OnHostTypeChanged();
             }
@@ -5658,7 +5648,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -5682,7 +5672,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -5706,7 +5696,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNIPChanging(value);
                 ReportPropertyChanging("NIP");
-                _NIP = StructuralObject.SetValidValue(value, true);
+                _NIP = StructuralObject.SetValidValue(value, true, "NIP");
                 ReportPropertyChanged("NIP");
                 OnNIPChanged();
             }
@@ -5730,7 +5720,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEuVATChanging(value);
                 ReportPropertyChanging("EuVAT");
-                _EuVAT = StructuralObject.SetValidValue(value, true);
+                _EuVAT = StructuralObject.SetValidValue(value, true, "EuVAT");
                 ReportPropertyChanged("EuVAT");
                 OnEuVATChanged();
             }
@@ -5754,7 +5744,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresKodPocztowyChanging(value);
                 ReportPropertyChanging("AdresKodPocztowy");
-                _AdresKodPocztowy = StructuralObject.SetValidValue(value);
+                _AdresKodPocztowy = StructuralObject.SetValidValue(value, "AdresKodPocztowy");
                 ReportPropertyChanged("AdresKodPocztowy");
                 OnAdresKodPocztowyChanged();
             }
@@ -5778,7 +5768,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresZagranicznyKodPocztowyChanging(value);
                 ReportPropertyChanging("AdresZagranicznyKodPocztowy");
-                _AdresZagranicznyKodPocztowy = StructuralObject.SetValidValue(value, true);
+                _AdresZagranicznyKodPocztowy = StructuralObject.SetValidValue(value, true, "AdresZagranicznyKodPocztowy");
                 ReportPropertyChanged("AdresZagranicznyKodPocztowy");
                 OnAdresZagranicznyKodPocztowyChanged();
             }
@@ -5802,7 +5792,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresPocztaChanging(value);
                 ReportPropertyChanging("AdresPoczta");
-                _AdresPoczta = StructuralObject.SetValidValue(value, true);
+                _AdresPoczta = StructuralObject.SetValidValue(value, true, "AdresPoczta");
                 ReportPropertyChanged("AdresPoczta");
                 OnAdresPocztaChanged();
             }
@@ -5826,7 +5816,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresMiejscowoscChanging(value);
                 ReportPropertyChanging("AdresMiejscowosc");
-                _AdresMiejscowosc = StructuralObject.SetValidValue(value, true);
+                _AdresMiejscowosc = StructuralObject.SetValidValue(value, true, "AdresMiejscowosc");
                 ReportPropertyChanged("AdresMiejscowosc");
                 OnAdresMiejscowoscChanged();
             }
@@ -5850,7 +5840,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresGminaChanging(value);
                 ReportPropertyChanging("AdresGmina");
-                _AdresGmina = StructuralObject.SetValidValue(value, true);
+                _AdresGmina = StructuralObject.SetValidValue(value, true, "AdresGmina");
                 ReportPropertyChanged("AdresGmina");
                 OnAdresGminaChanged();
             }
@@ -5874,7 +5864,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresPowiatChanging(value);
                 ReportPropertyChanging("AdresPowiat");
-                _AdresPowiat = StructuralObject.SetValidValue(value, true);
+                _AdresPowiat = StructuralObject.SetValidValue(value, true, "AdresPowiat");
                 ReportPropertyChanged("AdresPowiat");
                 OnAdresPowiatChanged();
             }
@@ -5898,7 +5888,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresWojewodztwoChanging(value);
                 ReportPropertyChanging("AdresWojewodztwo");
-                _AdresWojewodztwo = StructuralObject.SetValidValue(value);
+                _AdresWojewodztwo = StructuralObject.SetValidValue(value, "AdresWojewodztwo");
                 ReportPropertyChanged("AdresWojewodztwo");
                 OnAdresWojewodztwoChanged();
             }
@@ -5922,7 +5912,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresKrajChanging(value);
                 ReportPropertyChanging("AdresKraj");
-                _AdresKraj = StructuralObject.SetValidValue(value, true);
+                _AdresKraj = StructuralObject.SetValidValue(value, true, "AdresKraj");
                 ReportPropertyChanged("AdresKraj");
                 OnAdresKrajChanged();
             }
@@ -5946,7 +5936,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresKodKrajuChanging(value);
                 ReportPropertyChanging("AdresKodKraju");
-                _AdresKodKraju = StructuralObject.SetValidValue(value, true);
+                _AdresKodKraju = StructuralObject.SetValidValue(value, true, "AdresKodKraju");
                 ReportPropertyChanged("AdresKodKraju");
                 OnAdresKodKrajuChanged();
             }
@@ -5970,7 +5960,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresUlicaChanging(value);
                 ReportPropertyChanging("AdresUlica");
-                _AdresUlica = StructuralObject.SetValidValue(value, true);
+                _AdresUlica = StructuralObject.SetValidValue(value, true, "AdresUlica");
                 ReportPropertyChanged("AdresUlica");
                 OnAdresUlicaChanged();
             }
@@ -5994,7 +5984,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresNrDomuChanging(value);
                 ReportPropertyChanging("AdresNrDomu");
-                _AdresNrDomu = StructuralObject.SetValidValue(value, true);
+                _AdresNrDomu = StructuralObject.SetValidValue(value, true, "AdresNrDomu");
                 ReportPropertyChanged("AdresNrDomu");
                 OnAdresNrDomuChanged();
             }
@@ -6018,7 +6008,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresNrLokaluChanging(value);
                 ReportPropertyChanging("AdresNrLokalu");
-                _AdresNrLokalu = StructuralObject.SetValidValue(value, true);
+                _AdresNrLokalu = StructuralObject.SetValidValue(value, true, "AdresNrLokalu");
                 ReportPropertyChanged("AdresNrLokalu");
                 OnAdresNrLokaluChanged();
             }
@@ -6042,7 +6032,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresTelefonChanging(value);
                 ReportPropertyChanging("AdresTelefon");
-                _AdresTelefon = StructuralObject.SetValidValue(value, true);
+                _AdresTelefon = StructuralObject.SetValidValue(value, true, "AdresTelefon");
                 ReportPropertyChanged("AdresTelefon");
                 OnAdresTelefonChanged();
             }
@@ -6066,7 +6056,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAdresFaksChanging(value);
                 ReportPropertyChanging("AdresFaks");
-                _AdresFaks = StructuralObject.SetValidValue(value, true);
+                _AdresFaks = StructuralObject.SetValidValue(value, true, "AdresFaks");
                 ReportPropertyChanged("AdresFaks");
                 OnAdresFaksChanged();
             }
@@ -6090,7 +6080,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajPodmiotuChanging(value);
                 ReportPropertyChanging("RodzajPodmiotu");
-                _RodzajPodmiotu = StructuralObject.SetValidValue(value);
+                _RodzajPodmiotu = StructuralObject.SetValidValue(value, "RodzajPodmiotu");
                 ReportPropertyChanged("RodzajPodmiotu");
                 OnRodzajPodmiotuChanged();
             }
@@ -6114,7 +6104,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStatusPodmiotuChanging(value);
                 ReportPropertyChanging("StatusPodmiotu");
-                _StatusPodmiotu = StructuralObject.SetValidValue(value);
+                _StatusPodmiotu = StructuralObject.SetValidValue(value, "StatusPodmiotu");
                 ReportPropertyChanged("StatusPodmiotu");
                 OnStatusPodmiotuChanged();
             }
@@ -6138,7 +6128,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -6149,7 +6139,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -6177,7 +6166,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -6196,7 +6185,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -6221,7 +6210,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -6232,7 +6221,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -6344,7 +6332,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -6363,7 +6351,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -6388,7 +6376,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -6412,7 +6400,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
+                _Name = StructuralObject.SetValidValue(value, false, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -6436,7 +6424,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -6447,7 +6435,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -6507,7 +6494,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -6526,7 +6513,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -6551,7 +6538,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -6575,7 +6562,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
+                _Name = StructuralObject.SetValidValue(value, false, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -6599,7 +6586,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -6623,7 +6610,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFirmNameChanging(value);
                 ReportPropertyChanging("FirmName");
-                _FirmName = StructuralObject.SetValidValue(value, false);
+                _FirmName = StructuralObject.SetValidValue(value, false, "FirmName");
                 ReportPropertyChanged("FirmName");
                 OnFirmNameChanged();
             }
@@ -6647,7 +6634,7 @@ namespace Enova.Business.Old.DB
             {
                 OnClientChanging(value);
                 ReportPropertyChanging("Client");
-                _Client = StructuralObject.SetValidValue(value);
+                _Client = StructuralObject.SetValidValue(value, "Client");
                 ReportPropertyChanged("Client");
                 OnClientChanged();
             }
@@ -6671,7 +6658,7 @@ namespace Enova.Business.Old.DB
             {
                 OnClientTypeChanging(value);
                 ReportPropertyChanging("ClientType");
-                _ClientType = StructuralObject.SetValidValue(value, true);
+                _ClientType = StructuralObject.SetValidValue(value, true, "ClientType");
                 ReportPropertyChanged("ClientType");
                 OnClientTypeChanged();
             }
@@ -6682,7 +6669,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -6742,7 +6728,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -6759,7 +6745,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAktualizujCenyChanging(value);
                 ReportPropertyChanging("AktualizujCeny");
-                _AktualizujCeny = StructuralObject.SetValidValue(value);
+                _AktualizujCeny = StructuralObject.SetValidValue(value, "AktualizujCeny");
                 ReportPropertyChanged("AktualizujCeny");
                 OnAktualizujCenyChanged();
             }
@@ -6783,7 +6769,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAnulowanyChanging(value);
                 ReportPropertyChanging("Anulowany");
-                _Anulowany = StructuralObject.SetValidValue(value);
+                _Anulowany = StructuralObject.SetValidValue(value, "Anulowany");
                 ReportPropertyChanged("Anulowany");
                 OnAnulowanyChanged();
             }
@@ -6807,7 +6793,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBazowaChanging(value);
                 ReportPropertyChanging("Bazowa");
-                _Bazowa = StructuralObject.SetValidValue(value);
+                _Bazowa = StructuralObject.SetValidValue(value, "Bazowa");
                 ReportPropertyChanged("Bazowa");
                 OnBazowaChanged();
             }
@@ -6831,7 +6817,7 @@ namespace Enova.Business.Old.DB
             {
                 Onbi_disabledChanging(value);
                 ReportPropertyChanging("bi_disabled");
-                _bi_disabled = StructuralObject.SetValidValue(value);
+                _bi_disabled = StructuralObject.SetValidValue(value, "bi_disabled");
                 ReportPropertyChanged("bi_disabled");
                 Onbi_disabledChanged();
             }
@@ -6855,7 +6841,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaChanging(value);
                 ReportPropertyChanging("Blokada");
-                _Blokada = StructuralObject.SetValidValue(value);
+                _Blokada = StructuralObject.SetValidValue(value, "Blokada");
                 ReportPropertyChanged("Blokada");
                 OnBlokadaChanged();
             }
@@ -6879,7 +6865,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaCenyChanging(value);
                 ReportPropertyChanging("BlokadaCeny");
-                _BlokadaCeny = StructuralObject.SetValidValue(value);
+                _BlokadaCeny = StructuralObject.SetValidValue(value, "BlokadaCeny");
                 ReportPropertyChanged("BlokadaCeny");
                 OnBlokadaCenyChanged();
             }
@@ -6903,7 +6889,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaEdycjiDatyChanging(value);
                 ReportPropertyChanging("BlokadaEdycjiDaty");
-                _BlokadaEdycjiDaty = StructuralObject.SetValidValue(value);
+                _BlokadaEdycjiDaty = StructuralObject.SetValidValue(value, "BlokadaEdycjiDaty");
                 ReportPropertyChanged("BlokadaEdycjiDaty");
                 OnBlokadaEdycjiDatyChanged();
             }
@@ -6927,7 +6913,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaEdycjiDatyOperacjiChanging(value);
                 ReportPropertyChanging("BlokadaEdycjiDatyOperacji");
-                _BlokadaEdycjiDatyOperacji = StructuralObject.SetValidValue(value);
+                _BlokadaEdycjiDatyOperacji = StructuralObject.SetValidValue(value, "BlokadaEdycjiDatyOperacji");
                 ReportPropertyChanged("BlokadaEdycjiDatyOperacji");
                 OnBlokadaEdycjiDatyOperacjiChanged();
             }
@@ -6951,7 +6937,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaEdycjiDatyOtrzymaniaChanging(value);
                 ReportPropertyChanging("BlokadaEdycjiDatyOtrzymania");
-                _BlokadaEdycjiDatyOtrzymania = StructuralObject.SetValidValue(value);
+                _BlokadaEdycjiDatyOtrzymania = StructuralObject.SetValidValue(value, "BlokadaEdycjiDatyOtrzymania");
                 ReportPropertyChanged("BlokadaEdycjiDatyOtrzymania");
                 OnBlokadaEdycjiDatyOtrzymaniaChanged();
             }
@@ -6975,7 +6961,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaEdycjiMagazynuChanging(value);
                 ReportPropertyChanging("BlokadaEdycjiMagazynu");
-                _BlokadaEdycjiMagazynu = StructuralObject.SetValidValue(value);
+                _BlokadaEdycjiMagazynu = StructuralObject.SetValidValue(value, "BlokadaEdycjiMagazynu");
                 ReportPropertyChanged("BlokadaEdycjiMagazynu");
                 OnBlokadaEdycjiMagazynuChanged();
             }
@@ -6999,7 +6985,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBuforowanieChanging(value);
                 ReportPropertyChanging("Buforowanie");
-                _Buforowanie = StructuralObject.SetValidValue(value);
+                _Buforowanie = StructuralObject.SetValidValue(value, "Buforowanie");
                 ReportPropertyChanged("Buforowanie");
                 OnBuforowanieChanged();
             }
@@ -7023,7 +7009,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCechyWymaganeChanging(value);
                 ReportPropertyChanging("CechyWymagane");
-                _CechyWymagane = StructuralObject.SetValidValue(value, true);
+                _CechyWymagane = StructuralObject.SetValidValue(value, true, "CechyWymagane");
                 ReportPropertyChanged("CechyWymagane");
                 OnCechyWymaganeChanged();
             }
@@ -7047,7 +7033,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataKursuChanging(value);
                 ReportPropertyChanging("DataKursu");
-                _DataKursu = StructuralObject.SetValidValue(value);
+                _DataKursu = StructuralObject.SetValidValue(value, "DataKursu");
                 ReportPropertyChanged("DataKursu");
                 OnDataKursuChanged();
             }
@@ -7071,7 +7057,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDefNaglowek1XmlChanging(value);
                 ReportPropertyChanging("DefNaglowek1Xml");
-                _DefNaglowek1Xml = StructuralObject.SetValidValue(value, true);
+                _DefNaglowek1Xml = StructuralObject.SetValidValue(value, true, "DefNaglowek1Xml");
                 ReportPropertyChanged("DefNaglowek1Xml");
                 OnDefNaglowek1XmlChanged();
             }
@@ -7095,7 +7081,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDefNaglowek2XmlChanging(value);
                 ReportPropertyChanging("DefNaglowek2Xml");
-                _DefNaglowek2Xml = StructuralObject.SetValidValue(value, true);
+                _DefNaglowek2Xml = StructuralObject.SetValidValue(value, true, "DefNaglowek2Xml");
                 ReportPropertyChanged("DefNaglowek2Xml");
                 OnDefNaglowek2XmlChanged();
             }
@@ -7119,7 +7105,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDefPodsumowanieXmlChanging(value);
                 ReportPropertyChanging("DefPodsumowanieXml");
-                _DefPodsumowanieXml = StructuralObject.SetValidValue(value, true);
+                _DefPodsumowanieXml = StructuralObject.SetValidValue(value, true, "DefPodsumowanieXml");
                 ReportPropertyChanged("DefPodsumowanieXml");
                 OnDefPodsumowanieXmlChanged();
             }
@@ -7143,7 +7129,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDodawanieChanging(value);
                 ReportPropertyChanging("Dodawanie");
-                _Dodawanie = StructuralObject.SetValidValue(value);
+                _Dodawanie = StructuralObject.SetValidValue(value, "Dodawanie");
                 ReportPropertyChanged("Dodawanie");
                 OnDodawanieChanged();
             }
@@ -7167,7 +7153,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDozwolonyIncydentalnyChanging(value);
                 ReportPropertyChanging("DozwolonyIncydentalny");
-                _DozwolonyIncydentalny = StructuralObject.SetValidValue(value);
+                _DozwolonyIncydentalny = StructuralObject.SetValidValue(value, "DozwolonyIncydentalny");
                 ReportPropertyChanged("DozwolonyIncydentalny");
                 OnDozwolonyIncydentalnyChanged();
             }
@@ -7191,7 +7177,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrugiSymbolChanging(value);
                 ReportPropertyChanging("DrugiSymbol");
-                _DrugiSymbol = StructuralObject.SetValidValue(value, true);
+                _DrugiSymbol = StructuralObject.SetValidValue(value, true, "DrugiSymbol");
                 ReportPropertyChanged("DrugiSymbol");
                 OnDrugiSymbolChanged();
             }
@@ -7215,7 +7201,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukowanieCenyIRabatuChanging(value);
                 ReportPropertyChanging("DrukowanieCenyIRabatu");
-                _DrukowanieCenyIRabatu = StructuralObject.SetValidValue(value);
+                _DrukowanieCenyIRabatu = StructuralObject.SetValidValue(value, "DrukowanieCenyIRabatu");
                 ReportPropertyChanged("DrukowanieCenyIRabatu");
                 OnDrukowanieCenyIRabatuChanged();
             }
@@ -7239,7 +7225,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukowanieNumerowNadrzednychChanging(value);
                 ReportPropertyChanging("DrukowanieNumerowNadrzednych");
-                _DrukowanieNumerowNadrzednych = StructuralObject.SetValidValue(value);
+                _DrukowanieNumerowNadrzednych = StructuralObject.SetValidValue(value, "DrukowanieNumerowNadrzednych");
                 ReportPropertyChanged("DrukowanieNumerowNadrzednych");
                 OnDrukowanieNumerowNadrzednychChanged();
             }
@@ -7263,7 +7249,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukowanieNumerowPodrzednychChanging(value);
                 ReportPropertyChanging("DrukowanieNumerowPodrzednych");
-                _DrukowanieNumerowPodrzednych = StructuralObject.SetValidValue(value);
+                _DrukowanieNumerowPodrzednych = StructuralObject.SetValidValue(value, "DrukowanieNumerowPodrzednych");
                 ReportPropertyChanged("DrukowanieNumerowPodrzednych");
                 OnDrukowanieNumerowPodrzednychChanged();
             }
@@ -7287,7 +7273,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDuplikatWartosciChanging(value);
                 ReportPropertyChanging("DuplikatWartosci");
-                _DuplikatWartosci = StructuralObject.SetValidValue(value);
+                _DuplikatWartosci = StructuralObject.SetValidValue(value, "DuplikatWartosci");
                 ReportPropertyChanged("DuplikatWartosci");
                 OnDuplikatWartosciChanged();
             }
@@ -7311,7 +7297,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEdycjaStawkiVATChanging(value);
                 ReportPropertyChanging("EdycjaStawkiVAT");
-                _EdycjaStawkiVAT = StructuralObject.SetValidValue(value);
+                _EdycjaStawkiVAT = StructuralObject.SetValidValue(value, "EdycjaStawkiVAT");
                 ReportPropertyChanged("EdycjaStawkiVAT");
                 OnEdycjaStawkiVATChanged();
             }
@@ -7335,7 +7321,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEdycjaWartosciIntChanging(value);
                 ReportPropertyChanging("EdycjaWartosciInt");
-                _EdycjaWartosciInt = StructuralObject.SetValidValue(value);
+                _EdycjaWartosciInt = StructuralObject.SetValidValue(value, "EdycjaWartosciInt");
                 ReportPropertyChanged("EdycjaWartosciInt");
                 OnEdycjaWartosciIntChanged();
             }
@@ -7359,7 +7345,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRecordEwidencjaZKorektyChanging(value);
                 ReportPropertyChanging("RecordEwidencjaZKorekty");
-                _RecordEwidencjaZKorekty = StructuralObject.SetValidValue(value);
+                _RecordEwidencjaZKorekty = StructuralObject.SetValidValue(value, "RecordEwidencjaZKorekty");
                 ReportPropertyChanged("RecordEwidencjaZKorekty");
                 OnRecordEwidencjaZKorektyChanged();
             }
@@ -7383,7 +7369,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFiltrKontrahentaChanging(value);
                 ReportPropertyChanging("FiltrKontrahenta");
-                _FiltrKontrahenta = StructuralObject.SetValidValue(value, true);
+                _FiltrKontrahenta = StructuralObject.SetValidValue(value, true, "FiltrKontrahenta");
                 ReportPropertyChanged("FiltrKontrahenta");
                 OnFiltrKontrahentaChanged();
             }
@@ -7407,7 +7393,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFiltrStanuTowaruChanging(value);
                 ReportPropertyChanging("FiltrStanuTowaru");
-                _FiltrStanuTowaru = StructuralObject.SetValidValue(value);
+                _FiltrStanuTowaru = StructuralObject.SetValidValue(value, "FiltrStanuTowaru");
                 ReportPropertyChanged("FiltrStanuTowaru");
                 OnFiltrStanuTowaruChanged();
             }
@@ -7431,7 +7417,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFiltrTowaruChanging(value);
                 ReportPropertyChanging("FiltrTowaru");
-                _FiltrTowaru = StructuralObject.SetValidValue(value, true);
+                _FiltrTowaru = StructuralObject.SetValidValue(value, true, "FiltrTowaru");
                 ReportPropertyChanged("FiltrTowaru");
                 OnFiltrTowaruChanged();
             }
@@ -7455,7 +7441,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFiskalizowanyChanging(value);
                 ReportPropertyChanging("Fiskalizowany");
-                _Fiskalizowany = StructuralObject.SetValidValue(value);
+                _Fiskalizowany = StructuralObject.SetValidValue(value, "Fiskalizowany");
                 ReportPropertyChanged("Fiskalizowany");
                 OnFiskalizowanyChanged();
             }
@@ -7479,7 +7465,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFlagsChanging(value);
                 ReportPropertyChanging("Flags");
-                _Flags = StructuralObject.SetValidValue(value);
+                _Flags = StructuralObject.SetValidValue(value, "Flags");
                 ReportPropertyChanged("Flags");
                 OnFlagsChanged();
             }
@@ -7503,7 +7489,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -7529,7 +7515,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -7554,7 +7540,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscKopiiChanging(value);
                 ReportPropertyChanging("IloscKopii");
-                _IloscKopii = StructuralObject.SetValidValue(value);
+                _IloscKopii = StructuralObject.SetValidValue(value, "IloscKopii");
                 ReportPropertyChanged("IloscKopii");
                 OnIloscKopiiChanged();
             }
@@ -7578,7 +7564,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscTowaruKopiowanaChanging(value);
                 ReportPropertyChanging("IloscTowaruKopiowana");
-                _IloscTowaruKopiowana = StructuralObject.SetValidValue(value);
+                _IloscTowaruKopiowana = StructuralObject.SetValidValue(value, "IloscTowaruKopiowana");
                 ReportPropertyChanged("IloscTowaruKopiowana");
                 OnIloscTowaruKopiowanaChanged();
             }
@@ -7602,7 +7588,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInformacjeKRSChanging(value);
                 ReportPropertyChanging("InformacjeKRS");
-                _InformacjeKRS = StructuralObject.SetValidValue(value);
+                _InformacjeKRS = StructuralObject.SetValidValue(value, "InformacjeKRS");
                 ReportPropertyChanged("InformacjeKRS");
                 OnInformacjeKRSChanged();
             }
@@ -7626,7 +7612,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIntrastatIntChanging(value);
                 ReportPropertyChanging("IntrastatInt");
-                _IntrastatInt = StructuralObject.SetValidValue(value);
+                _IntrastatInt = StructuralObject.SetValidValue(value, "IntrastatInt");
                 ReportPropertyChanged("IntrastatInt");
                 OnIntrastatIntChanged();
             }
@@ -7650,7 +7636,7 @@ namespace Enova.Business.Old.DB
             {
                 OnJednostkaAlternatywnaChanging(value);
                 ReportPropertyChanging("JednostkaAlternatywna");
-                _JednostkaAlternatywna = StructuralObject.SetValidValue(value);
+                _JednostkaAlternatywna = StructuralObject.SetValidValue(value, "JednostkaAlternatywna");
                 ReportPropertyChanged("JednostkaAlternatywna");
                 OnJednostkaAlternatywnaChanged();
             }
@@ -7674,7 +7660,7 @@ namespace Enova.Business.Old.DB
             {
                 OnJestKWPZChanging(value);
                 ReportPropertyChanging("JestKWPZ");
-                _JestKWPZ = StructuralObject.SetValidValue(value);
+                _JestKWPZ = StructuralObject.SetValidValue(value, "JestKWPZ");
                 ReportPropertyChanged("JestKWPZ");
                 OnJestKWPZChanged();
             }
@@ -7698,7 +7684,7 @@ namespace Enova.Business.Old.DB
             {
                 OnJestWalutaKontrahentaChanging(value);
                 ReportPropertyChanging("JestWalutaKontrahenta");
-                _JestWalutaKontrahenta = StructuralObject.SetValidValue(value);
+                _JestWalutaKontrahenta = StructuralObject.SetValidValue(value, "JestWalutaKontrahenta");
                 ReportPropertyChanged("JestWalutaKontrahenta");
                 OnJestWalutaKontrahentaChanged();
             }
@@ -7722,7 +7708,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKasaZbiorczaChanging(value);
                 ReportPropertyChanging("KasaZbiorcza");
-                _KasaZbiorcza = StructuralObject.SetValidValue(value);
+                _KasaZbiorcza = StructuralObject.SetValidValue(value, "KasaZbiorcza");
                 ReportPropertyChanged("KasaZbiorcza");
                 OnKasaZbiorczaChanged();
             }
@@ -7746,7 +7732,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKasowanyChanging(value);
                 ReportPropertyChanging("Kasowany");
-                _Kasowany = StructuralObject.SetValidValue(value);
+                _Kasowany = StructuralObject.SetValidValue(value, "Kasowany");
                 ReportPropertyChanged("Kasowany");
                 OnKasowanyChanged();
             }
@@ -7770,7 +7756,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKategoriaIntChanging(value);
                 ReportPropertyChanging("KategoriaInt");
-                _KategoriaInt = StructuralObject.SetValidValue(value);
+                _KategoriaInt = StructuralObject.SetValidValue(value, "KategoriaInt");
                 ReportPropertyChanged("KategoriaInt");
                 OnKategoriaIntChanged();
             }
@@ -7794,7 +7780,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKierunekMagazynuIntChanging(value);
                 ReportPropertyChanging("KierunekMagazynuInt");
-                _KierunekMagazynuInt = StructuralObject.SetValidValue(value);
+                _KierunekMagazynuInt = StructuralObject.SetValidValue(value, "KierunekMagazynuInt");
                 ReportPropertyChanged("KierunekMagazynuInt");
                 OnKierunekMagazynuIntChanged();
             }
@@ -7818,7 +7804,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKierunekPlatnosciChanging(value);
                 ReportPropertyChanging("KierunekPlatnosci");
-                _KierunekPlatnosci = StructuralObject.SetValidValue(value);
+                _KierunekPlatnosci = StructuralObject.SetValidValue(value, "KierunekPlatnosci");
                 ReportPropertyChanged("KierunekPlatnosci");
                 OnKierunekPlatnosciChanged();
             }
@@ -7842,7 +7828,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKierunekZaliczkiChanging(value);
                 ReportPropertyChanging("KierunekZaliczki");
-                _KierunekZaliczki = StructuralObject.SetValidValue(value);
+                _KierunekZaliczki = StructuralObject.SetValidValue(value, "KierunekZaliczki");
                 ReportPropertyChanged("KierunekZaliczki");
                 OnKierunekZaliczkiChanged();
             }
@@ -7866,7 +7852,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKlawiszChanging(value);
                 ReportPropertyChanging("Klawisz");
-                _Klawisz = StructuralObject.SetValidValue(value, true);
+                _Klawisz = StructuralObject.SetValidValue(value, true, "Klawisz");
                 ReportPropertyChanged("Klawisz");
                 OnKlawiszChanged();
             }
@@ -7890,7 +7876,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontrahentWymaganyChanging(value);
                 ReportPropertyChanging("KontrahentWymagany");
-                _KontrahentWymagany = StructuralObject.SetValidValue(value);
+                _KontrahentWymagany = StructuralObject.SetValidValue(value, "KontrahentWymagany");
                 ReportPropertyChanged("KontrahentWymagany");
                 OnKontrahentWymaganyChanged();
             }
@@ -7914,7 +7900,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKopiujCechyDostawyChanging(value);
                 ReportPropertyChanging("KopiujCechyDostawy");
-                _KopiujCechyDostawy = StructuralObject.SetValidValue(value);
+                _KopiujCechyDostawy = StructuralObject.SetValidValue(value, "KopiujCechyDostawy");
                 ReportPropertyChanged("KopiujCechyDostawy");
                 OnKopiujCechyDostawyChanged();
             }
@@ -7938,7 +7924,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKursWgDatyChanging(value);
                 ReportPropertyChanging("KursWgDaty");
-                _KursWgDaty = StructuralObject.SetValidValue(value);
+                _KursWgDaty = StructuralObject.SetValidValue(value, "KursWgDaty");
                 ReportPropertyChanged("KursWgDaty");
                 OnKursWgDatyChanged();
             }
@@ -7962,7 +7948,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLiczonaOdIntChanging(value);
                 ReportPropertyChanging("LiczonaOdInt");
-                _LiczonaOdInt = StructuralObject.SetValidValue(value);
+                _LiczonaOdInt = StructuralObject.SetValidValue(value, "LiczonaOdInt");
                 ReportPropertyChanged("LiczonaOdInt");
                 OnLiczonaOdIntChanged();
             }
@@ -7986,7 +7972,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMinimumMarzyChanging(value);
                 ReportPropertyChanging("MinimumMarzy");
-                _MinimumMarzy = StructuralObject.SetValidValue(value);
+                _MinimumMarzy = StructuralObject.SetValidValue(value, "MinimumMarzy");
                 ReportPropertyChanged("MinimumMarzy");
                 OnMinimumMarzyChanged();
             }
@@ -8010,7 +7996,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMomentMagazynuChanging(value);
                 ReportPropertyChanging("MomentMagazynu");
-                _MomentMagazynu = StructuralObject.SetValidValue(value);
+                _MomentMagazynu = StructuralObject.SetValidValue(value, "MomentMagazynu");
                 ReportPropertyChanged("MomentMagazynu");
                 OnMomentMagazynuChanged();
             }
@@ -8034,7 +8020,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNaglowekChanging(value);
                 ReportPropertyChanging("Naglowek");
-                _Naglowek = StructuralObject.SetValidValue(value, true);
+                _Naglowek = StructuralObject.SetValidValue(value, true, "Naglowek");
                 ReportPropertyChanged("Naglowek");
                 OnNaglowekChanged();
             }
@@ -8058,7 +8044,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNaglowek2Changing(value);
                 ReportPropertyChanging("Naglowek2");
-                _Naglowek2 = StructuralObject.SetValidValue(value, true);
+                _Naglowek2 = StructuralObject.SetValidValue(value, true, "Naglowek2");
                 ReportPropertyChanged("Naglowek2");
                 OnNaglowek2Changed();
             }
@@ -8082,7 +8068,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -8106,7 +8092,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaDatyChanging(value);
                 ReportPropertyChanging("NazwaDaty");
-                _NazwaDaty = StructuralObject.SetValidValue(value, true);
+                _NazwaDaty = StructuralObject.SetValidValue(value, true, "NazwaDaty");
                 ReportPropertyChanged("NazwaDaty");
                 OnNazwaDatyChanged();
             }
@@ -8130,7 +8116,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaDatyOperacjiChanging(value);
                 ReportPropertyChanging("NazwaDatyOperacji");
-                _NazwaDatyOperacji = StructuralObject.SetValidValue(value, true);
+                _NazwaDatyOperacji = StructuralObject.SetValidValue(value, true, "NazwaDatyOperacji");
                 ReportPropertyChanged("NazwaDatyOperacji");
                 OnNazwaDatyOperacjiChanged();
             }
@@ -8154,7 +8140,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaTowaruChanging(value);
                 ReportPropertyChanging("NazwaTowaru");
-                _NazwaTowaru = StructuralObject.SetValidValue(value);
+                _NazwaTowaru = StructuralObject.SetValidValue(value, "NazwaTowaru");
                 ReportPropertyChanged("NazwaTowaru");
                 OnNazwaTowaruChanged();
             }
@@ -8178,7 +8164,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNieWymagajCechChanging(value);
                 ReportPropertyChanging("NieWymagajCech");
-                _NieWymagajCech = StructuralObject.SetValidValue(value);
+                _NieWymagajCech = StructuralObject.SetValidValue(value, "NieWymagajCech");
                 ReportPropertyChanged("NieWymagajCech");
                 OnNieWymagajCechChanged();
             }
@@ -8202,7 +8188,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNiezgodnoscWartosciChanging(value);
                 ReportPropertyChanging("NiezgodnoscWartosci");
-                _NiezgodnoscWartosci = StructuralObject.SetValidValue(value);
+                _NiezgodnoscWartosci = StructuralObject.SetValidValue(value, "NiezgodnoscWartosci");
                 ReportPropertyChanged("NiezgodnoscWartosci");
                 OnNiezgodnoscWartosciChanged();
             }
@@ -8226,7 +8212,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumeracjaPodczasEdycjiChanging(value);
                 ReportPropertyChanging("NumeracjaPodczasEdycji");
-                _NumeracjaPodczasEdycji = StructuralObject.SetValidValue(value);
+                _NumeracjaPodczasEdycji = StructuralObject.SetValidValue(value, "NumeracjaPodczasEdycji");
                 ReportPropertyChanged("NumeracjaPodczasEdycji");
                 OnNumeracjaPodczasEdycjiChanged();
             }
@@ -8250,7 +8236,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumeracjaWzorChanging(value);
                 ReportPropertyChanging("NumeracjaWzor");
-                _NumeracjaWzor = StructuralObject.SetValidValue(value, true);
+                _NumeracjaWzor = StructuralObject.SetValidValue(value, true, "NumeracjaWzor");
                 ReportPropertyChanged("NumeracjaWzor");
                 OnNumeracjaWzorChanged();
             }
@@ -8274,7 +8260,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkrDostawcaOdbiorcaChanging(value);
                 ReportPropertyChanging("OkrDostawcaOdbiorca");
-                _OkrDostawcaOdbiorca = StructuralObject.SetValidValue(value);
+                _OkrDostawcaOdbiorca = StructuralObject.SetValidValue(value, "OkrDostawcaOdbiorca");
                 ReportPropertyChanged("OkrDostawcaOdbiorca");
                 OnOkrDostawcaOdbiorcaChanged();
             }
@@ -8298,7 +8284,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisWydrukuChanging(value);
                 ReportPropertyChanging("OpisWydruku");
-                _OpisWydruku = StructuralObject.SetValidValue(value, true);
+                _OpisWydruku = StructuralObject.SetValidValue(value, true, "OpisWydruku");
                 ReportPropertyChanged("OpisWydruku");
                 OnOpisWydrukuChanged();
             }
@@ -8322,7 +8308,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPlanSplatChanging(value);
                 ReportPropertyChanging("PlanSplat");
-                _PlanSplat = StructuralObject.SetValidValue(value);
+                _PlanSplat = StructuralObject.SetValidValue(value, "PlanSplat");
                 ReportPropertyChanged("PlanSplat");
                 OnPlanSplatChanged();
             }
@@ -8346,7 +8332,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodsumowanieChanging(value);
                 ReportPropertyChanging("Podsumowanie");
-                _Podsumowanie = StructuralObject.SetValidValue(value, true);
+                _Podsumowanie = StructuralObject.SetValidValue(value, true, "Podsumowanie");
                 ReportPropertyChanged("Podsumowanie");
                 OnPodsumowanieChanged();
             }
@@ -8370,7 +8356,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPokazKomunikatChanging(value);
                 ReportPropertyChanging("PokazKomunikat");
-                _PokazKomunikat = StructuralObject.SetValidValue(value);
+                _PokazKomunikat = StructuralObject.SetValidValue(value, "PokazKomunikat");
                 ReportPropertyChanged("PokazKomunikat");
                 OnPokazKomunikatChanged();
             }
@@ -8394,7 +8380,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPokazParametryWydrukuChanging(value);
                 ReportPropertyChanging("PokazParametryWydruku");
-                _PokazParametryWydruku = StructuralObject.SetValidValue(value);
+                _PokazParametryWydruku = StructuralObject.SetValidValue(value, "PokazParametryWydruku");
                 ReportPropertyChanged("PokazParametryWydruku");
                 OnPokazParametryWydrukuChanged();
             }
@@ -8418,7 +8404,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPoleSortowaniaChanging(value);
                 ReportPropertyChanging("PoleSortowania");
-                _PoleSortowania = StructuralObject.SetValidValue(value, true);
+                _PoleSortowania = StructuralObject.SetValidValue(value, true, "PoleSortowania");
                 ReportPropertyChanged("PoleSortowania");
                 OnPoleSortowaniaChanged();
             }
@@ -8442,7 +8428,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPozwalajIlosc0Changing(value);
                 ReportPropertyChanging("PozwalajIlosc0");
-                _PozwalajIlosc0 = StructuralObject.SetValidValue(value);
+                _PozwalajIlosc0 = StructuralObject.SetValidValue(value, "PozwalajIlosc0");
                 ReportPropertyChanged("PozwalajIlosc0");
                 OnPozwalajIlosc0Changed();
             }
@@ -8466,7 +8452,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPozwalajMagazynBezPrawChanging(value);
                 ReportPropertyChanging("PozwalajMagazynBezPraw");
-                _PozwalajMagazynBezPraw = StructuralObject.SetValidValue(value);
+                _PozwalajMagazynBezPraw = StructuralObject.SetValidValue(value, "PozwalajMagazynBezPraw");
                 ReportPropertyChanged("PozwalajMagazynBezPraw");
                 OnPozwalajMagazynBezPrawChanged();
             }
@@ -8490,7 +8476,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPozwalajWartosc0Changing(value);
                 ReportPropertyChanging("PozwalajWartosc0");
-                _PozwalajWartosc0 = StructuralObject.SetValidValue(value);
+                _PozwalajWartosc0 = StructuralObject.SetValidValue(value, "PozwalajWartosc0");
                 ReportPropertyChanged("PozwalajWartosc0");
                 OnPozwalajWartosc0Changed();
             }
@@ -8514,7 +8500,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRezerwowacTowarChanging(value);
                 ReportPropertyChanging("RezerwowacTowar");
-                _RezerwowacTowar = StructuralObject.SetValidValue(value);
+                _RezerwowacTowar = StructuralObject.SetValidValue(value, "RezerwowacTowar");
                 ReportPropertyChanged("RezerwowacTowar");
                 OnRezerwowacTowarChanged();
             }
@@ -8538,7 +8524,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajTransakcjiChanging(value);
                 ReportPropertyChanging("RodzajTransakcji");
-                _RodzajTransakcji = StructuralObject.SetValidValue(value);
+                _RodzajTransakcji = StructuralObject.SetValidValue(value, "RodzajTransakcji");
                 ReportPropertyChanged("RodzajTransakcji");
                 OnRodzajTransakcjiChanged();
             }
@@ -8562,7 +8548,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajTransportuChanging(value);
                 ReportPropertyChanging("RodzajTransportu");
-                _RodzajTransportu = StructuralObject.SetValidValue(value);
+                _RodzajTransportu = StructuralObject.SetValidValue(value, "RodzajTransportu");
                 ReportPropertyChanged("RodzajTransportu");
                 OnRodzajTransportuChanged();
             }
@@ -8586,7 +8572,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajUmowyChanging(value);
                 ReportPropertyChanging("RodzajUmowy");
-                _RodzajUmowy = StructuralObject.SetValidValue(value);
+                _RodzajUmowy = StructuralObject.SetValidValue(value, "RodzajUmowy");
                 ReportPropertyChanged("RodzajUmowy");
                 OnRodzajUmowyChanged();
             }
@@ -8610,7 +8596,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSeriaOperatoraChanging(value);
                 ReportPropertyChanging("SeriaOperatora");
-                _SeriaOperatora = StructuralObject.SetValidValue(value);
+                _SeriaOperatora = StructuralObject.SetValidValue(value, "SeriaOperatora");
                 ReportPropertyChanged("SeriaOperatora");
                 OnSeriaOperatoraChanged();
             }
@@ -8634,7 +8620,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSposobPrzenoszeniaZaliczkiIntChanging(value);
                 ReportPropertyChanging("SposobPrzenoszeniaZaliczkiInt");
-                _SposobPrzenoszeniaZaliczkiInt = StructuralObject.SetValidValue(value);
+                _SposobPrzenoszeniaZaliczkiInt = StructuralObject.SetValidValue(value, "SposobPrzenoszeniaZaliczkiInt");
                 ReportPropertyChanged("SposobPrzenoszeniaZaliczkiInt");
                 OnSposobPrzenoszeniaZaliczkiIntChanged();
             }
@@ -8658,7 +8644,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSposobRozliczaniaNadrzednegoIntChanging(value);
                 ReportPropertyChanging("SposobRozliczaniaNadrzednegoInt");
-                _SposobRozliczaniaNadrzednegoInt = StructuralObject.SetValidValue(value);
+                _SposobRozliczaniaNadrzednegoInt = StructuralObject.SetValidValue(value, "SposobRozliczaniaNadrzednegoInt");
                 ReportPropertyChanged("SposobRozliczaniaNadrzednegoInt");
                 OnSposobRozliczaniaNadrzednegoIntChanged();
             }
@@ -8682,7 +8668,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -8706,7 +8692,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumyVATChanging(value);
                 ReportPropertyChanging("SumyVAT");
-                _SumyVAT = StructuralObject.SetValidValue(value);
+                _SumyVAT = StructuralObject.SetValidValue(value, "SumyVAT");
                 ReportPropertyChanged("SumyVAT");
                 OnSumyVATChanged();
             }
@@ -8730,7 +8716,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSymbolChanging(value);
                 ReportPropertyChanging("Symbol");
-                _Symbol = StructuralObject.SetValidValue(value, false);
+                _Symbol = StructuralObject.SetValidValue(value, false, "Symbol");
                 ReportPropertyChanged("Symbol");
                 OnSymbolChanged();
             }
@@ -8754,7 +8740,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTowarWgDostawcyChanging(value);
                 ReportPropertyChanging("TowarWgDostawcy");
-                _TowarWgDostawcy = StructuralObject.SetValidValue(value);
+                _TowarWgDostawcy = StructuralObject.SetValidValue(value, "TowarWgDostawcy");
                 ReportPropertyChanged("TowarWgDostawcy");
                 OnTowarWgDostawcyChanged();
             }
@@ -8778,7 +8764,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTylkoPodgladChanging(value);
                 ReportPropertyChanging("TylkoPodglad");
-                _TylkoPodglad = StructuralObject.SetValidValue(value);
+                _TylkoPodglad = StructuralObject.SetValidValue(value, "TylkoPodglad");
                 ReportPropertyChanged("TylkoPodglad");
                 OnTylkoPodgladChanged();
             }
@@ -8802,7 +8788,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypFiltruKontrahentaChanging(value);
                 ReportPropertyChanging("TypFiltruKontrahenta");
-                _TypFiltruKontrahenta = StructuralObject.SetValidValue(value);
+                _TypFiltruKontrahenta = StructuralObject.SetValidValue(value, "TypFiltruKontrahenta");
                 ReportPropertyChanged("TypFiltruKontrahenta");
                 OnTypFiltruKontrahentaChanged();
             }
@@ -8826,7 +8812,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypFiltruTowaruChanging(value);
                 ReportPropertyChanging("TypFiltruTowaru");
-                _TypFiltruTowaru = StructuralObject.SetValidValue(value);
+                _TypFiltruTowaru = StructuralObject.SetValidValue(value, "TypFiltruTowaru");
                 ReportPropertyChanged("TypFiltruTowaru");
                 OnTypFiltruTowaruChanged();
             }
@@ -8850,7 +8836,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypPartiiMagazynowejIntChanging(value);
                 ReportPropertyChanging("TypPartiiMagazynowejInt");
-                _TypPartiiMagazynowejInt = StructuralObject.SetValidValue(value);
+                _TypPartiiMagazynowejInt = StructuralObject.SetValidValue(value, "TypPartiiMagazynowejInt");
                 ReportPropertyChanged("TypPartiiMagazynowejInt");
                 OnTypPartiiMagazynowejIntChanged();
             }
@@ -8874,7 +8860,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTytulWydrukuChanging(value);
                 ReportPropertyChanging("TytulWydruku");
-                _TytulWydruku = StructuralObject.SetValidValue(value, true);
+                _TytulWydruku = StructuralObject.SetValidValue(value, true, "TytulWydruku");
                 ReportPropertyChanged("TytulWydruku");
                 OnTytulWydrukuChanged();
             }
@@ -8898,7 +8884,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTytulWydruku2Changing(value);
                 ReportPropertyChanging("TytulWydruku2");
-                _TytulWydruku2 = StructuralObject.SetValidValue(value, true);
+                _TytulWydruku2 = StructuralObject.SetValidValue(value, true, "TytulWydruku2");
                 ReportPropertyChanged("TytulWydruku2");
                 OnTytulWydruku2Changed();
             }
@@ -8922,7 +8908,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaChanging(value);
                 ReportPropertyChanging("Umowa");
-                _Umowa = StructuralObject.SetValidValue(value);
+                _Umowa = StructuralObject.SetValidValue(value, "Umowa");
                 ReportPropertyChanged("Umowa");
                 OnUmowaChanged();
             }
@@ -8946,7 +8932,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUstawieniaWskazaniePartiiDoZamowienChanging(value);
                 ReportPropertyChanging("UstawieniaWskazaniePartiiDoZamowien");
-                _UstawieniaWskazaniePartiiDoZamowien = StructuralObject.SetValidValue(value);
+                _UstawieniaWskazaniePartiiDoZamowien = StructuralObject.SetValidValue(value, "UstawieniaWskazaniePartiiDoZamowien");
                 ReportPropertyChanged("UstawieniaWskazaniePartiiDoZamowien");
                 OnUstawieniaWskazaniePartiiDoZamowienChanged();
             }
@@ -8970,7 +8956,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUstawieniaWskazaniePartiiFlagsChanging(value);
                 ReportPropertyChanging("UstawieniaWskazaniePartiiFlags");
-                _UstawieniaWskazaniePartiiFlags = StructuralObject.SetValidValue(value);
+                _UstawieniaWskazaniePartiiFlags = StructuralObject.SetValidValue(value, "UstawieniaWskazaniePartiiFlags");
                 ReportPropertyChanged("UstawieniaWskazaniePartiiFlags");
                 OnUstawieniaWskazaniePartiiFlagsChanged();
             }
@@ -8994,7 +8980,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWarunkiDostawyChanging(value);
                 ReportPropertyChanging("WarunkiDostawy");
-                _WarunkiDostawy = StructuralObject.SetValidValue(value);
+                _WarunkiDostawy = StructuralObject.SetValidValue(value, "WarunkiDostawy");
                 ReportPropertyChanged("WarunkiDostawy");
                 OnWarunkiDostawyChanged();
             }
@@ -9018,7 +9004,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWewnetrznyChanging(value);
                 ReportPropertyChanging("Wewnetrzny");
-                _Wewnetrzny = StructuralObject.SetValidValue(value);
+                _Wewnetrzny = StructuralObject.SetValidValue(value, "Wewnetrzny");
                 ReportPropertyChanged("Wewnetrzny");
                 OnWewnetrznyChanged();
             }
@@ -9042,7 +9028,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWidoczneCechyChanging(value);
                 ReportPropertyChanging("WidoczneCechy");
-                _WidoczneCechy = StructuralObject.SetValidValue(value, true);
+                _WidoczneCechy = StructuralObject.SetValidValue(value, true, "WidoczneCechy");
                 ReportPropertyChanged("WidoczneCechy");
                 OnWidoczneCechyChanged();
             }
@@ -9066,7 +9052,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWyborStawkiVATChanging(value);
                 ReportPropertyChanging("WyborStawkiVAT");
-                _WyborStawkiVAT = StructuralObject.SetValidValue(value);
+                _WyborStawkiVAT = StructuralObject.SetValidValue(value, "WyborStawkiVAT");
                 ReportPropertyChanged("WyborStawkiVAT");
                 OnWyborStawkiVATChanged();
             }
@@ -9090,7 +9076,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWyborTowaruChanging(value);
                 ReportPropertyChanging("WyborTowaru");
-                _WyborTowaru = StructuralObject.SetValidValue(value);
+                _WyborTowaru = StructuralObject.SetValidValue(value, "WyborTowaru");
                 ReportPropertyChanged("WyborTowaru");
                 OnWyborTowaruChanged();
             }
@@ -9114,7 +9100,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWydrukDomyslnyChanging(value);
                 ReportPropertyChanging("WydrukDomyslny");
-                _WydrukDomyslny = StructuralObject.SetValidValue(value);
+                _WydrukDomyslny = StructuralObject.SetValidValue(value, "WydrukDomyslny");
                 ReportPropertyChanged("WydrukDomyslny");
                 OnWydrukDomyslnyChanged();
             }
@@ -9138,7 +9124,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZablokujEdycjeKursuChanging(value);
                 ReportPropertyChanging("ZablokujEdycjeKursu");
-                _ZablokujEdycjeKursu = StructuralObject.SetValidValue(value);
+                _ZablokujEdycjeKursu = StructuralObject.SetValidValue(value, "ZablokujEdycjeKursu");
                 ReportPropertyChanged("ZablokujEdycjeKursu");
                 OnZablokujEdycjeKursuChanged();
             }
@@ -9162,7 +9148,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaMarzyChanging(value);
                 ReportPropertyChanging("ZmianaMarzy");
-                _ZmianaMarzy = StructuralObject.SetValidValue(value);
+                _ZmianaMarzy = StructuralObject.SetValidValue(value, "ZmianaMarzy");
                 ReportPropertyChanged("ZmianaMarzy");
                 OnZmianaMarzyChanged();
             }
@@ -9186,7 +9172,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaWartosciPozycjiIntChanging(value);
                 ReportPropertyChanging("ZmianaWartosciPozycjiInt");
-                _ZmianaWartosciPozycjiInt = StructuralObject.SetValidValue(value);
+                _ZmianaWartosciPozycjiInt = StructuralObject.SetValidValue(value, "ZmianaWartosciPozycjiInt");
                 ReportPropertyChanged("ZmianaWartosciPozycjiInt");
                 OnZmianaWartosciPozycjiIntChanged();
             }
@@ -9210,7 +9196,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCyklFakturowaniaSposobNaDniWolneChanging(value);
                 ReportPropertyChanging("CyklFakturowaniaSposobNaDniWolne");
-                _CyklFakturowaniaSposobNaDniWolne = StructuralObject.SetValidValue(value);
+                _CyklFakturowaniaSposobNaDniWolne = StructuralObject.SetValidValue(value, "CyklFakturowaniaSposobNaDniWolne");
                 ReportPropertyChanged("CyklFakturowaniaSposobNaDniWolne");
                 OnCyklFakturowaniaSposobNaDniWolneChanged();
             }
@@ -9234,7 +9220,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCyklFakturowaniaUmowyChanging(value);
                 ReportPropertyChanging("CyklFakturowaniaUmowy");
-                _CyklFakturowaniaUmowy = StructuralObject.SetValidValue(value);
+                _CyklFakturowaniaUmowy = StructuralObject.SetValidValue(value, "CyklFakturowaniaUmowy");
                 ReportPropertyChanged("CyklFakturowaniaUmowy");
                 OnCyklFakturowaniaUmowyChanged();
             }
@@ -9258,7 +9244,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDefinicjaEwidencjiCechaChanging(value);
                 ReportPropertyChanging("DefinicjaEwidencjiCecha");
-                _DefinicjaEwidencjiCecha = StructuralObject.SetValidValue(value, true);
+                _DefinicjaEwidencjiCecha = StructuralObject.SetValidValue(value, true, "DefinicjaEwidencjiCecha");
                 ReportPropertyChanged("DefinicjaEwidencjiCecha");
                 OnDefinicjaEwidencjiCechaChanged();
             }
@@ -9282,7 +9268,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDefinicjaEwidencjiZrodloIntChanging(value);
                 ReportPropertyChanging("DefinicjaEwidencjiZrodloInt");
-                _DefinicjaEwidencjiZrodloInt = StructuralObject.SetValidValue(value);
+                _DefinicjaEwidencjiZrodloInt = StructuralObject.SetValidValue(value, "DefinicjaEwidencjiZrodloInt");
                 ReportPropertyChanged("DefinicjaEwidencjiZrodloInt");
                 OnDefinicjaEwidencjiZrodloIntChanged();
             }
@@ -9306,7 +9292,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukowanieNumerowNadrzednychTylkoNajblizszeChanging(value);
                 ReportPropertyChanging("DrukowanieNumerowNadrzednychTylkoNajblizsze");
-                _DrukowanieNumerowNadrzednychTylkoNajblizsze = StructuralObject.SetValidValue(value);
+                _DrukowanieNumerowNadrzednychTylkoNajblizsze = StructuralObject.SetValidValue(value, "DrukowanieNumerowNadrzednychTylkoNajblizsze");
                 ReportPropertyChanged("DrukowanieNumerowNadrzednychTylkoNajblizsze");
                 OnDrukowanieNumerowNadrzednychTylkoNajblizszeChanged();
             }
@@ -9330,7 +9316,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukujDrugiRachunekChanging(value);
                 ReportPropertyChanging("DrukujDrugiRachunek");
-                _DrukujDrugiRachunek = StructuralObject.SetValidValue(value);
+                _DrukujDrugiRachunek = StructuralObject.SetValidValue(value, "DrukujDrugiRachunek");
                 ReportPropertyChanged("DrukujDrugiRachunek");
                 OnDrukujDrugiRachunekChanged();
             }
@@ -9354,7 +9340,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukujTylkoRoznicePoKorekcieChanging(value);
                 ReportPropertyChanging("DrukujTylkoRoznicePoKorekcie");
-                _DrukujTylkoRoznicePoKorekcie = StructuralObject.SetValidValue(value);
+                _DrukujTylkoRoznicePoKorekcie = StructuralObject.SetValidValue(value, "DrukujTylkoRoznicePoKorekcie");
                 ReportPropertyChanged("DrukujTylkoRoznicePoKorekcie");
                 OnDrukujTylkoRoznicePoKorekcieChanged();
             }
@@ -9378,7 +9364,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukujTylkoRoznicePrzedKorektaChanging(value);
                 ReportPropertyChanging("DrukujTylkoRoznicePrzedKorekta");
-                _DrukujTylkoRoznicePrzedKorekta = StructuralObject.SetValidValue(value);
+                _DrukujTylkoRoznicePrzedKorekta = StructuralObject.SetValidValue(value, "DrukujTylkoRoznicePrzedKorekta");
                 ReportPropertyChanged("DrukujTylkoRoznicePrzedKorekta");
                 OnDrukujTylkoRoznicePrzedKorektaChanged();
             }
@@ -9402,7 +9388,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKreatorDokumentuDomyslnaPodlistaTowaruChanging(value);
                 ReportPropertyChanging("KreatorDokumentuDomyslnaPodlistaTowaru");
-                _KreatorDokumentuDomyslnaPodlistaTowaru = StructuralObject.SetValidValue(value);
+                _KreatorDokumentuDomyslnaPodlistaTowaru = StructuralObject.SetValidValue(value, "KreatorDokumentuDomyslnaPodlistaTowaru");
                 ReportPropertyChanged("KreatorDokumentuDomyslnaPodlistaTowaru");
                 OnKreatorDokumentuDomyslnaPodlistaTowaruChanged();
             }
@@ -9426,7 +9412,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKreatorDokumentuJestWlaczonyChanging(value);
                 ReportPropertyChanging("KreatorDokumentuJestWlaczony");
-                _KreatorDokumentuJestWlaczony = StructuralObject.SetValidValue(value);
+                _KreatorDokumentuJestWlaczony = StructuralObject.SetValidValue(value, "KreatorDokumentuJestWlaczony");
                 ReportPropertyChanged("KreatorDokumentuJestWlaczony");
                 OnKreatorDokumentuJestWlaczonyChanged();
             }
@@ -9450,7 +9436,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPlatnoscKaucjiChanging(value);
                 ReportPropertyChanging("PlatnoscKaucji");
-                _PlatnoscKaucji = StructuralObject.SetValidValue(value);
+                _PlatnoscKaucji = StructuralObject.SetValidValue(value, "PlatnoscKaucji");
                 ReportPropertyChanged("PlatnoscKaucji");
                 OnPlatnoscKaucjiChanged();
             }
@@ -9474,7 +9460,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrecyzjaCenyPrecyzjaChanging(value);
                 ReportPropertyChanging("PrecyzjaCenyPrecyzja");
-                _PrecyzjaCenyPrecyzja = StructuralObject.SetValidValue(value);
+                _PrecyzjaCenyPrecyzja = StructuralObject.SetValidValue(value, "PrecyzjaCenyPrecyzja");
                 ReportPropertyChanged("PrecyzjaCenyPrecyzja");
                 OnPrecyzjaCenyPrecyzjaChanged();
             }
@@ -9498,7 +9484,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrecyzjaCenyWymuszajChanging(value);
                 ReportPropertyChanging("PrecyzjaCenyWymuszaj");
-                _PrecyzjaCenyWymuszaj = StructuralObject.SetValidValue(value);
+                _PrecyzjaCenyWymuszaj = StructuralObject.SetValidValue(value, "PrecyzjaCenyWymuszaj");
                 ReportPropertyChanged("PrecyzjaCenyWymuszaj");
                 OnPrecyzjaCenyWymuszajChanged();
             }
@@ -9522,7 +9508,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSprzedazPonizejCenyMinimalnejChanging(value);
                 ReportPropertyChanging("SprzedazPonizejCenyMinimalnej");
-                _SprzedazPonizejCenyMinimalnej = StructuralObject.SetValidValue(value);
+                _SprzedazPonizejCenyMinimalnej = StructuralObject.SetValidValue(value, "SprzedazPonizejCenyMinimalnej");
                 ReportPropertyChanged("SprzedazPonizejCenyMinimalnej");
                 OnSprzedazPonizejCenyMinimalnejChanged();
             }
@@ -9546,7 +9532,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUstawieniaWskazaniePartiiZasobyPodrzedneChanging(value);
                 ReportPropertyChanging("UstawieniaWskazaniePartiiZasobyPodrzedne");
-                _UstawieniaWskazaniePartiiZasobyPodrzedne = StructuralObject.SetValidValue(value);
+                _UstawieniaWskazaniePartiiZasobyPodrzedne = StructuralObject.SetValidValue(value, "UstawieniaWskazaniePartiiZasobyPodrzedne");
                 ReportPropertyChanged("UstawieniaWskazaniePartiiZasobyPodrzedne");
                 OnUstawieniaWskazaniePartiiZasobyPodrzedneChanged();
             }
@@ -9570,7 +9556,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWeryfikujRezerwacjeChanging(value);
                 ReportPropertyChanging("WeryfikujRezerwacje");
-                _WeryfikujRezerwacje = StructuralObject.SetValidValue(value);
+                _WeryfikujRezerwacje = StructuralObject.SetValidValue(value, "WeryfikujRezerwacje");
                 ReportPropertyChanged("WeryfikujRezerwacje");
                 OnWeryfikujRezerwacjeChanged();
             }
@@ -9594,7 +9580,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCenaPoRabacieLiczonaOdWartosciChanging(value);
                 ReportPropertyChanging("CenaPoRabacieLiczonaOdWartosci");
-                _CenaPoRabacieLiczonaOdWartosci = StructuralObject.SetValidValue(value);
+                _CenaPoRabacieLiczonaOdWartosci = StructuralObject.SetValidValue(value, "CenaPoRabacieLiczonaOdWartosci");
                 ReportPropertyChanged("CenaPoRabacieLiczonaOdWartosci");
                 OnCenaPoRabacieLiczonaOdWartosciChanged();
             }
@@ -9618,7 +9604,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukowanieZawszeOryginalChanging(value);
                 ReportPropertyChanging("DrukowanieZawszeOryginal");
-                _DrukowanieZawszeOryginal = StructuralObject.SetValidValue(value);
+                _DrukowanieZawszeOryginal = StructuralObject.SetValidValue(value, "DrukowanieZawszeOryginal");
                 ReportPropertyChanged("DrukowanieZawszeOryginal");
                 OnDrukowanieZawszeOryginalChanged();
             }
@@ -9642,7 +9628,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukujSWIFTZawszeChanging(value);
                 ReportPropertyChanging("DrukujSWIFTZawsze");
-                _DrukujSWIFTZawsze = StructuralObject.SetValidValue(value);
+                _DrukujSWIFTZawsze = StructuralObject.SetValidValue(value, "DrukujSWIFTZawsze");
                 ReportPropertyChanged("DrukujSWIFTZawsze");
                 OnDrukujSWIFTZawszeChanged();
             }
@@ -9666,7 +9652,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFiltrKontrahentaStosowanieChanging(value);
                 ReportPropertyChanging("FiltrKontrahentaStosowanie");
-                _FiltrKontrahentaStosowanie = StructuralObject.SetValidValue(value);
+                _FiltrKontrahentaStosowanie = StructuralObject.SetValidValue(value, "FiltrKontrahentaStosowanie");
                 ReportPropertyChanged("FiltrKontrahentaStosowanie");
                 OnFiltrKontrahentaStosowanieChanged();
             }
@@ -9690,7 +9676,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontrolerRelacjiInfoDisabledChanging(value);
                 ReportPropertyChanging("KontrolerRelacjiInfoDisabled");
-                _KontrolerRelacjiInfoDisabled = StructuralObject.SetValidValue(value);
+                _KontrolerRelacjiInfoDisabled = StructuralObject.SetValidValue(value, "KontrolerRelacjiInfoDisabled");
                 ReportPropertyChanged("KontrolerRelacjiInfoDisabled");
                 OnKontrolerRelacjiInfoDisabledChanged();
             }
@@ -9714,7 +9700,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontrolerRelacjiInfoPrzeliczajPozycjeRelacjiChanging(value);
                 ReportPropertyChanging("KontrolerRelacjiInfoPrzeliczajPozycjeRelacji");
-                _KontrolerRelacjiInfoPrzeliczajPozycjeRelacji = StructuralObject.SetValidValue(value);
+                _KontrolerRelacjiInfoPrzeliczajPozycjeRelacji = StructuralObject.SetValidValue(value, "KontrolerRelacjiInfoPrzeliczajPozycjeRelacji");
                 ReportPropertyChanged("KontrolerRelacjiInfoPrzeliczajPozycjeRelacji");
                 OnKontrolerRelacjiInfoPrzeliczajPozycjeRelacjiChanged();
             }
@@ -9738,7 +9724,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPostfixSeriiChanging(value);
                 ReportPropertyChanging("PostfixSerii");
-                _PostfixSerii = StructuralObject.SetValidValue(value, true);
+                _PostfixSerii = StructuralObject.SetValidValue(value, true, "PostfixSerii");
                 ReportPropertyChanged("PostfixSerii");
                 OnPostfixSeriiChanged();
             }
@@ -9762,7 +9748,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPozwalajWielowalutowyChanging(value);
                 ReportPropertyChanging("PozwalajWielowalutowy");
-                _PozwalajWielowalutowy = StructuralObject.SetValidValue(value);
+                _PozwalajWielowalutowy = StructuralObject.SetValidValue(value, "PozwalajWielowalutowy");
                 ReportPropertyChanged("PozwalajWielowalutowy");
                 OnPozwalajWielowalutowyChanged();
             }
@@ -9786,7 +9772,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSlownikSeriiChanging(value);
                 ReportPropertyChanging("SlownikSerii");
-                _SlownikSerii = StructuralObject.SetValidValue(value);
+                _SlownikSerii = StructuralObject.SetValidValue(value, "SlownikSerii");
                 ReportPropertyChanged("SlownikSerii");
                 OnSlownikSeriiChanged();
             }
@@ -9810,7 +9796,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSposobEdycjiKompletacjiChanging(value);
                 ReportPropertyChanging("SposobEdycjiKompletacji");
-                _SposobEdycjiKompletacji = StructuralObject.SetValidValue(value);
+                _SposobEdycjiKompletacji = StructuralObject.SetValidValue(value, "SposobEdycjiKompletacji");
                 ReportPropertyChanged("SposobEdycjiKompletacji");
                 OnSposobEdycjiKompletacjiChanged();
             }
@@ -9834,7 +9820,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartosciTylkoZeSlownikaChanging(value);
                 ReportPropertyChanging("WartosciTylkoZeSlownika");
-                _WartosciTylkoZeSlownika = StructuralObject.SetValidValue(value);
+                _WartosciTylkoZeSlownika = StructuralObject.SetValidValue(value, "WartosciTylkoZeSlownika");
                 ReportPropertyChanged("WartosciTylkoZeSlownika");
                 OnWartosciTylkoZeSlownikaChanged();
             }
@@ -9858,7 +9844,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWyborStawkiVATWgDatyChanging(value);
                 ReportPropertyChanging("WyborStawkiVATWgDaty");
-                _WyborStawkiVATWgDaty = StructuralObject.SetValidValue(value);
+                _WyborStawkiVATWgDaty = StructuralObject.SetValidValue(value, "WyborStawkiVATWgDaty");
                 ReportPropertyChanged("WyborStawkiVATWgDaty");
                 OnWyborStawkiVATWgDatyChanged();
             }
@@ -9882,7 +9868,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukujNumeryPoprzednichKorektChanging(value);
                 ReportPropertyChanging("DrukujNumeryPoprzednichKorekt");
-                _DrukujNumeryPoprzednichKorekt = StructuralObject.SetValidValue(value);
+                _DrukujNumeryPoprzednichKorekt = StructuralObject.SetValidValue(value, "DrukujNumeryPoprzednichKorekt");
                 ReportPropertyChanged("DrukujNumeryPoprzednichKorekt");
                 OnDrukujNumeryPoprzednichKorektChanged();
             }
@@ -9906,7 +9892,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNieWplywaNaOstatniaCeneZakupuChanging(value);
                 ReportPropertyChanging("NieWplywaNaOstatniaCeneZakupu");
-                _NieWplywaNaOstatniaCeneZakupu = StructuralObject.SetValidValue(value);
+                _NieWplywaNaOstatniaCeneZakupu = StructuralObject.SetValidValue(value, "NieWplywaNaOstatniaCeneZakupu");
                 ReportPropertyChanged("NieWplywaNaOstatniaCeneZakupu");
                 OnNieWplywaNaOstatniaCeneZakupuChanged();
             }
@@ -9930,7 +9916,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkreslenieDatyWplatyChanging(value);
                 ReportPropertyChanging("OkreslenieDatyWplaty");
-                _OkreslenieDatyWplaty = StructuralObject.SetValidValue(value);
+                _OkreslenieDatyWplaty = StructuralObject.SetValidValue(value, "OkreslenieDatyWplaty");
                 ReportPropertyChanged("OkreslenieDatyWplaty");
                 OnOkreslenieDatyWplatyChanged();
             }
@@ -9954,7 +9940,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkreslenieDatyWyplatyChanging(value);
                 ReportPropertyChanging("OkreslenieDatyWyplaty");
-                _OkreslenieDatyWyplaty = StructuralObject.SetValidValue(value);
+                _OkreslenieDatyWyplaty = StructuralObject.SetValidValue(value, "OkreslenieDatyWyplaty");
                 ReportPropertyChanged("OkreslenieDatyWyplaty");
                 OnOkreslenieDatyWyplatyChanged();
             }
@@ -9978,7 +9964,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKreatorDokumentuTowaryPodsumowanieVisibleChanging(value);
                 ReportPropertyChanging("KreatorDokumentuTowaryPodsumowanieVisible");
-                _KreatorDokumentuTowaryPodsumowanieVisible = StructuralObject.SetValidValue(value);
+                _KreatorDokumentuTowaryPodsumowanieVisible = StructuralObject.SetValidValue(value, "KreatorDokumentuTowaryPodsumowanieVisible");
                 ReportPropertyChanged("KreatorDokumentuTowaryPodsumowanieVisible");
                 OnKreatorDokumentuTowaryPodsumowanieVisibleChanged();
             }
@@ -10002,7 +9988,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKreatorDokumentuTowaryPodsumowanieXmlChanging(value);
                 ReportPropertyChanging("KreatorDokumentuTowaryPodsumowanieXml");
-                _KreatorDokumentuTowaryPodsumowanieXml = StructuralObject.SetValidValue(value, true);
+                _KreatorDokumentuTowaryPodsumowanieXml = StructuralObject.SetValidValue(value, true, "KreatorDokumentuTowaryPodsumowanieXml");
                 ReportPropertyChanged("KreatorDokumentuTowaryPodsumowanieXml");
                 OnKreatorDokumentuTowaryPodsumowanieXmlChanged();
             }
@@ -10026,7 +10012,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFormNETChanging(value);
                 ReportPropertyChanging("FormNET");
-                _FormNET = StructuralObject.SetValidValue(value);
+                _FormNET = StructuralObject.SetValidValue(value, "FormNET");
                 ReportPropertyChanged("FormNET");
                 OnFormNETChanged();
             }
@@ -10050,7 +10036,7 @@ namespace Enova.Business.Old.DB
             {
                 OnXmlNETChanging(value);
                 ReportPropertyChanging("XmlNET");
-                _XmlNET = StructuralObject.SetValidValue(value, true);
+                _XmlNET = StructuralObject.SetValidValue(value, true, "XmlNET");
                 ReportPropertyChanged("XmlNET");
                 OnXmlNETChanged();
             }
@@ -10074,7 +10060,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminPlatnosciLiczonyOdChanging(value);
                 ReportPropertyChanging("TerminPlatnosciLiczonyOd");
-                _TerminPlatnosciLiczonyOd = StructuralObject.SetValidValue(value);
+                _TerminPlatnosciLiczonyOd = StructuralObject.SetValidValue(value, "TerminPlatnosciLiczonyOd");
                 ReportPropertyChanged("TerminPlatnosciLiczonyOd");
                 OnTerminPlatnosciLiczonyOdChanged();
             }
@@ -10098,7 +10084,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInicjalizatorWalutyInfoWalutaPlatnosciChanging(value);
                 ReportPropertyChanging("InicjalizatorWalutyInfoWalutaPlatnosci");
-                _InicjalizatorWalutyInfoWalutaPlatnosci = StructuralObject.SetValidValue(value);
+                _InicjalizatorWalutyInfoWalutaPlatnosci = StructuralObject.SetValidValue(value, "InicjalizatorWalutyInfoWalutaPlatnosci");
                 ReportPropertyChanged("InicjalizatorWalutyInfoWalutaPlatnosci");
                 OnInicjalizatorWalutyInfoWalutaPlatnosciChanged();
             }
@@ -10122,7 +10108,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInicjalizatorWalutyInfoWalutaPozycjiChanging(value);
                 ReportPropertyChanging("InicjalizatorWalutyInfoWalutaPozycji");
-                _InicjalizatorWalutyInfoWalutaPozycji = StructuralObject.SetValidValue(value);
+                _InicjalizatorWalutyInfoWalutaPozycji = StructuralObject.SetValidValue(value, "InicjalizatorWalutyInfoWalutaPozycji");
                 ReportPropertyChanged("InicjalizatorWalutyInfoWalutaPozycji");
                 OnInicjalizatorWalutyInfoWalutaPozycjiChanged();
             }
@@ -10146,7 +10132,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInwentaryzacjaInfoBlokowanieTowarowChanging(value);
                 ReportPropertyChanging("InwentaryzacjaInfoBlokowanieTowarow");
-                _InwentaryzacjaInfoBlokowanieTowarow = StructuralObject.SetValidValue(value);
+                _InwentaryzacjaInfoBlokowanieTowarow = StructuralObject.SetValidValue(value, "InwentaryzacjaInfoBlokowanieTowarow");
                 ReportPropertyChanged("InwentaryzacjaInfoBlokowanieTowarow");
                 OnInwentaryzacjaInfoBlokowanieTowarowChanged();
             }
@@ -10170,7 +10156,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCenaWartosc0Changing(value);
                 ReportPropertyChanging("CenaWartosc0");
-                _CenaWartosc0 = StructuralObject.SetValidValue(value);
+                _CenaWartosc0 = StructuralObject.SetValidValue(value, "CenaWartosc0");
                 ReportPropertyChanged("CenaWartosc0");
                 OnCenaWartosc0Changed();
             }
@@ -10194,7 +10180,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPozwalajZatwierdzacBezPozycjiChanging(value);
                 ReportPropertyChanging("PozwalajZatwierdzacBezPozycji");
-                _PozwalajZatwierdzacBezPozycji = StructuralObject.SetValidValue(value);
+                _PozwalajZatwierdzacBezPozycji = StructuralObject.SetValidValue(value, "PozwalajZatwierdzacBezPozycji");
                 ReportPropertyChanged("PozwalajZatwierdzacBezPozycji");
                 OnPozwalajZatwierdzacBezPozycjiChanged();
             }
@@ -10218,7 +10204,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajWydrukuFiskalnegoChanging(value);
                 ReportPropertyChanging("RodzajWydrukuFiskalnego");
-                _RodzajWydrukuFiskalnego = StructuralObject.SetValidValue(value);
+                _RodzajWydrukuFiskalnego = StructuralObject.SetValidValue(value, "RodzajWydrukuFiskalnego");
                 ReportPropertyChanged("RodzajWydrukuFiskalnego");
                 OnRodzajWydrukuFiskalnegoChanged();
             }
@@ -10242,7 +10228,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontrolaLimituKredytowegoChanging(value);
                 ReportPropertyChanging("KontrolaLimituKredytowego");
-                _KontrolaLimituKredytowego = StructuralObject.SetValidValue(value);
+                _KontrolaLimituKredytowego = StructuralObject.SetValidValue(value, "KontrolaLimituKredytowego");
                 ReportPropertyChanged("KontrolaLimituKredytowego");
                 OnKontrolaLimituKredytowegoChanged();
             }
@@ -10266,7 +10252,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZachowaniePoLimicieChanging(value);
                 ReportPropertyChanging("ZachowaniePoLimicie");
-                _ZachowaniePoLimicie = StructuralObject.SetValidValue(value);
+                _ZachowaniePoLimicie = StructuralObject.SetValidValue(value, "ZachowaniePoLimicie");
                 ReportPropertyChanged("ZachowaniePoLimicie");
                 OnZachowaniePoLimicieChanged();
             }
@@ -10290,7 +10276,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRezerwacjaOdChanging(value);
                 ReportPropertyChanging("RezerwacjaOd");
-                _RezerwacjaOd = StructuralObject.SetValidValue(value);
+                _RezerwacjaOd = StructuralObject.SetValidValue(value, "RezerwacjaOd");
                 ReportPropertyChanged("RezerwacjaOd");
                 OnRezerwacjaOdChanged();
             }
@@ -10314,7 +10300,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRezerwacjaOdDniChanging(value);
                 ReportPropertyChanging("RezerwacjaOdDni");
-                _RezerwacjaOdDni = StructuralObject.SetValidValue(value);
+                _RezerwacjaOdDni = StructuralObject.SetValidValue(value, "RezerwacjaOdDni");
                 ReportPropertyChanged("RezerwacjaOdDni");
                 OnRezerwacjaOdDniChanged();
             }
@@ -10338,7 +10324,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRezerwacjaDoChanging(value);
                 ReportPropertyChanging("RezerwacjaDo");
-                _RezerwacjaDo = StructuralObject.SetValidValue(value);
+                _RezerwacjaDo = StructuralObject.SetValidValue(value, "RezerwacjaDo");
                 ReportPropertyChanged("RezerwacjaDo");
                 OnRezerwacjaDoChanged();
             }
@@ -10362,7 +10348,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRezerwacjaDoDniChanging(value);
                 ReportPropertyChanging("RezerwacjaDoDni");
-                _RezerwacjaDoDni = StructuralObject.SetValidValue(value);
+                _RezerwacjaDoDni = StructuralObject.SetValidValue(value, "RezerwacjaDoDni");
                 ReportPropertyChanged("RezerwacjaDoDni");
                 OnRezerwacjaDoDniChanged();
             }
@@ -10386,7 +10372,7 @@ namespace Enova.Business.Old.DB
             {
                 OnProdukcjaInfoObslugaTechnologiiChanging(value);
                 ReportPropertyChanging("ProdukcjaInfoObslugaTechnologii");
-                _ProdukcjaInfoObslugaTechnologii = StructuralObject.SetValidValue(value);
+                _ProdukcjaInfoObslugaTechnologii = StructuralObject.SetValidValue(value, "ProdukcjaInfoObslugaTechnologii");
                 ReportPropertyChanged("ProdukcjaInfoObslugaTechnologii");
                 OnProdukcjaInfoObslugaTechnologiiChanged();
             }
@@ -10410,7 +10396,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaParametrowZasobuInfoZmianaParametrowZasobuChanging(value);
                 ReportPropertyChanging("ZmianaParametrowZasobuInfoZmianaParametrowZasobu");
-                _ZmianaParametrowZasobuInfoZmianaParametrowZasobu = StructuralObject.SetValidValue(value);
+                _ZmianaParametrowZasobuInfoZmianaParametrowZasobu = StructuralObject.SetValidValue(value, "ZmianaParametrowZasobuInfoZmianaParametrowZasobu");
                 ReportPropertyChanged("ZmianaParametrowZasobuInfoZmianaParametrowZasobu");
                 OnZmianaParametrowZasobuInfoZmianaParametrowZasobuChanged();
             }
@@ -10434,7 +10420,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUstawieniaWskazaniePartiiOpcjeChanging(value);
                 ReportPropertyChanging("UstawieniaWskazaniePartiiOpcje");
-                _UstawieniaWskazaniePartiiOpcje = StructuralObject.SetValidValue(value);
+                _UstawieniaWskazaniePartiiOpcje = StructuralObject.SetValidValue(value, "UstawieniaWskazaniePartiiOpcje");
                 ReportPropertyChanged("UstawieniaWskazaniePartiiOpcje");
                 OnUstawieniaWskazaniePartiiOpcjeChanged();
             }
@@ -10458,7 +10444,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUstawieniaWskazaniePartiiPrzedmiotChanging(value);
                 ReportPropertyChanging("UstawieniaWskazaniePartiiPrzedmiot");
-                _UstawieniaWskazaniePartiiPrzedmiot = StructuralObject.SetValidValue(value);
+                _UstawieniaWskazaniePartiiPrzedmiot = StructuralObject.SetValidValue(value, "UstawieniaWskazaniePartiiPrzedmiot");
                 ReportPropertyChanged("UstawieniaWskazaniePartiiPrzedmiot");
                 OnUstawieniaWskazaniePartiiPrzedmiotChanged();
             }
@@ -10482,7 +10468,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOstrzezenieDlaEdycjiPokazChanging(value);
                 ReportPropertyChanging("OstrzezenieDlaEdycjiPokaz");
-                _OstrzezenieDlaEdycjiPokaz = StructuralObject.SetValidValue(value);
+                _OstrzezenieDlaEdycjiPokaz = StructuralObject.SetValidValue(value, "OstrzezenieDlaEdycjiPokaz");
                 ReportPropertyChanged("OstrzezenieDlaEdycjiPokaz");
                 OnOstrzezenieDlaEdycjiPokazChanged();
             }
@@ -10506,7 +10492,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajWydrukuChanging(value);
                 ReportPropertyChanging("RodzajWydruku");
-                _RodzajWydruku = StructuralObject.SetValidValue(value);
+                _RodzajWydruku = StructuralObject.SetValidValue(value, "RodzajWydruku");
                 ReportPropertyChanged("RodzajWydruku");
                 OnRodzajWydrukuChanged();
             }
@@ -10530,7 +10516,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLimitWartosciInfoReakcjaZatwierdzanieChanging(value);
                 ReportPropertyChanging("LimitWartosciInfoReakcjaZatwierdzanie");
-                _LimitWartosciInfoReakcjaZatwierdzanie = StructuralObject.SetValidValue(value);
+                _LimitWartosciInfoReakcjaZatwierdzanie = StructuralObject.SetValidValue(value, "LimitWartosciInfoReakcjaZatwierdzanie");
                 ReportPropertyChanged("LimitWartosciInfoReakcjaZatwierdzanie");
                 OnLimitWartosciInfoReakcjaZatwierdzanieChanged();
             }
@@ -10554,7 +10540,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukowanieNumerowPodrzednychTylkoNajblizszeChanging(value);
                 ReportPropertyChanging("DrukowanieNumerowPodrzednychTylkoNajblizsze");
-                _DrukowanieNumerowPodrzednychTylkoNajblizsze = StructuralObject.SetValidValue(value);
+                _DrukowanieNumerowPodrzednychTylkoNajblizsze = StructuralObject.SetValidValue(value, "DrukowanieNumerowPodrzednychTylkoNajblizsze");
                 ReportPropertyChanged("DrukowanieNumerowPodrzednychTylkoNajblizsze");
                 OnDrukowanieNumerowPodrzednychTylkoNajblizszeChanged();
             }
@@ -10578,7 +10564,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukujOrygKopiaChanging(value);
                 ReportPropertyChanging("DrukujOrygKopia");
-                _DrukujOrygKopia = StructuralObject.SetValidValue(value);
+                _DrukujOrygKopia = StructuralObject.SetValidValue(value, "DrukujOrygKopia");
                 ReportPropertyChanged("DrukujOrygKopia");
                 OnDrukujOrygKopiaChanged();
             }
@@ -10602,7 +10588,7 @@ namespace Enova.Business.Old.DB
             {
                 OnProceduraChanging(value);
                 ReportPropertyChanging("Procedura");
-                _Procedura = StructuralObject.SetValidValue(value, true);
+                _Procedura = StructuralObject.SetValidValue(value, true, "Procedura");
                 ReportPropertyChanged("Procedura");
                 OnProceduraChanged();
             }
@@ -10626,7 +10612,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDokumentKoncowyInfoDokumentKoncowyChanging(value);
                 ReportPropertyChanging("DokumentKoncowyInfoDokumentKoncowy");
-                _DokumentKoncowyInfoDokumentKoncowy = StructuralObject.SetValidValue(value);
+                _DokumentKoncowyInfoDokumentKoncowy = StructuralObject.SetValidValue(value, "DokumentKoncowyInfoDokumentKoncowy");
                 ReportPropertyChanged("DokumentKoncowyInfoDokumentKoncowy");
                 OnDokumentKoncowyInfoDokumentKoncowyChanged();
             }
@@ -10650,7 +10636,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajLokDlaDostawyChanging(value);
                 ReportPropertyChanging("RodzajLokDlaDostawy");
-                _RodzajLokDlaDostawy = StructuralObject.SetValidValue(value);
+                _RodzajLokDlaDostawy = StructuralObject.SetValidValue(value, "RodzajLokDlaDostawy");
                 ReportPropertyChanged("RodzajLokDlaDostawy");
                 OnRodzajLokDlaDostawyChanged();
             }
@@ -10674,7 +10660,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukujDateOperacjiChanging(value);
                 ReportPropertyChanging("DrukujDateOperacji");
-                _DrukujDateOperacji = StructuralObject.SetValidValue(value);
+                _DrukujDateOperacji = StructuralObject.SetValidValue(value, "DrukujDateOperacji");
                 ReportPropertyChanged("DrukujDateOperacji");
                 OnDrukujDateOperacjiChanged();
             }
@@ -10698,7 +10684,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukujDateDostawyChanging(value);
                 ReportPropertyChanging("DrukujDateDostawy");
-                _DrukujDateDostawy = StructuralObject.SetValidValue(value);
+                _DrukujDateDostawy = StructuralObject.SetValidValue(value, "DrukujDateDostawy");
                 ReportPropertyChanged("DrukujDateDostawy");
                 OnDrukujDateDostawyChanged();
             }
@@ -10722,7 +10708,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukujDateOtrzymaniaChanging(value);
                 ReportPropertyChanging("DrukujDateOtrzymania");
-                _DrukujDateOtrzymania = StructuralObject.SetValidValue(value);
+                _DrukujDateOtrzymania = StructuralObject.SetValidValue(value, "DrukujDateOtrzymania");
                 ReportPropertyChanged("DrukujDateOtrzymania");
                 OnDrukujDateOtrzymaniaChanged();
             }
@@ -10746,7 +10732,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaDatyDostawyChanging(value);
                 ReportPropertyChanging("NazwaDatyDostawy");
-                _NazwaDatyDostawy = StructuralObject.SetValidValue(value, true);
+                _NazwaDatyDostawy = StructuralObject.SetValidValue(value, true, "NazwaDatyDostawy");
                 ReportPropertyChanged("NazwaDatyDostawy");
                 OnNazwaDatyDostawyChanged();
             }
@@ -10770,7 +10756,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEdycjaDatyDostawyChanging(value);
                 ReportPropertyChanging("EdycjaDatyDostawy");
-                _EdycjaDatyDostawy = StructuralObject.SetValidValue(value);
+                _EdycjaDatyDostawy = StructuralObject.SetValidValue(value, "EdycjaDatyDostawy");
                 ReportPropertyChanged("EdycjaDatyDostawy");
                 OnEdycjaDatyDostawyChanged();
             }
@@ -10794,7 +10780,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInicjalizacjaDatyDostawyChanging(value);
                 ReportPropertyChanging("InicjalizacjaDatyDostawy");
-                _InicjalizacjaDatyDostawy = StructuralObject.SetValidValue(value);
+                _InicjalizacjaDatyDostawy = StructuralObject.SetValidValue(value, "InicjalizacjaDatyDostawy");
                 ReportPropertyChanged("InicjalizacjaDatyDostawy");
                 OnInicjalizacjaDatyDostawyChanged();
             }
@@ -10818,7 +10804,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukowanieZestawieniaMagazynowychChanging(value);
                 ReportPropertyChanging("DrukowanieZestawieniaMagazynowych");
-                _DrukowanieZestawieniaMagazynowych = StructuralObject.SetValidValue(value);
+                _DrukowanieZestawieniaMagazynowych = StructuralObject.SetValidValue(value, "DrukowanieZestawieniaMagazynowych");
                 ReportPropertyChanged("DrukowanieZestawieniaMagazynowych");
                 OnDrukowanieZestawieniaMagazynowychChanged();
             }
@@ -10842,7 +10828,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDrukujPlatnosciChanging(value);
                 ReportPropertyChanging("DrukujPlatnosci");
-                _DrukujPlatnosci = StructuralObject.SetValidValue(value);
+                _DrukujPlatnosci = StructuralObject.SetValidValue(value, "DrukujPlatnosci");
                 ReportPropertyChanged("DrukujPlatnosci");
                 OnDrukujPlatnosciChanged();
             }
@@ -10866,7 +10852,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodKreskowyZNumeremDokChanging(value);
                 ReportPropertyChanging("KodKreskowyZNumeremDok");
-                _KodKreskowyZNumeremDok = StructuralObject.SetValidValue(value);
+                _KodKreskowyZNumeremDok = StructuralObject.SetValidValue(value, "KodKreskowyZNumeremDok");
                 ReportPropertyChanged("KodKreskowyZNumeremDok");
                 OnKodKreskowyZNumeremDokChanged();
             }
@@ -10890,7 +10876,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInicjalizacjaDatyDostawyCechaChanging(value);
                 ReportPropertyChanging("InicjalizacjaDatyDostawyCecha");
-                _InicjalizacjaDatyDostawyCecha = StructuralObject.SetValidValue(value, true);
+                _InicjalizacjaDatyDostawyCecha = StructuralObject.SetValidValue(value, true, "InicjalizacjaDatyDostawyCecha");
                 ReportPropertyChanged("InicjalizacjaDatyDostawyCecha");
                 OnInicjalizacjaDatyDostawyCechaChanged();
             }
@@ -10914,7 +10900,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZaplataPrzyZatwierdzaniuChanging(value);
                 ReportPropertyChanging("ZaplataPrzyZatwierdzaniu");
-                _ZaplataPrzyZatwierdzaniu = StructuralObject.SetValidValue(value);
+                _ZaplataPrzyZatwierdzaniu = StructuralObject.SetValidValue(value, "ZaplataPrzyZatwierdzaniu");
                 ReportPropertyChanged("ZaplataPrzyZatwierdzaniu");
                 OnZaplataPrzyZatwierdzaniuChanged();
             }
@@ -10938,7 +10924,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataOkresIntrastatChanging(value);
                 ReportPropertyChanging("DataOkresIntrastat");
-                _DataOkresIntrastat = StructuralObject.SetValidValue(value);
+                _DataOkresIntrastat = StructuralObject.SetValidValue(value, "DataOkresIntrastat");
                 ReportPropertyChanged("DataOkresIntrastat");
                 OnDataOkresIntrastatChanged();
             }
@@ -10962,7 +10948,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFiltrZasobowChanging(value);
                 ReportPropertyChanging("FiltrZasobow");
-                _FiltrZasobow = StructuralObject.SetValidValue(value, true);
+                _FiltrZasobow = StructuralObject.SetValidValue(value, true, "FiltrZasobow");
                 ReportPropertyChanged("FiltrZasobow");
                 OnFiltrZasobowChanged();
             }
@@ -10986,7 +10972,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInicjalizatorWalutyInfoKursWalutyChanging(value);
                 ReportPropertyChanging("InicjalizatorWalutyInfoKursWaluty");
-                _InicjalizatorWalutyInfoKursWaluty = StructuralObject.SetValidValue(value);
+                _InicjalizatorWalutyInfoKursWaluty = StructuralObject.SetValidValue(value, "InicjalizatorWalutyInfoKursWaluty");
                 ReportPropertyChanged("InicjalizatorWalutyInfoKursWaluty");
                 OnInicjalizatorWalutyInfoKursWalutyChanged();
             }
@@ -11010,7 +10996,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDefNaglowekPXmlChanging(value);
                 ReportPropertyChanging("DefNaglowekPXml");
-                _DefNaglowekPXml = StructuralObject.SetValidValue(value, true);
+                _DefNaglowekPXml = StructuralObject.SetValidValue(value, true, "DefNaglowekPXml");
                 ReportPropertyChanged("DefNaglowekPXml");
                 OnDefNaglowekPXmlChanged();
             }
@@ -11034,7 +11020,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNaglowekPChanging(value);
                 ReportPropertyChanging("NaglowekP");
-                _NaglowekP = StructuralObject.SetValidValue(value, true);
+                _NaglowekP = StructuralObject.SetValidValue(value, true, "NaglowekP");
                 ReportPropertyChanged("NaglowekP");
                 OnNaglowekPChanged();
             }
@@ -11058,7 +11044,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEdycjaKosztuDodatkowegoChanging(value);
                 ReportPropertyChanging("EdycjaKosztuDodatkowego");
-                _EdycjaKosztuDodatkowego = StructuralObject.SetValidValue(value);
+                _EdycjaKosztuDodatkowego = StructuralObject.SetValidValue(value, "EdycjaKosztuDodatkowego");
                 ReportPropertyChanged("EdycjaKosztuDodatkowego");
                 OnEdycjaKosztuDodatkowegoChanged();
             }
@@ -11082,7 +11068,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodzialKosztuDodatkowegoChanging(value);
                 ReportPropertyChanging("PodzialKosztuDodatkowego");
-                _PodzialKosztuDodatkowego = StructuralObject.SetValidValue(value);
+                _PodzialKosztuDodatkowego = StructuralObject.SetValidValue(value, "PodzialKosztuDodatkowego");
                 ReportPropertyChanged("PodzialKosztuDodatkowego");
                 OnPodzialKosztuDodatkowegoChanged();
             }
@@ -11106,7 +11092,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisEwidencjiChanging(value);
                 ReportPropertyChanging("OpisEwidencji");
-                _OpisEwidencji = StructuralObject.SetValidValue(value);
+                _OpisEwidencji = StructuralObject.SetValidValue(value, "OpisEwidencji");
                 ReportPropertyChanged("OpisEwidencji");
                 OnOpisEwidencjiChanged();
             }
@@ -11130,7 +11116,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWzorzecOpisuPlatnosciChanging(value);
                 ReportPropertyChanging("WzorzecOpisuPlatnosci");
-                _WzorzecOpisuPlatnosci = StructuralObject.SetValidValue(value, true);
+                _WzorzecOpisuPlatnosci = StructuralObject.SetValidValue(value, true, "WzorzecOpisuPlatnosci");
                 ReportPropertyChanged("WzorzecOpisuPlatnosci");
                 OnWzorzecOpisuPlatnosciChanged();
             }
@@ -11154,7 +11140,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUsuwanieZerowychPozycjiKorektyChanging(value);
                 ReportPropertyChanging("UsuwanieZerowychPozycjiKorekty");
-                _UsuwanieZerowychPozycjiKorekty = StructuralObject.SetValidValue(value);
+                _UsuwanieZerowychPozycjiKorekty = StructuralObject.SetValidValue(value, "UsuwanieZerowychPozycjiKorekty");
                 ReportPropertyChanged("UsuwanieZerowychPozycjiKorekty");
                 OnUsuwanieZerowychPozycjiKorektyChanged();
             }
@@ -11178,7 +11164,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEdycjaIlosciZrealizowanejChanging(value);
                 ReportPropertyChanging("EdycjaIlosciZrealizowanej");
-                _EdycjaIlosciZrealizowanej = StructuralObject.SetValidValue(value);
+                _EdycjaIlosciZrealizowanej = StructuralObject.SetValidValue(value, "EdycjaIlosciZrealizowanej");
                 ReportPropertyChanged("EdycjaIlosciZrealizowanej");
                 OnEdycjaIlosciZrealizowanejChanged();
             }
@@ -11202,7 +11188,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEdycjaStanuRealizacjiChanging(value);
                 ReportPropertyChanging("EdycjaStanuRealizacji");
-                _EdycjaStanuRealizacji = StructuralObject.SetValidValue(value);
+                _EdycjaStanuRealizacji = StructuralObject.SetValidValue(value, "EdycjaStanuRealizacji");
                 ReportPropertyChanged("EdycjaStanuRealizacji");
                 OnEdycjaStanuRealizacjiChanged();
             }
@@ -11213,7 +11199,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -11641,7 +11626,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -11658,7 +11643,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAkceptujPromocjeChanging(value);
                 ReportPropertyChanging("AkceptujPromocje");
-                _AkceptujPromocje = StructuralObject.SetValidValue(value);
+                _AkceptujPromocje = StructuralObject.SetValidValue(value, "AkceptujPromocje");
                 ReportPropertyChanged("AkceptujPromocje");
                 OnAkceptujPromocjeChanged();
             }
@@ -11682,7 +11667,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAktualizujPrzychodemChanging(value);
                 ReportPropertyChanging("AktualizujPrzychodem");
-                _AktualizujPrzychodem = StructuralObject.SetValidValue(value);
+                _AktualizujPrzychodem = StructuralObject.SetValidValue(value, "AktualizujPrzychodem");
                 ReportPropertyChanged("AktualizujPrzychodem");
                 OnAktualizujPrzychodemChanged();
             }
@@ -11706,7 +11691,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorytmCechaBazowaChanging(value);
                 ReportPropertyChanging("AlgorytmCechaBazowa");
-                _AlgorytmCechaBazowa = StructuralObject.SetValidValue(value, true);
+                _AlgorytmCechaBazowa = StructuralObject.SetValidValue(value, true, "AlgorytmCechaBazowa");
                 ReportPropertyChanged("AlgorytmCechaBazowa");
                 OnAlgorytmCechaBazowaChanged();
             }
@@ -11730,7 +11715,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorytmCenaBazowaChanging(value);
                 ReportPropertyChanging("AlgorytmCenaBazowa");
-                _AlgorytmCenaBazowa = StructuralObject.SetValidValue(value);
+                _AlgorytmCenaBazowa = StructuralObject.SetValidValue(value, "AlgorytmCenaBazowa");
                 ReportPropertyChanged("AlgorytmCenaBazowa");
                 OnAlgorytmCenaBazowaChanged();
             }
@@ -11754,7 +11739,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorytmDeltaChanging(value);
                 ReportPropertyChanging("AlgorytmDelta");
-                _AlgorytmDelta = StructuralObject.SetValidValue(value);
+                _AlgorytmDelta = StructuralObject.SetValidValue(value, "AlgorytmDelta");
                 ReportPropertyChanged("AlgorytmDelta");
                 OnAlgorytmDeltaChanged();
             }
@@ -11778,7 +11763,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorytmDokladnoscChanging(value);
                 ReportPropertyChanging("AlgorytmDokladnosc");
-                _AlgorytmDokladnosc = StructuralObject.SetValidValue(value);
+                _AlgorytmDokladnosc = StructuralObject.SetValidValue(value, "AlgorytmDokladnosc");
                 ReportPropertyChanged("AlgorytmDokladnosc");
                 OnAlgorytmDokladnoscChanged();
             }
@@ -11802,7 +11787,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorytmTypChanging(value);
                 ReportPropertyChanging("AlgorytmTyp");
-                _AlgorytmTyp = StructuralObject.SetValidValue(value);
+                _AlgorytmTyp = StructuralObject.SetValidValue(value, "AlgorytmTyp");
                 ReportPropertyChanged("AlgorytmTyp");
                 OnAlgorytmTypChanged();
             }
@@ -11826,7 +11811,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorytmWspolczynnikTypChanging(value);
                 ReportPropertyChanging("AlgorytmWspolczynnikTyp");
-                _AlgorytmWspolczynnikTyp = StructuralObject.SetValidValue(value);
+                _AlgorytmWspolczynnikTyp = StructuralObject.SetValidValue(value, "AlgorytmWspolczynnikTyp");
                 ReportPropertyChanged("AlgorytmWspolczynnikTyp");
                 OnAlgorytmWspolczynnikTypChanged();
             }
@@ -11850,7 +11835,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorytmWspolczynnikWartoscChanging(value);
                 ReportPropertyChanging("AlgorytmWspolczynnikWartosc");
-                _AlgorytmWspolczynnikWartosc = StructuralObject.SetValidValue(value, true);
+                _AlgorytmWspolczynnikWartosc = StructuralObject.SetValidValue(value, true, "AlgorytmWspolczynnikWartosc");
                 ReportPropertyChanged("AlgorytmWspolczynnikWartosc");
                 OnAlgorytmWspolczynnikWartoscChanged();
             }
@@ -11874,7 +11859,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorytmWspolczynnikZnakChanging(value);
                 ReportPropertyChanging("AlgorytmWspolczynnikZnak");
-                _AlgorytmWspolczynnikZnak = StructuralObject.SetValidValue(value);
+                _AlgorytmWspolczynnikZnak = StructuralObject.SetValidValue(value, "AlgorytmWspolczynnikZnak");
                 ReportPropertyChanged("AlgorytmWspolczynnikZnak");
                 OnAlgorytmWspolczynnikZnakChanged();
             }
@@ -11898,7 +11883,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorytmZalezyOdDokumentuChanging(value);
                 ReportPropertyChanging("AlgorytmZalezyOdDokumentu");
-                _AlgorytmZalezyOdDokumentu = StructuralObject.SetValidValue(value);
+                _AlgorytmZalezyOdDokumentu = StructuralObject.SetValidValue(value, "AlgorytmZalezyOdDokumentu");
                 ReportPropertyChanged("AlgorytmZalezyOdDokumentu");
                 OnAlgorytmZalezyOdDokumentuChanged();
             }
@@ -11922,7 +11907,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorytmZaokraglenieChanging(value);
                 ReportPropertyChanging("AlgorytmZaokraglenie");
-                _AlgorytmZaokraglenie = StructuralObject.SetValidValue(value);
+                _AlgorytmZaokraglenie = StructuralObject.SetValidValue(value, "AlgorytmZaokraglenie");
                 ReportPropertyChanged("AlgorytmZaokraglenie");
                 OnAlgorytmZaokraglenieChanged();
             }
@@ -11946,7 +11931,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaChanging(value);
                 ReportPropertyChanging("Blokada");
-                _Blokada = StructuralObject.SetValidValue(value);
+                _Blokada = StructuralObject.SetValidValue(value, "Blokada");
                 ReportPropertyChanged("Blokada");
                 OnBlokadaChanged();
             }
@@ -11970,7 +11955,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCenaOdbiorcyChanging(value);
                 ReportPropertyChanging("CenaOdbiorcy");
-                _CenaOdbiorcy = StructuralObject.SetValidValue(value);
+                _CenaOdbiorcy = StructuralObject.SetValidValue(value, "CenaOdbiorcy");
                 ReportPropertyChanged("CenaOdbiorcy");
                 OnCenaOdbiorcyChanged();
             }
@@ -11994,7 +11979,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDodawanaDoTowaruChanging(value);
                 ReportPropertyChanging("DodawanaDoTowaru");
-                _DodawanaDoTowaru = StructuralObject.SetValidValue(value);
+                _DodawanaDoTowaru = StructuralObject.SetValidValue(value, "DodawanaDoTowaru");
                 ReportPropertyChanged("DodawanaDoTowaru");
                 OnDodawanaDoTowaruChanged();
             }
@@ -12018,7 +12003,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -12044,7 +12029,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -12069,7 +12054,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIndywidualna2RodzajChanging(value);
                 ReportPropertyChanging("Indywidualna2Rodzaj");
-                _Indywidualna2Rodzaj = StructuralObject.SetValidValue(value);
+                _Indywidualna2Rodzaj = StructuralObject.SetValidValue(value, "Indywidualna2Rodzaj");
                 ReportPropertyChanged("Indywidualna2Rodzaj");
                 OnIndywidualna2RodzajChanged();
             }
@@ -12093,7 +12078,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIndywidualna2WliczajChanging(value);
                 ReportPropertyChanging("Indywidualna2Wliczaj");
-                _Indywidualna2Wliczaj = StructuralObject.SetValidValue(value);
+                _Indywidualna2Wliczaj = StructuralObject.SetValidValue(value, "Indywidualna2Wliczaj");
                 ReportPropertyChanged("Indywidualna2Wliczaj");
                 OnIndywidualna2WliczajChanged();
             }
@@ -12117,7 +12102,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIndywidualna3RodzajChanging(value);
                 ReportPropertyChanging("Indywidualna3Rodzaj");
-                _Indywidualna3Rodzaj = StructuralObject.SetValidValue(value);
+                _Indywidualna3Rodzaj = StructuralObject.SetValidValue(value, "Indywidualna3Rodzaj");
                 ReportPropertyChanged("Indywidualna3Rodzaj");
                 OnIndywidualna3RodzajChanged();
             }
@@ -12141,7 +12126,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIndywidualna3WliczajChanging(value);
                 ReportPropertyChanging("Indywidualna3Wliczaj");
-                _Indywidualna3Wliczaj = StructuralObject.SetValidValue(value);
+                _Indywidualna3Wliczaj = StructuralObject.SetValidValue(value, "Indywidualna3Wliczaj");
                 ReportPropertyChanged("Indywidualna3Wliczaj");
                 OnIndywidualna3WliczajChanged();
             }
@@ -12165,7 +12150,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIndywidualnaRabatowanaChanging(value);
                 ReportPropertyChanging("IndywidualnaRabatowana");
-                _IndywidualnaRabatowana = StructuralObject.SetValidValue(value);
+                _IndywidualnaRabatowana = StructuralObject.SetValidValue(value, "IndywidualnaRabatowana");
                 ReportPropertyChanged("IndywidualnaRabatowana");
                 OnIndywidualnaRabatowanaChanged();
             }
@@ -12189,7 +12174,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIndywidualnaRodzajChanging(value);
                 ReportPropertyChanging("IndywidualnaRodzaj");
-                _IndywidualnaRodzaj = StructuralObject.SetValidValue(value);
+                _IndywidualnaRodzaj = StructuralObject.SetValidValue(value, "IndywidualnaRodzaj");
                 ReportPropertyChanged("IndywidualnaRodzaj");
                 OnIndywidualnaRodzajChanged();
             }
@@ -12213,7 +12198,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIndywidualnaWliczajChanging(value);
                 ReportPropertyChanging("IndywidualnaWliczaj");
-                _IndywidualnaWliczaj = StructuralObject.SetValidValue(value);
+                _IndywidualnaWliczaj = StructuralObject.SetValidValue(value, "IndywidualnaWliczaj");
                 ReportPropertyChanged("IndywidualnaWliczaj");
                 OnIndywidualnaWliczajChanged();
             }
@@ -12237,7 +12222,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMetodaChanging(value);
                 ReportPropertyChanging("Metoda");
-                _Metoda = StructuralObject.SetValidValue(value, true);
+                _Metoda = StructuralObject.SetValidValue(value, true, "Metoda");
                 ReportPropertyChanged("Metoda");
                 OnMetodaChanged();
             }
@@ -12261,7 +12246,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -12285,7 +12270,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPriorytetChanging(value);
                 ReportPropertyChanging("Priorytet");
-                _Priorytet = StructuralObject.SetValidValue(value);
+                _Priorytet = StructuralObject.SetValidValue(value, "Priorytet");
                 ReportPropertyChanged("Priorytet");
                 OnPriorytetChanged();
             }
@@ -12309,7 +12294,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabat1RodzajChanging(value);
                 ReportPropertyChanging("Rabat1Rodzaj");
-                _Rabat1Rodzaj = StructuralObject.SetValidValue(value);
+                _Rabat1Rodzaj = StructuralObject.SetValidValue(value, "Rabat1Rodzaj");
                 ReportPropertyChanged("Rabat1Rodzaj");
                 OnRabat1RodzajChanged();
             }
@@ -12333,7 +12318,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabat1WliczajChanging(value);
                 ReportPropertyChanging("Rabat1Wliczaj");
-                _Rabat1Wliczaj = StructuralObject.SetValidValue(value);
+                _Rabat1Wliczaj = StructuralObject.SetValidValue(value, "Rabat1Wliczaj");
                 ReportPropertyChanged("Rabat1Wliczaj");
                 OnRabat1WliczajChanged();
             }
@@ -12357,7 +12342,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabat2RodzajChanging(value);
                 ReportPropertyChanging("Rabat2Rodzaj");
-                _Rabat2Rodzaj = StructuralObject.SetValidValue(value);
+                _Rabat2Rodzaj = StructuralObject.SetValidValue(value, "Rabat2Rodzaj");
                 ReportPropertyChanged("Rabat2Rodzaj");
                 OnRabat2RodzajChanged();
             }
@@ -12381,7 +12366,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabat2WliczajChanging(value);
                 ReportPropertyChanging("Rabat2Wliczaj");
-                _Rabat2Wliczaj = StructuralObject.SetValidValue(value);
+                _Rabat2Wliczaj = StructuralObject.SetValidValue(value, "Rabat2Wliczaj");
                 ReportPropertyChanged("Rabat2Wliczaj");
                 OnRabat2WliczajChanged();
             }
@@ -12405,7 +12390,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabat3RodzajChanging(value);
                 ReportPropertyChanging("Rabat3Rodzaj");
-                _Rabat3Rodzaj = StructuralObject.SetValidValue(value);
+                _Rabat3Rodzaj = StructuralObject.SetValidValue(value, "Rabat3Rodzaj");
                 ReportPropertyChanged("Rabat3Rodzaj");
                 OnRabat3RodzajChanged();
             }
@@ -12429,7 +12414,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabat3WliczajChanging(value);
                 ReportPropertyChanging("Rabat3Wliczaj");
-                _Rabat3Wliczaj = StructuralObject.SetValidValue(value);
+                _Rabat3Wliczaj = StructuralObject.SetValidValue(value, "Rabat3Wliczaj");
                 ReportPropertyChanged("Rabat3Wliczaj");
                 OnRabat3WliczajChanged();
             }
@@ -12453,7 +12438,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabat4RodzajChanging(value);
                 ReportPropertyChanging("Rabat4Rodzaj");
-                _Rabat4Rodzaj = StructuralObject.SetValidValue(value);
+                _Rabat4Rodzaj = StructuralObject.SetValidValue(value, "Rabat4Rodzaj");
                 ReportPropertyChanged("Rabat4Rodzaj");
                 OnRabat4RodzajChanged();
             }
@@ -12477,7 +12462,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabat4WliczajChanging(value);
                 ReportPropertyChanging("Rabat4Wliczaj");
-                _Rabat4Wliczaj = StructuralObject.SetValidValue(value);
+                _Rabat4Wliczaj = StructuralObject.SetValidValue(value, "Rabat4Wliczaj");
                 ReportPropertyChanged("Rabat4Wliczaj");
                 OnRabat4WliczajChanged();
             }
@@ -12501,7 +12486,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabat5RodzajChanging(value);
                 ReportPropertyChanging("Rabat5Rodzaj");
-                _Rabat5Rodzaj = StructuralObject.SetValidValue(value);
+                _Rabat5Rodzaj = StructuralObject.SetValidValue(value, "Rabat5Rodzaj");
                 ReportPropertyChanged("Rabat5Rodzaj");
                 OnRabat5RodzajChanged();
             }
@@ -12525,7 +12510,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabat5WliczajChanging(value);
                 ReportPropertyChanging("Rabat5Wliczaj");
-                _Rabat5Wliczaj = StructuralObject.SetValidValue(value);
+                _Rabat5Wliczaj = StructuralObject.SetValidValue(value, "Rabat5Wliczaj");
                 ReportPropertyChanged("Rabat5Wliczaj");
                 OnRabat5WliczajChanged();
             }
@@ -12549,7 +12534,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabatujPromocjeChanging(value);
                 ReportPropertyChanging("RabatujPromocje");
-                _RabatujPromocje = StructuralObject.SetValidValue(value);
+                _RabatujPromocje = StructuralObject.SetValidValue(value, "RabatujPromocje");
                 ReportPropertyChanged("RabatujPromocje");
                 OnRabatujPromocjeChanged();
             }
@@ -12573,7 +12558,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -12597,7 +12582,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotCenyChanging(value);
                 ReportPropertyChanging("PodmiotCeny");
-                _PodmiotCeny = StructuralObject.SetValidValue(value);
+                _PodmiotCeny = StructuralObject.SetValidValue(value, "PodmiotCeny");
                 ReportPropertyChanged("PodmiotCeny");
                 OnPodmiotCenyChanged();
             }
@@ -12621,7 +12606,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKierunekChanging(value);
                 ReportPropertyChanging("Kierunek");
-                _Kierunek = StructuralObject.SetValidValue(value);
+                _Kierunek = StructuralObject.SetValidValue(value, "Kierunek");
                 ReportPropertyChanged("Kierunek");
                 OnKierunekChanged();
             }
@@ -12632,7 +12617,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -13446,7 +13430,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -13463,7 +13447,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaChanging(value);
                 ReportPropertyChanging("Blokada");
-                _Blokada = StructuralObject.SetValidValue(value);
+                _Blokada = StructuralObject.SetValidValue(value, "Blokada");
                 ReportPropertyChanged("Blokada");
                 OnBlokadaChanged();
             }
@@ -13487,7 +13471,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDodatkowyNaglowekDefinicjaChanging(value);
                 ReportPropertyChanging("DodatkowyNaglowekDefinicja");
-                _DodatkowyNaglowekDefinicja = StructuralObject.SetValidValue(value, true);
+                _DodatkowyNaglowekDefinicja = StructuralObject.SetValidValue(value, true, "DodatkowyNaglowekDefinicja");
                 ReportPropertyChanged("DodatkowyNaglowekDefinicja");
                 OnDodatkowyNaglowekDefinicjaChanged();
             }
@@ -13511,7 +13495,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDomyslnaChanging(value);
                 ReportPropertyChanging("Domyslna");
-                _Domyslna = StructuralObject.SetValidValue(value);
+                _Domyslna = StructuralObject.SetValidValue(value, "Domyslna");
                 ReportPropertyChanged("Domyslna");
                 OnDomyslnaChanged();
             }
@@ -13535,7 +13519,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -13561,7 +13545,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -13586,7 +13570,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, true);
+                _Nazwa = StructuralObject.SetValidValue(value, true, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -13610,7 +13594,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumeracjaPodczasEdycjiChanging(value);
                 ReportPropertyChanging("NumeracjaPodczasEdycji");
-                _NumeracjaPodczasEdycji = StructuralObject.SetValidValue(value);
+                _NumeracjaPodczasEdycji = StructuralObject.SetValidValue(value, "NumeracjaPodczasEdycji");
                 ReportPropertyChanged("NumeracjaPodczasEdycji");
                 OnNumeracjaPodczasEdycjiChanged();
             }
@@ -13634,7 +13618,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumeracjaWzorChanging(value);
                 ReportPropertyChanging("NumeracjaWzor");
-                _NumeracjaWzor = StructuralObject.SetValidValue(value, true);
+                _NumeracjaWzor = StructuralObject.SetValidValue(value, true, "NumeracjaWzor");
                 ReportPropertyChanged("NumeracjaWzor");
                 OnNumeracjaWzorChanged();
             }
@@ -13658,7 +13642,7 @@ namespace Enova.Business.Old.DB
             {
                 OnProceduraISOChanging(value);
                 ReportPropertyChanging("ProceduraISO");
-                _ProceduraISO = StructuralObject.SetValidValue(value);
+                _ProceduraISO = StructuralObject.SetValidValue(value, "ProceduraISO");
                 ReportPropertyChanged("ProceduraISO");
                 OnProceduraISOChanged();
             }
@@ -13682,7 +13666,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozszerzenieChanging(value);
                 ReportPropertyChanging("Rozszerzenie");
-                _Rozszerzenie = StructuralObject.SetValidValue(value, true);
+                _Rozszerzenie = StructuralObject.SetValidValue(value, true, "Rozszerzenie");
                 ReportPropertyChanged("Rozszerzenie");
                 OnRozszerzenieChanged();
             }
@@ -13706,7 +13690,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -13730,7 +13714,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSymbolChanging(value);
                 ReportPropertyChanging("Symbol");
-                _Symbol = StructuralObject.SetValidValue(value, false);
+                _Symbol = StructuralObject.SetValidValue(value, false, "Symbol");
                 ReportPropertyChanged("Symbol");
                 OnSymbolChanged();
             }
@@ -13754,7 +13738,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypIntChanging(value);
                 ReportPropertyChanging("TypInt");
-                _TypInt = StructuralObject.SetValidValue(value);
+                _TypInt = StructuralObject.SetValidValue(value, "TypInt");
                 ReportPropertyChanged("TypInt");
                 OnTypIntChanged();
             }
@@ -13778,7 +13762,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWidoczneCechyChanging(value);
                 ReportPropertyChanging("WidoczneCechy");
-                _WidoczneCechy = StructuralObject.SetValidValue(value, true);
+                _WidoczneCechy = StructuralObject.SetValidValue(value, true, "WidoczneCechy");
                 ReportPropertyChanged("WidoczneCechy");
                 OnWidoczneCechyChanged();
             }
@@ -13802,7 +13786,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSchematPodzialowyChanging(value);
                 ReportPropertyChanging("SchematPodzialowy");
-                _SchematPodzialowy = StructuralObject.SetValidValue(value);
+                _SchematPodzialowy = StructuralObject.SetValidValue(value, "SchematPodzialowy");
                 ReportPropertyChanged("SchematPodzialowy");
                 OnSchematPodzialowyChanged();
             }
@@ -13826,7 +13810,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZawszePrzeliczajOpisAnalitycznyChanging(value);
                 ReportPropertyChanging("ZawszePrzeliczajOpisAnalityczny");
-                _ZawszePrzeliczajOpisAnalityczny = StructuralObject.SetValidValue(value);
+                _ZawszePrzeliczajOpisAnalityczny = StructuralObject.SetValidValue(value, "ZawszePrzeliczajOpisAnalityczny");
                 ReportPropertyChanged("ZawszePrzeliczajOpisAnalityczny");
                 OnZawszePrzeliczajOpisAnalitycznyChanged();
             }
@@ -13850,7 +13834,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerDokumentuZeZrodlaChanging(value);
                 ReportPropertyChanging("NumerDokumentuZeZrodla");
-                _NumerDokumentuZeZrodla = StructuralObject.SetValidValue(value);
+                _NumerDokumentuZeZrodla = StructuralObject.SetValidValue(value, "NumerDokumentuZeZrodla");
                 ReportPropertyChanged("NumerDokumentuZeZrodla");
                 OnNumerDokumentuZeZrodlaChanged();
             }
@@ -13861,7 +13845,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -14051,7 +14034,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -14068,7 +14051,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -14094,7 +14077,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -14119,7 +14102,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodChanging(value);
                 ReportPropertyChanging("Kod");
-                _Kod = StructuralObject.SetValidValue(value, false);
+                _Kod = StructuralObject.SetValidValue(value, false, "Kod");
                 ReportPropertyChanged("Kod");
                 OnKodChanged();
             }
@@ -14143,7 +14126,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisChanging(value);
                 ReportPropertyChanging("Opis");
-                _Opis = StructuralObject.SetValidValue(value, true);
+                _Opis = StructuralObject.SetValidValue(value, true, "Opis");
                 ReportPropertyChanged("Opis");
                 OnOpisChanged();
             }
@@ -14167,7 +14150,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -14191,7 +14174,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStawkaProcentChanging(value);
                 ReportPropertyChanging("StawkaProcent");
-                _StawkaProcent = StructuralObject.SetValidValue(value);
+                _StawkaProcent = StructuralObject.SetValidValue(value, "StawkaProcent");
                 ReportPropertyChanged("StawkaProcent");
                 OnStawkaProcentChanged();
             }
@@ -14215,7 +14198,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStawkaStatusChanging(value);
                 ReportPropertyChanging("StawkaStatus");
-                _StawkaStatus = StructuralObject.SetValidValue(value);
+                _StawkaStatus = StructuralObject.SetValidValue(value, "StawkaStatus");
                 ReportPropertyChanged("StawkaStatus");
                 OnStawkaStatusChanged();
             }
@@ -14239,7 +14222,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStawkaZrodlowaChanging(value);
                 ReportPropertyChanging("StawkaZrodlowa");
-                _StawkaZrodlowa = StructuralObject.SetValidValue(value);
+                _StawkaZrodlowa = StructuralObject.SetValidValue(value, "StawkaZrodlowa");
                 ReportPropertyChanged("StawkaZrodlowa");
                 OnStawkaZrodlowaChanged();
             }
@@ -14263,7 +14246,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZablokowaneChanging(value);
                 ReportPropertyChanging("Zablokowane");
-                _Zablokowane = StructuralObject.SetValidValue(value);
+                _Zablokowane = StructuralObject.SetValidValue(value, "Zablokowane");
                 ReportPropertyChanged("Zablokowane");
                 OnZablokowaneChanged();
             }
@@ -14287,7 +14270,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStawkaKrajChanging(value);
                 ReportPropertyChanging("StawkaKraj");
-                _StawkaKraj = StructuralObject.SetValidValue(value);
+                _StawkaKraj = StructuralObject.SetValidValue(value, "StawkaKraj");
                 ReportPropertyChanged("StawkaKraj");
                 OnStawkaKrajChanged();
             }
@@ -14298,7 +14281,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -14494,7 +14476,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -14511,7 +14493,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaChanging(value);
                 ReportPropertyChanging("Blokada");
-                _Blokada = StructuralObject.SetValidValue(value);
+                _Blokada = StructuralObject.SetValidValue(value, "Blokada");
                 ReportPropertyChanged("Blokada");
                 OnBlokadaChanged();
             }
@@ -14535,7 +14517,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFlagsChanging(value);
                 ReportPropertyChanging("Flags");
-                _Flags = StructuralObject.SetValidValue(value);
+                _Flags = StructuralObject.SetValidValue(value, "Flags");
                 ReportPropertyChanged("Flags");
                 OnFlagsChanged();
             }
@@ -14559,7 +14541,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -14583,7 +14565,7 @@ namespace Enova.Business.Old.DB
             {
                 OnHiddenChanging(value);
                 ReportPropertyChanging("Hidden");
-                _Hidden = StructuralObject.SetValidValue(value);
+                _Hidden = StructuralObject.SetValidValue(value, "Hidden");
                 ReportPropertyChanged("Hidden");
                 OnHiddenChanged();
             }
@@ -14609,7 +14591,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -14634,7 +14616,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerChanging(value);
                 ReportPropertyChanging("Numer");
-                _Numer = StructuralObject.SetValidValue(value);
+                _Numer = StructuralObject.SetValidValue(value, "Numer");
                 ReportPropertyChanged("Numer");
                 OnNumerChanged();
             }
@@ -14658,7 +14640,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSposobKopiowaniaChanging(value);
                 ReportPropertyChanging("SposobKopiowania");
-                _SposobKopiowania = StructuralObject.SetValidValue(value);
+                _SposobKopiowania = StructuralObject.SetValidValue(value, "SposobKopiowania");
                 ReportPropertyChanged("SposobKopiowania");
                 OnSposobKopiowaniaChanged();
             }
@@ -14682,7 +14664,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -14706,7 +14688,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypIntChanging(value);
                 ReportPropertyChanging("TypInt");
-                _TypInt = StructuralObject.SetValidValue(value);
+                _TypInt = StructuralObject.SetValidValue(value, "TypInt");
                 ReportPropertyChanged("TypInt");
                 OnTypIntChanged();
             }
@@ -14730,7 +14712,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZachowanieDataDostawyChanging(value);
                 ReportPropertyChanging("ZachowanieDataDostawy");
-                _ZachowanieDataDostawy = StructuralObject.SetValidValue(value);
+                _ZachowanieDataDostawy = StructuralObject.SetValidValue(value, "ZachowanieDataDostawy");
                 ReportPropertyChanged("ZachowanieDataDostawy");
                 OnZachowanieDataDostawyChanged();
             }
@@ -14754,7 +14736,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZachowanieSposobFiltrowaniaPozycjiChanging(value);
                 ReportPropertyChanging("ZachowanieSposobFiltrowaniaPozycji");
-                _ZachowanieSposobFiltrowaniaPozycji = StructuralObject.SetValidValue(value);
+                _ZachowanieSposobFiltrowaniaPozycji = StructuralObject.SetValidValue(value, "ZachowanieSposobFiltrowaniaPozycji");
                 ReportPropertyChanged("ZachowanieSposobFiltrowaniaPozycji");
                 OnZachowanieSposobFiltrowaniaPozycjiChanged();
             }
@@ -14778,7 +14760,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZachowanieFiltrPozycjiChanging(value);
                 ReportPropertyChanging("ZachowanieFiltrPozycji");
-                _ZachowanieFiltrPozycji = StructuralObject.SetValidValue(value, true);
+                _ZachowanieFiltrPozycji = StructuralObject.SetValidValue(value, true, "ZachowanieFiltrPozycji");
                 ReportPropertyChanged("ZachowanieFiltrPozycji");
                 OnZachowanieFiltrPozycjiChanged();
             }
@@ -14802,7 +14784,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZachowanieFiltrPozycjiTechnologiiChanging(value);
                 ReportPropertyChanging("ZachowanieFiltrPozycjiTechnologii");
-                _ZachowanieFiltrPozycjiTechnologii = StructuralObject.SetValidValue(value);
+                _ZachowanieFiltrPozycjiTechnologii = StructuralObject.SetValidValue(value, "ZachowanieFiltrPozycjiTechnologii");
                 ReportPropertyChanged("ZachowanieFiltrPozycjiTechnologii");
                 OnZachowanieFiltrPozycjiTechnologiiChanged();
             }
@@ -14826,7 +14808,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZachowanieKopiujNumerObcyChanging(value);
                 ReportPropertyChanging("ZachowanieKopiujNumerObcy");
-                _ZachowanieKopiujNumerObcy = StructuralObject.SetValidValue(value);
+                _ZachowanieKopiujNumerObcy = StructuralObject.SetValidValue(value, "ZachowanieKopiujNumerObcy");
                 ReportPropertyChanged("ZachowanieKopiujNumerObcy");
                 OnZachowanieKopiujNumerObcyChanged();
             }
@@ -14850,7 +14832,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZachowanieAutomatycznaKorektaWgPodrzednegoChanging(value);
                 ReportPropertyChanging("ZachowanieAutomatycznaKorektaWgPodrzednego");
-                _ZachowanieAutomatycznaKorektaWgPodrzednego = StructuralObject.SetValidValue(value);
+                _ZachowanieAutomatycznaKorektaWgPodrzednego = StructuralObject.SetValidValue(value, "ZachowanieAutomatycznaKorektaWgPodrzednego");
                 ReportPropertyChanged("ZachowanieAutomatycznaKorektaWgPodrzednego");
                 OnZachowanieAutomatycznaKorektaWgPodrzednegoChanged();
             }
@@ -14874,7 +14856,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZachowanieKopiujSerieChanging(value);
                 ReportPropertyChanging("ZachowanieKopiujSerie");
-                _ZachowanieKopiujSerie = StructuralObject.SetValidValue(value);
+                _ZachowanieKopiujSerie = StructuralObject.SetValidValue(value, "ZachowanieKopiujSerie");
                 ReportPropertyChanged("ZachowanieKopiujSerie");
                 OnZachowanieKopiujSerieChanged();
             }
@@ -14898,7 +14880,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZachowanieInicjalizatorWalutyInfoKursWalutyChanging(value);
                 ReportPropertyChanging("ZachowanieInicjalizatorWalutyInfoKursWaluty");
-                _ZachowanieInicjalizatorWalutyInfoKursWaluty = StructuralObject.SetValidValue(value);
+                _ZachowanieInicjalizatorWalutyInfoKursWaluty = StructuralObject.SetValidValue(value, "ZachowanieInicjalizatorWalutyInfoKursWaluty");
                 ReportPropertyChanged("ZachowanieInicjalizatorWalutyInfoKursWaluty");
                 OnZachowanieInicjalizatorWalutyInfoKursWalutyChanged();
             }
@@ -14922,7 +14904,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZNadrzednegoDlaKorygowanegoChanging(value);
                 ReportPropertyChanging("ZNadrzednegoDlaKorygowanego");
-                _ZNadrzednegoDlaKorygowanego = StructuralObject.SetValidValue(value);
+                _ZNadrzednegoDlaKorygowanego = StructuralObject.SetValidValue(value, "ZNadrzednegoDlaKorygowanego");
                 ReportPropertyChanged("ZNadrzednegoDlaKorygowanego");
                 OnZNadrzednegoDlaKorygowanegoChanged();
             }
@@ -14946,7 +14928,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZPodrzednegoDlaKorygowanegoChanging(value);
                 ReportPropertyChanging("ZPodrzednegoDlaKorygowanego");
-                _ZPodrzednegoDlaKorygowanego = StructuralObject.SetValidValue(value);
+                _ZPodrzednegoDlaKorygowanego = StructuralObject.SetValidValue(value, "ZPodrzednegoDlaKorygowanego");
                 ReportPropertyChanged("ZPodrzednegoDlaKorygowanego");
                 OnZPodrzednegoDlaKorygowanegoChanged();
             }
@@ -14970,7 +14952,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZachowanieAutomatyczniePrzeliczajKosztWytworzeniaChanging(value);
                 ReportPropertyChanging("ZachowanieAutomatyczniePrzeliczajKosztWytworzenia");
-                _ZachowanieAutomatyczniePrzeliczajKosztWytworzenia = StructuralObject.SetValidValue(value);
+                _ZachowanieAutomatyczniePrzeliczajKosztWytworzenia = StructuralObject.SetValidValue(value, "ZachowanieAutomatyczniePrzeliczajKosztWytworzenia");
                 ReportPropertyChanged("ZachowanieAutomatyczniePrzeliczajKosztWytworzenia");
                 OnZachowanieAutomatyczniePrzeliczajKosztWytworzeniaChanged();
             }
@@ -14994,7 +14976,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSposobKopiowaniaKorektaChanging(value);
                 ReportPropertyChanging("SposobKopiowaniaKorekta");
-                _SposobKopiowaniaKorekta = StructuralObject.SetValidValue(value);
+                _SposobKopiowaniaKorekta = StructuralObject.SetValidValue(value, "SposobKopiowaniaKorekta");
                 ReportPropertyChanged("SposobKopiowaniaKorekta");
                 OnSposobKopiowaniaKorektaChanged();
             }
@@ -15102,7 +15084,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -15200,7 +15181,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -15217,7 +15198,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCategoryChanging(value);
                 ReportPropertyChanging("Category");
-                _Category = StructuralObject.SetValidValue(value, false);
+                _Category = StructuralObject.SetValidValue(value, false, "Category");
                 ReportPropertyChanged("Category");
                 OnCategoryChanged();
             }
@@ -15241,7 +15222,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -15267,7 +15248,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -15292,7 +15273,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLpChanging(value);
                 ReportPropertyChanging("Lp");
-                _Lp = StructuralObject.SetValidValue(value);
+                _Lp = StructuralObject.SetValidValue(value, "Lp");
                 ReportPropertyChanged("Lp");
                 OnLpChanged();
             }
@@ -15316,7 +15297,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -15340,7 +15321,7 @@ namespace Enova.Business.Old.DB
             {
                 OnValueChanging(value);
                 ReportPropertyChanging("Value");
-                _Value = StructuralObject.SetValidValue(value, false);
+                _Value = StructuralObject.SetValidValue(value, false, "Value");
                 ReportPropertyChanged("Value");
                 OnValueChanged();
             }
@@ -15364,7 +15345,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataContextChanging(value);
                 ReportPropertyChanging("DataContext");
-                _DataContext = StructuralObject.SetValidValue(value);
+                _DataContext = StructuralObject.SetValidValue(value, "DataContext");
                 ReportPropertyChanged("DataContext");
                 OnDataContextChanged();
             }
@@ -15388,7 +15369,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataContextTypeChanging(value);
                 ReportPropertyChanging("DataContextType");
-                _DataContextType = StructuralObject.SetValidValue(value, true);
+                _DataContextType = StructuralObject.SetValidValue(value, true, "DataContextType");
                 ReportPropertyChanged("DataContextType");
                 OnDataContextTypeChanged();
             }
@@ -15412,7 +15393,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParentIDChanging(value);
                 ReportPropertyChanging("ParentID");
-                _ParentID = StructuralObject.SetValidValue(value);
+                _ParentID = StructuralObject.SetValidValue(value, "ParentID");
                 ReportPropertyChanged("ParentID");
                 OnParentIDChanged();
             }
@@ -15423,7 +15404,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -15557,7 +15537,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -15574,7 +15554,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBuforKChanging(value);
                 ReportPropertyChanging("BuforK");
-                _BuforK = StructuralObject.SetValidValue(value);
+                _BuforK = StructuralObject.SetValidValue(value, "BuforK");
                 ReportPropertyChanged("BuforK");
                 OnBuforKChanged();
             }
@@ -15598,7 +15578,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataDokumentuChanging(value);
                 ReportPropertyChanging("DataDokumentu");
-                _DataDokumentu = StructuralObject.SetValidValue(value);
+                _DataDokumentu = StructuralObject.SetValidValue(value, "DataDokumentu");
                 ReportPropertyChanged("DataDokumentu");
                 OnDataDokumentuChanged();
             }
@@ -15622,7 +15602,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataEwidencjiChanging(value);
                 ReportPropertyChanging("DataEwidencji");
-                _DataEwidencji = StructuralObject.SetValidValue(value);
+                _DataEwidencji = StructuralObject.SetValidValue(value, "DataEwidencji");
                 ReportPropertyChanged("DataEwidencji");
                 OnDataEwidencjiChanged();
             }
@@ -15646,7 +15626,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataOperacjiChanging(value);
                 ReportPropertyChanging("DataOperacji");
-                _DataOperacji = StructuralObject.SetValidValue(value);
+                _DataOperacji = StructuralObject.SetValidValue(value, "DataOperacji");
                 ReportPropertyChanged("DataOperacji");
                 OnDataOperacjiChanged();
             }
@@ -15670,7 +15650,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataWplywuChanging(value);
                 ReportPropertyChanging("DataWplywu");
-                _DataWplywu = StructuralObject.SetValidValue(value);
+                _DataWplywu = StructuralObject.SetValidValue(value, "DataWplywu");
                 ReportPropertyChanged("DataWplywu");
                 OnDataWplywuChanged();
             }
@@ -15694,7 +15674,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDokumentChanging(value);
                 ReportPropertyChanging("Dokument");
-                _Dokument = StructuralObject.SetValidValue(value);
+                _Dokument = StructuralObject.SetValidValue(value, "Dokument");
                 ReportPropertyChanged("Dokument");
                 OnDokumentChanged();
             }
@@ -15718,7 +15698,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDokumentTypeChanging(value);
                 ReportPropertyChanging("DokumentType");
-                _DokumentType = StructuralObject.SetValidValue(value, true);
+                _DokumentType = StructuralObject.SetValidValue(value, true, "DokumentType");
                 ReportPropertyChanged("DokumentType");
                 OnDokumentTypeChanged();
             }
@@ -15742,7 +15722,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEwidencjaZbiorczaChanging(value);
                 ReportPropertyChanging("EwidencjaZbiorcza");
-                _EwidencjaZbiorcza = StructuralObject.SetValidValue(value);
+                _EwidencjaZbiorcza = StructuralObject.SetValidValue(value, "EwidencjaZbiorcza");
                 ReportPropertyChanged("EwidencjaZbiorcza");
                 OnEwidencjaZbiorczaChanged();
             }
@@ -15766,7 +15746,7 @@ namespace Enova.Business.Old.DB
             {
                 OnExportedChanging(value);
                 ReportPropertyChanging("Exported");
-                _Exported = StructuralObject.SetValidValue(value);
+                _Exported = StructuralObject.SetValidValue(value, "Exported");
                 ReportPropertyChanged("Exported");
                 OnExportedChanged();
             }
@@ -15790,7 +15770,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -15816,7 +15796,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -15841,7 +15821,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNadrzednyChanging(value);
                 ReportPropertyChanging("Nadrzedny");
-                _Nadrzedny = StructuralObject.SetValidValue(value);
+                _Nadrzedny = StructuralObject.SetValidValue(value, "Nadrzedny");
                 ReportPropertyChanged("Nadrzedny");
                 OnNadrzednyChanged();
             }
@@ -15865,7 +15845,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNadrzednyTypRelacjiChanging(value);
                 ReportPropertyChanging("NadrzednyTypRelacji");
-                _NadrzednyTypRelacji = StructuralObject.SetValidValue(value);
+                _NadrzednyTypRelacji = StructuralObject.SetValidValue(value, "NadrzednyTypRelacji");
                 ReportPropertyChanged("NadrzednyTypRelacji");
                 OnNadrzednyTypRelacjiChanged();
             }
@@ -15889,7 +15869,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNieKsiegowacChanging(value);
                 ReportPropertyChanging("NieKsiegowac");
-                _NieKsiegowac = StructuralObject.SetValidValue(value);
+                _NieKsiegowac = StructuralObject.SetValidValue(value, "NieKsiegowac");
                 ReportPropertyChanged("NieKsiegowac");
                 OnNieKsiegowacChanged();
             }
@@ -15913,7 +15893,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerDodatkowyChanging(value);
                 ReportPropertyChanging("NumerDodatkowy");
-                _NumerDodatkowy = StructuralObject.SetValidValue(value, true);
+                _NumerDodatkowy = StructuralObject.SetValidValue(value, true, "NumerDodatkowy");
                 ReportPropertyChanged("NumerDodatkowy");
                 OnNumerDodatkowyChanged();
             }
@@ -15937,7 +15917,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerDokumentuChanging(value);
                 ReportPropertyChanging("NumerDokumentu");
-                _NumerDokumentu = StructuralObject.SetValidValue(value, false);
+                _NumerDokumentu = StructuralObject.SetValidValue(value, false, "NumerDokumentu");
                 ReportPropertyChanged("NumerDokumentu");
                 OnNumerDokumentuChanged();
             }
@@ -15961,7 +15941,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerNumerChanging(value);
                 ReportPropertyChanging("NumerNumer");
-                _NumerNumer = StructuralObject.SetValidValue(value);
+                _NumerNumer = StructuralObject.SetValidValue(value, "NumerNumer");
                 ReportPropertyChanged("NumerNumer");
                 OnNumerNumerChanged();
             }
@@ -15985,7 +15965,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerPelnyChanging(value);
                 ReportPropertyChanging("NumerPelny");
-                _NumerPelny = StructuralObject.SetValidValue(value, true);
+                _NumerPelny = StructuralObject.SetValidValue(value, true, "NumerPelny");
                 ReportPropertyChanged("NumerPelny");
                 OnNumerPelnyChanged();
             }
@@ -16009,7 +15989,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerProceduryISOChanging(value);
                 ReportPropertyChanging("NumerProceduryISO");
-                _NumerProceduryISO = StructuralObject.SetValidValue(value, true);
+                _NumerProceduryISO = StructuralObject.SetValidValue(value, true, "NumerProceduryISO");
                 ReportPropertyChanged("NumerProceduryISO");
                 OnNumerProceduryISOChanged();
             }
@@ -16033,7 +16013,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerSymbolChanging(value);
                 ReportPropertyChanging("NumerSymbol");
-                _NumerSymbol = StructuralObject.SetValidValue(value, true);
+                _NumerSymbol = StructuralObject.SetValidValue(value, true, "NumerSymbol");
                 ReportPropertyChanged("NumerSymbol");
                 OnNumerSymbolChanged();
             }
@@ -16057,7 +16037,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOddzialChanging(value);
                 ReportPropertyChanging("Oddzial");
-                _Oddzial = StructuralObject.SetValidValue(value);
+                _Oddzial = StructuralObject.SetValidValue(value, "Oddzial");
                 ReportPropertyChanged("Oddzial");
                 OnOddzialChanged();
             }
@@ -16081,7 +16061,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisChanging(value);
                 ReportPropertyChanging("Opis");
-                _Opis = StructuralObject.SetValidValue(value, true);
+                _Opis = StructuralObject.SetValidValue(value, true, "Opis");
                 ReportPropertyChanged("Opis");
                 OnOpisChanged();
             }
@@ -16105,7 +16085,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotChanging(value);
                 ReportPropertyChanging("Podmiot");
-                _Podmiot = StructuralObject.SetValidValue(value);
+                _Podmiot = StructuralObject.SetValidValue(value, "Podmiot");
                 ReportPropertyChanged("Podmiot");
                 OnPodmiotChanged();
             }
@@ -16129,7 +16109,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotTypeChanging(value);
                 ReportPropertyChanging("PodmiotType");
-                _PodmiotType = StructuralObject.SetValidValue(value, true);
+                _PodmiotType = StructuralObject.SetValidValue(value, true, "PodmiotType");
                 ReportPropertyChanged("PodmiotType");
                 OnPodmiotTypeChanged();
             }
@@ -16153,7 +16133,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSeriaChanging(value);
                 ReportPropertyChanging("Seria");
-                _Seria = StructuralObject.SetValidValue(value, true);
+                _Seria = StructuralObject.SetValidValue(value, true, "Seria");
                 ReportPropertyChanged("Seria");
                 OnSeriaChanged();
             }
@@ -16177,7 +16157,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -16201,7 +16181,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanChanging(value);
                 ReportPropertyChanging("Stan");
-                _Stan = StructuralObject.SetValidValue(value);
+                _Stan = StructuralObject.SetValidValue(value, "Stan");
                 ReportPropertyChanged("Stan");
                 OnStanChanged();
             }
@@ -16225,7 +16205,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -16249,7 +16229,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscSymbolChanging(value);
                 ReportPropertyChanging("WartoscSymbol");
-                _WartoscSymbol = StructuralObject.SetValidValue(value, true);
+                _WartoscSymbol = StructuralObject.SetValidValue(value, true, "WartoscSymbol");
                 ReportPropertyChanged("WartoscSymbol");
                 OnWartoscSymbolChanged();
             }
@@ -16273,7 +16253,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscValueChanging(value);
                 ReportPropertyChanging("WartoscValue");
-                _WartoscValue = StructuralObject.SetValidValue(value);
+                _WartoscValue = StructuralObject.SetValidValue(value, "WartoscValue");
                 ReportPropertyChanged("WartoscValue");
                 OnWartoscValueChanged();
             }
@@ -16297,7 +16277,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNrDokumentuKChanging(value);
                 ReportPropertyChanging("NrDokumentuK");
-                _NrDokumentuK = StructuralObject.SetValidValue(value, true);
+                _NrDokumentuK = StructuralObject.SetValidValue(value, true, "NrDokumentuK");
                 ReportPropertyChanged("NrDokumentuK");
                 OnNrDokumentuKChanged();
             }
@@ -16321,7 +16301,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKolKPiRChanging(value);
                 ReportPropertyChanging("KolKPiR");
-                _KolKPiR = StructuralObject.SetValidValue(value);
+                _KolKPiR = StructuralObject.SetValidValue(value, "KolKPiR");
                 ReportPropertyChanged("KolKPiR");
                 OnKolKPiRChanged();
             }
@@ -16345,7 +16325,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSymbolNumeruZrodlaChanging(value);
                 ReportPropertyChanging("SymbolNumeruZrodla");
-                _SymbolNumeruZrodla = StructuralObject.SetValidValue(value, true);
+                _SymbolNumeruZrodla = StructuralObject.SetValidValue(value, true, "SymbolNumeruZrodla");
                 ReportPropertyChanged("SymbolNumeruZrodla");
                 OnSymbolNumeruZrodlaChanged();
             }
@@ -16356,7 +16336,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -16496,7 +16475,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -16513,7 +16492,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBruttoCySymbolChanging(value);
                 ReportPropertyChanging("BruttoCySymbol");
-                _BruttoCySymbol = StructuralObject.SetValidValue(value, true);
+                _BruttoCySymbol = StructuralObject.SetValidValue(value, true, "BruttoCySymbol");
                 ReportPropertyChanged("BruttoCySymbol");
                 OnBruttoCySymbolChanged();
             }
@@ -16537,7 +16516,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBruttoCyValueChanging(value);
                 ReportPropertyChanging("BruttoCyValue");
-                _BruttoCyValue = StructuralObject.SetValidValue(value);
+                _BruttoCyValue = StructuralObject.SetValidValue(value, "BruttoCyValue");
                 ReportPropertyChanged("BruttoCyValue");
                 OnBruttoCyValueChanged();
             }
@@ -16561,7 +16540,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCzasChanging(value);
                 ReportPropertyChanging("Czas");
-                _Czas = StructuralObject.SetValidValue(value);
+                _Czas = StructuralObject.SetValidValue(value, "Czas");
                 ReportPropertyChanged("Czas");
                 OnCzasChanged();
             }
@@ -16585,7 +16564,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCzestotliwoscRozliczaniaChanging(value);
                 ReportPropertyChanging("CzestotliwoscRozliczania");
-                _CzestotliwoscRozliczania = StructuralObject.SetValidValue(value);
+                _CzestotliwoscRozliczania = StructuralObject.SetValidValue(value, "CzestotliwoscRozliczania");
                 ReportPropertyChanged("CzestotliwoscRozliczania");
                 OnCzestotliwoscRozliczaniaChanged();
             }
@@ -16609,7 +16588,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataChanging(value);
                 ReportPropertyChanging("Data");
-                _Data = StructuralObject.SetValidValue(value);
+                _Data = StructuralObject.SetValidValue(value, "Data");
                 ReportPropertyChanged("Data");
                 OnDataChanged();
             }
@@ -16633,7 +16612,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataKursuChanging(value);
                 ReportPropertyChanging("DataKursu");
-                _DataKursu = StructuralObject.SetValidValue(value);
+                _DataKursu = StructuralObject.SetValidValue(value, "DataKursu");
                 ReportPropertyChanged("DataKursu");
                 OnDataKursuChanged();
             }
@@ -16657,7 +16636,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataOperacjiChanging(value);
                 ReportPropertyChanging("DataOperacji");
-                _DataOperacji = StructuralObject.SetValidValue(value);
+                _DataOperacji = StructuralObject.SetValidValue(value, "DataOperacji");
                 ReportPropertyChanged("DataOperacji");
                 OnDataOperacjiChanged();
             }
@@ -16681,7 +16660,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaOdpowiedzialnyChanging(value);
                 ReportPropertyChanging("DostawaOdpowiedzialny");
-                _DostawaOdpowiedzialny = StructuralObject.SetValidValue(value, true);
+                _DostawaOdpowiedzialny = StructuralObject.SetValidValue(value, true, "DostawaOdpowiedzialny");
                 ReportPropertyChanged("DostawaOdpowiedzialny");
                 OnDostawaOdpowiedzialnyChanged();
             }
@@ -16705,7 +16684,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaSposobChanging(value);
                 ReportPropertyChanging("DostawaSposob");
-                _DostawaSposob = StructuralObject.SetValidValue(value, true);
+                _DostawaSposob = StructuralObject.SetValidValue(value, true, "DostawaSposob");
                 ReportPropertyChanged("DostawaSposob");
                 OnDostawaSposobChanged();
             }
@@ -16729,7 +16708,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaTerminChanging(value);
                 ReportPropertyChanging("DostawaTermin");
-                _DostawaTermin = StructuralObject.SetValidValue(value);
+                _DostawaTermin = StructuralObject.SetValidValue(value, "DostawaTermin");
                 ReportPropertyChanged("DostawaTermin");
                 OnDostawaTerminChanged();
             }
@@ -16753,7 +16732,7 @@ namespace Enova.Business.Old.DB
             {
                 OnExportedChanging(value);
                 ReportPropertyChanging("Exported");
-                _Exported = StructuralObject.SetValidValue(value);
+                _Exported = StructuralObject.SetValidValue(value, "Exported");
                 ReportPropertyChanged("Exported");
                 OnExportedChanged();
             }
@@ -16777,7 +16756,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFlagsIntChanging(value);
                 ReportPropertyChanging("FlagsInt");
-                _FlagsInt = StructuralObject.SetValidValue(value);
+                _FlagsInt = StructuralObject.SetValidValue(value, "FlagsInt");
                 ReportPropertyChanged("FlagsInt");
                 OnFlagsIntChanged();
             }
@@ -16801,7 +16780,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -16827,7 +16806,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -16852,7 +16831,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKategoriaIntChanging(value);
                 ReportPropertyChanging("KategoriaInt");
-                _KategoriaInt = StructuralObject.SetValidValue(value);
+                _KategoriaInt = StructuralObject.SetValidValue(value, "KategoriaInt");
                 ReportPropertyChanged("KategoriaInt");
                 OnKategoriaIntChanged();
             }
@@ -16876,7 +16855,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKierunekMagazynuIntChanging(value);
                 ReportPropertyChanging("KierunekMagazynuInt");
-                _KierunekMagazynuInt = StructuralObject.SetValidValue(value);
+                _KierunekMagazynuInt = StructuralObject.SetValidValue(value, "KierunekMagazynuInt");
                 ReportPropertyChanged("KierunekMagazynuInt");
                 OnKierunekMagazynuIntChanged();
             }
@@ -16900,7 +16879,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKorektaChanging(value);
                 ReportPropertyChanging("Korekta");
-                _Korekta = StructuralObject.SetValidValue(value);
+                _Korekta = StructuralObject.SetValidValue(value, "Korekta");
                 ReportPropertyChanged("Korekta");
                 OnKorektaChanged();
             }
@@ -16924,7 +16903,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKorektaVATChanging(value);
                 ReportPropertyChanging("KorektaVAT");
-                _KorektaVAT = StructuralObject.SetValidValue(value);
+                _KorektaVAT = StructuralObject.SetValidValue(value, "KorektaVAT");
                 ReportPropertyChanged("KorektaVAT");
                 OnKorektaVATChanged();
             }
@@ -16948,7 +16927,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKursWalutyRecordChanging(value);
                 ReportPropertyChanging("KursWalutyRecord");
-                _KursWalutyRecord = StructuralObject.SetValidValue(value);
+                _KursWalutyRecord = StructuralObject.SetValidValue(value, "KursWalutyRecord");
                 ReportPropertyChanged("KursWalutyRecord");
                 OnKursWalutyRecordChanged();
             }
@@ -16972,7 +16951,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLiczonaOdIntChanging(value);
                 ReportPropertyChanging("LiczonaOdInt");
-                _LiczonaOdInt = StructuralObject.SetValidValue(value);
+                _LiczonaOdInt = StructuralObject.SetValidValue(value, "LiczonaOdInt");
                 ReportPropertyChanged("LiczonaOdInt");
                 OnLiczonaOdIntChanged();
             }
@@ -16996,7 +16975,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMaxIdentChanging(value);
                 ReportPropertyChanging("MaxIdent");
-                _MaxIdent = StructuralObject.SetValidValue(value);
+                _MaxIdent = StructuralObject.SetValidValue(value, "MaxIdent");
                 ReportPropertyChanged("MaxIdent");
                 OnMaxIdentChanged();
             }
@@ -17020,7 +16999,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMiejsceSwiadczeniaChanging(value);
                 ReportPropertyChanging("MiejsceSwiadczenia");
-                _MiejsceSwiadczenia = StructuralObject.SetValidValue(value, true);
+                _MiejsceSwiadczenia = StructuralObject.SetValidValue(value, true, "MiejsceSwiadczenia");
                 ReportPropertyChanged("MiejsceSwiadczenia");
                 OnMiejsceSwiadczeniaChanged();
             }
@@ -17044,7 +17023,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerNumerChanging(value);
                 ReportPropertyChanging("NumerNumer");
-                _NumerNumer = StructuralObject.SetValidValue(value);
+                _NumerNumer = StructuralObject.SetValidValue(value, "NumerNumer");
                 ReportPropertyChanged("NumerNumer");
                 OnNumerNumerChanged();
             }
@@ -17068,7 +17047,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerPelnyChanging(value);
                 ReportPropertyChanging("NumerPelny");
-                _NumerPelny = StructuralObject.SetValidValue(value, true);
+                _NumerPelny = StructuralObject.SetValidValue(value, true, "NumerPelny");
                 ReportPropertyChanged("NumerPelny");
                 OnNumerPelnyChanged();
             }
@@ -17092,7 +17071,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerPelnyZapisanyChanging(value);
                 ReportPropertyChanging("NumerPelnyZapisany");
-                _NumerPelnyZapisany = StructuralObject.SetValidValue(value, true);
+                _NumerPelnyZapisany = StructuralObject.SetValidValue(value, true, "NumerPelnyZapisany");
                 ReportPropertyChanged("NumerPelnyZapisany");
                 OnNumerPelnyZapisanyChanged();
             }
@@ -17116,7 +17095,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerSymbolChanging(value);
                 ReportPropertyChanging("NumerSymbol");
-                _NumerSymbol = StructuralObject.SetValidValue(value, true);
+                _NumerSymbol = StructuralObject.SetValidValue(value, true, "NumerSymbol");
                 ReportPropertyChanged("NumerSymbol");
                 OnNumerSymbolChanged();
             }
@@ -17140,7 +17119,7 @@ namespace Enova.Business.Old.DB
             {
                 OnObcyDataOtrzymaniaChanging(value);
                 ReportPropertyChanging("ObcyDataOtrzymania");
-                _ObcyDataOtrzymania = StructuralObject.SetValidValue(value);
+                _ObcyDataOtrzymania = StructuralObject.SetValidValue(value, "ObcyDataOtrzymania");
                 ReportPropertyChanged("ObcyDataOtrzymania");
                 OnObcyDataOtrzymaniaChanged();
             }
@@ -17164,7 +17143,7 @@ namespace Enova.Business.Old.DB
             {
                 OnObcyNumerChanging(value);
                 ReportPropertyChanging("ObcyNumer");
-                _ObcyNumer = StructuralObject.SetValidValue(value, true);
+                _ObcyNumer = StructuralObject.SetValidValue(value, true, "ObcyNumer");
                 ReportPropertyChanged("ObcyNumer");
                 OnObcyNumerChanged();
             }
@@ -17188,7 +17167,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkresIntrastatChanging(value);
                 ReportPropertyChanging("OkresIntrastat");
-                _OkresIntrastat = StructuralObject.SetValidValue(value);
+                _OkresIntrastat = StructuralObject.SetValidValue(value, "OkresIntrastat");
                 ReportPropertyChanged("OkresIntrastat");
                 OnOkresIntrastatChanged();
             }
@@ -17212,7 +17191,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisChanging(value);
                 ReportPropertyChanging("Opis");
-                _Opis = StructuralObject.SetValidValue(value, true);
+                _Opis = StructuralObject.SetValidValue(value, true, "Opis");
                 ReportPropertyChanged("Opis");
                 OnOpisChanged();
             }
@@ -17236,7 +17215,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOsobaChanging(value);
                 ReportPropertyChanging("Osoba");
-                _Osoba = StructuralObject.SetValidValue(value, true);
+                _Osoba = StructuralObject.SetValidValue(value, true, "Osoba");
                 ReportPropertyChanged("Osoba");
                 OnOsobaChanged();
             }
@@ -17260,7 +17239,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPotwierdzenieChanging(value);
                 ReportPropertyChanging("Potwierdzenie");
-                _Potwierdzenie = StructuralObject.SetValidValue(value);
+                _Potwierdzenie = StructuralObject.SetValidValue(value, "Potwierdzenie");
                 ReportPropertyChanged("Potwierdzenie");
                 OnPotwierdzenieChanged();
             }
@@ -17284,7 +17263,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabatChanging(value);
                 ReportPropertyChanging("Rabat");
-                _Rabat = StructuralObject.SetValidValue(value);
+                _Rabat = StructuralObject.SetValidValue(value, "Rabat");
                 ReportPropertyChanged("Rabat");
                 OnRabatChanged();
             }
@@ -17308,7 +17287,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajTransakcjiChanging(value);
                 ReportPropertyChanging("RodzajTransakcji");
-                _RodzajTransakcji = StructuralObject.SetValidValue(value);
+                _RodzajTransakcji = StructuralObject.SetValidValue(value, "RodzajTransakcji");
                 ReportPropertyChanged("RodzajTransakcji");
                 OnRodzajTransakcjiChanged();
             }
@@ -17332,7 +17311,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajTransportuChanging(value);
                 ReportPropertyChanging("RodzajTransportu");
-                _RodzajTransportu = StructuralObject.SetValidValue(value);
+                _RodzajTransportu = StructuralObject.SetValidValue(value, "RodzajTransportu");
                 ReportPropertyChanged("RodzajTransportu");
                 OnRodzajTransportuChanged();
             }
@@ -17356,7 +17335,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSeriaChanging(value);
                 ReportPropertyChanging("Seria");
-                _Seria = StructuralObject.SetValidValue(value, true);
+                _Seria = StructuralObject.SetValidValue(value, true, "Seria");
                 ReportPropertyChanged("Seria");
                 OnSeriaChanged();
             }
@@ -17380,7 +17359,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSeriaZapisanaChanging(value);
                 ReportPropertyChanging("SeriaZapisana");
-                _SeriaZapisana = StructuralObject.SetValidValue(value, true);
+                _SeriaZapisana = StructuralObject.SetValidValue(value, true, "SeriaZapisana");
                 ReportPropertyChanged("SeriaZapisana");
                 OnSeriaZapisanaChanged();
             }
@@ -17404,7 +17383,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSposobPrzenoszeniaZaliczkiIntChanging(value);
                 ReportPropertyChanging("SposobPrzenoszeniaZaliczkiInt");
-                _SposobPrzenoszeniaZaliczkiInt = StructuralObject.SetValidValue(value);
+                _SposobPrzenoszeniaZaliczkiInt = StructuralObject.SetValidValue(value, "SposobPrzenoszeniaZaliczkiInt");
                 ReportPropertyChanged("SposobPrzenoszeniaZaliczkiInt");
                 OnSposobPrzenoszeniaZaliczkiIntChanged();
             }
@@ -17428,7 +17407,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSposobRozliczaniaNadrzednegoIntChanging(value);
                 ReportPropertyChanging("SposobRozliczaniaNadrzednegoInt");
-                _SposobRozliczaniaNadrzednegoInt = StructuralObject.SetValidValue(value);
+                _SposobRozliczaniaNadrzednegoInt = StructuralObject.SetValidValue(value, "SposobRozliczaniaNadrzednegoInt");
                 ReportPropertyChanged("SposobRozliczaniaNadrzednegoInt");
                 OnSposobRozliczaniaNadrzednegoIntChanged();
             }
@@ -17452,7 +17431,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -17476,7 +17455,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanIntChanging(value);
                 ReportPropertyChanging("StanInt");
-                _StanInt = StructuralObject.SetValidValue(value);
+                _StanInt = StructuralObject.SetValidValue(value, "StanInt");
                 ReportPropertyChanged("StanInt");
                 OnStanIntChanged();
             }
@@ -17500,7 +17479,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumaBruttoChanging(value);
                 ReportPropertyChanging("SumaBrutto");
-                _SumaBrutto = StructuralObject.SetValidValue(value);
+                _SumaBrutto = StructuralObject.SetValidValue(value, "SumaBrutto");
                 ReportPropertyChanged("SumaBrutto");
                 OnSumaBruttoChanged();
             }
@@ -17524,7 +17503,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumaNettoChanging(value);
                 ReportPropertyChanging("SumaNetto");
-                _SumaNetto = StructuralObject.SetValidValue(value);
+                _SumaNetto = StructuralObject.SetValidValue(value, "SumaNetto");
                 ReportPropertyChanged("SumaNetto");
                 OnSumaNettoChanged();
             }
@@ -17548,7 +17527,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumaVATChanging(value);
                 ReportPropertyChanging("SumaVAT");
-                _SumaVAT = StructuralObject.SetValidValue(value);
+                _SumaVAT = StructuralObject.SetValidValue(value, "SumaVAT");
                 ReportPropertyChanged("SumaVAT");
                 OnSumaVATChanged();
             }
@@ -17572,7 +17551,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSymbolKasyChanging(value);
                 ReportPropertyChanging("SymbolKasy");
-                _SymbolKasy = StructuralObject.SetValidValue(value, true);
+                _SymbolKasy = StructuralObject.SetValidValue(value, true, "SymbolKasy");
                 ReportPropertyChanged("SymbolKasy");
                 OnSymbolKasyChanged();
             }
@@ -17596,7 +17575,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTabelaKursowaChanging(value);
                 ReportPropertyChanging("TabelaKursowa");
-                _TabelaKursowa = StructuralObject.SetValidValue(value);
+                _TabelaKursowa = StructuralObject.SetValidValue(value, "TabelaKursowa");
                 ReportPropertyChanged("TabelaKursowa");
                 OnTabelaKursowaChanged();
             }
@@ -17620,7 +17599,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminRozliczeniaChanging(value);
                 ReportPropertyChanging("TerminRozliczenia");
-                _TerminRozliczenia = StructuralObject.SetValidValue(value);
+                _TerminRozliczenia = StructuralObject.SetValidValue(value, "TerminRozliczenia");
                 ReportPropertyChanged("TerminRozliczenia");
                 OnTerminRozliczeniaChanged();
             }
@@ -17644,7 +17623,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypPartiiIntChanging(value);
                 ReportPropertyChanging("TypPartiiInt");
-                _TypPartiiInt = StructuralObject.SetValidValue(value);
+                _TypPartiiInt = StructuralObject.SetValidValue(value, "TypPartiiInt");
                 ReportPropertyChanged("TypPartiiInt");
                 OnTypPartiiIntChanged();
             }
@@ -17668,7 +17647,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypTerminuRozliczeniaChanging(value);
                 ReportPropertyChanging("TypTerminuRozliczenia");
-                _TypTerminuRozliczenia = StructuralObject.SetValidValue(value);
+                _TypTerminuRozliczenia = StructuralObject.SetValidValue(value, "TypTerminuRozliczenia");
                 ReportPropertyChanged("TypTerminuRozliczenia");
                 OnTypTerminuRozliczeniaChanged();
             }
@@ -17692,7 +17671,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWarunkiDostawyChanging(value);
                 ReportPropertyChanging("WarunkiDostawy");
-                _WarunkiDostawy = StructuralObject.SetValidValue(value);
+                _WarunkiDostawy = StructuralObject.SetValidValue(value, "WarunkiDostawy");
                 ReportPropertyChanged("WarunkiDostawy");
                 OnWarunkiDostawyChanged();
             }
@@ -17716,7 +17695,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCenaNaPodrzednyChanging(value);
                 ReportPropertyChanging("CenaNaPodrzedny");
-                _CenaNaPodrzedny = StructuralObject.SetValidValue(value);
+                _CenaNaPodrzedny = StructuralObject.SetValidValue(value, "CenaNaPodrzedny");
                 ReportPropertyChanged("CenaNaPodrzedny");
                 OnCenaNaPodrzednyChanged();
             }
@@ -17740,7 +17719,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdbiorcaMiejsceDostawyChanging(value);
                 ReportPropertyChanging("OdbiorcaMiejsceDostawy");
-                _OdbiorcaMiejsceDostawy = StructuralObject.SetValidValue(value);
+                _OdbiorcaMiejsceDostawy = StructuralObject.SetValidValue(value, "OdbiorcaMiejsceDostawy");
                 ReportPropertyChanged("OdbiorcaMiejsceDostawy");
                 OnOdbiorcaMiejsceDostawyChanged();
             }
@@ -17764,7 +17743,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrecyzjaCenyPrecyzjaChanging(value);
                 ReportPropertyChanging("PrecyzjaCenyPrecyzja");
-                _PrecyzjaCenyPrecyzja = StructuralObject.SetValidValue(value);
+                _PrecyzjaCenyPrecyzja = StructuralObject.SetValidValue(value, "PrecyzjaCenyPrecyzja");
                 ReportPropertyChanged("PrecyzjaCenyPrecyzja");
                 OnPrecyzjaCenyPrecyzjaChanged();
             }
@@ -17788,7 +17767,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrecyzjaCenyWymuszajChanging(value);
                 ReportPropertyChanging("PrecyzjaCenyWymuszaj");
-                _PrecyzjaCenyWymuszaj = StructuralObject.SetValidValue(value);
+                _PrecyzjaCenyWymuszaj = StructuralObject.SetValidValue(value, "PrecyzjaCenyWymuszaj");
                 ReportPropertyChanged("PrecyzjaCenyWymuszaj");
                 OnPrecyzjaCenyWymuszajChanged();
             }
@@ -17812,7 +17791,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajPlatnosciKaucjiChanging(value);
                 ReportPropertyChanging("RodzajPlatnosciKaucji");
-                _RodzajPlatnosciKaucji = StructuralObject.SetValidValue(value);
+                _RodzajPlatnosciKaucji = StructuralObject.SetValidValue(value, "RodzajPlatnosciKaucji");
                 ReportPropertyChanged("RodzajPlatnosciKaucji");
                 OnRodzajPlatnosciKaucjiChanged();
             }
@@ -17836,7 +17815,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozliczanieZbiorczeChanging(value);
                 ReportPropertyChanging("RozliczanieZbiorcze");
-                _RozliczanieZbiorcze = StructuralObject.SetValidValue(value);
+                _RozliczanieZbiorcze = StructuralObject.SetValidValue(value, "RozliczanieZbiorcze");
                 ReportPropertyChanged("RozliczanieZbiorcze");
                 OnRozliczanieZbiorczeChanged();
             }
@@ -17860,7 +17839,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklCzasChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklCzas");
-                _UmowaInfoCyklCzas = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklCzas = StructuralObject.SetValidValue(value, "UmowaInfoCyklCzas");
                 ReportPropertyChanged("UmowaInfoCyklCzas");
                 OnUmowaInfoCyklCzasChanged();
             }
@@ -17884,7 +17863,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklInterwalChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklInterwal");
-                _UmowaInfoCyklInterwal = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklInterwal = StructuralObject.SetValidValue(value, "UmowaInfoCyklInterwal");
                 ReportPropertyChanged("UmowaInfoCyklInterwal");
                 OnUmowaInfoCyklInterwalChanged();
             }
@@ -17908,7 +17887,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklKrotnoscChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklKrotnosc");
-                _UmowaInfoCyklKrotnosc = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklKrotnosc = StructuralObject.SetValidValue(value, "UmowaInfoCyklKrotnosc");
                 ReportPropertyChanged("UmowaInfoCyklKrotnosc");
                 OnUmowaInfoCyklKrotnoscChanged();
             }
@@ -17932,7 +17911,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklOkresCykluChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklOkresCyklu");
-                _UmowaInfoCyklOkresCyklu = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklOkresCyklu = StructuralObject.SetValidValue(value, "UmowaInfoCyklOkresCyklu");
                 ReportPropertyChanged("UmowaInfoCyklOkresCyklu");
                 OnUmowaInfoCyklOkresCykluChanged();
             }
@@ -17956,7 +17935,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklPozycjaDniaChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklPozycjaDnia");
-                _UmowaInfoCyklPozycjaDnia = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklPozycjaDnia = StructuralObject.SetValidValue(value, "UmowaInfoCyklPozycjaDnia");
                 ReportPropertyChanged("UmowaInfoCyklPozycjaDnia");
                 OnUmowaInfoCyklPozycjaDniaChanged();
             }
@@ -17980,7 +17959,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklRodzajTerminuChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklRodzajTerminu");
-                _UmowaInfoCyklRodzajTerminu = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklRodzajTerminu = StructuralObject.SetValidValue(value, "UmowaInfoCyklRodzajTerminu");
                 ReportPropertyChanged("UmowaInfoCyklRodzajTerminu");
                 OnUmowaInfoCyklRodzajTerminuChanged();
             }
@@ -18004,7 +17983,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklSposobNaDniWolneChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklSposobNaDniWolne");
-                _UmowaInfoCyklSposobNaDniWolne = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklSposobNaDniWolne = StructuralObject.SetValidValue(value, "UmowaInfoCyklSposobNaDniWolne");
                 ReportPropertyChanged("UmowaInfoCyklSposobNaDniWolne");
                 OnUmowaInfoCyklSposobNaDniWolneChanged();
             }
@@ -18028,7 +18007,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklTerminChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklTermin");
-                _UmowaInfoCyklTermin = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklTermin = StructuralObject.SetValidValue(value, "UmowaInfoCyklTermin");
                 ReportPropertyChanged("UmowaInfoCyklTermin");
                 OnUmowaInfoCyklTerminChanged();
             }
@@ -18052,7 +18031,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklTypChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklTyp");
-                _UmowaInfoCyklTyp = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklTyp = StructuralObject.SetValidValue(value, "UmowaInfoCyklTyp");
                 ReportPropertyChanged("UmowaInfoCyklTyp");
                 OnUmowaInfoCyklTypChanged();
             }
@@ -18076,7 +18055,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoDataOkresuRozliczeniowegoChanging(value);
                 ReportPropertyChanging("UmowaInfoDataOkresuRozliczeniowego");
-                _UmowaInfoDataOkresuRozliczeniowego = StructuralObject.SetValidValue(value);
+                _UmowaInfoDataOkresuRozliczeniowego = StructuralObject.SetValidValue(value, "UmowaInfoDataOkresuRozliczeniowego");
                 ReportPropertyChanged("UmowaInfoDataOkresuRozliczeniowego");
                 OnUmowaInfoDataOkresuRozliczeniowegoChanged();
             }
@@ -18100,7 +18079,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoWgZuzyciaChanging(value);
                 ReportPropertyChanging("UmowaInfoWgZuzycia");
-                _UmowaInfoWgZuzycia = StructuralObject.SetValidValue(value);
+                _UmowaInfoWgZuzycia = StructuralObject.SetValidValue(value, "UmowaInfoWgZuzycia");
                 ReportPropertyChanged("UmowaInfoWgZuzycia");
                 OnUmowaInfoWgZuzyciaChanged();
             }
@@ -18124,7 +18103,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminRozliczeniaKaucjiChanging(value);
                 ReportPropertyChanging("TerminRozliczeniaKaucji");
-                _TerminRozliczeniaKaucji = StructuralObject.SetValidValue(value);
+                _TerminRozliczeniaKaucji = StructuralObject.SetValidValue(value, "TerminRozliczeniaKaucji");
                 ReportPropertyChanged("TerminRozliczeniaKaucji");
                 OnTerminRozliczeniaKaucjiChanged();
             }
@@ -18148,7 +18127,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInwentaryzacjaInfoBlokowanieTowarowChanging(value);
                 ReportPropertyChanging("InwentaryzacjaInfoBlokowanieTowarow");
-                _InwentaryzacjaInfoBlokowanieTowarow = StructuralObject.SetValidValue(value);
+                _InwentaryzacjaInfoBlokowanieTowarow = StructuralObject.SetValidValue(value, "InwentaryzacjaInfoBlokowanieTowarow");
                 ReportPropertyChanged("InwentaryzacjaInfoBlokowanieTowarow");
                 OnInwentaryzacjaInfoBlokowanieTowarowChanged();
             }
@@ -18172,7 +18151,7 @@ namespace Enova.Business.Old.DB
             {
                 OnProdukcjaInfoIdentyfikatorElementuPowiazanegoChanging(value);
                 ReportPropertyChanging("ProdukcjaInfoIdentyfikatorElementuPowiazanego");
-                _ProdukcjaInfoIdentyfikatorElementuPowiazanego = StructuralObject.SetValidValue(value);
+                _ProdukcjaInfoIdentyfikatorElementuPowiazanego = StructuralObject.SetValidValue(value, "ProdukcjaInfoIdentyfikatorElementuPowiazanego");
                 ReportPropertyChanged("ProdukcjaInfoIdentyfikatorElementuPowiazanego");
                 OnProdukcjaInfoIdentyfikatorElementuPowiazanegoChanged();
             }
@@ -18196,7 +18175,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaParametrowZasobuInfoZmianaParametrowZasobuChanging(value);
                 ReportPropertyChanging("ZmianaParametrowZasobuInfoZmianaParametrowZasobu");
-                _ZmianaParametrowZasobuInfoZmianaParametrowZasobu = StructuralObject.SetValidValue(value);
+                _ZmianaParametrowZasobuInfoZmianaParametrowZasobu = StructuralObject.SetValidValue(value, "ZmianaParametrowZasobuInfoZmianaParametrowZasobu");
                 ReportPropertyChanged("ZmianaParametrowZasobuInfoZmianaParametrowZasobu");
                 OnZmianaParametrowZasobuInfoZmianaParametrowZasobuChanged();
             }
@@ -18220,7 +18199,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaParametrowZasobuInfoIloscValueChanging(value);
                 ReportPropertyChanging("ZmianaParametrowZasobuInfoIloscValue");
-                _ZmianaParametrowZasobuInfoIloscValue = StructuralObject.SetValidValue(value);
+                _ZmianaParametrowZasobuInfoIloscValue = StructuralObject.SetValidValue(value, "ZmianaParametrowZasobuInfoIloscValue");
                 ReportPropertyChanged("ZmianaParametrowZasobuInfoIloscValue");
                 OnZmianaParametrowZasobuInfoIloscValueChanged();
             }
@@ -18244,7 +18223,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaParametrowZasobuInfoIloscSymbolChanging(value);
                 ReportPropertyChanging("ZmianaParametrowZasobuInfoIloscSymbol");
-                _ZmianaParametrowZasobuInfoIloscSymbol = StructuralObject.SetValidValue(value, true);
+                _ZmianaParametrowZasobuInfoIloscSymbol = StructuralObject.SetValidValue(value, true, "ZmianaParametrowZasobuInfoIloscSymbol");
                 ReportPropertyChanged("ZmianaParametrowZasobuInfoIloscSymbol");
                 OnZmianaParametrowZasobuInfoIloscSymbolChanged();
             }
@@ -18268,7 +18247,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaParametrowZasobuInfoWartoscCyValueChanging(value);
                 ReportPropertyChanging("ZmianaParametrowZasobuInfoWartoscCyValue");
-                _ZmianaParametrowZasobuInfoWartoscCyValue = StructuralObject.SetValidValue(value);
+                _ZmianaParametrowZasobuInfoWartoscCyValue = StructuralObject.SetValidValue(value, "ZmianaParametrowZasobuInfoWartoscCyValue");
                 ReportPropertyChanged("ZmianaParametrowZasobuInfoWartoscCyValue");
                 OnZmianaParametrowZasobuInfoWartoscCyValueChanged();
             }
@@ -18292,7 +18271,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaParametrowZasobuInfoWartoscCySymbolChanging(value);
                 ReportPropertyChanging("ZmianaParametrowZasobuInfoWartoscCySymbol");
-                _ZmianaParametrowZasobuInfoWartoscCySymbol = StructuralObject.SetValidValue(value, true);
+                _ZmianaParametrowZasobuInfoWartoscCySymbol = StructuralObject.SetValidValue(value, true, "ZmianaParametrowZasobuInfoWartoscCySymbol");
                 ReportPropertyChanged("ZmianaParametrowZasobuInfoWartoscCySymbol");
                 OnZmianaParametrowZasobuInfoWartoscCySymbolChanged();
             }
@@ -18316,7 +18295,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklTermin2Changing(value);
                 ReportPropertyChanging("UmowaInfoCyklTermin2");
-                _UmowaInfoCyklTermin2 = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklTermin2 = StructuralObject.SetValidValue(value, "UmowaInfoCyklTermin2");
                 ReportPropertyChanged("UmowaInfoCyklTermin2");
                 OnUmowaInfoCyklTermin2Changed();
             }
@@ -18340,7 +18319,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklTermin3Changing(value);
                 ReportPropertyChanging("UmowaInfoCyklTermin3");
-                _UmowaInfoCyklTermin3 = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklTermin3 = StructuralObject.SetValidValue(value, "UmowaInfoCyklTermin3");
                 ReportPropertyChanged("UmowaInfoCyklTermin3");
                 OnUmowaInfoCyklTermin3Changed();
             }
@@ -18364,7 +18343,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklTermin4Changing(value);
                 ReportPropertyChanging("UmowaInfoCyklTermin4");
-                _UmowaInfoCyklTermin4 = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklTermin4 = StructuralObject.SetValidValue(value, "UmowaInfoCyklTermin4");
                 ReportPropertyChanged("UmowaInfoCyklTermin4");
                 OnUmowaInfoCyklTermin4Changed();
             }
@@ -18388,7 +18367,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklTermin5Changing(value);
                 ReportPropertyChanging("UmowaInfoCyklTermin5");
-                _UmowaInfoCyklTermin5 = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklTermin5 = StructuralObject.SetValidValue(value, "UmowaInfoCyklTermin5");
                 ReportPropertyChanged("UmowaInfoCyklTermin5");
                 OnUmowaInfoCyklTermin5Changed();
             }
@@ -18412,7 +18391,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklPozycjaDniaZaawansowanaChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklPozycjaDniaZaawansowana");
-                _UmowaInfoCyklPozycjaDniaZaawansowana = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklPozycjaDniaZaawansowana = StructuralObject.SetValidValue(value, "UmowaInfoCyklPozycjaDniaZaawansowana");
                 ReportPropertyChanged("UmowaInfoCyklPozycjaDniaZaawansowana");
                 OnUmowaInfoCyklPozycjaDniaZaawansowanaChanged();
             }
@@ -18436,7 +18415,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBuforOpisuAnalitycznegoChanging(value);
                 ReportPropertyChanging("BuforOpisuAnalitycznego");
-                _BuforOpisuAnalitycznego = StructuralObject.SetValidValue(value);
+                _BuforOpisuAnalitycznego = StructuralObject.SetValidValue(value, "BuforOpisuAnalitycznego");
                 ReportPropertyChanged("BuforOpisuAnalitycznego");
                 OnBuforOpisuAnalitycznegoChanged();
             }
@@ -18460,7 +18439,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFiltrZasobowChanging(value);
                 ReportPropertyChanging("FiltrZasobow");
-                _FiltrZasobow = StructuralObject.SetValidValue(value, true);
+                _FiltrZasobow = StructuralObject.SetValidValue(value, true, "FiltrZasobow");
                 ReportPropertyChanged("FiltrZasobow");
                 OnFiltrZasobowChanged();
             }
@@ -18484,7 +18463,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklKrotnoscChanging(value);
                 ReportPropertyChanging("DostawaCyklKrotnosc");
-                _DostawaCyklKrotnosc = StructuralObject.SetValidValue(value);
+                _DostawaCyklKrotnosc = StructuralObject.SetValidValue(value, "DostawaCyklKrotnosc");
                 ReportPropertyChanged("DostawaCyklKrotnosc");
                 OnDostawaCyklKrotnoscChanged();
             }
@@ -18508,7 +18487,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklInterwalChanging(value);
                 ReportPropertyChanging("DostawaCyklInterwal");
-                _DostawaCyklInterwal = StructuralObject.SetValidValue(value);
+                _DostawaCyklInterwal = StructuralObject.SetValidValue(value, "DostawaCyklInterwal");
                 ReportPropertyChanged("DostawaCyklInterwal");
                 OnDostawaCyklInterwalChanged();
             }
@@ -18532,7 +18511,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklTypChanging(value);
                 ReportPropertyChanging("DostawaCyklTyp");
-                _DostawaCyklTyp = StructuralObject.SetValidValue(value);
+                _DostawaCyklTyp = StructuralObject.SetValidValue(value, "DostawaCyklTyp");
                 ReportPropertyChanged("DostawaCyklTyp");
                 OnDostawaCyklTypChanged();
             }
@@ -18556,7 +18535,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklCzasChanging(value);
                 ReportPropertyChanging("DostawaCyklCzas");
-                _DostawaCyklCzas = StructuralObject.SetValidValue(value);
+                _DostawaCyklCzas = StructuralObject.SetValidValue(value, "DostawaCyklCzas");
                 ReportPropertyChanged("DostawaCyklCzas");
                 OnDostawaCyklCzasChanged();
             }
@@ -18580,7 +18559,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklPozycjaDniaChanging(value);
                 ReportPropertyChanging("DostawaCyklPozycjaDnia");
-                _DostawaCyklPozycjaDnia = StructuralObject.SetValidValue(value);
+                _DostawaCyklPozycjaDnia = StructuralObject.SetValidValue(value, "DostawaCyklPozycjaDnia");
                 ReportPropertyChanged("DostawaCyklPozycjaDnia");
                 OnDostawaCyklPozycjaDniaChanged();
             }
@@ -18604,7 +18583,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklRodzajTerminuChanging(value);
                 ReportPropertyChanging("DostawaCyklRodzajTerminu");
-                _DostawaCyklRodzajTerminu = StructuralObject.SetValidValue(value);
+                _DostawaCyklRodzajTerminu = StructuralObject.SetValidValue(value, "DostawaCyklRodzajTerminu");
                 ReportPropertyChanged("DostawaCyklRodzajTerminu");
                 OnDostawaCyklRodzajTerminuChanged();
             }
@@ -18628,7 +18607,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklSposobNaDniWolneChanging(value);
                 ReportPropertyChanging("DostawaCyklSposobNaDniWolne");
-                _DostawaCyklSposobNaDniWolne = StructuralObject.SetValidValue(value);
+                _DostawaCyklSposobNaDniWolne = StructuralObject.SetValidValue(value, "DostawaCyklSposobNaDniWolne");
                 ReportPropertyChanged("DostawaCyklSposobNaDniWolne");
                 OnDostawaCyklSposobNaDniWolneChanged();
             }
@@ -18652,7 +18631,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklOkresCykluChanging(value);
                 ReportPropertyChanging("DostawaCyklOkresCyklu");
-                _DostawaCyklOkresCyklu = StructuralObject.SetValidValue(value);
+                _DostawaCyklOkresCyklu = StructuralObject.SetValidValue(value, "DostawaCyklOkresCyklu");
                 ReportPropertyChanged("DostawaCyklOkresCyklu");
                 OnDostawaCyklOkresCykluChanged();
             }
@@ -18676,7 +18655,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklTerminChanging(value);
                 ReportPropertyChanging("DostawaCyklTermin");
-                _DostawaCyklTermin = StructuralObject.SetValidValue(value);
+                _DostawaCyklTermin = StructuralObject.SetValidValue(value, "DostawaCyklTermin");
                 ReportPropertyChanged("DostawaCyklTermin");
                 OnDostawaCyklTerminChanged();
             }
@@ -18700,7 +18679,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklTermin2Changing(value);
                 ReportPropertyChanging("DostawaCyklTermin2");
-                _DostawaCyklTermin2 = StructuralObject.SetValidValue(value);
+                _DostawaCyklTermin2 = StructuralObject.SetValidValue(value, "DostawaCyklTermin2");
                 ReportPropertyChanged("DostawaCyklTermin2");
                 OnDostawaCyklTermin2Changed();
             }
@@ -18724,7 +18703,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklTermin3Changing(value);
                 ReportPropertyChanging("DostawaCyklTermin3");
-                _DostawaCyklTermin3 = StructuralObject.SetValidValue(value);
+                _DostawaCyklTermin3 = StructuralObject.SetValidValue(value, "DostawaCyklTermin3");
                 ReportPropertyChanged("DostawaCyklTermin3");
                 OnDostawaCyklTermin3Changed();
             }
@@ -18748,7 +18727,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklTermin4Changing(value);
                 ReportPropertyChanging("DostawaCyklTermin4");
-                _DostawaCyklTermin4 = StructuralObject.SetValidValue(value);
+                _DostawaCyklTermin4 = StructuralObject.SetValidValue(value, "DostawaCyklTermin4");
                 ReportPropertyChanged("DostawaCyklTermin4");
                 OnDostawaCyklTermin4Changed();
             }
@@ -18772,7 +18751,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklTermin5Changing(value);
                 ReportPropertyChanging("DostawaCyklTermin5");
-                _DostawaCyklTermin5 = StructuralObject.SetValidValue(value);
+                _DostawaCyklTermin5 = StructuralObject.SetValidValue(value, "DostawaCyklTermin5");
                 ReportPropertyChanged("DostawaCyklTermin5");
                 OnDostawaCyklTermin5Changed();
             }
@@ -18796,7 +18775,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaCyklPozycjaDniaZaawansowanaChanging(value);
                 ReportPropertyChanging("DostawaCyklPozycjaDniaZaawansowana");
-                _DostawaCyklPozycjaDniaZaawansowana = StructuralObject.SetValidValue(value);
+                _DostawaCyklPozycjaDniaZaawansowana = StructuralObject.SetValidValue(value, "DostawaCyklPozycjaDniaZaawansowana");
                 ReportPropertyChanged("DostawaCyklPozycjaDniaZaawansowana");
                 OnDostawaCyklPozycjaDniaZaawansowanaChanged();
             }
@@ -18820,7 +18799,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKrajPodatkuVatChanging(value);
                 ReportPropertyChanging("KrajPodatkuVat");
-                _KrajPodatkuVat = StructuralObject.SetValidValue(value);
+                _KrajPodatkuVat = StructuralObject.SetValidValue(value, "KrajPodatkuVat");
                 ReportPropertyChanged("KrajPodatkuVat");
                 OnKrajPodatkuVatChanged();
             }
@@ -18844,7 +18823,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkresFromChanging(value);
                 ReportPropertyChanging("OkresFrom");
-                _OkresFrom = StructuralObject.SetValidValue(value);
+                _OkresFrom = StructuralObject.SetValidValue(value, "OkresFrom");
                 ReportPropertyChanged("OkresFrom");
                 OnOkresFromChanged();
             }
@@ -18868,7 +18847,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkresToChanging(value);
                 ReportPropertyChanging("OkresTo");
-                _OkresTo = StructuralObject.SetValidValue(value);
+                _OkresTo = StructuralObject.SetValidValue(value, "OkresTo");
                 ReportPropertyChanged("OkresTo");
                 OnOkresToChanged();
             }
@@ -18892,7 +18871,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodzialKosztuDodatkowegoChanging(value);
                 ReportPropertyChanging("PodzialKosztuDodatkowego");
-                _PodzialKosztuDodatkowego = StructuralObject.SetValidValue(value);
+                _PodzialKosztuDodatkowego = StructuralObject.SetValidValue(value, "PodzialKosztuDodatkowego");
                 ReportPropertyChanged("PodzialKosztuDodatkowego");
                 OnPodzialKosztuDodatkowegoChanged();
             }
@@ -18916,7 +18895,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRealizacjaStanChanging(value);
                 ReportPropertyChanging("RealizacjaStan");
-                _RealizacjaStan = StructuralObject.SetValidValue(value);
+                _RealizacjaStan = StructuralObject.SetValidValue(value, "RealizacjaStan");
                 ReportPropertyChanged("RealizacjaStan");
                 OnRealizacjaStanChanged();
             }
@@ -18940,7 +18919,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRealizacjaWynikChanging(value);
                 ReportPropertyChanging("RealizacjaWynik");
-                _RealizacjaWynik = StructuralObject.SetValidValue(value);
+                _RealizacjaWynik = StructuralObject.SetValidValue(value, "RealizacjaWynik");
                 ReportPropertyChanged("RealizacjaWynik");
                 OnRealizacjaWynikChanged();
             }
@@ -18964,7 +18943,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEDokumentInfoPodpisanyChanging(value);
                 ReportPropertyChanging("EDokumentInfoPodpisany");
-                _EDokumentInfoPodpisany = StructuralObject.SetValidValue(value);
+                _EDokumentInfoPodpisany = StructuralObject.SetValidValue(value, "EDokumentInfoPodpisany");
                 ReportPropertyChanged("EDokumentInfoPodpisany");
                 OnEDokumentInfoPodpisanyChanged();
             }
@@ -18988,7 +18967,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEDokumentInfoStatusChanging(value);
                 ReportPropertyChanging("EDokumentInfoStatus");
-                _EDokumentInfoStatus = StructuralObject.SetValidValue(value);
+                _EDokumentInfoStatus = StructuralObject.SetValidValue(value, "EDokumentInfoStatus");
                 ReportPropertyChanged("EDokumentInfoStatus");
                 OnEDokumentInfoStatusChanged();
             }
@@ -19012,7 +18991,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEDokumentInfoRodzajChanging(value);
                 ReportPropertyChanging("EDokumentInfoRodzaj");
-                _EDokumentInfoRodzaj = StructuralObject.SetValidValue(value);
+                _EDokumentInfoRodzaj = StructuralObject.SetValidValue(value, "EDokumentInfoRodzaj");
                 ReportPropertyChanged("EDokumentInfoRodzaj");
                 OnEDokumentInfoRodzajChanged();
             }
@@ -19036,7 +19015,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEDokumentInfoStatusDataChanging(value);
                 ReportPropertyChanging("EDokumentInfoStatusData");
-                _EDokumentInfoStatusData = StructuralObject.SetValidValue(value);
+                _EDokumentInfoStatusData = StructuralObject.SetValidValue(value, "EDokumentInfoStatusData");
                 ReportPropertyChanged("EDokumentInfoStatusData");
                 OnEDokumentInfoStatusDataChanged();
             }
@@ -19060,7 +19039,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEDokumentInfoArchiwumChanging(value);
                 ReportPropertyChanging("EDokumentInfoArchiwum");
-                _EDokumentInfoArchiwum = StructuralObject.SetValidValue(value);
+                _EDokumentInfoArchiwum = StructuralObject.SetValidValue(value, "EDokumentInfoArchiwum");
                 ReportPropertyChanged("EDokumentInfoArchiwum");
                 OnEDokumentInfoArchiwumChanged();
             }
@@ -19071,7 +19050,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -19661,7 +19639,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -19680,7 +19658,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -19705,7 +19683,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -19729,7 +19707,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBuforChanging(value);
                 ReportPropertyChanging("Bufor");
-                _Bufor = StructuralObject.SetValidValue(value);
+                _Bufor = StructuralObject.SetValidValue(value, "Bufor");
                 ReportPropertyChanged("Bufor");
                 OnBuforChanged();
             }
@@ -19753,7 +19731,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKierunekChanging(value);
                 ReportPropertyChanging("Kierunek");
-                _Kierunek = StructuralObject.SetValidValue(value);
+                _Kierunek = StructuralObject.SetValidValue(value, "Kierunek");
                 ReportPropertyChanged("Kierunek");
                 OnKierunekChanged();
             }
@@ -19777,7 +19755,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSeriaChanging(value);
                 ReportPropertyChanging("Seria");
-                _Seria = StructuralObject.SetValidValue(value, true);
+                _Seria = StructuralObject.SetValidValue(value, true, "Seria");
                 ReportPropertyChanged("Seria");
                 OnSeriaChanged();
             }
@@ -19801,7 +19779,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerSymbolChanging(value);
                 ReportPropertyChanging("NumerSymbol");
-                _NumerSymbol = StructuralObject.SetValidValue(value, true);
+                _NumerSymbol = StructuralObject.SetValidValue(value, true, "NumerSymbol");
                 ReportPropertyChanged("NumerSymbol");
                 OnNumerSymbolChanged();
             }
@@ -19825,7 +19803,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerNumerChanging(value);
                 ReportPropertyChanging("NumerNumer");
-                _NumerNumer = StructuralObject.SetValidValue(value);
+                _NumerNumer = StructuralObject.SetValidValue(value, "NumerNumer");
                 ReportPropertyChanged("NumerNumer");
                 OnNumerNumerChanged();
             }
@@ -19849,7 +19827,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerPelnyChanging(value);
                 ReportPropertyChanging("NumerPelny");
-                _NumerPelny = StructuralObject.SetValidValue(value, true);
+                _NumerPelny = StructuralObject.SetValidValue(value, true, "NumerPelny");
                 ReportPropertyChanged("NumerPelny");
                 OnNumerPelnyChanged();
             }
@@ -19873,7 +19851,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataChanging(value);
                 ReportPropertyChanging("Data");
-                _Data = StructuralObject.SetValidValue(value);
+                _Data = StructuralObject.SetValidValue(value, "Data");
                 ReportPropertyChanged("Data");
                 OnDataChanged();
             }
@@ -19897,7 +19875,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -19908,7 +19886,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -20064,7 +20041,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -20081,7 +20058,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBuforChanging(value);
                 ReportPropertyChanging("Bufor");
-                _Bufor = StructuralObject.SetValidValue(value);
+                _Bufor = StructuralObject.SetValidValue(value, "Bufor");
                 ReportPropertyChanged("Bufor");
                 OnBuforChanged();
             }
@@ -20105,7 +20082,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataChanging(value);
                 ReportPropertyChanging("Data");
-                _Data = StructuralObject.SetValidValue(value);
+                _Data = StructuralObject.SetValidValue(value, "Data");
                 ReportPropertyChanged("Data");
                 OnDataChanged();
             }
@@ -20129,7 +20106,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataKursuChanging(value);
                 ReportPropertyChanging("DataKursu");
-                _DataKursu = StructuralObject.SetValidValue(value);
+                _DataKursu = StructuralObject.SetValidValue(value, "DataKursu");
                 ReportPropertyChanged("DataKursu");
                 OnDataKursuChanged();
             }
@@ -20153,7 +20130,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -20179,7 +20156,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -20204,7 +20181,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInternalDescChanging(value);
                 ReportPropertyChanging("InternalDesc");
-                _InternalDesc = StructuralObject.SetValidValue(value, true);
+                _InternalDesc = StructuralObject.SetValidValue(value, true, "InternalDesc");
                 ReportPropertyChanged("InternalDesc");
                 OnInternalDescChanged();
             }
@@ -20228,7 +20205,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwota1SymbolChanging(value);
                 ReportPropertyChanging("Kwota1Symbol");
-                _Kwota1Symbol = StructuralObject.SetValidValue(value, true);
+                _Kwota1Symbol = StructuralObject.SetValidValue(value, true, "Kwota1Symbol");
                 ReportPropertyChanged("Kwota1Symbol");
                 OnKwota1SymbolChanged();
             }
@@ -20252,7 +20229,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwota1ValueChanging(value);
                 ReportPropertyChanging("Kwota1Value");
-                _Kwota1Value = StructuralObject.SetValidValue(value);
+                _Kwota1Value = StructuralObject.SetValidValue(value, "Kwota1Value");
                 ReportPropertyChanged("Kwota1Value");
                 OnKwota1ValueChanged();
             }
@@ -20276,7 +20253,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwota2SymbolChanging(value);
                 ReportPropertyChanging("Kwota2Symbol");
-                _Kwota2Symbol = StructuralObject.SetValidValue(value, true);
+                _Kwota2Symbol = StructuralObject.SetValidValue(value, true, "Kwota2Symbol");
                 ReportPropertyChanged("Kwota2Symbol");
                 OnKwota2SymbolChanged();
             }
@@ -20300,7 +20277,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwota2ValueChanging(value);
                 ReportPropertyChanging("Kwota2Value");
-                _Kwota2Value = StructuralObject.SetValidValue(value);
+                _Kwota2Value = StructuralObject.SetValidValue(value, "Kwota2Value");
                 ReportPropertyChanged("Kwota2Value");
                 OnKwota2ValueChanged();
             }
@@ -20324,7 +20301,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwota3SymbolChanging(value);
                 ReportPropertyChanging("Kwota3Symbol");
-                _Kwota3Symbol = StructuralObject.SetValidValue(value, true);
+                _Kwota3Symbol = StructuralObject.SetValidValue(value, true, "Kwota3Symbol");
                 ReportPropertyChanged("Kwota3Symbol");
                 OnKwota3SymbolChanged();
             }
@@ -20348,7 +20325,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwota3ValueChanging(value);
                 ReportPropertyChanging("Kwota3Value");
-                _Kwota3Value = StructuralObject.SetValidValue(value);
+                _Kwota3Value = StructuralObject.SetValidValue(value, "Kwota3Value");
                 ReportPropertyChanged("Kwota3Value");
                 OnKwota3ValueChanged();
             }
@@ -20372,7 +20349,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwota4SymbolChanging(value);
                 ReportPropertyChanging("Kwota4Symbol");
-                _Kwota4Symbol = StructuralObject.SetValidValue(value, true);
+                _Kwota4Symbol = StructuralObject.SetValidValue(value, true, "Kwota4Symbol");
                 ReportPropertyChanged("Kwota4Symbol");
                 OnKwota4SymbolChanged();
             }
@@ -20396,7 +20373,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwota4ValueChanging(value);
                 ReportPropertyChanging("Kwota4Value");
-                _Kwota4Value = StructuralObject.SetValidValue(value);
+                _Kwota4Value = StructuralObject.SetValidValue(value, "Kwota4Value");
                 ReportPropertyChanged("Kwota4Value");
                 OnKwota4ValueChanged();
             }
@@ -20420,7 +20397,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwota5SymbolChanging(value);
                 ReportPropertyChanging("Kwota5Symbol");
-                _Kwota5Symbol = StructuralObject.SetValidValue(value, true);
+                _Kwota5Symbol = StructuralObject.SetValidValue(value, true, "Kwota5Symbol");
                 ReportPropertyChanged("Kwota5Symbol");
                 OnKwota5SymbolChanged();
             }
@@ -20444,7 +20421,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwota5ValueChanging(value);
                 ReportPropertyChanging("Kwota5Value");
-                _Kwota5Value = StructuralObject.SetValidValue(value);
+                _Kwota5Value = StructuralObject.SetValidValue(value, "Kwota5Value");
                 ReportPropertyChanged("Kwota5Value");
                 OnKwota5ValueChanged();
             }
@@ -20468,7 +20445,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNadrzednyChanging(value);
                 ReportPropertyChanging("Nadrzedny");
-                _Nadrzedny = StructuralObject.SetValidValue(value);
+                _Nadrzedny = StructuralObject.SetValidValue(value, "Nadrzedny");
                 ReportPropertyChanged("Nadrzedny");
                 OnNadrzednyChanged();
             }
@@ -20492,7 +20469,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerDrukuChanging(value);
                 ReportPropertyChanging("NumerDruku");
-                _NumerDruku = StructuralObject.SetValidValue(value, true);
+                _NumerDruku = StructuralObject.SetValidValue(value, true, "NumerDruku");
                 ReportPropertyChanged("NumerDruku");
                 OnNumerDrukuChanged();
             }
@@ -20516,7 +20493,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerNumerChanging(value);
                 ReportPropertyChanging("NumerNumer");
-                _NumerNumer = StructuralObject.SetValidValue(value);
+                _NumerNumer = StructuralObject.SetValidValue(value, "NumerNumer");
                 ReportPropertyChanged("NumerNumer");
                 OnNumerNumerChanged();
             }
@@ -20540,7 +20517,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerPelnyChanging(value);
                 ReportPropertyChanging("NumerPelny");
-                _NumerPelny = StructuralObject.SetValidValue(value, true);
+                _NumerPelny = StructuralObject.SetValidValue(value, true, "NumerPelny");
                 ReportPropertyChanged("NumerPelny");
                 OnNumerPelnyChanged();
             }
@@ -20564,7 +20541,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerProceduryISOChanging(value);
                 ReportPropertyChanging("NumerProceduryISO");
-                _NumerProceduryISO = StructuralObject.SetValidValue(value, true);
+                _NumerProceduryISO = StructuralObject.SetValidValue(value, true, "NumerProceduryISO");
                 ReportPropertyChanged("NumerProceduryISO");
                 OnNumerProceduryISOChanged();
             }
@@ -20588,7 +20565,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerSymbolChanging(value);
                 ReportPropertyChanging("NumerSymbol");
-                _NumerSymbol = StructuralObject.SetValidValue(value, true);
+                _NumerSymbol = StructuralObject.SetValidValue(value, true, "NumerSymbol");
                 ReportPropertyChanged("NumerSymbol");
                 OnNumerSymbolChanged();
             }
@@ -20612,7 +20589,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOddzialChanging(value);
                 ReportPropertyChanging("Oddzial");
-                _Oddzial = StructuralObject.SetValidValue(value);
+                _Oddzial = StructuralObject.SetValidValue(value, "Oddzial");
                 ReportPropertyChanged("Oddzial");
                 OnOddzialChanged();
             }
@@ -20636,7 +20613,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisChanging(value);
                 ReportPropertyChanging("Opis");
-                _Opis = StructuralObject.SetValidValue(value, true);
+                _Opis = StructuralObject.SetValidValue(value, true, "Opis");
                 ReportPropertyChanged("Opis");
                 OnOpisChanged();
             }
@@ -20660,7 +20637,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotChanging(value);
                 ReportPropertyChanging("Podmiot");
-                _Podmiot = StructuralObject.SetValidValue(value);
+                _Podmiot = StructuralObject.SetValidValue(value, "Podmiot");
                 ReportPropertyChanged("Podmiot");
                 OnPodmiotChanged();
             }
@@ -20684,7 +20661,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotTypeChanging(value);
                 ReportPropertyChanging("PodmiotType");
-                _PodmiotType = StructuralObject.SetValidValue(value, false);
+                _PodmiotType = StructuralObject.SetValidValue(value, false, "PodmiotType");
                 ReportPropertyChanged("PodmiotType");
                 OnPodmiotTypeChanged();
             }
@@ -20708,7 +20685,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozszerzenieChanging(value);
                 ReportPropertyChanging("Rozszerzenie");
-                _Rozszerzenie = StructuralObject.SetValidValue(value, true);
+                _Rozszerzenie = StructuralObject.SetValidValue(value, true, "Rozszerzenie");
                 ReportPropertyChanged("Rozszerzenie");
                 OnRozszerzenieChanged();
             }
@@ -20732,7 +20709,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSeriaChanging(value);
                 ReportPropertyChanging("Seria");
-                _Seria = StructuralObject.SetValidValue(value, true);
+                _Seria = StructuralObject.SetValidValue(value, true, "Seria");
                 ReportPropertyChanged("Seria");
                 OnSeriaChanged();
             }
@@ -20756,7 +20733,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -20780,7 +20757,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanChanging(value);
                 ReportPropertyChanging("Stan");
-                _Stan = StructuralObject.SetValidValue(value);
+                _Stan = StructuralObject.SetValidValue(value, "Stan");
                 ReportPropertyChanged("Stan");
                 OnStanChanged();
             }
@@ -20804,7 +20781,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTabelaKursowaChanging(value);
                 ReportPropertyChanging("TabelaKursowa");
-                _TabelaKursowa = StructuralObject.SetValidValue(value);
+                _TabelaKursowa = StructuralObject.SetValidValue(value, "TabelaKursowa");
                 ReportPropertyChanged("TabelaKursowa");
                 OnTabelaKursowaChanged();
             }
@@ -20828,7 +20805,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -20852,7 +20829,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWielowalutowyChanging(value);
                 ReportPropertyChanging("Wielowalutowy");
-                _Wielowalutowy = StructuralObject.SetValidValue(value);
+                _Wielowalutowy = StructuralObject.SetValidValue(value, "Wielowalutowy");
                 ReportPropertyChanged("Wielowalutowy");
                 OnWielowalutowyChanged();
             }
@@ -20876,7 +20853,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInternalInt1Changing(value);
                 ReportPropertyChanging("InternalInt1");
-                _InternalInt1 = StructuralObject.SetValidValue(value);
+                _InternalInt1 = StructuralObject.SetValidValue(value, "InternalInt1");
                 ReportPropertyChanged("InternalInt1");
                 OnInternalInt1Changed();
             }
@@ -20887,7 +20864,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -21003,7 +20979,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -21022,7 +20998,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -21047,7 +21023,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLpChanging(value);
                 ReportPropertyChanging("Lp");
-                _Lp = StructuralObject.SetValidValue(value);
+                _Lp = StructuralObject.SetValidValue(value, "Lp");
                 ReportPropertyChanged("Lp");
                 OnLpChanged();
             }
@@ -21071,7 +21047,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -21095,7 +21071,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscValueChanging(value);
                 ReportPropertyChanging("IloscValue");
-                _IloscValue = StructuralObject.SetValidValue(value);
+                _IloscValue = StructuralObject.SetValidValue(value, "IloscValue");
                 ReportPropertyChanged("IloscValue");
                 OnIloscValueChanged();
             }
@@ -21119,7 +21095,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscSymbolChanging(value);
                 ReportPropertyChanging("IloscSymbol");
-                _IloscSymbol = StructuralObject.SetValidValue(value, false);
+                _IloscSymbol = StructuralObject.SetValidValue(value, false, "IloscSymbol");
                 ReportPropertyChanged("IloscSymbol");
                 OnIloscSymbolChanged();
             }
@@ -21143,7 +21119,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscValueChanging(value);
                 ReportPropertyChanging("WartoscValue");
-                _WartoscValue = StructuralObject.SetValidValue(value);
+                _WartoscValue = StructuralObject.SetValidValue(value, "WartoscValue");
                 ReportPropertyChanged("WartoscValue");
                 OnWartoscValueChanged();
             }
@@ -21167,7 +21143,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscSymbolChanging(value);
                 ReportPropertyChanging("WartoscSymbol");
-                _WartoscSymbol = StructuralObject.SetValidValue(value, true);
+                _WartoscSymbol = StructuralObject.SetValidValue(value, true, "WartoscSymbol");
                 ReportPropertyChanged("WartoscSymbol");
                 OnWartoscSymbolChanged();
             }
@@ -21191,7 +21167,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscWCZakupuValueChanging(value);
                 ReportPropertyChanging("WartoscWCZakupuValue");
-                _WartoscWCZakupuValue = StructuralObject.SetValidValue(value);
+                _WartoscWCZakupuValue = StructuralObject.SetValidValue(value, "WartoscWCZakupuValue");
                 ReportPropertyChanged("WartoscWCZakupuValue");
                 OnWartoscWCZakupuValueChanged();
             }
@@ -21215,7 +21191,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscWCZakupuSymbolChanging(value);
                 ReportPropertyChanging("WartoscWCZakupuSymbol");
-                _WartoscWCZakupuSymbol = StructuralObject.SetValidValue(value, true);
+                _WartoscWCZakupuSymbol = StructuralObject.SetValidValue(value, true, "WartoscWCZakupuSymbol");
                 ReportPropertyChanged("WartoscWCZakupuSymbol");
                 OnWartoscWCZakupuSymbolChanged();
             }
@@ -21239,7 +21215,7 @@ namespace Enova.Business.Old.DB
             {
                 OnProporcjaWartosciChanging(value);
                 ReportPropertyChanging("ProporcjaWartosci");
-                _ProporcjaWartosci = StructuralObject.SetValidValue(value);
+                _ProporcjaWartosci = StructuralObject.SetValidValue(value, "ProporcjaWartosci");
                 ReportPropertyChanged("ProporcjaWartosci");
                 OnProporcjaWartosciChanged();
             }
@@ -21263,7 +21239,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -21274,7 +21250,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -21422,7 +21397,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -21441,7 +21416,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -21466,7 +21441,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRoleGuidChanging(value);
                 ReportPropertyChanging("RoleGuid");
-                _RoleGuid = StructuralObject.SetValidValue(value);
+                _RoleGuid = StructuralObject.SetValidValue(value, "RoleGuid");
                 ReportPropertyChanged("RoleGuid");
                 OnRoleGuidChanged();
             }
@@ -21490,7 +21465,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -21501,7 +21476,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -21575,7 +21549,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -21594,7 +21568,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -21619,7 +21593,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -21643,7 +21617,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParentChanging(value);
                 ReportPropertyChanging("Parent");
-                _Parent = StructuralObject.SetValidValue(value);
+                _Parent = StructuralObject.SetValidValue(value, "Parent");
                 ReportPropertyChanged("Parent");
                 OnParentChanged();
             }
@@ -21667,7 +21641,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
+                _Name = StructuralObject.SetValidValue(value, false, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -21691,7 +21665,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFullNameChanging(value);
                 ReportPropertyChanging("FullName");
-                _FullName = StructuralObject.SetValidValue(value, true);
+                _FullName = StructuralObject.SetValidValue(value, true, "FullName");
                 ReportPropertyChanged("FullName");
                 OnFullNameChanged();
             }
@@ -21715,7 +21689,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCurrentOddzialChanging(value);
                 ReportPropertyChanging("CurrentOddzial");
-                _CurrentOddzial = StructuralObject.SetValidValue(value);
+                _CurrentOddzial = StructuralObject.SetValidValue(value, "CurrentOddzial");
                 ReportPropertyChanged("CurrentOddzial");
                 OnCurrentOddzialChanged();
             }
@@ -21739,7 +21713,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCurrentOddzialTypeChanging(value);
                 ReportPropertyChanging("CurrentOddzialType");
-                _CurrentOddzialType = StructuralObject.SetValidValue(value, true);
+                _CurrentOddzialType = StructuralObject.SetValidValue(value, true, "CurrentOddzialType");
                 ReportPropertyChanged("CurrentOddzialType");
                 OnCurrentOddzialTypeChanged();
             }
@@ -21763,7 +21737,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -21774,7 +21748,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -21882,7 +21855,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -21899,7 +21872,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAutoChanging(value);
                 ReportPropertyChanging("Auto");
-                _Auto = StructuralObject.SetValidValue(value);
+                _Auto = StructuralObject.SetValidValue(value, "Auto");
                 ReportPropertyChanged("Auto");
                 OnAutoChanged();
             }
@@ -21923,7 +21896,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAutomatyczneRozliczanieChanging(value);
                 ReportPropertyChanging("AutomatyczneRozliczanie");
-                _AutomatyczneRozliczanie = StructuralObject.SetValidValue(value);
+                _AutomatyczneRozliczanie = StructuralObject.SetValidValue(value, "AutomatyczneRozliczanie");
                 ReportPropertyChanged("AutomatyczneRozliczanie");
                 OnAutomatyczneRozliczanieChanged();
             }
@@ -21947,7 +21920,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAutoRozliczanieWgPrzelewowChanging(value);
                 ReportPropertyChanging("AutoRozliczanieWgPrzelewow");
-                _AutoRozliczanieWgPrzelewow = StructuralObject.SetValidValue(value);
+                _AutoRozliczanieWgPrzelewow = StructuralObject.SetValidValue(value, "AutoRozliczanieWgPrzelewow");
                 ReportPropertyChanged("AutoRozliczanieWgPrzelewow");
                 OnAutoRozliczanieWgPrzelewowChanged();
             }
@@ -21971,7 +21944,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaChanging(value);
                 ReportPropertyChanging("Blokada");
-                _Blokada = StructuralObject.SetValidValue(value);
+                _Blokada = StructuralObject.SetValidValue(value, "Blokada");
                 ReportPropertyChanged("Blokada");
                 OnBlokadaChanged();
             }
@@ -21995,7 +21968,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCodeChanging(value);
                 ReportPropertyChanging("Code");
-                _Code = StructuralObject.SetValidValue(value, true);
+                _Code = StructuralObject.SetValidValue(value, true, "Code");
                 ReportPropertyChanged("Code");
                 OnCodeChanged();
             }
@@ -22019,7 +21992,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDomyslnyChanging(value);
                 ReportPropertyChanging("Domyslny");
-                _Domyslny = StructuralObject.SetValidValue(value);
+                _Domyslny = StructuralObject.SetValidValue(value, "Domyslny");
                 ReportPropertyChanged("Domyslny");
                 OnDomyslnyChanged();
             }
@@ -22043,7 +22016,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEksportPrzelewowChanging(value);
                 ReportPropertyChanging("EksportPrzelewow");
-                _EksportPrzelewow = StructuralObject.SetValidValue(value);
+                _EksportPrzelewow = StructuralObject.SetValidValue(value, "EksportPrzelewow");
                 ReportPropertyChanged("EksportPrzelewow");
                 OnEksportPrzelewowChanged();
             }
@@ -22067,7 +22040,7 @@ namespace Enova.Business.Old.DB
             {
                 OnElixirKierunekChanging(value);
                 ReportPropertyChanging("ElixirKierunek");
-                _ElixirKierunek = StructuralObject.SetValidValue(value, true);
+                _ElixirKierunek = StructuralObject.SetValidValue(value, true, "ElixirKierunek");
                 ReportPropertyChanged("ElixirKierunek");
                 OnElixirKierunekChanged();
             }
@@ -22091,7 +22064,7 @@ namespace Enova.Business.Old.DB
             {
                 OnElixirNumerChanging(value);
                 ReportPropertyChanging("ElixirNumer");
-                _ElixirNumer = StructuralObject.SetValidValue(value, true);
+                _ElixirNumer = StructuralObject.SetValidValue(value, true, "ElixirNumer");
                 ReportPropertyChanged("ElixirNumer");
                 OnElixirNumerChanged();
             }
@@ -22115,7 +22088,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFiltrImportuChanging(value);
                 ReportPropertyChanging("FiltrImportu");
-                _FiltrImportu = StructuralObject.SetValidValue(value, true);
+                _FiltrImportu = StructuralObject.SetValidValue(value, true, "FiltrImportu");
                 ReportPropertyChanged("FiltrImportu");
                 OnFiltrImportuChanged();
             }
@@ -22139,7 +22112,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -22165,7 +22138,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -22190,7 +22163,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKartaNazwaChanging(value);
                 ReportPropertyChanging("KartaNazwa");
-                _KartaNazwa = StructuralObject.SetValidValue(value, true);
+                _KartaNazwa = StructuralObject.SetValidValue(value, true, "KartaNazwa");
                 ReportPropertyChanged("KartaNazwa");
                 OnKartaNazwaChanged();
             }
@@ -22214,7 +22187,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKartaNumerChanging(value);
                 ReportPropertyChanging("KartaNumer");
-                _KartaNumer = StructuralObject.SetValidValue(value, true);
+                _KartaNumer = StructuralObject.SetValidValue(value, true, "KartaNumer");
                 ReportPropertyChanged("KartaNumer");
                 OnKartaNumerChanged();
             }
@@ -22238,7 +22211,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKartaWaznaDoMonthChanging(value);
                 ReportPropertyChanging("KartaWaznaDoMonth");
-                _KartaWaznaDoMonth = StructuralObject.SetValidValue(value);
+                _KartaWaznaDoMonth = StructuralObject.SetValidValue(value, "KartaWaznaDoMonth");
                 ReportPropertyChanged("KartaWaznaDoMonth");
                 OnKartaWaznaDoMonthChanged();
             }
@@ -22262,7 +22235,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKartaWaznaDoYearChanging(value);
                 ReportPropertyChanging("KartaWaznaDoYear");
-                _KartaWaznaDoYear = StructuralObject.SetValidValue(value);
+                _KartaWaznaDoYear = StructuralObject.SetValidValue(value, "KartaWaznaDoYear");
                 ReportPropertyChanged("KartaWaznaDoYear");
                 OnKartaWaznaDoYearChanged();
             }
@@ -22286,7 +22259,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMagazynWalutChanging(value);
                 ReportPropertyChanging("MagazynWalut");
-                _MagazynWalut = StructuralObject.SetValidValue(value);
+                _MagazynWalut = StructuralObject.SetValidValue(value, "MagazynWalut");
                 ReportPropertyChanged("MagazynWalut");
                 OnMagazynWalutChanged();
             }
@@ -22310,7 +22283,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -22334,7 +22307,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOddzialChanging(value);
                 ReportPropertyChanging("Oddzial");
-                _Oddzial = StructuralObject.SetValidValue(value);
+                _Oddzial = StructuralObject.SetValidValue(value, "Oddzial");
                 ReportPropertyChanged("Oddzial");
                 OnOddzialChanged();
             }
@@ -22358,7 +22331,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkresRaportowChanging(value);
                 ReportPropertyChanging("OkresRaportow");
-                _OkresRaportow = StructuralObject.SetValidValue(value);
+                _OkresRaportow = StructuralObject.SetValidValue(value, "OkresRaportow");
                 ReportPropertyChanged("OkresRaportow");
                 OnOkresRaportowChanged();
             }
@@ -22382,7 +22355,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRachunkiWirtualneChanging(value);
                 ReportPropertyChanging("RachunkiWirtualne");
-                _RachunkiWirtualne = StructuralObject.SetValidValue(value);
+                _RachunkiWirtualne = StructuralObject.SetValidValue(value, "RachunkiWirtualne");
                 ReportPropertyChanged("RachunkiWirtualne");
                 OnRachunkiWirtualneChanged();
             }
@@ -22406,7 +22379,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozliczenieWyplatMWChanging(value);
                 ReportPropertyChanging("RozliczenieWyplatMW");
-                _RozliczenieWyplatMW = StructuralObject.SetValidValue(value);
+                _RozliczenieWyplatMW = StructuralObject.SetValidValue(value, "RozliczenieWyplatMW");
                 ReportPropertyChanged("RozliczenieWyplatMW");
                 OnRozliczenieWyplatMWChanged();
             }
@@ -22430,7 +22403,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSaldoBOSymbolChanging(value);
                 ReportPropertyChanging("SaldoBOSymbol");
-                _SaldoBOSymbol = StructuralObject.SetValidValue(value, true);
+                _SaldoBOSymbol = StructuralObject.SetValidValue(value, true, "SaldoBOSymbol");
                 ReportPropertyChanged("SaldoBOSymbol");
                 OnSaldoBOSymbolChanged();
             }
@@ -22454,7 +22427,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSaldoBOValueChanging(value);
                 ReportPropertyChanging("SaldoBOValue");
-                _SaldoBOValue = StructuralObject.SetValidValue(value);
+                _SaldoBOValue = StructuralObject.SetValidValue(value, "SaldoBOValue");
                 ReportPropertyChanged("SaldoBOValue");
                 OnSaldoBOValueChanged();
             }
@@ -22478,7 +22451,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -22502,7 +22475,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSymbolChanging(value);
                 ReportPropertyChanging("Symbol");
-                _Symbol = StructuralObject.SetValidValue(value, false);
+                _Symbol = StructuralObject.SetValidValue(value, false, "Symbol");
                 ReportPropertyChanged("Symbol");
                 OnSymbolChanged();
             }
@@ -22526,7 +22499,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTabelaKursowaChanging(value);
                 ReportPropertyChanging("TabelaKursowa");
-                _TabelaKursowa = StructuralObject.SetValidValue(value);
+                _TabelaKursowa = StructuralObject.SetValidValue(value, "TabelaKursowa");
                 ReportPropertyChanged("TabelaKursowa");
                 OnTabelaKursowaChanged();
             }
@@ -22550,7 +22523,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -22574,7 +22547,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypDanychChanging(value);
                 ReportPropertyChanging("TypDanych");
-                _TypDanych = StructuralObject.SetValidValue(value);
+                _TypDanych = StructuralObject.SetValidValue(value, "TypDanych");
                 ReportPropertyChanged("TypDanych");
                 OnTypDanychChanged();
             }
@@ -22598,7 +22571,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEksportPrzelewowWalChanging(value);
                 ReportPropertyChanging("EksportPrzelewowWal");
-                _EksportPrzelewowWal = StructuralObject.SetValidValue(value);
+                _EksportPrzelewowWal = StructuralObject.SetValidValue(value, "EksportPrzelewowWal");
                 ReportPropertyChanged("EksportPrzelewowWal");
                 OnEksportPrzelewowWalChanged();
             }
@@ -22622,7 +22595,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFiltrImportuExtChanging(value);
                 ReportPropertyChanging("FiltrImportuExt");
-                _FiltrImportuExt = StructuralObject.SetValidValue(value, true);
+                _FiltrImportuExt = StructuralObject.SetValidValue(value, true, "FiltrImportuExt");
                 ReportPropertyChanged("FiltrImportuExt");
                 OnFiltrImportuExtChanged();
             }
@@ -22646,7 +22619,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAutoRozliczanieWgNumerowChanging(value);
                 ReportPropertyChanging("AutoRozliczanieWgNumerow");
-                _AutoRozliczanieWgNumerow = StructuralObject.SetValidValue(value);
+                _AutoRozliczanieWgNumerow = StructuralObject.SetValidValue(value, "AutoRozliczanieWgNumerow");
                 ReportPropertyChanged("AutoRozliczanieWgNumerow");
                 OnAutoRozliczanieWgNumerowChanged();
             }
@@ -22670,7 +22643,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAutoRozliczanieChronoChanging(value);
                 ReportPropertyChanging("AutoRozliczanieChrono");
-                _AutoRozliczanieChrono = StructuralObject.SetValidValue(value);
+                _AutoRozliczanieChrono = StructuralObject.SetValidValue(value, "AutoRozliczanieChrono");
                 ReportPropertyChanged("AutoRozliczanieChrono");
                 OnAutoRozliczanieChronoChanged();
             }
@@ -22694,7 +22667,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKasowanieOperacjiChanging(value);
                 ReportPropertyChanging("KasowanieOperacji");
-                _KasowanieOperacji = StructuralObject.SetValidValue(value);
+                _KasowanieOperacji = StructuralObject.SetValidValue(value, "KasowanieOperacji");
                 ReportPropertyChanged("KasowanieOperacji");
                 OnKasowanieOperacjiChanged();
             }
@@ -22718,7 +22691,7 @@ namespace Enova.Business.Old.DB
             {
                 OnProcesorWyciaguWlaczonyChanging(value);
                 ReportPropertyChanging("ProcesorWyciaguWlaczony");
-                _ProcesorWyciaguWlaczony = StructuralObject.SetValidValue(value);
+                _ProcesorWyciaguWlaczony = StructuralObject.SetValidValue(value, "ProcesorWyciaguWlaczony");
                 ReportPropertyChanged("ProcesorWyciaguWlaczony");
                 OnProcesorWyciaguWlaczonyChanged();
             }
@@ -22742,7 +22715,7 @@ namespace Enova.Business.Old.DB
             {
                 OnProcesorWyciaguKodChanging(value);
                 ReportPropertyChanging("ProcesorWyciaguKod");
-                _ProcesorWyciaguKod = StructuralObject.SetValidValue(value, true);
+                _ProcesorWyciaguKod = StructuralObject.SetValidValue(value, true, "ProcesorWyciaguKod");
                 ReportPropertyChanged("ProcesorWyciaguKod");
                 OnProcesorWyciaguKodChanged();
             }
@@ -22766,7 +22739,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajRaportowChanging(value);
                 ReportPropertyChanging("RodzajRaportow");
-                _RodzajRaportow = StructuralObject.SetValidValue(value);
+                _RodzajRaportow = StructuralObject.SetValidValue(value, "RodzajRaportow");
                 ReportPropertyChanged("RodzajRaportow");
                 OnRodzajRaportowChanged();
             }
@@ -22790,7 +22763,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIdentyfikacjaWgPolaPodmiotChanging(value);
                 ReportPropertyChanging("IdentyfikacjaWgPolaPodmiot");
-                _IdentyfikacjaWgPolaPodmiot = StructuralObject.SetValidValue(value);
+                _IdentyfikacjaWgPolaPodmiot = StructuralObject.SetValidValue(value, "IdentyfikacjaWgPolaPodmiot");
                 ReportPropertyChanged("IdentyfikacjaWgPolaPodmiot");
                 OnIdentyfikacjaWgPolaPodmiotChanged();
             }
@@ -22814,7 +22787,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBankOnlineChanging(value);
                 ReportPropertyChanging("BankOnline");
-                _BankOnline = StructuralObject.SetValidValue(value);
+                _BankOnline = StructuralObject.SetValidValue(value, "BankOnline");
                 ReportPropertyChanged("BankOnline");
                 OnBankOnlineChanged();
             }
@@ -22838,7 +22811,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBankOnlineConfigChanging(value);
                 ReportPropertyChanging("BankOnlineConfig");
-                _BankOnlineConfig = StructuralObject.SetValidValue(value, true);
+                _BankOnlineConfig = StructuralObject.SetValidValue(value, true, "BankOnlineConfig");
                 ReportPropertyChanged("BankOnlineConfig");
                 OnBankOnlineConfigChanged();
             }
@@ -22849,7 +22822,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -23213,7 +23185,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -23230,7 +23202,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataChanging(value);
                 ReportPropertyChanging("Data");
-                _Data = StructuralObject.SetValidValue(value, true);
+                _Data = StructuralObject.SetValidValue(value, true, "Data");
                 ReportPropertyChanged("Data");
                 OnDataChanged();
             }
@@ -23254,7 +23226,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataKeyChanging(value);
                 ReportPropertyChanging("DataKey");
-                _DataKey = StructuralObject.SetValidValue(value, true);
+                _DataKey = StructuralObject.SetValidValue(value, true, "DataKey");
                 ReportPropertyChanged("DataKey");
                 OnDataKeyChanged();
             }
@@ -23280,7 +23252,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnLpChanging(value);
                     ReportPropertyChanging("Lp");
-                    _Lp = StructuralObject.SetValidValue(value);
+                    _Lp = StructuralObject.SetValidValue(value, "Lp");
                     ReportPropertyChanged("Lp");
                     OnLpChanged();
                 }
@@ -23307,7 +23279,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnNameChanging(value);
                     ReportPropertyChanging("Name");
-                    _Name = StructuralObject.SetValidValue(value, false);
+                    _Name = StructuralObject.SetValidValue(value, false, "Name");
                     ReportPropertyChanged("Name");
                     OnNameChanged();
                 }
@@ -23334,7 +23306,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnParentChanging(value);
                     ReportPropertyChanging("Parent");
-                    _Parent = StructuralObject.SetValidValue(value);
+                    _Parent = StructuralObject.SetValidValue(value, "Parent");
                     ReportPropertyChanged("Parent");
                     OnParentChanged();
                 }
@@ -23361,7 +23333,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnParentTypeChanging(value);
                     ReportPropertyChanging("ParentType");
-                    _ParentType = StructuralObject.SetValidValue(value, false);
+                    _ParentType = StructuralObject.SetValidValue(value, false, "ParentType");
                     ReportPropertyChanged("ParentType");
                     OnParentTypeChanged();
                 }
@@ -23373,7 +23345,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -23407,7 +23378,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -23424,7 +23395,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorithmChanging(value);
                 ReportPropertyChanging("Algorithm");
-                _Algorithm = StructuralObject.SetValidValue(value);
+                _Algorithm = StructuralObject.SetValidValue(value, "Algorithm");
                 ReportPropertyChanged("Algorithm");
                 OnAlgorithmChanged();
             }
@@ -23448,7 +23419,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCategoryChanging(value);
                 ReportPropertyChanging("Category");
-                _Category = StructuralObject.SetValidValue(value, true);
+                _Category = StructuralObject.SetValidValue(value, true, "Category");
                 ReportPropertyChanged("Category");
                 OnCategoryChanged();
             }
@@ -23472,7 +23443,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCodeChanging(value);
                 ReportPropertyChanging("Code");
-                _Code = StructuralObject.SetValidValue(value, true);
+                _Code = StructuralObject.SetValidValue(value, true, "Code");
                 ReportPropertyChanged("Code");
                 OnCodeChanged();
             }
@@ -23496,7 +23467,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDescriptionChanging(value);
                 ReportPropertyChanging("Description");
-                _Description = StructuralObject.SetValidValue(value, true);
+                _Description = StructuralObject.SetValidValue(value, true, "Description");
                 ReportPropertyChanged("Description");
                 OnDescriptionChanged();
             }
@@ -23520,7 +23491,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDictionaryChanging(value);
                 ReportPropertyChanging("Dictionary");
-                _Dictionary = StructuralObject.SetValidValue(value, true);
+                _Dictionary = StructuralObject.SetValidValue(value, true, "Dictionary");
                 ReportPropertyChanged("Dictionary");
                 OnDictionaryChanged();
             }
@@ -23544,7 +23515,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGroupChanging(value);
                 ReportPropertyChanging("Group");
-                _Group = StructuralObject.SetValidValue(value);
+                _Group = StructuralObject.SetValidValue(value, "Group");
                 ReportPropertyChanged("Group");
                 OnGroupChanged();
             }
@@ -23568,7 +23539,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -23592,7 +23563,7 @@ namespace Enova.Business.Old.DB
             {
                 OnHistoryChanging(value);
                 ReportPropertyChanging("History");
-                _History = StructuralObject.SetValidValue(value);
+                _History = StructuralObject.SetValidValue(value, "History");
                 ReportPropertyChanged("History");
                 OnHistoryChanged();
             }
@@ -23618,7 +23589,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -23643,7 +23614,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInfoChanging(value);
                 ReportPropertyChanging("Info");
-                _Info = StructuralObject.SetValidValue(value, true);
+                _Info = StructuralObject.SetValidValue(value, true, "Info");
                 ReportPropertyChanged("Info");
                 OnInfoChanged();
             }
@@ -23667,7 +23638,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInitValueStrChanging(value);
                 ReportPropertyChanging("InitValueStr");
-                _InitValueStr = StructuralObject.SetValidValue(value, true);
+                _InitValueStr = StructuralObject.SetValidValue(value, true, "InitValueStr");
                 ReportPropertyChanged("InitValueStr");
                 OnInitValueStrChanged();
             }
@@ -23691,7 +23662,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
+                _Name = StructuralObject.SetValidValue(value, false, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -23715,7 +23686,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrecisionChanging(value);
                 ReportPropertyChanging("Precision");
-                _Precision = StructuralObject.SetValidValue(value);
+                _Precision = StructuralObject.SetValidValue(value, "Precision");
                 ReportPropertyChanged("Precision");
                 OnPrecisionChanged();
             }
@@ -23739,7 +23710,7 @@ namespace Enova.Business.Old.DB
             {
                 OnReadOnlyModeChanging(value);
                 ReportPropertyChanging("ReadOnlyMode");
-                _ReadOnlyMode = StructuralObject.SetValidValue(value);
+                _ReadOnlyMode = StructuralObject.SetValidValue(value, "ReadOnlyMode");
                 ReportPropertyChanged("ReadOnlyMode");
                 OnReadOnlyModeChanged();
             }
@@ -23763,7 +23734,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -23787,7 +23758,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStrictDictionaryChanging(value);
                 ReportPropertyChanging("StrictDictionary");
-                _StrictDictionary = StructuralObject.SetValidValue(value);
+                _StrictDictionary = StructuralObject.SetValidValue(value, "StrictDictionary");
                 ReportPropertyChanged("StrictDictionary");
                 OnStrictDictionaryChanged();
             }
@@ -23811,7 +23782,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTableNameChanging(value);
                 ReportPropertyChanging("TableName");
-                _TableName = StructuralObject.SetValidValue(value, false);
+                _TableName = StructuralObject.SetValidValue(value, false, "TableName");
                 ReportPropertyChanged("TableName");
                 OnTableNameChanged();
             }
@@ -23835,7 +23806,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTextLengthChanging(value);
                 ReportPropertyChanging("TextLength");
-                _TextLength = StructuralObject.SetValidValue(value);
+                _TextLength = StructuralObject.SetValidValue(value, "TextLength");
                 ReportPropertyChanged("TextLength");
                 OnTextLengthChanged();
             }
@@ -23859,7 +23830,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypeInformationChanging(value);
                 ReportPropertyChanging("TypeInformation");
-                _TypeInformation = StructuralObject.SetValidValue(value, true);
+                _TypeInformation = StructuralObject.SetValidValue(value, true, "TypeInformation");
                 ReportPropertyChanged("TypeInformation");
                 OnTypeInformationChanged();
             }
@@ -23883,7 +23854,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypeNumberChanging(value);
                 ReportPropertyChanging("TypeNumber");
-                _TypeNumber = StructuralObject.SetValidValue(value);
+                _TypeNumber = StructuralObject.SetValidValue(value, "TypeNumber");
                 ReportPropertyChanged("TypeNumber");
                 OnTypeNumberChanged();
             }
@@ -23907,7 +23878,7 @@ namespace Enova.Business.Old.DB
             {
                 OnValueFilterChanging(value);
                 ReportPropertyChanging("ValueFilter");
-                _ValueFilter = StructuralObject.SetValidValue(value, true);
+                _ValueFilter = StructuralObject.SetValidValue(value, true, "ValueFilter");
                 ReportPropertyChanged("ValueFilter");
                 OnValueFilterChanged();
             }
@@ -23931,7 +23902,7 @@ namespace Enova.Business.Old.DB
             {
                 OnValueFromChanging(value);
                 ReportPropertyChanging("ValueFrom");
-                _ValueFrom = StructuralObject.SetValidValue(value, true);
+                _ValueFrom = StructuralObject.SetValidValue(value, true, "ValueFrom");
                 ReportPropertyChanged("ValueFrom");
                 OnValueFromChanged();
             }
@@ -23955,7 +23926,7 @@ namespace Enova.Business.Old.DB
             {
                 OnValueRequiredChanging(value);
                 ReportPropertyChanging("ValueRequired");
-                _ValueRequired = StructuralObject.SetValidValue(value);
+                _ValueRequired = StructuralObject.SetValidValue(value, "ValueRequired");
                 ReportPropertyChanged("ValueRequired");
                 OnValueRequiredChanged();
             }
@@ -23979,7 +23950,7 @@ namespace Enova.Business.Old.DB
             {
                 OnValueToChanging(value);
                 ReportPropertyChanging("ValueTo");
-                _ValueTo = StructuralObject.SetValidValue(value, true);
+                _ValueTo = StructuralObject.SetValidValue(value, true, "ValueTo");
                 ReportPropertyChanged("ValueTo");
                 OnValueToChanged();
             }
@@ -23990,7 +23961,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -24488,7 +24458,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -24507,7 +24477,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -24532,7 +24502,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -24556,7 +24526,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -24580,7 +24550,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminChanging(value);
                 ReportPropertyChanging("Termin");
-                _Termin = StructuralObject.SetValidValue(value);
+                _Termin = StructuralObject.SetValidValue(value, "Termin");
                 ReportPropertyChanged("Termin");
                 OnTerminChanged();
             }
@@ -24604,7 +24574,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaChanging(value);
                 ReportPropertyChanging("Blokada");
-                _Blokada = StructuralObject.SetValidValue(value);
+                _Blokada = StructuralObject.SetValidValue(value, "Blokada");
                 ReportPropertyChanged("Blokada");
                 OnBlokadaChanged();
             }
@@ -24628,7 +24598,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -24639,7 +24609,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -24863,7 +24832,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -24882,7 +24851,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -24907,7 +24876,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFromChanging(value);
                 ReportPropertyChanging("From");
-                _From = StructuralObject.SetValidValue(value);
+                _From = StructuralObject.SetValidValue(value, "From");
                 ReportPropertyChanged("From");
                 OnFromChanged();
             }
@@ -24931,7 +24900,7 @@ namespace Enova.Business.Old.DB
             {
                 OnToChanging(value);
                 ReportPropertyChanging("To");
-                _To = StructuralObject.SetValidValue(value);
+                _To = StructuralObject.SetValidValue(value, "To");
                 ReportPropertyChanged("To");
                 OnToChanged();
             }
@@ -24955,7 +24924,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypeChanging(value);
                 ReportPropertyChanging("Type");
-                _Type = StructuralObject.SetValidValue(value);
+                _Type = StructuralObject.SetValidValue(value, "Type");
                 ReportPropertyChanged("Type");
                 OnTypeChanged();
             }
@@ -24979,7 +24948,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTagChanging(value);
                 ReportPropertyChanging("Tag");
-                _Tag = StructuralObject.SetValidValue(value);
+                _Tag = StructuralObject.SetValidValue(value, "Tag");
                 ReportPropertyChanged("Tag");
                 OnTagChanged();
             }
@@ -25003,7 +24972,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -25014,7 +24983,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -25046,7 +25014,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -25065,7 +25033,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -25090,7 +25058,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -25114,7 +25082,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodChanging(value);
                 ReportPropertyChanging("Kod");
-                _Kod = StructuralObject.SetValidValue(value, false);
+                _Kod = StructuralObject.SetValidValue(value, false, "Kod");
                 ReportPropertyChanged("Kod");
                 OnKodChanged();
             }
@@ -25138,7 +25106,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisChanging(value);
                 ReportPropertyChanging("Opis");
-                _Opis = StructuralObject.SetValidValue(value, true);
+                _Opis = StructuralObject.SetValidValue(value, true, "Opis");
                 ReportPropertyChanged("Opis");
                 OnOpisChanged();
             }
@@ -25162,7 +25130,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrecyzjaChanging(value);
                 ReportPropertyChanging("Precyzja");
-                _Precyzja = StructuralObject.SetValidValue(value);
+                _Precyzja = StructuralObject.SetValidValue(value, "Precyzja");
                 ReportPropertyChanged("Precyzja");
                 OnPrecyzjaChanged();
             }
@@ -25186,7 +25154,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -25210,7 +25178,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaChanging(value);
                 ReportPropertyChanging("Blokada");
-                _Blokada = StructuralObject.SetValidValue(value);
+                _Blokada = StructuralObject.SetValidValue(value, "Blokada");
                 ReportPropertyChanged("Blokada");
                 OnBlokadaChanged();
             }
@@ -25234,7 +25202,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUzupelniajacaChanging(value);
                 ReportPropertyChanging("Uzupelniajaca");
-                _Uzupelniajaca = StructuralObject.SetValidValue(value);
+                _Uzupelniajaca = StructuralObject.SetValidValue(value, "Uzupelniajaca");
                 ReportPropertyChanged("Uzupelniajaca");
                 OnUzupelniajacaChanged();
             }
@@ -25258,7 +25226,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -25269,7 +25237,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -25366,28 +25333,6 @@ namespace Enova.Business.Old.DB
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("EnovaModel", "Towary_JednostkaUzupelniajaca_FK", "Towar")]
-        public EntityCollection<Towar> Towary3
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Towar>("EnovaModel.Towary_JednostkaUzupelniajaca_FK", "Towar");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Towar>("EnovaModel.Towary_JednostkaUzupelniajaca_FK", "Towar", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// Dokumentacja metadanych jest niedostępna.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("EnovaModel", "ZamiennikiTowaru_JednostkaTow_FK", "ZamiennikTowaru")]
         public EntityCollection<ZamiennikTowaru> ZamiennikiTowaru
         {
@@ -25461,7 +25406,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -25480,7 +25425,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -25505,7 +25450,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZapisChanging(value);
                 ReportPropertyChanging("Zapis");
-                _Zapis = StructuralObject.SetValidValue(value);
+                _Zapis = StructuralObject.SetValidValue(value, "Zapis");
                 ReportPropertyChanged("Zapis");
                 OnZapisChanged();
             }
@@ -25529,7 +25474,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZapisTypeChanging(value);
                 ReportPropertyChanging("ZapisType");
-                _ZapisType = StructuralObject.SetValidValue(value, false);
+                _ZapisType = StructuralObject.SetValidValue(value, false, "ZapisType");
                 ReportPropertyChanged("ZapisType");
                 OnZapisTypeChanged();
             }
@@ -25553,7 +25498,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodChanging(value);
                 ReportPropertyChanging("Kod");
-                _Kod = StructuralObject.SetValidValue(value, false);
+                _Kod = StructuralObject.SetValidValue(value, false, "Kod");
                 ReportPropertyChanged("Kod");
                 OnKodChanged();
             }
@@ -25577,7 +25522,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypKoduChanging(value);
                 ReportPropertyChanging("TypKodu");
-                _TypKodu = StructuralObject.SetValidValue(value);
+                _TypKodu = StructuralObject.SetValidValue(value, "TypKodu");
                 ReportPropertyChanged("TypKodu");
                 OnTypKoduChanged();
             }
@@ -25601,7 +25546,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -25625,7 +25570,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodTypKoduChanging(value);
                 ReportPropertyChanging("PodTypKodu");
-                _PodTypKodu = StructuralObject.SetValidValue(value);
+                _PodTypKodu = StructuralObject.SetValidValue(value, "PodTypKodu");
                 ReportPropertyChanged("PodTypKodu");
                 OnPodTypKoduChanged();
             }
@@ -25649,7 +25594,7 @@ namespace Enova.Business.Old.DB
             {
                 OnObcyChanging(value);
                 ReportPropertyChanging("Obcy");
-                _Obcy = StructuralObject.SetValidValue(value);
+                _Obcy = StructuralObject.SetValidValue(value, "Obcy");
                 ReportPropertyChanged("Obcy");
                 OnObcyChanged();
             }
@@ -25660,7 +25605,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -25734,7 +25678,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -25753,7 +25697,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -25778,7 +25722,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodPocztowyChanging(value);
                 ReportPropertyChanging("KodPocztowy");
-                _KodPocztowy = StructuralObject.SetValidValue(value, false);
+                _KodPocztowy = StructuralObject.SetValidValue(value, false, "KodPocztowy");
                 ReportPropertyChanged("KodPocztowy");
                 OnKodPocztowyChanged();
             }
@@ -25802,7 +25746,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWojewodztwoChanging(value);
                 ReportPropertyChanging("Wojewodztwo");
-                _Wojewodztwo = StructuralObject.SetValidValue(value);
+                _Wojewodztwo = StructuralObject.SetValidValue(value, "Wojewodztwo");
                 ReportPropertyChanged("Wojewodztwo");
                 OnWojewodztwoChanged();
             }
@@ -25826,7 +25770,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -25837,7 +25781,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -25955,7 +25898,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -25974,7 +25917,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -25999,7 +25942,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodPocztowyChanging(value);
                 ReportPropertyChanging("KodPocztowy");
-                _KodPocztowy = StructuralObject.SetValidValue(value, false);
+                _KodPocztowy = StructuralObject.SetValidValue(value, false, "KodPocztowy");
                 ReportPropertyChanged("KodPocztowy");
                 OnKodPocztowyChanged();
             }
@@ -26023,7 +25966,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWojewodztwoChanging(value);
                 ReportPropertyChanging("Wojewodztwo");
-                _Wojewodztwo = StructuralObject.SetValidValue(value);
+                _Wojewodztwo = StructuralObject.SetValidValue(value, "Wojewodztwo");
                 ReportPropertyChanged("Wojewodztwo");
                 OnWojewodztwoChanged();
             }
@@ -26047,7 +25990,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPowiatChanging(value);
                 ReportPropertyChanging("Powiat");
-                _Powiat = StructuralObject.SetValidValue(value, false);
+                _Powiat = StructuralObject.SetValidValue(value, false, "Powiat");
                 ReportPropertyChanged("Powiat");
                 OnPowiatChanged();
             }
@@ -26071,7 +26014,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGminaChanging(value);
                 ReportPropertyChanging("Gmina");
-                _Gmina = StructuralObject.SetValidValue(value, false);
+                _Gmina = StructuralObject.SetValidValue(value, false, "Gmina");
                 ReportPropertyChanged("Gmina");
                 OnGminaChanged();
             }
@@ -26095,7 +26038,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMiejscowoscChanging(value);
                 ReportPropertyChanging("Miejscowosc");
-                _Miejscowosc = StructuralObject.SetValidValue(value, false);
+                _Miejscowosc = StructuralObject.SetValidValue(value, false, "Miejscowosc");
                 ReportPropertyChanged("Miejscowosc");
                 OnMiejscowoscChanged();
             }
@@ -26119,7 +26062,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUlicaChanging(value);
                 ReportPropertyChanging("Ulica");
-                _Ulica = StructuralObject.SetValidValue(value, true);
+                _Ulica = StructuralObject.SetValidValue(value, true, "Ulica");
                 ReportPropertyChanged("Ulica");
                 OnUlicaChanged();
             }
@@ -26143,7 +26086,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -26154,7 +26097,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -26188,7 +26130,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -26207,7 +26149,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -26232,7 +26174,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontrahentTypeChanging(value);
                 ReportPropertyChanging("KontrahentType");
-                _KontrahentType = StructuralObject.SetValidValue(value, true);
+                _KontrahentType = StructuralObject.SetValidValue(value, true, "KontrahentType");
                 ReportPropertyChanged("KontrahentType");
                 OnKontrahentTypeChanged();
             }
@@ -26256,7 +26198,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwiskoChanging(value);
                 ReportPropertyChanging("Nazwisko");
-                _Nazwisko = StructuralObject.SetValidValue(value, false);
+                _Nazwisko = StructuralObject.SetValidValue(value, false, "Nazwisko");
                 ReportPropertyChanged("Nazwisko");
                 OnNazwiskoChanged();
             }
@@ -26280,7 +26222,7 @@ namespace Enova.Business.Old.DB
             {
                 OnImieChanging(value);
                 ReportPropertyChanging("Imie");
-                _Imie = StructuralObject.SetValidValue(value, false);
+                _Imie = StructuralObject.SetValidValue(value, false, "Imie");
                 ReportPropertyChanged("Imie");
                 OnImieChanged();
             }
@@ -26304,7 +26246,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanowiskoChanging(value);
                 ReportPropertyChanging("Stanowisko");
-                _Stanowisko = StructuralObject.SetValidValue(value, true);
+                _Stanowisko = StructuralObject.SetValidValue(value, true, "Stanowisko");
                 ReportPropertyChanged("Stanowisko");
                 OnStanowiskoChanged();
             }
@@ -26328,7 +26270,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktSkrytkaPocztowaChanging(value);
                 ReportPropertyChanging("KontaktSkrytkaPocztowa");
-                _KontaktSkrytkaPocztowa = StructuralObject.SetValidValue(value, true);
+                _KontaktSkrytkaPocztowa = StructuralObject.SetValidValue(value, true, "KontaktSkrytkaPocztowa");
                 ReportPropertyChanged("KontaktSkrytkaPocztowa");
                 OnKontaktSkrytkaPocztowaChanged();
             }
@@ -26352,7 +26294,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktTelefonKomorkowyChanging(value);
                 ReportPropertyChanging("KontaktTelefonKomorkowy");
-                _KontaktTelefonKomorkowy = StructuralObject.SetValidValue(value, true);
+                _KontaktTelefonKomorkowy = StructuralObject.SetValidValue(value, true, "KontaktTelefonKomorkowy");
                 ReportPropertyChanged("KontaktTelefonKomorkowy");
                 OnKontaktTelefonKomorkowyChanged();
             }
@@ -26376,7 +26318,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktEMAILChanging(value);
                 ReportPropertyChanging("KontaktEMAIL");
-                _KontaktEMAIL = StructuralObject.SetValidValue(value, true);
+                _KontaktEMAIL = StructuralObject.SetValidValue(value, true, "KontaktEMAIL");
                 ReportPropertyChanged("KontaktEMAIL");
                 OnKontaktEMAILChanged();
             }
@@ -26400,7 +26342,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktWWWChanging(value);
                 ReportPropertyChanging("KontaktWWW");
-                _KontaktWWW = StructuralObject.SetValidValue(value, true);
+                _KontaktWWW = StructuralObject.SetValidValue(value, true, "KontaktWWW");
                 ReportPropertyChanged("KontaktWWW");
                 OnKontaktWWWChanged();
             }
@@ -26424,7 +26366,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNieaktualnyChanging(value);
                 ReportPropertyChanging("Nieaktualny");
-                _Nieaktualny = StructuralObject.SetValidValue(value);
+                _Nieaktualny = StructuralObject.SetValidValue(value, "Nieaktualny");
                 ReportPropertyChanged("Nieaktualny");
                 OnNieaktualnyChanged();
             }
@@ -26448,7 +26390,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUwagiChanging(value);
                 ReportPropertyChanging("Uwagi");
-                _Uwagi = StructuralObject.SetValidValue(value, true);
+                _Uwagi = StructuralObject.SetValidValue(value, true, "Uwagi");
                 ReportPropertyChanged("Uwagi");
                 OnUwagiChanged();
             }
@@ -26472,7 +26414,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -26496,7 +26438,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -26520,7 +26462,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontrahentIDChanging(value);
                 ReportPropertyChanging("KontrahentID");
-                _KontrahentID = StructuralObject.SetValidValue(value);
+                _KontrahentID = StructuralObject.SetValidValue(value, "KontrahentID");
                 ReportPropertyChanged("KontrahentID");
                 OnKontrahentIDChanged();
             }
@@ -26544,7 +26486,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWizytowkaChanging(value);
                 ReportPropertyChanging("Wizytowka");
-                _Wizytowka = StructuralObject.SetValidValue(value);
+                _Wizytowka = StructuralObject.SetValidValue(value, "Wizytowka");
                 ReportPropertyChanged("Wizytowka");
                 OnWizytowkaChanged();
             }
@@ -26555,7 +26497,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -26615,7 +26556,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -26632,7 +26573,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaChanging(value);
                 ReportPropertyChanging("Blokada");
-                _Blokada = StructuralObject.SetValidValue(value);
+                _Blokada = StructuralObject.SetValidValue(value, "Blokada");
                 ReportPropertyChanged("Blokada");
                 OnBlokadaChanged();
             }
@@ -26656,7 +26597,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCenaOdbiorcyChanging(value);
                 ReportPropertyChanging("CenaOdbiorcy");
-                _CenaOdbiorcy = StructuralObject.SetValidValue(value);
+                _CenaOdbiorcy = StructuralObject.SetValidValue(value, "CenaOdbiorcy");
                 ReportPropertyChanged("CenaOdbiorcy");
                 OnCenaOdbiorcyChanged();
             }
@@ -26680,7 +26621,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEuVATChanging(value);
                 ReportPropertyChanging("EuVAT");
-                _EuVAT = StructuralObject.SetValidValue(value, true);
+                _EuVAT = StructuralObject.SetValidValue(value, true, "EuVAT");
                 ReportPropertyChanged("EuVAT");
                 OnEuVATChanged();
             }
@@ -26704,7 +26645,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -26730,7 +26671,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -26755,7 +26696,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodChanging(value);
                 ReportPropertyChanging("Kod");
-                _Kod = StructuralObject.SetValidValue(value, false);
+                _Kod = StructuralObject.SetValidValue(value, false, "Kod");
                 ReportPropertyChanged("Kod");
                 OnKodChanged();
             }
@@ -26779,7 +26720,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKomunikatChanging(value);
                 ReportPropertyChanging("Komunikat");
-                _Komunikat = StructuralObject.SetValidValue(value, true);
+                _Komunikat = StructuralObject.SetValidValue(value, true, "Komunikat");
                 ReportPropertyChanged("Komunikat");
                 OnKomunikatChanged();
             }
@@ -26803,7 +26744,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktEMAILChanging(value);
                 ReportPropertyChanging("KontaktEMAIL");
-                _KontaktEMAIL = StructuralObject.SetValidValue(value, true);
+                _KontaktEMAIL = StructuralObject.SetValidValue(value, true, "KontaktEMAIL");
                 ReportPropertyChanged("KontaktEMAIL");
                 OnKontaktEMAILChanged();
             }
@@ -26827,7 +26768,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktSkrytkaPocztowaChanging(value);
                 ReportPropertyChanging("KontaktSkrytkaPocztowa");
-                _KontaktSkrytkaPocztowa = StructuralObject.SetValidValue(value, true);
+                _KontaktSkrytkaPocztowa = StructuralObject.SetValidValue(value, true, "KontaktSkrytkaPocztowa");
                 ReportPropertyChanged("KontaktSkrytkaPocztowa");
                 OnKontaktSkrytkaPocztowaChanged();
             }
@@ -26851,7 +26792,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktTelefonKomorkowyChanging(value);
                 ReportPropertyChanging("KontaktTelefonKomorkowy");
-                _KontaktTelefonKomorkowy = StructuralObject.SetValidValue(value, true);
+                _KontaktTelefonKomorkowy = StructuralObject.SetValidValue(value, true, "KontaktTelefonKomorkowy");
                 ReportPropertyChanged("KontaktTelefonKomorkowy");
                 OnKontaktTelefonKomorkowyChanged();
             }
@@ -26875,7 +26816,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktWWWChanging(value);
                 ReportPropertyChanging("KontaktWWW");
-                _KontaktWWW = StructuralObject.SetValidValue(value, true);
+                _KontaktWWW = StructuralObject.SetValidValue(value, true, "KontaktWWW");
                 ReportPropertyChanged("KontaktWWW");
                 OnKontaktWWWChanged();
             }
@@ -26899,7 +26840,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontrolaDniChanging(value);
                 ReportPropertyChanging("KontrolaDni");
-                _KontrolaDni = StructuralObject.SetValidValue(value);
+                _KontrolaDni = StructuralObject.SetValidValue(value, "KontrolaDni");
                 ReportPropertyChanged("KontrolaDni");
                 OnKontrolaDniChanged();
             }
@@ -26923,7 +26864,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontrolaKwotaSymbolChanging(value);
                 ReportPropertyChanging("KontrolaKwotaSymbol");
-                _KontrolaKwotaSymbol = StructuralObject.SetValidValue(value, true);
+                _KontrolaKwotaSymbol = StructuralObject.SetValidValue(value, true, "KontrolaKwotaSymbol");
                 ReportPropertyChanged("KontrolaKwotaSymbol");
                 OnKontrolaKwotaSymbolChanged();
             }
@@ -26947,7 +26888,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontrolaKwotaValueChanging(value);
                 ReportPropertyChanging("KontrolaKwotaValue");
-                _KontrolaKwotaValue = StructuralObject.SetValidValue(value);
+                _KontrolaKwotaValue = StructuralObject.SetValidValue(value, "KontrolaKwotaValue");
                 ReportPropertyChanged("KontrolaKwotaValue");
                 OnKontrolaKwotaValueChanged();
             }
@@ -26971,7 +26912,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLimitKredytuSymbolChanging(value);
                 ReportPropertyChanging("LimitKredytuSymbol");
-                _LimitKredytuSymbol = StructuralObject.SetValidValue(value, true);
+                _LimitKredytuSymbol = StructuralObject.SetValidValue(value, true, "LimitKredytuSymbol");
                 ReportPropertyChanged("LimitKredytuSymbol");
                 OnLimitKredytuSymbolChanged();
             }
@@ -26995,7 +26936,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLimitKredytuValueChanging(value);
                 ReportPropertyChanging("LimitKredytuValue");
-                _LimitKredytuValue = StructuralObject.SetValidValue(value);
+                _LimitKredytuValue = StructuralObject.SetValidValue(value, "LimitKredytuValue");
                 ReportPropertyChanged("LimitKredytuValue");
                 OnLimitKredytuValueChanged();
             }
@@ -27019,7 +26960,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaStrChanging(value);
                 ReportPropertyChanging("NazwaStr");
-                _NazwaStr = StructuralObject.SetValidValue(value, false);
+                _NazwaStr = StructuralObject.SetValidValue(value, false, "NazwaStr");
                 ReportPropertyChanged("NazwaStr");
                 OnNazwaStrChanged();
             }
@@ -27043,7 +26984,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNIPChanging(value);
                 ReportPropertyChanging("NIP");
-                _NIP = StructuralObject.SetValidValue(value, true);
+                _NIP = StructuralObject.SetValidValue(value, true, "NIP");
                 ReportPropertyChanged("NIP");
                 OnNIPChanged();
             }
@@ -27067,7 +27008,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOsobaAdresChanging(value);
                 ReportPropertyChanging("OsobaAdres");
-                _OsobaAdres = StructuralObject.SetValidValue(value, true);
+                _OsobaAdres = StructuralObject.SetValidValue(value, true, "OsobaAdres");
                 ReportPropertyChanged("OsobaAdres");
                 OnOsobaAdresChanged();
             }
@@ -27091,7 +27032,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOsobaOsobaChanging(value);
                 ReportPropertyChanging("OsobaOsoba");
-                _OsobaOsoba = StructuralObject.SetValidValue(value, true);
+                _OsobaOsoba = StructuralObject.SetValidValue(value, true, "OsobaOsoba");
                 ReportPropertyChanged("OsobaOsoba");
                 OnOsobaOsobaChanged();
             }
@@ -27115,7 +27056,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOsobaTelefonChanging(value);
                 ReportPropertyChanging("OsobaTelefon");
-                _OsobaTelefon = StructuralObject.SetValidValue(value, true);
+                _OsobaTelefon = StructuralObject.SetValidValue(value, true, "OsobaTelefon");
                 ReportPropertyChanged("OsobaTelefon");
                 OnOsobaTelefonChanged();
             }
@@ -27139,7 +27080,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabatChanging(value);
                 ReportPropertyChanging("Rabat");
-                _Rabat = StructuralObject.SetValidValue(value);
+                _Rabat = StructuralObject.SetValidValue(value, "Rabat");
                 ReportPropertyChanged("Rabat");
                 OnRabatChanged();
             }
@@ -27163,7 +27104,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabatTowaruChanging(value);
                 ReportPropertyChanging("RabatTowaru");
-                _RabatTowaru = StructuralObject.SetValidValue(value);
+                _RabatTowaru = StructuralObject.SetValidValue(value, "RabatTowaru");
                 ReportPropertyChanged("RabatTowaru");
                 OnRabatTowaruChanged();
             }
@@ -27187,7 +27128,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajPodmiotuChanging(value);
                 ReportPropertyChanging("RodzajPodmiotu");
-                _RodzajPodmiotu = StructuralObject.SetValidValue(value);
+                _RodzajPodmiotu = StructuralObject.SetValidValue(value, "RodzajPodmiotu");
                 ReportPropertyChanged("RodzajPodmiotu");
                 OnRodzajPodmiotuChanged();
             }
@@ -27211,7 +27152,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -27235,7 +27176,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStatusPodmiotuChanging(value);
                 ReportPropertyChanging("StatusPodmiotu");
-                _StatusPodmiotu = StructuralObject.SetValidValue(value);
+                _StatusPodmiotu = StructuralObject.SetValidValue(value, "StatusPodmiotu");
                 ReportPropertyChanged("StatusPodmiotu");
                 OnStatusPodmiotuChanged();
             }
@@ -27259,7 +27200,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminChanging(value);
                 ReportPropertyChanging("Termin");
-                _Termin = StructuralObject.SetValidValue(value);
+                _Termin = StructuralObject.SetValidValue(value, "Termin");
                 ReportPropertyChanged("Termin");
                 OnTerminChanged();
             }
@@ -27283,7 +27224,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUwagiChanging(value);
                 ReportPropertyChanging("Uwagi");
-                _Uwagi = StructuralObject.SetValidValue(value, true);
+                _Uwagi = StructuralObject.SetValidValue(value, true, "Uwagi");
                 ReportPropertyChanged("Uwagi");
                 OnUwagiChanged();
             }
@@ -27307,7 +27248,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOddzialFirmyChanging(value);
                 ReportPropertyChanging("OddzialFirmy");
-                _OddzialFirmy = StructuralObject.SetValidValue(value);
+                _OddzialFirmy = StructuralObject.SetValidValue(value, "OddzialFirmy");
                 ReportPropertyChanged("OddzialFirmy");
                 OnOddzialFirmyChanged();
             }
@@ -27331,7 +27272,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajDokumentuKaucjiChanging(value);
                 ReportPropertyChanging("RodzajDokumentuKaucji");
-                _RodzajDokumentuKaucji = StructuralObject.SetValidValue(value);
+                _RodzajDokumentuKaucji = StructuralObject.SetValidValue(value, "RodzajDokumentuKaucji");
                 ReportPropertyChanged("RodzajDokumentuKaucji");
                 OnRodzajDokumentuKaucjiChanged();
             }
@@ -27355,7 +27296,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajPlatnosciKaucjiChanging(value);
                 ReportPropertyChanging("RodzajPlatnosciKaucji");
-                _RodzajPlatnosciKaucji = StructuralObject.SetValidValue(value);
+                _RodzajPlatnosciKaucji = StructuralObject.SetValidValue(value, "RodzajPlatnosciKaucji");
                 ReportPropertyChanged("RodzajPlatnosciKaucji");
                 OnRodzajPlatnosciKaucjiChanged();
             }
@@ -27379,7 +27320,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminPlanowanyChanging(value);
                 ReportPropertyChanging("TerminPlanowany");
-                _TerminPlanowany = StructuralObject.SetValidValue(value);
+                _TerminPlanowany = StructuralObject.SetValidValue(value, "TerminPlanowany");
                 ReportPropertyChanged("TerminPlanowany");
                 OnTerminPlanowanyChanged();
             }
@@ -27403,7 +27344,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminRozliczeniaKaucjiChanging(value);
                 ReportPropertyChanging("TerminRozliczeniaKaucji");
-                _TerminRozliczeniaKaucji = StructuralObject.SetValidValue(value);
+                _TerminRozliczeniaKaucji = StructuralObject.SetValidValue(value, "TerminRozliczeniaKaucji");
                 ReportPropertyChanged("TerminRozliczeniaKaucji");
                 OnTerminRozliczeniaKaucjiChanged();
             }
@@ -27427,7 +27368,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneIndywidualneChanging(value);
                 ReportPropertyChanging("OdsKarneIndywidualne");
-                _OdsKarneIndywidualne = StructuralObject.SetValidValue(value);
+                _OdsKarneIndywidualne = StructuralObject.SetValidValue(value, "OdsKarneIndywidualne");
                 ReportPropertyChanged("OdsKarneIndywidualne");
                 OnOdsKarneIndywidualneChanged();
             }
@@ -27451,7 +27392,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneOdsIndHistChanging(value);
                 ReportPropertyChanging("OdsKarneOdsIndHist");
-                _OdsKarneOdsIndHist = StructuralObject.SetValidValue(value, true);
+                _OdsKarneOdsIndHist = StructuralObject.SetValidValue(value, true, "OdsKarneOdsIndHist");
                 ReportPropertyChanged("OdsKarneOdsIndHist");
                 OnOdsKarneOdsIndHistChanged();
             }
@@ -27475,7 +27416,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneRozpoczecieDniChanging(value);
                 ReportPropertyChanging("OdsKarneRozpoczecieDni");
-                _OdsKarneRozpoczecieDni = StructuralObject.SetValidValue(value);
+                _OdsKarneRozpoczecieDni = StructuralObject.SetValidValue(value, "OdsKarneRozpoczecieDni");
                 ReportPropertyChanged("OdsKarneRozpoczecieDni");
                 OnOdsKarneRozpoczecieDniChanged();
             }
@@ -27499,7 +27440,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneRozpoczecieTypChanging(value);
                 ReportPropertyChanging("OdsKarneRozpoczecieTyp");
-                _OdsKarneRozpoczecieTyp = StructuralObject.SetValidValue(value);
+                _OdsKarneRozpoczecieTyp = StructuralObject.SetValidValue(value, "OdsKarneRozpoczecieTyp");
                 ReportPropertyChanged("OdsKarneRozpoczecieTyp");
                 OnOdsKarneRozpoczecieTypChanged();
             }
@@ -27523,7 +27464,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneStopaChanging(value);
                 ReportPropertyChanging("OdsKarneStopa");
-                _OdsKarneStopa = StructuralObject.SetValidValue(value);
+                _OdsKarneStopa = StructuralObject.SetValidValue(value, "OdsKarneStopa");
                 ReportPropertyChanged("OdsKarneStopa");
                 OnOdsKarneStopaChanged();
             }
@@ -27547,7 +27488,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneZwlokaChanging(value);
                 ReportPropertyChanging("OdsKarneZwloka");
-                _OdsKarneZwloka = StructuralObject.SetValidValue(value);
+                _OdsKarneZwloka = StructuralObject.SetValidValue(value, "OdsKarneZwloka");
                 ReportPropertyChanged("OdsKarneZwloka");
                 OnOdsKarneZwlokaChanged();
             }
@@ -27571,7 +27512,7 @@ namespace Enova.Business.Old.DB
             {
                 OnVATLiczonyOdChanging(value);
                 ReportPropertyChanging("VATLiczonyOd");
-                _VATLiczonyOd = StructuralObject.SetValidValue(value);
+                _VATLiczonyOd = StructuralObject.SetValidValue(value, "VATLiczonyOd");
                 ReportPropertyChanged("VATLiczonyOd");
                 OnVATLiczonyOdChanged();
             }
@@ -27595,7 +27536,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKorespondencjaNazwaFirmyChanging(value);
                 ReportPropertyChanging("KorespondencjaNazwaFirmy");
-                _KorespondencjaNazwaFirmy = StructuralObject.SetValidValue(value, true);
+                _KorespondencjaNazwaFirmy = StructuralObject.SetValidValue(value, true, "KorespondencjaNazwaFirmy");
                 ReportPropertyChanged("KorespondencjaNazwaFirmy");
                 OnKorespondencjaNazwaFirmyChanged();
             }
@@ -27619,7 +27560,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypLimituKredytowegoChanging(value);
                 ReportPropertyChanging("TypLimituKredytowego");
-                _TypLimituKredytowego = StructuralObject.SetValidValue(value);
+                _TypLimituKredytowego = StructuralObject.SetValidValue(value, "TypLimituKredytowego");
                 ReportPropertyChanged("TypLimituKredytowego");
                 OnTypLimituKredytowegoChanged();
             }
@@ -27643,7 +27584,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKorespondencjaOpisChanging(value);
                 ReportPropertyChanging("KorespondencjaOpis");
-                _KorespondencjaOpis = StructuralObject.SetValidValue(value, true);
+                _KorespondencjaOpis = StructuralObject.SetValidValue(value, true, "KorespondencjaOpis");
                 ReportPropertyChanged("KorespondencjaOpis");
                 OnKorespondencjaOpisChanged();
             }
@@ -27667,7 +27608,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajPodmiotuZakupChanging(value);
                 ReportPropertyChanging("RodzajPodmiotuZakup");
-                _RodzajPodmiotuZakup = StructuralObject.SetValidValue(value);
+                _RodzajPodmiotuZakup = StructuralObject.SetValidValue(value, "RodzajPodmiotuZakup");
                 ReportPropertyChanged("RodzajPodmiotuZakup");
                 OnRodzajPodmiotuZakupChanged();
             }
@@ -27691,7 +27632,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypPrzeterminowaniaChanging(value);
                 ReportPropertyChanging("TypPrzeterminowania");
-                _TypPrzeterminowania = StructuralObject.SetValidValue(value);
+                _TypPrzeterminowania = StructuralObject.SetValidValue(value, "TypPrzeterminowania");
                 ReportPropertyChanged("TypPrzeterminowania");
                 OnTypPrzeterminowaniaChanged();
             }
@@ -27715,7 +27656,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAktualizacjaPrzyImporcieChanging(value);
                 ReportPropertyChanging("AktualizacjaPrzyImporcie");
-                _AktualizacjaPrzyImporcie = StructuralObject.SetValidValue(value);
+                _AktualizacjaPrzyImporcie = StructuralObject.SetValidValue(value, "AktualizacjaPrzyImporcie");
                 ReportPropertyChanged("AktualizacjaPrzyImporcie");
                 OnAktualizacjaPrzyImporcieChanged();
             }
@@ -27739,7 +27680,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEFakturaChanging(value);
                 ReportPropertyChanging("EFaktura");
-                _EFaktura = StructuralObject.SetValidValue(value);
+                _EFaktura = StructuralObject.SetValidValue(value, "EFaktura");
                 ReportPropertyChanged("EFaktura");
                 OnEFakturaChanged();
             }
@@ -27763,7 +27704,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEFakturaOkresFromChanging(value);
                 ReportPropertyChanging("EFakturaOkresFrom");
-                _EFakturaOkresFrom = StructuralObject.SetValidValue(value);
+                _EFakturaOkresFrom = StructuralObject.SetValidValue(value, "EFakturaOkresFrom");
                 ReportPropertyChanged("EFakturaOkresFrom");
                 OnEFakturaOkresFromChanged();
             }
@@ -27787,7 +27728,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEFakturaOkresToChanging(value);
                 ReportPropertyChanging("EFakturaOkresTo");
-                _EFakturaOkresTo = StructuralObject.SetValidValue(value);
+                _EFakturaOkresTo = StructuralObject.SetValidValue(value, "EFakturaOkresTo");
                 ReportPropertyChanged("EFakturaOkresTo");
                 OnEFakturaOkresToChanged();
             }
@@ -27811,7 +27752,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaSprzedazyChanging(value);
                 ReportPropertyChanging("BlokadaSprzedazy");
-                _BlokadaSprzedazy = StructuralObject.SetValidValue(value);
+                _BlokadaSprzedazy = StructuralObject.SetValidValue(value, "BlokadaSprzedazy");
                 ReportPropertyChanged("BlokadaSprzedazy");
                 OnBlokadaSprzedazyChanged();
             }
@@ -27835,7 +27776,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWyjatkiDlaPOChanging(value);
                 ReportPropertyChanging("WyjatkiDlaPO");
-                _WyjatkiDlaPO = StructuralObject.SetValidValue(value);
+                _WyjatkiDlaPO = StructuralObject.SetValidValue(value, "WyjatkiDlaPO");
                 ReportPropertyChanged("WyjatkiDlaPO");
                 OnWyjatkiDlaPOChanged();
             }
@@ -27859,7 +27800,7 @@ namespace Enova.Business.Old.DB
             {
                 OnREGONChanging(value);
                 ReportPropertyChanging("REGON");
-                _REGON = StructuralObject.SetValidValue(value, true);
+                _REGON = StructuralObject.SetValidValue(value, true, "REGON");
                 ReportPropertyChanged("REGON");
                 OnREGONChanged();
             }
@@ -27883,7 +27824,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPESELChanging(value);
                 ReportPropertyChanging("PESEL");
-                _PESEL = StructuralObject.SetValidValue(value, true);
+                _PESEL = StructuralObject.SetValidValue(value, true, "PESEL");
                 ReportPropertyChanged("PESEL");
                 OnPESELChanged();
             }
@@ -27894,7 +27835,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -28180,7 +28120,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -28199,7 +28139,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -28224,7 +28164,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInstanceChanging(value);
                 ReportPropertyChanging("Instance");
-                _Instance = StructuralObject.SetValidValue(value);
+                _Instance = StructuralObject.SetValidValue(value, "Instance");
                 ReportPropertyChanged("Instance");
                 OnInstanceChanged();
             }
@@ -28248,7 +28188,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSessionIDChanging(value);
                 ReportPropertyChanging("SessionID");
-                _SessionID = StructuralObject.SetValidValue(value);
+                _SessionID = StructuralObject.SetValidValue(value, "SessionID");
                 ReportPropertyChanged("SessionID");
                 OnSessionIDChanged();
             }
@@ -28272,7 +28212,7 @@ namespace Enova.Business.Old.DB
             {
                 OnActionChanging(value);
                 ReportPropertyChanging("Action");
-                _Action = StructuralObject.SetValidValue(value);
+                _Action = StructuralObject.SetValidValue(value, "Action");
                 ReportPropertyChanged("Action");
                 OnActionChanged();
             }
@@ -28296,7 +28236,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRecordTableChanging(value);
                 ReportPropertyChanging("RecordTable");
-                _RecordTable = StructuralObject.SetValidValue(value, true);
+                _RecordTable = StructuralObject.SetValidValue(value, true, "RecordTable");
                 ReportPropertyChanged("RecordTable");
                 OnRecordTableChanged();
             }
@@ -28320,7 +28260,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRecordIDChanging(value);
                 ReportPropertyChanging("RecordID");
-                _RecordID = StructuralObject.SetValidValue(value);
+                _RecordID = StructuralObject.SetValidValue(value, "RecordID");
                 ReportPropertyChanged("RecordID");
                 OnRecordIDChanged();
             }
@@ -28344,7 +28284,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOperatorIDChanging(value);
                 ReportPropertyChanging("OperatorID");
-                _OperatorID = StructuralObject.SetValidValue(value);
+                _OperatorID = StructuralObject.SetValidValue(value, "OperatorID");
                 ReportPropertyChanged("OperatorID");
                 OnOperatorIDChanged();
             }
@@ -28368,7 +28308,7 @@ namespace Enova.Business.Old.DB
             {
                 OnModificationTimeChanging(value);
                 ReportPropertyChanging("ModificationTime");
-                _ModificationTime = StructuralObject.SetValidValue(value);
+                _ModificationTime = StructuralObject.SetValidValue(value, "ModificationTime");
                 ReportPropertyChanged("ModificationTime");
                 OnModificationTimeChanged();
             }
@@ -28392,7 +28332,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -28403,7 +28343,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -28437,7 +28376,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -28454,7 +28393,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorytmChanging(value);
                 ReportPropertyChanging("Algorytm");
-                _Algorytm = StructuralObject.SetValidValue(value);
+                _Algorytm = StructuralObject.SetValidValue(value, "Algorytm");
                 ReportPropertyChanged("Algorytm");
                 OnAlgorytmChanged();
             }
@@ -28478,7 +28417,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCechaAlgorytmuChanging(value);
                 ReportPropertyChanging("CechaAlgorytmu");
-                _CechaAlgorytmu = StructuralObject.SetValidValue(value, true);
+                _CechaAlgorytmu = StructuralObject.SetValidValue(value, true, "CechaAlgorytmu");
                 ReportPropertyChanged("CechaAlgorytmu");
                 OnCechaAlgorytmuChanged();
             }
@@ -28502,7 +28441,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFiltrTowaruChanging(value);
                 ReportPropertyChanging("FiltrTowaru");
-                _FiltrTowaru = StructuralObject.SetValidValue(value, true);
+                _FiltrTowaru = StructuralObject.SetValidValue(value, true, "FiltrTowaru");
                 ReportPropertyChanged("FiltrTowaru");
                 OnFiltrTowaruChanged();
             }
@@ -28526,7 +28465,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -28552,7 +28491,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -28577,7 +28516,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMarzaUjemnaChanging(value);
                 ReportPropertyChanging("MarzaUjemna");
-                _MarzaUjemna = StructuralObject.SetValidValue(value);
+                _MarzaUjemna = StructuralObject.SetValidValue(value, "MarzaUjemna");
                 ReportPropertyChanged("MarzaUjemna");
                 OnMarzaUjemnaChanged();
             }
@@ -28601,7 +28540,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -28625,7 +28564,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOddzialChanging(value);
                 ReportPropertyChanging("Oddzial");
-                _Oddzial = StructuralObject.SetValidValue(value);
+                _Oddzial = StructuralObject.SetValidValue(value, "Oddzial");
                 ReportPropertyChanged("Oddzial");
                 OnOddzialChanged();
             }
@@ -28649,7 +28588,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisChanging(value);
                 ReportPropertyChanging("Opis");
-                _Opis = StructuralObject.SetValidValue(value, true);
+                _Opis = StructuralObject.SetValidValue(value, true, "Opis");
                 ReportPropertyChanged("Opis");
                 OnOpisChanged();
             }
@@ -28673,7 +28612,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodlegaGeneratorZamowienChanging(value);
                 ReportPropertyChanging("PodlegaGeneratorZamowien");
-                _PodlegaGeneratorZamowien = StructuralObject.SetValidValue(value);
+                _PodlegaGeneratorZamowien = StructuralObject.SetValidValue(value, "PodlegaGeneratorZamowien");
                 ReportPropertyChanged("PodlegaGeneratorZamowien");
                 OnPodlegaGeneratorZamowienChanged();
             }
@@ -28697,7 +28636,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRezerwacjePonizejStanuChanging(value);
                 ReportPropertyChanging("RezerwacjePonizejStanu");
-                _RezerwacjePonizejStanu = StructuralObject.SetValidValue(value);
+                _RezerwacjePonizejStanu = StructuralObject.SetValidValue(value, "RezerwacjePonizejStanu");
                 ReportPropertyChanged("RezerwacjePonizejStanu");
                 OnRezerwacjePonizejStanuChanged();
             }
@@ -28721,7 +28660,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozchodyPoPrzychodachChanging(value);
                 ReportPropertyChanging("RozchodyPoPrzychodach");
-                _RozchodyPoPrzychodach = StructuralObject.SetValidValue(value);
+                _RozchodyPoPrzychodach = StructuralObject.SetValidValue(value, "RozchodyPoPrzychodach");
                 ReportPropertyChanged("RozchodyPoPrzychodach");
                 OnRozchodyPoPrzychodachChanged();
             }
@@ -28745,7 +28684,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -28769,7 +28708,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanyUjemneChanging(value);
                 ReportPropertyChanging("StanyUjemne");
-                _StanyUjemne = StructuralObject.SetValidValue(value);
+                _StanyUjemne = StructuralObject.SetValidValue(value, "StanyUjemne");
                 ReportPropertyChanged("StanyUjemne");
                 OnStanyUjemneChanged();
             }
@@ -28793,7 +28732,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSymbolChanging(value);
                 ReportPropertyChanging("Symbol");
-                _Symbol = StructuralObject.SetValidValue(value, false);
+                _Symbol = StructuralObject.SetValidValue(value, false, "Symbol");
                 ReportPropertyChanged("Symbol");
                 OnSymbolChanged();
             }
@@ -28817,7 +28756,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkresDostepnosciFromChanging(value);
                 ReportPropertyChanging("OkresDostepnosciFrom");
-                _OkresDostepnosciFrom = StructuralObject.SetValidValue(value);
+                _OkresDostepnosciFrom = StructuralObject.SetValidValue(value, "OkresDostepnosciFrom");
                 ReportPropertyChanged("OkresDostepnosciFrom");
                 OnOkresDostepnosciFromChanged();
             }
@@ -28841,7 +28780,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkresDostepnosciToChanging(value);
                 ReportPropertyChanging("OkresDostepnosciTo");
-                _OkresDostepnosciTo = StructuralObject.SetValidValue(value);
+                _OkresDostepnosciTo = StructuralObject.SetValidValue(value, "OkresDostepnosciTo");
                 ReportPropertyChanged("OkresDostepnosciTo");
                 OnOkresDostepnosciToChanged();
             }
@@ -28852,7 +28791,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -28990,7 +28928,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -29007,7 +28945,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCzasChanging(value);
                 ReportPropertyChanging("Czas");
-                _Czas = StructuralObject.SetValidValue(value);
+                _Czas = StructuralObject.SetValidValue(value, "Czas");
                 ReportPropertyChanged("Czas");
                 OnCzasChanged();
             }
@@ -29031,7 +28969,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataChanging(value);
                 ReportPropertyChanging("Data");
-                _Data = StructuralObject.SetValidValue(value);
+                _Data = StructuralObject.SetValidValue(value, "Data");
                 ReportPropertyChanged("Data");
                 OnDataChanged();
             }
@@ -29057,7 +28995,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -29082,7 +29020,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscSymbolChanging(value);
                 ReportPropertyChanging("IloscSymbol");
-                _IloscSymbol = StructuralObject.SetValidValue(value, true);
+                _IloscSymbol = StructuralObject.SetValidValue(value, true, "IloscSymbol");
                 ReportPropertyChanged("IloscSymbol");
                 OnIloscSymbolChanged();
             }
@@ -29106,7 +29044,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscValueChanging(value);
                 ReportPropertyChanging("IloscValue");
-                _IloscValue = StructuralObject.SetValidValue(value);
+                _IloscValue = StructuralObject.SetValidValue(value, "IloscValue");
                 ReportPropertyChanged("IloscValue");
                 OnIloscValueChanged();
             }
@@ -29130,7 +29068,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKorektaChanging(value);
                 ReportPropertyChanging("Korekta");
-                _Korekta = StructuralObject.SetValidValue(value);
+                _Korekta = StructuralObject.SetValidValue(value, "Korekta");
                 ReportPropertyChanged("Korekta");
                 OnKorektaChanged();
             }
@@ -29154,7 +29092,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkresChanging(value);
                 ReportPropertyChanging("Okres");
-                _Okres = StructuralObject.SetValidValue(value);
+                _Okres = StructuralObject.SetValidValue(value, "Okres");
                 ReportPropertyChanged("Okres");
                 OnOkresChanged();
             }
@@ -29178,7 +29116,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrzychodCzasChanging(value);
                 ReportPropertyChanging("PrzychodCzas");
-                _PrzychodCzas = StructuralObject.SetValidValue(value);
+                _PrzychodCzas = StructuralObject.SetValidValue(value, "PrzychodCzas");
                 ReportPropertyChanged("PrzychodCzas");
                 OnPrzychodCzasChanged();
             }
@@ -29202,7 +29140,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrzychodDataChanging(value);
                 ReportPropertyChanging("PrzychodData");
-                _PrzychodData = StructuralObject.SetValidValue(value);
+                _PrzychodData = StructuralObject.SetValidValue(value, "PrzychodData");
                 ReportPropertyChanged("PrzychodData");
                 OnPrzychodDataChanged();
             }
@@ -29226,7 +29164,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrzychodDataZasobuChanging(value);
                 ReportPropertyChanging("PrzychodDataZasobu");
-                _PrzychodDataZasobu = StructuralObject.SetValidValue(value);
+                _PrzychodDataZasobu = StructuralObject.SetValidValue(value, "PrzychodDataZasobu");
                 ReportPropertyChanged("PrzychodDataZasobu");
                 OnPrzychodDataZasobuChanged();
             }
@@ -29250,7 +29188,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrzychodPozycjaIdentChanging(value);
                 ReportPropertyChanging("PrzychodPozycjaIdent");
-                _PrzychodPozycjaIdent = StructuralObject.SetValidValue(value);
+                _PrzychodPozycjaIdent = StructuralObject.SetValidValue(value, "PrzychodPozycjaIdent");
                 ReportPropertyChanged("PrzychodPozycjaIdent");
                 OnPrzychodPozycjaIdentChanged();
             }
@@ -29274,7 +29212,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrzychodTypChanging(value);
                 ReportPropertyChanging("PrzychodTyp");
-                _PrzychodTyp = StructuralObject.SetValidValue(value);
+                _PrzychodTyp = StructuralObject.SetValidValue(value, "PrzychodTyp");
                 ReportPropertyChanged("PrzychodTyp");
                 OnPrzychodTypChanged();
             }
@@ -29298,7 +29236,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrzychodWartoscChanging(value);
                 ReportPropertyChanging("PrzychodWartosc");
-                _PrzychodWartosc = StructuralObject.SetValidValue(value);
+                _PrzychodWartosc = StructuralObject.SetValidValue(value, "PrzychodWartosc");
                 ReportPropertyChanged("PrzychodWartosc");
                 OnPrzychodWartoscChanged();
             }
@@ -29322,7 +29260,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozchodCzasChanging(value);
                 ReportPropertyChanging("RozchodCzas");
-                _RozchodCzas = StructuralObject.SetValidValue(value);
+                _RozchodCzas = StructuralObject.SetValidValue(value, "RozchodCzas");
                 ReportPropertyChanged("RozchodCzas");
                 OnRozchodCzasChanged();
             }
@@ -29346,7 +29284,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozchodDataChanging(value);
                 ReportPropertyChanging("RozchodData");
-                _RozchodData = StructuralObject.SetValidValue(value);
+                _RozchodData = StructuralObject.SetValidValue(value, "RozchodData");
                 ReportPropertyChanged("RozchodData");
                 OnRozchodDataChanged();
             }
@@ -29370,7 +29308,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozchodDataZasobuChanging(value);
                 ReportPropertyChanging("RozchodDataZasobu");
-                _RozchodDataZasobu = StructuralObject.SetValidValue(value);
+                _RozchodDataZasobu = StructuralObject.SetValidValue(value, "RozchodDataZasobu");
                 ReportPropertyChanged("RozchodDataZasobu");
                 OnRozchodDataZasobuChanged();
             }
@@ -29394,7 +29332,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozchodPozycjaIdentChanging(value);
                 ReportPropertyChanging("RozchodPozycjaIdent");
-                _RozchodPozycjaIdent = StructuralObject.SetValidValue(value);
+                _RozchodPozycjaIdent = StructuralObject.SetValidValue(value, "RozchodPozycjaIdent");
                 ReportPropertyChanged("RozchodPozycjaIdent");
                 OnRozchodPozycjaIdentChanged();
             }
@@ -29418,7 +29356,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozchodTypChanging(value);
                 ReportPropertyChanging("RozchodTyp");
-                _RozchodTyp = StructuralObject.SetValidValue(value);
+                _RozchodTyp = StructuralObject.SetValidValue(value, "RozchodTyp");
                 ReportPropertyChanged("RozchodTyp");
                 OnRozchodTypChanged();
             }
@@ -29442,7 +29380,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozchodWartoscChanging(value);
                 ReportPropertyChanging("RozchodWartosc");
-                _RozchodWartosc = StructuralObject.SetValidValue(value);
+                _RozchodWartosc = StructuralObject.SetValidValue(value, "RozchodWartosc");
                 ReportPropertyChanged("RozchodWartosc");
                 OnRozchodWartoscChanged();
             }
@@ -29466,7 +29404,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -29490,7 +29428,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStornowanyChanging(value);
                 ReportPropertyChanging("Stornowany");
-                _Stornowany = StructuralObject.SetValidValue(value);
+                _Stornowany = StructuralObject.SetValidValue(value, "Stornowany");
                 ReportPropertyChanged("Stornowany");
                 OnStornowanyChanged();
             }
@@ -29514,7 +29452,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFlagsChanging(value);
                 ReportPropertyChanging("Flags");
-                _Flags = StructuralObject.SetValidValue(value);
+                _Flags = StructuralObject.SetValidValue(value, "Flags");
                 ReportPropertyChanged("Flags");
                 OnFlagsChanged();
             }
@@ -29538,7 +29476,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrzychodPartiaTowaruChanging(value);
                 ReportPropertyChanging("PrzychodPartiaTowaru");
-                _PrzychodPartiaTowaru = StructuralObject.SetValidValue(value);
+                _PrzychodPartiaTowaru = StructuralObject.SetValidValue(value, "PrzychodPartiaTowaru");
                 ReportPropertyChanged("PrzychodPartiaTowaru");
                 OnPrzychodPartiaTowaruChanged();
             }
@@ -29562,7 +29500,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozchodPartiaTowaruChanging(value);
                 ReportPropertyChanging("RozchodPartiaTowaru");
-                _RozchodPartiaTowaru = StructuralObject.SetValidValue(value);
+                _RozchodPartiaTowaru = StructuralObject.SetValidValue(value, "RozchodPartiaTowaru");
                 ReportPropertyChanged("RozchodPartiaTowaru");
                 OnRozchodPartiaTowaruChanged();
             }
@@ -29573,7 +29511,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -29839,7 +29776,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -29856,7 +29793,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFullNameChanging(value);
                 ReportPropertyChanging("FullName");
-                _FullName = StructuralObject.SetValidValue(value, true);
+                _FullName = StructuralObject.SetValidValue(value, true, "FullName");
                 ReportPropertyChanged("FullName");
                 OnFullNameChanged();
             }
@@ -29880,7 +29817,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -29906,7 +29843,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -29931,7 +29868,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLockedChanging(value);
                 ReportPropertyChanging("Locked");
-                _Locked = StructuralObject.SetValidValue(value);
+                _Locked = StructuralObject.SetValidValue(value, "Locked");
                 ReportPropertyChanged("Locked");
                 OnLockedChanged();
             }
@@ -29955,7 +29892,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
+                _Name = StructuralObject.SetValidValue(value, false, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -29979,7 +29916,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPasswordChanging(value);
                 ReportPropertyChanging("Password");
-                _Password = StructuralObject.SetValidValue(value, false);
+                _Password = StructuralObject.SetValidValue(value, false, "Password");
                 ReportPropertyChanged("Password");
                 OnPasswordChanged();
             }
@@ -30003,7 +29940,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPromptPasswordChanging(value);
                 ReportPropertyChanging("PromptPassword");
-                _PromptPassword = StructuralObject.SetValidValue(value, true);
+                _PromptPassword = StructuralObject.SetValidValue(value, true, "PromptPassword");
                 ReportPropertyChanged("PromptPassword");
                 OnPromptPasswordChanged();
             }
@@ -30027,7 +29964,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -30051,7 +29988,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTrustedChanging(value);
                 ReportPropertyChanging("Trusted");
-                _Trusted = StructuralObject.SetValidValue(value, true);
+                _Trusted = StructuralObject.SetValidValue(value, true, "Trusted");
                 ReportPropertyChanged("Trusted");
                 OnTrustedChanged();
             }
@@ -30062,7 +29999,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -30314,7 +30250,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -30333,7 +30269,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -30358,7 +30294,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -30369,7 +30305,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -30477,7 +30412,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -30496,7 +30431,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -30521,7 +30456,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAllowConversionChanging(value);
                 ReportPropertyChanging("AllowConversion");
-                _AllowConversion = StructuralObject.SetValidValue(value);
+                _AllowConversion = StructuralObject.SetValidValue(value, "AllowConversion");
                 ReportPropertyChanged("AllowConversion");
                 OnAllowConversionChanged();
             }
@@ -30545,7 +30480,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAllowOperatorsManagmentChanging(value);
                 ReportPropertyChanging("AllowOperatorsManagment");
-                _AllowOperatorsManagment = StructuralObject.SetValidValue(value);
+                _AllowOperatorsManagment = StructuralObject.SetValidValue(value, "AllowOperatorsManagment");
                 ReportPropertyChanged("AllowOperatorsManagment");
                 OnAllowOperatorsManagmentChanged();
             }
@@ -30569,7 +30504,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -30593,7 +30528,7 @@ namespace Enova.Business.Old.DB
             {
                 OnClientLicenceNumberChanging(value);
                 ReportPropertyChanging("ClientLicenceNumber");
-                _ClientLicenceNumber = StructuralObject.SetValidValue(value, true);
+                _ClientLicenceNumber = StructuralObject.SetValidValue(value, true, "ClientLicenceNumber");
                 ReportPropertyChanged("ClientLicenceNumber");
                 OnClientLicenceNumberChanged();
             }
@@ -30617,7 +30552,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPasswordHistoryChanging(value);
                 ReportPropertyChanging("PasswordHistory");
-                _PasswordHistory = StructuralObject.SetValidValue(value, true);
+                _PasswordHistory = StructuralObject.SetValidValue(value, true, "PasswordHistory");
                 ReportPropertyChanged("PasswordHistory");
                 OnPasswordHistoryChanged();
             }
@@ -30641,7 +30576,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInvalidLoginCounterChanging(value);
                 ReportPropertyChanging("InvalidLoginCounter");
-                _InvalidLoginCounter = StructuralObject.SetValidValue(value);
+                _InvalidLoginCounter = StructuralObject.SetValidValue(value, "InvalidLoginCounter");
                 ReportPropertyChanged("InvalidLoginCounter");
                 OnInvalidLoginCounterChanged();
             }
@@ -30665,7 +30600,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRecentInvalidLoginChanging(value);
                 ReportPropertyChanging("RecentInvalidLogin");
-                _RecentInvalidLogin = StructuralObject.SetValidValue(value);
+                _RecentInvalidLogin = StructuralObject.SetValidValue(value, "RecentInvalidLogin");
                 ReportPropertyChanged("RecentInvalidLogin");
                 OnRecentInvalidLoginChanged();
             }
@@ -30689,7 +30624,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRecentPasswordChangeChanging(value);
                 ReportPropertyChanging("RecentPasswordChange");
-                _RecentPasswordChange = StructuralObject.SetValidValue(value);
+                _RecentPasswordChange = StructuralObject.SetValidValue(value, "RecentPasswordChange");
                 ReportPropertyChanged("RecentPasswordChange");
                 OnRecentPasswordChangeChanged();
             }
@@ -30713,7 +30648,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAllowDevelopmentChanging(value);
                 ReportPropertyChanging("AllowDevelopment");
-                _AllowDevelopment = StructuralObject.SetValidValue(value);
+                _AllowDevelopment = StructuralObject.SetValidValue(value, "AllowDevelopment");
                 ReportPropertyChanged("AllowDevelopment");
                 OnAllowDevelopmentChanged();
             }
@@ -30737,7 +30672,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAllowEnova365Changing(value);
                 ReportPropertyChanging("AllowEnova365");
-                _AllowEnova365 = StructuralObject.SetValidValue(value);
+                _AllowEnova365 = StructuralObject.SetValidValue(value, "AllowEnova365");
                 ReportPropertyChanged("AllowEnova365");
                 OnAllowEnova365Changed();
             }
@@ -30761,7 +30696,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAllowExternalProvidersChanging(value);
                 ReportPropertyChanging("AllowExternalProviders");
-                _AllowExternalProviders = StructuralObject.SetValidValue(value);
+                _AllowExternalProviders = StructuralObject.SetValidValue(value, "AllowExternalProviders");
                 ReportPropertyChanged("AllowExternalProviders");
                 OnAllowExternalProvidersChanged();
             }
@@ -30785,7 +30720,7 @@ namespace Enova.Business.Old.DB
             {
                 OnExternalProviderChanging(value);
                 ReportPropertyChanging("ExternalProvider");
-                _ExternalProvider = StructuralObject.SetValidValue(value, true);
+                _ExternalProvider = StructuralObject.SetValidValue(value, true, "ExternalProvider");
                 ReportPropertyChanged("ExternalProvider");
                 OnExternalProviderChanged();
             }
@@ -30809,7 +30744,7 @@ namespace Enova.Business.Old.DB
             {
                 OnExternalProviderUserIdChanging(value);
                 ReportPropertyChanging("ExternalProviderUserId");
-                _ExternalProviderUserId = StructuralObject.SetValidValue(value, true);
+                _ExternalProviderUserId = StructuralObject.SetValidValue(value, true, "ExternalProviderUserId");
                 ReportPropertyChanged("ExternalProviderUserId");
                 OnExternalProviderUserIdChanged();
             }
@@ -30833,7 +30768,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIsSupervisorChanging(value);
                 ReportPropertyChanging("IsSupervisor");
-                _IsSupervisor = StructuralObject.SetValidValue(value);
+                _IsSupervisor = StructuralObject.SetValidValue(value, "IsSupervisor");
                 ReportPropertyChanged("IsSupervisor");
                 OnIsSupervisorChanged();
             }
@@ -30844,7 +30779,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -30930,7 +30864,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -30947,7 +30881,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAutomatyczneChanging(value);
                 ReportPropertyChanging("Automatyczne");
-                _Automatyczne = StructuralObject.SetValidValue(value);
+                _Automatyczne = StructuralObject.SetValidValue(value, "Automatyczne");
                 ReportPropertyChanged("Automatyczne");
                 OnAutomatyczneChanged();
             }
@@ -30971,7 +30905,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBuforChanging(value);
                 ReportPropertyChanging("Bufor");
-                _Bufor = StructuralObject.SetValidValue(value);
+                _Bufor = StructuralObject.SetValidValue(value, "Bufor");
                 ReportPropertyChanged("Bufor");
                 OnBuforChanged();
             }
@@ -30995,7 +30929,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataDokumentuChanging(value);
                 ReportPropertyChanging("DataDokumentu");
-                _DataDokumentu = StructuralObject.SetValidValue(value);
+                _DataDokumentu = StructuralObject.SetValidValue(value, "DataDokumentu");
                 ReportPropertyChanged("DataDokumentu");
                 OnDataDokumentuChanged();
             }
@@ -31019,7 +30953,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataRozliczeniaChanging(value);
                 ReportPropertyChanging("DataRozliczenia");
-                _DataRozliczenia = StructuralObject.SetValidValue(value);
+                _DataRozliczenia = StructuralObject.SetValidValue(value, "DataRozliczenia");
                 ReportPropertyChanged("DataRozliczenia");
                 OnDataRozliczeniaChanged();
             }
@@ -31043,7 +30977,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDokumentIDChanging(value);
                 ReportPropertyChanging("DokumentID");
-                _DokumentID = StructuralObject.SetValidValue(value);
+                _DokumentID = StructuralObject.SetValidValue(value, "DokumentID");
                 ReportPropertyChanged("DokumentID");
                 OnDokumentIDChanged();
             }
@@ -31067,7 +31001,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDokumentTypeChanging(value);
                 ReportPropertyChanging("DokumentType");
-                _DokumentType = StructuralObject.SetValidValue(value, false);
+                _DokumentType = StructuralObject.SetValidValue(value, false, "DokumentType");
                 ReportPropertyChanged("DokumentType");
                 OnDokumentTypeChanged();
             }
@@ -31093,7 +31027,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -31118,7 +31052,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInfoChanging(value);
                 ReportPropertyChanging("Info");
-                _Info = StructuralObject.SetValidValue(value);
+                _Info = StructuralObject.SetValidValue(value, "Info");
                 ReportPropertyChanged("Info");
                 OnInfoChanged();
             }
@@ -31142,7 +31076,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKierunekChanging(value);
                 ReportPropertyChanging("Kierunek");
-                _Kierunek = StructuralObject.SetValidValue(value);
+                _Kierunek = StructuralObject.SetValidValue(value, "Kierunek");
                 ReportPropertyChanged("Kierunek");
                 OnKierunekChanged();
             }
@@ -31166,7 +31100,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKsiegujZbiorczoChanging(value);
                 ReportPropertyChanging("KsiegujZbiorczo");
-                _KsiegujZbiorczo = StructuralObject.SetValidValue(value);
+                _KsiegujZbiorczo = StructuralObject.SetValidValue(value, "KsiegujZbiorczo");
                 ReportPropertyChanged("KsiegujZbiorczo");
                 OnKsiegujZbiorczoChanged();
             }
@@ -31190,7 +31124,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKursChanging(value);
                 ReportPropertyChanging("Kurs");
-                _Kurs = StructuralObject.SetValidValue(value);
+                _Kurs = StructuralObject.SetValidValue(value, "Kurs");
                 ReportPropertyChanged("Kurs");
                 OnKursChanged();
             }
@@ -31214,7 +31148,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaKsiegiSymbolChanging(value);
                 ReportPropertyChanging("KwotaKsiegiSymbol");
-                _KwotaKsiegiSymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaKsiegiSymbol = StructuralObject.SetValidValue(value, true, "KwotaKsiegiSymbol");
                 ReportPropertyChanged("KwotaKsiegiSymbol");
                 OnKwotaKsiegiSymbolChanged();
             }
@@ -31238,7 +31172,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaKsiegiValueChanging(value);
                 ReportPropertyChanging("KwotaKsiegiValue");
-                _KwotaKsiegiValue = StructuralObject.SetValidValue(value);
+                _KwotaKsiegiValue = StructuralObject.SetValidValue(value, "KwotaKsiegiValue");
                 ReportPropertyChanged("KwotaKsiegiValue");
                 OnKwotaKsiegiValueChanged();
             }
@@ -31262,7 +31196,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaRozliczonaSymbolChanging(value);
                 ReportPropertyChanging("KwotaRozliczonaSymbol");
-                _KwotaRozliczonaSymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaRozliczonaSymbol = StructuralObject.SetValidValue(value, true, "KwotaRozliczonaSymbol");
                 ReportPropertyChanged("KwotaRozliczonaSymbol");
                 OnKwotaRozliczonaSymbolChanged();
             }
@@ -31286,7 +31220,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaRozliczonaValueChanging(value);
                 ReportPropertyChanging("KwotaRozliczonaValue");
-                _KwotaRozliczonaValue = StructuralObject.SetValidValue(value);
+                _KwotaRozliczonaValue = StructuralObject.SetValidValue(value, "KwotaRozliczonaValue");
                 ReportPropertyChanged("KwotaRozliczonaValue");
                 OnKwotaRozliczonaValueChanged();
             }
@@ -31310,7 +31244,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaSymbolChanging(value);
                 ReportPropertyChanging("KwotaSymbol");
-                _KwotaSymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaSymbol = StructuralObject.SetValidValue(value, true, "KwotaSymbol");
                 ReportPropertyChanged("KwotaSymbol");
                 OnKwotaSymbolChanged();
             }
@@ -31334,7 +31268,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaValueChanging(value);
                 ReportPropertyChanging("KwotaValue");
-                _KwotaValue = StructuralObject.SetValidValue(value);
+                _KwotaValue = StructuralObject.SetValidValue(value, "KwotaValue");
                 ReportPropertyChanged("KwotaValue");
                 OnKwotaValueChanged();
             }
@@ -31358,7 +31292,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerDokumentuChanging(value);
                 ReportPropertyChanging("NumerDokumentu");
-                _NumerDokumentu = StructuralObject.SetValidValue(value, false);
+                _NumerDokumentu = StructuralObject.SetValidValue(value, false, "NumerDokumentu");
                 ReportPropertyChanged("NumerDokumentu");
                 OnNumerDokumentuChanged();
             }
@@ -31382,7 +31316,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisChanging(value);
                 ReportPropertyChanging("Opis");
-                _Opis = StructuralObject.SetValidValue(value, true);
+                _Opis = StructuralObject.SetValidValue(value, true, "Opis");
                 ReportPropertyChanged("Opis");
                 OnOpisChanged();
             }
@@ -31406,7 +31340,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotChanging(value);
                 ReportPropertyChanging("Podmiot");
-                _Podmiot = StructuralObject.SetValidValue(value);
+                _Podmiot = StructuralObject.SetValidValue(value, "Podmiot");
                 ReportPropertyChanged("Podmiot");
                 OnPodmiotChanged();
             }
@@ -31430,7 +31364,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotTypeChanging(value);
                 ReportPropertyChanging("PodmiotType");
-                _PodmiotType = StructuralObject.SetValidValue(value, false);
+                _PodmiotType = StructuralObject.SetValidValue(value, false, "PodmiotType");
                 ReportPropertyChanged("PodmiotType");
                 OnPodmiotTypeChanged();
             }
@@ -31454,7 +31388,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPriorytetChanging(value);
                 ReportPropertyChanging("Priorytet");
-                _Priorytet = StructuralObject.SetValidValue(value);
+                _Priorytet = StructuralObject.SetValidValue(value, "Priorytet");
                 ReportPropertyChanged("Priorytet");
                 OnPriorytetChanged();
             }
@@ -31478,7 +31412,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRachunekChanging(value);
                 ReportPropertyChanging("Rachunek");
-                _Rachunek = StructuralObject.SetValidValue(value);
+                _Rachunek = StructuralObject.SetValidValue(value, "Rachunek");
                 ReportPropertyChanged("Rachunek");
                 OnRachunekChanged();
             }
@@ -31502,7 +31436,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRachunekWirtualnyChanging(value);
                 ReportPropertyChanging("RachunekWirtualny");
-                _RachunekWirtualny = StructuralObject.SetValidValue(value, true);
+                _RachunekWirtualny = StructuralObject.SetValidValue(value, true, "RachunekWirtualny");
                 ReportPropertyChanged("RachunekWirtualny");
                 OnRachunekWirtualnyChanged();
             }
@@ -31526,7 +31460,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozliczanaChanging(value);
                 ReportPropertyChanging("Rozliczana");
-                _Rozliczana = StructuralObject.SetValidValue(value);
+                _Rozliczana = StructuralObject.SetValidValue(value, "Rozliczana");
                 ReportPropertyChanged("Rozliczana");
                 OnRozliczanaChanged();
             }
@@ -31550,7 +31484,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -31574,7 +31508,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTabelaKursowaChanging(value);
                 ReportPropertyChanging("TabelaKursowa");
-                _TabelaKursowa = StructuralObject.SetValidValue(value);
+                _TabelaKursowa = StructuralObject.SetValidValue(value, "TabelaKursowa");
                 ReportPropertyChanged("TabelaKursowa");
                 OnTabelaKursowaChanged();
             }
@@ -31598,7 +31532,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminChanging(value);
                 ReportPropertyChanging("Termin");
-                _Termin = StructuralObject.SetValidValue(value);
+                _Termin = StructuralObject.SetValidValue(value, "Termin");
                 ReportPropertyChanged("Termin");
                 OnTerminChanged();
             }
@@ -31622,7 +31556,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypPrzelewuChanging(value);
                 ReportPropertyChanging("TypPrzelewu");
-                _TypPrzelewu = StructuralObject.SetValidValue(value);
+                _TypPrzelewu = StructuralObject.SetValidValue(value, "TypPrzelewu");
                 ReportPropertyChanged("TypPrzelewu");
                 OnTypPrzelewuChanged();
             }
@@ -31646,7 +31580,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWindykacjaDataChanging(value);
                 ReportPropertyChanging("WindykacjaData");
-                _WindykacjaData = StructuralObject.SetValidValue(value);
+                _WindykacjaData = StructuralObject.SetValidValue(value, "WindykacjaData");
                 ReportPropertyChanged("WindykacjaData");
                 OnWindykacjaDataChanged();
             }
@@ -31670,7 +31604,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWindykacjaStanChanging(value);
                 ReportPropertyChanging("WindykacjaStan");
-                _WindykacjaStan = StructuralObject.SetValidValue(value);
+                _WindykacjaStan = StructuralObject.SetValidValue(value, "WindykacjaStan");
                 ReportPropertyChanged("WindykacjaStan");
                 OnWindykacjaStanChanged();
             }
@@ -31694,7 +31628,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWindykacjaTerminChanging(value);
                 ReportPropertyChanging("WindykacjaTermin");
-                _WindykacjaTermin = StructuralObject.SetValidValue(value);
+                _WindykacjaTermin = StructuralObject.SetValidValue(value, "WindykacjaTermin");
                 ReportPropertyChanged("WindykacjaTermin");
                 OnWindykacjaTerminChanged();
             }
@@ -31718,7 +31652,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZwrotInfoChanging(value);
                 ReportPropertyChanging("ZwrotInfo");
-                _ZwrotInfo = StructuralObject.SetValidValue(value);
+                _ZwrotInfo = StructuralObject.SetValidValue(value, "ZwrotInfo");
                 ReportPropertyChanged("ZwrotInfo");
                 OnZwrotInfoChanged();
             }
@@ -31742,7 +31676,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminPlanowanyChanging(value);
                 ReportPropertyChanging("TerminPlanowany");
-                _TerminPlanowany = StructuralObject.SetValidValue(value);
+                _TerminPlanowany = StructuralObject.SetValidValue(value, "TerminPlanowany");
                 ReportPropertyChanged("TerminPlanowany");
                 OnTerminPlanowanyChanged();
             }
@@ -31766,7 +31700,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPreliminarzPozChanging(value);
                 ReportPropertyChanging("PreliminarzPoz");
-                _PreliminarzPoz = StructuralObject.SetValidValue(value);
+                _PreliminarzPoz = StructuralObject.SetValidValue(value, "PreliminarzPoz");
                 ReportPropertyChanged("PreliminarzPoz");
                 OnPreliminarzPozChanged();
             }
@@ -31790,7 +31724,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -31814,7 +31748,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminLiczonyOdChanging(value);
                 ReportPropertyChanging("TerminLiczonyOd");
-                _TerminLiczonyOd = StructuralObject.SetValidValue(value);
+                _TerminLiczonyOd = StructuralObject.SetValidValue(value, "TerminLiczonyOd");
                 ReportPropertyChanged("TerminLiczonyOd");
                 OnTerminLiczonyOdChanged();
             }
@@ -31838,7 +31772,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanNotyChanging(value);
                 ReportPropertyChanging("StanNoty");
-                _StanNoty = StructuralObject.SetValidValue(value);
+                _StanNoty = StructuralObject.SetValidValue(value, "StanNoty");
                 ReportPropertyChanged("StanNoty");
                 OnStanNotyChanged();
             }
@@ -31849,7 +31783,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -31969,7 +31902,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -31986,7 +31919,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCenaSymbolChanging(value);
                 ReportPropertyChanging("CenaSymbol");
-                _CenaSymbol = StructuralObject.SetValidValue(value, true);
+                _CenaSymbol = StructuralObject.SetValidValue(value, true, "CenaSymbol");
                 ReportPropertyChanged("CenaSymbol");
                 OnCenaSymbolChanged();
             }
@@ -32010,7 +31943,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCenaValueChanging(value);
                 ReportPropertyChanging("CenaValue");
-                _CenaValue = StructuralObject.SetValidValue(value);
+                _CenaValue = StructuralObject.SetValidValue(value, "CenaValue");
                 ReportPropertyChanged("CenaValue");
                 OnCenaValueChanged();
             }
@@ -32034,7 +31967,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCzasChanging(value);
                 ReportPropertyChanging("Czas");
-                _Czas = StructuralObject.SetValidValue(value);
+                _Czas = StructuralObject.SetValidValue(value, "Czas");
                 ReportPropertyChanged("Czas");
                 OnCzasChanged();
             }
@@ -32058,7 +31991,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataChanging(value);
                 ReportPropertyChanging("Data");
-                _Data = StructuralObject.SetValidValue(value);
+                _Data = StructuralObject.SetValidValue(value, "Data");
                 ReportPropertyChanged("Data");
                 OnDataChanged();
             }
@@ -32082,7 +32015,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataPrzecenOkresowychChanging(value);
                 ReportPropertyChanging("DataPrzecenOkresowych");
-                _DataPrzecenOkresowych = StructuralObject.SetValidValue(value);
+                _DataPrzecenOkresowych = StructuralObject.SetValidValue(value, "DataPrzecenOkresowych");
                 ReportPropertyChanged("DataPrzecenOkresowych");
                 OnDataPrzecenOkresowychChanged();
             }
@@ -32106,7 +32039,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDostawaChanging(value);
                 ReportPropertyChanging("Dostawa");
-                _Dostawa = StructuralObject.SetValidValue(value);
+                _Dostawa = StructuralObject.SetValidValue(value, "Dostawa");
                 ReportPropertyChanged("Dostawa");
                 OnDostawaChanged();
             }
@@ -32130,7 +32063,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDzienChanging(value);
                 ReportPropertyChanging("Dzien");
-                _Dzien = StructuralObject.SetValidValue(value);
+                _Dzien = StructuralObject.SetValidValue(value, "Dzien");
                 ReportPropertyChanged("Dzien");
                 OnDzienChanged();
             }
@@ -32154,7 +32087,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFlagsChanging(value);
                 ReportPropertyChanging("Flags");
-                _Flags = StructuralObject.SetValidValue(value);
+                _Flags = StructuralObject.SetValidValue(value, "Flags");
                 ReportPropertyChanged("Flags");
                 OnFlagsChanged();
             }
@@ -32180,7 +32113,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -32205,7 +32138,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIdentChanging(value);
                 ReportPropertyChanging("Ident");
-                _Ident = StructuralObject.SetValidValue(value);
+                _Ident = StructuralObject.SetValidValue(value, "Ident");
                 ReportPropertyChanged("Ident");
                 OnIdentChanged();
             }
@@ -32229,7 +32162,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscMagazynuSymbolChanging(value);
                 ReportPropertyChanging("IloscMagazynuSymbol");
-                _IloscMagazynuSymbol = StructuralObject.SetValidValue(value, true);
+                _IloscMagazynuSymbol = StructuralObject.SetValidValue(value, true, "IloscMagazynuSymbol");
                 ReportPropertyChanged("IloscMagazynuSymbol");
                 OnIloscMagazynuSymbolChanged();
             }
@@ -32253,7 +32186,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscMagazynuValueChanging(value);
                 ReportPropertyChanging("IloscMagazynuValue");
-                _IloscMagazynuValue = StructuralObject.SetValidValue(value);
+                _IloscMagazynuValue = StructuralObject.SetValidValue(value, "IloscMagazynuValue");
                 ReportPropertyChanged("IloscMagazynuValue");
                 OnIloscMagazynuValueChanged();
             }
@@ -32277,7 +32210,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscRezerwowanaSymbolChanging(value);
                 ReportPropertyChanging("IloscRezerwowanaSymbol");
-                _IloscRezerwowanaSymbol = StructuralObject.SetValidValue(value, true);
+                _IloscRezerwowanaSymbol = StructuralObject.SetValidValue(value, true, "IloscRezerwowanaSymbol");
                 ReportPropertyChanged("IloscRezerwowanaSymbol");
                 OnIloscRezerwowanaSymbolChanged();
             }
@@ -32301,7 +32234,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscRezerwowanaValueChanging(value);
                 ReportPropertyChanging("IloscRezerwowanaValue");
-                _IloscRezerwowanaValue = StructuralObject.SetValidValue(value);
+                _IloscRezerwowanaValue = StructuralObject.SetValidValue(value, "IloscRezerwowanaValue");
                 ReportPropertyChanged("IloscRezerwowanaValue");
                 OnIloscRezerwowanaValueChanged();
             }
@@ -32325,7 +32258,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscSymbolChanging(value);
                 ReportPropertyChanging("IloscSymbol");
-                _IloscSymbol = StructuralObject.SetValidValue(value, true);
+                _IloscSymbol = StructuralObject.SetValidValue(value, true, "IloscSymbol");
                 ReportPropertyChanged("IloscSymbol");
                 OnIloscSymbolChanged();
             }
@@ -32349,7 +32282,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscUzupelniajacaSymbolChanging(value);
                 ReportPropertyChanging("IloscUzupelniajacaSymbol");
-                _IloscUzupelniajacaSymbol = StructuralObject.SetValidValue(value, true);
+                _IloscUzupelniajacaSymbol = StructuralObject.SetValidValue(value, true, "IloscUzupelniajacaSymbol");
                 ReportPropertyChanged("IloscUzupelniajacaSymbol");
                 OnIloscUzupelniajacaSymbolChanged();
             }
@@ -32373,7 +32306,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscUzupelniajacaValueChanging(value);
                 ReportPropertyChanging("IloscUzupelniajacaValue");
-                _IloscUzupelniajacaValue = StructuralObject.SetValidValue(value);
+                _IloscUzupelniajacaValue = StructuralObject.SetValidValue(value, "IloscUzupelniajacaValue");
                 ReportPropertyChanged("IloscUzupelniajacaValue");
                 OnIloscUzupelniajacaValueChanged();
             }
@@ -32397,7 +32330,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscValueChanging(value);
                 ReportPropertyChanging("IloscValue");
-                _IloscValue = StructuralObject.SetValidValue(value);
+                _IloscValue = StructuralObject.SetValidValue(value, "IloscValue");
                 ReportPropertyChanged("IloscValue");
                 OnIloscValueChanged();
             }
@@ -32421,7 +32354,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscZasobuValueChanging(value);
                 ReportPropertyChanging("IloscZasobuValue");
-                _IloscZasobuValue = StructuralObject.SetValidValue(value);
+                _IloscZasobuValue = StructuralObject.SetValidValue(value, "IloscZasobuValue");
                 ReportPropertyChanged("IloscZasobuValue");
                 OnIloscZasobuValueChanged();
             }
@@ -32445,7 +32378,7 @@ namespace Enova.Business.Old.DB
             {
                 OnJestOpisChanging(value);
                 ReportPropertyChanging("JestOpis");
-                _JestOpis = StructuralObject.SetValidValue(value);
+                _JestOpis = StructuralObject.SetValidValue(value, "JestOpis");
                 ReportPropertyChanged("JestOpis");
                 OnJestOpisChanged();
             }
@@ -32469,7 +32402,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKierunekMagazynuChanging(value);
                 ReportPropertyChanging("KierunekMagazynu");
-                _KierunekMagazynu = StructuralObject.SetValidValue(value);
+                _KierunekMagazynu = StructuralObject.SetValidValue(value, "KierunekMagazynu");
                 ReportPropertyChanged("KierunekMagazynu");
                 OnKierunekMagazynuChanged();
             }
@@ -32493,7 +32426,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodCNChanging(value);
                 ReportPropertyChanging("KodCN");
-                _KodCN = StructuralObject.SetValidValue(value, true);
+                _KodCN = StructuralObject.SetValidValue(value, true, "KodCN");
                 ReportPropertyChanged("KodCN");
                 OnKodCNChanged();
             }
@@ -32517,7 +32450,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKorektaCenyChanging(value);
                 ReportPropertyChanging("KorektaCeny");
-                _KorektaCeny = StructuralObject.SetValidValue(value);
+                _KorektaCeny = StructuralObject.SetValidValue(value, "KorektaCeny");
                 ReportPropertyChanged("KorektaCeny");
                 OnKorektaCenyChanged();
             }
@@ -32541,7 +32474,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKosztDodatkowyChanging(value);
                 ReportPropertyChanging("KosztDodatkowy");
-                _KosztDodatkowy = StructuralObject.SetValidValue(value);
+                _KosztDodatkowy = StructuralObject.SetValidValue(value, "KosztDodatkowy");
                 ReportPropertyChanged("KosztDodatkowy");
                 OnKosztDodatkowyChanged();
             }
@@ -32565,7 +32498,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKosztFakturowyChanging(value);
                 ReportPropertyChanging("KosztFakturowy");
-                _KosztFakturowy = StructuralObject.SetValidValue(value);
+                _KosztFakturowy = StructuralObject.SetValidValue(value, "KosztFakturowy");
                 ReportPropertyChanged("KosztFakturowy");
                 OnKosztFakturowyChanged();
             }
@@ -32589,7 +32522,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKosztMagazynowyChanging(value);
                 ReportPropertyChanging("KosztMagazynowy");
-                _KosztMagazynowy = StructuralObject.SetValidValue(value);
+                _KosztMagazynowy = StructuralObject.SetValidValue(value, "KosztMagazynowy");
                 ReportPropertyChanged("KosztMagazynowy");
                 OnKosztMagazynowyChanged();
             }
@@ -32613,7 +32546,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKosztStatystycznyChanging(value);
                 ReportPropertyChanging("KosztStatystyczny");
-                _KosztStatystyczny = StructuralObject.SetValidValue(value);
+                _KosztStatystyczny = StructuralObject.SetValidValue(value, "KosztStatystyczny");
                 ReportPropertyChanged("KosztStatystyczny");
                 OnKosztStatystycznyChanged();
             }
@@ -32637,7 +32570,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKrajowaStawkaVATChanging(value);
                 ReportPropertyChanging("KrajowaStawkaVAT");
-                _KrajowaStawkaVAT = StructuralObject.SetValidValue(value);
+                _KrajowaStawkaVAT = StructuralObject.SetValidValue(value, "KrajowaStawkaVAT");
                 ReportPropertyChanged("KrajowaStawkaVAT");
                 OnKrajowaStawkaVATChanged();
             }
@@ -32661,7 +32594,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKrajPochodzeniaChanging(value);
                 ReportPropertyChanging("KrajPochodzenia");
-                _KrajPochodzenia = StructuralObject.SetValidValue(value, true);
+                _KrajPochodzenia = StructuralObject.SetValidValue(value, true, "KrajPochodzenia");
                 ReportPropertyChanged("KrajPochodzenia");
                 OnKrajPochodzeniaChanged();
             }
@@ -32685,7 +32618,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKrajPrzeznaczeniaChanging(value);
                 ReportPropertyChanging("KrajPrzeznaczenia");
-                _KrajPrzeznaczenia = StructuralObject.SetValidValue(value, true);
+                _KrajPrzeznaczenia = StructuralObject.SetValidValue(value, true, "KrajPrzeznaczenia");
                 ReportPropertyChanged("KrajPrzeznaczenia");
                 OnKrajPrzeznaczeniaChanged();
             }
@@ -32709,7 +32642,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKrotnoscChanging(value);
                 ReportPropertyChanging("Krotnosc");
-                _Krotnosc = StructuralObject.SetValidValue(value);
+                _Krotnosc = StructuralObject.SetValidValue(value, "Krotnosc");
                 ReportPropertyChanged("Krotnosc");
                 OnKrotnoscChanged();
             }
@@ -32733,7 +32666,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLpChanging(value);
                 ReportPropertyChanging("Lp");
-                _Lp = StructuralObject.SetValidValue(value);
+                _Lp = StructuralObject.SetValidValue(value, "Lp");
                 ReportPropertyChanged("Lp");
                 OnLpChanged();
             }
@@ -32757,7 +32690,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMasaBruttoSymbolChanging(value);
                 ReportPropertyChanging("MasaBruttoSymbol");
-                _MasaBruttoSymbol = StructuralObject.SetValidValue(value, true);
+                _MasaBruttoSymbol = StructuralObject.SetValidValue(value, true, "MasaBruttoSymbol");
                 ReportPropertyChanged("MasaBruttoSymbol");
                 OnMasaBruttoSymbolChanged();
             }
@@ -32781,7 +32714,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMasaBruttoValueChanging(value);
                 ReportPropertyChanging("MasaBruttoValue");
-                _MasaBruttoValue = StructuralObject.SetValidValue(value);
+                _MasaBruttoValue = StructuralObject.SetValidValue(value, "MasaBruttoValue");
                 ReportPropertyChanged("MasaBruttoValue");
                 OnMasaBruttoValueChanged();
             }
@@ -32805,7 +32738,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMasaNettoSymbolChanging(value);
                 ReportPropertyChanging("MasaNettoSymbol");
-                _MasaNettoSymbol = StructuralObject.SetValidValue(value, true);
+                _MasaNettoSymbol = StructuralObject.SetValidValue(value, true, "MasaNettoSymbol");
                 ReportPropertyChanged("MasaNettoSymbol");
                 OnMasaNettoSymbolChanged();
             }
@@ -32829,7 +32762,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMasaNettoValueChanging(value);
                 ReportPropertyChanging("MasaNettoValue");
-                _MasaNettoValue = StructuralObject.SetValidValue(value);
+                _MasaNettoValue = StructuralObject.SetValidValue(value, "MasaNettoValue");
                 ReportPropertyChanged("MasaNettoValue");
                 OnMasaNettoValueChanged();
             }
@@ -32853,7 +32786,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -32877,7 +32810,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerArkuszaChanging(value);
                 ReportPropertyChanging("NumerArkusza");
-                _NumerArkusza = StructuralObject.SetValidValue(value, true);
+                _NumerArkusza = StructuralObject.SetValidValue(value, true, "NumerArkusza");
                 ReportPropertyChanged("NumerArkusza");
                 OnNumerArkuszaChanged();
             }
@@ -32901,7 +32834,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerWArkuszuChanging(value);
                 ReportPropertyChanging("NumerWArkuszu");
-                _NumerWArkuszu = StructuralObject.SetValidValue(value);
+                _NumerWArkuszu = StructuralObject.SetValidValue(value, "NumerWArkuszu");
                 ReportPropertyChanged("NumerWArkuszu");
                 OnNumerWArkuszuChanged();
             }
@@ -32925,7 +32858,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkresRozliczonyFromChanging(value);
                 ReportPropertyChanging("OkresRozliczonyFrom");
-                _OkresRozliczonyFrom = StructuralObject.SetValidValue(value);
+                _OkresRozliczonyFrom = StructuralObject.SetValidValue(value, "OkresRozliczonyFrom");
                 ReportPropertyChanged("OkresRozliczonyFrom");
                 OnOkresRozliczonyFromChanged();
             }
@@ -32949,7 +32882,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkresRozliczonyToChanging(value);
                 ReportPropertyChanging("OkresRozliczonyTo");
-                _OkresRozliczonyTo = StructuralObject.SetValidValue(value);
+                _OkresRozliczonyTo = StructuralObject.SetValidValue(value, "OkresRozliczonyTo");
                 ReportPropertyChanged("OkresRozliczonyTo");
                 OnOkresRozliczonyToChanged();
             }
@@ -32973,7 +32906,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisChanging(value);
                 ReportPropertyChanging("Opis");
-                _Opis = StructuralObject.SetValidValue(value, true);
+                _Opis = StructuralObject.SetValidValue(value, true, "Opis");
                 ReportPropertyChanged("Opis");
                 OnOpisChanged();
             }
@@ -32997,7 +32930,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabatChanging(value);
                 ReportPropertyChanging("Rabat");
-                _Rabat = StructuralObject.SetValidValue(value);
+                _Rabat = StructuralObject.SetValidValue(value, "Rabat");
                 ReportPropertyChanged("Rabat");
                 OnRabatChanged();
             }
@@ -33021,7 +32954,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabatCenySymbolChanging(value);
                 ReportPropertyChanging("RabatCenySymbol");
-                _RabatCenySymbol = StructuralObject.SetValidValue(value, true);
+                _RabatCenySymbol = StructuralObject.SetValidValue(value, true, "RabatCenySymbol");
                 ReportPropertyChanged("RabatCenySymbol");
                 OnRabatCenySymbolChanged();
             }
@@ -33045,7 +32978,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabatCenyValueChanging(value);
                 ReportPropertyChanging("RabatCenyValue");
-                _RabatCenyValue = StructuralObject.SetValidValue(value);
+                _RabatCenyValue = StructuralObject.SetValidValue(value, "RabatCenyValue");
                 ReportPropertyChanged("RabatCenyValue");
                 OnRabatCenyValueChanged();
             }
@@ -33069,7 +33002,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajTransakcjiChanging(value);
                 ReportPropertyChanging("RodzajTransakcji");
-                _RodzajTransakcji = StructuralObject.SetValidValue(value);
+                _RodzajTransakcji = StructuralObject.SetValidValue(value, "RodzajTransakcji");
                 ReportPropertyChanged("RodzajTransakcji");
                 OnRodzajTransakcjiChanged();
             }
@@ -33093,7 +33026,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -33117,7 +33050,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanPoczatkowySymbolChanging(value);
                 ReportPropertyChanging("StanPoczatkowySymbol");
-                _StanPoczatkowySymbol = StructuralObject.SetValidValue(value, true);
+                _StanPoczatkowySymbol = StructuralObject.SetValidValue(value, true, "StanPoczatkowySymbol");
                 ReportPropertyChanged("StanPoczatkowySymbol");
                 OnStanPoczatkowySymbolChanged();
             }
@@ -33141,7 +33074,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanPoczatkowyValueChanging(value);
                 ReportPropertyChanging("StanPoczatkowyValue");
-                _StanPoczatkowyValue = StructuralObject.SetValidValue(value);
+                _StanPoczatkowyValue = StructuralObject.SetValidValue(value, "StanPoczatkowyValue");
                 ReportPropertyChanged("StanPoczatkowyValue");
                 OnStanPoczatkowyValueChanged();
             }
@@ -33165,7 +33098,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStatusPozycjiChanging(value);
                 ReportPropertyChanging("StatusPozycji");
-                _StatusPozycji = StructuralObject.SetValidValue(value);
+                _StatusPozycji = StructuralObject.SetValidValue(value, "StatusPozycji");
                 ReportPropertyChanged("StatusPozycji");
                 OnStatusPozycjiChanged();
             }
@@ -33189,7 +33122,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStawkaProcentChanging(value);
                 ReportPropertyChanging("StawkaProcent");
-                _StawkaProcent = StructuralObject.SetValidValue(value);
+                _StawkaProcent = StructuralObject.SetValidValue(value, "StawkaProcent");
                 ReportPropertyChanged("StawkaProcent");
                 OnStawkaProcentChanged();
             }
@@ -33213,7 +33146,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStawkaStatusChanging(value);
                 ReportPropertyChanging("StawkaStatus");
-                _StawkaStatus = StructuralObject.SetValidValue(value);
+                _StawkaStatus = StructuralObject.SetValidValue(value, "StawkaStatus");
                 ReportPropertyChanged("StawkaStatus");
                 OnStawkaStatusChanged();
             }
@@ -33237,7 +33170,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStawkaZrodlowaChanging(value);
                 ReportPropertyChanging("StawkaZrodlowa");
-                _StawkaZrodlowa = StructuralObject.SetValidValue(value);
+                _StawkaZrodlowa = StructuralObject.SetValidValue(value, "StawkaZrodlowa");
                 ReportPropertyChanged("StawkaZrodlowa");
                 OnStawkaZrodlowaChanged();
             }
@@ -33261,7 +33194,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumaBruttoChanging(value);
                 ReportPropertyChanging("SumaBrutto");
-                _SumaBrutto = StructuralObject.SetValidValue(value);
+                _SumaBrutto = StructuralObject.SetValidValue(value, "SumaBrutto");
                 ReportPropertyChanged("SumaBrutto");
                 OnSumaBruttoChanged();
             }
@@ -33285,7 +33218,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumaNettoChanging(value);
                 ReportPropertyChanging("SumaNetto");
-                _SumaNetto = StructuralObject.SetValidValue(value);
+                _SumaNetto = StructuralObject.SetValidValue(value, "SumaNetto");
                 ReportPropertyChanged("SumaNetto");
                 OnSumaNettoChanged();
             }
@@ -33309,7 +33242,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumaVATChanging(value);
                 ReportPropertyChanging("SumaVAT");
-                _SumaVAT = StructuralObject.SetValidValue(value);
+                _SumaVAT = StructuralObject.SetValidValue(value, "SumaVAT");
                 ReportPropertyChanged("SumaVAT");
                 OnSumaVATChanged();
             }
@@ -33333,7 +33266,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSWWChanging(value);
                 ReportPropertyChanging("SWW");
-                _SWW = StructuralObject.SetValidValue(value, true);
+                _SWW = StructuralObject.SetValidValue(value, true, "SWW");
                 ReportPropertyChanged("SWW");
                 OnSWWChanged();
             }
@@ -33357,7 +33290,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUrzadzenieChanging(value);
                 ReportPropertyChanging("Urzadzenie");
-                _Urzadzenie = StructuralObject.SetValidValue(value);
+                _Urzadzenie = StructuralObject.SetValidValue(value, "Urzadzenie");
                 ReportPropertyChanged("Urzadzenie");
                 OnUrzadzenieChanged();
             }
@@ -33381,7 +33314,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscCySymbolChanging(value);
                 ReportPropertyChanging("WartoscCySymbol");
-                _WartoscCySymbol = StructuralObject.SetValidValue(value, true);
+                _WartoscCySymbol = StructuralObject.SetValidValue(value, true, "WartoscCySymbol");
                 ReportPropertyChanged("WartoscCySymbol");
                 OnWartoscCySymbolChanged();
             }
@@ -33405,7 +33338,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscCyValueChanging(value);
                 ReportPropertyChanging("WartoscCyValue");
-                _WartoscCyValue = StructuralObject.SetValidValue(value);
+                _WartoscCyValue = StructuralObject.SetValidValue(value, "WartoscCyValue");
                 ReportPropertyChanged("WartoscCyValue");
                 OnWartoscCyValueChanged();
             }
@@ -33429,7 +33362,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWOkresieChanging(value);
                 ReportPropertyChanging("WOkresie");
-                _WOkresie = StructuralObject.SetValidValue(value);
+                _WOkresie = StructuralObject.SetValidValue(value, "WOkresie");
                 ReportPropertyChanged("WOkresie");
                 OnWOkresieChanged();
             }
@@ -33453,7 +33386,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWspolczynnikDenChanging(value);
                 ReportPropertyChanging("WspolczynnikDen");
-                _WspolczynnikDen = StructuralObject.SetValidValue(value);
+                _WspolczynnikDen = StructuralObject.SetValidValue(value, "WspolczynnikDen");
                 ReportPropertyChanged("WspolczynnikDen");
                 OnWspolczynnikDenChanged();
             }
@@ -33477,7 +33410,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWspolczynnikNumChanging(value);
                 ReportPropertyChanging("WspolczynnikNum");
-                _WspolczynnikNum = StructuralObject.SetValidValue(value);
+                _WspolczynnikNum = StructuralObject.SetValidValue(value, "WspolczynnikNum");
                 ReportPropertyChanged("WspolczynnikNum");
                 OnWspolczynnikNumChanged();
             }
@@ -33501,7 +33434,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGTIN13Changing(value);
                 ReportPropertyChanging("GTIN13");
-                _GTIN13 = StructuralObject.SetValidValue(value, true);
+                _GTIN13 = StructuralObject.SetValidValue(value, true, "GTIN13");
                 ReportPropertyChanged("GTIN13");
                 OnGTIN13Changed();
             }
@@ -33525,7 +33458,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSchematOpakowanChanging(value);
                 ReportPropertyChanging("SchematOpakowan");
-                _SchematOpakowan = StructuralObject.SetValidValue(value);
+                _SchematOpakowan = StructuralObject.SetValidValue(value, "SchematOpakowan");
                 ReportPropertyChanged("SchematOpakowan");
                 OnSchematOpakowanChanged();
             }
@@ -33549,7 +33482,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklCzasChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklCzas");
-                _UmowaInfoCyklCzas = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklCzas = StructuralObject.SetValidValue(value, "UmowaInfoCyklCzas");
                 ReportPropertyChanged("UmowaInfoCyklCzas");
                 OnUmowaInfoCyklCzasChanged();
             }
@@ -33573,7 +33506,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklInterwalChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklInterwal");
-                _UmowaInfoCyklInterwal = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklInterwal = StructuralObject.SetValidValue(value, "UmowaInfoCyklInterwal");
                 ReportPropertyChanged("UmowaInfoCyklInterwal");
                 OnUmowaInfoCyklInterwalChanged();
             }
@@ -33597,7 +33530,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklKrotnoscChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklKrotnosc");
-                _UmowaInfoCyklKrotnosc = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklKrotnosc = StructuralObject.SetValidValue(value, "UmowaInfoCyklKrotnosc");
                 ReportPropertyChanged("UmowaInfoCyklKrotnosc");
                 OnUmowaInfoCyklKrotnoscChanged();
             }
@@ -33621,7 +33554,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklOkresCykluChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklOkresCyklu");
-                _UmowaInfoCyklOkresCyklu = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklOkresCyklu = StructuralObject.SetValidValue(value, "UmowaInfoCyklOkresCyklu");
                 ReportPropertyChanged("UmowaInfoCyklOkresCyklu");
                 OnUmowaInfoCyklOkresCykluChanged();
             }
@@ -33645,7 +33578,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklPozycjaDniaChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklPozycjaDnia");
-                _UmowaInfoCyklPozycjaDnia = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklPozycjaDnia = StructuralObject.SetValidValue(value, "UmowaInfoCyklPozycjaDnia");
                 ReportPropertyChanged("UmowaInfoCyklPozycjaDnia");
                 OnUmowaInfoCyklPozycjaDniaChanged();
             }
@@ -33669,7 +33602,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklRodzajTerminuChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklRodzajTerminu");
-                _UmowaInfoCyklRodzajTerminu = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklRodzajTerminu = StructuralObject.SetValidValue(value, "UmowaInfoCyklRodzajTerminu");
                 ReportPropertyChanged("UmowaInfoCyklRodzajTerminu");
                 OnUmowaInfoCyklRodzajTerminuChanged();
             }
@@ -33693,7 +33626,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklSposobNaDniWolneChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklSposobNaDniWolne");
-                _UmowaInfoCyklSposobNaDniWolne = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklSposobNaDniWolne = StructuralObject.SetValidValue(value, "UmowaInfoCyklSposobNaDniWolne");
                 ReportPropertyChanged("UmowaInfoCyklSposobNaDniWolne");
                 OnUmowaInfoCyklSposobNaDniWolneChanged();
             }
@@ -33717,7 +33650,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklTerminChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklTermin");
-                _UmowaInfoCyklTermin = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklTermin = StructuralObject.SetValidValue(value, "UmowaInfoCyklTermin");
                 ReportPropertyChanged("UmowaInfoCyklTermin");
                 OnUmowaInfoCyklTerminChanged();
             }
@@ -33741,7 +33674,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklTypChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklTyp");
-                _UmowaInfoCyklTyp = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklTyp = StructuralObject.SetValidValue(value, "UmowaInfoCyklTyp");
                 ReportPropertyChanged("UmowaInfoCyklTyp");
                 OnUmowaInfoCyklTypChanged();
             }
@@ -33765,7 +33698,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoDataOkresuRozliczeniowegoChanging(value);
                 ReportPropertyChanging("UmowaInfoDataOkresuRozliczeniowego");
-                _UmowaInfoDataOkresuRozliczeniowego = StructuralObject.SetValidValue(value);
+                _UmowaInfoDataOkresuRozliczeniowego = StructuralObject.SetValidValue(value, "UmowaInfoDataOkresuRozliczeniowego");
                 ReportPropertyChanged("UmowaInfoDataOkresuRozliczeniowego");
                 OnUmowaInfoDataOkresuRozliczeniowegoChanged();
             }
@@ -33789,7 +33722,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoWgZuzyciaChanging(value);
                 ReportPropertyChanging("UmowaInfoWgZuzycia");
-                _UmowaInfoWgZuzycia = StructuralObject.SetValidValue(value);
+                _UmowaInfoWgZuzycia = StructuralObject.SetValidValue(value, "UmowaInfoWgZuzycia");
                 ReportPropertyChanged("UmowaInfoWgZuzycia");
                 OnUmowaInfoWgZuzyciaChanged();
             }
@@ -33813,7 +33746,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDefinicjaPowstaniaObowiazkuVATChanging(value);
                 ReportPropertyChanging("DefinicjaPowstaniaObowiazkuVAT");
-                _DefinicjaPowstaniaObowiazkuVAT = StructuralObject.SetValidValue(value);
+                _DefinicjaPowstaniaObowiazkuVAT = StructuralObject.SetValidValue(value, "DefinicjaPowstaniaObowiazkuVAT");
                 ReportPropertyChanged("DefinicjaPowstaniaObowiazkuVAT");
                 OnDefinicjaPowstaniaObowiazkuVATChanged();
             }
@@ -33837,7 +33770,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKompletacjaInfoDodatkowaChanging(value);
                 ReportPropertyChanging("KompletacjaInfoDodatkowa");
-                _KompletacjaInfoDodatkowa = StructuralObject.SetValidValue(value);
+                _KompletacjaInfoDodatkowa = StructuralObject.SetValidValue(value, "KompletacjaInfoDodatkowa");
                 ReportPropertyChanged("KompletacjaInfoDodatkowa");
                 OnKompletacjaInfoDodatkowaChanged();
             }
@@ -33861,7 +33794,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKompletacjaInfoProporcjaWartosciChanging(value);
                 ReportPropertyChanging("KompletacjaInfoProporcjaWartosci");
-                _KompletacjaInfoProporcjaWartosci = StructuralObject.SetValidValue(value);
+                _KompletacjaInfoProporcjaWartosci = StructuralObject.SetValidValue(value, "KompletacjaInfoProporcjaWartosci");
                 ReportPropertyChanged("KompletacjaInfoProporcjaWartosci");
                 OnKompletacjaInfoProporcjaWartosciChanged();
             }
@@ -33885,7 +33818,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKompletacjaInfoWartoscSymbolChanging(value);
                 ReportPropertyChanging("KompletacjaInfoWartoscSymbol");
-                _KompletacjaInfoWartoscSymbol = StructuralObject.SetValidValue(value, true);
+                _KompletacjaInfoWartoscSymbol = StructuralObject.SetValidValue(value, true, "KompletacjaInfoWartoscSymbol");
                 ReportPropertyChanged("KompletacjaInfoWartoscSymbol");
                 OnKompletacjaInfoWartoscSymbolChanged();
             }
@@ -33909,7 +33842,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKompletacjaInfoWartoscValueChanging(value);
                 ReportPropertyChanging("KompletacjaInfoWartoscValue");
-                _KompletacjaInfoWartoscValue = StructuralObject.SetValidValue(value);
+                _KompletacjaInfoWartoscValue = StructuralObject.SetValidValue(value, "KompletacjaInfoWartoscValue");
                 ReportPropertyChanged("KompletacjaInfoWartoscValue");
                 OnKompletacjaInfoWartoscValueChanged();
             }
@@ -33933,7 +33866,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKompletacjaInfoWspolczynnikDenChanging(value);
                 ReportPropertyChanging("KompletacjaInfoWspolczynnikDen");
-                _KompletacjaInfoWspolczynnikDen = StructuralObject.SetValidValue(value);
+                _KompletacjaInfoWspolczynnikDen = StructuralObject.SetValidValue(value, "KompletacjaInfoWspolczynnikDen");
                 ReportPropertyChanged("KompletacjaInfoWspolczynnikDen");
                 OnKompletacjaInfoWspolczynnikDenChanged();
             }
@@ -33957,7 +33890,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKompletacjaInfoWspolczynnikNumChanging(value);
                 ReportPropertyChanging("KompletacjaInfoWspolczynnikNum");
-                _KompletacjaInfoWspolczynnikNum = StructuralObject.SetValidValue(value);
+                _KompletacjaInfoWspolczynnikNum = StructuralObject.SetValidValue(value, "KompletacjaInfoWspolczynnikNum");
                 ReportPropertyChanged("KompletacjaInfoWspolczynnikNum");
                 OnKompletacjaInfoWspolczynnikNumChanged();
             }
@@ -33981,7 +33914,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodstawaZwolnieniaChanging(value);
                 ReportPropertyChanging("PodstawaZwolnienia");
-                _PodstawaZwolnienia = StructuralObject.SetValidValue(value, true);
+                _PodstawaZwolnienia = StructuralObject.SetValidValue(value, true, "PodstawaZwolnienia");
                 ReportPropertyChanged("PodstawaZwolnienia");
                 OnPodstawaZwolnieniaChanged();
             }
@@ -34005,7 +33938,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNabywcaPodatnikChanging(value);
                 ReportPropertyChanging("NabywcaPodatnik");
-                _NabywcaPodatnik = StructuralObject.SetValidValue(value);
+                _NabywcaPodatnik = StructuralObject.SetValidValue(value, "NabywcaPodatnik");
                 ReportPropertyChanged("NabywcaPodatnik");
                 OnNabywcaPodatnikChanged();
             }
@@ -34029,7 +33962,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBezRabatuChanging(value);
                 ReportPropertyChanging("BezRabatu");
-                _BezRabatu = StructuralObject.SetValidValue(value);
+                _BezRabatu = StructuralObject.SetValidValue(value, "BezRabatu");
                 ReportPropertyChanged("BezRabatu");
                 OnBezRabatuChanged();
             }
@@ -34053,7 +33986,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZaliczkaInfoBruttoCyValueChanging(value);
                 ReportPropertyChanging("ZaliczkaInfoBruttoCyValue");
-                _ZaliczkaInfoBruttoCyValue = StructuralObject.SetValidValue(value);
+                _ZaliczkaInfoBruttoCyValue = StructuralObject.SetValidValue(value, "ZaliczkaInfoBruttoCyValue");
                 ReportPropertyChanged("ZaliczkaInfoBruttoCyValue");
                 OnZaliczkaInfoBruttoCyValueChanged();
             }
@@ -34077,7 +34010,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZaliczkaInfoBruttoCySymbolChanging(value);
                 ReportPropertyChanging("ZaliczkaInfoBruttoCySymbol");
-                _ZaliczkaInfoBruttoCySymbol = StructuralObject.SetValidValue(value, true);
+                _ZaliczkaInfoBruttoCySymbol = StructuralObject.SetValidValue(value, true, "ZaliczkaInfoBruttoCySymbol");
                 ReportPropertyChanged("ZaliczkaInfoBruttoCySymbol");
                 OnZaliczkaInfoBruttoCySymbolChanged();
             }
@@ -34101,7 +34034,7 @@ namespace Enova.Business.Old.DB
             {
                 OnProdukcjaInfoIdentyfikatorElementuPowiazanegoChanging(value);
                 ReportPropertyChanging("ProdukcjaInfoIdentyfikatorElementuPowiazanego");
-                _ProdukcjaInfoIdentyfikatorElementuPowiazanego = StructuralObject.SetValidValue(value);
+                _ProdukcjaInfoIdentyfikatorElementuPowiazanego = StructuralObject.SetValidValue(value, "ProdukcjaInfoIdentyfikatorElementuPowiazanego");
                 ReportPropertyChanged("ProdukcjaInfoIdentyfikatorElementuPowiazanego");
                 OnProdukcjaInfoIdentyfikatorElementuPowiazanegoChanged();
             }
@@ -34125,7 +34058,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaParametrowZasobuInfoZmianaParametrowZasobuChanging(value);
                 ReportPropertyChanging("ZmianaParametrowZasobuInfoZmianaParametrowZasobu");
-                _ZmianaParametrowZasobuInfoZmianaParametrowZasobu = StructuralObject.SetValidValue(value);
+                _ZmianaParametrowZasobuInfoZmianaParametrowZasobu = StructuralObject.SetValidValue(value, "ZmianaParametrowZasobuInfoZmianaParametrowZasobu");
                 ReportPropertyChanged("ZmianaParametrowZasobuInfoZmianaParametrowZasobu");
                 OnZmianaParametrowZasobuInfoZmianaParametrowZasobuChanged();
             }
@@ -34149,7 +34082,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaParametrowZasobuInfoIloscValueChanging(value);
                 ReportPropertyChanging("ZmianaParametrowZasobuInfoIloscValue");
-                _ZmianaParametrowZasobuInfoIloscValue = StructuralObject.SetValidValue(value);
+                _ZmianaParametrowZasobuInfoIloscValue = StructuralObject.SetValidValue(value, "ZmianaParametrowZasobuInfoIloscValue");
                 ReportPropertyChanged("ZmianaParametrowZasobuInfoIloscValue");
                 OnZmianaParametrowZasobuInfoIloscValueChanged();
             }
@@ -34173,7 +34106,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaParametrowZasobuInfoIloscSymbolChanging(value);
                 ReportPropertyChanging("ZmianaParametrowZasobuInfoIloscSymbol");
-                _ZmianaParametrowZasobuInfoIloscSymbol = StructuralObject.SetValidValue(value, true);
+                _ZmianaParametrowZasobuInfoIloscSymbol = StructuralObject.SetValidValue(value, true, "ZmianaParametrowZasobuInfoIloscSymbol");
                 ReportPropertyChanged("ZmianaParametrowZasobuInfoIloscSymbol");
                 OnZmianaParametrowZasobuInfoIloscSymbolChanged();
             }
@@ -34197,7 +34130,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaParametrowZasobuInfoWartoscCyValueChanging(value);
                 ReportPropertyChanging("ZmianaParametrowZasobuInfoWartoscCyValue");
-                _ZmianaParametrowZasobuInfoWartoscCyValue = StructuralObject.SetValidValue(value);
+                _ZmianaParametrowZasobuInfoWartoscCyValue = StructuralObject.SetValidValue(value, "ZmianaParametrowZasobuInfoWartoscCyValue");
                 ReportPropertyChanged("ZmianaParametrowZasobuInfoWartoscCyValue");
                 OnZmianaParametrowZasobuInfoWartoscCyValueChanged();
             }
@@ -34221,7 +34154,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZmianaParametrowZasobuInfoWartoscCySymbolChanging(value);
                 ReportPropertyChanging("ZmianaParametrowZasobuInfoWartoscCySymbol");
-                _ZmianaParametrowZasobuInfoWartoscCySymbol = StructuralObject.SetValidValue(value, true);
+                _ZmianaParametrowZasobuInfoWartoscCySymbol = StructuralObject.SetValidValue(value, true, "ZmianaParametrowZasobuInfoWartoscCySymbol");
                 ReportPropertyChanged("ZmianaParametrowZasobuInfoWartoscCySymbol");
                 OnZmianaParametrowZasobuInfoWartoscCySymbolChanged();
             }
@@ -34245,7 +34178,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParametryRezerwacjiDataOdChanging(value);
                 ReportPropertyChanging("ParametryRezerwacjiDataOd");
-                _ParametryRezerwacjiDataOd = StructuralObject.SetValidValue(value);
+                _ParametryRezerwacjiDataOd = StructuralObject.SetValidValue(value, "ParametryRezerwacjiDataOd");
                 ReportPropertyChanged("ParametryRezerwacjiDataOd");
                 OnParametryRezerwacjiDataOdChanged();
             }
@@ -34269,7 +34202,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParametryRezerwacjiDataDoChanging(value);
                 ReportPropertyChanging("ParametryRezerwacjiDataDo");
-                _ParametryRezerwacjiDataDo = StructuralObject.SetValidValue(value);
+                _ParametryRezerwacjiDataDo = StructuralObject.SetValidValue(value, "ParametryRezerwacjiDataDo");
                 ReportPropertyChanged("ParametryRezerwacjiDataDo");
                 OnParametryRezerwacjiDataDoChanged();
             }
@@ -34293,7 +34226,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParametryRezerwacjiCzasOdChanging(value);
                 ReportPropertyChanging("ParametryRezerwacjiCzasOd");
-                _ParametryRezerwacjiCzasOd = StructuralObject.SetValidValue(value);
+                _ParametryRezerwacjiCzasOd = StructuralObject.SetValidValue(value, "ParametryRezerwacjiCzasOd");
                 ReportPropertyChanged("ParametryRezerwacjiCzasOd");
                 OnParametryRezerwacjiCzasOdChanged();
             }
@@ -34317,7 +34250,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParametryRezerwacjiCzasDoChanging(value);
                 ReportPropertyChanging("ParametryRezerwacjiCzasDo");
-                _ParametryRezerwacjiCzasDo = StructuralObject.SetValidValue(value);
+                _ParametryRezerwacjiCzasDo = StructuralObject.SetValidValue(value, "ParametryRezerwacjiCzasDo");
                 ReportPropertyChanged("ParametryRezerwacjiCzasDo");
                 OnParametryRezerwacjiCzasDoChanged();
             }
@@ -34341,7 +34274,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParametryRezerwacjiPriorytetChanging(value);
                 ReportPropertyChanging("ParametryRezerwacjiPriorytet");
-                _ParametryRezerwacjiPriorytet = StructuralObject.SetValidValue(value);
+                _ParametryRezerwacjiPriorytet = StructuralObject.SetValidValue(value, "ParametryRezerwacjiPriorytet");
                 ReportPropertyChanged("ParametryRezerwacjiPriorytet");
                 OnParametryRezerwacjiPriorytetChanged();
             }
@@ -34365,7 +34298,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklTermin2Changing(value);
                 ReportPropertyChanging("UmowaInfoCyklTermin2");
-                _UmowaInfoCyklTermin2 = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklTermin2 = StructuralObject.SetValidValue(value, "UmowaInfoCyklTermin2");
                 ReportPropertyChanged("UmowaInfoCyklTermin2");
                 OnUmowaInfoCyklTermin2Changed();
             }
@@ -34389,7 +34322,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklTermin3Changing(value);
                 ReportPropertyChanging("UmowaInfoCyklTermin3");
-                _UmowaInfoCyklTermin3 = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklTermin3 = StructuralObject.SetValidValue(value, "UmowaInfoCyklTermin3");
                 ReportPropertyChanged("UmowaInfoCyklTermin3");
                 OnUmowaInfoCyklTermin3Changed();
             }
@@ -34413,7 +34346,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklTermin4Changing(value);
                 ReportPropertyChanging("UmowaInfoCyklTermin4");
-                _UmowaInfoCyklTermin4 = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklTermin4 = StructuralObject.SetValidValue(value, "UmowaInfoCyklTermin4");
                 ReportPropertyChanged("UmowaInfoCyklTermin4");
                 OnUmowaInfoCyklTermin4Changed();
             }
@@ -34437,7 +34370,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklTermin5Changing(value);
                 ReportPropertyChanging("UmowaInfoCyklTermin5");
-                _UmowaInfoCyklTermin5 = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklTermin5 = StructuralObject.SetValidValue(value, "UmowaInfoCyklTermin5");
                 ReportPropertyChanged("UmowaInfoCyklTermin5");
                 OnUmowaInfoCyklTermin5Changed();
             }
@@ -34461,7 +34394,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUmowaInfoCyklPozycjaDniaZaawansowanaChanging(value);
                 ReportPropertyChanging("UmowaInfoCyklPozycjaDniaZaawansowana");
-                _UmowaInfoCyklPozycjaDniaZaawansowana = StructuralObject.SetValidValue(value);
+                _UmowaInfoCyklPozycjaDniaZaawansowana = StructuralObject.SetValidValue(value, "UmowaInfoCyklPozycjaDniaZaawansowana");
                 ReportPropertyChanged("UmowaInfoCyklPozycjaDniaZaawansowana");
                 OnUmowaInfoCyklPozycjaDniaZaawansowanaChanged();
             }
@@ -34485,7 +34418,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStawkaKrajChanging(value);
                 ReportPropertyChanging("StawkaKraj");
-                _StawkaKraj = StructuralObject.SetValidValue(value);
+                _StawkaKraj = StructuralObject.SetValidValue(value, "StawkaKraj");
                 ReportPropertyChanged("StawkaKraj");
                 OnStawkaKrajChanged();
             }
@@ -34509,7 +34442,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKorektaRabatuChanging(value);
                 ReportPropertyChanging("KorektaRabatu");
-                _KorektaRabatu = StructuralObject.SetValidValue(value);
+                _KorektaRabatu = StructuralObject.SetValidValue(value, "KorektaRabatu");
                 ReportPropertyChanged("KorektaRabatu");
                 OnKorektaRabatuChanged();
             }
@@ -34533,7 +34466,7 @@ namespace Enova.Business.Old.DB
             {
                 OnVATOdMarzyChanging(value);
                 ReportPropertyChanging("VATOdMarzy");
-                _VATOdMarzy = StructuralObject.SetValidValue(value);
+                _VATOdMarzy = StructuralObject.SetValidValue(value, "VATOdMarzy");
                 ReportPropertyChanged("VATOdMarzy");
                 OnVATOdMarzyChanged();
             }
@@ -34557,7 +34490,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDoliczajKosztDodatkowyChanging(value);
                 ReportPropertyChanging("DoliczajKosztDodatkowy");
-                _DoliczajKosztDodatkowy = StructuralObject.SetValidValue(value);
+                _DoliczajKosztDodatkowy = StructuralObject.SetValidValue(value, "DoliczajKosztDodatkowy");
                 ReportPropertyChanged("DoliczajKosztDodatkowy");
                 OnDoliczajKosztDodatkowyChanged();
             }
@@ -34581,7 +34514,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscZrealizowanaValueChanging(value);
                 ReportPropertyChanging("IloscZrealizowanaValue");
-                _IloscZrealizowanaValue = StructuralObject.SetValidValue(value);
+                _IloscZrealizowanaValue = StructuralObject.SetValidValue(value, "IloscZrealizowanaValue");
                 ReportPropertyChanged("IloscZrealizowanaValue");
                 OnIloscZrealizowanaValueChanged();
             }
@@ -34605,7 +34538,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscZrealizowanaSymbolChanging(value);
                 ReportPropertyChanging("IloscZrealizowanaSymbol");
-                _IloscZrealizowanaSymbol = StructuralObject.SetValidValue(value, true);
+                _IloscZrealizowanaSymbol = StructuralObject.SetValidValue(value, true, "IloscZrealizowanaSymbol");
                 ReportPropertyChanged("IloscZrealizowanaSymbol");
                 OnIloscZrealizowanaSymbolChanged();
             }
@@ -34629,7 +34562,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscZasobuRezerwowanaValueChanging(value);
                 ReportPropertyChanging("IloscZasobuRezerwowanaValue");
-                _IloscZasobuRezerwowanaValue = StructuralObject.SetValidValue(value);
+                _IloscZasobuRezerwowanaValue = StructuralObject.SetValidValue(value, "IloscZasobuRezerwowanaValue");
                 ReportPropertyChanged("IloscZasobuRezerwowanaValue");
                 OnIloscZasobuRezerwowanaValueChanged();
             }
@@ -34640,7 +34573,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -34828,7 +34760,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -34845,7 +34777,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDodatkowaChanging(value);
                 ReportPropertyChanging("Dodatkowa");
-                _Dodatkowa = StructuralObject.SetValidValue(value);
+                _Dodatkowa = StructuralObject.SetValidValue(value, "Dodatkowa");
                 ReportPropertyChanged("Dodatkowa");
                 OnDodatkowaChanged();
             }
@@ -34871,7 +34803,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -34896,7 +34828,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscMagazynuSymbolChanging(value);
                 ReportPropertyChanging("IloscMagazynuSymbol");
-                _IloscMagazynuSymbol = StructuralObject.SetValidValue(value, true);
+                _IloscMagazynuSymbol = StructuralObject.SetValidValue(value, true, "IloscMagazynuSymbol");
                 ReportPropertyChanged("IloscMagazynuSymbol");
                 OnIloscMagazynuSymbolChanged();
             }
@@ -34920,7 +34852,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscMagazynuValueChanging(value);
                 ReportPropertyChanging("IloscMagazynuValue");
-                _IloscMagazynuValue = StructuralObject.SetValidValue(value);
+                _IloscMagazynuValue = StructuralObject.SetValidValue(value, "IloscMagazynuValue");
                 ReportPropertyChanged("IloscMagazynuValue");
                 OnIloscMagazynuValueChanged();
             }
@@ -34944,7 +34876,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscSymbolChanging(value);
                 ReportPropertyChanging("IloscSymbol");
-                _IloscSymbol = StructuralObject.SetValidValue(value, true);
+                _IloscSymbol = StructuralObject.SetValidValue(value, true, "IloscSymbol");
                 ReportPropertyChanged("IloscSymbol");
                 OnIloscSymbolChanged();
             }
@@ -34968,7 +34900,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscValueChanging(value);
                 ReportPropertyChanging("IloscValue");
-                _IloscValue = StructuralObject.SetValidValue(value);
+                _IloscValue = StructuralObject.SetValidValue(value, "IloscValue");
                 ReportPropertyChanged("IloscValue");
                 OnIloscValueChanged();
             }
@@ -34992,7 +34924,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNadrzednaIdentChanging(value);
                 ReportPropertyChanging("NadrzednaIdent");
-                _NadrzednaIdent = StructuralObject.SetValidValue(value);
+                _NadrzednaIdent = StructuralObject.SetValidValue(value, "NadrzednaIdent");
                 ReportPropertyChanged("NadrzednaIdent");
                 OnNadrzednaIdentChanged();
             }
@@ -35016,7 +34948,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodrzednaIdentChanging(value);
                 ReportPropertyChanging("PodrzednaIdent");
-                _PodrzednaIdent = StructuralObject.SetValidValue(value);
+                _PodrzednaIdent = StructuralObject.SetValidValue(value, "PodrzednaIdent");
                 ReportPropertyChanged("PodrzednaIdent");
                 OnPodrzednaIdentChanged();
             }
@@ -35040,7 +34972,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -35064,7 +34996,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumaBruttoChanging(value);
                 ReportPropertyChanging("SumaBrutto");
-                _SumaBrutto = StructuralObject.SetValidValue(value);
+                _SumaBrutto = StructuralObject.SetValidValue(value, "SumaBrutto");
                 ReportPropertyChanged("SumaBrutto");
                 OnSumaBruttoChanged();
             }
@@ -35088,7 +35020,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumaNettoChanging(value);
                 ReportPropertyChanging("SumaNetto");
-                _SumaNetto = StructuralObject.SetValidValue(value);
+                _SumaNetto = StructuralObject.SetValidValue(value, "SumaNetto");
                 ReportPropertyChanged("SumaNetto");
                 OnSumaNettoChanged();
             }
@@ -35112,7 +35044,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumaVATChanging(value);
                 ReportPropertyChanging("SumaVAT");
-                _SumaVAT = StructuralObject.SetValidValue(value);
+                _SumaVAT = StructuralObject.SetValidValue(value, "SumaVAT");
                 ReportPropertyChanged("SumaVAT");
                 OnSumaVATChanged();
             }
@@ -35136,7 +35068,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscSymbolChanging(value);
                 ReportPropertyChanging("WartoscSymbol");
-                _WartoscSymbol = StructuralObject.SetValidValue(value, true);
+                _WartoscSymbol = StructuralObject.SetValidValue(value, true, "WartoscSymbol");
                 ReportPropertyChanged("WartoscSymbol");
                 OnWartoscSymbolChanged();
             }
@@ -35160,7 +35092,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscValueChanging(value);
                 ReportPropertyChanging("WartoscValue");
-                _WartoscValue = StructuralObject.SetValidValue(value);
+                _WartoscValue = StructuralObject.SetValidValue(value, "WartoscValue");
                 ReportPropertyChanged("WartoscValue");
                 OnWartoscValueChanged();
             }
@@ -35184,7 +35116,7 @@ namespace Enova.Business.Old.DB
             {
                 OnProdukcjaInfoIdentyfikatorElementuPowiazanegoChanging(value);
                 ReportPropertyChanging("ProdukcjaInfoIdentyfikatorElementuPowiazanego");
-                _ProdukcjaInfoIdentyfikatorElementuPowiazanego = StructuralObject.SetValidValue(value);
+                _ProdukcjaInfoIdentyfikatorElementuPowiazanego = StructuralObject.SetValidValue(value, "ProdukcjaInfoIdentyfikatorElementuPowiazanego");
                 ReportPropertyChanged("ProdukcjaInfoIdentyfikatorElementuPowiazanego");
                 OnProdukcjaInfoIdentyfikatorElementuPowiazanegoChanged();
             }
@@ -35195,7 +35127,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -35351,7 +35282,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -35368,7 +35299,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -35394,7 +35325,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -35419,7 +35350,7 @@ namespace Enova.Business.Old.DB
             {
                 OnImieChanging(value);
                 ReportPropertyChanging("Imie");
-                _Imie = StructuralObject.SetValidValue(value, false);
+                _Imie = StructuralObject.SetValidValue(value, false, "Imie");
                 ReportPropertyChanged("Imie");
                 OnImieChanged();
             }
@@ -35443,7 +35374,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIndywidualnaDRAChanging(value);
                 ReportPropertyChanging("IndywidualnaDRA");
-                _IndywidualnaDRA = StructuralObject.SetValidValue(value);
+                _IndywidualnaDRA = StructuralObject.SetValidValue(value, "IndywidualnaDRA");
                 ReportPropertyChanged("IndywidualnaDRA");
                 OnIndywidualnaDRAChanged();
             }
@@ -35467,7 +35398,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodChanging(value);
                 ReportPropertyChanging("Kod");
-                _Kod = StructuralObject.SetValidValue(value, false);
+                _Kod = StructuralObject.SetValidValue(value, false, "Kod");
                 ReportPropertyChanged("Kod");
                 OnKodChanged();
             }
@@ -35491,7 +35422,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaSymbolChanging(value);
                 ReportPropertyChanging("KwotaSymbol");
-                _KwotaSymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaSymbol = StructuralObject.SetValidValue(value, true, "KwotaSymbol");
                 ReportPropertyChanged("KwotaSymbol");
                 OnKwotaSymbolChanged();
             }
@@ -35515,7 +35446,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaValueChanging(value);
                 ReportPropertyChanging("KwotaValue");
-                _KwotaValue = StructuralObject.SetValidValue(value);
+                _KwotaValue = StructuralObject.SetValidValue(value, "KwotaValue");
                 ReportPropertyChanged("KwotaValue");
                 OnKwotaValueChanged();
             }
@@ -35539,7 +35470,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNaDRAUmieszczajREGONChanging(value);
                 ReportPropertyChanging("NaDRAUmieszczajREGON");
-                _NaDRAUmieszczajREGON = StructuralObject.SetValidValue(value);
+                _NaDRAUmieszczajREGON = StructuralObject.SetValidValue(value, "NaDRAUmieszczajREGON");
                 ReportPropertyChanged("NaDRAUmieszczajREGON");
                 OnNaDRAUmieszczajREGONChanged();
             }
@@ -35563,7 +35494,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwiskoChanging(value);
                 ReportPropertyChanging("Nazwisko");
-                _Nazwisko = StructuralObject.SetValidValue(value, false);
+                _Nazwisko = StructuralObject.SetValidValue(value, false, "Nazwisko");
                 ReportPropertyChanged("Nazwisko");
                 OnNazwiskoChanged();
             }
@@ -35587,7 +35518,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNetAutoZatwWnioskuChanging(value);
                 ReportPropertyChanging("NetAutoZatwWniosku");
-                _NetAutoZatwWniosku = StructuralObject.SetValidValue(value);
+                _NetAutoZatwWniosku = StructuralObject.SetValidValue(value, "NetAutoZatwWniosku");
                 ReportPropertyChanged("NetAutoZatwWniosku");
                 OnNetAutoZatwWnioskuChanged();
             }
@@ -35611,7 +35542,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNetPodwladniNizszegoPoziomuChanging(value);
                 ReportPropertyChanging("NetPodwladniNizszegoPoziomu");
-                _NetPodwladniNizszegoPoziomu = StructuralObject.SetValidValue(value);
+                _NetPodwladniNizszegoPoziomu = StructuralObject.SetValidValue(value, "NetPodwladniNizszegoPoziomu");
                 ReportPropertyChanged("NetPodwladniNizszegoPoziomu");
                 OnNetPodwladniNizszegoPoziomuChanged();
             }
@@ -35635,7 +35566,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNetWidocznyWNetChanging(value);
                 ReportPropertyChanging("NetWidocznyWNet");
-                _NetWidocznyWNet = StructuralObject.SetValidValue(value);
+                _NetWidocznyWNet = StructuralObject.SetValidValue(value, "NetWidocznyWNet");
                 ReportPropertyChanged("NetWidocznyWNet");
                 OnNetWidocznyWNetChanged();
             }
@@ -35659,7 +35590,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPESELChanging(value);
                 ReportPropertyChanging("PESEL");
-                _PESEL = StructuralObject.SetValidValue(value, true);
+                _PESEL = StructuralObject.SetValidValue(value, true, "PESEL");
                 ReportPropertyChanged("PESEL");
                 OnPESELChanged();
             }
@@ -35683,7 +35614,7 @@ namespace Enova.Business.Old.DB
             {
                 OnProcentChanging(value);
                 ReportPropertyChanging("Procent");
-                _Procent = StructuralObject.SetValidValue(value);
+                _Procent = StructuralObject.SetValidValue(value, "Procent");
                 ReportPropertyChanged("Procent");
                 OnProcentChanged();
             }
@@ -35707,7 +35638,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -35731,7 +35662,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -35755,7 +35686,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUwagiChanging(value);
                 ReportPropertyChanging("Uwagi");
-                _Uwagi = StructuralObject.SetValidValue(value, true);
+                _Uwagi = StructuralObject.SetValidValue(value, true, "Uwagi");
                 ReportPropertyChanged("Uwagi");
                 OnUwagiChanged();
             }
@@ -35779,7 +35710,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWieloetatowoscChanging(value);
                 ReportPropertyChanging("Wieloetatowosc");
-                _Wieloetatowosc = StructuralObject.SetValidValue(value);
+                _Wieloetatowosc = StructuralObject.SetValidValue(value, "Wieloetatowosc");
                 ReportPropertyChanged("Wieloetatowosc");
                 OnWieloetatowoscChanged();
             }
@@ -35803,7 +35734,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWlascicielChanging(value);
                 ReportPropertyChanging("Wlasciciel");
-                _Wlasciciel = StructuralObject.SetValidValue(value);
+                _Wlasciciel = StructuralObject.SetValidValue(value, "Wlasciciel");
                 ReportPropertyChanged("Wlasciciel");
                 OnWlascicielChanged();
             }
@@ -35827,7 +35758,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWydzialChanging(value);
                 ReportPropertyChanging("Wydzial");
-                _Wydzial = StructuralObject.SetValidValue(value);
+                _Wydzial = StructuralObject.SetValidValue(value, "Wydzial");
                 ReportPropertyChanged("Wydzial");
                 OnWydzialChanged();
             }
@@ -35851,7 +35782,7 @@ namespace Enova.Business.Old.DB
             {
                 OnHistZatrWgGlownegoChanging(value);
                 ReportPropertyChanging("HistZatrWgGlownego");
-                _HistZatrWgGlownego = StructuralObject.SetValidValue(value);
+                _HistZatrWgGlownego = StructuralObject.SetValidValue(value, "HistZatrWgGlownego");
                 ReportPropertyChanged("HistZatrWgGlownego");
                 OnHistZatrWgGlownegoChanged();
             }
@@ -35875,7 +35806,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInneDochodyWgGlownegoChanging(value);
                 ReportPropertyChanging("InneDochodyWgGlownego");
-                _InneDochodyWgGlownego = StructuralObject.SetValidValue(value);
+                _InneDochodyWgGlownego = StructuralObject.SetValidValue(value, "InneDochodyWgGlownego");
                 ReportPropertyChanged("InneDochodyWgGlownego");
                 OnInneDochodyWgGlownegoChanged();
             }
@@ -35899,7 +35830,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZbiegUbespWgGlownegoChanging(value);
                 ReportPropertyChanging("ZbiegUbespWgGlownego");
-                _ZbiegUbespWgGlownego = StructuralObject.SetValidValue(value);
+                _ZbiegUbespWgGlownego = StructuralObject.SetValidValue(value, "ZbiegUbespWgGlownego");
                 ReportPropertyChanged("ZbiegUbespWgGlownego");
                 OnZbiegUbespWgGlownegoChanged();
             }
@@ -35923,7 +35854,7 @@ namespace Enova.Business.Old.DB
             {
                 OnArchiwumInfoChanging(value);
                 ReportPropertyChanging("ArchiwumInfo");
-                _ArchiwumInfo = StructuralObject.SetValidValue(value);
+                _ArchiwumInfo = StructuralObject.SetValidValue(value, "ArchiwumInfo");
                 ReportPropertyChanged("ArchiwumInfo");
                 OnArchiwumInfoChanged();
             }
@@ -35934,7 +35865,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -36036,7 +35966,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -36053,7 +35983,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGotowkaPoczatkoweSymbolChanging(value);
                 ReportPropertyChanging("GotowkaPoczatkoweSymbol");
-                _GotowkaPoczatkoweSymbol = StructuralObject.SetValidValue(value, true);
+                _GotowkaPoczatkoweSymbol = StructuralObject.SetValidValue(value, true, "GotowkaPoczatkoweSymbol");
                 ReportPropertyChanged("GotowkaPoczatkoweSymbol");
                 OnGotowkaPoczatkoweSymbolChanged();
             }
@@ -36077,7 +36007,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGotowkaPoczatkoweValueChanging(value);
                 ReportPropertyChanging("GotowkaPoczatkoweValue");
-                _GotowkaPoczatkoweValue = StructuralObject.SetValidValue(value);
+                _GotowkaPoczatkoweValue = StructuralObject.SetValidValue(value, "GotowkaPoczatkoweValue");
                 ReportPropertyChanged("GotowkaPoczatkoweValue");
                 OnGotowkaPoczatkoweValueChanged();
             }
@@ -36101,7 +36031,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGotowkaWplatySymbolChanging(value);
                 ReportPropertyChanging("GotowkaWplatySymbol");
-                _GotowkaWplatySymbol = StructuralObject.SetValidValue(value, true);
+                _GotowkaWplatySymbol = StructuralObject.SetValidValue(value, true, "GotowkaWplatySymbol");
                 ReportPropertyChanged("GotowkaWplatySymbol");
                 OnGotowkaWplatySymbolChanged();
             }
@@ -36125,7 +36055,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGotowkaWplatyValueChanging(value);
                 ReportPropertyChanging("GotowkaWplatyValue");
-                _GotowkaWplatyValue = StructuralObject.SetValidValue(value);
+                _GotowkaWplatyValue = StructuralObject.SetValidValue(value, "GotowkaWplatyValue");
                 ReportPropertyChanged("GotowkaWplatyValue");
                 OnGotowkaWplatyValueChanged();
             }
@@ -36149,7 +36079,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGotowkaWyplatySymbolChanging(value);
                 ReportPropertyChanging("GotowkaWyplatySymbol");
-                _GotowkaWyplatySymbol = StructuralObject.SetValidValue(value, true);
+                _GotowkaWyplatySymbol = StructuralObject.SetValidValue(value, true, "GotowkaWyplatySymbol");
                 ReportPropertyChanged("GotowkaWyplatySymbol");
                 OnGotowkaWyplatySymbolChanged();
             }
@@ -36173,7 +36103,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGotowkaWyplatyValueChanging(value);
                 ReportPropertyChanging("GotowkaWyplatyValue");
-                _GotowkaWyplatyValue = StructuralObject.SetValidValue(value);
+                _GotowkaWyplatyValue = StructuralObject.SetValidValue(value, "GotowkaWyplatyValue");
                 ReportPropertyChanged("GotowkaWyplatyValue");
                 OnGotowkaWyplatyValueChanged();
             }
@@ -36197,7 +36127,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -36223,7 +36153,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -36248,7 +36178,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerNumerChanging(value);
                 ReportPropertyChanging("NumerNumer");
-                _NumerNumer = StructuralObject.SetValidValue(value);
+                _NumerNumer = StructuralObject.SetValidValue(value, "NumerNumer");
                 ReportPropertyChanged("NumerNumer");
                 OnNumerNumerChanged();
             }
@@ -36272,7 +36202,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerPelnyChanging(value);
                 ReportPropertyChanging("NumerPelny");
-                _NumerPelny = StructuralObject.SetValidValue(value, true);
+                _NumerPelny = StructuralObject.SetValidValue(value, true, "NumerPelny");
                 ReportPropertyChanged("NumerPelny");
                 OnNumerPelnyChanged();
             }
@@ -36296,7 +36226,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerSymbolChanging(value);
                 ReportPropertyChanging("NumerSymbol");
-                _NumerSymbol = StructuralObject.SetValidValue(value, true);
+                _NumerSymbol = StructuralObject.SetValidValue(value, true, "NumerSymbol");
                 ReportPropertyChanged("NumerSymbol");
                 OnNumerSymbolChanged();
             }
@@ -36320,7 +36250,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkresFromChanging(value);
                 ReportPropertyChanging("OkresFrom");
-                _OkresFrom = StructuralObject.SetValidValue(value);
+                _OkresFrom = StructuralObject.SetValidValue(value, "OkresFrom");
                 ReportPropertyChanged("OkresFrom");
                 OnOkresFromChanged();
             }
@@ -36344,7 +36274,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkresToChanging(value);
                 ReportPropertyChanging("OkresTo");
-                _OkresTo = StructuralObject.SetValidValue(value);
+                _OkresTo = StructuralObject.SetValidValue(value, "OkresTo");
                 ReportPropertyChanged("OkresTo");
                 OnOkresToChanged();
             }
@@ -36368,7 +36298,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSaldoPoczatkoweSymbolChanging(value);
                 ReportPropertyChanging("SaldoPoczatkoweSymbol");
-                _SaldoPoczatkoweSymbol = StructuralObject.SetValidValue(value, true);
+                _SaldoPoczatkoweSymbol = StructuralObject.SetValidValue(value, true, "SaldoPoczatkoweSymbol");
                 ReportPropertyChanged("SaldoPoczatkoweSymbol");
                 OnSaldoPoczatkoweSymbolChanged();
             }
@@ -36392,7 +36322,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSaldoPoczatkoweValueChanging(value);
                 ReportPropertyChanging("SaldoPoczatkoweValue");
-                _SaldoPoczatkoweValue = StructuralObject.SetValidValue(value);
+                _SaldoPoczatkoweValue = StructuralObject.SetValidValue(value, "SaldoPoczatkoweValue");
                 ReportPropertyChanged("SaldoPoczatkoweValue");
                 OnSaldoPoczatkoweValueChanged();
             }
@@ -36416,7 +36346,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -36440,7 +36370,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWplatySymbolChanging(value);
                 ReportPropertyChanging("WplatySymbol");
-                _WplatySymbol = StructuralObject.SetValidValue(value, true);
+                _WplatySymbol = StructuralObject.SetValidValue(value, true, "WplatySymbol");
                 ReportPropertyChanged("WplatySymbol");
                 OnWplatySymbolChanged();
             }
@@ -36464,7 +36394,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWplatyValueChanging(value);
                 ReportPropertyChanging("WplatyValue");
-                _WplatyValue = StructuralObject.SetValidValue(value);
+                _WplatyValue = StructuralObject.SetValidValue(value, "WplatyValue");
                 ReportPropertyChanged("WplatyValue");
                 OnWplatyValueChanged();
             }
@@ -36488,7 +36418,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWyplatySymbolChanging(value);
                 ReportPropertyChanging("WyplatySymbol");
-                _WyplatySymbol = StructuralObject.SetValidValue(value, true);
+                _WyplatySymbol = StructuralObject.SetValidValue(value, true, "WyplatySymbol");
                 ReportPropertyChanged("WyplatySymbol");
                 OnWyplatySymbolChanged();
             }
@@ -36512,7 +36442,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWyplatyValueChanging(value);
                 ReportPropertyChanging("WyplatyValue");
-                _WyplatyValue = StructuralObject.SetValidValue(value);
+                _WyplatyValue = StructuralObject.SetValidValue(value, "WyplatyValue");
                 ReportPropertyChanged("WyplatyValue");
                 OnWyplatyValueChanged();
             }
@@ -36536,7 +36466,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZaimportowaneFragmentyChanging(value);
                 ReportPropertyChanging("ZaimportowaneFragmenty");
-                _ZaimportowaneFragmenty = StructuralObject.SetValidValue(value, true);
+                _ZaimportowaneFragmenty = StructuralObject.SetValidValue(value, true, "ZaimportowaneFragmenty");
                 ReportPropertyChanged("ZaimportowaneFragmenty");
                 OnZaimportowaneFragmentyChanged();
             }
@@ -36560,7 +36490,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRodzajRaportuChanging(value);
                 ReportPropertyChanging("RodzajRaportu");
-                _RodzajRaportu = StructuralObject.SetValidValue(value);
+                _RodzajRaportu = StructuralObject.SetValidValue(value, "RodzajRaportu");
                 ReportPropertyChanged("RodzajRaportu");
                 OnRodzajRaportuChanged();
             }
@@ -36584,7 +36514,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerDziennyChanging(value);
                 ReportPropertyChanging("NumerDzienny");
-                _NumerDzienny = StructuralObject.SetValidValue(value);
+                _NumerDzienny = StructuralObject.SetValidValue(value, "NumerDzienny");
                 ReportPropertyChanged("NumerDzienny");
                 OnNumerDziennyChanged();
             }
@@ -36608,7 +36538,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBuforChanging(value);
                 ReportPropertyChanging("Bufor");
-                _Bufor = StructuralObject.SetValidValue(value);
+                _Bufor = StructuralObject.SetValidValue(value, "Bufor");
                 ReportPropertyChanged("Bufor");
                 OnBuforChanged();
             }
@@ -36619,7 +36549,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -36715,7 +36644,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -36732,7 +36661,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFlagsChanging(value);
                 ReportPropertyChanging("Flags");
-                _Flags = StructuralObject.SetValidValue(value);
+                _Flags = StructuralObject.SetValidValue(value, "Flags");
                 ReportPropertyChanged("Flags");
                 OnFlagsChanged();
             }
@@ -36756,7 +36685,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGlownaChanging(value);
                 ReportPropertyChanging("Glowna");
-                _Glowna = StructuralObject.SetValidValue(value);
+                _Glowna = StructuralObject.SetValidValue(value, "Glowna");
                 ReportPropertyChanged("Glowna");
                 OnGlownaChanged();
             }
@@ -36780,7 +36709,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -36806,7 +36735,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -36831,7 +36760,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozliczenieChanging(value);
                 ReportPropertyChanging("Rozliczenie");
-                _Rozliczenie = StructuralObject.SetValidValue(value);
+                _Rozliczenie = StructuralObject.SetValidValue(value, "Rozliczenie");
                 ReportPropertyChanged("Rozliczenie");
                 OnRozliczenieChanged();
             }
@@ -36855,7 +36784,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -36879,7 +36808,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStornowanaChanging(value);
                 ReportPropertyChanging("Stornowana");
-                _Stornowana = StructuralObject.SetValidValue(value);
+                _Stornowana = StructuralObject.SetValidValue(value, "Stornowana");
                 ReportPropertyChanged("Stornowana");
                 OnStornowanaChanged();
             }
@@ -36903,7 +36832,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumaBruttoChanging(value);
                 ReportPropertyChanging("SumaBrutto");
-                _SumaBrutto = StructuralObject.SetValidValue(value);
+                _SumaBrutto = StructuralObject.SetValidValue(value, "SumaBrutto");
                 ReportPropertyChanged("SumaBrutto");
                 OnSumaBruttoChanged();
             }
@@ -36927,7 +36856,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumaNettoChanging(value);
                 ReportPropertyChanging("SumaNetto");
-                _SumaNetto = StructuralObject.SetValidValue(value);
+                _SumaNetto = StructuralObject.SetValidValue(value, "SumaNetto");
                 ReportPropertyChanged("SumaNetto");
                 OnSumaNettoChanged();
             }
@@ -36951,7 +36880,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSumaVATChanging(value);
                 ReportPropertyChanging("SumaVAT");
-                _SumaVAT = StructuralObject.SetValidValue(value);
+                _SumaVAT = StructuralObject.SetValidValue(value, "SumaVAT");
                 ReportPropertyChanged("SumaVAT");
                 OnSumaVATChanged();
             }
@@ -36975,7 +36904,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypIntChanging(value);
                 ReportPropertyChanging("TypInt");
-                _TypInt = StructuralObject.SetValidValue(value);
+                _TypInt = StructuralObject.SetValidValue(value, "TypInt");
                 ReportPropertyChanged("TypInt");
                 OnTypIntChanged();
             }
@@ -36999,7 +36928,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscSymbolChanging(value);
                 ReportPropertyChanging("WartoscSymbol");
-                _WartoscSymbol = StructuralObject.SetValidValue(value, true);
+                _WartoscSymbol = StructuralObject.SetValidValue(value, true, "WartoscSymbol");
                 ReportPropertyChanged("WartoscSymbol");
                 OnWartoscSymbolChanged();
             }
@@ -37023,7 +36952,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscValueChanging(value);
                 ReportPropertyChanging("WartoscValue");
-                _WartoscValue = StructuralObject.SetValidValue(value);
+                _WartoscValue = StructuralObject.SetValidValue(value, "WartoscValue");
                 ReportPropertyChanged("WartoscValue");
                 OnWartoscValueChanged();
             }
@@ -37047,7 +36976,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozliczenieKoncowyChanging(value);
                 ReportPropertyChanging("RozliczenieKoncowy");
-                _RozliczenieKoncowy = StructuralObject.SetValidValue(value);
+                _RozliczenieKoncowy = StructuralObject.SetValidValue(value, "RozliczenieKoncowy");
                 ReportPropertyChanged("RozliczenieKoncowy");
                 OnRozliczenieKoncowyChanged();
             }
@@ -37071,7 +37000,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSposobUtworzeniaChanging(value);
                 ReportPropertyChanging("SposobUtworzenia");
-                _SposobUtworzenia = StructuralObject.SetValidValue(value);
+                _SposobUtworzenia = StructuralObject.SetValidValue(value, "SposobUtworzenia");
                 ReportPropertyChanged("SposobUtworzenia");
                 OnSposobUtworzeniaChanged();
             }
@@ -37082,7 +37011,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -37328,7 +37256,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -37347,7 +37275,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -37372,7 +37300,7 @@ namespace Enova.Business.Old.DB
             {
                 OnReplicationGuidChanging(value);
                 ReportPropertyChanging("ReplicationGuid");
-                _ReplicationGuid = StructuralObject.SetValidValue(value);
+                _ReplicationGuid = StructuralObject.SetValidValue(value, "ReplicationGuid");
                 ReportPropertyChanged("ReplicationGuid");
                 OnReplicationGuidChanged();
             }
@@ -37396,7 +37324,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTimeChanging(value);
                 ReportPropertyChanging("Time");
-                _Time = StructuralObject.SetValidValue(value);
+                _Time = StructuralObject.SetValidValue(value, "Time");
                 ReportPropertyChanged("Time");
                 OnTimeChanged();
             }
@@ -37420,7 +37348,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDescriptionChanging(value);
                 ReportPropertyChanging("Description");
-                _Description = StructuralObject.SetValidValue(value, true);
+                _Description = StructuralObject.SetValidValue(value, true, "Description");
                 ReportPropertyChanged("Description");
                 OnDescriptionChanged();
             }
@@ -37444,7 +37372,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataChanging(value);
                 ReportPropertyChanging("Data");
-                _Data = StructuralObject.SetValidValue(value, true);
+                _Data = StructuralObject.SetValidValue(value, true, "Data");
                 ReportPropertyChanged("Data");
                 OnDataChanged();
             }
@@ -37468,7 +37396,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -37479,7 +37407,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -37591,7 +37518,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -37610,7 +37537,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -37635,7 +37562,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypeChanging(value);
                 ReportPropertyChanging("Type");
-                _Type = StructuralObject.SetValidValue(value);
+                _Type = StructuralObject.SetValidValue(value, "Type");
                 ReportPropertyChanged("Type");
                 OnTypeChanged();
             }
@@ -37659,7 +37586,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumberChanging(value);
                 ReportPropertyChanging("Number");
-                _Number = StructuralObject.SetValidValue(value);
+                _Number = StructuralObject.SetValidValue(value, "Number");
                 ReportPropertyChanged("Number");
                 OnNumberChanged();
             }
@@ -37683,7 +37610,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFieldsChanging(value);
                 ReportPropertyChanging("Fields");
-                _Fields = StructuralObject.SetValidValue(value, true);
+                _Fields = StructuralObject.SetValidValue(value, true, "Fields");
                 ReportPropertyChanged("Fields");
                 OnFieldsChanged();
             }
@@ -37707,7 +37634,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFilterChanging(value);
                 ReportPropertyChanging("Filter");
-                _Filter = StructuralObject.SetValidValue(value, true);
+                _Filter = StructuralObject.SetValidValue(value, true, "Filter");
                 ReportPropertyChanged("Filter");
                 OnFilterChanged();
             }
@@ -37731,7 +37658,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -37742,7 +37669,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -37818,7 +37744,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -37837,7 +37763,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -37862,7 +37788,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -37886,7 +37812,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
+                _Name = StructuralObject.SetValidValue(value, false, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -37910,7 +37836,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLockedChanging(value);
                 ReportPropertyChanging("Locked");
-                _Locked = StructuralObject.SetValidValue(value);
+                _Locked = StructuralObject.SetValidValue(value, "Locked");
                 ReportPropertyChanged("Locked");
                 OnLockedChanged();
             }
@@ -37934,7 +37860,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDeviceChanging(value);
                 ReportPropertyChanging("Device");
-                _Device = StructuralObject.SetValidValue(value);
+                _Device = StructuralObject.SetValidValue(value, "Device");
                 ReportPropertyChanged("Device");
                 OnDeviceChanged();
             }
@@ -37958,7 +37884,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDeviceConnectionChanging(value);
                 ReportPropertyChanging("DeviceConnection");
-                _DeviceConnection = StructuralObject.SetValidValue(value, true);
+                _DeviceConnection = StructuralObject.SetValidValue(value, true, "DeviceConnection");
                 ReportPropertyChanged("DeviceConnection");
                 OnDeviceConnectionChanged();
             }
@@ -37982,7 +37908,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCodePageChanging(value);
                 ReportPropertyChanging("CodePage");
-                _CodePage = StructuralObject.SetValidValue(value, true);
+                _CodePage = StructuralObject.SetValidValue(value, true, "CodePage");
                 ReportPropertyChanged("CodePage");
                 OnCodePageChanged();
             }
@@ -38006,7 +37932,7 @@ namespace Enova.Business.Old.DB
             {
                 OnExportChanging(value);
                 ReportPropertyChanging("Export");
-                _Export = StructuralObject.SetValidValue(value);
+                _Export = StructuralObject.SetValidValue(value, "Export");
                 ReportPropertyChanged("Export");
                 OnExportChanged();
             }
@@ -38030,7 +37956,7 @@ namespace Enova.Business.Old.DB
             {
                 OnImportChanging(value);
                 ReportPropertyChanging("Import");
-                _Import = StructuralObject.SetValidValue(value);
+                _Import = StructuralObject.SetValidValue(value, "Import");
                 ReportPropertyChanged("Import");
                 OnImportChanged();
             }
@@ -38054,7 +37980,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRefreshPeriodChanging(value);
                 ReportPropertyChanging("RefreshPeriod");
-                _RefreshPeriod = StructuralObject.SetValidValue(value);
+                _RefreshPeriod = StructuralObject.SetValidValue(value, "RefreshPeriod");
                 ReportPropertyChanged("RefreshPeriod");
                 OnRefreshPeriodChanged();
             }
@@ -38078,7 +38004,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRefreshFromChanging(value);
                 ReportPropertyChanging("RefreshFrom");
-                _RefreshFrom = StructuralObject.SetValidValue(value);
+                _RefreshFrom = StructuralObject.SetValidValue(value, "RefreshFrom");
                 ReportPropertyChanged("RefreshFrom");
                 OnRefreshFromChanged();
             }
@@ -38102,7 +38028,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRefreshToChanging(value);
                 ReportPropertyChanging("RefreshTo");
-                _RefreshTo = StructuralObject.SetValidValue(value);
+                _RefreshTo = StructuralObject.SetValidValue(value, "RefreshTo");
                 ReportPropertyChanged("RefreshTo");
                 OnRefreshToChanged();
             }
@@ -38126,7 +38052,7 @@ namespace Enova.Business.Old.DB
             {
                 OnManualChanging(value);
                 ReportPropertyChanging("Manual");
-                _Manual = StructuralObject.SetValidValue(value);
+                _Manual = StructuralObject.SetValidValue(value, "Manual");
                 ReportPropertyChanged("Manual");
                 OnManualChanged();
             }
@@ -38150,7 +38076,7 @@ namespace Enova.Business.Old.DB
             {
                 OnForListChanging(value);
                 ReportPropertyChanging("ForList");
-                _ForList = StructuralObject.SetValidValue(value);
+                _ForList = StructuralObject.SetValidValue(value, "ForList");
                 ReportPropertyChanged("ForList");
                 OnForListChanged();
             }
@@ -38174,7 +38100,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -38185,7 +38111,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -38265,7 +38190,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -38284,7 +38209,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -38309,7 +38234,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSourceChanging(value);
                 ReportPropertyChanging("Source");
-                _Source = StructuralObject.SetValidValue(value);
+                _Source = StructuralObject.SetValidValue(value, "Source");
                 ReportPropertyChanged("Source");
                 OnSourceChanged();
             }
@@ -38333,7 +38258,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSourceTypeChanging(value);
                 ReportPropertyChanging("SourceType");
-                _SourceType = StructuralObject.SetValidValue(value, false);
+                _SourceType = StructuralObject.SetValidValue(value, false, "SourceType");
                 ReportPropertyChanged("SourceType");
                 OnSourceTypeChanged();
             }
@@ -38357,7 +38282,7 @@ namespace Enova.Business.Old.DB
             {
                 OnReadOnlyRightChanging(value);
                 ReportPropertyChanging("ReadOnlyRight");
-                _ReadOnlyRight = StructuralObject.SetValidValue(value);
+                _ReadOnlyRight = StructuralObject.SetValidValue(value, "ReadOnlyRight");
                 ReportPropertyChanged("ReadOnlyRight");
                 OnReadOnlyRightChanged();
             }
@@ -38381,7 +38306,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -38392,7 +38317,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -38466,7 +38390,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -38485,7 +38409,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -38510,7 +38434,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -38534,7 +38458,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -38558,7 +38482,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -38582,7 +38506,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -38593,7 +38517,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -38655,7 +38578,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -38672,7 +38595,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBuforChanging(value);
                 ReportPropertyChanging("Bufor");
-                _Bufor = StructuralObject.SetValidValue(value);
+                _Bufor = StructuralObject.SetValidValue(value, "Bufor");
                 ReportPropertyChanged("Bufor");
                 OnBuforChanged();
             }
@@ -38696,7 +38619,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataChanging(value);
                 ReportPropertyChanging("Data");
-                _Data = StructuralObject.SetValidValue(value);
+                _Data = StructuralObject.SetValidValue(value, "Data");
                 ReportPropertyChanged("Data");
                 OnDataChanged();
             }
@@ -38720,7 +38643,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataOgraniczeniaNaliczaniaOdsetekChanging(value);
                 ReportPropertyChanging("DataOgraniczeniaNaliczaniaOdsetek");
-                _DataOgraniczeniaNaliczaniaOdsetek = StructuralObject.SetValidValue(value);
+                _DataOgraniczeniaNaliczaniaOdsetek = StructuralObject.SetValidValue(value, "DataOgraniczeniaNaliczaniaOdsetek");
                 ReportPropertyChanged("DataOgraniczeniaNaliczaniaOdsetek");
                 OnDataOgraniczeniaNaliczaniaOdsetekChanged();
             }
@@ -38744,7 +38667,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDokumentIDChanging(value);
                 ReportPropertyChanging("DokumentID");
-                _DokumentID = StructuralObject.SetValidValue(value);
+                _DokumentID = StructuralObject.SetValidValue(value, "DokumentID");
                 ReportPropertyChanged("DokumentID");
                 OnDokumentIDChanged();
             }
@@ -38768,7 +38691,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDokumentTypeChanging(value);
                 ReportPropertyChanging("DokumentType");
-                _DokumentType = StructuralObject.SetValidValue(value, false);
+                _DokumentType = StructuralObject.SetValidValue(value, false, "DokumentType");
                 ReportPropertyChanged("DokumentType");
                 OnDokumentTypeChanged();
             }
@@ -38792,7 +38715,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -38818,7 +38741,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -38843,7 +38766,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaDokumentuSymbolChanging(value);
                 ReportPropertyChanging("KwotaDokumentuSymbol");
-                _KwotaDokumentuSymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaDokumentuSymbol = StructuralObject.SetValidValue(value, true, "KwotaDokumentuSymbol");
                 ReportPropertyChanged("KwotaDokumentuSymbol");
                 OnKwotaDokumentuSymbolChanged();
             }
@@ -38867,7 +38790,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaDokumentuValueChanging(value);
                 ReportPropertyChanging("KwotaDokumentuValue");
-                _KwotaDokumentuValue = StructuralObject.SetValidValue(value);
+                _KwotaDokumentuValue = StructuralObject.SetValidValue(value, "KwotaDokumentuValue");
                 ReportPropertyChanged("KwotaDokumentuValue");
                 OnKwotaDokumentuValueChanged();
             }
@@ -38891,7 +38814,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaZaplatySymbolChanging(value);
                 ReportPropertyChanging("KwotaZaplatySymbol");
-                _KwotaZaplatySymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaZaplatySymbol = StructuralObject.SetValidValue(value, true, "KwotaZaplatySymbol");
                 ReportPropertyChanged("KwotaZaplatySymbol");
                 OnKwotaZaplatySymbolChanged();
             }
@@ -38915,7 +38838,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaZaplatyValueChanging(value);
                 ReportPropertyChanging("KwotaZaplatyValue");
-                _KwotaZaplatyValue = StructuralObject.SetValidValue(value);
+                _KwotaZaplatyValue = StructuralObject.SetValidValue(value, "KwotaZaplatyValue");
                 ReportPropertyChanged("KwotaZaplatyValue");
                 OnKwotaZaplatyValueChanged();
             }
@@ -38939,7 +38862,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotIDChanging(value);
                 ReportPropertyChanging("PodmiotID");
-                _PodmiotID = StructuralObject.SetValidValue(value);
+                _PodmiotID = StructuralObject.SetValidValue(value, "PodmiotID");
                 ReportPropertyChanged("PodmiotID");
                 OnPodmiotIDChanged();
             }
@@ -38963,7 +38886,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotTypeChanging(value);
                 ReportPropertyChanging("PodmiotType");
-                _PodmiotType = StructuralObject.SetValidValue(value, false);
+                _PodmiotType = StructuralObject.SetValidValue(value, false, "PodmiotType");
                 ReportPropertyChanged("PodmiotType");
                 OnPodmiotTypeChanged();
             }
@@ -38987,7 +38910,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -39011,7 +38934,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanNotyChanging(value);
                 ReportPropertyChanging("StanNoty");
-                _StanNoty = StructuralObject.SetValidValue(value);
+                _StanNoty = StructuralObject.SetValidValue(value, "StanNoty");
                 ReportPropertyChanged("StanNoty");
                 OnStanNotyChanged();
             }
@@ -39035,7 +38958,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZaplataIDChanging(value);
                 ReportPropertyChanging("ZaplataID");
-                _ZaplataID = StructuralObject.SetValidValue(value);
+                _ZaplataID = StructuralObject.SetValidValue(value, "ZaplataID");
                 ReportPropertyChanged("ZaplataID");
                 OnZaplataIDChanged();
             }
@@ -39059,7 +38982,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZaplataTypeChanging(value);
                 ReportPropertyChanging("ZaplataType");
-                _ZaplataType = StructuralObject.SetValidValue(value, false);
+                _ZaplataType = StructuralObject.SetValidValue(value, false, "ZaplataType");
                 ReportPropertyChanged("ZaplataType");
                 OnZaplataTypeChanged();
             }
@@ -39083,7 +39006,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZwlokaChanging(value);
                 ReportPropertyChanging("Zwloka");
-                _Zwloka = StructuralObject.SetValidValue(value);
+                _Zwloka = StructuralObject.SetValidValue(value, "Zwloka");
                 ReportPropertyChanged("Zwloka");
                 OnZwlokaChanged();
             }
@@ -39107,7 +39030,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataOgraniczeniaNaliczaniaOdsetekOdChanging(value);
                 ReportPropertyChanging("DataOgraniczeniaNaliczaniaOdsetekOd");
-                _DataOgraniczeniaNaliczaniaOdsetekOd = StructuralObject.SetValidValue(value);
+                _DataOgraniczeniaNaliczaniaOdsetekOd = StructuralObject.SetValidValue(value, "DataOgraniczeniaNaliczaniaOdsetekOd");
                 ReportPropertyChanged("DataOgraniczeniaNaliczaniaOdsetekOd");
                 OnDataOgraniczeniaNaliczaniaOdsetekOdChanged();
             }
@@ -39131,7 +39054,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaRKSymbolChanging(value);
                 ReportPropertyChanging("KwotaRKSymbol");
-                _KwotaRKSymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaRKSymbol = StructuralObject.SetValidValue(value, true, "KwotaRKSymbol");
                 ReportPropertyChanged("KwotaRKSymbol");
                 OnKwotaRKSymbolChanged();
             }
@@ -39155,7 +39078,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaRKValueChanging(value);
                 ReportPropertyChanging("KwotaRKValue");
-                _KwotaRKValue = StructuralObject.SetValidValue(value);
+                _KwotaRKValue = StructuralObject.SetValidValue(value, "KwotaRKValue");
                 ReportPropertyChanged("KwotaRKValue");
                 OnKwotaRKValueChanged();
             }
@@ -39179,7 +39102,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStatusRKChanging(value);
                 ReportPropertyChanging("StatusRK");
-                _StatusRK = StructuralObject.SetValidValue(value);
+                _StatusRK = StructuralObject.SetValidValue(value, "StatusRK");
                 ReportPropertyChanged("StatusRK");
                 OnStatusRKChanged();
             }
@@ -39203,7 +39126,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypRKChanging(value);
                 ReportPropertyChanging("TypRK");
-                _TypRK = StructuralObject.SetValidValue(value);
+                _TypRK = StructuralObject.SetValidValue(value, "TypRK");
                 ReportPropertyChanged("TypRK");
                 OnTypRKChanged();
             }
@@ -39227,7 +39150,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataKsiChanging(value);
                 ReportPropertyChanging("DataKsi");
-                _DataKsi = StructuralObject.SetValidValue(value);
+                _DataKsi = StructuralObject.SetValidValue(value, "DataKsi");
                 ReportPropertyChanged("DataKsi");
                 OnDataKsiChanged();
             }
@@ -39238,7 +39161,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -39320,7 +39242,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -39337,7 +39259,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataChanging(value);
                 ReportPropertyChanging("Data");
-                _Data = StructuralObject.SetValidValue(value);
+                _Data = StructuralObject.SetValidValue(value, "Data");
                 ReportPropertyChanged("Data");
                 OnDataChanged();
             }
@@ -39361,7 +39283,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataKsiegowaniaChanging(value);
                 ReportPropertyChanging("DataKsiegowania");
-                _DataKsiegowania = StructuralObject.SetValidValue(value);
+                _DataKsiegowania = StructuralObject.SetValidValue(value, "DataKsiegowania");
                 ReportPropertyChanged("DataKsiegowania");
                 OnDataKsiegowaniaChanged();
             }
@@ -39385,7 +39307,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataPierwszegoChanging(value);
                 ReportPropertyChanging("DataPierwszego");
-                _DataPierwszego = StructuralObject.SetValidValue(value);
+                _DataPierwszego = StructuralObject.SetValidValue(value, "DataPierwszego");
                 ReportPropertyChanged("DataPierwszego");
                 OnDataPierwszegoChanged();
             }
@@ -39409,7 +39331,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataRozliczeniaChanging(value);
                 ReportPropertyChanging("DataRozliczenia");
-                _DataRozliczenia = StructuralObject.SetValidValue(value);
+                _DataRozliczenia = StructuralObject.SetValidValue(value, "DataRozliczenia");
                 ReportPropertyChanged("DataRozliczenia");
                 OnDataRozliczeniaChanged();
             }
@@ -39433,7 +39355,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDokumentIDChanging(value);
                 ReportPropertyChanging("DokumentID");
-                _DokumentID = StructuralObject.SetValidValue(value);
+                _DokumentID = StructuralObject.SetValidValue(value, "DokumentID");
                 ReportPropertyChanged("DokumentID");
                 OnDokumentIDChanged();
             }
@@ -39457,7 +39379,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDokumentTypeChanging(value);
                 ReportPropertyChanging("DokumentType");
-                _DokumentType = StructuralObject.SetValidValue(value, false);
+                _DokumentType = StructuralObject.SetValidValue(value, false, "DokumentType");
                 ReportPropertyChanged("DokumentType");
                 OnDokumentTypeChanged();
             }
@@ -39483,7 +39405,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -39508,7 +39430,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaRozliczonaSymbolChanging(value);
                 ReportPropertyChanging("KwotaRozliczonaSymbol");
-                _KwotaRozliczonaSymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaRozliczonaSymbol = StructuralObject.SetValidValue(value, true, "KwotaRozliczonaSymbol");
                 ReportPropertyChanged("KwotaRozliczonaSymbol");
                 OnKwotaRozliczonaSymbolChanged();
             }
@@ -39532,7 +39454,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaRozliczonaValueChanging(value);
                 ReportPropertyChanging("KwotaRozliczonaValue");
-                _KwotaRozliczonaValue = StructuralObject.SetValidValue(value);
+                _KwotaRozliczonaValue = StructuralObject.SetValidValue(value, "KwotaRozliczonaValue");
                 ReportPropertyChanged("KwotaRozliczonaValue");
                 OnKwotaRozliczonaValueChanged();
             }
@@ -39556,7 +39478,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaSymbolChanging(value);
                 ReportPropertyChanging("KwotaSymbol");
-                _KwotaSymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaSymbol = StructuralObject.SetValidValue(value, true, "KwotaSymbol");
                 ReportPropertyChanged("KwotaSymbol");
                 OnKwotaSymbolChanged();
             }
@@ -39580,7 +39502,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaValueChanging(value);
                 ReportPropertyChanging("KwotaValue");
-                _KwotaValue = StructuralObject.SetValidValue(value);
+                _KwotaValue = StructuralObject.SetValidValue(value, "KwotaValue");
                 ReportPropertyChanged("KwotaValue");
                 OnKwotaValueChanged();
             }
@@ -39604,7 +39526,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerChanging(value);
                 ReportPropertyChanging("Numer");
-                _Numer = StructuralObject.SetValidValue(value, false);
+                _Numer = StructuralObject.SetValidValue(value, false, "Numer");
                 ReportPropertyChanged("Numer");
                 OnNumerChanged();
             }
@@ -39628,7 +39550,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotChanging(value);
                 ReportPropertyChanging("Podmiot");
-                _Podmiot = StructuralObject.SetValidValue(value);
+                _Podmiot = StructuralObject.SetValidValue(value, "Podmiot");
                 ReportPropertyChanged("Podmiot");
                 OnPodmiotChanged();
             }
@@ -39652,7 +39574,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotTypeChanging(value);
                 ReportPropertyChanging("PodmiotType");
-                _PodmiotType = StructuralObject.SetValidValue(value, true);
+                _PodmiotType = StructuralObject.SetValidValue(value, true, "PodmiotType");
                 ReportPropertyChanged("PodmiotType");
                 OnPodmiotTypeChanged();
             }
@@ -39676,7 +39598,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -39700,7 +39622,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminChanging(value);
                 ReportPropertyChanging("Termin");
-                _Termin = StructuralObject.SetValidValue(value);
+                _Termin = StructuralObject.SetValidValue(value, "Termin");
                 ReportPropertyChanged("Termin");
                 OnTerminChanged();
             }
@@ -39724,7 +39646,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -39748,7 +39670,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZwrotChanging(value);
                 ReportPropertyChanging("Zwrot");
-                _Zwrot = StructuralObject.SetValidValue(value);
+                _Zwrot = StructuralObject.SetValidValue(value, "Zwrot");
                 ReportPropertyChanged("Zwrot");
                 OnZwrotChanged();
             }
@@ -39772,7 +39694,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminPlanowanyChanging(value);
                 ReportPropertyChanging("TerminPlanowany");
-                _TerminPlanowany = StructuralObject.SetValidValue(value);
+                _TerminPlanowany = StructuralObject.SetValidValue(value, "TerminPlanowany");
                 ReportPropertyChanged("TerminPlanowany");
                 OnTerminPlanowanyChanged();
             }
@@ -39796,7 +39718,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataPierwszegoKsiChanging(value);
                 ReportPropertyChanging("DataPierwszegoKsi");
-                _DataPierwszegoKsi = StructuralObject.SetValidValue(value);
+                _DataPierwszegoKsi = StructuralObject.SetValidValue(value, "DataPierwszegoKsi");
                 ReportPropertyChanged("DataPierwszegoKsi");
                 OnDataPierwszegoKsiChanged();
             }
@@ -39820,7 +39742,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataOstatniegoKsiChanging(value);
                 ReportPropertyChanging("DataOstatniegoKsi");
-                _DataOstatniegoKsi = StructuralObject.SetValidValue(value);
+                _DataOstatniegoKsi = StructuralObject.SetValidValue(value, "DataOstatniegoKsi");
                 ReportPropertyChanged("DataOstatniegoKsi");
                 OnDataOstatniegoKsiChanged();
             }
@@ -39844,7 +39766,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSymbolKontaKsiChanging(value);
                 ReportPropertyChanging("SymbolKontaKsi");
-                _SymbolKontaKsi = StructuralObject.SetValidValue(value, true);
+                _SymbolKontaKsi = StructuralObject.SetValidValue(value, true, "SymbolKontaKsi");
                 ReportPropertyChanged("SymbolKontaKsi");
                 OnSymbolKontaKsiChanged();
             }
@@ -39855,7 +39777,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -39933,7 +39854,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -39950,7 +39871,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBiernikChanging(value);
                 ReportPropertyChanging("Biernik");
-                _Biernik = StructuralObject.SetValidValue(value, false);
+                _Biernik = StructuralObject.SetValidValue(value, false, "Biernik");
                 ReportPropertyChanged("Biernik");
                 OnBiernikChanged();
             }
@@ -39974,7 +39895,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaChanging(value);
                 ReportPropertyChanging("Blokada");
-                _Blokada = StructuralObject.SetValidValue(value);
+                _Blokada = StructuralObject.SetValidValue(value, "Blokada");
                 ReportPropertyChanged("Blokada");
                 OnBlokadaChanged();
             }
@@ -39998,7 +39919,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -40024,7 +39945,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -40049,7 +39970,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLimitKredytowyChanging(value);
                 ReportPropertyChanging("LimitKredytowy");
-                _LimitKredytowy = StructuralObject.SetValidValue(value);
+                _LimitKredytowy = StructuralObject.SetValidValue(value, "LimitKredytowy");
                 ReportPropertyChanged("LimitKredytowy");
                 OnLimitKredytowyChanged();
             }
@@ -40073,7 +39994,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -40097,7 +40018,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdroczonyChanging(value);
                 ReportPropertyChanging("Odroczony");
-                _Odroczony = StructuralObject.SetValidValue(value);
+                _Odroczony = StructuralObject.SetValidValue(value, "Odroczony");
                 ReportPropertyChanged("Odroczony");
                 OnOdroczonyChanged();
             }
@@ -40121,7 +40042,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPlatnikChanging(value);
                 ReportPropertyChanging("Platnik");
-                _Platnik = StructuralObject.SetValidValue(value);
+                _Platnik = StructuralObject.SetValidValue(value, "Platnik");
                 ReportPropertyChanged("Platnik");
                 OnPlatnikChanged();
             }
@@ -40145,7 +40066,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPlatnikTypeChanging(value);
                 ReportPropertyChanging("PlatnikType");
-                _PlatnikType = StructuralObject.SetValidValue(value, true);
+                _PlatnikType = StructuralObject.SetValidValue(value, true, "PlatnikType");
                 ReportPropertyChanged("PlatnikType");
                 OnPlatnikTypeChanged();
             }
@@ -40169,7 +40090,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -40193,7 +40114,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -40204,7 +40125,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -40326,7 +40246,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -40345,7 +40265,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -40370,7 +40290,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIdentChanging(value);
                 ReportPropertyChanging("Ident");
-                _Ident = StructuralObject.SetValidValue(value);
+                _Ident = StructuralObject.SetValidValue(value, "Ident");
                 ReportPropertyChanged("Ident");
                 OnIdentChanged();
             }
@@ -40394,7 +40314,7 @@ namespace Enova.Business.Old.DB
             {
                 OnValueChanging(value);
                 ReportPropertyChanging("Value");
-                _Value = StructuralObject.SetValidValue(value, true);
+                _Value = StructuralObject.SetValidValue(value, true, "Value");
                 ReportPropertyChanged("Value");
                 OnValueChanged();
             }
@@ -40418,7 +40338,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataChanging(value);
                 ReportPropertyChanging("Data");
-                _Data = StructuralObject.SetValidValue(value, true);
+                _Data = StructuralObject.SetValidValue(value, true, "Data");
                 ReportPropertyChanged("Data");
                 OnDataChanged();
             }
@@ -40442,7 +40362,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -40453,7 +40373,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -40489,7 +40408,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -40508,7 +40427,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -40533,7 +40452,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -40557,7 +40476,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTableNameChanging(value);
                 ReportPropertyChanging("TableName");
-                _TableName = StructuralObject.SetValidValue(value, false);
+                _TableName = StructuralObject.SetValidValue(value, false, "TableName");
                 ReportPropertyChanged("TableName");
                 OnTableNameChanged();
             }
@@ -40581,7 +40500,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
+                _Name = StructuralObject.SetValidValue(value, false, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -40605,7 +40524,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFormatedNameChanging(value);
                 ReportPropertyChanging("FormatedName");
-                _FormatedName = StructuralObject.SetValidValue(value, false);
+                _FormatedName = StructuralObject.SetValidValue(value, false, "FormatedName");
                 ReportPropertyChanged("FormatedName");
                 OnFormatedNameChanged();
             }
@@ -40629,7 +40548,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDescriptionChanging(value);
                 ReportPropertyChanging("Description");
-                _Description = StructuralObject.SetValidValue(value, true);
+                _Description = StructuralObject.SetValidValue(value, true, "Description");
                 ReportPropertyChanged("Description");
                 OnDescriptionChanged();
             }
@@ -40653,7 +40572,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLockedChanging(value);
                 ReportPropertyChanging("Locked");
-                _Locked = StructuralObject.SetValidValue(value);
+                _Locked = StructuralObject.SetValidValue(value, "Locked");
                 ReportPropertyChanged("Locked");
                 OnLockedChanged();
             }
@@ -40677,7 +40596,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIsNotificationChanging(value);
                 ReportPropertyChanging("IsNotification");
-                _IsNotification = StructuralObject.SetValidValue(value);
+                _IsNotification = StructuralObject.SetValidValue(value, "IsNotification");
                 ReportPropertyChanged("IsNotification");
                 OnIsNotificationChanged();
             }
@@ -40701,7 +40620,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNotificationTypeChanging(value);
                 ReportPropertyChanging("NotificationType");
-                _NotificationType = StructuralObject.SetValidValue(value);
+                _NotificationType = StructuralObject.SetValidValue(value, "NotificationType");
                 ReportPropertyChanged("NotificationType");
                 OnNotificationTypeChanged();
             }
@@ -40725,7 +40644,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNotificationTimeChanging(value);
                 ReportPropertyChanging("NotificationTime");
-                _NotificationTime = StructuralObject.SetValidValue(value);
+                _NotificationTime = StructuralObject.SetValidValue(value, "NotificationTime");
                 ReportPropertyChanged("NotificationTime");
                 OnNotificationTimeChanged();
             }
@@ -40749,7 +40668,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAllowModificationChanging(value);
                 ReportPropertyChanging("AllowModification");
-                _AllowModification = StructuralObject.SetValidValue(value);
+                _AllowModification = StructuralObject.SetValidValue(value, "AllowModification");
                 ReportPropertyChanged("AllowModification");
                 OnAllowModificationChanged();
             }
@@ -40773,7 +40692,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIsVisibleInSchedulerChanging(value);
                 ReportPropertyChanging("IsVisibleInScheduler");
-                _IsVisibleInScheduler = StructuralObject.SetValidValue(value);
+                _IsVisibleInScheduler = StructuralObject.SetValidValue(value, "IsVisibleInScheduler");
                 ReportPropertyChanged("IsVisibleInScheduler");
                 OnIsVisibleInSchedulerChanged();
             }
@@ -40797,7 +40716,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlgorithmChanging(value);
                 ReportPropertyChanging("Algorithm");
-                _Algorithm = StructuralObject.SetValidValue(value);
+                _Algorithm = StructuralObject.SetValidValue(value, "Algorithm");
                 ReportPropertyChanged("Algorithm");
                 OnAlgorithmChanged();
             }
@@ -40821,7 +40740,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCodeChanging(value);
                 ReportPropertyChanging("Code");
-                _Code = StructuralObject.SetValidValue(value, true);
+                _Code = StructuralObject.SetValidValue(value, true, "Code");
                 ReportPropertyChanged("Code");
                 OnCodeChanged();
             }
@@ -40845,7 +40764,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOperatorTypeChanging(value);
                 ReportPropertyChanging("OperatorType");
-                _OperatorType = StructuralObject.SetValidValue(value);
+                _OperatorType = StructuralObject.SetValidValue(value, "OperatorType");
                 ReportPropertyChanged("OperatorType");
                 OnOperatorTypeChanged();
             }
@@ -40869,7 +40788,7 @@ namespace Enova.Business.Old.DB
             {
                 OnActionTypeChanging(value);
                 ReportPropertyChanging("ActionType");
-                _ActionType = StructuralObject.SetValidValue(value);
+                _ActionType = StructuralObject.SetValidValue(value, "ActionType");
                 ReportPropertyChanged("ActionType");
                 OnActionTypeChanged();
             }
@@ -40893,7 +40812,7 @@ namespace Enova.Business.Old.DB
             {
                 OnActionRunAtChanging(value);
                 ReportPropertyChanging("ActionRunAt");
-                _ActionRunAt = StructuralObject.SetValidValue(value);
+                _ActionRunAt = StructuralObject.SetValidValue(value, "ActionRunAt");
                 ReportPropertyChanged("ActionRunAt");
                 OnActionRunAtChanged();
             }
@@ -40917,7 +40836,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRoleGuidChanging(value);
                 ReportPropertyChanging("RoleGuid");
-                _RoleGuid = StructuralObject.SetValidValue(value);
+                _RoleGuid = StructuralObject.SetValidValue(value, "RoleGuid");
                 ReportPropertyChanged("RoleGuid");
                 OnRoleGuidChanged();
             }
@@ -40941,7 +40860,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -40965,7 +40884,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMultiTaskChanging(value);
                 ReportPropertyChanging("MultiTask");
-                _MultiTask = StructuralObject.SetValidValue(value);
+                _MultiTask = StructuralObject.SetValidValue(value, "MultiTask");
                 ReportPropertyChanged("MultiTask");
                 OnMultiTaskChanged();
             }
@@ -40989,7 +40908,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDeleteOnRealizedChanging(value);
                 ReportPropertyChanging("DeleteOnRealized");
-                _DeleteOnRealized = StructuralObject.SetValidValue(value);
+                _DeleteOnRealized = StructuralObject.SetValidValue(value, "DeleteOnRealized");
                 ReportPropertyChanged("DeleteOnRealized");
                 OnDeleteOnRealizedChanged();
             }
@@ -41013,7 +40932,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWizardDefinitionChanging(value);
                 ReportPropertyChanging("WizardDefinition");
-                _WizardDefinition = StructuralObject.SetValidValue(value);
+                _WizardDefinition = StructuralObject.SetValidValue(value, "WizardDefinition");
                 ReportPropertyChanged("WizardDefinition");
                 OnWizardDefinitionChanged();
             }
@@ -41037,7 +40956,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSonetaExplorerChanging(value);
                 ReportPropertyChanging("SonetaExplorer");
-                _SonetaExplorer = StructuralObject.SetValidValue(value);
+                _SonetaExplorer = StructuralObject.SetValidValue(value, "SonetaExplorer");
                 ReportPropertyChanged("SonetaExplorer");
                 OnSonetaExplorerChanged();
             }
@@ -41061,7 +40980,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInWorkflowUseChanging(value);
                 ReportPropertyChanging("InWorkflowUse");
-                _InWorkflowUse = StructuralObject.SetValidValue(value);
+                _InWorkflowUse = StructuralObject.SetValidValue(value, "InWorkflowUse");
                 ReportPropertyChanged("InWorkflowUse");
                 OnInWorkflowUseChanged();
             }
@@ -41085,7 +41004,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWizardInstructionChanging(value);
                 ReportPropertyChanging("WizardInstruction");
-                _WizardInstruction = StructuralObject.SetValidValue(value, true);
+                _WizardInstruction = StructuralObject.SetValidValue(value, true, "WizardInstruction");
                 ReportPropertyChanged("WizardInstruction");
                 OnWizardInstructionChanged();
             }
@@ -41109,7 +41028,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMakeParentReadonlyChanging(value);
                 ReportPropertyChanging("MakeParentReadonly");
-                _MakeParentReadonly = StructuralObject.SetValidValue(value);
+                _MakeParentReadonly = StructuralObject.SetValidValue(value, "MakeParentReadonly");
                 ReportPropertyChanged("MakeParentReadonly");
                 OnMakeParentReadonlyChanged();
             }
@@ -41133,7 +41052,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIsStartChanging(value);
                 ReportPropertyChanging("IsStart");
-                _IsStart = StructuralObject.SetValidValue(value);
+                _IsStart = StructuralObject.SetValidValue(value, "IsStart");
                 ReportPropertyChanged("IsStart");
                 OnIsStartChanged();
             }
@@ -41157,7 +41076,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWFDefinitionChanging(value);
                 ReportPropertyChanging("WFDefinition");
-                _WFDefinition = StructuralObject.SetValidValue(value);
+                _WFDefinition = StructuralObject.SetValidValue(value, "WFDefinition");
                 ReportPropertyChanged("WFDefinition");
                 OnWFDefinitionChanged();
             }
@@ -41181,7 +41100,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWFDefinitionTypeChanging(value);
                 ReportPropertyChanging("WFDefinitionType");
-                _WFDefinitionType = StructuralObject.SetValidValue(value, true);
+                _WFDefinitionType = StructuralObject.SetValidValue(value, true, "WFDefinitionType");
                 ReportPropertyChanged("WFDefinitionType");
                 OnWFDefinitionTypeChanged();
             }
@@ -41205,7 +41124,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWFDefItemChanging(value);
                 ReportPropertyChanging("WFDefItem");
-                _WFDefItem = StructuralObject.SetValidValue(value);
+                _WFDefItem = StructuralObject.SetValidValue(value, "WFDefItem");
                 ReportPropertyChanged("WFDefItem");
                 OnWFDefItemChanged();
             }
@@ -41229,7 +41148,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWFDefItemTypeChanging(value);
                 ReportPropertyChanging("WFDefItemType");
-                _WFDefItemType = StructuralObject.SetValidValue(value, true);
+                _WFDefItemType = StructuralObject.SetValidValue(value, true, "WFDefItemType");
                 ReportPropertyChanged("WFDefItemType");
                 OnWFDefItemTypeChanged();
             }
@@ -41253,7 +41172,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOGSchemaChanging(value);
                 ReportPropertyChanging("OGSchema");
-                _OGSchema = StructuralObject.SetValidValue(value);
+                _OGSchema = StructuralObject.SetValidValue(value, "OGSchema");
                 ReportPropertyChanged("OGSchema");
                 OnOGSchemaChanged();
             }
@@ -41277,7 +41196,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOGSchemaTypeChanging(value);
                 ReportPropertyChanging("OGSchemaType");
-                _OGSchemaType = StructuralObject.SetValidValue(value, true);
+                _OGSchemaType = StructuralObject.SetValidValue(value, true, "OGSchemaType");
                 ReportPropertyChanged("OGSchemaType");
                 OnOGSchemaTypeChanged();
             }
@@ -41301,7 +41220,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInitParentChanging(value);
                 ReportPropertyChanging("InitParent");
-                _InitParent = StructuralObject.SetValidValue(value);
+                _InitParent = StructuralObject.SetValidValue(value, "InitParent");
                 ReportPropertyChanged("InitParent");
                 OnInitParentChanged();
             }
@@ -41325,7 +41244,7 @@ namespace Enova.Business.Old.DB
             {
                 OnXMLChanging(value);
                 ReportPropertyChanging("XML");
-                _XML = StructuralObject.SetValidValue(value, true);
+                _XML = StructuralObject.SetValidValue(value, true, "XML");
                 ReportPropertyChanged("XML");
                 OnXMLChanged();
             }
@@ -41349,7 +41268,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIsSingleInstanceChanging(value);
                 ReportPropertyChanging("IsSingleInstance");
-                _IsSingleInstance = StructuralObject.SetValidValue(value);
+                _IsSingleInstance = StructuralObject.SetValidValue(value, "IsSingleInstance");
                 ReportPropertyChanged("IsSingleInstance");
                 OnIsSingleInstanceChanged();
             }
@@ -41373,7 +41292,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOverdueHandlingChanging(value);
                 ReportPropertyChanging("OverdueHandling");
-                _OverdueHandling = StructuralObject.SetValidValue(value);
+                _OverdueHandling = StructuralObject.SetValidValue(value, "OverdueHandling");
                 ReportPropertyChanged("OverdueHandling");
                 OnOverdueHandlingChanged();
             }
@@ -41397,7 +41316,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOverdueServiceTypeChanging(value);
                 ReportPropertyChanging("OverdueServiceType");
-                _OverdueServiceType = StructuralObject.SetValidValue(value);
+                _OverdueServiceType = StructuralObject.SetValidValue(value, "OverdueServiceType");
                 ReportPropertyChanged("OverdueServiceType");
                 OnOverdueServiceTypeChanged();
             }
@@ -41408,7 +41327,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -41526,7 +41444,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -41545,7 +41463,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -41570,7 +41488,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLinkedObjectChanging(value);
                 ReportPropertyChanging("LinkedObject");
-                _LinkedObject = StructuralObject.SetValidValue(value);
+                _LinkedObject = StructuralObject.SetValidValue(value, "LinkedObject");
                 ReportPropertyChanged("LinkedObject");
                 OnLinkedObjectChanged();
             }
@@ -41594,7 +41512,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLinkedObjectTypeChanging(value);
                 ReportPropertyChanging("LinkedObjectType");
-                _LinkedObjectType = StructuralObject.SetValidValue(value, false);
+                _LinkedObjectType = StructuralObject.SetValidValue(value, false, "LinkedObjectType");
                 ReportPropertyChanged("LinkedObjectType");
                 OnLinkedObjectTypeChanged();
             }
@@ -41618,7 +41536,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIsParentChanging(value);
                 ReportPropertyChanging("IsParent");
-                _IsParent = StructuralObject.SetValidValue(value);
+                _IsParent = StructuralObject.SetValidValue(value, "IsParent");
                 ReportPropertyChanged("IsParent");
                 OnIsParentChanged();
             }
@@ -41642,7 +41560,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -41653,7 +41571,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -41727,7 +41644,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -41746,7 +41663,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -41771,7 +41688,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -41795,7 +41712,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParentChanging(value);
                 ReportPropertyChanging("Parent");
-                _Parent = StructuralObject.SetValidValue(value);
+                _Parent = StructuralObject.SetValidValue(value, "Parent");
                 ReportPropertyChanged("Parent");
                 OnParentChanged();
             }
@@ -41819,7 +41736,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParentTypeChanging(value);
                 ReportPropertyChanging("ParentType");
-                _ParentType = StructuralObject.SetValidValue(value, true);
+                _ParentType = StructuralObject.SetValidValue(value, true, "ParentType");
                 ReportPropertyChanged("ParentType");
                 OnParentTypeChanged();
             }
@@ -41843,7 +41760,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOperatorRoleTypeChanging(value);
                 ReportPropertyChanging("OperatorRoleType");
-                _OperatorRoleType = StructuralObject.SetValidValue(value);
+                _OperatorRoleType = StructuralObject.SetValidValue(value, "OperatorRoleType");
                 ReportPropertyChanged("OperatorRoleType");
                 OnOperatorRoleTypeChanged();
             }
@@ -41867,7 +41784,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRoleGuidChanging(value);
                 ReportPropertyChanging("RoleGuid");
-                _RoleGuid = StructuralObject.SetValidValue(value);
+                _RoleGuid = StructuralObject.SetValidValue(value, "RoleGuid");
                 ReportPropertyChanged("RoleGuid");
                 OnRoleGuidChanged();
             }
@@ -41891,7 +41808,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTaskUserChanging(value);
                 ReportPropertyChanging("TaskUser");
-                _TaskUser = StructuralObject.SetValidValue(value);
+                _TaskUser = StructuralObject.SetValidValue(value, "TaskUser");
                 ReportPropertyChanged("TaskUser");
                 OnTaskUserChanged();
             }
@@ -41915,7 +41832,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTaskUserTypeChanging(value);
                 ReportPropertyChanging("TaskUserType");
-                _TaskUserType = StructuralObject.SetValidValue(value, true);
+                _TaskUserType = StructuralObject.SetValidValue(value, true, "TaskUserType");
                 ReportPropertyChanged("TaskUserType");
                 OnTaskUserTypeChanged();
             }
@@ -41939,7 +41856,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStartChanging(value);
                 ReportPropertyChanging("Start");
-                _Start = StructuralObject.SetValidValue(value);
+                _Start = StructuralObject.SetValidValue(value, "Start");
                 ReportPropertyChanged("Start");
                 OnStartChanged();
             }
@@ -41963,7 +41880,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEndChanging(value);
                 ReportPropertyChanging("End");
-                _End = StructuralObject.SetValidValue(value);
+                _End = StructuralObject.SetValidValue(value, "End");
                 ReportPropertyChanged("End");
                 OnEndChanged();
             }
@@ -41987,7 +41904,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNotificationChanging(value);
                 ReportPropertyChanging("Notification");
-                _Notification = StructuralObject.SetValidValue(value);
+                _Notification = StructuralObject.SetValidValue(value, "Notification");
                 ReportPropertyChanged("Notification");
                 OnNotificationChanged();
             }
@@ -42011,7 +41928,7 @@ namespace Enova.Business.Old.DB
             {
                 OnProgressChanging(value);
                 ReportPropertyChanging("Progress");
-                _Progress = StructuralObject.SetValidValue(value);
+                _Progress = StructuralObject.SetValidValue(value, "Progress");
                 ReportPropertyChanged("Progress");
                 OnProgressChanged();
             }
@@ -42035,7 +41952,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
+                _Name = StructuralObject.SetValidValue(value, false, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -42059,7 +41976,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDescriptionChanging(value);
                 ReportPropertyChanging("Description");
-                _Description = StructuralObject.SetValidValue(value, true);
+                _Description = StructuralObject.SetValidValue(value, true, "Description");
                 ReportPropertyChanged("Description");
                 OnDescriptionChanged();
             }
@@ -42083,7 +42000,7 @@ namespace Enova.Business.Old.DB
             {
                 OnModifiedChanging(value);
                 ReportPropertyChanging("Modified");
-                _Modified = StructuralObject.SetValidValue(value);
+                _Modified = StructuralObject.SetValidValue(value, "Modified");
                 ReportPropertyChanged("Modified");
                 OnModifiedChanged();
             }
@@ -42107,7 +42024,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -42131,7 +42048,7 @@ namespace Enova.Business.Old.DB
             {
                 OnValidFromChanging(value);
                 ReportPropertyChanging("ValidFrom");
-                _ValidFrom = StructuralObject.SetValidValue(value);
+                _ValidFrom = StructuralObject.SetValidValue(value, "ValidFrom");
                 ReportPropertyChanged("ValidFrom");
                 OnValidFromChanged();
             }
@@ -42155,7 +42072,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWizardDefinitionChanging(value);
                 ReportPropertyChanging("WizardDefinition");
-                _WizardDefinition = StructuralObject.SetValidValue(value);
+                _WizardDefinition = StructuralObject.SetValidValue(value, "WizardDefinition");
                 ReportPropertyChanged("WizardDefinition");
                 OnWizardDefinitionChanged();
             }
@@ -42179,7 +42096,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWFTransitionChanging(value);
                 ReportPropertyChanging("WFTransition");
-                _WFTransition = StructuralObject.SetValidValue(value);
+                _WFTransition = StructuralObject.SetValidValue(value, "WFTransition");
                 ReportPropertyChanged("WFTransition");
                 OnWFTransitionChanged();
             }
@@ -42203,7 +42120,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWFTransitionTypeChanging(value);
                 ReportPropertyChanging("WFTransitionType");
-                _WFTransitionType = StructuralObject.SetValidValue(value, true);
+                _WFTransitionType = StructuralObject.SetValidValue(value, true, "WFTransitionType");
                 ReportPropertyChanged("WFTransitionType");
                 OnWFTransitionTypeChanged();
             }
@@ -42227,7 +42144,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWFWorkflowChanging(value);
                 ReportPropertyChanging("WFWorkflow");
-                _WFWorkflow = StructuralObject.SetValidValue(value);
+                _WFWorkflow = StructuralObject.SetValidValue(value, "WFWorkflow");
                 ReportPropertyChanged("WFWorkflow");
                 OnWFWorkflowChanged();
             }
@@ -42251,7 +42168,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWFWorkflowTypeChanging(value);
                 ReportPropertyChanging("WFWorkflowType");
-                _WFWorkflowType = StructuralObject.SetValidValue(value, true);
+                _WFWorkflowType = StructuralObject.SetValidValue(value, true, "WFWorkflowType");
                 ReportPropertyChanged("WFWorkflowType");
                 OnWFWorkflowTypeChanged();
             }
@@ -42275,7 +42192,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEditInWorkflowChanging(value);
                 ReportPropertyChanging("EditInWorkflow");
-                _EditInWorkflow = StructuralObject.SetValidValue(value);
+                _EditInWorkflow = StructuralObject.SetValidValue(value, "EditInWorkflow");
                 ReportPropertyChanged("EditInWorkflow");
                 OnEditInWorkflowChanged();
             }
@@ -42286,7 +42203,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -42456,7 +42372,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -42475,7 +42391,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -42500,7 +42416,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTableNameChanging(value);
                 ReportPropertyChanging("TableName");
-                _TableName = StructuralObject.SetValidValue(value, false);
+                _TableName = StructuralObject.SetValidValue(value, false, "TableName");
                 ReportPropertyChanged("TableName");
                 OnTableNameChanged();
             }
@@ -42524,7 +42440,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCodeChanging(value);
                 ReportPropertyChanging("Code");
-                _Code = StructuralObject.SetValidValue(value, true);
+                _Code = StructuralObject.SetValidValue(value, true, "Code");
                 ReportPropertyChanged("Code");
                 OnCodeChanged();
             }
@@ -42548,7 +42464,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -42559,7 +42475,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -42637,7 +42552,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -42654,7 +42569,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAktualizujCenyChanging(value);
                 ReportPropertyChanging("AktualizujCeny");
-                _AktualizujCeny = StructuralObject.SetValidValue(value);
+                _AktualizujCeny = StructuralObject.SetValidValue(value, "AktualizujCeny");
                 ReportPropertyChanged("AktualizujCeny");
                 OnAktualizujCenyChanged();
             }
@@ -42678,7 +42593,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaChanging(value);
                 ReportPropertyChanging("Blokada");
-                _Blokada = StructuralObject.SetValidValue(value);
+                _Blokada = StructuralObject.SetValidValue(value, "Blokada");
                 ReportPropertyChanged("Blokada");
                 OnBlokadaChanged();
             }
@@ -42702,7 +42617,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCenaZakupuKartotekowaSymbolChanging(value);
                 ReportPropertyChanging("CenaZakupuKartotekowaSymbol");
-                _CenaZakupuKartotekowaSymbol = StructuralObject.SetValidValue(value, true);
+                _CenaZakupuKartotekowaSymbol = StructuralObject.SetValidValue(value, true, "CenaZakupuKartotekowaSymbol");
                 ReportPropertyChanged("CenaZakupuKartotekowaSymbol");
                 OnCenaZakupuKartotekowaSymbolChanged();
             }
@@ -42726,7 +42641,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCenaZakupuKartotekowaValueChanging(value);
                 ReportPropertyChanging("CenaZakupuKartotekowaValue");
-                _CenaZakupuKartotekowaValue = StructuralObject.SetValidValue(value);
+                _CenaZakupuKartotekowaValue = StructuralObject.SetValidValue(value, "CenaZakupuKartotekowaValue");
                 ReportPropertyChanged("CenaZakupuKartotekowaValue");
                 OnCenaZakupuKartotekowaValueChanged();
             }
@@ -42750,7 +42665,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDoWyprzedazyChanging(value);
                 ReportPropertyChanging("DoWyprzedazy");
-                _DoWyprzedazy = StructuralObject.SetValidValue(value);
+                _DoWyprzedazy = StructuralObject.SetValidValue(value, "DoWyprzedazy");
                 ReportPropertyChanged("DoWyprzedazy");
                 OnDoWyprzedazyChanged();
             }
@@ -42774,7 +42689,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEANChanging(value);
                 ReportPropertyChanging("EAN");
-                _EAN = StructuralObject.SetValidValue(value, true);
+                _EAN = StructuralObject.SetValidValue(value, true, "EAN");
                 ReportPropertyChanged("EAN");
                 OnEANChanged();
             }
@@ -42798,7 +42713,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEdycjaNazwyChanging(value);
                 ReportPropertyChanging("EdycjaNazwy");
-                _EdycjaNazwy = StructuralObject.SetValidValue(value);
+                _EdycjaNazwy = StructuralObject.SetValidValue(value, "EdycjaNazwy");
                 ReportPropertyChanged("EdycjaNazwy");
                 OnEdycjaNazwyChanged();
             }
@@ -42822,7 +42737,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -42848,7 +42763,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -42873,7 +42788,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodChanging(value);
                 ReportPropertyChanging("Kod");
-                _Kod = StructuralObject.SetValidValue(value, false);
+                _Kod = StructuralObject.SetValidValue(value, false, "Kod");
                 ReportPropertyChanged("Kod");
                 OnKodChanged();
             }
@@ -42881,30 +42796,6 @@ namespace Enova.Business.Old.DB
         private global::System.String _Kod;
         partial void OnKodChanging(global::System.String value);
         partial void OnKodChanged();
-    
-        /// <summary>
-        /// Dokumentacja metadanych jest niedostępna.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String KodCN
-        {
-            get
-            {
-                return _KodCN;
-            }
-            set
-            {
-                OnKodCNChanging(value);
-                ReportPropertyChanging("KodCN");
-                _KodCN = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("KodCN");
-                OnKodCNChanged();
-            }
-        }
-        private global::System.String _KodCN;
-        partial void OnKodCNChanging(global::System.String value);
-        partial void OnKodCNChanged();
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -42921,7 +42812,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKosztDodatkowyChanging(value);
                 ReportPropertyChanging("KosztDodatkowy");
-                _KosztDodatkowy = StructuralObject.SetValidValue(value);
+                _KosztDodatkowy = StructuralObject.SetValidValue(value, "KosztDodatkowy");
                 ReportPropertyChanged("KosztDodatkowy");
                 OnKosztDodatkowyChanged();
             }
@@ -42945,7 +42836,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLockingTillTimeChanging(value);
                 ReportPropertyChanging("LockingTillTime");
-                _LockingTillTime = StructuralObject.SetValidValue(value);
+                _LockingTillTime = StructuralObject.SetValidValue(value, "LockingTillTime");
                 ReportPropertyChanged("LockingTillTime");
                 OnLockingTillTimeChanged();
             }
@@ -42969,7 +42860,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMarzaChanging(value);
                 ReportPropertyChanging("Marza");
-                _Marza = StructuralObject.SetValidValue(value);
+                _Marza = StructuralObject.SetValidValue(value, "Marza");
                 ReportPropertyChanged("Marza");
                 OnMarzaChanged();
             }
@@ -42993,7 +42884,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMasaBruttoSymbolChanging(value);
                 ReportPropertyChanging("MasaBruttoSymbol");
-                _MasaBruttoSymbol = StructuralObject.SetValidValue(value, true);
+                _MasaBruttoSymbol = StructuralObject.SetValidValue(value, true, "MasaBruttoSymbol");
                 ReportPropertyChanged("MasaBruttoSymbol");
                 OnMasaBruttoSymbolChanged();
             }
@@ -43017,7 +42908,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMasaBruttoValueChanging(value);
                 ReportPropertyChanging("MasaBruttoValue");
-                _MasaBruttoValue = StructuralObject.SetValidValue(value);
+                _MasaBruttoValue = StructuralObject.SetValidValue(value, "MasaBruttoValue");
                 ReportPropertyChanged("MasaBruttoValue");
                 OnMasaBruttoValueChanged();
             }
@@ -43041,7 +42932,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMasaNettoSymbolChanging(value);
                 ReportPropertyChanging("MasaNettoSymbol");
-                _MasaNettoSymbol = StructuralObject.SetValidValue(value, true);
+                _MasaNettoSymbol = StructuralObject.SetValidValue(value, true, "MasaNettoSymbol");
                 ReportPropertyChanged("MasaNettoSymbol");
                 OnMasaNettoSymbolChanged();
             }
@@ -43065,7 +42956,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMasaNettoValueChanging(value);
                 ReportPropertyChanging("MasaNettoValue");
-                _MasaNettoValue = StructuralObject.SetValidValue(value);
+                _MasaNettoValue = StructuralObject.SetValidValue(value, "MasaNettoValue");
                 ReportPropertyChanged("MasaNettoValue");
                 OnMasaNettoValueChanged();
             }
@@ -43089,7 +42980,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMinimalnaMarzaChanging(value);
                 ReportPropertyChanging("MinimalnaMarza");
-                _MinimalnaMarza = StructuralObject.SetValidValue(value);
+                _MinimalnaMarza = StructuralObject.SetValidValue(value, "MinimalnaMarza");
                 ReportPropertyChanged("MinimalnaMarza");
                 OnMinimalnaMarzaChanged();
             }
@@ -43113,7 +43004,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNarzutChanging(value);
                 ReportPropertyChanging("Narzut");
-                _Narzut = StructuralObject.SetValidValue(value);
+                _Narzut = StructuralObject.SetValidValue(value, "Narzut");
                 ReportPropertyChanged("Narzut");
                 OnNarzutChanged();
             }
@@ -43137,7 +43028,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -43161,7 +43052,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaIntrastatChanging(value);
                 ReportPropertyChanging("NazwaIntrastat");
-                _NazwaIntrastat = StructuralObject.SetValidValue(value, true);
+                _NazwaIntrastat = StructuralObject.SetValidValue(value, true, "NazwaIntrastat");
                 ReportPropertyChanged("NazwaIntrastat");
                 OnNazwaIntrastatChanged();
             }
@@ -43185,7 +43076,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerKatalogowyChanging(value);
                 ReportPropertyChanging("NumerKatalogowy");
-                _NumerKatalogowy = StructuralObject.SetValidValue(value, true);
+                _NumerKatalogowy = StructuralObject.SetValidValue(value, true, "NumerKatalogowy");
                 ReportPropertyChanged("NumerKatalogowy");
                 OnNumerKatalogowyChanged();
             }
@@ -43209,7 +43100,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisChanging(value);
                 ReportPropertyChanging("Opis");
-                _Opis = StructuralObject.SetValidValue(value, true);
+                _Opis = StructuralObject.SetValidValue(value, true, "Opis");
                 ReportPropertyChanged("Opis");
                 OnOpisChanged();
             }
@@ -43233,7 +43124,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPelneKompletyChanging(value);
                 ReportPropertyChanging("PelneKomplety");
-                _PelneKomplety = StructuralObject.SetValidValue(value);
+                _PelneKomplety = StructuralObject.SetValidValue(value, "PelneKomplety");
                 ReportPropertyChanged("PelneKomplety");
                 OnPelneKompletyChanged();
             }
@@ -43257,7 +43148,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrecyzjaChanging(value);
                 ReportPropertyChanging("Precyzja");
-                _Precyzja = StructuralObject.SetValidValue(value);
+                _Precyzja = StructuralObject.SetValidValue(value, "Precyzja");
                 ReportPropertyChanged("Precyzja");
                 OnPrecyzjaChanged();
             }
@@ -43281,7 +43172,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value);
+                _Stamp = StructuralObject.SetValidValue(value, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -43305,7 +43196,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanMaksymalnySymbolChanging(value);
                 ReportPropertyChanging("StanMaksymalnySymbol");
-                _StanMaksymalnySymbol = StructuralObject.SetValidValue(value, true);
+                _StanMaksymalnySymbol = StructuralObject.SetValidValue(value, true, "StanMaksymalnySymbol");
                 ReportPropertyChanged("StanMaksymalnySymbol");
                 OnStanMaksymalnySymbolChanged();
             }
@@ -43329,7 +43220,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanMaksymalnyValueChanging(value);
                 ReportPropertyChanging("StanMaksymalnyValue");
-                _StanMaksymalnyValue = StructuralObject.SetValidValue(value);
+                _StanMaksymalnyValue = StructuralObject.SetValidValue(value, "StanMaksymalnyValue");
                 ReportPropertyChanged("StanMaksymalnyValue");
                 OnStanMaksymalnyValueChanged();
             }
@@ -43353,7 +43244,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanMinimalnySymbolChanging(value);
                 ReportPropertyChanging("StanMinimalnySymbol");
-                _StanMinimalnySymbol = StructuralObject.SetValidValue(value, true);
+                _StanMinimalnySymbol = StructuralObject.SetValidValue(value, true, "StanMinimalnySymbol");
                 ReportPropertyChanged("StanMinimalnySymbol");
                 OnStanMinimalnySymbolChanged();
             }
@@ -43377,7 +43268,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanMinimalnyValueChanging(value);
                 ReportPropertyChanging("StanMinimalnyValue");
-                _StanMinimalnyValue = StructuralObject.SetValidValue(value);
+                _StanMinimalnyValue = StructuralObject.SetValidValue(value, "StanMinimalnyValue");
                 ReportPropertyChanged("StanMinimalnyValue");
                 OnStanMinimalnyValueChanged();
             }
@@ -43401,7 +43292,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSWWChanging(value);
                 ReportPropertyChanging("SWW");
-                _SWW = StructuralObject.SetValidValue(value, true);
+                _SWW = StructuralObject.SetValidValue(value, true, "SWW");
                 ReportPropertyChanged("SWW");
                 OnSWWChanged();
             }
@@ -43425,7 +43316,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -43449,7 +43340,7 @@ namespace Enova.Business.Old.DB
             {
                 OnVATOdMarzyChanging(value);
                 ReportPropertyChanging("VATOdMarzy");
-                _VATOdMarzy = StructuralObject.SetValidValue(value);
+                _VATOdMarzy = StructuralObject.SetValidValue(value, "VATOdMarzy");
                 ReportPropertyChanged("VATOdMarzy");
                 OnVATOdMarzyChanged();
             }
@@ -43473,7 +43364,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWyborPartiiChanging(value);
                 ReportPropertyChanging("WyborPartii");
-                _WyborPartii = StructuralObject.SetValidValue(value);
+                _WyborPartii = StructuralObject.SetValidValue(value, "WyborPartii");
                 ReportPropertyChanged("WyborPartii");
                 OnWyborPartiiChanged();
             }
@@ -43497,7 +43388,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZaokraglenieZamowieniaSymbolChanging(value);
                 ReportPropertyChanging("ZaokraglenieZamowieniaSymbol");
-                _ZaokraglenieZamowieniaSymbol = StructuralObject.SetValidValue(value, true);
+                _ZaokraglenieZamowieniaSymbol = StructuralObject.SetValidValue(value, true, "ZaokraglenieZamowieniaSymbol");
                 ReportPropertyChanged("ZaokraglenieZamowieniaSymbol");
                 OnZaokraglenieZamowieniaSymbolChanged();
             }
@@ -43521,7 +43412,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZaokraglenieZamowieniaValueChanging(value);
                 ReportPropertyChanging("ZaokraglenieZamowieniaValue");
-                _ZaokraglenieZamowieniaValue = StructuralObject.SetValidValue(value);
+                _ZaokraglenieZamowieniaValue = StructuralObject.SetValidValue(value, "ZaokraglenieZamowieniaValue");
                 ReportPropertyChanged("ZaokraglenieZamowieniaValue");
                 OnZaokraglenieZamowieniaValueChanged();
             }
@@ -43545,7 +43436,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLinkChanging(value);
                 ReportPropertyChanging("Link");
-                _Link = StructuralObject.SetValidValue(value, true);
+                _Link = StructuralObject.SetValidValue(value, true, "Link");
                 ReportPropertyChanged("Link");
                 OnLinkChanged();
             }
@@ -43569,7 +43460,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpakowanieChanging(value);
                 ReportPropertyChanging("Opakowanie");
-                _Opakowanie = StructuralObject.SetValidValue(value);
+                _Opakowanie = StructuralObject.SetValidValue(value, "Opakowanie");
                 ReportPropertyChanged("Opakowanie");
                 OnOpakowanieChanged();
             }
@@ -43593,7 +43484,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrefiksGTIN13Changing(value);
                 ReportPropertyChanging("PrefiksGTIN13");
-                _PrefiksGTIN13 = StructuralObject.SetValidValue(value, true);
+                _PrefiksGTIN13 = StructuralObject.SetValidValue(value, true, "PrefiksGTIN13");
                 ReportPropertyChanged("PrefiksGTIN13");
                 OnPrefiksGTIN13Changed();
             }
@@ -43617,7 +43508,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAlternatywneDefinicjeStawekInfoPowodZmianyStawkiVatChanging(value);
                 ReportPropertyChanging("AlternatywneDefinicjeStawekInfoPowodZmianyStawkiVat");
-                _AlternatywneDefinicjeStawekInfoPowodZmianyStawkiVat = StructuralObject.SetValidValue(value);
+                _AlternatywneDefinicjeStawekInfoPowodZmianyStawkiVat = StructuralObject.SetValidValue(value, "AlternatywneDefinicjeStawekInfoPowodZmianyStawkiVat");
                 ReportPropertyChanged("AlternatywneDefinicjeStawekInfoPowodZmianyStawkiVat");
                 OnAlternatywneDefinicjeStawekInfoPowodZmianyStawkiVatChanged();
             }
@@ -43641,7 +43532,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDefinicjaPowstaniaObowiazkuVATInfoSprzedazChanging(value);
                 ReportPropertyChanging("DefinicjaPowstaniaObowiazkuVATInfoSprzedaz");
-                _DefinicjaPowstaniaObowiazkuVATInfoSprzedaz = StructuralObject.SetValidValue(value);
+                _DefinicjaPowstaniaObowiazkuVATInfoSprzedaz = StructuralObject.SetValidValue(value, "DefinicjaPowstaniaObowiazkuVATInfoSprzedaz");
                 ReportPropertyChanged("DefinicjaPowstaniaObowiazkuVATInfoSprzedaz");
                 OnDefinicjaPowstaniaObowiazkuVATInfoSprzedazChanged();
             }
@@ -43665,7 +43556,7 @@ namespace Enova.Business.Old.DB
             {
                 OnProduktInfoCenaIndywidualnaChanging(value);
                 ReportPropertyChanging("ProduktInfoCenaIndywidualna");
-                _ProduktInfoCenaIndywidualna = StructuralObject.SetValidValue(value);
+                _ProduktInfoCenaIndywidualna = StructuralObject.SetValidValue(value, "ProduktInfoCenaIndywidualna");
                 ReportPropertyChanged("ProduktInfoCenaIndywidualna");
                 OnProduktInfoCenaIndywidualnaChanged();
             }
@@ -43689,7 +43580,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodstawaZwolnieniaChanging(value);
                 ReportPropertyChanging("PodstawaZwolnienia");
-                _PodstawaZwolnienia = StructuralObject.SetValidValue(value, true);
+                _PodstawaZwolnienia = StructuralObject.SetValidValue(value, true, "PodstawaZwolnienia");
                 ReportPropertyChanged("PodstawaZwolnienia");
                 OnPodstawaZwolnieniaChanged();
             }
@@ -43713,7 +43604,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNabywcaPodatnikChanging(value);
                 ReportPropertyChanging("NabywcaPodatnik");
-                _NabywcaPodatnik = StructuralObject.SetValidValue(value);
+                _NabywcaPodatnik = StructuralObject.SetValidValue(value, "NabywcaPodatnik");
                 ReportPropertyChanged("NabywcaPodatnik");
                 OnNabywcaPodatnikChanged();
             }
@@ -43737,7 +43628,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWyborPartiiOpcjeOpcjeChanging(value);
                 ReportPropertyChanging("WyborPartiiOpcjeOpcje");
-                _WyborPartiiOpcjeOpcje = StructuralObject.SetValidValue(value);
+                _WyborPartiiOpcjeOpcje = StructuralObject.SetValidValue(value, "WyborPartiiOpcjeOpcje");
                 ReportPropertyChanged("WyborPartiiOpcjeOpcje");
                 OnWyborPartiiOpcjeOpcjeChanged();
             }
@@ -43761,7 +43652,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWyborPartiiOpcjeAutonumerowanieOpcjeChanging(value);
                 ReportPropertyChanging("WyborPartiiOpcjeAutonumerowanieOpcje");
-                _WyborPartiiOpcjeAutonumerowanieOpcje = StructuralObject.SetValidValue(value);
+                _WyborPartiiOpcjeAutonumerowanieOpcje = StructuralObject.SetValidValue(value, "WyborPartiiOpcjeAutonumerowanieOpcje");
                 ReportPropertyChanged("WyborPartiiOpcjeAutonumerowanieOpcje");
                 OnWyborPartiiOpcjeAutonumerowanieOpcjeChanged();
             }
@@ -43785,7 +43676,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKrajPochodzeniaChanging(value);
                 ReportPropertyChanging("KrajPochodzenia");
-                _KrajPochodzenia = StructuralObject.SetValidValue(value, true);
+                _KrajPochodzenia = StructuralObject.SetValidValue(value, true, "KrajPochodzenia");
                 ReportPropertyChanged("KrajPochodzenia");
                 OnKrajPochodzeniaChanged();
             }
@@ -43809,7 +43700,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMinimalnaMarzaProcentChanging(value);
                 ReportPropertyChanging("MinimalnaMarzaProcent");
-                _MinimalnaMarzaProcent = StructuralObject.SetValidValue(value);
+                _MinimalnaMarzaProcent = StructuralObject.SetValidValue(value, "MinimalnaMarzaProcent");
                 ReportPropertyChanged("MinimalnaMarzaProcent");
                 OnMinimalnaMarzaProcentChanged();
             }
@@ -43833,7 +43724,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDoliczajKosztDodatkowyChanging(value);
                 ReportPropertyChanging("DoliczajKosztDodatkowy");
-                _DoliczajKosztDodatkowy = StructuralObject.SetValidValue(value);
+                _DoliczajKosztDodatkowy = StructuralObject.SetValidValue(value, "DoliczajKosztDodatkowy");
                 ReportPropertyChanged("DoliczajKosztDodatkowy");
                 OnDoliczajKosztDodatkowyChanged();
             }
@@ -43857,7 +43748,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodlegaPSDChanging(value);
                 ReportPropertyChanging("PodlegaPSD");
-                _PodlegaPSD = StructuralObject.SetValidValue(value);
+                _PodlegaPSD = StructuralObject.SetValidValue(value, "PodlegaPSD");
                 ReportPropertyChanged("PodlegaPSD");
                 OnPodlegaPSDChanged();
             }
@@ -43868,7 +43759,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -44426,44 +44316,6 @@ namespace Enova.Business.Old.DB
                 }
             }
         }
-    
-        /// <summary>
-        /// Dokumentacja metadanych jest niedostępna.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("EnovaModel", "Towary_JednostkaUzupelniajaca_FK", "Jednostki")]
-        public Jednostka JednostkaUzupelniajaca
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Jednostka>("EnovaModel.Towary_JednostkaUzupelniajaca_FK", "Jednostki").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Jednostka>("EnovaModel.Towary_JednostkaUzupelniajaca_FK", "Jednostki").Value = value;
-            }
-        }
-        /// <summary>
-        /// Dokumentacja metadanych jest niedostępna.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Jednostka> JednostkaUzupelniajacaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Jednostka>("EnovaModel.Towary_JednostkaUzupelniajaca_FK", "Jednostki");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Jednostka>("EnovaModel.Towary_JednostkaUzupelniajaca_FK", "Jednostki", value);
-                }
-            }
-        }
 
         #endregion
 
@@ -44500,7 +44352,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -44517,7 +44369,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEuVATChanging(value);
                 ReportPropertyChanging("EuVAT");
-                _EuVAT = StructuralObject.SetValidValue(value, true);
+                _EuVAT = StructuralObject.SetValidValue(value, true, "EuVAT");
                 ReportPropertyChanged("EuVAT");
                 OnEuVATChanged();
             }
@@ -44541,7 +44393,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -44567,7 +44419,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -44592,7 +44444,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodChanging(value);
                 ReportPropertyChanging("Kod");
-                _Kod = StructuralObject.SetValidValue(value, false);
+                _Kod = StructuralObject.SetValidValue(value, false, "Kod");
                 ReportPropertyChanged("Kod");
                 OnKodChanged();
             }
@@ -44616,7 +44468,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodUrzeduSkarbowegoChanging(value);
                 ReportPropertyChanging("KodUrzeduSkarbowego");
-                _KodUrzeduSkarbowego = StructuralObject.SetValidValue(value, true);
+                _KodUrzeduSkarbowego = StructuralObject.SetValidValue(value, true, "KodUrzeduSkarbowego");
                 ReportPropertyChanged("KodUrzeduSkarbowego");
                 OnKodUrzeduSkarbowegoChanged();
             }
@@ -44640,7 +44492,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktEMAILChanging(value);
                 ReportPropertyChanging("KontaktEMAIL");
-                _KontaktEMAIL = StructuralObject.SetValidValue(value, true);
+                _KontaktEMAIL = StructuralObject.SetValidValue(value, true, "KontaktEMAIL");
                 ReportPropertyChanged("KontaktEMAIL");
                 OnKontaktEMAILChanged();
             }
@@ -44664,7 +44516,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktSkrytkaPocztowaChanging(value);
                 ReportPropertyChanging("KontaktSkrytkaPocztowa");
-                _KontaktSkrytkaPocztowa = StructuralObject.SetValidValue(value, true);
+                _KontaktSkrytkaPocztowa = StructuralObject.SetValidValue(value, true, "KontaktSkrytkaPocztowa");
                 ReportPropertyChanged("KontaktSkrytkaPocztowa");
                 OnKontaktSkrytkaPocztowaChanged();
             }
@@ -44688,7 +44540,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktTelefonKomorkowyChanging(value);
                 ReportPropertyChanging("KontaktTelefonKomorkowy");
-                _KontaktTelefonKomorkowy = StructuralObject.SetValidValue(value, true);
+                _KontaktTelefonKomorkowy = StructuralObject.SetValidValue(value, true, "KontaktTelefonKomorkowy");
                 ReportPropertyChanged("KontaktTelefonKomorkowy");
                 OnKontaktTelefonKomorkowyChanged();
             }
@@ -44712,7 +44564,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontaktWWWChanging(value);
                 ReportPropertyChanging("KontaktWWW");
-                _KontaktWWW = StructuralObject.SetValidValue(value, true);
+                _KontaktWWW = StructuralObject.SetValidValue(value, true, "KontaktWWW");
                 ReportPropertyChanged("KontaktWWW");
                 OnKontaktWWWChanged();
             }
@@ -44736,7 +44588,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLimitKredytuSymbolChanging(value);
                 ReportPropertyChanging("LimitKredytuSymbol");
-                _LimitKredytuSymbol = StructuralObject.SetValidValue(value, true);
+                _LimitKredytuSymbol = StructuralObject.SetValidValue(value, true, "LimitKredytuSymbol");
                 ReportPropertyChanged("LimitKredytuSymbol");
                 OnLimitKredytuSymbolChanged();
             }
@@ -44760,7 +44612,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLimitKredytuValueChanging(value);
                 ReportPropertyChanging("LimitKredytuValue");
-                _LimitKredytuValue = StructuralObject.SetValidValue(value);
+                _LimitKredytuValue = StructuralObject.SetValidValue(value, "LimitKredytuValue");
                 ReportPropertyChanged("LimitKredytuValue");
                 OnLimitKredytuValueChanged();
             }
@@ -44784,7 +44636,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -44808,7 +44660,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNIPChanging(value);
                 ReportPropertyChanging("NIP");
-                _NIP = StructuralObject.SetValidValue(value, true);
+                _NIP = StructuralObject.SetValidValue(value, true, "NIP");
                 ReportPropertyChanged("NIP");
                 OnNIPChanged();
             }
@@ -44832,7 +44684,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneIndywidualneChanging(value);
                 ReportPropertyChanging("OdsKarneIndywidualne");
-                _OdsKarneIndywidualne = StructuralObject.SetValidValue(value);
+                _OdsKarneIndywidualne = StructuralObject.SetValidValue(value, "OdsKarneIndywidualne");
                 ReportPropertyChanged("OdsKarneIndywidualne");
                 OnOdsKarneIndywidualneChanged();
             }
@@ -44856,7 +44708,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneOdsIndHistChanging(value);
                 ReportPropertyChanging("OdsKarneOdsIndHist");
-                _OdsKarneOdsIndHist = StructuralObject.SetValidValue(value, true);
+                _OdsKarneOdsIndHist = StructuralObject.SetValidValue(value, true, "OdsKarneOdsIndHist");
                 ReportPropertyChanged("OdsKarneOdsIndHist");
                 OnOdsKarneOdsIndHistChanged();
             }
@@ -44880,7 +44732,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneRozpoczecieDniChanging(value);
                 ReportPropertyChanging("OdsKarneRozpoczecieDni");
-                _OdsKarneRozpoczecieDni = StructuralObject.SetValidValue(value);
+                _OdsKarneRozpoczecieDni = StructuralObject.SetValidValue(value, "OdsKarneRozpoczecieDni");
                 ReportPropertyChanged("OdsKarneRozpoczecieDni");
                 OnOdsKarneRozpoczecieDniChanged();
             }
@@ -44904,7 +44756,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneRozpoczecieTypChanging(value);
                 ReportPropertyChanging("OdsKarneRozpoczecieTyp");
-                _OdsKarneRozpoczecieTyp = StructuralObject.SetValidValue(value);
+                _OdsKarneRozpoczecieTyp = StructuralObject.SetValidValue(value, "OdsKarneRozpoczecieTyp");
                 ReportPropertyChanged("OdsKarneRozpoczecieTyp");
                 OnOdsKarneRozpoczecieTypChanged();
             }
@@ -44928,7 +44780,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneStopaChanging(value);
                 ReportPropertyChanging("OdsKarneStopa");
-                _OdsKarneStopa = StructuralObject.SetValidValue(value);
+                _OdsKarneStopa = StructuralObject.SetValidValue(value, "OdsKarneStopa");
                 ReportPropertyChanged("OdsKarneStopa");
                 OnOdsKarneStopaChanged();
             }
@@ -44952,7 +44804,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOdsKarneZwlokaChanging(value);
                 ReportPropertyChanging("OdsKarneZwloka");
-                _OdsKarneZwloka = StructuralObject.SetValidValue(value);
+                _OdsKarneZwloka = StructuralObject.SetValidValue(value, "OdsKarneZwloka");
                 ReportPropertyChanged("OdsKarneZwloka");
                 OnOdsKarneZwlokaChanged();
             }
@@ -44976,7 +44828,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOsobaAdresChanging(value);
                 ReportPropertyChanging("OsobaAdres");
-                _OsobaAdres = StructuralObject.SetValidValue(value, true);
+                _OsobaAdres = StructuralObject.SetValidValue(value, true, "OsobaAdres");
                 ReportPropertyChanged("OsobaAdres");
                 OnOsobaAdresChanged();
             }
@@ -45000,7 +44852,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOsobaOsobaChanging(value);
                 ReportPropertyChanging("OsobaOsoba");
-                _OsobaOsoba = StructuralObject.SetValidValue(value, true);
+                _OsobaOsoba = StructuralObject.SetValidValue(value, true, "OsobaOsoba");
                 ReportPropertyChanged("OsobaOsoba");
                 OnOsobaOsobaChanged();
             }
@@ -45024,7 +44876,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOsobaTelefonChanging(value);
                 ReportPropertyChanging("OsobaTelefon");
-                _OsobaTelefon = StructuralObject.SetValidValue(value, true);
+                _OsobaTelefon = StructuralObject.SetValidValue(value, true, "OsobaTelefon");
                 ReportPropertyChanged("OsobaTelefon");
                 OnOsobaTelefonChanged();
             }
@@ -45048,7 +44900,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRabatChanging(value);
                 ReportPropertyChanging("Rabat");
-                _Rabat = StructuralObject.SetValidValue(value);
+                _Rabat = StructuralObject.SetValidValue(value, "Rabat");
                 ReportPropertyChanged("Rabat");
                 OnRabatChanged();
             }
@@ -45072,7 +44924,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -45096,7 +44948,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTerminChanging(value);
                 ReportPropertyChanging("Termin");
-                _Termin = StructuralObject.SetValidValue(value);
+                _Termin = StructuralObject.SetValidValue(value, "Termin");
                 ReportPropertyChanged("Termin");
                 OnTerminChanged();
             }
@@ -45120,7 +44972,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUwagiChanging(value);
                 ReportPropertyChanging("Uwagi");
-                _Uwagi = StructuralObject.SetValidValue(value, true);
+                _Uwagi = StructuralObject.SetValidValue(value, true, "Uwagi");
                 ReportPropertyChanged("Uwagi");
                 OnUwagiChanged();
             }
@@ -45144,7 +44996,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokadaChanging(value);
                 ReportPropertyChanging("Blokada");
-                _Blokada = StructuralObject.SetValidValue(value);
+                _Blokada = StructuralObject.SetValidValue(value, "Blokada");
                 ReportPropertyChanged("Blokada");
                 OnBlokadaChanged();
             }
@@ -45155,7 +45007,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -45233,7 +45084,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -45252,7 +45103,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -45277,7 +45128,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -45301,7 +45152,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSymbolChanging(value);
                 ReportPropertyChanging("Symbol");
-                _Symbol = StructuralObject.SetValidValue(value, false);
+                _Symbol = StructuralObject.SetValidValue(value, false, "Symbol");
                 ReportPropertyChanged("Symbol");
                 OnSymbolChanged();
             }
@@ -45325,7 +45176,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -45349,7 +45200,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKrajChanging(value);
                 ReportPropertyChanging("Kraj");
-                _Kraj = StructuralObject.SetValidValue(value, true);
+                _Kraj = StructuralObject.SetValidValue(value, true, "Kraj");
                 ReportPropertyChanged("Kraj");
                 OnKrajChanged();
             }
@@ -45373,7 +45224,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCalkowityChanging(value);
                 ReportPropertyChanging("Calkowity");
-                _Calkowity = StructuralObject.SetValidValue(value, true);
+                _Calkowity = StructuralObject.SetValidValue(value, true, "Calkowity");
                 ReportPropertyChanged("Calkowity");
                 OnCalkowityChanged();
             }
@@ -45397,7 +45248,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDziesietnyChanging(value);
                 ReportPropertyChanging("Dziesietny");
-                _Dziesietny = StructuralObject.SetValidValue(value, true);
+                _Dziesietny = StructuralObject.SetValidValue(value, true, "Dziesietny");
                 ReportPropertyChanged("Dziesietny");
                 OnDziesietnyChanged();
             }
@@ -45421,7 +45272,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKrotnoscChanging(value);
                 ReportPropertyChanging("Krotnosc");
-                _Krotnosc = StructuralObject.SetValidValue(value);
+                _Krotnosc = StructuralObject.SetValidValue(value, "Krotnosc");
                 ReportPropertyChanged("Krotnosc");
                 OnKrotnoscChanged();
             }
@@ -45445,7 +45296,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEuroStalyKursChanging(value);
                 ReportPropertyChanging("EuroStalyKurs");
-                _EuroStalyKurs = StructuralObject.SetValidValue(value);
+                _EuroStalyKurs = StructuralObject.SetValidValue(value, "EuroStalyKurs");
                 ReportPropertyChanged("EuroStalyKurs");
                 OnEuroStalyKursChanged();
             }
@@ -45469,7 +45320,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEuroKursChanging(value);
                 ReportPropertyChanging("EuroKurs");
-                _EuroKurs = StructuralObject.SetValidValue(value);
+                _EuroKurs = StructuralObject.SetValidValue(value, "EuroKurs");
                 ReportPropertyChanged("EuroKurs");
                 OnEuroKursChanged();
             }
@@ -45493,7 +45344,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEuroKrotnoscChanging(value);
                 ReportPropertyChanging("EuroKrotnosc");
-                _EuroKrotnosc = StructuralObject.SetValidValue(value);
+                _EuroKrotnosc = StructuralObject.SetValidValue(value, "EuroKrotnosc");
                 ReportPropertyChanged("EuroKrotnosc");
                 OnEuroKrotnoscChanged();
             }
@@ -45517,7 +45368,7 @@ namespace Enova.Business.Old.DB
             {
                 OnEuroDataChanging(value);
                 ReportPropertyChanging("EuroData");
-                _EuroData = StructuralObject.SetValidValue(value);
+                _EuroData = StructuralObject.SetValidValue(value, "EuroData");
                 ReportPropertyChanged("EuroData");
                 OnEuroDataChanged();
             }
@@ -45541,7 +45392,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -45552,7 +45403,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -45674,7 +45524,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -45693,7 +45543,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -45718,7 +45568,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLpChanging(value);
                 ReportPropertyChanging("Lp");
-                _Lp = StructuralObject.SetValidValue(value);
+                _Lp = StructuralObject.SetValidValue(value, "Lp");
                 ReportPropertyChanged("Lp");
                 OnLpChanged();
             }
@@ -45742,7 +45592,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWspolczynnikNumChanging(value);
                 ReportPropertyChanging("WspolczynnikNum");
-                _WspolczynnikNum = StructuralObject.SetValidValue(value);
+                _WspolczynnikNum = StructuralObject.SetValidValue(value, "WspolczynnikNum");
                 ReportPropertyChanged("WspolczynnikNum");
                 OnWspolczynnikNumChanged();
             }
@@ -45766,7 +45616,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWspolczynnikDenChanging(value);
                 ReportPropertyChanging("WspolczynnikDen");
-                _WspolczynnikDen = StructuralObject.SetValidValue(value);
+                _WspolczynnikDen = StructuralObject.SetValidValue(value, "WspolczynnikDen");
                 ReportPropertyChanged("WspolczynnikDen");
                 OnWspolczynnikDenChanged();
             }
@@ -45790,7 +45640,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDwustronnyChanging(value);
                 ReportPropertyChanging("Dwustronny");
-                _Dwustronny = StructuralObject.SetValidValue(value);
+                _Dwustronny = StructuralObject.SetValidValue(value, "Dwustronny");
                 ReportPropertyChanged("Dwustronny");
                 OnDwustronnyChanged();
             }
@@ -45814,7 +45664,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, true);
+                _Stamp = StructuralObject.SetValidValue(value, true, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -45825,7 +45675,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -46023,7 +45872,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -46040,7 +45889,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCzasChanging(value);
                 ReportPropertyChanging("Czas");
-                _Czas = StructuralObject.SetValidValue(value);
+                _Czas = StructuralObject.SetValidValue(value, "Czas");
                 ReportPropertyChanged("Czas");
                 OnCzasChanged();
             }
@@ -46064,7 +45913,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataDokumentuChanging(value);
                 ReportPropertyChanging("DataDokumentu");
-                _DataDokumentu = StructuralObject.SetValidValue(value);
+                _DataDokumentu = StructuralObject.SetValidValue(value, "DataDokumentu");
                 ReportPropertyChanged("DataDokumentu");
                 OnDataDokumentuChanged();
             }
@@ -46088,7 +45937,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataRozliczeniaChanging(value);
                 ReportPropertyChanging("DataRozliczenia");
-                _DataRozliczenia = StructuralObject.SetValidValue(value);
+                _DataRozliczenia = StructuralObject.SetValidValue(value, "DataRozliczenia");
                 ReportPropertyChanged("DataRozliczenia");
                 OnDataRozliczeniaChanged();
             }
@@ -46112,7 +45961,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDokumentChanging(value);
                 ReportPropertyChanging("Dokument");
-                _Dokument = StructuralObject.SetValidValue(value);
+                _Dokument = StructuralObject.SetValidValue(value, "Dokument");
                 ReportPropertyChanged("Dokument");
                 OnDokumentChanged();
             }
@@ -46136,7 +45985,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDokumentTypeChanging(value);
                 ReportPropertyChanging("DokumentType");
-                _DokumentType = StructuralObject.SetValidValue(value, true);
+                _DokumentType = StructuralObject.SetValidValue(value, true, "DokumentType");
                 ReportPropertyChanged("DokumentType");
                 OnDokumentTypeChanged();
             }
@@ -46162,7 +46011,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -46187,7 +46036,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKartaNazwaChanging(value);
                 ReportPropertyChanging("KartaNazwa");
-                _KartaNazwa = StructuralObject.SetValidValue(value, true);
+                _KartaNazwa = StructuralObject.SetValidValue(value, true, "KartaNazwa");
                 ReportPropertyChanged("KartaNazwa");
                 OnKartaNazwaChanged();
             }
@@ -46211,7 +46060,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKartaNumerChanging(value);
                 ReportPropertyChanging("KartaNumer");
-                _KartaNumer = StructuralObject.SetValidValue(value, true);
+                _KartaNumer = StructuralObject.SetValidValue(value, true, "KartaNumer");
                 ReportPropertyChanged("KartaNumer");
                 OnKartaNumerChanged();
             }
@@ -46235,7 +46084,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKartaWaznaDoMonthChanging(value);
                 ReportPropertyChanging("KartaWaznaDoMonth");
-                _KartaWaznaDoMonth = StructuralObject.SetValidValue(value);
+                _KartaWaznaDoMonth = StructuralObject.SetValidValue(value, "KartaWaznaDoMonth");
                 ReportPropertyChanged("KartaWaznaDoMonth");
                 OnKartaWaznaDoMonthChanged();
             }
@@ -46259,7 +46108,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKartaWaznaDoYearChanging(value);
                 ReportPropertyChanging("KartaWaznaDoYear");
-                _KartaWaznaDoYear = StructuralObject.SetValidValue(value);
+                _KartaWaznaDoYear = StructuralObject.SetValidValue(value, "KartaWaznaDoYear");
                 ReportPropertyChanged("KartaWaznaDoYear");
                 OnKartaWaznaDoYearChanged();
             }
@@ -46283,7 +46132,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKierunekChanging(value);
                 ReportPropertyChanging("Kierunek");
-                _Kierunek = StructuralObject.SetValidValue(value);
+                _Kierunek = StructuralObject.SetValidValue(value, "Kierunek");
                 ReportPropertyChanged("Kierunek");
                 OnKierunekChanged();
             }
@@ -46307,7 +46156,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKsiegujZbiorczoChanging(value);
                 ReportPropertyChanging("KsiegujZbiorczo");
-                _KsiegujZbiorczo = StructuralObject.SetValidValue(value);
+                _KsiegujZbiorczo = StructuralObject.SetValidValue(value, "KsiegujZbiorczo");
                 ReportPropertyChanged("KsiegujZbiorczo");
                 OnKsiegujZbiorczoChanged();
             }
@@ -46331,7 +46180,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKursChanging(value);
                 ReportPropertyChanging("Kurs");
-                _Kurs = StructuralObject.SetValidValue(value);
+                _Kurs = StructuralObject.SetValidValue(value, "Kurs");
                 ReportPropertyChanged("Kurs");
                 OnKursChanged();
             }
@@ -46355,7 +46204,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaKsiegiSymbolChanging(value);
                 ReportPropertyChanging("KwotaKsiegiSymbol");
-                _KwotaKsiegiSymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaKsiegiSymbol = StructuralObject.SetValidValue(value, true, "KwotaKsiegiSymbol");
                 ReportPropertyChanged("KwotaKsiegiSymbol");
                 OnKwotaKsiegiSymbolChanged();
             }
@@ -46379,7 +46228,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaKsiegiValueChanging(value);
                 ReportPropertyChanging("KwotaKsiegiValue");
-                _KwotaKsiegiValue = StructuralObject.SetValidValue(value);
+                _KwotaKsiegiValue = StructuralObject.SetValidValue(value, "KwotaKsiegiValue");
                 ReportPropertyChanged("KwotaKsiegiValue");
                 OnKwotaKsiegiValueChanged();
             }
@@ -46403,7 +46252,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaRaportuSymbolChanging(value);
                 ReportPropertyChanging("KwotaRaportuSymbol");
-                _KwotaRaportuSymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaRaportuSymbol = StructuralObject.SetValidValue(value, true, "KwotaRaportuSymbol");
                 ReportPropertyChanged("KwotaRaportuSymbol");
                 OnKwotaRaportuSymbolChanged();
             }
@@ -46427,7 +46276,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaRaportuValueChanging(value);
                 ReportPropertyChanging("KwotaRaportuValue");
-                _KwotaRaportuValue = StructuralObject.SetValidValue(value);
+                _KwotaRaportuValue = StructuralObject.SetValidValue(value, "KwotaRaportuValue");
                 ReportPropertyChanged("KwotaRaportuValue");
                 OnKwotaRaportuValueChanged();
             }
@@ -46451,7 +46300,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaRozliczonaSymbolChanging(value);
                 ReportPropertyChanging("KwotaRozliczonaSymbol");
-                _KwotaRozliczonaSymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaRozliczonaSymbol = StructuralObject.SetValidValue(value, true, "KwotaRozliczonaSymbol");
                 ReportPropertyChanged("KwotaRozliczonaSymbol");
                 OnKwotaRozliczonaSymbolChanged();
             }
@@ -46475,7 +46324,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaRozliczonaValueChanging(value);
                 ReportPropertyChanging("KwotaRozliczonaValue");
-                _KwotaRozliczonaValue = StructuralObject.SetValidValue(value);
+                _KwotaRozliczonaValue = StructuralObject.SetValidValue(value, "KwotaRozliczonaValue");
                 ReportPropertyChanged("KwotaRozliczonaValue");
                 OnKwotaRozliczonaValueChanged();
             }
@@ -46499,7 +46348,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaSymbolChanging(value);
                 ReportPropertyChanging("KwotaSymbol");
-                _KwotaSymbol = StructuralObject.SetValidValue(value, true);
+                _KwotaSymbol = StructuralObject.SetValidValue(value, true, "KwotaSymbol");
                 ReportPropertyChanged("KwotaSymbol");
                 OnKwotaSymbolChanged();
             }
@@ -46523,7 +46372,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKwotaValueChanging(value);
                 ReportPropertyChanging("KwotaValue");
-                _KwotaValue = StructuralObject.SetValidValue(value);
+                _KwotaValue = StructuralObject.SetValidValue(value, "KwotaValue");
                 ReportPropertyChanged("KwotaValue");
                 OnKwotaValueChanged();
             }
@@ -46547,7 +46396,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLpChanging(value);
                 ReportPropertyChanging("Lp");
-                _Lp = StructuralObject.SetValidValue(value);
+                _Lp = StructuralObject.SetValidValue(value, "Lp");
                 ReportPropertyChanged("Lp");
                 OnLpChanged();
             }
@@ -46571,7 +46420,7 @@ namespace Enova.Business.Old.DB
             {
                 OnMagazynWalutChanging(value);
                 ReportPropertyChanging("MagazynWalut");
-                _MagazynWalut = StructuralObject.SetValidValue(value);
+                _MagazynWalut = StructuralObject.SetValidValue(value, "MagazynWalut");
                 ReportPropertyChanged("MagazynWalut");
                 OnMagazynWalutChanged();
             }
@@ -46595,7 +46444,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumerDokumentuChanging(value);
                 ReportPropertyChanging("NumerDokumentu");
-                _NumerDokumentu = StructuralObject.SetValidValue(value, false);
+                _NumerDokumentu = StructuralObject.SetValidValue(value, false, "NumerDokumentu");
                 ReportPropertyChanged("NumerDokumentu");
                 OnNumerDokumentuChanged();
             }
@@ -46619,7 +46468,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNumeryDokumentowChanging(value);
                 ReportPropertyChanging("NumeryDokumentow");
-                _NumeryDokumentow = StructuralObject.SetValidValue(value, true);
+                _NumeryDokumentow = StructuralObject.SetValidValue(value, true, "NumeryDokumentow");
                 ReportPropertyChanged("NumeryDokumentow");
                 OnNumeryDokumentowChanged();
             }
@@ -46643,7 +46492,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOpisChanging(value);
                 ReportPropertyChanging("Opis");
-                _Opis = StructuralObject.SetValidValue(value, false);
+                _Opis = StructuralObject.SetValidValue(value, false, "Opis");
                 ReportPropertyChanged("Opis");
                 OnOpisChanged();
             }
@@ -46667,7 +46516,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotChanging(value);
                 ReportPropertyChanging("Podmiot");
-                _Podmiot = StructuralObject.SetValidValue(value);
+                _Podmiot = StructuralObject.SetValidValue(value, "Podmiot");
                 ReportPropertyChanged("Podmiot");
                 OnPodmiotChanged();
             }
@@ -46691,7 +46540,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodmiotTypeChanging(value);
                 ReportPropertyChanging("PodmiotType");
-                _PodmiotType = StructuralObject.SetValidValue(value, true);
+                _PodmiotType = StructuralObject.SetValidValue(value, true, "PodmiotType");
                 ReportPropertyChanged("PodmiotType");
                 OnPodmiotTypeChanged();
             }
@@ -46715,7 +46564,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRachunekNumerCSChanging(value);
                 ReportPropertyChanging("RachunekNumerCS");
-                _RachunekNumerCS = StructuralObject.SetValidValue(value, true);
+                _RachunekNumerCS = StructuralObject.SetValidValue(value, true, "RachunekNumerCS");
                 ReportPropertyChanged("RachunekNumerCS");
                 OnRachunekNumerCSChanged();
             }
@@ -46739,7 +46588,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRachunekNumerKierunekChanging(value);
                 ReportPropertyChanging("RachunekNumerKierunek");
-                _RachunekNumerKierunek = StructuralObject.SetValidValue(value, true);
+                _RachunekNumerKierunek = StructuralObject.SetValidValue(value, true, "RachunekNumerKierunek");
                 ReportPropertyChanged("RachunekNumerKierunek");
                 OnRachunekNumerKierunekChanged();
             }
@@ -46763,7 +46612,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRachunekNumerKrajChanging(value);
                 ReportPropertyChanging("RachunekNumerKraj");
-                _RachunekNumerKraj = StructuralObject.SetValidValue(value, true);
+                _RachunekNumerKraj = StructuralObject.SetValidValue(value, true, "RachunekNumerKraj");
                 ReportPropertyChanged("RachunekNumerKraj");
                 OnRachunekNumerKrajChanged();
             }
@@ -46787,7 +46636,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRachunekNumerNumerChanging(value);
                 ReportPropertyChanging("RachunekNumerNumer");
-                _RachunekNumerNumer = StructuralObject.SetValidValue(value, true);
+                _RachunekNumerNumer = StructuralObject.SetValidValue(value, true, "RachunekNumerNumer");
                 ReportPropertyChanged("RachunekNumerNumer");
                 OnRachunekNumerNumerChanged();
             }
@@ -46811,7 +46660,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRachunekSWIFTChanging(value);
                 ReportPropertyChanging("RachunekSWIFT");
-                _RachunekSWIFT = StructuralObject.SetValidValue(value, true);
+                _RachunekSWIFT = StructuralObject.SetValidValue(value, true, "RachunekSWIFT");
                 ReportPropertyChanged("RachunekSWIFT");
                 OnRachunekSWIFTChanged();
             }
@@ -46835,7 +46684,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRaportChanging(value);
                 ReportPropertyChanging("Raport");
-                _Raport = StructuralObject.SetValidValue(value);
+                _Raport = StructuralObject.SetValidValue(value, "Raport");
                 ReportPropertyChanged("Raport");
                 OnRaportChanged();
             }
@@ -46859,7 +46708,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRaportTypeChanging(value);
                 ReportPropertyChanging("RaportType");
-                _RaportType = StructuralObject.SetValidValue(value, false);
+                _RaportType = StructuralObject.SetValidValue(value, false, "RaportType");
                 ReportPropertyChanged("RaportType");
                 OnRaportTypeChanged();
             }
@@ -46883,7 +46732,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRozliczanaChanging(value);
                 ReportPropertyChanging("Rozliczana");
-                _Rozliczana = StructuralObject.SetValidValue(value);
+                _Rozliczana = StructuralObject.SetValidValue(value, "Rozliczana");
                 ReportPropertyChanged("Rozliczana");
                 OnRozliczanaChanged();
             }
@@ -46907,7 +46756,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -46931,7 +46780,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStanChanging(value);
                 ReportPropertyChanging("Stan");
-                _Stan = StructuralObject.SetValidValue(value);
+                _Stan = StructuralObject.SetValidValue(value, "Stan");
                 ReportPropertyChanged("Stan");
                 OnStanChanged();
             }
@@ -46955,7 +46804,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTabelaKursowaChanging(value);
                 ReportPropertyChanging("TabelaKursowa");
-                _TabelaKursowa = StructuralObject.SetValidValue(value);
+                _TabelaKursowa = StructuralObject.SetValidValue(value, "TabelaKursowa");
                 ReportPropertyChanged("TabelaKursowa");
                 OnTabelaKursowaChanged();
             }
@@ -46979,7 +46828,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscWgKursuSymbolChanging(value);
                 ReportPropertyChanging("WartoscWgKursuSymbol");
-                _WartoscWgKursuSymbol = StructuralObject.SetValidValue(value, true);
+                _WartoscWgKursuSymbol = StructuralObject.SetValidValue(value, true, "WartoscWgKursuSymbol");
                 ReportPropertyChanged("WartoscWgKursuSymbol");
                 OnWartoscWgKursuSymbolChanged();
             }
@@ -47003,7 +46852,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscWgKursuValueChanging(value);
                 ReportPropertyChanging("WartoscWgKursuValue");
-                _WartoscWgKursuValue = StructuralObject.SetValidValue(value);
+                _WartoscWgKursuValue = StructuralObject.SetValidValue(value, "WartoscWgKursuValue");
                 ReportPropertyChanged("WartoscWgKursuValue");
                 OnWartoscWgKursuValueChanged();
             }
@@ -47027,7 +46876,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscWgMagazynuWalutSymbolChanging(value);
                 ReportPropertyChanging("WartoscWgMagazynuWalutSymbol");
-                _WartoscWgMagazynuWalutSymbol = StructuralObject.SetValidValue(value, true);
+                _WartoscWgMagazynuWalutSymbol = StructuralObject.SetValidValue(value, true, "WartoscWgMagazynuWalutSymbol");
                 ReportPropertyChanged("WartoscWgMagazynuWalutSymbol");
                 OnWartoscWgMagazynuWalutSymbolChanged();
             }
@@ -47051,7 +46900,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWartoscWgMagazynuWalutValueChanging(value);
                 ReportPropertyChanging("WartoscWgMagazynuWalutValue");
-                _WartoscWgMagazynuWalutValue = StructuralObject.SetValidValue(value);
+                _WartoscWgMagazynuWalutValue = StructuralObject.SetValidValue(value, "WartoscWgMagazynuWalutValue");
                 ReportPropertyChanged("WartoscWgMagazynuWalutValue");
                 OnWartoscWgMagazynuWalutValueChanged();
             }
@@ -47075,7 +46924,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWindykacjaDataChanging(value);
                 ReportPropertyChanging("WindykacjaData");
-                _WindykacjaData = StructuralObject.SetValidValue(value);
+                _WindykacjaData = StructuralObject.SetValidValue(value, "WindykacjaData");
                 ReportPropertyChanged("WindykacjaData");
                 OnWindykacjaDataChanged();
             }
@@ -47099,7 +46948,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWindykacjaStanChanging(value);
                 ReportPropertyChanging("WindykacjaStan");
-                _WindykacjaStan = StructuralObject.SetValidValue(value);
+                _WindykacjaStan = StructuralObject.SetValidValue(value, "WindykacjaStan");
                 ReportPropertyChanged("WindykacjaStan");
                 OnWindykacjaStanChanged();
             }
@@ -47123,7 +46972,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWindykacjaTerminChanging(value);
                 ReportPropertyChanging("WindykacjaTermin");
-                _WindykacjaTermin = StructuralObject.SetValidValue(value);
+                _WindykacjaTermin = StructuralObject.SetValidValue(value, "WindykacjaTermin");
                 ReportPropertyChanged("WindykacjaTermin");
                 OnWindykacjaTerminChanged();
             }
@@ -47147,7 +46996,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZasobySkopiowaneZChanging(value);
                 ReportPropertyChanging("ZasobySkopiowaneZ");
-                _ZasobySkopiowaneZ = StructuralObject.SetValidValue(value);
+                _ZasobySkopiowaneZ = StructuralObject.SetValidValue(value, "ZasobySkopiowaneZ");
                 ReportPropertyChanged("ZasobySkopiowaneZ");
                 OnZasobySkopiowaneZChanged();
             }
@@ -47171,7 +47020,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZwrotChanging(value);
                 ReportPropertyChanging("Zwrot");
-                _Zwrot = StructuralObject.SetValidValue(value);
+                _Zwrot = StructuralObject.SetValidValue(value, "Zwrot");
                 ReportPropertyChanged("Zwrot");
                 OnZwrotChanged();
             }
@@ -47195,7 +47044,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWynagrodzenieChanging(value);
                 ReportPropertyChanging("Wynagrodzenie");
-                _Wynagrodzenie = StructuralObject.SetValidValue(value);
+                _Wynagrodzenie = StructuralObject.SetValidValue(value, "Wynagrodzenie");
                 ReportPropertyChanged("Wynagrodzenie");
                 OnWynagrodzenieChanged();
             }
@@ -47219,7 +47068,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWynagrodzenieMetodaChanging(value);
                 ReportPropertyChanging("WynagrodzenieMetoda");
-                _WynagrodzenieMetoda = StructuralObject.SetValidValue(value);
+                _WynagrodzenieMetoda = StructuralObject.SetValidValue(value, "WynagrodzenieMetoda");
                 ReportPropertyChanged("WynagrodzenieMetoda");
                 OnWynagrodzenieMetodaChanged();
             }
@@ -47243,7 +47092,7 @@ namespace Enova.Business.Old.DB
             {
                 OnHandlowaChanging(value);
                 ReportPropertyChanging("Handlowa");
-                _Handlowa = StructuralObject.SetValidValue(value);
+                _Handlowa = StructuralObject.SetValidValue(value, "Handlowa");
                 ReportPropertyChanged("Handlowa");
                 OnHandlowaChanged();
             }
@@ -47267,7 +47116,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPreliminarzPozChanging(value);
                 ReportPropertyChanging("PreliminarzPoz");
-                _PreliminarzPoz = StructuralObject.SetValidValue(value);
+                _PreliminarzPoz = StructuralObject.SetValidValue(value, "PreliminarzPoz");
                 ReportPropertyChanged("PreliminarzPoz");
                 OnPreliminarzPozChanged();
             }
@@ -47291,7 +47140,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -47302,7 +47151,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -47460,7 +47308,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -47479,7 +47327,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -47504,7 +47352,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscRezerwowanaSymbolChanging(value);
                 ReportPropertyChanging("IloscRezerwowanaSymbol");
-                _IloscRezerwowanaSymbol = StructuralObject.SetValidValue(value, true);
+                _IloscRezerwowanaSymbol = StructuralObject.SetValidValue(value, true, "IloscRezerwowanaSymbol");
                 ReportPropertyChanged("IloscRezerwowanaSymbol");
                 OnIloscRezerwowanaSymbolChanged();
             }
@@ -47528,7 +47376,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscRezerwowanaValueChanging(value);
                 ReportPropertyChanging("IloscRezerwowanaValue");
-                _IloscRezerwowanaValue = StructuralObject.SetValidValue(value);
+                _IloscRezerwowanaValue = StructuralObject.SetValidValue(value, "IloscRezerwowanaValue");
                 ReportPropertyChanged("IloscRezerwowanaValue");
                 OnIloscRezerwowanaValueChanged();
             }
@@ -47552,7 +47400,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscSymbolChanging(value);
                 ReportPropertyChanging("IloscSymbol");
-                _IloscSymbol = StructuralObject.SetValidValue(value, true);
+                _IloscSymbol = StructuralObject.SetValidValue(value, true, "IloscSymbol");
                 ReportPropertyChanged("IloscSymbol");
                 OnIloscSymbolChanged();
             }
@@ -47576,7 +47424,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIloscValueChanging(value);
                 ReportPropertyChanging("IloscValue");
-                _IloscValue = StructuralObject.SetValidValue(value);
+                _IloscValue = StructuralObject.SetValidValue(value, "IloscValue");
                 ReportPropertyChanged("IloscValue");
                 OnIloscValueChanged();
             }
@@ -47600,7 +47448,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKierunekChanging(value);
                 ReportPropertyChanging("Kierunek");
-                _Kierunek = StructuralObject.SetValidValue(value);
+                _Kierunek = StructuralObject.SetValidValue(value, "Kierunek");
                 ReportPropertyChanged("Kierunek");
                 OnKierunekChanged();
             }
@@ -47624,7 +47472,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNadrzednyChanging(value);
                 ReportPropertyChanging("Nadrzedny");
-                _Nadrzedny = StructuralObject.SetValidValue(value);
+                _Nadrzedny = StructuralObject.SetValidValue(value, "Nadrzedny");
                 ReportPropertyChanged("Nadrzedny");
                 OnNadrzednyChanged();
             }
@@ -47648,7 +47496,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOkresChanging(value);
                 ReportPropertyChanging("Okres");
-                _Okres = StructuralObject.SetValidValue(value);
+                _Okres = StructuralObject.SetValidValue(value, "Okres");
                 ReportPropertyChanged("Okres");
                 OnOkresChanged();
             }
@@ -47672,7 +47520,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPartiaCzasChanging(value);
                 ReportPropertyChanging("PartiaCzas");
-                _PartiaCzas = StructuralObject.SetValidValue(value);
+                _PartiaCzas = StructuralObject.SetValidValue(value, "PartiaCzas");
                 ReportPropertyChanged("PartiaCzas");
                 OnPartiaCzasChanged();
             }
@@ -47696,7 +47544,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPartiaDataChanging(value);
                 ReportPropertyChanging("PartiaData");
-                _PartiaData = StructuralObject.SetValidValue(value);
+                _PartiaData = StructuralObject.SetValidValue(value, "PartiaData");
                 ReportPropertyChanged("PartiaData");
                 OnPartiaDataChanged();
             }
@@ -47720,7 +47568,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPartiaDataZasobuChanging(value);
                 ReportPropertyChanging("PartiaDataZasobu");
-                _PartiaDataZasobu = StructuralObject.SetValidValue(value);
+                _PartiaDataZasobu = StructuralObject.SetValidValue(value, "PartiaDataZasobu");
                 ReportPropertyChanged("PartiaDataZasobu");
                 OnPartiaDataZasobuChanged();
             }
@@ -47744,7 +47592,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPartiaPozycjaIdentChanging(value);
                 ReportPropertyChanging("PartiaPozycjaIdent");
-                _PartiaPozycjaIdent = StructuralObject.SetValidValue(value);
+                _PartiaPozycjaIdent = StructuralObject.SetValidValue(value, "PartiaPozycjaIdent");
                 ReportPropertyChanged("PartiaPozycjaIdent");
                 OnPartiaPozycjaIdentChanged();
             }
@@ -47768,7 +47616,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPartiaTypChanging(value);
                 ReportPropertyChanging("PartiaTyp");
-                _PartiaTyp = StructuralObject.SetValidValue(value);
+                _PartiaTyp = StructuralObject.SetValidValue(value, "PartiaTyp");
                 ReportPropertyChanged("PartiaTyp");
                 OnPartiaTypChanged();
             }
@@ -47792,7 +47640,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPartiaWartoscChanging(value);
                 ReportPropertyChanging("PartiaWartosc");
-                _PartiaWartosc = StructuralObject.SetValidValue(value);
+                _PartiaWartosc = StructuralObject.SetValidValue(value, "PartiaWartosc");
                 ReportPropertyChanged("PartiaWartosc");
                 OnPartiaWartoscChanged();
             }
@@ -47816,7 +47664,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -47840,7 +47688,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParametryRezerwacjiDataOdChanging(value);
                 ReportPropertyChanging("ParametryRezerwacjiDataOd");
-                _ParametryRezerwacjiDataOd = StructuralObject.SetValidValue(value);
+                _ParametryRezerwacjiDataOd = StructuralObject.SetValidValue(value, "ParametryRezerwacjiDataOd");
                 ReportPropertyChanged("ParametryRezerwacjiDataOd");
                 OnParametryRezerwacjiDataOdChanged();
             }
@@ -47864,7 +47712,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParametryRezerwacjiDataDoChanging(value);
                 ReportPropertyChanging("ParametryRezerwacjiDataDo");
-                _ParametryRezerwacjiDataDo = StructuralObject.SetValidValue(value);
+                _ParametryRezerwacjiDataDo = StructuralObject.SetValidValue(value, "ParametryRezerwacjiDataDo");
                 ReportPropertyChanged("ParametryRezerwacjiDataDo");
                 OnParametryRezerwacjiDataDoChanged();
             }
@@ -47888,7 +47736,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParametryRezerwacjiCzasOdChanging(value);
                 ReportPropertyChanging("ParametryRezerwacjiCzasOd");
-                _ParametryRezerwacjiCzasOd = StructuralObject.SetValidValue(value);
+                _ParametryRezerwacjiCzasOd = StructuralObject.SetValidValue(value, "ParametryRezerwacjiCzasOd");
                 ReportPropertyChanged("ParametryRezerwacjiCzasOd");
                 OnParametryRezerwacjiCzasOdChanged();
             }
@@ -47912,7 +47760,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParametryRezerwacjiCzasDoChanging(value);
                 ReportPropertyChanging("ParametryRezerwacjiCzasDo");
-                _ParametryRezerwacjiCzasDo = StructuralObject.SetValidValue(value);
+                _ParametryRezerwacjiCzasDo = StructuralObject.SetValidValue(value, "ParametryRezerwacjiCzasDo");
                 ReportPropertyChanged("ParametryRezerwacjiCzasDo");
                 OnParametryRezerwacjiCzasDoChanged();
             }
@@ -47936,7 +47784,7 @@ namespace Enova.Business.Old.DB
             {
                 OnParametryRezerwacjiPriorytetChanging(value);
                 ReportPropertyChanging("ParametryRezerwacjiPriorytet");
-                _ParametryRezerwacjiPriorytet = StructuralObject.SetValidValue(value);
+                _ParametryRezerwacjiPriorytet = StructuralObject.SetValidValue(value, "ParametryRezerwacjiPriorytet");
                 ReportPropertyChanged("ParametryRezerwacjiPriorytet");
                 OnParametryRezerwacjiPriorytetChanged();
             }
@@ -47960,7 +47808,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPartiaPartiaTowaruChanging(value);
                 ReportPropertyChanging("PartiaPartiaTowaru");
-                _PartiaPartiaTowaru = StructuralObject.SetValidValue(value);
+                _PartiaPartiaTowaru = StructuralObject.SetValidValue(value, "PartiaPartiaTowaru");
                 ReportPropertyChanged("PartiaPartiaTowaru");
                 OnPartiaPartiaTowaruChanged();
             }
@@ -47984,7 +47832,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPartiaTowaruChanging(value);
                 ReportPropertyChanging("PartiaTowaru");
-                _PartiaTowaru = StructuralObject.SetValidValue(value);
+                _PartiaTowaru = StructuralObject.SetValidValue(value, "PartiaTowaru");
                 ReportPropertyChanged("PartiaTowaru");
                 OnPartiaTowaruChanged();
             }
@@ -47995,7 +47843,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -48187,7 +48034,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -48204,7 +48051,7 @@ namespace Enova.Business.Old.DB
             {
                 OnGuidChanging(value);
                 ReportPropertyChanging("Guid");
-                _Guid = StructuralObject.SetValidValue(value);
+                _Guid = StructuralObject.SetValidValue(value, "Guid");
                 ReportPropertyChanged("Guid");
                 OnGuidChanged();
             }
@@ -48230,7 +48077,7 @@ namespace Enova.Business.Old.DB
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -48255,7 +48102,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKodChanging(value);
                 ReportPropertyChanging("Kod");
-                _Kod = StructuralObject.SetValidValue(value, false);
+                _Kod = StructuralObject.SetValidValue(value, false, "Kod");
                 ReportPropertyChanged("Kod");
                 OnKodChanged();
             }
@@ -48279,7 +48126,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -48303,7 +48150,7 @@ namespace Enova.Business.Old.DB
             {
                 OnStampChanging(value);
                 ReportPropertyChanging("Stamp");
-                _Stamp = StructuralObject.SetValidValue(value, false);
+                _Stamp = StructuralObject.SetValidValue(value, false, "Stamp");
                 ReportPropertyChanged("Stamp");
                 OnStampChanged();
             }
@@ -48327,7 +48174,7 @@ namespace Enova.Business.Old.DB
             {
                 OnTypChanging(value);
                 ReportPropertyChanging("Typ");
-                _Typ = StructuralObject.SetValidValue(value);
+                _Typ = StructuralObject.SetValidValue(value, "Typ");
                 ReportPropertyChanged("Typ");
                 OnTypChanged();
             }
@@ -48338,7 +48185,6 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-    
         #region Właściwości nawigacji
     
         /// <summary>
@@ -48410,7 +48256,7 @@ namespace Enova.Business.Old.DB
 
         #endregion
 
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -48427,7 +48273,7 @@ namespace Enova.Business.Old.DB
             {
                 OnAutomatycznieNowyChanging(value);
                 ReportPropertyChanging("AutomatycznieNowy");
-                _AutomatycznieNowy = StructuralObject.SetValidValue(value);
+                _AutomatycznieNowy = StructuralObject.SetValidValue(value, "AutomatycznieNowy");
                 ReportPropertyChanged("AutomatycznieNowy");
                 OnAutomatycznieNowyChanged();
             }
@@ -48451,7 +48297,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKasowanieChanging(value);
                 ReportPropertyChanging("Kasowanie");
-                _Kasowanie = StructuralObject.SetValidValue(value);
+                _Kasowanie = StructuralObject.SetValidValue(value, "Kasowanie");
                 ReportPropertyChanged("Kasowanie");
                 OnKasowanieChanged();
             }
@@ -48475,7 +48321,7 @@ namespace Enova.Business.Old.DB
             {
                 OnIstniejacyDokumentChanging(value);
                 ReportPropertyChanging("IstniejacyDokument");
-                _IstniejacyDokument = StructuralObject.SetValidValue(value);
+                _IstniejacyDokument = StructuralObject.SetValidValue(value, "IstniejacyDokument");
                 ReportPropertyChanged("IstniejacyDokument");
                 OnIstniejacyDokumentChanged();
             }
@@ -48499,7 +48345,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKlawiszChanging(value);
                 ReportPropertyChanging("Klawisz");
-                _Klawisz = StructuralObject.SetValidValue(value);
+                _Klawisz = StructuralObject.SetValidValue(value, "Klawisz");
                 ReportPropertyChanged("Klawisz");
                 OnKlawiszChanged();
             }
@@ -48523,7 +48369,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNazwaChanging(value);
                 ReportPropertyChanging("Nazwa");
-                _Nazwa = StructuralObject.SetValidValue(value, false);
+                _Nazwa = StructuralObject.SetValidValue(value, false, "Nazwa");
                 ReportPropertyChanged("Nazwa");
                 OnNazwaChanged();
             }
@@ -48547,7 +48393,7 @@ namespace Enova.Business.Old.DB
             {
                 OnNowyDokumentChanging(value);
                 ReportPropertyChanging("NowyDokument");
-                _NowyDokument = StructuralObject.SetValidValue(value);
+                _NowyDokument = StructuralObject.SetValidValue(value, "NowyDokument");
                 ReportPropertyChanged("NowyDokument");
                 OnNowyDokumentChanged();
             }
@@ -48571,7 +48417,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPodczasZatwierdzaniaNowyChanging(value);
                 ReportPropertyChanging("PodczasZatwierdzaniaNowy");
-                _PodczasZatwierdzaniaNowy = StructuralObject.SetValidValue(value);
+                _PodczasZatwierdzaniaNowy = StructuralObject.SetValidValue(value, "PodczasZatwierdzaniaNowy");
                 ReportPropertyChanged("PodczasZatwierdzaniaNowy");
                 OnPodczasZatwierdzaniaNowyChanged();
             }
@@ -48595,7 +48441,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRecznieChanging(value);
                 ReportPropertyChanging("Recznie");
-                _Recznie = StructuralObject.SetValidValue(value);
+                _Recznie = StructuralObject.SetValidValue(value, "Recznie");
                 ReportPropertyChanged("Recznie");
                 OnRecznieChanged();
             }
@@ -48619,7 +48465,7 @@ namespace Enova.Business.Old.DB
             {
                 OnRecznieZatwierdzonyChanging(value);
                 ReportPropertyChanging("RecznieZatwierdzony");
-                _RecznieZatwierdzony = StructuralObject.SetValidValue(value);
+                _RecznieZatwierdzony = StructuralObject.SetValidValue(value, "RecznieZatwierdzony");
                 ReportPropertyChanged("RecznieZatwierdzony");
                 OnRecznieZatwierdzonyChanged();
             }
@@ -48643,7 +48489,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWieleDokumentowChanging(value);
                 ReportPropertyChanging("WieleDokumentow");
-                _WieleDokumentow = StructuralObject.SetValidValue(value);
+                _WieleDokumentow = StructuralObject.SetValidValue(value, "WieleDokumentow");
                 ReportPropertyChanged("WieleDokumentow");
                 OnWieleDokumentowChanged();
             }
@@ -48664,7 +48510,7 @@ namespace Enova.Business.Old.DB
     [Serializable()]
     public partial class ZachowanieRelacji : ComplexObject
     {
-        #region Właściwości pierwotne
+        #region Właściwości proste
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
@@ -48681,7 +48527,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBezKorektyMagazynuChanging(value);
                 ReportPropertyChanging("BezKorektyMagazynu");
-                _BezKorektyMagazynu = StructuralObject.SetValidValue(value);
+                _BezKorektyMagazynu = StructuralObject.SetValidValue(value, "BezKorektyMagazynu");
                 ReportPropertyChanged("BezKorektyMagazynu");
                 OnBezKorektyMagazynuChanged();
             }
@@ -48705,7 +48551,7 @@ namespace Enova.Business.Old.DB
             {
                 OnBlokujOtwarcieChanging(value);
                 ReportPropertyChanging("BlokujOtwarcie");
-                _BlokujOtwarcie = StructuralObject.SetValidValue(value);
+                _BlokujOtwarcie = StructuralObject.SetValidValue(value, "BlokujOtwarcie");
                 ReportPropertyChanged("BlokujOtwarcie");
                 OnBlokujOtwarcieChanged();
             }
@@ -48729,7 +48575,7 @@ namespace Enova.Business.Old.DB
             {
                 OnCechaLaczeniaChanging(value);
                 ReportPropertyChanging("CechaLaczenia");
-                _CechaLaczenia = StructuralObject.SetValidValue(value, true);
+                _CechaLaczenia = StructuralObject.SetValidValue(value, true, "CechaLaczenia");
                 ReportPropertyChanged("CechaLaczenia");
                 OnCechaLaczeniaChanged();
             }
@@ -48753,7 +48599,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataDokumentuChanging(value);
                 ReportPropertyChanging("DataDokumentu");
-                _DataDokumentu = StructuralObject.SetValidValue(value);
+                _DataDokumentu = StructuralObject.SetValidValue(value, "DataDokumentu");
                 ReportPropertyChanged("DataDokumentu");
                 OnDataDokumentuChanged();
             }
@@ -48777,7 +48623,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataKursuChanging(value);
                 ReportPropertyChanging("DataKursu");
-                _DataKursu = StructuralObject.SetValidValue(value);
+                _DataKursu = StructuralObject.SetValidValue(value, "DataKursu");
                 ReportPropertyChanged("DataKursu");
                 OnDataKursuChanged();
             }
@@ -48801,7 +48647,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataObcyChanging(value);
                 ReportPropertyChanging("DataObcy");
-                _DataObcy = StructuralObject.SetValidValue(value);
+                _DataObcy = StructuralObject.SetValidValue(value, "DataObcy");
                 ReportPropertyChanged("DataObcy");
                 OnDataObcyChanged();
             }
@@ -48825,7 +48671,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDataOperacjiChanging(value);
                 ReportPropertyChanging("DataOperacji");
-                _DataOperacji = StructuralObject.SetValidValue(value);
+                _DataOperacji = StructuralObject.SetValidValue(value, "DataOperacji");
                 ReportPropertyChanged("DataOperacji");
                 OnDataOperacjiChanged();
             }
@@ -48849,7 +48695,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDowolnaDataChanging(value);
                 ReportPropertyChanging("DowolnaData");
-                _DowolnaData = StructuralObject.SetValidValue(value);
+                _DowolnaData = StructuralObject.SetValidValue(value, "DowolnaData");
                 ReportPropertyChanged("DowolnaData");
                 OnDowolnaDataChanged();
             }
@@ -48873,7 +48719,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDziedziczyUstawieniaChanging(value);
                 ReportPropertyChanging("DziedziczyUstawienia");
-                _DziedziczyUstawienia = StructuralObject.SetValidValue(value);
+                _DziedziczyUstawienia = StructuralObject.SetValidValue(value, "DziedziczyUstawienia");
                 ReportPropertyChanged("DziedziczyUstawienia");
                 OnDziedziczyUstawieniaChanged();
             }
@@ -48897,7 +48743,7 @@ namespace Enova.Business.Old.DB
             {
                 OnFiltrTowarowChanging(value);
                 ReportPropertyChanging("FiltrTowarow");
-                _FiltrTowarow = StructuralObject.SetValidValue(value);
+                _FiltrTowarow = StructuralObject.SetValidValue(value, "FiltrTowarow");
                 ReportPropertyChanged("FiltrTowarow");
                 OnFiltrTowarowChanged();
             }
@@ -48921,7 +48767,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKontrahentChanging(value);
                 ReportPropertyChanging("Kontrahent");
-                _Kontrahent = StructuralObject.SetValidValue(value);
+                _Kontrahent = StructuralObject.SetValidValue(value, "Kontrahent");
                 ReportPropertyChanged("Kontrahent");
                 OnKontrahentChanged();
             }
@@ -48945,7 +48791,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKopiujOpisChanging(value);
                 ReportPropertyChanging("KopiujOpis");
-                _KopiujOpis = StructuralObject.SetValidValue(value);
+                _KopiujOpis = StructuralObject.SetValidValue(value, "KopiujOpis");
                 ReportPropertyChanged("KopiujOpis");
                 OnKopiujOpisChanged();
             }
@@ -48969,7 +48815,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKorektaWartosciChanging(value);
                 ReportPropertyChanging("KorektaWartosci");
-                _KorektaWartosci = StructuralObject.SetValidValue(value);
+                _KorektaWartosci = StructuralObject.SetValidValue(value, "KorektaWartosci");
                 ReportPropertyChanged("KorektaWartosci");
                 OnKorektaWartosciChanged();
             }
@@ -48993,7 +48839,7 @@ namespace Enova.Business.Old.DB
             {
                 OnLaczeniePozycjiChanging(value);
                 ReportPropertyChanging("LaczeniePozycji");
-                _LaczeniePozycji = StructuralObject.SetValidValue(value);
+                _LaczeniePozycji = StructuralObject.SetValidValue(value, "LaczeniePozycji");
                 ReportPropertyChanged("LaczeniePozycji");
                 OnLaczeniePozycjiChanged();
             }
@@ -49017,7 +48863,7 @@ namespace Enova.Business.Old.DB
             {
                 OnOgraniczDoStanuChanging(value);
                 ReportPropertyChanging("OgraniczDoStanu");
-                _OgraniczDoStanu = StructuralObject.SetValidValue(value);
+                _OgraniczDoStanu = StructuralObject.SetValidValue(value, "OgraniczDoStanu");
                 ReportPropertyChanged("OgraniczDoStanu");
                 OnOgraniczDoStanuChanged();
             }
@@ -49041,7 +48887,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPomniejszajIloscZarezerwowanaChanging(value);
                 ReportPropertyChanging("PomniejszajIloscZarezerwowana");
-                _PomniejszajIloscZarezerwowana = StructuralObject.SetValidValue(value);
+                _PomniejszajIloscZarezerwowana = StructuralObject.SetValidValue(value, "PomniejszajIloscZarezerwowana");
                 ReportPropertyChanged("PomniejszajIloscZarezerwowana");
                 OnPomniejszajIloscZarezerwowanaChanged();
             }
@@ -49065,7 +48911,7 @@ namespace Enova.Business.Old.DB
             {
                 OnPrzenoszenieIlosciChanging(value);
                 ReportPropertyChanging("PrzenoszenieIlosci");
-                _PrzenoszenieIlosci = StructuralObject.SetValidValue(value);
+                _PrzenoszenieIlosci = StructuralObject.SetValidValue(value, "PrzenoszenieIlosci");
                 ReportPropertyChanged("PrzenoszenieIlosci");
                 OnPrzenoszenieIlosciChanged();
             }
@@ -49089,7 +48935,7 @@ namespace Enova.Business.Old.DB
             {
                 OnSynchroniujStanChanging(value);
                 ReportPropertyChanging("SynchroniujStan");
-                _SynchroniujStan = StructuralObject.SetValidValue(value);
+                _SynchroniujStan = StructuralObject.SetValidValue(value, "SynchroniujStan");
                 ReportPropertyChanged("SynchroniujStan");
                 OnSynchroniujStanChanged();
             }
@@ -49113,7 +48959,7 @@ namespace Enova.Business.Old.DB
             {
                 OnUsuwajAutomatycznieChanging(value);
                 ReportPropertyChanging("UsuwajAutomatycznie");
-                _UsuwajAutomatycznie = StructuralObject.SetValidValue(value);
+                _UsuwajAutomatycznie = StructuralObject.SetValidValue(value, "UsuwajAutomatycznie");
                 ReportPropertyChanged("UsuwajAutomatycznie");
                 OnUsuwajAutomatycznieChanged();
             }
@@ -49137,7 +48983,7 @@ namespace Enova.Business.Old.DB
             {
                 OnVatWgPodrzednegoChanging(value);
                 ReportPropertyChanging("VatWgPodrzednego");
-                _VatWgPodrzednego = StructuralObject.SetValidValue(value);
+                _VatWgPodrzednego = StructuralObject.SetValidValue(value, "VatWgPodrzednego");
                 ReportPropertyChanged("VatWgPodrzednego");
                 OnVatWgPodrzednegoChanged();
             }
@@ -49161,7 +49007,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWielePozycjiChanging(value);
                 ReportPropertyChanging("WielePozycji");
-                _WielePozycji = StructuralObject.SetValidValue(value);
+                _WielePozycji = StructuralObject.SetValidValue(value, "WielePozycji");
                 ReportPropertyChanged("WielePozycji");
                 OnWielePozycjiChanged();
             }
@@ -49185,7 +49031,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWyborPozycjiChanging(value);
                 ReportPropertyChanging("WyborPozycji");
-                _WyborPozycji = StructuralObject.SetValidValue(value);
+                _WyborPozycji = StructuralObject.SetValidValue(value, "WyborPozycji");
                 ReportPropertyChanged("WyborPozycji");
                 OnWyborPozycjiChanged();
             }
@@ -49209,7 +49055,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWyliczanieIlosciChanging(value);
                 ReportPropertyChanging("WyliczanieIlosci");
-                _WyliczanieIlosci = StructuralObject.SetValidValue(value);
+                _WyliczanieIlosci = StructuralObject.SetValidValue(value, "WyliczanieIlosci");
                 ReportPropertyChanged("WyliczanieIlosci");
                 OnWyliczanieIlosciChanged();
             }
@@ -49233,7 +49079,7 @@ namespace Enova.Business.Old.DB
             {
                 OnDaneKontrahentaZKartyChanging(value);
                 ReportPropertyChanging("DaneKontrahentaZKarty");
-                _DaneKontrahentaZKarty = StructuralObject.SetValidValue(value);
+                _DaneKontrahentaZKarty = StructuralObject.SetValidValue(value, "DaneKontrahentaZKarty");
                 ReportPropertyChanged("DaneKontrahentaZKarty");
                 OnDaneKontrahentaZKartyChanged();
             }
@@ -49257,7 +49103,7 @@ namespace Enova.Business.Old.DB
             {
                 OnWalutaPozycjiJakDokumentuChanging(value);
                 ReportPropertyChanging("WalutaPozycjiJakDokumentu");
-                _WalutaPozycjiJakDokumentu = StructuralObject.SetValidValue(value);
+                _WalutaPozycjiJakDokumentu = StructuralObject.SetValidValue(value, "WalutaPozycjiJakDokumentu");
                 ReportPropertyChanged("WalutaPozycjiJakDokumentu");
                 OnWalutaPozycjiJakDokumentuChanged();
             }
@@ -49281,7 +49127,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInicjalizatorStawkiVatInfoZrodloStawkiVatChanging(value);
                 ReportPropertyChanging("InicjalizatorStawkiVatInfoZrodloStawkiVat");
-                _InicjalizatorStawkiVatInfoZrodloStawkiVat = StructuralObject.SetValidValue(value);
+                _InicjalizatorStawkiVatInfoZrodloStawkiVat = StructuralObject.SetValidValue(value, "InicjalizatorStawkiVatInfoZrodloStawkiVat");
                 ReportPropertyChanged("InicjalizatorStawkiVatInfoZrodloStawkiVat");
                 OnInicjalizatorStawkiVatInfoZrodloStawkiVatChanged();
             }
@@ -49305,7 +49151,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZastepowanieProduktowSkladnikamiChanging(value);
                 ReportPropertyChanging("ZastepowanieProduktowSkladnikami");
-                _ZastepowanieProduktowSkladnikami = StructuralObject.SetValidValue(value);
+                _ZastepowanieProduktowSkladnikami = StructuralObject.SetValidValue(value, "ZastepowanieProduktowSkladnikami");
                 ReportPropertyChanged("ZastepowanieProduktowSkladnikami");
                 OnZastepowanieProduktowSkladnikamiChanged();
             }
@@ -49329,7 +49175,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKopiujCechyDokumentuChanging(value);
                 ReportPropertyChanging("KopiujCechyDokumentu");
-                _KopiujCechyDokumentu = StructuralObject.SetValidValue(value);
+                _KopiujCechyDokumentu = StructuralObject.SetValidValue(value, "KopiujCechyDokumentu");
                 ReportPropertyChanged("KopiujCechyDokumentu");
                 OnKopiujCechyDokumentuChanged();
             }
@@ -49353,7 +49199,7 @@ namespace Enova.Business.Old.DB
             {
                 OnKopiujCechyPozycjiChanging(value);
                 ReportPropertyChanging("KopiujCechyPozycji");
-                _KopiujCechyPozycji = StructuralObject.SetValidValue(value);
+                _KopiujCechyPozycji = StructuralObject.SetValidValue(value, "KopiujCechyPozycji");
                 ReportPropertyChanged("KopiujCechyPozycji");
                 OnKopiujCechyPozycjiChanged();
             }
@@ -49377,7 +49223,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInicjalizatorWalutyInfoWalutaPlatnosciChanging(value);
                 ReportPropertyChanging("InicjalizatorWalutyInfoWalutaPlatnosci");
-                _InicjalizatorWalutyInfoWalutaPlatnosci = StructuralObject.SetValidValue(value);
+                _InicjalizatorWalutyInfoWalutaPlatnosci = StructuralObject.SetValidValue(value, "InicjalizatorWalutyInfoWalutaPlatnosci");
                 ReportPropertyChanged("InicjalizatorWalutyInfoWalutaPlatnosci");
                 OnInicjalizatorWalutyInfoWalutaPlatnosciChanged();
             }
@@ -49401,7 +49247,7 @@ namespace Enova.Business.Old.DB
             {
                 OnInicjalizatorWalutyInfoWalutaPozycjiChanging(value);
                 ReportPropertyChanging("InicjalizatorWalutyInfoWalutaPozycji");
-                _InicjalizatorWalutyInfoWalutaPozycji = StructuralObject.SetValidValue(value);
+                _InicjalizatorWalutyInfoWalutaPozycji = StructuralObject.SetValidValue(value, "InicjalizatorWalutyInfoWalutaPozycji");
                 ReportPropertyChanged("InicjalizatorWalutyInfoWalutaPozycji");
                 OnInicjalizatorWalutyInfoWalutaPozycjiChanged();
             }
@@ -49425,7 +49271,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZrodloNazwyTowaruChanging(value);
                 ReportPropertyChanging("ZrodloNazwyTowaru");
-                _ZrodloNazwyTowaru = StructuralObject.SetValidValue(value);
+                _ZrodloNazwyTowaru = StructuralObject.SetValidValue(value, "ZrodloNazwyTowaru");
                 ReportPropertyChanged("ZrodloNazwyTowaru");
                 OnZrodloNazwyTowaruChanged();
             }
@@ -49449,7 +49295,7 @@ namespace Enova.Business.Old.DB
             {
                 OnZasobyZNadrzednegoChanging(value);
                 ReportPropertyChanging("ZasobyZNadrzednego");
-                _ZasobyZNadrzednego = StructuralObject.SetValidValue(value);
+                _ZasobyZNadrzednego = StructuralObject.SetValidValue(value, "ZasobyZNadrzednego");
                 ReportPropertyChanged("ZasobyZNadrzednego");
                 OnZasobyZNadrzednegoChanged();
             }
@@ -49464,5 +49310,4 @@ namespace Enova.Business.Old.DB
 
     #endregion
 
-    
 }
