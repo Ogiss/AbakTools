@@ -43,39 +43,8 @@ namespace AbakTools.Ksiegowosc.Forms
                 var pr = przedstawicielComboBox.SelectedIndex > 0 ? (string)przedstawicielComboBox.SelectedItem : null;
                 var reportSource = new List<DokumentEwidencjiViewRow>();
                 DateTime dataDo = dataDoDateTimePicker.Value.Date; ;
-                DateTime dataOd = dataOdDateTimePicker.Value.Date.AddDays(1).AddMilliseconds(-1);
+                DateTime dataOd = dataOdDateTimePicker.Value.Date.AddDays(1);
 
-                /*
-                var cm = Session.GetModule<Enova.API.Core.CoreModule>();
-                var kontrahenci = CRMService.Kontrahenci.ByPrzedstawiciel(Session, pr).ToList();
-
-                foreach (var k in kontrahenci)
-                {
-                    var filter =
-                        "NumerDokumentu LIKE 'FK/%'" +
-                        " AND DataDokumentu >= '" + dataOd.ToShortDateString() + "' AND DataDokumentu <= '" + dataDo.ToShortDateString() + "'" +
-                        " AND Typ = " + (int)Enova.API.Core.TypDokumentu.SprzedażEwidencja;
-                    var dokumenty = cm.DokEwidencja.WgPodmiot(k).CreateView().SetFilter(filter).Cast<Enova.API.Core.DokEwidencji>().ToList();
-                    foreach (var de in dokumenty)
-                    {
-                        if (de.Stan == Enova.API.Core.StanEwidencji.Bufor)
-                        {
-                            var dh = de.Dokument as Enova.API.Handel.DokumentHandlowy;
-                            reportSource.Add(new DokumentEwidencjiViewRow()
-                            {
-                                ID = de.ID,
-                                Stan = de.Stan,
-                                KodKontrahenta = k.Kod,
-                                NazwaKontrahenta = k.Nazwa,
-                                NumerDokumentu = de.NumerDokumentu,
-                                DataDokumentu = de.DataDokumentu,
-                                WartośćDokumentu = de.Wartosc.Value,
-                                WartośćNetto = dh!=null ? dh.WartoscNetto.Value : (decimal?)null
-                            });
-                        }
-                    }
-                }
-                */
 
                 var sql = string.Format(
                     "SELECT k.Kod,k.Nazwa,de.Stan,de.DataDokumentu,de.NumerDokumentu,de.WartoscValue AS Wartosc,fp.Data Przewoznik,t0.DataRozliczenia, dh.SumaNetto WartoscNetto " +
@@ -87,9 +56,9 @@ namespace AbakTools.Ksiegowosc.Forms
                     "GROUP BY pl.Dokument)t0 ON t0.Dokument=dh.ID " +
                     "WHERE de.Stan={0} AND de.Typ={1} AND de.PodmiotType='Kontrahenci' AND de.DokumentType='DokHandlowe' " +
                     (pr != null ? "AND f.Data='{2}'" : "") + " AND dh.Definicja = 2 " +
-                    "AND de.DataDokumentu >= '{3}' AND de.DataDokumentu <= '{4}'",
+                    "AND de.DataDokumentu >= '{3}' AND de.DataDokumentu < '{4}'",
                     (int)Enova.API.Core.StanEwidencji.Bufor, (int)Enova.API.Core.TypDokumentu.SprzedażEwidencja,
-                    pr, dataOd.ToShortDateString(), dataDo.ToShortDateString());
+                    pr, dataOd.Date.ToString("s"), dataDo.Date.ToString("s"));
 
                 using (var dc = new Enova.Business.Old.DB.EnovaContext())
                 {
