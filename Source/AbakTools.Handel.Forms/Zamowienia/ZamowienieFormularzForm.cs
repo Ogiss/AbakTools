@@ -92,7 +92,8 @@ namespace AbakTools.Zamowienia.Forms
         {
             przedstawicieleComboBox.Items.Add("(Wszyscy)");
             przedstawicieleComboBox.Items.AddRange(
-                BusinessService.Dictionary.GetByFeatureName(Session, "Kontrahenci", "przedstawiciel").ToList().Select(r=>r.Value).OrderBy(r => r).ToArray());
+                BusinessService.Dictionary.GetByFeatureName(Session, "Kontrahenci", "przedstawiciel").ToList().Select(r=>r.Value)
+                .OrderBy(r => r).ToArray());
             przedstawicieleComboBox.SelectedIndex = 0;
         }
 
@@ -289,7 +290,8 @@ namespace AbakTools.Zamowienia.Forms
                             (GetObrotyBase)new GetObrotyEnova(conn, parent.Session, parent.kontrahent)
                             ) : new GetObrotyBase(parent.Session, parent.kontrahent);
                         var dictionaryItems = featureDef.DictionaryList.ToList().Where(r => r.Value != "RESZTA").OrderBy(r => r.Value);
-                        var towary = ob.TowaryModule.Towary.CreateView().SetFilter(string.Format("Features.[{0}] = '{1}'", featureDef.Name, "RESZTA")).Cast<Enova.API.Towary.Towar>().ToList();
+                        var towary = ob.TowaryModule.Towary.CreateView().SetFilter(string.Format("Features.[{0}] = '{1}'", featureDef.Name, "RESZTA"))
+                            .Cast<Enova.API.Towary.Towar>().ToList();
                         var defCeny = ob.TowaryModule.DefinicjeCen["Hurtowa"];
                         this.ProgressArgs.MaxProgress1 = dictionaryItems.Count() + towary.Count;
                         this.ProgressArgs.Progress2Visible = false;
@@ -592,7 +594,8 @@ namespace AbakTools.Zamowienia.Forms
                     parent.DataSource = new List<RaportFormularzWgGrupViewRow>();
 
                     var dictionaryItems = featureDef.DictionaryList.ToList().Where(r => r.Value != "RESZTA").OrderBy(r => r.Value);
-                    var towary = tm.Towary.CreateView().SetFilter(string.Format("Features.[{0}] = '{1}'", featureDef.Name, "RESZTA")).Cast<Enova.API.Towary.Towar>().ToList();
+                    var towary = tm.Towary.CreateView().SetFilter(string.Format("Features.[{0}] = '{1}'", featureDef.Name, "RESZTA"))
+                        .Cast<Enova.API.Towary.Towar>().ToList();
 
                     this.ProgressArgs.MaxProgress1 = dictionaryItems.Count() + towary.Count;
                     this.ProgressArgs.Progress2Visible = false;
@@ -668,7 +671,8 @@ namespace AbakTools.Zamowienia.Forms
 
                             double obrFV = 0;
 
-                            var sql = "SELECT t.Guid FROM dbo.Towary t INNER JOIN dbo.Features f ON (f.Parent=t.ID AND f.ParentType='Towary' AND f.Name='" + featureDef.Name + "') WHERE f.Data='" + d.Value + "'";
+                            var sql = "SELECT t.Guid FROM dbo.Towary t INNER JOIN dbo.Features f ON (f.Parent=t.ID AND f.ParentType='Towary' AND f.Name='" 
+                                + featureDef.Name + "') WHERE f.Data='" + d.Value + "'";
                             using(var cmd = new SqlCommand(sql, conn))
                             {
                                 using(SqlDataReader reader = cmd.ExecuteReader())
@@ -957,18 +961,16 @@ namespace AbakTools.Zamowienia.Forms
                 {
                     var to = dateTo.Date.AddDays(1);
                     var kguid = Kontrahent.Guid;
-                    /*
-                    return dc.PozycjeZamowien
-                                .Where(r => r.Zamowienie.Synchronizacja != (int)Enova.Business.Old.Types.RowSynchronize.NotsynchronizedDelete
-                                && r.Produkt != null && r.Produkt.EnovaGuid == towarGuid && r.Zamowienie.DataDodania >= dateFrom.Date && r.Zamowienie.DataDodania < to
-                                && r.Ilosc != null && r.Ilosc > 0 && r.Zamowienie.Kontrahent.Guid == kguid).Sum(r => r.Ilosc);
-                     */
                     var sql = string.Format(
                         "SELECT SUM(pz.Ilosc) Ilosc FROM dbo.PozycjeZamowien pz INNER JOIN dbo.Zamowienia z on z.ID = pz.Zamowienie " +
                         "INNER JOIN dbo.product p ON p.id=pz.Produkt INNER JOIN dbo.Kontrahenci k on k.ID=z.Kontrahent " +
                         "WHERE z.Synchronizacja != {0} and pz.Produkt is not null and p.enova_guid='{1}' and z.DataDodania>='{2}' and z.DataDodania<'{3}' " +
                         "AND pz.Ilosc IS NOT NULL AND pz.Ilosc > 0 AND k.Guid='{4}'",
-                        (int)Enova.Business.Old.Types.RowSynchronizeOld.NotsynchronizedDelete, towarGuid, dateFrom.Date.ToShortDateString(), to.Date.ToShortDateString(), kguid);
+                        (int)Enova.Business.Old.Types.RowSynchronizeOld.NotsynchronizedDelete, 
+                        towarGuid, 
+                        dateFrom.Date.ToString("s"), 
+                        to.Date.ToString("s"),
+                        kguid);
                     return dc.ExecuteStoreQuery<double?>(sql).FirstOrDefault();
                 }
             }
