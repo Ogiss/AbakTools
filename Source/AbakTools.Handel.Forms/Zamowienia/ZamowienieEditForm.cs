@@ -168,7 +168,8 @@ namespace AbakTools.Zamowienia.Forms
                 {
                     Zamowienie.DataDodania = DateTime.Now;
                     Zamowienie.NaKiedy = DateTime.Now;
-                    Enova.Business.Old.DB.Web.StatusZamowienia status = DbContext.StatusyZamowien.Where(s => s.PSID == 1).FirstOrDefault();
+                    Enova.Business.Old.DB.Web.StatusZamowienia status = 
+                        DbContext.StatusyZamowien.Where(s => s.NoweZamowienie == true).FirstOrDefault();
                     Zamowienie.HistoriaZamowienia.Add(new DBWeb.HistoriaZamowienia()
                     {
                         DataDodania = DateTime.Now,
@@ -971,7 +972,8 @@ namespace AbakTools.Zamowienia.Forms
         {
             DBWeb.Operator @operator = LoginedOperator;
             DBWeb.StatusZamowienia status = null;
-            if (Zamowienie.StatusZamowienia == null || (Zamowienie.StatusZamowienia.NoweZamowienie.Value && Zamowienie.RodzajTransportu == RodzajTransportu.NieWybrano))
+            if (Zamowienie.StatusZamowienia == null || (Zamowienie.StatusZamowienia.NoweZamowienie.Value && 
+                Zamowienie.RodzajTransportu == RodzajTransportu.NieWybrano))
             {
                 status = DbContext.StatusyZamowien
                     .Where(s => s.Wstrzymane.Value == true).FirstOrDefault();

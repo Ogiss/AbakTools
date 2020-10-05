@@ -18,7 +18,7 @@ namespace Enova.Business.Old.DB.Web
     {
         public StatusZamowienia()
         {
-            this.PSID = 0;
+            this.PSID = null;
             this.Szablon = string.Empty;
             this.BlokadaUsuniecia = false;
             this.Faktura = true;
