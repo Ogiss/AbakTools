@@ -88,10 +88,13 @@ namespace Enova.API.Connector.Handel
         }
 
         public void DrukujDokument(Form form, Guid guid, string template,
-            Enova.API.Printer.Destinations destination = Enova.API.Printer.Destinations.Preview,
+            Enova.API.Printer.Destinations destination = Enova.API.Printer.Destinations.PDF,
             string outputFile = null
             )
         {
+            MessageBox.Show("Tymczasowo wydruki są dostępne wyłącznie z poziomu programu enova.",
+                "AbakTools", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            /*
             using (var fs = new StreamWriter("enova.error.txt"))
             {
                 var dh = GetObjValue(GetValue("DokHandlowe"), "Item", new Type[] { typeof(Guid) }, new object[] { guid });
@@ -107,49 +110,44 @@ namespace Enova.API.Connector.Handel
                         new object[] { ((Business.Session)Session).EnovaObject });
 
                     CallObjMethod(context, "Set", new Type[] { typeof(object) }, new object[] { dh });
-                    t = Type.GetType("Soneta.Printer.AspGenerator, Soneta.Printer");
+                    t = Type.GetType("Soneta.Printer.AspReportGenerator, Soneta.Printer");
                     var generator = t.GetConstructor(new Type[0]).Invoke(new object[0]);
                     SetObjValue(generator, "TemplateFileName", template);
-                    t = Type.GetType("Soneta.Printer.AspGenerator, Soneta.Printer").GetNestedType("Destinations");
-                    generator.GetType().GetField("Destination").SetValue(generator, Enum.ToObject(t, (int)destination));
+                    SetObjValue(generator, "SingleRow", true);
+                    t = Type.GetType("Soneta.Printer.AspDestinations, Soneta.Printer");
+                    generator.GetType().GetProperty("AspDestination").SetValue(generator, Enum.ToObject(t, (int)destination));
                     if (!string.IsNullOrEmpty(outputFile))
                         generator.GetType().GetField("OutputFileName").SetValue(generator, outputFile);
 
                     try
                     {
-                        //string cdir = Directory.GetCurrentDirectory();
-                        //Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
+                        t = Type.GetType("Soneta.Printer.AspTransformParams, Soneta.Printer");
+                        var aspTransformParams = t.GetConstructor(new Type[0]).Invoke(new object[0]);
+                        t.GetProperty("Context").SetValue(aspTransformParams, context);
+                        t.GetProperty("Generator").SetValue(aspTransformParams, generator);
 
-                        CallObjMethod(generator, "Print",
-                            new Type[]{
-                            typeof(System.Windows.Forms.Control),
-                            Type.GetType("Soneta.Business.Context, Soneta.Business"),
-                            typeof(bool),
-                            typeof(System.Collections.IEnumerable)
-                        },
-                            new object[]{
-                            form != null ? form : Form.ActiveForm,
-                            context,
-                            destination == Enova.API.Printer.Destinations.Preview,
-                            new ArrayList()
-                        });
+                        t = Type.GetType("Soneta.Printer.AspTransform, Soneta.Printer");
+                        var aspTransformInstance = t.GetField("Instance", BindingFlags.Static | BindingFlags.Public).GetValue(null);
+
+                        CallObjMethod(
+                            aspTransformInstance,
+                            "Transform",
+                            new[] { Type.GetType("Soneta.Printer.AspTransformParams, Soneta.Printer") },
+                            new[] { aspTransformParams }
+                            );
+
+
                         //Directory.SetCurrentDirectory(cdir);
                     }
                     catch (Exception ex)
                     {
-                        /*
-                        using(var fs = new StreamWriter("enova.error.txt"))
-                        {
-                            fs.WriteLine("Exception:" + ex.GetType().Name);
-                            fs.WriteLine(ex.Message);
-                        }
-                         */
                         throw ex;
                     }
 
 
                 }
             }
+            */
         }
 
 
