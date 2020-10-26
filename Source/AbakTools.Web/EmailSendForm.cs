@@ -139,7 +139,7 @@ namespace AbakTools.Web
                 // not the default credentials
                 client.UseDefaultCredentials = false;
                 // Provide your credentials
-                client.Credentials = new System.Net.NetworkCredential("abak145@gmail.com", "ghutomira145");
+                client.Credentials = new System.Net.NetworkCredential("abak145@gmail.com", "pdljlgezqylesfot");
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
 
                 // Use SendAsync to send the message asynchronously
