@@ -1,14 +1,10 @@
-﻿using System;
-using System.ComponentModel;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
 namespace AbakTools.Handel.Forms
 {
-    public class PozycjeZamowieniaGrid : Enova.Business.Old.Controls.DataGidViewSelect
+    public class PozycjeZamowieniaGrid : global::Enova.Business.Old.Controls.DataGidViewSelect
     {
 
         protected override bool ProcessDataGridViewKey(KeyEventArgs e)

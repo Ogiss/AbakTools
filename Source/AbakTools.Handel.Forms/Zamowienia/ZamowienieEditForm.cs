@@ -9,15 +9,17 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using AbakTools.EnovaApi;
+using AbakTools.Framework;
 using Microsoft.Reporting.WinForms;
-//using Enova.Business.Old.DB.Web;
-using Enova.Business.Old.Types;
-using DBWeb = Enova.Business.Old.DB.Web;
-using DBEnova = Enova.Business.Old.DB;
+//using global::Enova.Business.Old.DB.Web;
+using global::Enova.Business.Old.Types;
+using DBWeb = global::Enova.Business.Old.DB.Web;
+using DBEnova = global::Enova.Business.Old.DB;
 
 namespace AbakTools.Zamowienia.Forms
 {
-    public partial class ZamowienieEditForm : Enova.Business.Old.Forms.DataEditForm
+    public partial class ZamowienieEditForm : global::Enova.Business.Old.Forms.DataEditForm
     {
         private bool cancelClose = false;
         private bool fireEvents = true;
@@ -25,16 +27,16 @@ namespace AbakTools.Zamowienia.Forms
         private bool zmienionoStatus = false;
         public bool SpakowanoZamowienie;
 
-        new public Enova.Business.Old.DB.EnovaContext DataContext
+        new public global::Enova.Business.Old.DB.EnovaContext DataContext
         {
-            get { return (Enova.Business.Old.DB.EnovaContext)base.DataContext; }
+            get { return (global::Enova.Business.Old.DB.EnovaContext)base.DataContext; }
         }
 
-        public Enova.Business.Old.DB.Web.WebContext DbContext
+        public global::Enova.Business.Old.DB.Web.WebContext DbContext
         {
             get
             {
-                return Enova.Business.Old.Core.ContextManager.WebContext;
+                return global::Enova.Business.Old.Core.ContextManager.WebContext;
             }
         }
 
@@ -48,11 +50,11 @@ namespace AbakTools.Zamowienia.Forms
             }
         }
 
-        public Enova.Business.Old.DB.Web.Zamowienie Zamowienie
+        public global::Enova.Business.Old.DB.Web.Zamowienie Zamowienie
         {
             get
             {
-                return (Enova.Business.Old.DB.Web.Zamowienie)DataSource;
+                return (global::Enova.Business.Old.DB.Web.Zamowienie)DataSource;
             }
             set
             {
@@ -103,10 +105,10 @@ namespace AbakTools.Zamowienia.Forms
                     }
                      */
 
-                    var service = Enova.API.EnovaService.Instance;
+                    var service = global::Enova.API.EnovaService.Instance;
                     using (var session = service.CreateSession())
                     {
-                        var ekontrahent = session.GetModule<Enova.API.CRM.CRMModule>().Kontrahenci[Zamowienie.Kontrahent.Guid.Value];
+                        var ekontrahent = session.GetModule<global::Enova.API.CRM.CRMModule>().Kontrahenci[Zamowienie.Kontrahent.Guid.Value];
                         if (ekontrahent != null)
                         {
                             this.kontrahentEnovaSelect.SelectedItem = ekontrahent;
@@ -117,17 +119,17 @@ namespace AbakTools.Zamowienia.Forms
 
                 }
 
-                if (((Enova.Business.Old.DB.Web.Zamowienie)DataSource).EntityState == System.Data.EntityState.Unchanged)
+                if (((global::Enova.Business.Old.DB.Web.Zamowienie)DataSource).EntityState == System.Data.EntityState.Unchanged)
                 {
-                    DbContext.Refresh(System.Data.Objects.RefreshMode.StoreWins, ((Enova.Business.Old.DB.Web.Zamowienie)DataSource).PozycjeZamowienia);
-                    DbContext.Refresh(System.Data.Objects.RefreshMode.StoreWins, ((Enova.Business.Old.DB.Web.Zamowienie)DataSource).HistoriaZamowienia);
+                    DbContext.Refresh(System.Data.Objects.RefreshMode.StoreWins, ((global::Enova.Business.Old.DB.Web.Zamowienie)DataSource).PozycjeZamowienia);
+                    DbContext.Refresh(System.Data.Objects.RefreshMode.StoreWins, ((global::Enova.Business.Old.DB.Web.Zamowienie)DataSource).HistoriaZamowienia);
                 }
 
                 if (Zamowienie.StatusZamowienia != null && Zamowienie.StatusZamowienia.NoweZamowienie.Value && (Zamowienie.RodzajTransportu == RodzajTransportu.Kurier || Zamowienie.RodzajTransportu == RodzajTransportu.Przedstawiciel))
                     Zamowienie.Transport = (int)RodzajTransportu.NieWybrano;
 
-                if (Enova.Business.Old.DB.Web.User.LoginedUser.IsAdmin.Value ||
-                    (Enova.Business.Old.DB.Web.User.LoginedUser.IsSuperAdmin != null && Enova.Business.Old.DB.Web.User.LoginedUser.IsSuperAdmin.Value))
+                if (global::Enova.Business.Old.DB.Web.User.LoginedUser.IsAdmin.Value ||
+                    (global::Enova.Business.Old.DB.Web.User.LoginedUser.IsSuperAdmin != null && global::Enova.Business.Old.DB.Web.User.LoginedUser.IsSuperAdmin.Value))
                 {
                     pilneCheckBox.Visible = true;
                     blokadaCheckBox.Visible = true;
@@ -168,7 +170,7 @@ namespace AbakTools.Zamowienia.Forms
                 {
                     Zamowienie.DataDodania = DateTime.Now;
                     Zamowienie.NaKiedy = DateTime.Now;
-                    Enova.Business.Old.DB.Web.StatusZamowienia status = 
+                    global::Enova.Business.Old.DB.Web.StatusZamowienia status = 
                         DbContext.StatusyZamowien.Where(s => s.NoweZamowienie == true).FirstOrDefault();
                     Zamowienie.HistoriaZamowienia.Add(new DBWeb.HistoriaZamowienia()
                     {
@@ -224,12 +226,12 @@ namespace AbakTools.Zamowienia.Forms
 
         private void loadSezony()
         {
-            var service = Enova.API.EnovaService.Instance;
+            var service = global::Enova.API.EnovaService.Instance;
             sezonyComboBox.Items.Add("---------------");
             sezonDodatkowyComboBox.Items.Add("---------------");
             using (var session = service.CreateSession())
             {
-                var bm = session.GetModule<Enova.API.Business.BusinessModule>();
+                var bm = session.GetModule<global::Enova.API.Business.BusinessModule>();
                 foreach (var s in bm.Dictionary["F.SEZON"].OrderBy(r => r.Value))
                 {
                     sezonyComboBox.Items.Add(s.Value);
@@ -262,8 +264,8 @@ namespace AbakTools.Zamowienia.Forms
                 if (Zamowienie.EntityState != System.Data.EntityState.Added && Zamowienie.EntityState != System.Data.EntityState.Detached)
                     Zamowienie.PozycjeZamowienia.Load();
 
-                pozycjeBindingSource.DataSource = ((Enova.Business.Old.DB.Web.Zamowienie)DataSource).PozycjeZamowienia
-                    .Where(p => p.Synchronizacja != (int)Enova.Business.Old.Types.RowSynchronizeOld.NotsynchronizedDelete && p.Ilosc > 0).OrderBy(p => p.Ident).ToList();
+                pozycjeBindingSource.DataSource = ((global::Enova.Business.Old.DB.Web.Zamowienie)DataSource).PozycjeZamowienia
+                    .Where(p => p.Synchronizacja != (int)global::Enova.Business.Old.Types.RowSynchronizeOld.NotsynchronizedDelete && p.Ilosc > 0).OrderBy(p => p.Ident).ToList();
                 Zamowienie.PrzeliczZamowienie();
             }
         }
@@ -299,7 +301,7 @@ namespace AbakTools.Zamowienia.Forms
                 }
 
                 historiaListBox.Items.Clear();
-                foreach (Enova.Business.Old.DB.Web.HistoriaZamowienia hist in Zamowienie.HistoriaZamowienia.Where(h => h.EntityState != System.Data.EntityState.Deleted
+                foreach (global::Enova.Business.Old.DB.Web.HistoriaZamowienia hist in Zamowienie.HistoriaZamowienia.Where(h => h.EntityState != System.Data.EntityState.Deleted
                     && h.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete && h.Deleted == false).OrderByDescending(h => h.DataDodania))
                 {
                     historiaListBox.Items.Add(hist.ToString());
@@ -309,7 +311,7 @@ namespace AbakTools.Zamowienia.Forms
 
         protected override bool CancelValid()
         {
-            if (Zamowienie.EntityState == System.Data.EntityState.Added || Zamowienie.Synchronizacja == (int)Enova.Business.Old.Types.RowSynchronizeOld.Notsaved)
+            if (Zamowienie.EntityState == System.Data.EntityState.Added || Zamowienie.Synchronizacja == (int)global::Enova.Business.Old.Types.RowSynchronizeOld.Notsaved)
             {
                 DialogResult result = MessageBox.Show("Czy napewno chcesz zrezygnować z zamówienia?", "EnovaTools", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (result == DialogResult.No)
@@ -335,7 +337,7 @@ namespace AbakTools.Zamowienia.Forms
         {
             if (SaveChanges())
             {
-                bool? preview = DbContext.GetConfigBool("PREVIEW_ORDER", Enova.Business.Old.DB.Web.User.LoginedUser);
+                bool? preview = DbContext.GetConfigBool("PREVIEW_ORDER", global::Enova.Business.Old.DB.Web.User.LoginedUser);
 
                 var query = DbContext.PozycjeZamowieniaView
                     .Where(p => p.ZamowienieID == Zamowienie.ID).OrderBy(p => p.Ident).ThenBy(p => p.ProduktKod).ThenBy(p => p.ProduktNazwa).ThenBy(p => p.AtrybutNazwa);
@@ -415,7 +417,7 @@ namespace AbakTools.Zamowienia.Forms
                     using (AbakTools.Printer.PrintingService ps = new AbakTools.Printer.PrintingService())
                     {
                         ps.ReportPath = "Reports\\ZamowienieReport.rdlc";
-                        //ps.DataSources.Add(new ReportDataSource("Zamowienie", new List<Enova.Business.Old.DB.Web.Zamowienie>() { Zamowienie }));
+                        //ps.DataSources.Add(new ReportDataSource("Zamowienie", new List<global::Enova.Business.Old.DB.Web.Zamowienie>() { Zamowienie }));
                         ps.SetParameters(new List<ReportParameter>()
                     {
                         new ReportParameter("numer",Zamowienie.NumerPelny),
@@ -456,7 +458,7 @@ namespace AbakTools.Zamowienia.Forms
                 DialogResult result = MessageBox.Show("Czy napewno chcesz usunąć pozycję?", "EnovaTools", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (result == DialogResult.Yes)
                 {
-                    ((Enova.Business.Old.Core.IDeleteRecord)pozycja).DeleteRecord();
+                    ((global::Enova.Business.Old.Core.IDeleteRecord)pozycja).DeleteRecord();
                     pozycjeBindingSource.Remove(pozycja);
                     Zamowienie.PrzeliczZamowienie();
                 }
@@ -537,7 +539,7 @@ namespace AbakTools.Zamowienia.Forms
                         StawkaVatSymbol = produkt.StawkaVat.Nazwa,
                         StawkaVatValue = produkt.StawkaVat.Procent,
                         PSID = 0,
-                        Synchronizacja = (int)Enova.Business.Old.Types.RowSynchronize.NotsynchronizedNew,
+                        Synchronizacja = (int)global::Enova.Business.Old.Types.RowSynchronize.NotsynchronizedNew,
                         Ident = Zamowienie.MaxIdent == null ? 1 : Zamowienie.MaxIdent + 1,
                     };
                      */
@@ -571,7 +573,7 @@ namespace AbakTools.Zamowienia.Forms
                 StawkaVatSymbol = produkt.StawkaVat.Nazwa,
                 StawkaVatValue = produkt.StawkaVat.Procent,
                 PSID = 0,
-                Synchronizacja = (int)Enova.Business.Old.Types.RowSynchronizeOld.NotsynchronizedNew,
+                Synchronizacja = (int)global::Enova.Business.Old.Types.RowSynchronizeOld.NotsynchronizedNew,
                 Ident = Zamowienie.MaxIdent == null ? 1 : Zamowienie.MaxIdent + 1,
             };
 
@@ -692,7 +694,7 @@ namespace AbakTools.Zamowienia.Forms
                 GUID = Guid.NewGuid(),
                 Prywatna = false,
                 Stamp = DateTime.Now,
-                Synchronizacja = (int)Enova.Business.Old.Types.RowSynchronizeOld.NotsynchronizedNew
+                Synchronizacja = (int)global::Enova.Business.Old.Types.RowSynchronizeOld.NotsynchronizedNew
             };
             DialogResult result = form.ShowDialog();
             if (result == DialogResult.OK)
@@ -760,7 +762,7 @@ namespace AbakTools.Zamowienia.Forms
         {
             get
             {
-                return Enova.Business.Old.DB.Web.User.LoginedUser.IsAdmin.Value;
+                return global::Enova.Business.Old.DB.Web.User.LoginedUser.IsAdmin.Value;
             }
         }
 
@@ -768,7 +770,7 @@ namespace AbakTools.Zamowienia.Forms
         {
             get
             {
-                return Enova.Business.Old.DB.Web.User.LoginedUser.IsSuperAdmin.Value;
+                return global::Enova.Business.Old.DB.Web.User.LoginedUser.IsSuperAdmin.Value;
             }
         }
 
@@ -776,7 +778,7 @@ namespace AbakTools.Zamowienia.Forms
         {
             get
             {
-                return Enova.Business.Old.DB.Web.User.LoginedUser.IsWarehouseman.Value;
+                return global::Enova.Business.Old.DB.Web.User.LoginedUser.IsWarehouseman.Value;
             }
         }
 
@@ -1389,9 +1391,9 @@ namespace AbakTools.Zamowienia.Forms
             //if (kontrahentSelectTextBox.SelectedItem != null)
             if (Zamowienie.Kontrahent != null)
             {
-                //Enova.Business.Old.DB.Web.Kontrahent kontrahent = (Enova.Business.Old.DB.Web.Kontrahent)kontrahentSelectTextBox.SelectedItem;
-                Enova.Business.Old.DB.Web.Kontrahent kontrahent = Zamowienie.Kontrahent;
-                form.KontrahentId = Enova.Business.Old.Core.ContextManager.DataContext.Kontrahenci.Where(k => k.Guid == kontrahent.Guid).Select(k => k.ID).FirstOrDefault();
+                //global::Enova.Business.Old.DB.Web.Kontrahent kontrahent = (global::Enova.Business.Old.DB.Web.Kontrahent)kontrahentSelectTextBox.SelectedItem;
+                global::Enova.Business.Old.DB.Web.Kontrahent kontrahent = Zamowienie.Kontrahent;
+                form.KontrahentId = global::Enova.Business.Old.Core.ContextManager.DataContext.Kontrahenci.Where(k => k.Guid == kontrahent.Guid).Select(k => k.ID).FirstOrDefault();
             }
             DialogResult result = form.ShowDialog();
             if (result == DialogResult.OK && form.DataSource != null)
@@ -1452,17 +1454,17 @@ namespace AbakTools.Zamowienia.Forms
             this.ActiveControl = pozycjeDataGrid;
         }
 
-        private Enova.Business.Old.DB.Web.Produkt webProdukt(Guid guid)
+        private global::Enova.Business.Old.DB.Web.Produkt webProdukt(Guid guid)
         {
-            Enova.Business.Old.DB.Web.Produkt produkt = DbContext.GetProduktByEnovaGuid(guid);
+            global::Enova.Business.Old.DB.Web.Produkt produkt = DbContext.GetProduktByEnovaGuid(guid);
             if (produkt == null)
             {
-                var ec = Enova.Business.Old.Core.ContextManager.DataContext;
-                Enova.Business.Old.DB.Towar towar = Enova.Business.Old.Core.ContextManager.DataContext.Towary.Where(t => t.Guid == guid).FirstOrDefault();
+                var ec = global::Enova.Business.Old.Core.ContextManager.DataContext;
+                global::Enova.Business.Old.DB.Towar towar = global::Enova.Business.Old.Core.ContextManager.DataContext.Towary.Where(t => t.Guid == guid).FirstOrDefault();
                 DateTime stamp = DateTime.Now;
                 if (!towar.DefinicjaStawkiReference.IsLoaded)
                     towar.DefinicjaStawkiReference.Load();
-                Enova.Business.Old.DB.Web.StawkaVat stawkaVat = (Enova.Business.Old.DB.Web.StawkaVat)towar.DefinicjaStawki;
+                global::Enova.Business.Old.DB.Web.StawkaVat stawkaVat = (global::Enova.Business.Old.DB.Web.StawkaVat)towar.DefinicjaStawki;
                 /*
                 int ograniczenieSprzedarzy = 0;
                 var fos = towar.GetFeatures(ec, "Ograniczenie sprzedaży").FirstOrDefault();
@@ -1471,7 +1473,7 @@ namespace AbakTools.Zamowienia.Forms
                  */
                 if (stawkaVat != null)
                 {
-                    produkt = new Enova.Business.Old.DB.Web.Produkt()
+                    produkt = new global::Enova.Business.Old.DB.Web.Produkt()
                     {
                         EnovaGuid = towar.Guid,
                         GUID = Guid.NewGuid(),
@@ -1485,7 +1487,7 @@ namespace AbakTools.Zamowienia.Forms
                         Indexed = true,
                         KrotkiOpis = "",
                         LangID = 3,
-                        LinkRewrite = Enova.Business.Old.Core.Tools.LinkRewrite(towar.Nazwa),
+                        LinkRewrite = global::Enova.Business.Old.Core.Tools.LinkRewrite(towar.Nazwa),
                         MetaOpis = "",
                         MetaTytul = "",
                         Opis = "",
@@ -1494,7 +1496,7 @@ namespace AbakTools.Zamowienia.Forms
                         PSID = 0,
                         Stamp = stamp,
                         Stan = 0,
-                        Synchronizacja = (int)Enova.Business.Old.Types.RowSynchronizeOld.NotsynchronizedNew,
+                        Synchronizacja = (int)global::Enova.Business.Old.Types.RowSynchronizeOld.NotsynchronizedNew,
                         Widoczny = true,
                         WlascicielID = 0,
                         StawkaVat = stawkaVat,
@@ -1769,7 +1771,7 @@ namespace AbakTools.Zamowienia.Forms
 
         private void wystawFaktureButton_Click(object sender, EventArgs e)
         {
-            if (!Enova.Business.Old.DB.Web.Operator.CurrentOperator.CheckPrawaDostepu(Business.OperatorPrawaDostepu.Magazynier))
+            if (!global::Enova.Business.Old.DB.Web.Operator.CurrentOperator.CheckPrawaDostepu(Business.OperatorPrawaDostepu.Magazynier))
             {
                 BAL.Forms.FormManager.Alert("Nie posiadasz wystarczających uprawnień");
                 return;
@@ -1849,7 +1851,7 @@ namespace AbakTools.Zamowienia.Forms
                                 if (MessageBox.Show(this, "Czy chcesz wydrukować fakturę ?", "AbakTools",
                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
                                 {
-                                    var template = Enova.Business.Old.Core.Configuration.GetSetting("EnovaFVReport");
+                                    var template = global::Enova.Business.Old.Core.Configuration.GetSetting("EnovaFVReport");
                                     template = Path.IsPathRooted(template) ? template : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Aspx", template);
                                     if (string.IsNullOrEmpty(template))
                                         throw new Exception("Nie skonfigurowano wzorca wydruku dla faktury sprzedaży");
@@ -1908,11 +1910,15 @@ namespace AbakTools.Zamowienia.Forms
                                 if (MessageBox.Show(this, "Czy chcesz wydrukować fakturę ?", "AbakTools",
                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
                                 {
-                                    var template = Enova.Business.Old.Core.Configuration.GetSetting("EnovaFVReport");
+                                    /*
+                                    var template = global::Enova.Business.Old.Core.Configuration.GetSetting("EnovaFVReport");
                                     template = Path.IsPathRooted(template) ? template : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Aspx", template);
                                     if (string.IsNullOrEmpty(template))
                                         throw new Exception("Nie skonfigurowano wzorca wydruku dla faktury sprzedaży");
                                     hm.DrukujDokument(null, dokument.Guid, template);
+                                    */
+
+                                    DependencyProvider.Resolve<IEnovaService>().PrintDocument(dokument.Guid);
                                 }
                             }
 
@@ -1936,15 +1942,9 @@ namespace AbakTools.Zamowienia.Forms
 
         private void drukujFaktureToolStripButton_Click(object sender, EventArgs e)
         {
-            if (this.Zamowienie.FakturaGuid != null)
+            if (this.Zamowienie.FakturaGuid.HasValue)
             {
-                string template = Enova.Business.Old.Core.Configuration.GetSetting("EnovaFVReport");
-                if (string.IsNullOrEmpty(template))
-                    throw new Exception("Nie skonfigurowano wzoru wydruku dla dokumentu sprzedaży");
-                //Enova.API.EnovaServiceAttribute.EnovaService.HandelModule.DrukujDokument(this, this.Zamowienie.FakturaGuid.Value, template);
-                using (var session = Enova.API.EnovaService.Instance.CreateSession())
-                    session.GetModule<Enova.API.Handel.HandelModule>().DrukujDokument(this, this.Zamowienie.FakturaGuid.Value, template);
-
+                DependencyProvider.Resolve<IEnovaService>().PrintDocument(Zamowienie.FakturaGuid.Value);
             }
         }
 
@@ -1954,7 +1954,7 @@ namespace AbakTools.Zamowienia.Forms
         {
             public Guid GetMapGuid(Guid guid)
             {
-                var dc = Enova.Business.Old.Core.ContextManager.WebContext;
+                var dc = global::Enova.Business.Old.Core.ContextManager.WebContext;
                 var cel = dc.GuidMaps.Where(g => g.Tabela == "Towary" && g.Zrodlo == guid).Select(g => g.Cel).FirstOrDefault();
                 if (cel == null)
                     return guid;
@@ -2043,14 +2043,14 @@ namespace AbakTools.Zamowienia.Forms
         /*
         private void kontrahentSelectTextBox_SelectionChanged(object sender, EventArgs e)
         {
-            Enova.Business.Old.DB.Web.Kontrahent kontrahent;
-            if (kontrahentSelectTextBox.SelectedItem is Enova.Business.Old.DB.Kontrahent)
+            global::Enova.Business.Old.DB.Web.Kontrahent kontrahent;
+            if (kontrahentSelectTextBox.SelectedItem is global::Enova.Business.Old.DB.Kontrahent)
             {
-                kontrahent = ((Enova.Business.Old.DB.Kontrahent)kontrahentSelectTextBox.SelectedItem).GetWebKontrahent();
+                kontrahent = ((global::Enova.Business.Old.DB.Kontrahent)kontrahentSelectTextBox.SelectedItem).GetWebKontrahent();
             }
             else
             {
-                kontrahent = (Enova.Business.Old.DB.Web.Kontrahent)kontrahentSelectTextBox.SelectedItem;
+                kontrahent = (global::Enova.Business.Old.DB.Web.Kontrahent)kontrahentSelectTextBox.SelectedItem;
             }
             if (kontrahent != null && (Zamowienie.Kontrahent == null || Zamowienie.Kontrahent.ID != kontrahent.ID))
             {
@@ -2092,11 +2092,11 @@ namespace AbakTools.Zamowienia.Forms
         private void kontrahentEnovaSelect_ValueChanged(object sender, EventArgs e)
         {
             var enovaKontrahent = (Enova.API.CRM.Kontrahent)this.kontrahentEnovaSelect.SelectedItem;
-            var kontrahent = Enova.Business.Old.DB.Web.Kontrahent.GetKontrahent(DbContext, enovaKontrahent);
+            var kontrahent = global::Enova.Business.Old.DB.Web.Kontrahent.GetKontrahent(DbContext, enovaKontrahent);
             if (kontrahent == null && enovaKontrahent != null)
             {
                 kontrahent = new DBWeb.Kontrahent(enovaKontrahent);
-                (kontrahent as Enova.Business.Old.Core.ISaveChanges).SaveChanges();
+                (kontrahent as global::Enova.Business.Old.Core.ISaveChanges).SaveChanges();
             }
             if (kontrahent != null && (Zamowienie.Kontrahent == null || Zamowienie.Kontrahent.Guid != kontrahent.Guid))
             {

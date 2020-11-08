@@ -233,6 +233,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\EnovaApiService\EnovaApi\EnovaApi.csproj">
+      <Project>{f24f2bb1-e719-492e-87ae-254bedb9a313}</Project>
+      <Name>EnovaApi</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Libs\BAL\BAL.Business\BAL.Business.csproj">
       <Project>{190505bd-83f7-4cc2-8d02-d07bcd5f05b9}</Project>
       <Name>BAL.Business</Name>
@@ -277,6 +281,10 @@
       <Project>{3f7a828a-5829-489d-8c4f-610ad188426c}</Project>
       <Name>AbakTools.CRM</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Enova.Api\AbakTools.EnovaApi.csproj">
+      <Project>{f2ab3a27-fb6f-499f-8672-bf53f6314459}</Project>
+      <Name>AbakTools.EnovaApi</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AbakTools.Finanse.Forms\AbakTools.Finanse.Forms.csproj">
       <Project>{f7e9636d-8f89-4946-b1df-0b080a09d058}</Project>
       <Name>AbakTools.Finanse.Forms</Name>
@@ -308,6 +316,10 @@
     <ProjectReference Include="..\AbakTools.Ksiegowosc.Forms\AbakTools.Ksiegowosc.Forms.csproj">
       <Project>{96f33d1a-f382-453a-b647-a2239c07168a}</Project>
       <Name>AbakTools.Ksiegowosc.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Printer\AbakTools.Printer.csproj">
+      <Project>{98ed01dc-ae4f-4dc9-8a5d-2b540d605e71}</Project>
+      <Name>AbakTools.Printer</Name>
     </ProjectReference>
     <ProjectReference Include="..\AbakTools.SMS\AbakTools.SMS.csproj">
       <Project>{6da7b0a0-3b27-4b27-8fe6-57e0b668fb65}</Project>

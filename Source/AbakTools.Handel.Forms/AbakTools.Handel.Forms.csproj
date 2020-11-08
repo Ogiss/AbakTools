@@ -521,6 +521,10 @@
       <Project>{3F7A828A-5829-489D-8C4F-610AD188426C}</Project>
       <Name>AbakTools.CRM</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AbakTools.Enova.Api\AbakTools.EnovaApi.csproj">
+      <Project>{f2ab3a27-fb6f-499f-8672-bf53f6314459}</Project>
+      <Name>AbakTools.EnovaApi</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AbakTools.Forms\AbakTools.Forms.csproj">
       <Project>{2BCDD22E-6A64-4E1A-BC00-B41F5D9D4F32}</Project>
       <Name>AbakTools.Forms</Name>

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Unity;
+﻿using Unity;
 using AbakTools.Framework;
 
 namespace EnovaToolsExplorer
@@ -15,6 +11,8 @@ namespace EnovaToolsExplorer
         {
             new AbakTools.Configuration.ComponentSetup(),
             new AbakTools.Infrastructure.ComponentSetup(),
+            new AbakTools.Printer.ComponentSetup(),
+            new AbakTools.EnovaApi.ComponentSetup(), 
             new Setups.EnovaApiSetup()
         };
         

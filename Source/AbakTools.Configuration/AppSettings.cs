@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Configuration;
 using System.Globalization;
+using System.Security.Policy;
 
 
 namespace AbakTools.Configuration
@@ -12,18 +13,20 @@ namespace AbakTools.Configuration
     {
         public static string EnovaPath { get; private set; }
         public static string EnovaDatabase { get; private set; }
+        public static Uri EnovaApiUrl { get; private set; }
 
         internal static void Load()
         {
             EnovaPath = LoadString("EnovaPath", true);
             EnovaDatabase = LoadString("EnovaDatabase", true);
+            EnovaApiUrl = LoadUri("EnovaApiUrl", true, "http://localhost:9000/api/");
         }
 
-        private static string LoadString(string key, bool required)
+        private static string LoadString(string key, bool required, string defaultValue = null)
         {
-            string setting = ConfigurationManager.AppSettings[key];
+            string setting = ConfigurationManager.AppSettings[key] ?? defaultValue;
 
-            if (required && String.IsNullOrEmpty(setting))
+            if (required && string.IsNullOrEmpty(setting))
             {
                 throw new InvalidConfigurationException(key);
             }
@@ -35,7 +38,7 @@ namespace AbakTools.Configuration
         {
             string settingStr = LoadString(key, required);
 
-            if (!Int32.TryParse(settingStr, out int setting))
+            if (!int.TryParse(settingStr, out int setting))
             {
                 throw new InvalidConfigurationException(key);
             }
@@ -92,5 +95,16 @@ namespace AbakTools.Configuration
             return setting;
         }
 
+        private static Uri LoadUri(string key, bool required, string defaultValue = null)
+        {
+            string settingStr = LoadString(key, required, defaultValue);
+
+            if (!Uri.TryCreate(settingStr, UriKind.RelativeOrAbsolute, out Uri uri))
+            {
+                throw new InvalidConfigurationException(key);
+            }
+
+            return uri;
+        }
     }
 }

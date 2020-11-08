@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 
@@ -52,22 +47,22 @@ namespace AbakTools.Printer
         }
 
 
-        public ReportForm(string title, string reportPath, IEnumerable<ReportDataSource> dataSources)
+        public ReportForm(string title, string reportPath, IEnumerable<ReportDataSource> dataSources, IEnumerable<ReportParameter> parameters = null)
         {
             InitializeComponent();
             SetReport(title, reportPath, dataSources);
             ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
             ReportViewer.ZoomMode = ZoomMode.Percent;
-            ReportViewer.ZoomPercent = 100;
+            ReportViewer.ZoomPercent = 30;
         }
 
-        public ReportForm(string title, System.IO.Stream stream, IEnumerable<ReportDataSource> dataSources)
+        public ReportForm(string title, System.IO.Stream stream, IEnumerable<ReportDataSource> dataSources, IEnumerable<ReportParameter> parameters = null)
         {
             InitializeComponent();
             SetReport(title, stream, dataSources);
             ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
             ReportViewer.ZoomMode = ZoomMode.Percent;
-            ReportViewer.ZoomPercent = 100;
+            ReportViewer.ZoomPercent = 30;
         }
 
 
@@ -89,7 +84,7 @@ namespace AbakTools.Printer
         }
 
 
-        public void SetReport(string title, string reportPath, IEnumerable<ReportDataSource> dataSources)
+        public void SetReport(string title, string reportPath, IEnumerable<ReportDataSource> dataSources, IEnumerable<ReportParameter> parameters = null)
         {
             this.Text = title;
             this.ReportViewer.LocalReport.ReportPath = reportPath;
@@ -99,9 +94,14 @@ namespace AbakTools.Printer
             {
                 this.ReportViewer.LocalReport.DataSources.Add(ds);
             }
+
+            if (parameters != null)
+            {
+                this.ReportViewer.LocalReport.SetParameters(parameters);
+            }
         }
 
-        public void SetReport(string title, System.IO.Stream stream, IEnumerable<ReportDataSource> dataSources)
+        public void SetReport(string title, System.IO.Stream stream, IEnumerable<ReportDataSource> dataSources, IEnumerable<ReportParameter> parameters = null)
         {
             this.Text = title;
             //this.ReportViewer.LocalReport.ReportPath = reportPath;

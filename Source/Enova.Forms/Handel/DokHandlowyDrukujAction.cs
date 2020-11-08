@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using AbakTools.Framework;
+using AbakTools.EnovaApi;
 
 [assembly: BAL.Types.Action(
     ActionType = typeof(Enova.Forms.Handel.DokHandlowyDrukujAction),
@@ -80,7 +82,7 @@ namespace Enova.Forms.Handel
 
         public void Action()
         {
-            //var service = Enova.API.EnovaServiceAttribute.EnovaService;
+            /*
             var service = Enova.API.EnovaService.Instance;
             if (service != null && service.IsLogined)
             {
@@ -99,19 +101,15 @@ namespace Enova.Forms.Handel
                         throw new Exception("Nie skonfigurowano wzoru wydruku dla dokumentu sprzedaży");
 
                     template = Path.IsPathRooted(template) ? template : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Aspx", template);
-
-                    /*
-                    service.HandelModule.DrukujDokument(
-                        (System.Windows.Forms.Form)BAL.Forms.FormManager.MainForm,
-                        this.DokHandlowy.Guid,
-                        template);
-                     */
                     session.GetModule<API.Handel.HandelModule>().DrukujDokument(
                         null, this.DokHandlowy.Guid, template);
 
                 }
 
             }
+            */
+
+            DependencyProvider.Resolve<IEnovaService>().PrintDocument(DokHandlowy.Guid);
         }
 
     }

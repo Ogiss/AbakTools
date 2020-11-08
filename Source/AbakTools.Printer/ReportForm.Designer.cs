@@ -38,6 +38,8 @@
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.Size = new System.Drawing.Size(1139, 741);
             this.reportViewer.TabIndex = 0;
+            this.reportViewer.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.reportViewer.ZoomPercent = 25;
             // 
             // ReportForm
             // 
@@ -49,6 +51,7 @@
             this.Name = "ReportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ReportForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ReportForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ReportForm_KeyDown);
             this.ResumeLayout(false);
