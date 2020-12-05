@@ -384,6 +384,10 @@
     <None Include="Resources\KontrahenciEnovaViewSelect.grid.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\EnovaApiService\EnovaApi\EnovaApi.csproj">
+      <Project>{F24F2BB1-E719-492E-87AE-254BEDB9A313}</Project>
+      <Name>EnovaApi</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Libs\BAL\BAL.Business\BAL.Business.csproj">
       <Project>{190505bd-83f7-4cc2-8d02-d07bcd5f05b9}</Project>
       <Name>BAL.Business</Name>

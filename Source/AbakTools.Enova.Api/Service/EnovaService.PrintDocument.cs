@@ -19,6 +19,24 @@ namespace AbakTools.EnovaApi.Service
             }
         }
 
+        public byte[] ExportDocumentToPdf(CommercialDocument document)
+        {
+            if (document != null)
+            {
+                return _documentPrinterService.ExportToPdf(
+                    GetDocumentTemplatePath(document),
+                    GetDataSources(document),
+                    GetParameters(document));
+            }
+
+            return null;
+        }
+
+        public byte[] ExportDocumentToPdf(Guid guid)
+        {
+            return ExportDocumentToPdf(_commercialDocumentRepository.Get(guid));
+        }
+
         private string GetDocumentTemplatePath(CommercialDocument document)
         {
             switch (document.Definition.Category)

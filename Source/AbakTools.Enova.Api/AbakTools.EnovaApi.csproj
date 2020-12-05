@@ -74,6 +74,7 @@
     <Compile Include="Infrastructure\Repositories\Abstract\EnovaRepositoryBase.cs" />
     <Compile Include="Infrastructure\Repositories\CommercialDocumentRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Document\IDocumentService.cs" />
     <Compile Include="Service\EnovaService.cs" />
     <Compile Include="Service\EnovaService.PrintDocument.cs" />
   </ItemGroup>

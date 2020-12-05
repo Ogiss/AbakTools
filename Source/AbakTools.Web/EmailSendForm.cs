@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Net.Mail;
+using System.IO;
 
 namespace AbakTools.Web
 {
@@ -69,6 +70,25 @@ namespace AbakTools.Web
             InitializeComponent();
         }
 
+        public static DialogResult SendMail(MailData mailData, out string mailTo)
+        {
+            var form = new EmailSendForm();
+            form.MailTo = mailData.MailTo;
+            form.MailToName = mailData.MailToName;
+            form.MailSubject = mailData.MailSubject;
+            form.MailBody = mailData.MailBody;
+            mailData.Attachments.ForEach(x =>
+            {
+                form.Attachments.Add(new Attachment(new MemoryStream(x.Content), x.FileName));
+            });
+
+            mailTo = mailData.MailTo;
+            var result = form.ShowDialog();
+            mailTo = form.MailTo;
+
+            return result;
+        }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -95,6 +115,19 @@ namespace AbakTools.Web
             {
                 this.session.Dispose();
                 this.session = null;
+            }
+
+            if(Attachments?.Any() ?? false)
+            {
+                Attachments.ForEach(x =>
+                {
+                    if(x.ContentStream != null)
+                    {
+                        x.ContentStream.Dispose();
+                    }
+                });
+
+                Attachments.Clear();
             }
         }
 
