@@ -800,7 +800,7 @@ namespace AbakTools.Zamowienia.Forms
             if (Zamowienie.StatusZamowienia == null || (Zamowienie.StatusZamowienia.NoweZamowienie.Value && Zamowienie.RodzajTransportu != RodzajTransportu.DoDostawcy))
             {
                 DBWeb.HistoriaZamowienia hist = Zamowienie.OstatniaHistoriaZamowienia;
-                if (IsAdmin || IsWarehouseman || Zamowienie.ZamPrzedstawiciela.Value || (hist?.Operator != null) ||
+                if (IsAdmin || IsWarehouseman || Zamowienie.ZamPrzedstawiciela || (hist?.Operator != null) ||
                     IsAgetOrder)
                 {
                     statusButton1.Text = "Wstrzymane";
@@ -1314,7 +1314,7 @@ namespace AbakTools.Zamowienia.Forms
         private void kopiujButton_Click(object sender, EventArgs e)
         {
             this.SaveChanges();
-            if (Zamowienie.ZamPrzedstawiciela != null && Zamowienie.ZamPrzedstawiciela.Value && Zamowienie.Kontrahent.Guid == null)
+            if (Zamowienie.ZamPrzedstawiciela && Zamowienie.Kontrahent.Guid == null)
             {
                 MessageBox.Show("Zamówienie stworzone przez przedstawiciela.\r\nMusisz wybrać kontrahenta!!!");
                 return;
@@ -2105,7 +2105,7 @@ namespace AbakTools.Zamowienia.Forms
                 {
                     Zamowienie.AdresFaktury = kontrahent.DomyslnyAdresFaktury;
                     Zamowienie.AdresWysylki = kontrahent.DomyslnyAdresWysylki;
-                    if (Zamowienie.ZamPrzedstawiciela != null && Zamowienie.ZamPrzedstawiciela.Value && (kontrahent.CzyAgent == null || !kontrahent.CzyAgent.Value))
+                    if (Zamowienie.ZamPrzedstawiciela && (kontrahent.CzyAgent == null || !kontrahent.CzyAgent.Value))
                         Zamowienie.ZamPrzedstawiciela = false;
                     fireEvents = false;
                     terminTextBox.Text = Zamowienie.TerminPlatnosci.ToString();

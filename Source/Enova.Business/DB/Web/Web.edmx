@@ -2072,7 +2072,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Name="TotalNetto" Type="Decimal" Nullable="true" Precision="17" Scale="2" />
           <Property Name="TotalBrutto" Type="Decimal" Nullable="true" Precision="17" Scale="2" />
           <Property Name="DataDodania" Type="DateTime" Nullable="true" Precision="3" />
-          <Property Name="ZamPrzedstawiciela" Type="Boolean" Nullable="true" />
+          <Property Name="ZamPrzedstawicielaNullable" Type="Boolean" Nullable="true" />
           <Property Name="KontrahentInfo" Type="String" Nullable="true" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="Status" Type="Int32" Nullable="true" />
           <Property Name="Synchronizacja" Type="Int32" Nullable="true" />
@@ -4072,7 +4072,7 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
                 <ScalarProperty Name="Synchronizacja" ColumnName="Synchronizacja" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="KontrahentInfo" ColumnName="KontrahentInfo" />
-                <ScalarProperty Name="ZamPrzedstawiciela" ColumnName="ZamPrzedstawiciela" />
+                <ScalarProperty Name="ZamPrzedstawicielaNullable" ColumnName="ZamPrzedstawiciela" />
                 <ScalarProperty Name="DataDodania" ColumnName="DataDodania" />
                 <ScalarProperty Name="TotalBrutto" ColumnName="TotalBrutto" />
                 <ScalarProperty Name="TotalNetto" ColumnName="TotalNetto" />

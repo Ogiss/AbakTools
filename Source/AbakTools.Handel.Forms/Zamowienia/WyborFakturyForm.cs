@@ -37,7 +37,7 @@ namespace AbakTools.Zamowienia.Forms
 
                 using (var s = Enova.API.EnovaService.Instance.CreateSession())
                 {
-                    if (Zamowienie.ZamPrzedstawiciela.Value)
+                    if (Zamowienie.ZamPrzedstawiciela)
                         kontrahenci = Enova.Forms.Services.CRMService.Kontrahenci.ByPrzedstawiciel(s, Zamowienie.Kontrahent.Kod);
                     else
                         kontrahenci = new Enova.API.CRM.Kontrahent[] { s.GetModule<Enova.API.CRM.CRMModule>().Kontrahenci[Zamowienie.Kontrahent.Guid.Value] };

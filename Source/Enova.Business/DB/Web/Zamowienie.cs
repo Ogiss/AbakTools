@@ -39,6 +39,8 @@ namespace Enova.Business.Old.DB.Web
         public bool BlokadaEdycji = false;
         public bool IstniejaBraki = false;
 
+        public bool ZamPrzedstawiciela { get => ZamPrzedstawicielaNullable ?? false; set => ZamPrzedstawicielaNullable = value; }
+
         public string NumerPelny
         {
             get
@@ -147,7 +149,7 @@ namespace Enova.Business.Old.DB.Web
         {
             get
             {
-                if (ZamPrzedstawiciela.Value)
+                if (ZamPrzedstawiciela)
                 {
                     return KontrahentInfo;
                 }
@@ -162,7 +164,7 @@ namespace Enova.Business.Old.DB.Web
         {
             get
             {
-                if ((bool)ZamPrzedstawiciela)
+                if (ZamPrzedstawiciela)
                 {
                     return KontrahentInfo;
                 }
@@ -179,7 +181,7 @@ namespace Enova.Business.Old.DB.Web
         {
             get
             {
-                if ((bool)ZamPrzedstawiciela)
+                if (ZamPrzedstawiciela)
                 {
                     return new Adres()
                     {
@@ -227,7 +229,7 @@ namespace Enova.Business.Old.DB.Web
             get
             {
                 string adres = "";
-                if ((bool)ZamPrzedstawiciela)
+                if (ZamPrzedstawiciela)
                 {
                     adres += KontrahentInfo;
                 }
@@ -405,12 +407,12 @@ namespace Enova.Business.Old.DB.Web
             {
                 if (!string.IsNullOrEmpty(this.ZrodloKod))
                     return this.ZrodloKod;
-                if (!ZamPrzedstawiciela.Value)
+                if (!ZamPrzedstawiciela)
                 {
                     HistoriaZamowienia his = HistoriaZamowienia.Where(h => h.Status.NoweZamowienie == true).FirstOrDefault();
                     return his?.Operator?.Nazwa;
                 }
-                return (ZamPrzedstawiciela.Value ? PrzedstawicielKod + "-" : "") + "WWW";
+                return (ZamPrzedstawiciela ? PrzedstawicielKod + "-" : "") + "WWW";
             }
         }
 
@@ -620,7 +622,7 @@ namespace Enova.Business.Old.DB.Web
         {
             get
             {
-                if ((ZamPrzedstawiciela == null || !(bool)ZamPrzedstawiciela) && Kontrahent != null)
+                if (!ZamPrzedstawiciela && Kontrahent != null)
                     return Kontrahent.Przedstawiciel;
                 return null;
 
@@ -631,7 +633,7 @@ namespace Enova.Business.Old.DB.Web
         {
             get
             {
-                if (ZamPrzedstawiciela != null && (bool)ZamPrzedstawiciela)
+                if (ZamPrzedstawiciela)
                 {
                     return KontrahentKod;
                 }
@@ -992,7 +994,7 @@ namespace Enova.Business.Old.DB.Web
             {
                 if (Termin != null)
                     return Termin.Value;
-                if (this.Kontrahent != null && this.ZamPrzedstawiciela.Value == false)
+                if (this.Kontrahent != null && !this.ZamPrzedstawiciela)
                 {
                     Enova.Business.Old.DB.Kontrahent enovaKontrahent = this.Kontrahent.EnovaKontrahent;
                     if (enovaKontrahent != null && enovaKontrahent.Termin != null)

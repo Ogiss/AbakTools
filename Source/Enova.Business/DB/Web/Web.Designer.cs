@@ -25693,24 +25693,24 @@ namespace Enova.Business.Old.DB.Web
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> ZamPrzedstawiciela
+        public Nullable<global::System.Boolean> ZamPrzedstawicielaNullable
         {
             get
             {
-                return _ZamPrzedstawiciela;
+                return _ZamPrzedstawicielaNullable;
             }
             set
             {
-                OnZamPrzedstawicielaChanging(value);
-                ReportPropertyChanging("ZamPrzedstawiciela");
-                _ZamPrzedstawiciela = StructuralObject.SetValidValue(value, "ZamPrzedstawiciela");
-                ReportPropertyChanged("ZamPrzedstawiciela");
-                OnZamPrzedstawicielaChanged();
+                OnZamPrzedstawicielaNullableChanging(value);
+                ReportPropertyChanging("ZamPrzedstawicielaNullable");
+                _ZamPrzedstawicielaNullable = StructuralObject.SetValidValue(value, "ZamPrzedstawicielaNullable");
+                ReportPropertyChanged("ZamPrzedstawicielaNullable");
+                OnZamPrzedstawicielaNullableChanged();
             }
         }
-        private Nullable<global::System.Boolean> _ZamPrzedstawiciela;
-        partial void OnZamPrzedstawicielaChanging(Nullable<global::System.Boolean> value);
-        partial void OnZamPrzedstawicielaChanged();
+        private Nullable<global::System.Boolean> _ZamPrzedstawicielaNullable;
+        partial void OnZamPrzedstawicielaNullableChanging(Nullable<global::System.Boolean> value);
+        partial void OnZamPrzedstawicielaNullableChanged();
     
         /// <summary>
         /// Dokumentacja metadanych jest niedostępna.
