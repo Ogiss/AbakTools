@@ -2,10 +2,23 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
+      <Rectangle Name="Rectangle1">
+        <KeepTogether>true</KeepTogether>
+        <Top>18.54847cm</Top>
+        <Left>0.93898cm</Left>
+        <Height>2.39711cm</Height>
+        <Width>6.5581cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Rectangle>
       <Line Name="Line1">
         <Left>0.02482cm</Left>
         <Height>0cm</Height>
         <Width>18.99709cm</Width>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -19,9 +32,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Faktura nr " + First(Fields!DocumentNumber.Value, "Document")</Value>
+                <Value>="Faktura VAT Korekta nr " + First(Fields!DocumentNumber.Value, "Document")</Value>
                 <Style>
-                  <FontSize>18pt</FontSize>
+                  <FontSize>17pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -33,8 +46,8 @@
         <Top>0.14111cm</Top>
         <Left>0.02482cm</Left>
         <Height>0.9256cm</Height>
-        <Width>8.35346cm</Width>
-        <ZIndex>1</ZIndex>
+        <Width>12.11054cm</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -66,7 +79,7 @@
         <Left>14.26044cm</Left>
         <Height>0.4cm</Height>
         <Width>2.58197cm</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -98,7 +111,7 @@
         <Left>14.26044cm</Left>
         <Height>0.4cm</Height>
         <Width>2.58197cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -113,7 +126,7 @@
         <Left>0.02482cm</Left>
         <Height>0cm</Height>
         <Width>18.99709cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -125,7 +138,7 @@
         <Left>0.02482cm</Left>
         <Height>0cm</Height>
         <Width>18.99709cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -154,7 +167,7 @@
         <Left>16.94825cm</Left>
         <Height>0.4cm</Height>
         <Width>2.07366cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -187,7 +200,7 @@
         <Left>16.94825cm</Left>
         <Height>0.4cm</Height>
         <Width>2.07366cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -221,7 +234,7 @@
         <Left>0.02482cm</Left>
         <Height>0.55265cm</Height>
         <Width>3.54441cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -264,7 +277,7 @@
         <Left>0.02482cm</Left>
         <Height>0.93978cm</Height>
         <Width>8.98845cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -294,7 +307,7 @@
         <Left>0.02482cm</Left>
         <Height>0.6cm</Height>
         <Width>8.98845cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -324,7 +337,7 @@
         <Left>0.02482cm</Left>
         <Height>0.6cm</Height>
         <Width>8.98845cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -354,7 +367,7 @@
         <Left>0.02482cm</Left>
         <Height>0.6cm</Height>
         <Width>8.98845cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -384,7 +397,7 @@
         <Left>0.02481cm</Left>
         <Height>0.6cm</Height>
         <Width>8.98846cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -414,7 +427,7 @@
         <Left>0.02481cm</Left>
         <Height>0.6cm</Height>
         <Width>8.98846cm</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -448,7 +461,7 @@
         <Left>10.26586cm</Left>
         <Height>0.55265cm</Height>
         <Width>3.54441cm</Width>
-        <ZIndex>15</ZIndex>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -480,7 +493,7 @@
         <Left>10.26586cm</Left>
         <Height>0.93978cm</Height>
         <Width>8.75605cm</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -510,7 +523,7 @@
         <Left>10.26586cm</Left>
         <Height>0.6cm</Height>
         <Width>8.75605cm</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -540,7 +553,7 @@
         <Left>10.26585cm</Left>
         <Height>0.6cm</Height>
         <Width>8.75606cm</Width>
-        <ZIndex>18</ZIndex>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -570,7 +583,7 @@
         <Left>10.26585cm</Left>
         <Height>0.6cm</Height>
         <Width>8.75606cm</Width>
-        <ZIndex>19</ZIndex>
+        <ZIndex>20</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -600,7 +613,7 @@
         <Left>10.26584cm</Left>
         <Height>0.6cm</Height>
         <Width>8.75607cm</Width>
-        <ZIndex>20</ZIndex>
+        <ZIndex>21</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -630,7 +643,7 @@
         <Left>10.26584cm</Left>
         <Height>0.6cm</Height>
         <Width>8.75607cm</Width>
-        <ZIndex>21</ZIndex>
+        <ZIndex>22</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -660,7 +673,7 @@
         <Left>0.02482cm</Left>
         <Height>0.6cm</Height>
         <Width>8.98846cm</Width>
-        <ZIndex>22</ZIndex>
+        <ZIndex>23</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -694,7 +707,7 @@
         <Left>0.02482cm</Left>
         <Height>0.55265cm</Height>
         <Width>3.54441cm</Width>
-        <ZIndex>23</ZIndex>
+        <ZIndex>24</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -750,7 +763,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>9.59556cm</Width>
+              <Width>9.06638cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.15195cm</Width>
@@ -804,14 +817,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="QuantityFormated">
+                    <Textbox Name="QuantityTurnoverFormated">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!QuantityFormated.Value</Value>
+                              <Value>=Fields!QuantityTurnoverFormated.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -822,7 +835,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>QuantityFormated</rd:DefaultName>
+                      <rd:DefaultName>QuantityTurnoverFormated</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -849,7 +862,7 @@
                               <Value>=Fields!PriceWithoutTaxAfterDiscount.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
-                                <Format>0.00'zł';(0.00'zł')</Format>
+                                <Format>0.00' zł';(0.00' zł')</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -886,7 +899,7 @@
                               <Value>=Fields!TotalValueWithoutTax.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
-                                <Format>0.00'zł';(0.00'zł')</Format>
+                                <Format>0.00' zł';(0.00' zł')</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1006,7 +1019,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Ilość</Value>
+                            <Value>Korekta ilości</Value>
                             <Style>
                               <FontSize>8pt</FontSize>
                             </Style>
@@ -1159,7 +1172,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>0.65264cm</Size>
+                <Size>1.18181cm</Size>
                 <CellContents>
                   <Textbox Name="OrdinalNumber">
                     <CanGrow>true</CanGrow>
@@ -1168,7 +1181,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!OrdinalNumber.Value</Value>
+                            <Value>=RowNumber(nothing) &amp; " (" &amp; Fields!OrdinalNumber.Value &amp; ")"</Value>
                             <Style>
                               <FontFamily />
                               <FontSize>8pt</FontSize>
@@ -1196,11 +1209,20 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Rows</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!QuantityTurnover.Value</FilterExpression>
+            <Operator>NotEqual</Operator>
+            <FilterValues>
+              <FilterValue>=CDec(0)</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>7.52969cm</Top>
         <Left>0.02482cm</Left>
         <Height>1.09417cm</Height>
         <Width>18.99709cm</Width>
-        <ZIndex>24</ZIndex>
+        <ZIndex>25</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1223,6 +1245,7 @@
                           <TextRun>
                             <Value>Stawka VAT</Value>
                             <Style>
+                              <FontSize>9pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -1276,7 +1299,8 @@
                             <TextRun>
                               <Value>=Fields!TotalValueWithoutTax.Value</Value>
                               <Style>
-                                <Format>0.00'zł';(0.00'zł')</Format>
+                                <FontSize>9pt</FontSize>
+                                <Format>0.00'zł'</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1311,7 +1335,8 @@
                             <TextRun>
                               <Value>=Fields!TotalValueTax.Value</Value>
                               <Style>
-                                <Format>0.00'zł';(0.00'zł')</Format>
+                                <FontSize>9pt</FontSize>
+                                <Format>0.00'zł'</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1346,7 +1371,8 @@
                             <TextRun>
                               <Value>=Fields!TotalValueWithTax.Value</Value>
                               <Style>
-                                <Format>0.00'zł';(0.00'zł')</Format>
+                                <FontSize>9pt</FontSize>
+                                <Format>0.00'zł'</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1386,7 +1412,8 @@
                             <TextRun>
                               <Value>=First(Fields!TotalValueWithoutTax.Value, "Document")</Value>
                               <Style>
-                                <Format>0.00'zł';(0.00'zł')</Format>
+                                <FontSize>9pt</FontSize>
+                                <Format>0.00'zł'</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1421,7 +1448,8 @@
                             <TextRun>
                               <Value>=First(Fields!TotalValueTax.Value, "Document")</Value>
                               <Style>
-                                <Format>0.00'zł';(0.00'zł')</Format>
+                                <FontSize>9pt</FontSize>
+                                <Format>0.00'zł'</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1456,7 +1484,8 @@
                             <TextRun>
                               <Value>=First(Fields!TotalValueWithTax.Value, "Document")</Value>
                               <Style>
-                                <Format>0.00'zł';(0.00'zł')</Format>
+                                <FontSize>9pt</FontSize>
+                                <Format>0.00'zł'</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1504,6 +1533,7 @@
                           <TextRun>
                             <Value>Netto</Value>
                             <Style>
+                              <FontSize>9pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -1541,6 +1571,7 @@
                           <TextRun>
                             <Value>Kwota VAT</Value>
                             <Style>
+                              <FontSize>9pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -1578,6 +1609,7 @@
                           <TextRun>
                             <Value>Brutto</Value>
                             <Style>
+                              <FontSize>9pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -1628,7 +1660,9 @@
                         <TextRuns>
                           <TextRun>
                             <Value>=Fields!TaxName.Value</Value>
-                            <Style />
+                            <Style>
+                              <FontSize>9pt</FontSize>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style>
@@ -1663,7 +1697,9 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Suma:</Value>
-                            <Style />
+                            <Style>
+                              <FontSize>9pt</FontSize>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style>
@@ -1695,7 +1731,7 @@
         <Left>9.02191cm</Left>
         <Height>1.8cm</Height>
         <Width>10cm</Width>
-        <ZIndex>25</ZIndex>
+        <ZIndex>26</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1707,7 +1743,7 @@
         <Left>3.15524cm</Left>
         <Height>0cm</Height>
         <Width>14.19458cm</Width>
-        <ZIndex>26</ZIndex>
+        <ZIndex>27</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1721,7 +1757,8 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Do zapłaty:</Value>
+                <Value>=IIf(Sum(Fields!TotalValueWithTax.Value, "Document") &gt;= CDec(0),
+"Do zapłaty:", "Do zwrotu:")</Value>
                 <Style>
                   <FontFamily>Times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -1736,7 +1773,7 @@
         <Left>3.15524cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>27</ZIndex>
+        <ZIndex>28</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1754,11 +1791,12 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!TotalValueWithTax.Value, "Document")</Value>
+                <Value>=Abs(Sum(Fields!TotalValueWithTax.Value, "Document"))</Value>
                 <Style>
                   <FontFamily>Times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
+                  <Format>0.00'zł'</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1772,7 +1810,7 @@
         <Left>11.52191cm</Left>
         <Height>0.6cm</Height>
         <Width>5.82792cm</Width>
-        <ZIndex>28</ZIndex>
+        <ZIndex>29</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1782,6 +1820,7 @@
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>pl-PL</rd:FormatSymbolCulture>
         </Style>
       </Textbox>
       <Textbox Name="Textbox74">
@@ -1806,7 +1845,7 @@
         <Left>3.11997cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>29</ZIndex>
+        <ZIndex>30</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1824,7 +1863,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!TotalValueWithTaxInWords.Value, "Document")</Value>
+                <Value>=Replace(First(Fields!TotalValueWithTaxInWords.Value, "Document"),"-","")</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
                   <FontFamily>Times New Roman</FontFamily>
@@ -1841,7 +1880,504 @@
         <Left>5.76108cm</Left>
         <Height>0.6cm</Height>
         <Width>11.51819cm</Width>
-        <ZIndex>30</ZIndex>
+        <ZIndex>31</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox76">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=IIf(Sum(Fields!TotalValueWithTax.Value, "Document") &gt;= CDec(0),
+"Pozostało do zapłaty:", "Pozostało do zwrotu:")</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox76</rd:DefaultName>
+        <Top>13.35024cm</Top>
+        <Left>0.38594cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.60444cm</Width>
+        <ZIndex>32</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Tablix Name="Tablix5">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.94657cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4.90363cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.65302cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.02917cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.53443cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox32">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Lp.</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox32</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox34">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Sposób zapłaty</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox34</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox36">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Termin</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox36</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox38">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Kwota</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox38</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.60057cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox33">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=RowNumber("Payments")</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox33</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="PaymentMethod">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!PaymentMethod.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>PaymentMethod</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="DateOfPayment">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!DateOfPayment.Value</Value>
+                              <Style>
+                                <Format>yyyy-MM-dd</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>DateOfPayment</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="PaymentAmount">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!PaymentAmount.Value</Value>
+                              <Style>
+                                <Format>0.00' zł';(0.00' zł')</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>PaymentAmount</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pl-PL</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>Payments</DataSetName>
+        <Top>14.12716cm</Top>
+        <Left>0.42175cm</Left>
+        <Height>1.135cm</Height>
+        <Width>12.53239cm</Width>
+        <ZIndex>33</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Line Name="Line5">
+        <Top>20.13467cm</Top>
+        <Left>1.22873cm</Left>
+        <Height>0cm</Height>
+        <Width>5.95312cm</Width>
+        <ZIndex>34</ZIndex>
+        <Style>
+          <Border>
+            <Style>Dotted</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line6">
+        <Top>20.13467cm</Top>
+        <Left>11.32615cm</Left>
+        <Height>0cm</Height>
+        <Width>5.95312cm</Width>
+        <ZIndex>35</ZIndex>
+        <Style>
+          <Border>
+            <Style>Dotted</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox41">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Podpis osoby uprawionej do wystawienia faktury</Value>
+                <Style>
+                  <FontSize>6pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox41</rd:DefaultName>
+        <Top>20.20523cm</Top>
+        <Left>1.22873cm</Left>
+        <Height>0.46008cm</Height>
+        <Width>5.95312cm</Width>
+        <ZIndex>36</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox42">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Podpis osoby upoważnionej do otrzymania faktury</Value>
+                <Style>
+                  <FontSize>6pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox41</rd:DefaultName>
+        <Top>20.20522cm</Top>
+        <Left>11.32615cm</Left>
+        <Height>0.46008cm</Height>
+        <Width>5.95312cm</Width>
+        <ZIndex>37</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Rectangle Name="Rectangle2">
+        <KeepTogether>true</KeepTogether>
+        <Top>18.54847cm</Top>
+        <Left>11.04596cm</Left>
+        <Height>2.39711cm</Height>
+        <Width>6.5581cm</Width>
+        <ZIndex>38</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Description.Value, "Document")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>15.47495cm</Top>
+        <Left>0.47307cm</Left>
+        <Height>1.34938cm</Height>
+        <Width>18.25625cm</Width>
+        <ZIndex>39</ZIndex>
+        <Visibility>
+          <Hidden>=IIf(IsNothing(First(Fields!Description.Value, "Document")) 
+Or Len(First(Fields!Description.Value, "Document")) = 0, True, False)</Hidden>
+        </Visibility>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1853,10 +2389,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>6.85355in</Height>
+    <Height>8.42878in</Height>
     <Style />
   </Body>
-  <Width>7.48894in</Width>
+  <Width>7.5202in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -1937,6 +2473,10 @@
         <Field Name="Definition">
           <DataField>Definition</DataField>
           <rd:TypeName>EnovaApi.Models.CommercialDocument.DocumentDefinition</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="DocumentNumber">
           <DataField>DocumentNumber</DataField>
@@ -2025,6 +2565,18 @@
         </Field>
         <Field Name="QuantityFormated">
           <DataField>QuantityFormated</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuantityTurnover">
+          <DataField>QuantityTurnover</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="QuantityTurnoverFormated">
+          <DataField>QuantityTurnoverFormated</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuantityTurnoverUnit">
+          <DataField>QuantityTurnoverUnit</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="QuantityUnit">

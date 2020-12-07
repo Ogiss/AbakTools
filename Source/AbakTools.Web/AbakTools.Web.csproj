@@ -132,6 +132,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttachmentData.cs" />
     <Compile Include="AttachmentsForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -44,6 +44,9 @@ namespace AbakTools.EnovaApi.Service
                 case DocumentCategory.Invoice:
                     return "Reports/Invoice.rdlc";
 
+                case DocumentCategory.InvoiceCorrection:
+                    return "Reports/InvoiceCorrection.rdlc";
+
                 default:
                     throw new NotImplementedException();
             }

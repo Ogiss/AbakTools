@@ -108,7 +108,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Reports\Invoice — Kopia.rdlc">
+    <EmbeddedResource Include="Reports\InvoiceCorrection.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Invoice.rdlc">
