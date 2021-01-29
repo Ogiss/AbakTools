@@ -31,12 +31,14 @@ namespace AbakTools.Towary.Forms
         private void SaveChanges(Enova.Business.Old.Controls.KategorieTreeView.KategoriaTreeNode node)
         {
             Enova.Business.Old.DB.Web.KategoriaOld kategoria = node.Kategoria;
+
             if (kategoria != null)
             {
                 foreach (var n in node.Nodes)
                 {
                     SaveChanges((Enova.Business.Old.Controls.KategorieTreeView.KategoriaTreeNode)n);
                 }
+
                 ((ISaveChanges)kategoria).SaveChanges();
             }
         }
@@ -224,7 +226,5 @@ namespace AbakTools.Towary.Forms
                 kategorieTreeView.SelectedNode.ForeColor = Color.Red;
             }
         }
-
-
     }
 }

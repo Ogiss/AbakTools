@@ -304,7 +304,8 @@ namespace Enova.Business.Old.Controls
 
             private void loadChildren()
             {
-                foreach (var k in kategoria.Podkategorie.Where(k => k.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete && k.EnovaFeature == false )
+                foreach (var k in kategoria.Podkategorie.Where(
+                    k => k.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete && k.EnovaFeature == false && k.deleted == false )
                     .OrderBy(k => k.KolejnoscWyswietlania).ThenBy(r=>r.Nazwa))
                 {
                     this.Nodes.Add(new KategoriaTreeNode(k));
@@ -316,6 +317,5 @@ namespace Enova.Business.Old.Controls
         }
 
         #endregion
-
     }
 }
