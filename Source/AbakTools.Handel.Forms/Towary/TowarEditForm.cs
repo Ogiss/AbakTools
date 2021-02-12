@@ -166,7 +166,7 @@ namespace AbakTools.Towary.Forms
 
             var kategorie = Enova.Business.Old.Core.ContextManager.WebContext.KategorieOld.Where(k => k.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete).OrderBy(k => k.PoziomGlebokosci).ThenBy(k => k.KolejnoscWyswietlania).ToList();
             KategoriaTreeNode root = null;
-            
+
             foreach (var kategoria in kategorie)
             {
                 if (kategoria.PoziomGlebokosci == 0)
@@ -205,7 +205,7 @@ namespace AbakTools.Towary.Forms
 
         private void loadZdjecia()
         {
-            foreach (var z in this.Towar.Zdjecia.Where(z=>z.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete && z.Deleted == false).OrderBy(z=>z.ID).ThenBy(z=>z.Legenda).ToList())
+            foreach (var z in this.Towar.Zdjecia.Where(z => z.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete && z.Deleted == false).OrderBy(z => z.ID).ThenBy(z => z.Legenda).ToList())
             {
                 //string imgPath = IMG_DIR + this.Towar.ID.ToString() + "-" + z.ID.ToString() + ".jpg";
                 //zdjeciaImageViewer.Add(imgPath, z);
@@ -226,7 +226,7 @@ namespace AbakTools.Towary.Forms
             {
                 AtrybutTreeNode gnode = new AtrybutTreeNode(grupa);
                 atrybutyTreeView.Nodes.Add(gnode);
-                foreach (var atrybut in grupa.Atrybuty.Where(a=>a.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete && a.is_deleted == false).OrderBy(a=>a.Kolejnosc).ThenBy(a => a.Nazwa))
+                foreach (var atrybut in grupa.Atrybuty.Where(a => a.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete && a.is_deleted == false).OrderBy(a => a.Kolejnosc).ThenBy(a => a.Nazwa))
                 {
                     AtrybutTreeNode anode = new AtrybutTreeNode(atrybut);
                     atrybutyNodes.Add(atrybut.ID, anode);
@@ -285,6 +285,7 @@ namespace AbakTools.Towary.Forms
             if (Towar.EnovaGuid != null)
             {
                 DialogResult result = MessageBox.Show("Czy napewno chcesz zmienić powiązanie z towarem Enova?", "EnovaTools", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
                 if (result == System.Windows.Forms.DialogResult.No)
                     return;
             }
@@ -298,63 +299,64 @@ namespace AbakTools.Towary.Forms
                 Enova.Business.Old.DB.TowarRow enovaTowarRow = (Enova.Business.Old.DB.TowarRow)((Enova.Business.Old.Controls.ISelectForm)form).SelectedItem;
                 Enova.Business.Old.DB.Towar enovaTowar = Enova.Business.Old.Core.ContextManager.DataContext.Towary.Where(t => t.ID == enovaTowarRow.ID).FirstOrDefault();
 
-                if (Towar.EnovaGuid != null)
+                if (!Towar.EnovaGuid.HasValue)
                 {
-                    towarEnovaTextBox.Text = "(" + enovaTowar.Kod + ") " + enovaTowar.Nazwa;
-                    Towar.Kod = enovaTowar.Kod;
-                    Towar.EnovaGuid = enovaTowar.Guid;
-                    Towar.EnovaStamp = 0;
-                }
-                else
-                {
-                    towarEnovaTextBox.Text = "(" + enovaTowar.Kod + ") " + enovaTowar.Nazwa;
-                    Towar.Kod = enovaTowar.Kod;
-                    Towar.EnovaGuid = enovaTowar.Guid;
-                    Towar.Nazwa = enovaTowar.Nazwa;
-                    Towar.Cena = (decimal)enovaTowar.CenaHurtowaNetto;
                     Towar.EnovaStamp = enovaTowar.Stamp;
+                    Towar.Nazwa = enovaTowar.Nazwa;
+                }
 
-                    var stawkaVat = Enova.Business.Old.Core.ContextManager.WebContext.StawkiVat
-                        .Where(sv => sv.GUID == enovaTowar.DefinicjaStawki.Guid).FirstOrDefault();
-                    Towar.StawkaVat = stawkaVat;
-                    //Towar.LinkRewrite = Enova.Business.Old.Core.Tools.LinkRewrite(Towar.Nazwa);
+                towarEnovaTextBox.Text = "(" + enovaTowar.Kod + ") " + enovaTowar.Nazwa;
+                Towar.Kod = enovaTowar.Kod;
+                Towar.EnovaGuid = enovaTowar.Guid;
+                Towar.Cena = (decimal)enovaTowar.CenaHurtowaNetto;
 
-                    string dostawcaStr = enovaTowar.GetDostawca();
-                    if (!string.IsNullOrEmpty(dostawcaStr))
+
+                var stawkaVat = Enova.Business.Old.Core.ContextManager.WebContext.StawkiVat
+                    .Where(sv => sv.GUID == enovaTowar.DefinicjaStawki.Guid).FirstOrDefault();
+                Towar.StawkaVat = stawkaVat;
+                //Towar.LinkRewrite = Enova.Business.Old.Core.Tools.LinkRewrite(Towar.Nazwa);
+
+                string dostawcaStr = enovaTowar.GetDostawca();
+                if (!string.IsNullOrEmpty(dostawcaStr))
+                {
+                    Enova.Business.Old.DB.Dictionary dict = Enova.Business.Old.Core.ContextManager.DataContext.DictionarySet
+                        .Where(d => d.Category == "F.DOSTAWCY" && d.Value == dostawcaStr).FirstOrDefault();
+                    if (dict != null)
                     {
-                        Enova.Business.Old.DB.Dictionary dict = Enova.Business.Old.Core.ContextManager.DataContext.DictionarySet
-                            .Where(d => d.Category == "F.DOSTAWCY" && d.Value == dostawcaStr).FirstOrDefault();
-                        if (dict != null)
-                        {
-                            Enova.Business.Old.DB.Web.Dostawca dostawca = Enova.Business.Old.Core.ContextManager.WebContext.Dostawcy.Where(d => d.GUID == dict.Guid).FirstOrDefault();
-                            if (dostawca != null)
-                                Towar.Dostawca = dostawca;
-                        }
+                        Enova.Business.Old.DB.Web.Dostawca dostawca = Enova.Business.Old.Core.ContextManager.WebContext.Dostawcy.Where(d => d.GUID == dict.Guid).FirstOrDefault();
+                        if (dostawca != null)
+                            Towar.Dostawca = dostawca;
                     }
+                }
 
-                    var grupy = Enova.Business.Old.DB.FeatureDef.GrupyRabatowe.ToList();
-                    foreach (var grupa in grupy)
+                Towar.TowarGrupyRabatowe.Clear();
+
+                var grupy = Enova.Business.Old.DB.FeatureDef.GrupyRabatowe.ToList();
+
+                foreach (var grupa in grupy)
+                {
+                    var features = enovaTowar.Features.Where(f => f.Name == grupa.Name).ToList();
+
+                    foreach (var feature in features)
                     {
-                        var features = enovaTowar.Features.Where(f => f.Name == grupa.Name).ToList();
-                        foreach (var feature in features)
+                        var disc = grupa.DictionarySet.Where(d => d.Value == feature.Data).FirstOrDefault();
+
+                        if (disc != null)
                         {
-                            var disc = grupa.DictionarySet.Where(d => d.Value == feature.Data).FirstOrDefault();
-                            if (disc != null)
+                            var grupaRabatowa = Enova.Business.Old.Core.ContextManager.WebContext.GrupyRabatowe
+                                .Where(gr => gr.GUID == disc.Guid).FirstOrDefault();
+
+                            if (grupaRabatowa != null)
                             {
-                                var grupaRabatowa = Enova.Business.Old.Core.ContextManager.WebContext.GrupyRabatowe
-                                    .Where(gr => gr.GUID == disc.Guid).FirstOrDefault();
-                                if (grupaRabatowa != null)
+                                Towar.TowarGrupyRabatowe.Add(new TowarGrupaRabatowa()
                                 {
-                                    Towar.TowarGrupyRabatowe.Add(new TowarGrupaRabatowa()
-                                    {
-                                        GrupaRabatowa = grupaRabatowa
-                                    });
-                                }
+                                    GrupaRabatowa = grupaRabatowa
+                                });
                             }
                         }
                     }
                 }
-                
+
             }
         }
 
@@ -444,7 +446,7 @@ namespace AbakTools.Towary.Forms
                     atrybutImgBindingSource.DataSource = zdjecie;
                 }
             }
-            else if(e.Node is ZdjecieTreeNode)
+            else if (e.Node is ZdjecieTreeNode)
             {
                 var zdjecie = ((ZdjecieTreeNode)e.Node).Zdjecie;
 
@@ -580,7 +582,7 @@ namespace AbakTools.Towary.Forms
                 else if (e.Node is AtrybutDetailTreeNode)
                 {
                     AtrybutDetailTreeNode node = (AtrybutDetailTreeNode)e.Node;
-                    
+
 
                     if (node.Checked)
                     {
@@ -594,7 +596,7 @@ namespace AbakTools.Towary.Forms
                         node.AtrybutProduktu.Deleted = true;
                         node.AtrybutProduktu.Synchronizacja = (int)RowSynchronizeOld.NotsynchronizedDelete;
                         node.Parent.Checked = false;
-                        
+
                     }
                     node.SetText();
 
@@ -669,12 +671,12 @@ namespace AbakTools.Towary.Forms
                     if (rcp.Synchronizacja == (int)RowSynchronizeOld.Synchronized)
                         rcp.Synchronizacja = (int)RowSynchronizeOld.NotsynchronizedNew;
                 }
-                
+
             }
 
             foreach (var kid in kategorieDeleted)
             {
-                KategoriaProdukt kp = Towar.KategorieProduktu.Where(k => k.KategoriaID == kid 
+                KategoriaProdukt kp = Towar.KategorieProduktu.Where(k => k.KategoriaID == kid
                     && k.Synchronizacja != (int)RowSynchronizeOld.NotsynchronizedDelete && k.Deleted == false).FirstOrDefault();
                 if (kp != null)
                 {
@@ -687,8 +689,8 @@ namespace AbakTools.Towary.Forms
             {
                 //if (kvp.Value.Synchronizacja == (int)RowSynchronize.Synchronized)
                 //{
-                    kvp.Value.Stamp = DateTime.Now;
-                    kvp.Value.Synchronizacja = (int)RowSynchronizeOld.NotsynchronizedDelete;
+                kvp.Value.Stamp = DateTime.Now;
+                kvp.Value.Synchronizacja = (int)RowSynchronizeOld.NotsynchronizedDelete;
                 //}
                 //else
                 //{
@@ -696,8 +698,8 @@ namespace AbakTools.Towary.Forms
                 //        Enova.Business.Old.Core.ContextManager.WebContext.DeleteObject(z);
                 //    foreach (var k in kvp.Value.KombinacjeAtrybutu.ToList())
                 //        Enova.Business.Old.Core.ContextManager.WebContext.DeleteObject(k);
-               //     Enova.Business.Old.Core.ContextManager.WebContext.DeleteObject(kvp.Value);
-               // }
+                //     Enova.Business.Old.Core.ContextManager.WebContext.DeleteObject(kvp.Value);
+                // }
             }
             atrybutyDeleted.Clear();
 
@@ -709,35 +711,35 @@ namespace AbakTools.Towary.Forms
                     {
                         //if (paz.Synchronizacja == (int)RowSynchronize.Synchronized)
                         //{
-                            paz.Stamp = DateTime.Now;
-                            paz.Synchronizacja = (int)RowSynchronizeOld.NotsynchronizedDelete;
-                            ap.Stamp = paz.Stamp;
-                            if (ap.Synchronizacja == (int)RowSynchronizeOld.Synchronized)
-                                ap.Synchronizacja = (int)RowSynchronizeOld.NotsynchronizedEdit;
-                       // }
+                        paz.Stamp = DateTime.Now;
+                        paz.Synchronizacja = (int)RowSynchronizeOld.NotsynchronizedDelete;
+                        ap.Stamp = paz.Stamp;
+                        if (ap.Synchronizacja == (int)RowSynchronizeOld.Synchronized)
+                            ap.Synchronizacja = (int)RowSynchronizeOld.NotsynchronizedEdit;
+                        // }
                         //else
                         //{
-                       //     Enova.Business.Old.Core.ContextManager.WebContext.DeleteObject(paz);
-                       // }
+                        //     Enova.Business.Old.Core.ContextManager.WebContext.DeleteObject(paz);
+                        // }
                     }
                 }
             }
 
             foreach (var zdjecie in zdjeciaDeleted)
             {
-               // if (zdjecie.Synchronizacja == (int)RowSynchronize.Synchronized)
+                // if (zdjecie.Synchronizacja == (int)RowSynchronize.Synchronized)
                 //{
-                    zdjecie.Stamp = DateTime.Now;
-                    zdjecie.Synchronizacja = (int)RowSynchronizeOld.NotsynchronizedDelete;
+                zdjecie.Stamp = DateTime.Now;
+                zdjecie.Synchronizacja = (int)RowSynchronizeOld.NotsynchronizedDelete;
                 //}
                 //else
-               // {
+                // {
                 //    if (File.Exists(IMG_DIR + Towar.ID.ToString() + "-" + zdjecie.ID.ToString() + ".jpg"))
-               //         File.Delete(IMG_DIR + Towar.ID.ToString() + "-" + zdjecie.ID.ToString() + ".jpg");
-               //     foreach (var a in zdjecie.ProduktyAtrybutyZdjecia.ToList())
-               //         Enova.Business.Old.Core.ContextManager.WebContext.DeleteObject(a);
+                //         File.Delete(IMG_DIR + Towar.ID.ToString() + "-" + zdjecie.ID.ToString() + ".jpg");
+                //     foreach (var a in zdjecie.ProduktyAtrybutyZdjecia.ToList())
+                //         Enova.Business.Old.Core.ContextManager.WebContext.DeleteObject(a);
                 //    Enova.Business.Old.Core.ContextManager.WebContext.DeleteObject(zdjecie);
-               // }
+                // }
             }
 
             zdjeciaDeleted.Clear();
@@ -751,7 +753,7 @@ namespace AbakTools.Towary.Forms
         private void okButton_Click(object sender, EventArgs e)
         {
 
-            
+
         }
 
         private void zdjecieDodajButton_Click(object sender, EventArgs e)
@@ -767,7 +769,7 @@ namespace AbakTools.Towary.Forms
                 string tmpFilename = Guid.NewGuid().ToString() + ".jpg";
                 Bitmap btm = (Bitmap)Bitmap.FromFile(openFileDialog.FileName);
                 Bitmap dstbtm = Enova.Business.Old.Core.Tools.RenderImage(btm, 600, 600);
-                
+
                 /*
                 using (FileStream fs = new FileStream(tmpDir + tmpFilename, FileMode.CreateNew))
                     dstbtm.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
@@ -796,34 +798,35 @@ namespace AbakTools.Towary.Forms
                     zdjecie.ImageBytes = ms.ToArray();
                 }
 
-                
+
                 btm.Dispose();
                 dstbtm.Dispose();
                 btm = null;
                 dstbtm = null;
-/*
-                Enova.Business.Old.DB.Web.Zdjecie zdjecie = new Enova.Business.Old.DB.Web.Zdjecie()
-                {
-                    Produkt = Towar,
-                    FileName = tmpDir+tmpFilename,
-                    Okladka = false,
-                    Gotowy = false,
-                    GUID = Guid.NewGuid(),
-                    LangID = 3,
-                    Legenda = this.Towar.Nazwa,
-                    Pozycja = 0,
-                    PSID = 0,
-                    PSProduktID = 0,
-                    Stamp = DateTime.Now,
-                    Synchronizacja = (int)RowSynchronize.NotsynchronizedNew,
-                    FileStamp = 1
-                };
+                /*
+                                Enova.Business.Old.DB.Web.Zdjecie zdjecie = new Enova.Business.Old.DB.Web.Zdjecie()
+                                {
+                                    Produkt = Towar,
+                                    FileName = tmpDir+tmpFilename,
+                                    Okladka = false,
+                                    Gotowy = false,
+                                    GUID = Guid.NewGuid(),
+                                    LangID = 3,
+                                    Legenda = this.Towar.Nazwa,
+                                    Pozycja = 0,
+                                    PSID = 0,
+                                    PSProduktID = 0,
+                                    Stamp = DateTime.Now,
+                                    Synchronizacja = (int)RowSynchronize.NotsynchronizedNew,
+                                    FileStamp = 1
+                                };
 
- */              if (Towar.Zdjecia.Count(r=>r.Synchronizacja!=(byte)RowSynchronizeOld.NotsynchronizedDelete && r.Deleted == false ) == 1)
+                 */
+                if (Towar.Zdjecia.Count(r => r.Synchronizacja != (byte)RowSynchronizeOld.NotsynchronizedDelete && r.Deleted == false) == 1)
                     zdjecie.Okladka = true;
 
                 //zdjeciaImageViewer.Add(tmpDir + tmpFilename, zdjecie);
-                 zdjeciaImageViewer.Add(zdjecie.GetImage(), zdjecie);
+                zdjeciaImageViewer.Add(zdjecie.GetImage(), zdjecie);
 
             }
         }
@@ -862,7 +865,7 @@ namespace AbakTools.Towary.Forms
                 AbakTools.Towary.Forms.WyborZdjeciaForm form = new WyborZdjeciaForm()
                 {
                     Towar = this.Towar,
-                    ZdjeciaDeleted = zdjeciaDeleted.Select(z=>z.GUID).ToList()
+                    ZdjeciaDeleted = zdjeciaDeleted.Select(z => z.GUID).ToList()
                 };
 
                 DialogResult result = form.ShowDialog();
@@ -1005,8 +1008,8 @@ namespace AbakTools.Towary.Forms
                 switch (e.KeyCode)
                 {
                     case Keys.A:
-                    krotkiOpisTextBox.SelectAll();
-                    break;
+                        krotkiOpisTextBox.SelectAll();
+                        break;
                 }
             }
         }
