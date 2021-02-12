@@ -89,7 +89,7 @@
     <None Include="Properties\DataSources\EnovaApi.Models.Customer.Customer.datasource" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\EnovaApiService\EnovaApi\EnovaApi.csproj">
+    <ProjectReference Include="..\..\..\EnovaApiService\EnovaApi\EnovaApi.csproj">
       <Project>{f24f2bb1-e719-492e-87ae-254bedb9a313}</Project>
       <Name>EnovaApi</Name>
     </ProjectReference>

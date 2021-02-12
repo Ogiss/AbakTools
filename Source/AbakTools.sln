@@ -80,7 +80,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{C97C3B33-B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbakTools.EnovaApi", "AbakTools.Enova.Api\AbakTools.EnovaApi.csproj", "{F2AB3A27-FB6F-499F-8672-BF53F6314459}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnovaApi", "..\..\..\EnovaApiService\EnovaApi\EnovaApi.csproj", "{F24F2BB1-E719-492E-87AE-254BEDB9A313}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnovaApi", "..\..\EnovaApiService\EnovaApi\EnovaApi.csproj", "{F24F2BB1-E719-492E-87AE-254BEDB9A313}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

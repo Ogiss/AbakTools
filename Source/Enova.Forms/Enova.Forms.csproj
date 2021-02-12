@@ -384,7 +384,7 @@
     <None Include="Resources\KontrahenciEnovaViewSelect.grid.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\EnovaApiService\EnovaApi\EnovaApi.csproj">
+    <ProjectReference Include="..\..\..\EnovaApiService\EnovaApi\EnovaApi.csproj">
       <Project>{F24F2BB1-E719-492E-87AE-254BEDB9A313}</Project>
       <Name>EnovaApi</Name>
     </ProjectReference>
