@@ -112,7 +112,8 @@ namespace AbakTools.Kadry.Forms
         {
             decimal kara = 0;
 
-            var sql = string.Format("SELECT SUM(t0.Przychod) AS Przychod, SUM(t0.Rozchod) Rozchod FROM (" +
+            //var sql = string.Format("SELECT SUM(t0.Przychod) AS Przychod, SUM(t0.Rozchod) Rozchod FROM (" +
+            var sql = "SELECT SUM(t0.Przychod) AS Przychod, SUM(t0.Rozchod) Rozchod FROM (" +
                     "SELECT " +
                         "Przychod = CASE WHEN f.Data IS NULL THEN ob.PrzychodWartosc ELSE CONVERT(DECIMAL(12,2), f.Data) * ob.IloscValue END, " +
                         "ob.RozchodWartosc Rozchod " +
@@ -121,8 +122,9 @@ namespace AbakTools.Kadry.Forms
                     "INNER JOIN PozycjeDokHan pdh ON pdh.Ident=ob.RozchodPozycjaIdent AND pdh.Dokument=ob.RozchodDokument " +
                     "INNER JOIN DokHandlowe dh ON ob.RozchodDokument=dh.id " +
                     "LEFT JOIN Features f ON f.ParentType='PozycjeDokHan' AND f.Parent = pdh.ID AND f.Name='prowizja' " +
-                    "WHERE t.Typ!=2 AND ob.RozchodData>='{0}' AND ob.RozchodData<'{1}' AND ob.Magazyn = {2} AND dh.Definicja=5 AND dh.Stan=1) AS t0",
-                    dataOd.ToShortDateString(), dataDo.ToShortDateString(), magazyn);
+                    //"WHERE t.Typ!=2 AND ob.RozchodData>='{0}' AND ob.RozchodData<'{1}' AND ob.Magazyn = {2} AND dh.Definicja=5 AND dh.Stan=1) AS t0",
+                    $"WHERE t.Typ!=2 AND ob.RozchodData>=@from AND ob.RozchodData<@to AND ob.Magazyn = {magazyn} AND dh.Definicja=5 AND dh.Stan=1) AS t0";
+                    //dataOd.ToShortDateString(), dataDo.ToShortDateString(), magazyn);
 
             SqlConnection con = (SqlConnection)((EntityConnection)ec.Connection).StoreConnection;
             con.Open();
@@ -130,6 +132,9 @@ namespace AbakTools.Kadry.Forms
             {
                 cmd.CommandTimeout = int.MaxValue;
                 cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("from", dataOd.Date);
+                cmd.Parameters.AddWithValue("to", dataDo.Date);
+
                 using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleRow))
                 {
                     dr.Read();
@@ -152,9 +157,9 @@ namespace AbakTools.Kadry.Forms
         {
             decimal kara = 0;
 
-            //SUM(Round((Rozchod-Przychod)*{0}*PrKary/100,2)) Kara 
 
-            string sql = string.Format("SELECT CONVERT(DECIMAL(12,2), SUM(t1.Kara)) Kara FROM (SELECT ((t0.Rozchod - t0.Przychod) *{0} * PrKary /100) Kara FROM (" +
+            //string sql = string.Format("SELECT CONVERT(DECIMAL(12,2), SUM(t1.Kara)) Kara FROM (SELECT ((t0.Rozchod - t0.Przychod) *{0} * PrKary /100) Kara FROM (" +
+            string sql = $"SELECT CONVERT(DECIMAL(12,2), SUM(t1.Kara)) Kara FROM (SELECT ((t0.Rozchod - t0.Przychod) *@prowizja * PrKary /100) Kara FROM (" +
                 "SELECT " +
                     "Przychod = CASE WHEN f.Data IS NULL THEN ob.PrzychodWartosc ELSE CONVERT(DECIMAL(12,2), f.Data) * ob.IloscValue END, " +
                     "ob.RozchodWartosc Rozchod," +
@@ -164,9 +169,10 @@ namespace AbakTools.Kadry.Forms
                 "INNER JOIN DokHandlowe dh ON ob.RozchodDokument=dh.id " +
                 "INNER JOIN Towary t ON t.ID = ob.Towar " +
                 "LEFT JOIN Features f ON f.ParentType='PozycjeDokHan' AND f.Parent = pdh.ID AND f.[Name]='prowizja' " +
-                "LEFT JOIN Features fk ON fk.ParentType='Towary' AND fk.Parent=ob.Towar AND fk.[Name]='{1}' " +
-                "WHERE ob.RozchodData>='{2}' AND ob.RozchodData<'{3}' AND ob.Magazyn = {4} AND dh.Definicja=5 AND t.Typ!=2 and dh.Stan=1)t0)t1",
-                (prProwizja / 100).ToString().Replace(",","."), cecha, dataOd.ToShortDateString(), dataDo.ToShortDateString(), magazyn);
+                $"LEFT JOIN Features fk ON fk.ParentType='Towary' AND fk.Parent=ob.Towar AND fk.[Name]='{cecha}' " +
+            //"WHERE ob.RozchodData>='{2}' AND ob.RozchodData<'{3}' AND ob.Magazyn = {4} AND dh.Definicja=5 AND t.Typ!=2 and dh.Stan=1)t0)t1",
+            $"WHERE ob.RozchodData>=@from AND ob.RozchodData<@to AND ob.Magazyn = {magazyn} AND dh.Definicja=5 AND t.Typ!=2 and dh.Stan=1)t0)t1";
+            //(prProwizja / 100).ToString().Replace(",","."), cecha, dataOd.ToShortDateString(), dataDo.ToShortDateString(), magazyn);
 
 
             SqlConnection con = (SqlConnection)((EntityConnection)ec.Connection).StoreConnection;
@@ -175,6 +181,10 @@ namespace AbakTools.Kadry.Forms
             {
                 cmd.CommandTimeout = int.MaxValue;
                 cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("prowizja", prProwizja / 100);
+                cmd.Parameters.AddWithValue("from", dataOd.Date);
+                cmd.Parameters.AddWithValue("to", dataDo.Date);
+
                 using (SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleRow))
                 {
                     dr.Read();
@@ -837,7 +847,6 @@ namespace AbakTools.Kadry.Forms
 
         private void loadProwizjePracownicy(int year, int month)
         {
-            var prowizje = Enova.Business.Old.Core.ContextManager.WebContext.ProwizjePracownikow.Where(p => p.Rok == year && p.Miesiac == month).ToList();
             Dictionary<string, string> pracownicy = new Dictionary<string, string>()
             {
                     { "MG" , "MG" },
@@ -845,6 +854,11 @@ namespace AbakTools.Kadry.Forms
                     { "PD" , "PD" },
                     { "SD" , "SD" }
             };
+
+            var prowizje = Enova.Business.Old.Core.ContextManager.WebContext.ProwizjePracownikow.Where(p => p.Rok == year && p.Miesiac == month)
+                .ToList()
+                .Where(x=>pracownicy.ContainsKey(x.PracownikKod))
+                .ToList();
 
             if (prowizje.Count > 0)
             {
