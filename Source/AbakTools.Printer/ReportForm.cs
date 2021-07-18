@@ -54,6 +54,7 @@ namespace AbakTools.Printer
             ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
             ReportViewer.ZoomMode = ZoomMode.Percent;
             ReportViewer.ZoomPercent = 30;
+            SetPageSettings();
         }
 
         public ReportForm(string title, System.IO.Stream stream, IEnumerable<ReportDataSource> dataSources, IEnumerable<ReportParameter> parameters = null)
@@ -63,8 +64,8 @@ namespace AbakTools.Printer
             ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
             ReportViewer.ZoomMode = ZoomMode.Percent;
             ReportViewer.ZoomPercent = 30;
+            SetPageSettings();
         }
-
 
         public ReportForm(string reportPath, string dataSourceName, object dataSource, IEnumerable<ReportParameter> parameters)
         {
@@ -81,8 +82,9 @@ namespace AbakTools.Printer
             }
             if (parameters != null)
                 this.ReportViewer.LocalReport.SetParameters(parameters);
-        }
 
+            SetPageSettings();
+        }
 
         public void SetReport(string title, string reportPath, IEnumerable<ReportDataSource> dataSources, IEnumerable<ReportParameter> parameters = null)
         {
@@ -114,7 +116,6 @@ namespace AbakTools.Printer
             }
         }
 
-
         public void AddDataSource(string name, object data)
         {
             this.DataSources.Add(new ReportDataSource(name, data));
@@ -140,6 +141,13 @@ namespace AbakTools.Printer
                         break;
                 }
             }
+        }
+
+        private void SetPageSettings()
+        {
+            var ps = ReportViewer.GetPageSettings();
+            ps.Margins.Right = 0;
+            ReportViewer.SetPageSettings(ps);
         }
     }
 }

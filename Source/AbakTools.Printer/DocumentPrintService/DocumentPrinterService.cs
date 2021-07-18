@@ -14,7 +14,7 @@ namespace AbakTools.Printer.DocumentPrintService
                 "AbakTools",
                 templatePath,
                 PrepareDocumentDataSources(dataSources),
-                PreapeDocymentParameters(parameters));
+                PreapeDocumentParameters(parameters));
 
             form.Show();
         }
@@ -22,7 +22,7 @@ namespace AbakTools.Printer.DocumentPrintService
         public byte[] ExportToPdf(string templatePath, IDictionary<string, object> dataSources, IDictionary<string, object> parameters = null)
         {
             var reportDataSources = PrepareDocumentDataSources(dataSources);
-            var reportParameters = PreapeDocymentParameters(parameters);
+            var reportParameters = PreapeDocumentParameters(parameters);
             var localReport = new LocalReport();
             
             localReport.ReportPath = templatePath;
@@ -45,8 +45,8 @@ namespace AbakTools.Printer.DocumentPrintService
           "  <PageWidth>21cm</PageWidth>" +
           "  <PageHeight>29.7cm</PageHeight>" +
           "  <MarginTop>0.5cm</MarginTop>" +
-          "  <MarginLeft>0.8cm</MarginLeft>" +
-          "  <MarginRight>0.8cm</MarginRight>" +
+          "  <MarginLeft>0.5cm</MarginLeft>" +
+          "  <MarginRight>0.5cm</MarginRight>" +
           "  <MarginBottom>0.5cm</MarginBottom>" +
           "</DeviceInfo>";
         }
@@ -56,7 +56,7 @@ namespace AbakTools.Printer.DocumentPrintService
             return dataSources.Select(x => new ReportDataSource(x.Key, x.Value)).ToList();
         }
 
-        private IEnumerable<ReportParameter> PreapeDocymentParameters(IDictionary<string, object> parameters)
+        private IEnumerable<ReportParameter> PreapeDocumentParameters(IDictionary<string, object> parameters)
         {
             return parameters?.Select(x => new ReportParameter(x.Key, x.Value?.ToString())).ToList();
         }
