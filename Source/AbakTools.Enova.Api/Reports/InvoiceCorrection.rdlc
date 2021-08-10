@@ -1621,9 +1621,9 @@
       </Tablix>
       <Line Name="Line4">
         <Top>9.18774cm</Top>
-        <Left>3.04941cm</Left>
+        <Left>3.29977cm</Left>
         <Height>0cm</Height>
-        <Width>14.19458cm</Width>
+        <Width>14.43852cm</Width>
         <ZIndex>24</ZIndex>
         <Style>
           <Border>
@@ -1650,8 +1650,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox72</rd:DefaultName>
-        <Top>8.51719cm</Top>
-        <Left>3.04941cm</Left>
+        <Top>8.44663cm</Top>
+        <Left>3.29977cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>25</ZIndex>
@@ -1688,7 +1688,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox73</rd:DefaultName>
         <Top>8.58774cm</Top>
-        <Left>11.41608cm</Left>
+        <Left>11.91037cm</Left>
         <Height>0.6cm</Height>
         <Width>5.82792cm</Width>
         <ZIndex>26</ZIndex>
@@ -1722,10 +1722,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox74</rd:DefaultName>
-        <Top>9.18774cm</Top>
-        <Left>3.01414cm</Left>
+        <Top>9.15246cm</Top>
+        <Left>3.29977cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Width>2.46472cm</Width>
         <ZIndex>27</ZIndex>
         <Style>
           <Border>
@@ -1758,16 +1758,16 @@
         </Paragraphs>
         <rd:DefaultName>Textbox74</rd:DefaultName>
         <Top>9.18774cm</Top>
-        <Left>5.65525cm</Left>
+        <Left>5.94088cm</Left>
         <Height>0.6cm</Height>
-        <Width>11.51819cm</Width>
+        <Width>11.79741cm</Width>
         <ZIndex>28</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
+          <PaddingRight>4pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
@@ -2253,6 +2253,130 @@ Or Len(First(Fields!Description.Value, "Document")) = 0, True, False)</Hidden>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!TotalValueCorrectionInfo.Value, "CorrectionInfo")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>6.81684cm</Top>
+        <Left>0.02483cm</Left>
+        <Height>1.2cm</Height>
+        <Width>2.84819cm</Width>
+        <ZIndex>34</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!TotalTaxCorrectionInfo.Value, "CorrectionInfo")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>8.05212cm</Top>
+        <Left>0.05552cm</Left>
+        <Height>1.2cm</Height>
+        <Width>2.8175cm</Width>
+        <ZIndex>35</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox18">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tytuł wystawienia korekty:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox18</rd:DefaultName>
+        <Top>6.95296cm</Top>
+        <Left>3.29977cm</Left>
+        <Height>0.5cm</Height>
+        <Width>5.54573cm</Width>
+        <ZIndex>36</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox19">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CorrectionTitle.Value, "CorrectionInfo")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>7.48824cm</Top>
+        <Left>3.29977cm</Left>
+        <Height>0.5cm</Height>
+        <Width>5.54573cm</Width>
+        <ZIndex>37</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>5.901in</Height>
     <Style />
@@ -2318,6 +2442,13 @@ Or Len(First(Fields!Description.Value, "Document")) = 0, True, False)</Hidden>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
       <rd:DataSourceID>bd63a597-0ce7-4126-a79c-d75fcbadbf36</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="AbakToolsEnovaApiDomainCommercialDocument">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>b631ec6b-9347-4847-9629-5607a30960e1</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -2642,6 +2773,31 @@ Or Len(First(Fields!Description.Value, "Document")) = 0, True, False)</Hidden>
         <rd:DataSetName>EnovaApi.Models.CommercialDocument</rd:DataSetName>
         <rd:TableName>DocumentPaymentRow</rd:TableName>
         <rd:ObjectDataSourceType>EnovaApi.Models.CommercialDocument.DocumentPaymentRow, EnovaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="CorrectionInfo">
+      <Query>
+        <DataSourceName>AbakToolsEnovaApiDomainCommercialDocument</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CorrectionTitle">
+          <DataField>CorrectionTitle</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotalTaxCorrectionInfo">
+          <DataField>TotalTaxCorrectionInfo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotalValueCorrectionInfo">
+          <DataField>TotalValueCorrectionInfo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>AbakTools.EnovaApi.Domain.CommercialDocument</rd:DataSetName>
+        <rd:TableName>CorrectionInfo</rd:TableName>
+        <rd:ObjectDataSourceType>AbakTools.EnovaApi.Domain.CommercialDocument.CorrectionInfo, AbakTools.EnovaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

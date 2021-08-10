@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComponentSetup.cs" />
+    <Compile Include="Domain\CommercialDocument\CorrectionInfo.cs" />
     <Compile Include="Domain\CommercialDocument\ICommercialDocumentRepository.cs" />
     <Compile Include="Domain\Common\IEnovaGuidedEntityRepository.cs" />
     <Compile Include="Domain\Common\IEnovaRepository.cs" />
@@ -80,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AbakTools.EnovaApi.Domain.CommercialDocument.CorrectionInfo.datasource" />
     <None Include="Properties\DataSources\EnovaApi.Models.Address.Address.datasource" />
     <None Include="Properties\DataSources\EnovaApi.Models.CommercialDocument.CommercialDocument.datasource" />
     <None Include="Properties\DataSources\EnovaApi.Models.CommercialDocument.CommercialDocumentRow.datasource" />

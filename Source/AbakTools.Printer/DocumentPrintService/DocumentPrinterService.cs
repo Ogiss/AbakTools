@@ -14,7 +14,7 @@ namespace AbakTools.Printer.DocumentPrintService
                 "AbakTools",
                 templatePath,
                 PrepareDocumentDataSources(dataSources),
-                PreapeDocumentParameters(parameters));
+                PrepareDocumentParameters(parameters));
 
             form.Show();
         }
@@ -22,7 +22,7 @@ namespace AbakTools.Printer.DocumentPrintService
         public byte[] ExportToPdf(string templatePath, IDictionary<string, object> dataSources, IDictionary<string, object> parameters = null)
         {
             var reportDataSources = PrepareDocumentDataSources(dataSources);
-            var reportParameters = PreapeDocumentParameters(parameters);
+            var reportParameters = PrepareDocumentParameters(parameters);
             var localReport = new LocalReport();
             
             localReport.ReportPath = templatePath;
@@ -56,7 +56,7 @@ namespace AbakTools.Printer.DocumentPrintService
             return dataSources.Select(x => new ReportDataSource(x.Key, x.Value)).ToList();
         }
 
-        private IEnumerable<ReportParameter> PreapeDocumentParameters(IDictionary<string, object> parameters)
+        private IEnumerable<ReportParameter> PrepareDocumentParameters(IDictionary<string, object> parameters)
         {
             return parameters?.Select(x => new ReportParameter(x.Key, x.Value?.ToString())).ToList();
         }

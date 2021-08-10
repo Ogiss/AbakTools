@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AbakTools.EnovaApi.Domain.CommercialDocument;
 using EnovaApi.Models.CommercialDocument;
 
 namespace AbakTools.EnovaApi.Service
@@ -45,10 +46,25 @@ namespace AbakTools.EnovaApi.Service
                     return "Reports/Invoice.rdlc";
 
                 case DocumentCategory.InvoiceCorrection:
+                    CheckIsInvoiceCorrectionSupported(document);
                     return "Reports/InvoiceCorrection.rdlc";
 
                 default:
                     throw new NotImplementedException();
+            }
+        }
+
+        private void CheckIsInvoiceCorrectionSupported(CommercialDocument document)
+        {
+            foreach (var row in document.Rows)
+            {
+                if (row.CorrectionType != PositionCorrectionType.None)
+                {
+                    if (!(row.CorrectionType == PositionCorrectionType.Quantity || row.CorrectionType == PositionCorrectionType.Return))
+                    {
+                        throw new NotSupportedException("Faktura korygująca z korektą ceny nie jest obsługiwana w wydrukach Tools-ów. Musisz wydrukować ją w Enova-ej.");
+                    }
+                }
             }
         }
 
@@ -62,8 +78,36 @@ namespace AbakTools.EnovaApi.Service
                 {"CustomerAddress", new[] {document.Customer.MainAddress}},
                 {"Rows", document.Rows},
                 {"Taxes", document.TaxesSummary},
-                {"Payments", document.PaymentSummary}
+                {"Payments", document.PaymentSummary},
+                {"CorrectionInfo", GetCorrectionInfo(document) }
             };
+        }
+
+        private CorrectionInfo[] GetCorrectionInfo(CommercialDocument document)
+        {
+            if (document.Definition.Category == DocumentCategory.InvoiceCorrection)
+            {
+                var correctionInfo = new CorrectionInfo();
+                var correctionDiff = Math.Abs(document.TotalValueWithoutTax);
+                var taxCorrectionDiff = Math.Abs(document.TotalValueTax);
+
+                correctionInfo.CorrectionTitle = "Zwrot towaru";
+
+                if (document.TotalValueWithoutTax < 0)
+                {
+                    correctionInfo.TotalValueCorrectionInfo = $"Kwota zmniejszenia wartości bez podatku: {correctionDiff:N2} PLN";
+                    correctionInfo.TotalTaxCorrectionInfo = $"Kwota zmniejszenia podatku należnego: {taxCorrectionDiff:N2} PLN";
+                }
+                else if (document.TotalValueWithoutTax > 0)
+                {
+                    correctionInfo.TotalValueCorrectionInfo = $"Kwota zwiększenia wartości bez podatku: {correctionDiff:N2} PLN";
+                    correctionInfo.TotalTaxCorrectionInfo = $"Kwota zwiększenia podatku należnego: {taxCorrectionDiff:N2} PLN";
+                }
+
+                return new[] { correctionInfo };
+            }
+
+            return null;
         }
 
         private Dictionary<string, object> GetParameters(CommercialDocument document)

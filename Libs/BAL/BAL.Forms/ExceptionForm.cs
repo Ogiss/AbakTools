@@ -25,6 +25,11 @@ namespace BAL.Forms
         {
             InitializeComponent();
             this.exception = ex;
+            if (exception is System.Reflection.TargetInvocationException && exception.InnerException != null)
+            {
+                exception = exception.InnerException;
+            }
+
             this.Text = FormManager.FormService.ApplicationName;
         }
 
@@ -34,7 +39,8 @@ namespace BAL.Forms
             {
                 StringBuilder builder = new StringBuilder();
                 builder.AppendLine("Wystąpił wyjątek: " + this.GetExceptionTypeName(this.exception));
-                builder.AppendLine(this.GetExceptionMessage(this.exception));
+                builder.AppendLine().AppendLine(this.GetExceptionMessage(this.exception));
+
                 if (this.exception.InnerException != null)
                 {
                     builder.AppendLine();

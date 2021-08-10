@@ -46,20 +46,19 @@
             // 
             // textBox
             // 
-            this.textBox.Location = new System.Drawing.Point(161, 13);
+            this.textBox.Location = new System.Drawing.Point(161, 12);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
             this.textBox.ReadOnly = true;
-            this.textBox.Size = new System.Drawing.Size(358, 105);
+            this.textBox.Size = new System.Drawing.Size(358, 125);
             this.textBox.TabIndex = 1;
             this.textBox.TabStop = false;
-            this.textBox.WordWrap = false;
             // 
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Location = new System.Drawing.Point(444, 136);
+            this.okButton.Location = new System.Drawing.Point(444, 167);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 2;
@@ -69,7 +68,7 @@
             // detailButton
             // 
             this.detailButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.detailButton.Location = new System.Drawing.Point(161, 136);
+            this.detailButton.Location = new System.Drawing.Point(161, 167);
             this.detailButton.Name = "detailButton";
             this.detailButton.Size = new System.Drawing.Size(75, 23);
             this.detailButton.TabIndex = 3;
@@ -80,7 +79,7 @@
             // ExceptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(531, 171);
+            this.ClientSize = new System.Drawing.Size(531, 202);
             this.Controls.Add(this.detailButton);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.textBox);
