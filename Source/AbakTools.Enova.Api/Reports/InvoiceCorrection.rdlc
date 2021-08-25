@@ -150,7 +150,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Date</rd:DefaultName>
-        <Top>0.1256cm</Top>
+        <Top>0.10583cm</Top>
         <Left>16.94825cm</Left>
         <Height>0.4cm</Height>
         <Width>2.07366cm</Width>
@@ -217,8 +217,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.38422cm</Top>
-        <Left>0.02482cm</Left>
+        <Top>3.36396cm</Top>
+        <Left>0.0555cm</Left>
         <Height>0.42cm</Height>
         <Width>3.54441cm</Width>
         <ZIndex>8</ZIndex>
@@ -258,8 +258,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>1.83949cm</Top>
-        <Left>0.02483cm</Left>
+        <Top>3.81923cm</Top>
+        <Left>0.05551cm</Left>
         <Height>0.81984cm</Height>
         <Width>8.98845cm</Width>
         <ZIndex>9</ZIndex>
@@ -287,8 +287,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>2.65934cm</Top>
-        <Left>0.02482cm</Left>
+        <Top>4.63908cm</Top>
+        <Left>0.0555cm</Left>
         <Height>0.42cm</Height>
         <Width>8.98845cm</Width>
         <ZIndex>10</ZIndex>
@@ -316,8 +316,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>3.07934cm</Top>
-        <Left>0.02483cm</Left>
+        <Top>5.05908cm</Top>
+        <Left>0.05551cm</Left>
         <Height>0.48cm</Height>
         <Width>8.98845cm</Width>
         <ZIndex>11</ZIndex>
@@ -345,8 +345,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>3.55934cm</Top>
-        <Left>0.02483cm</Left>
+        <Top>5.53908cm</Top>
+        <Left>0.05551cm</Left>
         <Height>0.42cm</Height>
         <Width>8.98845cm</Width>
         <ZIndex>12</ZIndex>
@@ -374,8 +374,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>3.97934cm</Top>
-        <Left>0.02483cm</Left>
+        <Top>5.95908cm</Top>
+        <Left>0.05551cm</Left>
         <Height>0.42cm</Height>
         <Width>8.98846cm</Width>
         <ZIndex>13</ZIndex>
@@ -403,8 +403,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>4.39934cm</Top>
-        <Left>0.02483cm</Left>
+        <Top>6.37908cm</Top>
+        <Left>0.05551cm</Left>
         <Height>0.42cm</Height>
         <Width>8.98846cm</Width>
         <ZIndex>14</ZIndex>
@@ -436,8 +436,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.41949cm</Top>
-        <Left>10.26586cm</Left>
+        <Top>3.39923cm</Top>
+        <Left>10.29654cm</Left>
         <Height>0.42cm</Height>
         <Width>3.54441cm</Width>
         <ZIndex>15</ZIndex>
@@ -467,8 +467,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>1.83949cm</Top>
-        <Left>10.26584cm</Left>
+        <Top>3.81923cm</Top>
+        <Left>10.29652cm</Left>
         <Height>0.82cm</Height>
         <Width>8.75605cm</Width>
         <ZIndex>16</ZIndex>
@@ -495,8 +495,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>2.65934cm</Top>
-        <Left>10.26584cm</Left>
+        <Top>4.63908cm</Top>
+        <Left>10.29652cm</Left>
         <Height>0.42cm</Height>
         <Width>8.75605cm</Width>
         <ZIndex>17</ZIndex>
@@ -524,8 +524,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>3.07934cm</Top>
-        <Left>10.26583cm</Left>
+        <Top>5.05908cm</Top>
+        <Left>10.29651cm</Left>
         <Height>0.42cm</Height>
         <Width>8.75606cm</Width>
         <ZIndex>18</ZIndex>
@@ -553,8 +553,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>3.49934cm</Top>
-        <Left>10.26583cm</Left>
+        <Top>5.47908cm</Top>
+        <Left>10.29651cm</Left>
         <Height>0.42cm</Height>
         <Width>8.75606cm</Width>
         <ZIndex>19</ZIndex>
@@ -582,8 +582,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>5.23934cm</Top>
-        <Left>0.02483cm</Left>
+        <Top>7.21908cm</Top>
+        <Left>0.05551cm</Left>
         <Height>0.42cm</Height>
         <Width>8.98846cm</Width>
         <ZIndex>20</ZIndex>
@@ -614,8 +614,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>4.81934cm</Top>
-        <Left>0.02483cm</Left>
+        <Top>6.79908cm</Top>
+        <Left>0.05551cm</Left>
         <Height>0.42cm</Height>
         <Width>3.54441cm</Width>
         <ZIndex>21</ZIndex>
@@ -1111,8 +1111,8 @@
             </FilterValues>
           </Filter>
         </Filters>
-        <Top>5.83573cm</Top>
-        <Left>0.02482cm</Left>
+        <Top>7.81547cm</Top>
+        <Left>0.0555cm</Left>
         <Height>0.84cm</Height>
         <Width>18.99709cm</Width>
         <ZIndex>22</ZIndex>
@@ -1608,8 +1608,8 @@
         </TablixRowHierarchy>
         <KeepTogether>true</KeepTogether>
         <DataSetName>Taxes</DataSetName>
-        <Top>6.85212cm</Top>
-        <Left>9.02189cm</Left>
+        <Top>8.83186cm</Top>
+        <Left>9.05257cm</Left>
         <Height>1.32cm</Height>
         <Width>10cm</Width>
         <ZIndex>23</ZIndex>
@@ -1620,8 +1620,8 @@
         </Style>
       </Tablix>
       <Line Name="Line4">
-        <Top>9.18774cm</Top>
-        <Left>3.29977cm</Left>
+        <Top>11.16748cm</Top>
+        <Left>3.33045cm</Left>
         <Height>0cm</Height>
         <Width>14.43852cm</Width>
         <ZIndex>24</ZIndex>
@@ -1650,8 +1650,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox72</rd:DefaultName>
-        <Top>8.44663cm</Top>
-        <Left>3.29977cm</Left>
+        <Top>10.42637cm</Top>
+        <Left>3.33045cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>25</ZIndex>
@@ -1687,8 +1687,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox73</rd:DefaultName>
-        <Top>8.58774cm</Top>
-        <Left>11.91037cm</Left>
+        <Top>10.56748cm</Top>
+        <Left>11.94105cm</Left>
         <Height>0.6cm</Height>
         <Width>5.82792cm</Width>
         <ZIndex>26</ZIndex>
@@ -1722,8 +1722,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox74</rd:DefaultName>
-        <Top>9.15246cm</Top>
-        <Left>3.29977cm</Left>
+        <Top>11.1322cm</Top>
+        <Left>3.33045cm</Left>
         <Height>0.6cm</Height>
         <Width>2.46472cm</Width>
         <ZIndex>27</ZIndex>
@@ -1757,8 +1757,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox74</rd:DefaultName>
-        <Top>9.18774cm</Top>
-        <Left>5.94088cm</Left>
+        <Top>11.16748cm</Top>
+        <Left>5.97156cm</Left>
         <Height>0.6cm</Height>
         <Width>11.79741cm</Width>
         <ZIndex>28</ZIndex>
@@ -1791,8 +1791,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox76</rd:DefaultName>
-        <Top>10.21052cm</Top>
-        <Left>0.33462cm</Left>
+        <Top>12.19026cm</Top>
+        <Left>0.3653cm</Left>
         <Height>0.42cm</Height>
         <Width>5.60444cm</Width>
         <ZIndex>29</ZIndex>
@@ -2110,8 +2110,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Payments</DataSetName>
-        <Top>10.73635cm</Top>
-        <Left>0.33462cm</Left>
+        <Top>12.71609cm</Top>
+        <Left>0.3653cm</Left>
         <Height>0.87cm</Height>
         <Width>12.53239cm</Width>
         <ZIndex>30</ZIndex>
@@ -2154,8 +2154,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox41</rd:DefaultName>
-        <Top>13.41157cm</Top>
-        <Left>0.94854cm</Left>
+        <Top>15.39131cm</Top>
+        <Left>0.97922cm</Left>
         <Height>1.5cm</Height>
         <Width>5.95312cm</Width>
         <ZIndex>31</ZIndex>
@@ -2203,8 +2203,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox41</rd:DefaultName>
-        <Top>13.41157cm</Top>
-        <Left>11.04596cm</Left>
+        <Top>15.39131cm</Top>
+        <Left>11.07664cm</Left>
         <Height>1.5cm</Height>
         <Width>5.95312cm</Width>
         <ZIndex>32</ZIndex>
@@ -2234,8 +2234,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>11.74746cm</Top>
-        <Left>0.33462cm</Left>
+        <Top>13.7272cm</Top>
+        <Left>0.3653cm</Left>
         <Height>1.34938cm</Height>
         <Width>18.25625cm</Width>
         <ZIndex>33</ZIndex>
@@ -2270,8 +2270,8 @@ Or Len(First(Fields!Description.Value, "Document")) = 0, True, False)</Hidden>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>6.81684cm</Top>
-        <Left>0.02483cm</Left>
+        <Top>8.79658cm</Top>
+        <Left>0.05551cm</Left>
         <Height>1.2cm</Height>
         <Width>2.84819cm</Width>
         <ZIndex>34</ZIndex>
@@ -2302,8 +2302,8 @@ Or Len(First(Fields!Description.Value, "Document")) = 0, True, False)</Hidden>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>8.05212cm</Top>
-        <Left>0.05552cm</Left>
+        <Top>10.03186cm</Top>
+        <Left>0.0862cm</Left>
         <Height>1.2cm</Height>
         <Width>2.8175cm</Width>
         <ZIndex>35</ZIndex>
@@ -2332,8 +2332,8 @@ Or Len(First(Fields!Description.Value, "Document")) = 0, True, False)</Hidden>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Top>6.95296cm</Top>
-        <Left>3.29977cm</Left>
+        <Top>8.9327cm</Top>
+        <Left>3.33045cm</Left>
         <Height>0.5cm</Height>
         <Width>5.54573cm</Width>
         <ZIndex>36</ZIndex>
@@ -2362,8 +2362,8 @@ Or Len(First(Fields!Description.Value, "Document")) = 0, True, False)</Hidden>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>7.48824cm</Top>
-        <Left>3.29977cm</Left>
+        <Top>9.46798cm</Top>
+        <Left>3.33045cm</Left>
         <Height>0.5cm</Height>
         <Width>5.54573cm</Width>
         <ZIndex>37</ZIndex>
@@ -2377,8 +2377,200 @@ Or Len(First(Fields!Description.Value, "Document")) = 0, True, False)</Hidden>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox22">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Dokument korygowany:</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>1.41949cm</Top>
+        <Left>0.05551cm</Left>
+        <Height>0.42cm</Height>
+        <Width>3.78254cm</Width>
+        <ZIndex>38</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox23">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!DocumentNumber.Value, "CorrectedDocument")</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>1.87477cm</Top>
+        <Left>0.05552cm</Left>
+        <Height>0.45cm</Height>
+        <Width>9.01914cm</Width>
+        <ZIndex>39</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox24">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!DateName.Value, "Definition")</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.34453cm</Top>
+        <Left>0.05553cm</Left>
+        <Height>0.4cm</Height>
+        <Width>2.58197cm</Width>
+        <ZIndex>40</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Date2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Date.Value, "CorrectedDocument")</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <Format>yyyy-MM-dd</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Date</rd:DefaultName>
+        <Top>2.34453cm</Top>
+        <Left>2.74333cm</Left>
+        <Height>0.4cm</Height>
+        <Width>2.07366cm</Width>
+        <ZIndex>41</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="OperationDateName2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Data sprzedaży</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>OperationDateName</rd:DefaultName>
+        <Top>2.74453cm</Top>
+        <Left>0.05553cm</Left>
+        <Height>0.4cm</Height>
+        <Width>2.58197cm</Width>
+        <ZIndex>42</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="OperationDate2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!OperationDate.Value, "CorrectedDocument")</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <Format>yyyy-MM-dd</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>OperationDate</rd:DefaultName>
+        <Top>2.74453cm</Top>
+        <Left>2.74333cm</Left>
+        <Height>0.4cm</Height>
+        <Width>2.07366cm</Width>
+        <ZIndex>43</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>5.901in</Height>
+    <Height>6.69267in</Height>
     <Style />
   </Body>
   <Width>7.5202in</Width>
@@ -2450,6 +2642,13 @@ Or Len(First(Fields!Description.Value, "Document")) = 0, True, False)</Hidden>
       </ConnectionProperties>
       <rd:DataSourceID>b631ec6b-9347-4847-9629-5607a30960e1</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="EnovaApiModelsCommercialDocument5">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>a8d1039c-fafa-4878-a21d-2c15e477275d</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="Document">
@@ -2458,6 +2657,10 @@ Or Len(First(Fields!Description.Value, "Document")) = 0, True, False)</Hidden>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="CorrectedDocument">
+          <DataField>CorrectedDocument</DataField>
+          <rd:TypeName>EnovaApi.Models.CommercialDocument.CommercialDocument</rd:TypeName>
+        </Field>
         <Field Name="Customer">
           <DataField>Customer</DataField>
           <rd:TypeName>EnovaApi.Models.Customer.Customer</rd:TypeName>
@@ -2798,6 +3001,87 @@ Or Len(First(Fields!Description.Value, "Document")) = 0, True, False)</Hidden>
         <rd:DataSetName>AbakTools.EnovaApi.Domain.CommercialDocument</rd:DataSetName>
         <rd:TableName>CorrectionInfo</rd:TableName>
         <rd:ObjectDataSourceType>AbakTools.EnovaApi.Domain.CommercialDocument.CorrectionInfo, AbakTools.EnovaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="CorrectedDocument">
+      <Query>
+        <DataSourceName>EnovaApiModelsCommercialDocument5</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CorrectedDocument">
+          <DataField>CorrectedDocument</DataField>
+          <rd:TypeName>EnovaApi.Models.CommercialDocument.CommercialDocument</rd:TypeName>
+        </Field>
+        <Field Name="Customer">
+          <DataField>Customer</DataField>
+          <rd:TypeName>EnovaApi.Models.Customer.Customer</rd:TypeName>
+        </Field>
+        <Field Name="Date">
+          <DataField>Date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Definition">
+          <DataField>Definition</DataField>
+          <rd:TypeName>EnovaApi.Models.CommercialDocument.DocumentDefinition</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocumentNumber">
+          <DataField>DocumentNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Guid">
+          <DataField>Guid</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OperationDate">
+          <DataField>OperationDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="PaymentSummary">
+          <DataField>PaymentSummary</DataField>
+          <rd:TypeName>System.Collections.Generic.IEnumerable`1[[EnovaApi.Models.CommercialDocument.DocumentPaymentRow, EnovaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]</rd:TypeName>
+        </Field>
+        <Field Name="Rows">
+          <DataField>Rows</DataField>
+          <rd:TypeName>System.Collections.Generic.IEnumerable`1[[EnovaApi.Models.CommercialDocument.CommercialDocumentRow, EnovaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]</rd:TypeName>
+        </Field>
+        <Field Name="State">
+          <DataField>State</DataField>
+          <rd:TypeName>EnovaApi.Models.CommercialDocument.DocumentState</rd:TypeName>
+        </Field>
+        <Field Name="TaxesSummary">
+          <DataField>TaxesSummary</DataField>
+          <rd:TypeName>System.Collections.Generic.IEnumerable`1[[EnovaApi.Models.CommercialDocument.DocumentTaxRow, EnovaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]</rd:TypeName>
+        </Field>
+        <Field Name="TotalValueTax">
+          <DataField>TotalValueTax</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalValueWithoutTax">
+          <DataField>TotalValueWithoutTax</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalValueWithTax">
+          <DataField>TotalValueWithTax</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalValueWithTaxInWords">
+          <DataField>TotalValueWithTaxInWords</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>EnovaApi.Models.CommercialDocument</rd:DataSetName>
+        <rd:TableName>CommercialDocument</rd:TableName>
+        <rd:ObjectDataSourceType>EnovaApi.Models.CommercialDocument.CommercialDocument, EnovaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

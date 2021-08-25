@@ -79,7 +79,8 @@ namespace AbakTools.EnovaApi.Service
                 {"Rows", document.Rows},
                 {"Taxes", document.TaxesSummary},
                 {"Payments", document.PaymentSummary},
-                {"CorrectionInfo", GetCorrectionInfo(document) }
+                {"CorrectionInfo", GetCorrectionInfo(document) },
+                { "CorrectedDocument", document.CorrectedDocument != null ? new[] { document.CorrectedDocument } : Array.Empty<CommercialDocument>() }
             };
         }
 
