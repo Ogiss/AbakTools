@@ -101,7 +101,7 @@ namespace AbakTools.Towary.Forms
             }
         }
 
- 
+
         private void loadEnovaProdukty()
         {
             /*
@@ -511,7 +511,7 @@ namespace AbakTools.Towary.Forms
         }
 
         private AbakTools.Towary.Forms.PodgladProduktuForm previewForm = null;
-       
+
         private void podgladCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (podgladCheckBox.Checked)
@@ -564,44 +564,44 @@ namespace AbakTools.Towary.Forms
 
         private void WyborProduktuForm_VisibleChanged(object sender, EventArgs e)
         {
-                if (this.Visible)
+            if (this.Visible)
+            {
+                if (previewForm != null && !previewForm.Visible && podgladCheckBox.Checked)
+                    setPreviewVisible(true);
+                this.Focus();
+                kategorieTreeView.SelectKategorie(this.kategorieSelected);
+                if (tabControl.SelectedIndex == 0)
                 {
-                    if (previewForm != null && !previewForm.Visible && podgladCheckBox.Checked)
-                        setPreviewVisible(true);
-                    this.Focus();
-                    kategorieTreeView.SelectKategorie(this.kategorieSelected);
-                    if (tabControl.SelectedIndex == 0)
+                    if (produktyWebDataGridView.CurrentRow != null)
                     {
-                        if (produktyWebDataGridView.CurrentRow != null)
-                        {
-                            int first = produktyWebDataGridView.CurrentRow.Index - produktyWebDataGridView.DisplayedRowCount(false) / 2;
-                            if (first < 0) first = 0;
-                            produktyWebDataGridView.FirstDisplayedScrollingRowIndex = first;
-                        }
-                    }
-                    else
-                    {
-                        if (produktyEnovaDataGridView.CurrentRow != null)
-                        {
-                            int first = produktyEnovaDataGridView.CurrentRow.Index - produktyEnovaDataGridView.DisplayedRowCount(false) / 2;
-                            if (first < 0) first = 0;
-                            produktyEnovaDataGridView.FirstDisplayedScrollingRowIndex = first;
-                        }
+                        int first = produktyWebDataGridView.CurrentRow.Index - produktyWebDataGridView.DisplayedRowCount(false) / 2;
+                        if (first < 0) first = 0;
+                        produktyWebDataGridView.FirstDisplayedScrollingRowIndex = first;
                     }
                 }
                 else
                 {
-                    this.kategorieSelected = kategorieTreeView.Kategoria;
-                    findTextBox.Text = "";
-                    findEnovaTextBox.Text = "";
-                    //webSortedColumn = produktyWebDataGridView.SortedColumn;
-                    //webSortOrder = produktyWebDataGridView.SortOrder;
-                    enovaSortedColumn = produktyEnovaDataGridView.SortedColumn;
-                    enovaSortOrder = produktyEnovaDataGridView.SortOrder;
-
-                    if (previewForm != null && previewForm.Visible)
-                        setPreviewVisible(false);
+                    if (produktyEnovaDataGridView.CurrentRow != null)
+                    {
+                        int first = produktyEnovaDataGridView.CurrentRow.Index - produktyEnovaDataGridView.DisplayedRowCount(false) / 2;
+                        if (first < 0) first = 0;
+                        produktyEnovaDataGridView.FirstDisplayedScrollingRowIndex = first;
+                    }
                 }
+            }
+            else
+            {
+                this.kategorieSelected = kategorieTreeView.Kategoria;
+                findTextBox.Text = "";
+                findEnovaTextBox.Text = "";
+                //webSortedColumn = produktyWebDataGridView.SortedColumn;
+                //webSortOrder = produktyWebDataGridView.SortOrder;
+                enovaSortedColumn = produktyEnovaDataGridView.SortedColumn;
+                enovaSortOrder = produktyEnovaDataGridView.SortOrder;
+
+                if (previewForm != null && previewForm.Visible)
+                    setPreviewVisible(false);
+            }
         }
 
         private delegate void setPreviewVisibleDelegate(bool visible);
@@ -673,7 +673,7 @@ namespace AbakTools.Towary.Forms
                     webSortType = Enova.Business.Old.Web.TowaryAtrybutyTable.TowarySortType.Cena;
                     break;
             }
-            
+
             loadData();
         }
 
@@ -704,16 +704,30 @@ namespace AbakTools.Towary.Forms
                 var row = produktyWebDataGridView.Rows[e.RowIndex];
                 if (row.DataBoundItem != null)
                 {
-                    /*
-                    Enova.Business.Old.DB.Web.ProduktAtrybut pa = (Enova.Business.Old.DB.Web.ProduktAtrybut)row.DataBoundItem;
-                    if (!pa.Dostepny)
-                    {
-                        row.DefaultCellStyle.ForeColor = Color.Red;
-                        row.DefaultCellStyle.SelectionForeColor = Color.Red;
-                    }
-                     */
                     Enova.Business.Old.DB.Web.TowarAtrybut ta = (Enova.Business.Old.DB.Web.TowarAtrybut)row.DataBoundItem;
-                    if(!ta.Dostepny)
+                    if (!string.IsNullOrEmpty(ta.SelectListBackColor))
+                    {
+                        try
+                        {
+                            var parts = ta.SelectListBackColor.Split(';');
+                            if (parts.Length > 0)
+                            {
+                                var backColor = ColorTranslator.FromHtml(parts[0]);
+                                row.DefaultCellStyle.BackColor = backColor;
+                                row.DefaultCellStyle.SelectionBackColor = backColor;
+                            }
+
+                            if (parts.Length > 1)
+                            {
+                                var foreColor = ColorTranslator.FromHtml(parts[1]);
+                                row.DefaultCellStyle.ForeColor = foreColor;
+                                row.DefaultCellStyle.SelectionForeColor = foreColor;
+                            }
+                        }
+                        catch { }
+
+                    }
+                    else if (!ta.Dostepny)
                     {
                         row.DefaultCellStyle.ForeColor = Color.Red;
                         row.DefaultCellStyle.SelectionForeColor = Color.Red;

@@ -81,14 +81,14 @@ namespace AbakTools.Towary.Forms
 
         private void ChangeReadyForSelectedRows(CheckBox checkBox)
         {
-            if(checkBox.CheckState != CheckState.Indeterminate && DataGrid.SelectedRows.Count > 0)
+            if (checkBox.CheckState != CheckState.Indeterminate && DataGrid.SelectedRows.Count > 0)
             {
-                foreach(DataGridViewRow row in DataGrid.SelectedRows)
+                foreach (DataGridViewRow row in DataGrid.SelectedRows)
                 {
-                    var product = ( Produkt)row.DataBoundItem;
+                    var product = (Produkt)row.DataBoundItem;
                     product.Gotowy = checkBox.CheckState == CheckState.Checked ? true : false;
 
-                    if(product.EntityState == EntityState.Modified)
+                    if (product.EntityState == EntityState.Modified)
                     {
                         product.Synchronizacja = (byte)RowSynchronizeOld.NotsynchronizedEdit;
                     }
@@ -228,32 +228,45 @@ namespace AbakTools.Towary.Forms
 
                 if (product != null)
                 {
-                    //row.Cells[7].Style.SelectionBackColor = DataGrid.DefaultCellStyle.BackColor;
-                    //row.Cells[7].Style.SelectionForeColor = DataGrid.DefaultCellStyle.ForeColor;
-
-                    var pink = Color.FromArgb(204, 67, 136);
-                    Color? backColor = product.NotWebAvailable ? pink :
-                        (product.IsNew ? Color.LightBlue : (product.IsEdited ? Color.LightGreen : (Color?)null));
-
-                    if (backColor.HasValue)
+                    if (!string.IsNullOrEmpty(product.ManagementListBackColor))
                     {
-                        row.DefaultCellStyle.BackColor = backColor.Value;
-                        row.DefaultCellStyle.SelectionBackColor = backColor.Value;
-                        /*
-                        row.Cells[7].Style.SelectionBackColor = backColor.Value;
-                        if (product.IsActive)
+                        try
                         {
-                            row.Cells[7].Style.SelectionForeColor = Color.Black;
+                            var parts = product.ManagementListBackColor.Split(';');
+                            if (parts.Length > 0)
+                            {
+                                var backColor = ColorTranslator.FromHtml(parts[0]);
+                                row.DefaultCellStyle.BackColor = backColor;
+                                row.DefaultCellStyle.SelectionBackColor = backColor;
+                            }
+
+                            if(parts.Length > 1)
+                            {
+                                var foreColor = ColorTranslator.FromHtml(parts[1]);
+                                row.DefaultCellStyle.ForeColor = foreColor;
+                                row.DefaultCellStyle.SelectionForeColor = foreColor;
+                            }
                         }
-                        */
+                        catch { }
                     }
-
-
-                    if (!product.IsActive)
+                    else
                     {
-                        row.DefaultCellStyle.ForeColor = Color.Red;
-                        row.DefaultCellStyle.SelectionForeColor = Color.Red;
-                        //row.Cells[7].Style.SelectionForeColor = Color.Red;
+                        var pink = Color.FromArgb(204, 67, 136);
+                        Color? backColor = product.NotWebAvailable ? pink :
+                            (product.IsNew ? Color.LightBlue : (product.IsEdited ? Color.LightGreen : (Color?)null));
+
+                        if (backColor.HasValue)
+                        {
+                            row.DefaultCellStyle.BackColor = backColor.Value;
+                            row.DefaultCellStyle.SelectionBackColor = backColor.Value;
+                        }
+
+
+                        if (!product.IsActive)
+                        {
+                            row.DefaultCellStyle.ForeColor = Color.Red;
+                            row.DefaultCellStyle.SelectionForeColor = Color.Red;
+                        }
                     }
                 }
             };

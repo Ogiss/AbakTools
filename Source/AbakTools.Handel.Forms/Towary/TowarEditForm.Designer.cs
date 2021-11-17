@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.statusTextBox = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.searchIndexTextBox = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.dostawcaComboBox = new System.Windows.Forms.ComboBox();
@@ -62,9 +64,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.wyprzedazCheckBox = new System.Windows.Forms.CheckBox();
-            this.towarEnovaCheckBox = new System.Windows.Forms.CheckBox();
             this.dostepnyCheckBox = new System.Windows.Forms.CheckBox();
             this.outOfStock1RadioButton = new System.Windows.Forms.RadioButton();
             this.outOfStock0RadioButton = new System.Windows.Forms.RadioButton();
@@ -129,8 +133,6 @@
             this.atrybutZdjeciePictureBox = new System.Windows.Forms.PictureBox();
             this.atrybutyTreeView = new System.Windows.Forms.TreeView();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.statusTextBox = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.mainTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataSourceBinding)).BeginInit();
@@ -219,6 +221,24 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dane podstawowe";
+            // 
+            // statusTextBox
+            // 
+            this.statusTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "UserState", true));
+            this.statusTextBox.Location = new System.Drawing.Point(362, 122);
+            this.statusTextBox.Name = "statusTextBox";
+            this.statusTextBox.Size = new System.Drawing.Size(250, 20);
+            this.statusTextBox.TabIndex = 16;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(316, 125);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(40, 13);
+            this.label36.TabIndex = 15;
+            this.label36.Text = "Status:";
             // 
             // searchIndexTextBox
             // 
@@ -499,9 +519,11 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox1);
+            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.label38);
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.label37);
             this.groupBox3.Controls.Add(this.wyprzedazCheckBox);
-            this.groupBox3.Controls.Add(this.towarEnovaCheckBox);
             this.groupBox3.Controls.Add(this.dostepnyCheckBox);
             this.groupBox3.Controls.Add(this.outOfStock1RadioButton);
             this.groupBox3.Controls.Add(this.outOfStock0RadioButton);
@@ -515,16 +537,40 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ustawienia";
             // 
-            // checkBox1
+            // textBox3
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.DataSourceBinding, "NotWebAvailable", true));
-            this.checkBox1.Location = new System.Drawing.Point(127, 46);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(134, 17);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Niedostepny na stronie";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "SelectListBackColor", true));
+            this.textBox3.Location = new System.Drawing.Point(257, 44);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(102, 20);
+            this.textBox3.TabIndex = 16;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(186, 47);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(69, 13);
+            this.label38.TabIndex = 15;
+            this.label38.Text = "Lista wyboru:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "ManagementListBackColor", true));
+            this.textBox2.Location = new System.Drawing.Point(78, 44);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(102, 20);
+            this.textBox2.TabIndex = 14;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(10, 47);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(62, 13);
+            this.label37.TabIndex = 13;
+            this.label37.Text = "Lista edycji:";
             // 
             // wyprzedazCheckBox
             // 
@@ -536,17 +582,6 @@
             this.wyprzedazCheckBox.TabIndex = 9;
             this.wyprzedazCheckBox.Text = "Wyprzedaż";
             this.wyprzedazCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // towarEnovaCheckBox
-            // 
-            this.towarEnovaCheckBox.AutoSize = true;
-            this.towarEnovaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.DataSourceBinding, "TowarEnova", true));
-            this.towarEnovaCheckBox.Location = new System.Drawing.Point(32, 46);
-            this.towarEnovaCheckBox.Name = "towarEnovaCheckBox";
-            this.towarEnovaCheckBox.Size = new System.Drawing.Size(89, 17);
-            this.towarEnovaCheckBox.TabIndex = 7;
-            this.towarEnovaCheckBox.Text = "Towar enova";
-            this.towarEnovaCheckBox.UseVisualStyleBackColor = true;
             // 
             // dostepnyCheckBox
             // 
@@ -1191,24 +1226,6 @@
             this.openFileDialog.InitialDirectory = "c:\\";
             this.openFileDialog.RestoreDirectory = true;
             // 
-            // statusTextBox
-            // 
-            this.statusTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "UserState", true));
-            this.statusTextBox.Location = new System.Drawing.Point(362, 122);
-            this.statusTextBox.Name = "statusTextBox";
-            this.statusTextBox.Size = new System.Drawing.Size(250, 20);
-            this.statusTextBox.TabIndex = 16;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(316, 125);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(40, 13);
-            this.label36.TabIndex = 15;
-            this.label36.Text = "Status:";
-            // 
             // TowarEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1321,7 +1338,6 @@
         private System.Windows.Forms.CheckBox dostepnyCheckBox;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.CheckBox attributeAvailableCheckBox;
-        private System.Windows.Forms.CheckBox towarEnovaCheckBox;
         private System.Windows.Forms.CheckBox deletedAttributeCheckBox;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
@@ -1342,7 +1358,6 @@
         private System.Windows.Forms.TextBox searchIndexTextBox;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.CheckBox wyprzedazCheckBox;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label34;
@@ -1351,5 +1366,9 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox statusTextBox;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label38;
     }
 }

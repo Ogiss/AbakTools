@@ -516,7 +516,9 @@
           <Property Name="NotWebAvailable" Type="bit" Nullable="false" />
           <Property Name="MinimumOrderQuantity" Type="int" Nullable="true" />
           <Property Name="UserState" Type="varchar" MaxLength="255" Nullable="true"/>
-        </EntityType>
+		  <Property Name="SelectListBackColor" Type="varchar" MaxLength="32" />
+		  <Property Name="ManagementListBackColor" Type="varchar" MaxLength="32" />
+		</EntityType>
         <EntityType Name="product_attribute">
           <Key>
             <PropertyRef Name="id" />
@@ -1254,6 +1256,8 @@ warning 6002: The table/view 'AbakTools.dbo.TowaryAtrybuty' does not have a prim
           <Property Name="Cena" Type="decimal" Precision="20" Scale="6" />
           <Property Name="OrderIndex" Type="nvarchar" MaxLength="50" />
           <Property Name="SearchIndex" Type="nvarchar" MaxLength="50" />
+		  <Property Name="SelectListBackColor" Type="varchar" MaxLength="32" />
+		  <Property Name="ManagementListBackColor" Type="varchar" MaxLength="32" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'AbakTools.dbo.ZamowieniaView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1536,43 +1540,47 @@ FROM [dbo].[ProduktyAtrybuty] AS [ProduktyAtrybuty]</DefiningQuery>
 FROM [dbo].[StanyMagazynoweView] AS [StanyMagazynoweView]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="TowaryAtrybuty" EntityType="Self.TowaryAtrybuty" store:Type="Views" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-[TowaryAtrybuty].[ID1] AS [ID1], 
-[TowaryAtrybuty].[ID2] AS [ID2], 
-[TowaryAtrybuty].[TowarID] AS [TowarID], 
-[TowaryAtrybuty].[AtrybutTowaruID] AS [AtrybutTowaruID], 
-[TowaryAtrybuty].[TowarGuid] AS [TowarGuid], 
-[TowaryAtrybuty].[TowarEnovaGuid] AS [TowarEnovaGuid], 
-[TowaryAtrybuty].[TowarKod] AS [TowarKod], 
-[TowaryAtrybuty].[TowarKodDostawcy] AS [TowarKodDostawcy], 
-[TowaryAtrybuty].[TowarNazwa] AS [TowarNazwa], 
-[TowaryAtrybuty].[TowarGotowy] AS [TowarGotowy], 
-[TowaryAtrybuty].[TowarSynchronize] AS [TowarSynchronize], 
-[TowaryAtrybuty].[TowarStamp] AS [TowarStamp], 
-[TowaryAtrybuty].[AtrybutID] AS [AtrybutID], 
-[TowaryAtrybuty].[AtrybutNazwa] AS [AtrybutNazwa], 
-[TowaryAtrybuty].[GrupaAtrNazwa] AS [GrupaAtrNazwa], 
-[TowaryAtrybuty].[GrupaAtrNazwaPubliczna] AS [GrupaAtrNazwaPubliczna], 
-[TowaryAtrybuty].[AtrybutTowaruSynchronize] AS [AtrybutTowaruSynchronize], 
-[TowaryAtrybuty].[AtrybutTowaruStamp] AS [AtrybutTowaruStamp], 
-[TowaryAtrybuty].[TowarAktywny] AS [TowarAktywny], 
-[TowaryAtrybuty].[TowarDostepny] AS [TowarDostepny], 
-[TowaryAtrybuty].[TowarDisableAV] AS [TowarDisableAV], 
-[TowaryAtrybuty].[TowarVisibleAV] AS [TowarVisibleAV], 
-[TowaryAtrybuty].[AtrybutTowaruAktywny] AS [AtrybutTowaruAktywny], 
-[TowaryAtrybuty].[AtrybutTowaruDostepny] AS [AtrybutTowaruDostepny], 
-[TowaryAtrybuty].[AtrybutTowaruDisableAV] AS [AtrybutTowaruDisableAV], 
-[TowaryAtrybuty].[AtrybutTowaruVisibleAV] AS [AtrybutTowaruVisibleAV], 
-[TowaryAtrybuty].[Aktywny] AS [Aktywny], 
-[TowaryAtrybuty].[Blokada] AS [Blokada], 
-[TowaryAtrybuty].[Dostepny] AS [Dostepny], 
-[TowaryAtrybuty].[DoSprawdzenia] AS [DoSprawdzenia], 
-[TowaryAtrybuty].[DisableAV] AS [DisableAV], 
-[TowaryAtrybuty].[VisibleAV] AS [VisibleAV], 
-[TowaryAtrybuty].[Cena] AS [Cena], 
-[TowaryAtrybuty].[OrderIndex] AS [OrderIndex], 
-[TowaryAtrybuty].[SearchIndex] AS [SearchIndex]
-FROM [dbo].[TowaryAtrybuty] AS [TowaryAtrybuty]</DefiningQuery>
+            <DefiningQuery>
+				SELECT
+				[TowaryAtrybuty].[ID1] AS [ID1],
+				[TowaryAtrybuty].[ID2] AS [ID2],
+				[TowaryAtrybuty].[TowarID] AS [TowarID],
+				[TowaryAtrybuty].[AtrybutTowaruID] AS [AtrybutTowaruID],
+				[TowaryAtrybuty].[TowarGuid] AS [TowarGuid],
+				[TowaryAtrybuty].[TowarEnovaGuid] AS [TowarEnovaGuid],
+				[TowaryAtrybuty].[TowarKod] AS [TowarKod],
+				[TowaryAtrybuty].[TowarKodDostawcy] AS [TowarKodDostawcy],
+				[TowaryAtrybuty].[TowarNazwa] AS [TowarNazwa],
+				[TowaryAtrybuty].[TowarGotowy] AS [TowarGotowy],
+				[TowaryAtrybuty].[TowarSynchronize] AS [TowarSynchronize],
+				[TowaryAtrybuty].[TowarStamp] AS [TowarStamp],
+				[TowaryAtrybuty].[AtrybutID] AS [AtrybutID],
+				[TowaryAtrybuty].[AtrybutNazwa] AS [AtrybutNazwa],
+				[TowaryAtrybuty].[GrupaAtrNazwa] AS [GrupaAtrNazwa],
+				[TowaryAtrybuty].[GrupaAtrNazwaPubliczna] AS [GrupaAtrNazwaPubliczna],
+				[TowaryAtrybuty].[AtrybutTowaruSynchronize] AS [AtrybutTowaruSynchronize],
+				[TowaryAtrybuty].[AtrybutTowaruStamp] AS [AtrybutTowaruStamp],
+				[TowaryAtrybuty].[TowarAktywny] AS [TowarAktywny],
+				[TowaryAtrybuty].[TowarDostepny] AS [TowarDostepny],
+				[TowaryAtrybuty].[TowarDisableAV] AS [TowarDisableAV],
+				[TowaryAtrybuty].[TowarVisibleAV] AS [TowarVisibleAV],
+				[TowaryAtrybuty].[AtrybutTowaruAktywny] AS [AtrybutTowaruAktywny],
+				[TowaryAtrybuty].[AtrybutTowaruDostepny] AS [AtrybutTowaruDostepny],
+				[TowaryAtrybuty].[AtrybutTowaruDisableAV] AS [AtrybutTowaruDisableAV],
+				[TowaryAtrybuty].[AtrybutTowaruVisibleAV] AS [AtrybutTowaruVisibleAV],
+				[TowaryAtrybuty].[Aktywny] AS [Aktywny],
+				[TowaryAtrybuty].[Blokada] AS [Blokada],
+				[TowaryAtrybuty].[Dostepny] AS [Dostepny],
+				[TowaryAtrybuty].[DoSprawdzenia] AS [DoSprawdzenia],
+				[TowaryAtrybuty].[DisableAV] AS [DisableAV],
+				[TowaryAtrybuty].[VisibleAV] AS [VisibleAV],
+				[TowaryAtrybuty].[Cena] AS [Cena],
+				[TowaryAtrybuty].[OrderIndex] AS [OrderIndex],
+				[TowaryAtrybuty].[SearchIndex] AS [SearchIndex],
+				[TowaryAtrybuty].[OrderIndex] AS [ManagementListBackColor],
+				[TowaryAtrybuty].[SearchIndex] AS [SelectListBackColor]
+
+				FROM [dbo].[TowaryAtrybuty] AS [TowaryAtrybuty]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ZamowieniaView" EntityType="Self.ZamowieniaView" store:Type="Views" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT 
@@ -2295,6 +2303,8 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Name="NotWebAvailable" Type="Boolean" Nullable="false" />
           <Property Name="MinimumOrderQuantity" Type="Int32" Nullable="true" />
           <Property Name="UserState" Type="String" />
+          <Property Name="SelectListBackColor" Type="String" Nullable="true" Unicode="false" MaxLength="32" />
+          <Property Name="ManagementListBackColor" Type="String" Nullable="true" Unicode="false" MaxLength="32" />
           </EntityType>
         <EntityType Name="AtrybutProduktu">
           <Key>
@@ -3532,6 +3542,8 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Name="Cena" Type="Decimal" Precision="20" Scale="6" />
           <Property Name="OrderIndex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SearchIndex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ManagementListBackColor" Type="String" Nullable="true" Unicode="false" MaxLength="32" />
+          <Property Name="SelectListBackColor" Type="String" Nullable="true" Unicode="false" MaxLength="32" />
         </EntityType>
         <Association Name="ProduktTowarAtrybut">
           <End Type="WebModel.Produkt" Role="Produkt" Multiplicity="1" />
@@ -4205,6 +4217,8 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <EntitySetMapping Name="Produkty">
             <EntityTypeMapping TypeName="IsTypeOf(WebModel.Produkt)">
               <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="ManagementListBackColor" ColumnName="ManagementListBackColor" />
+                <ScalarProperty Name="SelectListBackColor" ColumnName="SelectListBackColor" />
                 <ScalarProperty Name="UserState" ColumnName="UserState" />
                 <ScalarProperty Name="MinimumOrderQuantity" ColumnName="MinimumOrderQuantity" />
                 <ScalarProperty Name="NotWebAvailable" ColumnName="NotWebAvailable" />
@@ -5151,6 +5165,8 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <EntitySetMapping Name="TowaryAtrybuty">
             <EntityTypeMapping TypeName="WebModel.TowarAtrybut">
               <MappingFragment StoreEntitySet="TowaryAtrybuty">
+                <ScalarProperty Name="ManagementListBackColor" ColumnName="ManagementListBackColor" />
+                <ScalarProperty Name="SelectListBackColor" ColumnName="SelectListBackColor" />
                 <ScalarProperty Name="SearchIndex" ColumnName="SearchIndex" />
                 <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
                 <ScalarProperty Name="Cena" ColumnName="Cena" />
