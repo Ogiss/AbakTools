@@ -1577,8 +1577,8 @@ FROM [dbo].[StanyMagazynoweView] AS [StanyMagazynoweView]</DefiningQuery>
 				[TowaryAtrybuty].[Cena] AS [Cena],
 				[TowaryAtrybuty].[OrderIndex] AS [OrderIndex],
 				[TowaryAtrybuty].[SearchIndex] AS [SearchIndex],
-				[TowaryAtrybuty].[OrderIndex] AS [ManagementListBackColor],
-				[TowaryAtrybuty].[SearchIndex] AS [SelectListBackColor]
+				[TowaryAtrybuty].[ManagementListBackColor] AS [ManagementListBackColor],
+				[TowaryAtrybuty].[SelectListBackColor] AS [SelectListBackColor]
 
 				FROM [dbo].[TowaryAtrybuty] AS [TowaryAtrybuty]</DefiningQuery>
           </EntitySet>

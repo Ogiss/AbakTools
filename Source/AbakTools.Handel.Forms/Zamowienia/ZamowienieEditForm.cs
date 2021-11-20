@@ -402,8 +402,8 @@ namespace AbakTools.Zamowienia.Forms
                         new ReportParameter("wiadomosci", wiadomosci /*Zamowienie.WiadomosciText*/)
                     });
 
-                    form.reportViewer.LocalReport.DataSources.Clear();
-                    form.reportViewer.LocalReport.DataSources.Add(
+                    form.ReportViewer.LocalReport.DataSources.Clear();
+                    form.ReportViewer.LocalReport.DataSources.Add(
                          new ReportDataSource("PozycjeZamowieniaView", pozycje)
                          );
 
@@ -414,7 +414,7 @@ namespace AbakTools.Zamowienia.Forms
                 }
                 else
                 {
-                    using (AbakTools.Printer.PrintingService ps = new AbakTools.Printer.PrintingService())
+                    using (Printer.PrintingService ps = new Printer.PrintingService())
                     {
                         ps.ReportPath = "Reports\\ZamowienieReport.rdlc";
                         //ps.DataSources.Add(new ReportDataSource("Zamowienie", new List<global::Enova.Business.Old.DB.Web.Zamowienie>() { Zamowienie }));

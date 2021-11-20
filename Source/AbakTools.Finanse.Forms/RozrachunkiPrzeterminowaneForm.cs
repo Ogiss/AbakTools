@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Data;
-using System.Data.Entity;
-using System.Data.Objects;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using AbakTools.Printer;
@@ -112,9 +108,9 @@ namespace AbakTools.Finanse.Forms
             if (reportSource != null)
             {
                 ReportForm form = new ReportForm();
-                form.reportViewer.LocalReport.ReportPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Reports\\RozrachunkiPrzeterminowaneReport.rdlc");
-                form.reportViewer.LocalReport.DataSources.Clear();
-                form.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("RozrachunekRow", reportSource));
+                form.ReportViewer.LocalReport.ReportPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Reports\\RozrachunkiPrzeterminowaneReport.rdlc");
+                form.ReportViewer.LocalReport.DataSources.Clear();
+                form.ReportViewer.LocalReport.DataSources.Add(new ReportDataSource("RozrachunekRow", reportSource));
 
                 form.ShowDialog();
             }

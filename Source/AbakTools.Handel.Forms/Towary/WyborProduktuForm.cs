@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Data;
-using System.Data.Entity;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace AbakTools.Towary.Forms

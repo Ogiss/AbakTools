@@ -36,10 +36,9 @@
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
+            this.reportViewer.ServerReport.BearerToken = null;
             this.reportViewer.Size = new System.Drawing.Size(1139, 741);
             this.reportViewer.TabIndex = 0;
-            this.reportViewer.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
-            this.reportViewer.ZoomPercent = 25;
             // 
             // ReportForm
             // 
@@ -53,14 +52,12 @@
             this.Text = "ReportForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ReportForm_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ReportForm_KeyDown);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public Microsoft.Reporting.WinForms.ReportViewer reportViewer;
-
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
     }
 }

@@ -7,7 +7,6 @@ namespace AbakTools.Printer
 {
     public partial class ReportForm : Form
     {
-
         public ReportViewer ReportViewer
         {
             get
@@ -46,6 +45,11 @@ namespace AbakTools.Printer
             InitializeComponent();
         }
 
+        private void ReportForm_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer.RefreshReport();
+        }
 
         public ReportForm(string title, string reportPath, IEnumerable<ReportDataSource> dataSources, IEnumerable<ReportParameter> parameters = null)
         {
@@ -119,15 +123,6 @@ namespace AbakTools.Printer
         public void AddDataSource(string name, object data)
         {
             this.DataSources.Add(new ReportDataSource(name, data));
-        }
-
-
-        private void ReportForm_Load(object sender, EventArgs e)
-        {
-            //reportViewer.SetDisplayMode(DisplayMode.PrintLayout);
-            //reportViewer.ZoomMode = ZoomMode.PageWidth; //ZoomMode.Percent;
-            //reportViewer.ZoomPercent = 100;
-            reportViewer.RefreshReport();
         }
 
         private void ReportForm_KeyDown(object sender, KeyEventArgs e)
