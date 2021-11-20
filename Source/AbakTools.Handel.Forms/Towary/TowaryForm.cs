@@ -25,6 +25,24 @@ namespace AbakTools.Towary.Forms
         public TowaryForm()
         {
             InitializeComponent();
+            SetColumnsHeadersStyles();
+        }
+
+        private void SetColumnsHeadersStyles()
+        {
+            /*
+            DataGrid.EnableHeadersVisualStyles = false;
+            var color = ColorTranslator.FromHtml("#E5E5E5");
+
+            for (var idx = 0; idx < DataGrid.ColumnCount; idx++)
+            {
+                if (idx % 2 == 0)
+                {
+                    DataGrid.Columns[idx].HeaderCell.Style.BackColor = color;
+                }
+            }
+            */
+
         }
 
         protected override void LoadData()
@@ -240,7 +258,7 @@ namespace AbakTools.Towary.Forms
                                 row.DefaultCellStyle.SelectionBackColor = backColor;
                             }
 
-                            if(parts.Length > 1)
+                            if (parts.Length > 1)
                             {
                                 var foreColor = ColorTranslator.FromHtml(parts[1]);
                                 row.DefaultCellStyle.ForeColor = foreColor;
