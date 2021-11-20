@@ -76,18 +76,10 @@
             this.gotowyCheckBox = new System.Windows.Forms.CheckBox();
             this.blokadaCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.metaOpisTextBox = new System.Windows.Forms.TextBox();
-            this.metaSlowaTextBox = new System.Windows.Forms.TextBox();
-            this.metaTytulTextBox = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.opisTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.krotkiOpisTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.linkRewriteTextBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.kategorieTabPage = new System.Windows.Forms.TabPage();
             this.kategorieTreeView = new System.Windows.Forms.TreeView();
             this.zdjeciaTabPage = new System.Windows.Forms.TabPage();
@@ -133,6 +125,7 @@
             this.atrybutZdjeciePictureBox = new System.Windows.Forms.PictureBox();
             this.atrybutyTreeView = new System.Windows.Forms.TreeView();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.TabControl.SuspendLayout();
             this.mainTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataSourceBinding)).BeginInit();
@@ -152,6 +145,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.atrybutBindingSource)).BeginInit();
             this.adminAttrGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.atrybutZdjeciePictureBox)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
@@ -519,10 +513,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.label38);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.label37);
             this.groupBox3.Controls.Add(this.wyprzedazCheckBox);
             this.groupBox3.Controls.Add(this.dostepnyCheckBox);
             this.groupBox3.Controls.Add(this.outOfStock1RadioButton);
@@ -540,15 +530,15 @@
             // textBox3
             // 
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "SelectListBackColor", true));
-            this.textBox3.Location = new System.Drawing.Point(257, 44);
+            this.textBox3.Location = new System.Drawing.Point(307, 33);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(102, 20);
+            this.textBox3.Size = new System.Drawing.Size(120, 20);
             this.textBox3.TabIndex = 16;
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(186, 47);
+            this.label38.Location = new System.Drawing.Point(236, 36);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(69, 13);
             this.label38.TabIndex = 15;
@@ -557,16 +547,16 @@
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "ManagementListBackColor", true));
-            this.textBox2.Location = new System.Drawing.Point(78, 44);
+            this.textBox2.Location = new System.Drawing.Point(78, 33);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(102, 20);
+            this.textBox2.Size = new System.Drawing.Size(120, 20);
             this.textBox2.TabIndex = 14;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(10, 47);
+            this.label37.Location = new System.Drawing.Point(10, 36);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(62, 13);
             this.label37.TabIndex = 13;
@@ -650,78 +640,17 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.metaOpisTextBox);
-            this.groupBox4.Controls.Add(this.metaSlowaTextBox);
-            this.groupBox4.Controls.Add(this.metaTytulTextBox);
-            this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.opisTextBox);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.krotkiOpisTextBox);
             this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.linkRewriteTextBox);
-            this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Location = new System.Drawing.Point(8, 328);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(1044, 281);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dane dodatkowe";
-            // 
-            // metaOpisTextBox
-            // 
-            this.metaOpisTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "MetaOpis", true));
-            this.metaOpisTextBox.Location = new System.Drawing.Point(103, 125);
-            this.metaOpisTextBox.Multiline = true;
-            this.metaOpisTextBox.Name = "metaOpisTextBox";
-            this.metaOpisTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.metaOpisTextBox.Size = new System.Drawing.Size(333, 128);
-            this.metaOpisTextBox.TabIndex = 11;
-            // 
-            // metaSlowaTextBox
-            // 
-            this.metaSlowaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "MetaSlowa", true));
-            this.metaSlowaTextBox.Location = new System.Drawing.Point(103, 78);
-            this.metaSlowaTextBox.Multiline = true;
-            this.metaSlowaTextBox.Name = "metaSlowaTextBox";
-            this.metaSlowaTextBox.Size = new System.Drawing.Size(333, 41);
-            this.metaSlowaTextBox.TabIndex = 10;
-            // 
-            // metaTytulTextBox
-            // 
-            this.metaTytulTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "MetaTytul", true));
-            this.metaTytulTextBox.Location = new System.Drawing.Point(103, 52);
-            this.metaTytulTextBox.Name = "metaTytulTextBox";
-            this.metaTytulTextBox.Size = new System.Drawing.Size(333, 20);
-            this.metaTytulTextBox.TabIndex = 9;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(41, 128);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 13);
-            this.label15.TabIndex = 8;
-            this.label15.Text = "Meta opis:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(31, 81);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 13);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Meta słowa:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(39, 55);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 13);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "Meta tytuł:";
             // 
             // opisTextBox
             // 
@@ -761,23 +690,6 @@
             this.label11.Size = new System.Drawing.Size(59, 13);
             this.label11.TabIndex = 2;
             this.label11.Text = "Krótki opis:";
-            // 
-            // linkRewriteTextBox
-            // 
-            this.linkRewriteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "LinkRewrite", true));
-            this.linkRewriteTextBox.Location = new System.Drawing.Point(103, 26);
-            this.linkRewriteTextBox.Name = "linkRewriteTextBox";
-            this.linkRewriteTextBox.Size = new System.Drawing.Size(333, 20);
-            this.linkRewriteTextBox.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(33, 29);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Link rewrite:";
             // 
             // kategorieTabPage
             // 
@@ -1226,6 +1138,19 @@
             this.openFileDialog.InitialDirectory = "c:\\";
             this.openFileDialog.RestoreDirectory = true;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.textBox3);
+            this.groupBox5.Controls.Add(this.label38);
+            this.groupBox5.Controls.Add(this.label37);
+            this.groupBox5.Controls.Add(this.textBox2);
+            this.groupBox5.Location = new System.Drawing.Point(6, 19);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(440, 100);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Kolory";
+            // 
             // TowarEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1260,6 +1185,8 @@
             this.adminAttrGroupBox.ResumeLayout(false);
             this.adminAttrGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.atrybutZdjeciePictureBox)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1298,17 +1225,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox krotkiOpisTextBox;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox linkRewriteTextBox;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabPage kategorieTabPage;
         private System.Windows.Forms.TabPage zdjeciaTabPage;
         private System.Windows.Forms.TabPage atrybutyTabPage;
-        private System.Windows.Forms.TextBox metaOpisTextBox;
-        private System.Windows.Forms.TextBox metaSlowaTextBox;
-        private System.Windows.Forms.TextBox metaTytulTextBox;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TreeView kategorieTreeView;
         private Enova.Business.Old.Controls.ImageViewer zdjeciaImageViewer;
         private System.Windows.Forms.Label label17;
@@ -1370,5 +1289,6 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }

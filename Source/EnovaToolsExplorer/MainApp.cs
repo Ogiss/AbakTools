@@ -43,6 +43,8 @@ namespace EnovaToolsExplorer
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
             Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(CurrentDomain_UnhandledException);
 
+            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
+
             Enova.Business.Old.Core.Configuration.LoadConfiguration();
             //var enovaPath = Enova.Business.Old.Core.Configuration.GetSetting("EnovaPath");
             //Enova.API.EnovaService.Initialize(enovaPath);
