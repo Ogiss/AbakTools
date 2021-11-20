@@ -375,14 +375,14 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>www.pthabak.pl</Value>
+                <Value>= IIF(First(Fields!AgentPhone.Value, "Customer") Is Nothing OR First(Fields!AgentPhone.Value, "Customer") = "", "", "Tel.:" + First(Fields!AgentPhone.Value, "Customer") + ", ") + "www.pthabak.pl"</Value>
                 <Style />
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <Top>4.40725cm</Top>
+        <Top>4.37197cm</Top>
         <Left>0.06339cm</Left>
         <Height>0.42cm</Height>
         <Width>8.98846cm</Width>
@@ -2458,8 +2458,16 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="AgentPhone">
+          <DataField>AgentPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Code">
           <DataField>Code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Guid">
@@ -2481,6 +2489,18 @@
         <Field Name="Nip">
           <DataField>Nip</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PaymentDeadlineInDays">
+          <DataField>PaymentDeadlineInDays</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Stamp">
+          <DataField>Stamp</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="WebAccount">
+          <DataField>WebAccount</DataField>
+          <rd:TypeName>EnovaApi.Models.Customer.WebAccount</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

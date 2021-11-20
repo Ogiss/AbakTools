@@ -57,7 +57,7 @@ namespace AbakTools.Printer
             SetReport(title, reportPath, dataSources);
             ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
             ReportViewer.ZoomMode = ZoomMode.Percent;
-            ReportViewer.ZoomPercent = 30;
+            ReportViewer.ZoomPercent = 100;
             SetPageSettings();
         }
 
@@ -67,7 +67,7 @@ namespace AbakTools.Printer
             SetReport(title, stream, dataSources);
             ReportViewer.SetDisplayMode(DisplayMode.PrintLayout);
             ReportViewer.ZoomMode = ZoomMode.Percent;
-            ReportViewer.ZoomPercent = 30;
+            ReportViewer.ZoomPercent = 100;
             SetPageSettings();
         }
 
