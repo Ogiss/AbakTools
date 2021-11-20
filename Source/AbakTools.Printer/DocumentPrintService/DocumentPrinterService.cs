@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using AbakTools.Framework.Utils.Extensions;
 using Microsoft.Reporting.WinForms;
+using BAL.Forms;
 
 namespace AbakTools.Printer.DocumentPrintService
 {
@@ -10,11 +10,16 @@ namespace AbakTools.Printer.DocumentPrintService
     {
         public void PrintDocument(string templatePath, IDictionary<string, object> dataSources, IDictionary<string, object> parameters = null)
         {
-            var form = new ReportForm(
-                "AbakTools",
-                templatePath,
-                PrepareDocumentDataSources(dataSources),
-                PrepareDocumentParameters(parameters));
+            ReportForm form = null;
+
+            using (WaitCursor.ForLastOpenedForm())
+            {
+                form = new ReportForm(
+                    "AbakTools",
+                    templatePath,
+                    PrepareDocumentDataSources(dataSources),
+                    PrepareDocumentParameters(parameters));
+            }
 
             form.Show();
         }
@@ -24,13 +29,13 @@ namespace AbakTools.Printer.DocumentPrintService
             var reportDataSources = PrepareDocumentDataSources(dataSources);
             var reportParameters = PrepareDocumentParameters(parameters);
             var localReport = new LocalReport();
-            
+
             localReport.ReportPath = templatePath;
 
             localReport.DataSources.Clear();
             reportDataSources.ForEach(localReport.DataSources.Add);
 
-            if(reportParameters != null)
+            if (reportParameters != null)
             {
                 localReport.SetParameters(reportParameters);
             }

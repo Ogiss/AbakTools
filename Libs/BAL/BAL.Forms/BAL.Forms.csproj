@@ -251,6 +251,7 @@
     <Compile Include="GridService.cs" />
     <Compile Include="GridTemplate.cs" />
     <Compile Include="GridViewContext.cs" />
+    <Compile Include="Helpers\ApplicationHelper.cs" />
     <Compile Include="IControlContainer.cs" />
     <Compile Include="IControlKey.cs" />
     <Compile Include="IDataPanelForm.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BAL.Forms.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,15 @@ namespace BAL.Forms
 
         public WaitCursor(Control form)
         {
-            this.form = form != null ? form : Form.ActiveForm;
+            this.form = form != null ? form : ApplicationHelper.GetLastOpenedForm();
             if (this.form == null)
                 this.form =(Form)FormManager.MainForm;
             this.form.Enabled = false;
             this.form.Cursor = Cursors.WaitCursor;
         }
+
+        public static WaitCursor Of(Control form) => new WaitCursor(form);
+        public static WaitCursor ForLastOpenedForm() => new WaitCursor(null);
 
         public WaitCursor() : this(null) { }
 
