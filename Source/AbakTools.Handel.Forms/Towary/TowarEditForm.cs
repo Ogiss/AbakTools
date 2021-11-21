@@ -10,6 +10,7 @@ using System.Linq;
 using System.Data.Entity;
 using Enova.Business.Old.DB.Web;
 using Enova.Business.Old.Types;
+using BAL.Forms.Helpers;
 
 namespace AbakTools.Towary.Forms
 {
@@ -92,6 +93,8 @@ namespace AbakTools.Towary.Forms
                 statusTextBox.AutoCompleteCustomSource = userStateAutocompleteSource;
                 statusTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 statusTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+                RefreshColorPreview(null);
             }
         }
 
@@ -1176,6 +1179,67 @@ namespace AbakTools.Towary.Forms
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void colorChangeButton_Click(object sender, EventArgs e)
+        {
+            if (sender is Control control)
+            {
+                var tag = (string)control.Tag;
+                var color = getColor(tag);
+
+                if (color.HasValue)
+                {
+                    colorDialog.Color = color.Value;
+                }
+
+                if (colorDialog.ShowDialog() == DialogResult.OK)
+                {
+                    setColor(tag, colorDialog.Color);
+                }
+            }
+        }
+
+        private Color? getColor(string tag)
+        {
+            var textBox = GetColorGroupTextBoxByTag(tag);
+
+            if (textBox != null)
+            {
+                try
+                {
+                    return ColorTranslator.FromHtml(textBox.Text);
+                }
+                catch { }
+            }
+
+            return default;
+        }
+
+        private void setColor(string tag, Color color)
+        {
+            var pinfo = Towar.GetType().GetProperty(tag);
+
+            if (pinfo != null)
+            {
+                pinfo.SetValue(Towar, ColorTranslator.ToHtml(color));
+                RefreshColorPreview(tag);
+            }
+        }
+
+        private TextBox GetColorGroupTextBoxByTag(string tag)
+        {
+            var name = $"textBox{tag}";
+            return colorGroupBox.Controls[name] as TextBox;
+        }
+
+        private void RefreshColorPreview(string tag)
+        {
+            textBoxManagementListColor.BackColor = ColorHelper.ParseColor(Towar.ManagementListBackColor, Color.White);
+            textBoxManagementListColor.ForeColor = ColorHelper.ParseColor(Towar.ManagementListForeColor, Color.Black);
+
+            textBoxSelectListColor.BackColor = ColorHelper.ParseColor(Towar.SelectListBackColor, Color.White);
+            textBoxSelectListColor.ForeColor = ColorHelper.ParseColor(Towar.SelectListForeColor, Color.Black);
         }
     }
 }

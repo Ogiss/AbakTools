@@ -517,7 +517,9 @@
           <Property Name="MinimumOrderQuantity" Type="int" Nullable="true" />
           <Property Name="UserState" Type="varchar" MaxLength="255" Nullable="true"/>
 		  <Property Name="SelectListBackColor" Type="varchar" MaxLength="32" />
+		  <Property Name="SelectListForeColor" Type="varchar" MaxLength="32" />
 		  <Property Name="ManagementListBackColor" Type="varchar" MaxLength="32" />
+		  <Property Name="ManagementListForeColor" Type="varchar" MaxLength="32" />
 		</EntityType>
         <EntityType Name="product_attribute">
           <Key>
@@ -1257,7 +1259,9 @@ warning 6002: The table/view 'AbakTools.dbo.TowaryAtrybuty' does not have a prim
           <Property Name="OrderIndex" Type="nvarchar" MaxLength="50" />
           <Property Name="SearchIndex" Type="nvarchar" MaxLength="50" />
 		  <Property Name="SelectListBackColor" Type="varchar" MaxLength="32" />
+		  <Property Name="SelectListForeColor" Type="varchar" MaxLength="32" />
 		  <Property Name="ManagementListBackColor" Type="varchar" MaxLength="32" />
+			<Property Name="ManagementListForeColor" Type="varchar" MaxLength="32" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'AbakTools.dbo.ZamowieniaView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1578,7 +1582,9 @@ FROM [dbo].[StanyMagazynoweView] AS [StanyMagazynoweView]</DefiningQuery>
 				[TowaryAtrybuty].[OrderIndex] AS [OrderIndex],
 				[TowaryAtrybuty].[SearchIndex] AS [SearchIndex],
 				[TowaryAtrybuty].[ManagementListBackColor] AS [ManagementListBackColor],
-				[TowaryAtrybuty].[SelectListBackColor] AS [SelectListBackColor]
+				[TowaryAtrybuty].[ManagementListForeColor] AS [ManagementListForeColor],
+				[TowaryAtrybuty].[SelectListBackColor] AS [SelectListBackColor],
+				[TowaryAtrybuty].[SelectListForeColor] AS [SelectListForeColor]
 
 				FROM [dbo].[TowaryAtrybuty] AS [TowaryAtrybuty]</DefiningQuery>
           </EntitySet>
@@ -2304,7 +2310,9 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Name="MinimumOrderQuantity" Type="Int32" Nullable="true" />
           <Property Name="UserState" Type="String" />
           <Property Name="SelectListBackColor" Type="String" Nullable="true" Unicode="false" MaxLength="32" />
+			<Property Name="SelectListForeColor" Type="String" Nullable="true" Unicode="false" MaxLength="32" />
           <Property Name="ManagementListBackColor" Type="String" Nullable="true" Unicode="false" MaxLength="32" />
+			<Property Name="ManagementListForeColor" Type="String" Nullable="true" Unicode="false" MaxLength="32" />
           </EntityType>
         <EntityType Name="AtrybutProduktu">
           <Key>
@@ -3543,7 +3551,9 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
           <Property Name="OrderIndex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SearchIndex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ManagementListBackColor" Type="String" Nullable="true" Unicode="false" MaxLength="32" />
+			<Property Name="ManagementListForeColor" Type="String" Nullable="true" Unicode="false" MaxLength="32" />
           <Property Name="SelectListBackColor" Type="String" Nullable="true" Unicode="false" MaxLength="32" />
+			<Property Name="SelectListForeColor" Type="String" Nullable="true" Unicode="false" MaxLength="32" />
         </EntityType>
         <Association Name="ProduktTowarAtrybut">
           <End Type="WebModel.Produkt" Role="Produkt" Multiplicity="1" />
@@ -4218,7 +4228,9 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
             <EntityTypeMapping TypeName="IsTypeOf(WebModel.Produkt)">
               <MappingFragment StoreEntitySet="product">
                 <ScalarProperty Name="ManagementListBackColor" ColumnName="ManagementListBackColor" />
+				  <ScalarProperty Name="ManagementListForeColor" ColumnName="ManagementListForeColor" />
                 <ScalarProperty Name="SelectListBackColor" ColumnName="SelectListBackColor" />
+				  <ScalarProperty Name="SelectListForeColor" ColumnName="SelectListForeColor" />
                 <ScalarProperty Name="UserState" ColumnName="UserState" />
                 <ScalarProperty Name="MinimumOrderQuantity" ColumnName="MinimumOrderQuantity" />
                 <ScalarProperty Name="NotWebAvailable" ColumnName="NotWebAvailable" />
@@ -5166,7 +5178,9 @@ FROM [dbo].[ZamowieniaView] AS [ZamowieniaView]</DefiningQuery>
             <EntityTypeMapping TypeName="WebModel.TowarAtrybut">
               <MappingFragment StoreEntitySet="TowaryAtrybuty">
                 <ScalarProperty Name="ManagementListBackColor" ColumnName="ManagementListBackColor" />
+				  <ScalarProperty Name="ManagementListForeColor" ColumnName="ManagementListForeColor" />
                 <ScalarProperty Name="SelectListBackColor" ColumnName="SelectListBackColor" />
+				  <ScalarProperty Name="SelectListForeColor" ColumnName="SelectListForeColor" />
                 <ScalarProperty Name="SearchIndex" ColumnName="SearchIndex" />
                 <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
                 <ScalarProperty Name="Cena" ColumnName="Cena" />

@@ -64,10 +64,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
             this.wyprzedazCheckBox = new System.Windows.Forms.CheckBox();
             this.dostepnyCheckBox = new System.Windows.Forms.CheckBox();
             this.outOfStock1RadioButton = new System.Windows.Forms.RadioButton();
@@ -75,7 +71,24 @@
             this.label23 = new System.Windows.Forms.Label();
             this.gotowyCheckBox = new System.Windows.Forms.CheckBox();
             this.blokadaCheckBox = new System.Windows.Forms.CheckBox();
+            this.textBoxSelectListBackColor = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.textBoxManagementListBackColor = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.colorGroupBox = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxSelectListColor = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxManagementListColor = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxSelectListForeColor = new System.Windows.Forms.TextBox();
+            this.textBoxManagementListForeColor = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.opisTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.krotkiOpisTextBox = new System.Windows.Forms.TextBox();
@@ -125,7 +138,7 @@
             this.atrybutZdjeciePictureBox = new System.Windows.Forms.PictureBox();
             this.atrybutyTreeView = new System.Windows.Forms.TreeView();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.TabControl.SuspendLayout();
             this.mainTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataSourceBinding)).BeginInit();
@@ -137,6 +150,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stawkiVatBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.colorGroupBox.SuspendLayout();
             this.kategorieTabPage.SuspendLayout();
             this.zdjeciaTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.selectedImgBindingSource)).BeginInit();
@@ -145,7 +159,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.atrybutBindingSource)).BeginInit();
             this.adminAttrGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.atrybutZdjeciePictureBox)).BeginInit();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
@@ -527,41 +540,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ustawienia";
             // 
-            // textBox3
-            // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "SelectListBackColor", true));
-            this.textBox3.Location = new System.Drawing.Point(307, 33);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(120, 20);
-            this.textBox3.TabIndex = 16;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(236, 36);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(69, 13);
-            this.label38.TabIndex = 15;
-            this.label38.Text = "Lista wyboru:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "ManagementListBackColor", true));
-            this.textBox2.Location = new System.Drawing.Point(78, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 20);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(10, 36);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(62, 13);
-            this.label37.TabIndex = 13;
-            this.label37.Text = "Lista edycji:";
-            // 
             // wyprzedazCheckBox
             // 
             this.wyprzedazCheckBox.AutoSize = true;
@@ -638,9 +616,46 @@
             this.blokadaCheckBox.UseVisualStyleBackColor = true;
             this.blokadaCheckBox.CheckedChanged += new System.EventHandler(this.blokadaCheckBox_CheckedChanged);
             // 
+            // textBoxSelectListBackColor
+            // 
+            this.textBoxSelectListBackColor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "SelectListBackColor", true));
+            this.textBoxSelectListBackColor.Location = new System.Drawing.Point(79, 94);
+            this.textBoxSelectListBackColor.Name = "textBoxSelectListBackColor";
+            this.textBoxSelectListBackColor.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSelectListBackColor.TabIndex = 16;
+            this.textBoxSelectListBackColor.Tag = "SelectListBackColor";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(4, 97);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(69, 13);
+            this.label38.TabIndex = 15;
+            this.label38.Text = "Lista wyboru:";
+            // 
+            // textBoxManagementListBackColor
+            // 
+            this.textBoxManagementListBackColor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "ManagementListBackColor", true));
+            this.textBoxManagementListBackColor.Location = new System.Drawing.Point(79, 33);
+            this.textBoxManagementListBackColor.Name = "textBoxManagementListBackColor";
+            this.textBoxManagementListBackColor.Size = new System.Drawing.Size(100, 20);
+            this.textBoxManagementListBackColor.TabIndex = 14;
+            this.textBoxManagementListBackColor.Tag = "ManagementListBackColor";
+            this.textBoxManagementListBackColor.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(11, 37);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(62, 13);
+            this.label37.TabIndex = 13;
+            this.label37.Text = "Lista edycji:";
+            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.groupBox5);
+            this.groupBox4.Controls.Add(this.colorGroupBox);
             this.groupBox4.Controls.Add(this.opisTextBox);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.krotkiOpisTextBox);
@@ -651,6 +666,149 @@
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dane dodatkowe";
+            // 
+            // colorGroupBox
+            // 
+            this.colorGroupBox.Controls.Add(this.button4);
+            this.colorGroupBox.Controls.Add(this.button3);
+            this.colorGroupBox.Controls.Add(this.button2);
+            this.colorGroupBox.Controls.Add(this.button1);
+            this.colorGroupBox.Controls.Add(this.textBoxSelectListColor);
+            this.colorGroupBox.Controls.Add(this.label15);
+            this.colorGroupBox.Controls.Add(this.textBoxManagementListColor);
+            this.colorGroupBox.Controls.Add(this.label14);
+            this.colorGroupBox.Controls.Add(this.textBoxSelectListForeColor);
+            this.colorGroupBox.Controls.Add(this.textBoxManagementListForeColor);
+            this.colorGroupBox.Controls.Add(this.label13);
+            this.colorGroupBox.Controls.Add(this.label10);
+            this.colorGroupBox.Controls.Add(this.textBoxSelectListBackColor);
+            this.colorGroupBox.Controls.Add(this.label38);
+            this.colorGroupBox.Controls.Add(this.label37);
+            this.colorGroupBox.Controls.Add(this.textBoxManagementListBackColor);
+            this.colorGroupBox.Location = new System.Drawing.Point(6, 19);
+            this.colorGroupBox.Name = "colorGroupBox";
+            this.colorGroupBox.Size = new System.Drawing.Size(440, 151);
+            this.colorGroupBox.TabIndex = 6;
+            this.colorGroupBox.TabStop = false;
+            this.colorGroupBox.Text = "Kolory";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(378, 93);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(52, 23);
+            this.button4.TabIndex = 32;
+            this.button4.Tag = "SelectListForeColor";
+            this.button4.Text = "Zmień";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.colorChangeButton_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(185, 93);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(52, 23);
+            this.button3.TabIndex = 31;
+            this.button3.Tag = "SelectListBackColor";
+            this.button3.Text = "Zmień";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.colorChangeButton_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(378, 32);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(52, 23);
+            this.button2.TabIndex = 30;
+            this.button2.Tag = "ManagementListForeColor";
+            this.button2.Text = "Zmień";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.colorChangeButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(185, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(52, 23);
+            this.button1.TabIndex = 29;
+            this.button1.Tag = "ManagementListBackColor";
+            this.button1.Text = "Zmień";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.colorChangeButton_Click);
+            // 
+            // textBoxSelectListColor
+            // 
+            this.textBoxSelectListColor.BackColor = System.Drawing.Color.White;
+            this.textBoxSelectListColor.Location = new System.Drawing.Point(79, 120);
+            this.textBoxSelectListColor.Name = "textBoxSelectListColor";
+            this.textBoxSelectListColor.ReadOnly = true;
+            this.textBoxSelectListColor.Size = new System.Drawing.Size(346, 20);
+            this.textBoxSelectListColor.TabIndex = 28;
+            this.textBoxSelectListColor.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ...";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(24, 123);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(49, 13);
+            this.label15.TabIndex = 27;
+            this.label15.Text = "Podgląd:";
+            // 
+            // textBoxManagementListColor
+            // 
+            this.textBoxManagementListColor.BackColor = System.Drawing.Color.White;
+            this.textBoxManagementListColor.Location = new System.Drawing.Point(79, 60);
+            this.textBoxManagementListColor.Name = "textBoxManagementListColor";
+            this.textBoxManagementListColor.ReadOnly = true;
+            this.textBoxManagementListColor.Size = new System.Drawing.Size(346, 20);
+            this.textBoxManagementListColor.TabIndex = 26;
+            this.textBoxManagementListColor.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ...";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(24, 63);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(49, 13);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Podgląd:";
+            // 
+            // textBoxSelectListForeColor
+            // 
+            this.textBoxSelectListForeColor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "SelectListForeColor", true));
+            this.textBoxSelectListForeColor.Location = new System.Drawing.Point(252, 95);
+            this.textBoxSelectListForeColor.Name = "textBoxSelectListForeColor";
+            this.textBoxSelectListForeColor.Size = new System.Drawing.Size(120, 20);
+            this.textBoxSelectListForeColor.TabIndex = 20;
+            this.textBoxSelectListForeColor.Tag = "SelectListForeColor";
+            // 
+            // textBoxManagementListForeColor
+            // 
+            this.textBoxManagementListForeColor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DataSourceBinding, "ManagementListForeColor", true));
+            this.textBoxManagementListForeColor.Location = new System.Drawing.Point(252, 34);
+            this.textBoxManagementListForeColor.Name = "textBoxManagementListForeColor";
+            this.textBoxManagementListForeColor.Size = new System.Drawing.Size(120, 20);
+            this.textBoxManagementListForeColor.TabIndex = 19;
+            this.textBoxManagementListForeColor.Tag = "ManagementListForeColor";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(271, 18);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 13);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Kolor czcionki";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(113, 17);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Kolor tła";
             // 
             // opisTextBox
             // 
@@ -1138,19 +1296,6 @@
             this.openFileDialog.InitialDirectory = "c:\\";
             this.openFileDialog.RestoreDirectory = true;
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.textBox3);
-            this.groupBox5.Controls.Add(this.label38);
-            this.groupBox5.Controls.Add(this.label37);
-            this.groupBox5.Controls.Add(this.textBox2);
-            this.groupBox5.Location = new System.Drawing.Point(6, 19);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(440, 100);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Kolory";
-            // 
             // TowarEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1174,6 +1319,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.colorGroupBox.ResumeLayout(false);
+            this.colorGroupBox.PerformLayout();
             this.kategorieTabPage.ResumeLayout(false);
             this.zdjeciaTabPage.ResumeLayout(false);
             this.zdjeciaTabPage.PerformLayout();
@@ -1185,8 +1332,6 @@
             this.adminAttrGroupBox.ResumeLayout(false);
             this.adminAttrGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.atrybutZdjeciePictureBox)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1285,10 +1430,23 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox statusTextBox;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxManagementListBackColor;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxSelectListBackColor;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox colorGroupBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxSelectListForeColor;
+        private System.Windows.Forms.TextBox textBoxManagementListForeColor;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.TextBox textBoxManagementListColor;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxSelectListColor;
+        private System.Windows.Forms.Label label15;
     }
 }

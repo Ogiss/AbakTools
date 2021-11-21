@@ -16084,6 +16084,30 @@ namespace Enova.Business.Old.DB.Web
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public global::System.String SelectListForeColor
+        {
+            get
+            {
+                return _SelectListForeColor;
+            }
+            set
+            {
+                OnSelectListForeColorChanging(value);
+                ReportPropertyChanging("SelectListForeColor");
+                _SelectListForeColor = StructuralObject.SetValidValue(value, true, "SelectListForeColor");
+                ReportPropertyChanged("SelectListForeColor");
+                OnSelectListForeColorChanged();
+            }
+        }
+        private global::System.String _SelectListForeColor;
+        partial void OnSelectListForeColorChanging(global::System.String value);
+        partial void OnSelectListForeColorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String ManagementListBackColor
         {
             get
@@ -16102,6 +16126,30 @@ namespace Enova.Business.Old.DB.Web
         private global::System.String _ManagementListBackColor;
         partial void OnManagementListBackColorChanging(global::System.String value);
         partial void OnManagementListBackColorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ManagementListForeColor
+        {
+            get
+            {
+                return _ManagementListForeColor;
+            }
+            set
+            {
+                OnManagementListForeColorChanging(value);
+                ReportPropertyChanging("ManagementListForeColor");
+                _ManagementListForeColor = StructuralObject.SetValidValue(value, true, "ManagementListForeColor");
+                ReportPropertyChanged("ManagementListForeColor");
+                OnManagementListForeColorChanged();
+            }
+        }
+        private global::System.String _ManagementListForeColor;
+        partial void OnManagementListForeColorChanging(global::System.String value);
+        partial void OnManagementListForeColorChanged();
 
         #endregion
 
@@ -24262,6 +24310,30 @@ namespace Enova.Business.Old.DB.Web
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public global::System.String ManagementListForeColor
+        {
+            get
+            {
+                return _ManagementListForeColor;
+            }
+            set
+            {
+                OnManagementListForeColorChanging(value);
+                ReportPropertyChanging("ManagementListForeColor");
+                _ManagementListForeColor = StructuralObject.SetValidValue(value, true, "ManagementListForeColor");
+                ReportPropertyChanged("ManagementListForeColor");
+                OnManagementListForeColorChanged();
+            }
+        }
+        private global::System.String _ManagementListForeColor;
+        partial void OnManagementListForeColorChanging(global::System.String value);
+        partial void OnManagementListForeColorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String SelectListBackColor
         {
             get
@@ -24280,6 +24352,30 @@ namespace Enova.Business.Old.DB.Web
         private global::System.String _SelectListBackColor;
         partial void OnSelectListBackColorChanging(global::System.String value);
         partial void OnSelectListBackColorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String SelectListForeColor
+        {
+            get
+            {
+                return _SelectListForeColor;
+            }
+            set
+            {
+                OnSelectListForeColorChanging(value);
+                ReportPropertyChanging("SelectListForeColor");
+                _SelectListForeColor = StructuralObject.SetValidValue(value, true, "SelectListForeColor");
+                ReportPropertyChanged("SelectListForeColor");
+                OnSelectListForeColorChanged();
+            }
+        }
+        private global::System.String _SelectListForeColor;
+        partial void OnSelectListForeColorChanging(global::System.String value);
+        partial void OnSelectListForeColorChanged();
 
         #endregion
 

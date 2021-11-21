@@ -4,6 +4,7 @@ using System.Linq;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using BAL.Forms.Helpers;
 
 namespace AbakTools.Towary.Forms
 {
@@ -701,34 +702,62 @@ namespace AbakTools.Towary.Forms
                 if (row.DataBoundItem != null)
                 {
                     Enova.Business.Old.DB.Web.TowarAtrybut ta = (Enova.Business.Old.DB.Web.TowarAtrybut)row.DataBoundItem;
-                    if (!string.IsNullOrEmpty(ta.SelectListBackColor))
-                    {
-                        try
-                        {
-                            var parts = ta.SelectListBackColor.Split(';');
-                            if (parts.Length > 0)
-                            {
-                                var backColor = ColorTranslator.FromHtml(parts[0]);
-                                row.DefaultCellStyle.BackColor = backColor;
-                                row.DefaultCellStyle.SelectionBackColor = backColor;
-                            }
-
-                            if (parts.Length > 1)
-                            {
-                                var foreColor = ColorTranslator.FromHtml(parts[1]);
-                                row.DefaultCellStyle.ForeColor = foreColor;
-                                row.DefaultCellStyle.SelectionForeColor = foreColor;
-                            }
-                        }
-                        catch { }
-
-                    }
-                    else if (!ta.Dostepny)
-                    {
-                        row.DefaultCellStyle.ForeColor = Color.Red;
-                        row.DefaultCellStyle.SelectionForeColor = Color.Red;
-                    }
+                    SetRowBackColor(row, GetRowBackColor(ta));
+                    SetRowForeColor(row, GetRowForeColor(ta));
+                    SetRowFontStyle(row, GetRowFontStyle(row, ta));
                 }
+            }
+        }
+
+        private Color? GetRowBackColor(Enova.Business.Old.DB.Web.TowarAtrybut towarAtrybut)
+        {
+            if (ColorHelper.TryParseColorFromHtml(towarAtrybut.SelectListBackColor, out Color color))
+                return color;
+
+            return null;
+        }
+
+        private Color? GetRowForeColor(Enova.Business.Old.DB.Web.TowarAtrybut towarAtrybut)
+        {
+            if (ColorHelper.TryParseColorFromHtml(towarAtrybut.SelectListForeColor, out Color color))
+                return color;
+
+            return !towarAtrybut.Dostepny ? Color.Red : (Color?)null;
+        }
+
+        private FontStyle? GetRowFontStyle(DataGridViewRow row, Enova.Business.Old.DB.Web.TowarAtrybut towarAtrybut)
+        {
+            if (towarAtrybut.SelectListForeColor != null && towarAtrybut.SelectListBackColor != null)
+            {
+                return row.Selected ? FontStyle.Bold : FontStyle.Regular;
+            }
+
+            return null;
+        }
+
+        private void SetRowBackColor(DataGridViewRow row, Color? color)
+        {
+            if (color.HasValue)
+            {
+                row.DefaultCellStyle.BackColor = color.Value;
+                row.DefaultCellStyle.SelectionBackColor = color.Value;
+            }
+        }
+
+        private void SetRowForeColor(DataGridViewRow row, Color? color)
+        {
+            if (color.HasValue)
+            {
+                row.DefaultCellStyle.ForeColor = color.Value;
+                row.DefaultCellStyle.SelectionForeColor = color.Value;
+            }
+        }
+
+        private void SetRowFontStyle(DataGridViewRow row, FontStyle? fontStyle)
+        {
+            if (fontStyle.HasValue)
+            {
+                row.DefaultCellStyle.Font = new Font(DataGrid.DefaultFont, fontStyle.Value);
             }
         }
 

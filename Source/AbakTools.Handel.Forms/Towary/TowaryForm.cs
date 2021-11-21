@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DbWeb = Enova.Business.Old.DB.Web;
 using Enova.Business.Old.DB.Web;
 using Enova.Business.Old.Types;
+using BAL.Forms.Helpers;
 
 [assembly: BAL.Forms.MenuAction("WebTools\\Towary", typeof(AbakTools.Towary.Forms.TowaryForm), Priority = 1040)]
 
@@ -25,24 +26,6 @@ namespace AbakTools.Towary.Forms
         public TowaryForm()
         {
             InitializeComponent();
-            SetColumnsHeadersStyles();
-        }
-
-        private void SetColumnsHeadersStyles()
-        {
-            /*
-            DataGrid.EnableHeadersVisualStyles = false;
-            var color = ColorTranslator.FromHtml("#E5E5E5");
-
-            for (var idx = 0; idx < DataGrid.ColumnCount; idx++)
-            {
-                if (idx % 2 == 0)
-                {
-                    DataGrid.Columns[idx].HeaderCell.Style.BackColor = color;
-                }
-            }
-            */
-
         }
 
         protected override void LoadData()
@@ -246,48 +229,66 @@ namespace AbakTools.Towary.Forms
 
                 if (product != null)
                 {
-                    if (!string.IsNullOrEmpty(product.ManagementListBackColor))
-                    {
-                        try
-                        {
-                            var parts = product.ManagementListBackColor.Split(';');
-                            if (parts.Length > 0)
-                            {
-                                var backColor = ColorTranslator.FromHtml(parts[0]);
-                                row.DefaultCellStyle.BackColor = backColor;
-                                row.DefaultCellStyle.SelectionBackColor = backColor;
-                            }
-
-                            if (parts.Length > 1)
-                            {
-                                var foreColor = ColorTranslator.FromHtml(parts[1]);
-                                row.DefaultCellStyle.ForeColor = foreColor;
-                                row.DefaultCellStyle.SelectionForeColor = foreColor;
-                            }
-                        }
-                        catch { }
-                    }
-                    else
-                    {
-                        var pink = Color.FromArgb(204, 67, 136);
-                        Color? backColor = product.NotWebAvailable ? pink :
-                            (product.IsNew ? Color.LightBlue : (product.IsEdited ? Color.LightGreen : (Color?)null));
-
-                        if (backColor.HasValue)
-                        {
-                            row.DefaultCellStyle.BackColor = backColor.Value;
-                            row.DefaultCellStyle.SelectionBackColor = backColor.Value;
-                        }
-
-
-                        if (!product.IsActive)
-                        {
-                            row.DefaultCellStyle.ForeColor = Color.Red;
-                            row.DefaultCellStyle.SelectionForeColor = Color.Red;
-                        }
-                    }
+                    SetRowBackColor(row, GetRowBackColor(product));
+                    SetRowForeColor(row, GetRowForeColor(product));
                 }
             };
+        }
+
+        private Color? GetRowBackColor(Produkt product)
+        {
+            Color? color;
+            if (!string.IsNullOrEmpty(product.ManagementListBackColor) &&
+                    ColorHelper.TryParseColorFromHtml(product.ManagementListBackColor, out Color customBackColor))
+            {
+                color = customBackColor;
+            }
+            else
+            {
+                var pink = Color.FromArgb(204, 67, 136);
+                color = product.NotWebAvailable ? pink :
+                    (product.IsNew ? Color.LightBlue : (product.IsEdited ? Color.LightGreen : (Color?)null));
+            }
+
+            return color;
+        }
+
+        private Color? GetRowForeColor(Produkt product)
+        {
+            Color? color = null;
+
+            if (!string.IsNullOrEmpty(product.ManagementListForeColor) &&
+                        ColorHelper.TryParseColorFromHtml(product.ManagementListForeColor, out Color customForeColor))
+            {
+                color = customForeColor;
+            }
+            else
+            {
+                if (!product.IsActive)
+                {
+                    color = Color.Red;
+                }
+            }
+
+            return color;
+        }
+
+        private void SetRowBackColor(DataGridViewRow row, Color? color)
+        {
+            if (color.HasValue)
+            {
+                row.DefaultCellStyle.BackColor = color.Value;
+                row.DefaultCellStyle.SelectionBackColor = color.Value;
+            }
+        }
+
+        private void SetRowForeColor(DataGridViewRow row, Color? color)
+        {
+            if (color.HasValue)
+            {
+                row.DefaultCellStyle.ForeColor = color.Value;
+                row.DefaultCellStyle.SelectionForeColor = color.Value;
+            }
         }
     }
 }

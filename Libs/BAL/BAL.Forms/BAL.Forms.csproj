@@ -252,6 +252,7 @@
     <Compile Include="GridTemplate.cs" />
     <Compile Include="GridViewContext.cs" />
     <Compile Include="Helpers\ApplicationHelper.cs" />
+    <Compile Include="Helpers\ColorHelper.cs" />
     <Compile Include="IControlContainer.cs" />
     <Compile Include="IControlKey.cs" />
     <Compile Include="IDataPanelForm.cs" />
@@ -423,6 +424,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SendEmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
